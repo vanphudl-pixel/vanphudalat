@@ -8,7 +8,7 @@ from urllib.parse import urljoin, urlparse
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(HERE))
-LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi"]
+LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he"]
 BASE = "https://vanphudl-pixel.github.io/"
 problems = []
 
@@ -32,7 +32,7 @@ for l in LANGS:
             problems.append(f"{l}/{k}: image img/{a[5]}.jpg does not exist")
     # Business rules: never mention driving licences, never state electric-scooter range in km
     txt = repr(c)
-    for pat in [r"licen", r"права", r"驾照", r"면허", r"免許", r"ใบขับขี่", r"\bSIM\b", r"lesen", r"bằng lái",
+    for pat in [r"licen", r"права", r"驾照", r"면허", r"免許", r"ใบขับขี่", r"\bSIM\b", r"lesen memandu", r"tanpa lesen", r"perlu lesen", r"bằng lái", r"Führerschein", r"\bpermis\b", r"licencia", r"carnet de conducir", r"רישיון",
                 r"\d+\s?(km|公里|км|กม|킬로)\s*(per charge|на заряд|充电|충전|充電|ต่อการชาร์จ|mỗi lần sạc)"]:
         if re.search(pat, txt, re.I):
             problems.append(f"{l}: forbidden wording /{pat}/")

@@ -4,9 +4,9 @@ Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 
 ## How a new article is added
 1. Pick the first unchecked topic in "Backlog" (season-aware: skip ahead if a seasonal topic is due within ~4 weeks).
-2. Add the article to **every** file in `content/` (en, ru, zh, ko, ja, th, id, ms, vi) under the **same key**, appended at the END of `C["articles"]` (order = publish order).
+2. Add the article to **every** file in `content/` (en, ru, zh, ko, ja, th, id, ms, vi, de, fr, es, he) under the **same key**, appended at the END of `C["articles"]` (order = publish order).
    Tuple: `(slug, title_tag, h1, meta_description, lead, image_name, html_body)`
-   - slug: en/zh/ko/ja/th/id/ms → same English kebab slug; ru → transliterated Russian slug; vi → Vietnamese kebab slug without diacritics.
+   - slug: en/zh/ko/ja/th/id/ms/de/fr/es/he → same English kebab slug; ru → transliterated Russian slug; vi → Vietnamese kebab slug without diacritics.
    - image_name: one of the files in `/img` without `.jpg`: electric-row, electric-helmets, airblade, fleet-gas, vision-white (do NOT use guest-1/guest-2 as article images).
    - html_body: `<h2>`, `<p>`, `<ul><li>` only. Link to the routes page with `<a href="{ROUTES}">…</a>` when relevant.
 3. In `content/en.py` add the publish date: `C["dates"]["<key>"] = "YYYY-MM-DD"` (create `C["dates"] = {}` if missing).
@@ -21,6 +21,7 @@ Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 - Rules to mention where natural: no alcohol/beer when riding; strictly follow Vietnamese traffic law.
 - Facts about places: only well-established ones; distances/times as approximate ("about", "около", "约"). No invented prices of tickets/hotels, no invented opening hours, no fake reviews or quotes, no claims about competitors.
 - Write each language natively (not word-for-word); keep the article genuinely useful to a traveller (≈450–700 words in en). Avoid keyword stuffing.
+- Hebrew (he) is right-to-left; write natural Israeli Hebrew, plural address (אתם), avoid recommending pork dishes. German/French/Spanish: natural, informal-friendly tone (du / vous / tú).
 - Malay: avoid pork dishes as recommendations; mention halal where food is discussed. Thai/Malay/Indonesian readers drive on the left at home — remind "Vietnam drives on the right" if riding is discussed.
 
 ## Published

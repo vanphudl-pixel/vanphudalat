@@ -8,9 +8,9 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 BASE = "https://vanphudl-pixel.github.io/"
 OUT = HERE.parent  # repo root = published site
-LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi"]
-LABEL = {"en": "EN", "ru": "RU", "zh": "中文", "ko": "한국어", "ja": "日本語", "th": "ไทย", "id": "ID", "ms": "MY", "vi": "VI"}
-LOCALE = {"en": "en_US", "ru": "ru_RU", "zh": "zh_CN", "ko": "ko_KR", "ja": "ja_JP", "th": "th_TH", "id": "id_ID", "ms": "ms_MY", "vi": "vi_VN"}
+LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he"]
+LABEL = {"en": "EN", "ru": "RU", "zh": "中文", "ko": "한국어", "ja": "日本語", "th": "ไทย", "id": "ID", "ms": "MY", "vi": "VI", "de": "DE", "fr": "FR", "es": "ES", "he": "עב"}
+LOCALE = {"en": "en_US", "ru": "ru_RU", "zh": "zh_CN", "ko": "ko_KR", "ja": "ja_JP", "th": "th_TH", "id": "id_ID", "ms": "ms_MY", "vi": "vi_VN", "de": "de_DE", "fr": "fr_FR", "es": "es_ES", "he": "he_IL"}
 LAT, LON = 11.9510676, 108.4384077
 GMAPS = "https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6"
 YA_LINK = f"https://yandex.ru/maps/?pt={LON},{LAT}&z=17&l=map"
@@ -69,6 +69,11 @@ table.price tr:last-child td{border-bottom:0}
 .float.tgf{background:#229ED9}
 .float.zf{background:#0068FF}
 html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
+html[dir=rtl] .checks li{padding:12px 40px 12px 14px}
+html[dir=rtl] .checks li:before{left:auto;right:14px}
+html[dir=rtl] ol{padding-left:0;padding-right:20px}
+html[dir=rtl] .prose ul{padding-left:0;padding-right:20px}
+html[dir=rtl] .langs,html[dir=rtl] .price,html[dir=rtl] table.price th,html[dir=rtl] table.price td{text-align:right}
 """
 
 # ------------------------------------------------------------------ URLs
@@ -159,7 +164,7 @@ def head(l, kind, key, title, desc, ld, img="electric-row"):
     alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + path_of(x, kind, key)}">\n' for x in LANGS)
     alts += f'<link rel="alternate" hreflang="x-default" href="{BASE + path_of("en", kind, key)}">\n'
     return f"""<!doctype html>
-<html lang="{l}">
+<html lang="{l}"{' dir="rtl"' if l == "he" else ""}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -183,7 +188,7 @@ def foot(l, root_redirect=False):
     if root_redirect:
         redirect = ("(function(){if(/bot|crawl|spider|slurp|yandex|google|bing|baidu/i.test(navigator.userAgent))return;let p=null;try{p=localStorage.getItem('lang')}catch(e){}"
                     "const ok=" + json.dumps(LANGS) + ";let t=p;if(!t){const ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en'];"
-                    "for(const x of ls){let n=x.toLowerCase().slice(0,2);if(n==='in')n='id';if(ok.includes(n)){t=n;break}}}"
+                    "for(const x of ls){let n=x.toLowerCase().slice(0,2);if(n==='in')n='id';if(n==='iw')n='he';if(ok.includes(n)){t=n;break}}}"
                     "if(t&&t!=='en'&&ok.includes(t))location.replace(t+'/');})();")
     return f"""<footer>{u["footer"]}</footer>
 {floats(l)}
