@@ -27,7 +27,7 @@ C = {
   ("Tiada deposit wang", "hanya tinggalkan pasport atau kad pengenalan sepanjang tempoh sewaan."),
   ("Bayar dahulu", "bayaran sewa penuh dibuat semasa mengambil motosikal."),
   ("Hantar ke hotel percuma", "ke hotel di pusat bandar Da Lat untuk sewaan 2 hari ke atas."),
-  ("Termasuk topi keledar", "untuk setiap motosikal."),
+  ("Termasuk topi keledar", "untuk setiap motosikal."), ("Pemegang telefon + 1 liter minyak", "setiap motosikal ada pemegang telefon; motosikal petrol diberi 1 liter minyak, cukup ke stesen minyak terdekat."),
   ("Cuba tunggang dan video", "sebelum sewaan anda mencuba motosikal dan kami rakam keadaannya bersama."),
   ("Pulangkan sebelum 9:00 malam", "pada hari terakhir sewaan."),
  ],

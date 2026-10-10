@@ -27,7 +27,7 @@ C = {
   ("Tanpa deposit uang", "cukup titipkan paspor atau KTP selama masa sewa."),
   ("Bayar di muka", "biaya sewa dibayar penuh saat mengambil motor."),
   ("Gratis antar ke hotel", "di pusat kota Da Lat untuk sewa 2 hari atau lebih."),
-  ("Termasuk helm", "untuk setiap motor."),
+  ("Termasuk helm", "untuk setiap motor."), ("Holder HP + 1 liter bensin", "setiap motor ada holder HP; motor bensin diberi 1 liter bensin, cukup sampai SPBU terdekat."),
   ("Tes kendara dan video", "sebelum sewa Anda mencoba motor, lalu kami merekam kondisinya bersama."),
   ("Kembali sebelum 21.00", "di hari terakhir sewa."),
  ],

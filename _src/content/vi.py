@@ -27,7 +27,7 @@ C = {
   ("Không cọc tiền", "chỉ gửi CCCD hoặc hộ chiếu trong thời gian thuê."),
   ("Trả trước", "thanh toán đủ tiền thuê khi nhận xe."),
   ("Giao xe miễn phí", "tận khách sạn trung tâm Đà Lạt khi thuê từ 2 ngày."),
-  ("Kèm mũ bảo hiểm", "mỗi xe đều có mũ miễn phí."),
+  ("Kèm mũ bảo hiểm", "mỗi xe đều có mũ miễn phí."), ("Giá đỡ điện thoại + 1 lít xăng", "xe nào cũng có giá đỡ điện thoại; xe xăng giao sẵn 1 lít, đủ chạy tới cây xăng gần nhất."),
   ("Chạy thử và quay video", "trước khi thuê bạn chạy thử, hai bên cùng quay video tình trạng xe."),
   ("Trả xe trước 21:00", "vào ngày cuối thuê."),
  ],

@@ -28,6 +28,7 @@ C = {
   ("Pay upfront", "the full rental is paid when you pick up the bike."),
   ("Free hotel delivery", "to hotels in central Da Lat for rentals of 2+ days."),
   ("Helmet included", "with every bike."),
+  ("Phone holder + 1 liter of fuel", "every bike has a phone holder; gas scooters come with 1 liter of fuel to get you to the nearest station."),
   ("Test ride and video", "you try the bike and we film its condition together before the rental."),
   ("Return by 9:00 PM", "on the last day of the rental."),
  ],

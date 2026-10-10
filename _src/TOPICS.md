@@ -16,7 +16,7 @@ Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 ## Hard rules (business owner's decisions — never break)
 - NEVER mention driving licences/permits in any language (no "license", "права", "驾照", "bằng lái", etc.).
 - NEVER state an electric-scooter range in km.
-- Prices: 150,000 VND/day for every bike (Honda Vision 110, Honda Air Blade 125, electric scooter). No cash deposit — guest leaves passport or ID card. Free helmet. Free hotel delivery in central Da Lat for 2+ days. Rental day = pickup until 21:00. Test ride + video of bike condition before rental.
+- Prices: 150,000 VND/day for every bike (Honda Vision 110, Honda Air Blade 125, electric scooter). No cash deposit — guest leaves passport or ID card. Free helmet. Phone holder on every bike; gas scooters come with 1 liter of fuel. Free hotel delivery in central Da Lat for 2+ days. Rental day = pickup until 21:00. Test ride + video of bike condition before rental.
 - Contacts: WhatsApp +84 944 081 101 / +84 834 622 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat, Russian Telegram channel t.me/dalat_life_vietnam. Shop: 1/15/5 Thông Thiên Học, Đà Lạt.
 - Rules to mention where natural: no alcohol/beer when riding; strictly follow Vietnamese traffic law.
 - Facts about places: only well-established ones; distances/times as approximate ("about", "около", "约"). No invented prices of tickets/hotels, no invented opening hours, no fake reviews or quotes, no claims about competitors.

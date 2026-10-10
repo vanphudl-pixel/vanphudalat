@@ -14,6 +14,7 @@ LOCALE = {"en": "en_US", "ru": "ru_RU", "zh": "zh_CN", "ko": "ko_KR", "ja": "ja_
 LAT, LON = 11.9510676, 108.4384077
 GMAPS = "https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6"
 YA_LINK = f"https://yandex.ru/maps/?pt={LON},{LAT}&z=17&l=map"
+AMAP = f"https://uri.amap.com/marker?position={LON},{LAT}&name=Van%20Phu%20%E5%A4%A7%E5%8F%BB%E6%91%A9%E6%89%98%E8%BD%A6%E7%A7%9F%E8%B5%81&src=vanphudalat&coordinate=wgs84&callnative=1"
 YA_WIDGET = f"https://yandex.ru/map-widget/v1/?ll={LON}%2C{LAT}&z=16&pt={LON}%2C{LAT}%2Cpm2rdm"
 TG = "https://t.me/vanphudalat"
 TG_CHANNEL = "https://t.me/dalat_life_vietnam"
@@ -96,10 +97,11 @@ def btn(kind, l, cls_extra=""):
     if kind == "zalo": return f'<a class="btn zalo" href="{ZALO}" target="_blank" rel="noopener">{u["zalo_btn"]}</a>'
     if kind == "wc": return '<button class="btn wechat wcbtn" type="button">WeChat: vanphudalat</button>'
     if kind == "gmap": return f'<a class="btn alt" href="{GMAPS}" target="_blank" rel="noopener">{u["open_map"]}</a>'
+    if kind == "amap": return f'<a class="btn alt" href="{AMAP}" target="_blank" rel="noopener">在高德地图中打开</a>'
     if kind == "yamap": return f'<a class="btn alt" href="{YA_LINK}" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>'
     raise KeyError(kind)
 
-HERO = {"ru": ["tg", "wa", "yamap", "wc"], "zh": ["wc", "wa", "gmap"], "vi": ["zalo", "wa", "gmap"]}
+HERO = {"ru": ["tg", "wa", "yamap", "wc"], "zh": ["wc", "wa", "amap", "gmap"], "vi": ["zalo", "wa", "gmap"]}
 def hero_btns(l): return "\n".join(btn(k, l) for k in HERO.get(l, ["wa", "gmap"]))
 
 def floats(l):
@@ -114,7 +116,9 @@ def contact_box(l):
     if l == "ru":
         b = f'<a class="btn tg" href="{TG_CHANNEL}" target="_blank" rel="noopener">{u["box_btn"]}</a>'
     elif l == "zh":
-        b = btn("wc", l)
+        b = ('<img src="/img/wechat-qr.png" alt="微信二维码 vanphudalat — 大叻租摩托车" width="280" height="375" '
+             'style="display:block;max-width:280px;width:100%;height:auto;border-radius:12px;margin:0 0 12px;background:#fff">'
+             + btn("wc", l))
     elif l == "vi":
         b = btn("zalo", l)
     else:
@@ -229,7 +233,7 @@ def page_home(l):
     if l == "ru":
         mp = f'<iframe class="map" src="{YA_WIDGET}" loading="lazy" title="Яндекс Карты" allowfullscreen></iframe><p class="note"><a href="{YA_LINK}" target="_blank" rel="noopener">Яндекс Карты</a> · <a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a></p>'
     else:
-        mp = f'<iframe class="map" src="https://maps.google.com/maps?q={LAT},{LON}&hl={l}&z=17&output=embed" loading="lazy" title="Google Maps"></iframe><p class="note"><a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a></p>'
+        mp = f'<iframe class="map" src="https://maps.google.com/maps?q={LAT},{LON}&hl={l}&z=17&output=embed" loading="lazy" title="Google Maps"></iframe><p class="note"><a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a>' + (f' · <a href="{AMAP}" target="_blank" rel="noopener">高德地图</a>' if l == "zh" else "") + '</p>'
     imgs = [("electric-row", 1), ("airblade", 2), ("electric-helmets", 3), ("fleet-gas", 4), ("vision-white", 5), ("guest-1", 6), ("guest-2", 7)]
     gallery = "".join(f'<img src="{pre}img/{n}.jpg" alt="{alt} {i}" loading="lazy">' for n, i in imgs)
     body = f"""
