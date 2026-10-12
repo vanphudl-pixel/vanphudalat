@@ -54,7 +54,7 @@ C = {
   ("Có phải đặt cọc tiền không?", "Không. Không cọc tiền, chỉ gửi CCCD hoặc hộ chiếu trong thời gian thuê. Tiền thuê trả đủ trước."),
   ("1 ngày thuê tính thế nào?", "Từ lúc nhận xe đến 21:00 cùng ngày. Trả trước 21:00 hôm sau tính 2 ngày, cứ thế tính tiếp."),
   ("Có giao xe tận khách sạn không?", "Có. Thuê từ 2 ngày, Văn Phú giao xe miễn phí tận khách sạn trung tâm Đà Lạt."),
-  ("Có kèm mũ bảo hiểm không?", "Có, mỗi xe đều kèm mũ bảo hiểm miễn phí."),
+  ("Thuê xe được kèm những gì?", "Mỗi xe đều kèm mũ bảo hiểm và giá đỡ điện thoại miễn phí; xe xăng được giao kèm 1 lít xăng."),
   ("Nên chọn xe nào?", "Đi trong phố và quãng ngắn thì Honda Vision hoặc xe máy điện nhẹ, êm. Đi đèo dốc, ra ngoại ô như đồi chè Cầu Đất thì nên chọn Honda Air Blade 125, leo dốc khỏe hơn."),
   ("Có đặt xe trước được không?", "Được. Nhắn Zalo, WhatsApp hoặc WeChat ngày thuê và tên khách sạn, Văn Phú xác nhận và chuẩn bị xe sẵn."),
   ("Tiệm ở đâu?", "Văn Phú ở 1/15/5 Thông Thiên Học, Đà Lạt. Có trên Google Maps — xem bản đồ bên dưới."),

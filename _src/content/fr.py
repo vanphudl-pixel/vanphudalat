@@ -55,7 +55,7 @@ C = {
   ("Faut-il laisser une caution en espèces ?", "Non. Pas de caution en espèces : vous laissez votre passeport ou votre carte d'identité pendant la location. La location est payée en totalité d'avance."),
   ("Comment est comptée une journée ?", "De la prise en main jusqu'à 21h le même jour. Un retour avant 21h le lendemain compte pour 2 jours, et ainsi de suite."),
   ("Livrez-vous à l'hôtel ?", "Oui. Dès 2 jours de location, nous livrons gratuitement le scooter dans les hôtels du centre de Da Lat."),
-  ("Le casque est-il fourni ?", "Oui, un casque est offert avec chaque scooter."),
+  ("Qu'est-ce qui est inclus dans la location ?", "Chaque scooter est fourni avec un casque et un support de téléphone offerts, et les scooters à essence sont remis avec 1 litre de carburant."),
   ("Quel scooter choisir ?", "En ville et pour de courts trajets, le Honda Vision et les scooters électriques sont légers et silencieux. Pour les collines et les sorties, comme les collines de thé de Cau Dat, prenez le Honda Air Blade 125, plus puissant en montée."),
   ("Puis-je réserver à l'avance ?", "Oui. Envoyez vos dates et le nom de votre hôtel sur WhatsApp, Zalo ou WeChat : nous confirmons et préparons le scooter."),
   ("Où se trouve la boutique ?", "Van Phu se trouve au 1/15/5 Thông Thiên Học, Da Lat. Elle est sur Google Maps — voir la carte ci-dessous."),

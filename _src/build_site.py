@@ -205,8 +205,13 @@ const lb=document.getElementById('lb');document.querySelectorAll('.gallery img')
 
 def business_ld(l, url):
     h, u = C[l]["home"], C[l]["ui"]
-    return {"@context": "https://schema.org", "@type": "LocalBusiness",
-            "name": "Van Phu Dalat Motorbike Rental", "alternateName": "Thuê xe máy Đà Lạt Văn Phú",
+    return {"@context": "https://schema.org", "@type": ["LocalBusiness", "AutoRental"], "@id": BASE + "#business",
+            "name": "Van Phu Dalat Motorbike Rental", "alternateName": ["Thuê xe máy Đà Lạt Văn Phú", "Văn Phú Đà Lạt", "Dalat Motorbike Rental"],
+            "areaServed": {"@type": "City", "name": "Da Lat", "alternateName": ["Đà Lạt", "Dalat"]},
+            "currenciesAccepted": "VND",
+            "knowsAbout": ["motorbike rental", "scooter rental", "electric scooter rental", "Da Lat motorbike routes"],
+            "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": n, "value": True} for n in
+                               ["Free helmet", "Phone holder", "1 liter of fuel (gas scooters)", "Free hotel delivery in central Da Lat (2+ days)", "No cash deposit (passport or ID held)"]],
             "description": h["desc"], "url": url, "image": BASE + "img/electric-row.jpg",
             "telephone": "+84944081101", "priceRange": "150,000 VND",
             "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Đà Lạt", "addressCountry": "VN"},
@@ -381,5 +386,26 @@ for kind, key in groups:
     for l in LANGS:
         urls += f"  <url>\n    <loc>{BASE + path_of(l, kind, key)}</loc>\n{alts}    <lastmod>{lm}</lastmod>\n  </url>\n"
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
+LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
+
+> Local motorbike and scooter rental in Da Lat (Đà Lạt), Vietnam. Honda Vision 110, Honda Air Blade 125 and electric scooters, all 150,000 VND per day. No cash deposit, free hotel delivery in central Da Lat for rentals of 2+ days.
+
+## Key facts
+- Address: 1/15/5 Thông Thiên Học, Đà Lạt, Vietnam ({GMAPS})
+- Price: 150,000 VND/day for every bike, fixed, no hidden fees
+- Rental day: from pickup until 9:00 PM the same day
+- Deposit: no cash deposit; the guest leaves a passport or ID card; rental fee paid upfront
+- Included: free helmet and phone holder with every bike; gas scooters come with 1 liter of fuel
+- Delivery: free to hotels in central Da Lat for rentals of 2 days or more
+- Before renting: test ride and a video of the bike's condition, filmed together
+- Booking: WhatsApp +84 944 081 101 or +84 834 622 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat
+- Languages on the website: {", ".join(LABEL.values())}
+
+## Pages
+- [Home (English)]({BASE}): prices, bikes, FAQ, map
+- [Motorbike routes around Da Lat]({BASE + routes_path("en")})
+- [Travel blog]({BASE + blog_path("en")})
+""" + "".join(f"- [{LABEL[x]} home]({BASE + home_path(x)})\n" for x in LANGS if x != "en")
+(OUT / "llms.txt").write_text(LLMS, encoding="utf-8")
 (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /_src/\n\nSitemap: {BASE}sitemap.xml\n", encoding="utf-8")
 print("pages:", sum(1 for _ in OUT.rglob("index.html")))

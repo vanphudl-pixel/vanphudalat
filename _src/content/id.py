@@ -54,7 +54,7 @@ C = {
   ("Apakah perlu deposit uang?", "Tidak. Tidak ada deposit uang: Anda cukup menitipkan paspor atau KTP selama masa sewa. Biaya sewa dibayar penuh di muka."),
   ("Bagaimana 1 hari sewa dihitung?", "Dari pengambilan sampai pukul 21.00 di hari yang sama. Kembali sebelum 21.00 keesokan harinya dihitung 2 hari, dan seterusnya."),
   ("Apakah bisa antar ke hotel?", "Bisa. Untuk sewa 2 hari atau lebih, motor kami antar gratis ke hotel di pusat kota Da Lat."),
-  ("Apakah helm disediakan?", "Ya, helm gratis untuk setiap motor."),
+  ("Apa saja yang termasuk dalam sewa?", "Setiap motor dapat helm dan holder HP gratis, dan skuter bensin diserahkan dengan 1 liter bensin."),
   ("Motor mana yang sebaiknya dipilih?", "Untuk dalam kota dan jarak dekat, Honda Vision dan skuter listrik ringan dan senyap. Untuk tanjakan dan ke luar kota, seperti kebun teh Cau Dat, pilih Honda Air Blade 125 — lebih bertenaga di tanjakan."),
   ("Bisa pesan dari jauh hari?", "Bisa. Kirim tanggal dan nama hotel via WhatsApp, Zalo atau WeChat, kami konfirmasi dan siapkan motornya."),
   ("Di mana lokasi toko?", "Van Phu ada di 1/15/5 Thông Thiên Học, Da Lat. Lokasinya ada di Google Maps — lihat peta di bawah."),

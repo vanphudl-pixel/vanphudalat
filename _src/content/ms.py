@@ -54,7 +54,7 @@ C = {
   ("Perlukah deposit wang?", "Tidak. Tiada deposit wang: anda hanya tinggalkan pasport atau kad pengenalan sepanjang sewaan. Bayaran sewa dibuat penuh terlebih dahulu."),
   ("Bagaimana 1 hari sewaan dikira?", "Dari masa ambil hingga 9:00 malam hari yang sama. Pulang sebelum 9:00 malam keesokan harinya dikira 2 hari, dan seterusnya."),
   ("Boleh hantar ke hotel?", "Boleh. Untuk sewaan 2 hari ke atas, kami hantar motosikal percuma ke hotel di pusat bandar Da Lat."),
-  ("Adakah topi keledar disediakan?", "Ya, topi keledar percuma untuk setiap motosikal."),
+  ("Apa yang termasuk dalam sewaan?", "Setiap motosikal disertakan topi keledar dan pemegang telefon percuma, dan skuter petrol diserahkan dengan 1 liter minyak."),
   ("Motosikal mana yang patut dipilih?", "Untuk bandar dan perjalanan dekat, Honda Vision dan skuter elektrik ringan dan senyap. Untuk bukit dan ke luar bandar, seperti ladang teh Cau Dat, pilih Honda Air Blade 125 — lebih berkuasa ketika mendaki."),
   ("Boleh tempah awal?", "Boleh. Hantar tarikh dan nama hotel melalui WhatsApp, Zalo atau WeChat, kami akan sahkan dan sediakan motosikal."),
   ("Di mana kedai?", "Van Phu terletak di 1/15/5 Thông Thiên Học, Da Lat. Lokasinya ada di Google Maps — lihat peta di bawah."),

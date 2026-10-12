@@ -55,7 +55,7 @@ C = {
   ("Muss ich eine Barkaution hinterlegen?", "Nein. Es gibt keine Barkaution: Du hinterlegst während der Miete deinen Reisepass oder Personalausweis. Die Miete wird vorab vollständig bezahlt."),
   ("Wie wird ein Miettag gezählt?", "Von der Übergabe bis 21:00 Uhr am selben Tag. Rückgabe bis 21:00 Uhr am nächsten Tag zählt als 2 Tage, und so weiter."),
   ("Liefert ihr ins Hotel?", "Ja. Ab 2 Miettagen liefern wir den Roller kostenlos in Hotels im Zentrum von Da Lat."),
-  ("Ist ein Helm dabei?", "Ja, zu jedem Roller gibt es einen Helm gratis."),
+  ("Was ist bei der Miete dabei?", "Zu jedem Roller gibt es gratis einen Helm und eine Handyhalterung, Benzinroller bekommst du mit 1 Liter Sprit."),
   ("Welchen Roller soll ich nehmen?", "Für die Stadt und kurze Wege sind Honda Vision und E-Roller leicht und leise. Für Hügel und Ausflüge, etwa zu den Teehügeln von Cau Dat, nimm die Honda Air Blade 125 — sie hat mehr Kraft am Berg."),
   ("Kann ich im Voraus buchen?", "Ja. Schick uns deine Daten und den Hotelnamen per WhatsApp, Zalo oder WeChat — wir bestätigen und bereiten den Roller vor."),
   ("Wo ist der Laden?", "Van Phu liegt in 1/15/5 Thông Thiên Học, Da Lat. Er ist auf Google Maps eingetragen — siehe Karte unten."),

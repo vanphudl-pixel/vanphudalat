@@ -55,7 +55,7 @@ C = {
   ("¿Hay que dejar un depósito en efectivo?", "No. No hay depósito en efectivo: dejas tu pasaporte o documento de identidad durante el alquiler. El alquiler se paga completo por adelantado."),
   ("¿Cómo se cuenta un día de alquiler?", "Desde la recogida hasta las 21:00 del mismo día. Devolverla antes de las 21:00 del día siguiente cuenta como 2 días, y así sucesivamente."),
   ("¿Entregáis en el hotel?", "Sí. A partir de 2 días de alquiler llevamos la moto gratis a hoteles del centro de Da Lat."),
-  ("¿Incluye casco?", "Sí, cada moto incluye un casco gratis."),
+  ("¿Qué incluye el alquiler?", "Cada moto incluye casco y soporte para el móvil gratis, y los scooters de gasolina se entregan con 1 litro de combustible."),
   ("¿Qué moto elijo?", "Para la ciudad y trayectos cortos, la Honda Vision y los scooters eléctricos son ligeros y silenciosos. Para colinas y salidas, como las colinas de té de Cau Dat, elige la Honda Air Blade 125: tiene más fuerza en las subidas."),
   ("¿Puedo reservar con antelación?", "Sí. Envíanos tus fechas y el nombre del hotel por WhatsApp, Zalo o WeChat y te confirmamos y preparamos la moto."),
   ("¿Dónde está la tienda?", "Van Phu está en 1/15/5 Thông Thiên Học, Da Lat. Aparece en Google Maps — mira el mapa abajo."),
