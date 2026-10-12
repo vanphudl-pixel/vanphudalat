@@ -31,9 +31,9 @@ Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 - 2026-10-10 food — What to eat in Da Lat
 - 2026-10-10 riding — Riding a motorbike in Vietnam: tips
 - 2026-10-11 wildsunflower — Wild sunflower (dã quỳ) season around Da Lat by motorbike
+- 2026-10-12 waterfalls — Waterfalls near Da Lat by motorbike (Datanla, Prenn, Elephant Falls, Pongour)
 
 ## Backlog (top = next)
-- [ ] waterfalls — Waterfalls near Da Lat by motorbike (Datanla, Pongour, Elephant Falls)
 - [ ] caudat — Cau Dat tea hills: complete sunrise guide
 - [ ] electric — Electric scooter rental in Da Lat: why it's great for the city (no range, no licence talk)
 - [ ] nightmarket — Da Lat night market guide: what to eat and buy
