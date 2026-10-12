@@ -374,6 +374,19 @@ def page_article(l, k):
 """
     return head(l, "art", k, title, desc, [art, crumbs_ld(l, [(u["crumbs_blog"], blog_path(l)), (h1, me)])], img) + body + foot(l)
 
+# old URLs from the previous site on this domain -> new pages
+OLD = {"thuexemaydalat/": ("vi", "home"), "motorbike-rental-in-dalat-for-foreigners-easy-safe-fast/": ("en", "home")}
+
+def page_redirect_to(l, to):
+    return f"""<!doctype html>
+<html lang="{l}"><head><meta charset="utf-8">
+<title>{C[l]["home"]["title"]}</title>
+<link rel="canonical" href="{BASE + to}">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={BASE + to}">
+</head><body><a href="{BASE + to}">{C[l]["home"]["title"]}</a></body></html>
+"""
+
 def page_redirect(l):
     """language root (/, /vi/, /ru/...) -> keyword rental page. Meta refresh 0 is read by
     Google/Yandex/Bing as a permanent redirect; '/' also picks the visitor's language."""
@@ -432,6 +445,9 @@ def write(path, html):
     p.write_text(html, encoding="utf-8")
 
 # images live in <repo>/img and are referenced directly; nothing is deleted here
+
+for old, (l_, k_) in OLD.items():
+    write(old, page_redirect_to(l_, path_of(l_, k_)))
 
 groups = [("home", None), ("ev", None), ("routes", None), ("blog", None)] + [("art", k) for k in ARTICLES]
 for l in LANGS:
