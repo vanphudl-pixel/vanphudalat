@@ -75,6 +75,8 @@ html[dir=rtl] .checks li:before{left:auto;right:14px}
 html[dir=rtl] ol{padding-left:0;padding-right:20px}
 html[dir=rtl] .prose ul{padding-left:0;padding-right:20px}
 html[dir=rtl] .langs,html[dir=rtl] .price,html[dir=rtl] table.price th,html[dir=rtl] table.price td{text-align:right}
+footer a{color:inherit;text-decoration:underline}
+.kw{margin:12px 0 0;font-size:14px}
 """
 
 # ------------------------------------------------------------------ URLs
@@ -139,13 +141,16 @@ def contact_box(l):
         b = f'<a class="btn wa" href="{wa_link(l)}" target="_blank" rel="noopener">{u["box_btn"]}</a>'
     return f'<div class="box"><h2>{u["box_title"]}</h2><p>{u["box_text"]}</p>{b}</div>'
 
+def kw_rent(l): return C[l]["ui"]["alt"].split(" — ")[0]
+
 def cta_box(l, frm):
     u = C[l]["ui"]
     first = {"ru": "tg", "vi": "zalo", "zh": "wc"}.get(l)
     btns = (btn(first, l) + "\n" if first else "") + btn("wa", l)
     return f"""<div class="cta-box"><h2>{u["cta_title"]}</h2><p>{u["cta_text"]}</p>
 <div class="cta">{btns}
-<a class="btn alt" href="{rel(frm, home_path(l))}">{u["cta_prices"]}</a></div></div>"""
+<a class="btn alt" href="{rel(frm, home_path(l))}">{u["cta_prices"]}</a></div>
+<p class="kw"><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a></p></div>"""
 
 def contacts(l):
     h = C[l]["home"]
@@ -191,7 +196,7 @@ def head(l, kind, key, title, desc, ld, img="electric-row"):
 </head>
 <body>"""
 
-def foot(l, root_redirect=False):
+def foot(l, root_redirect=False, frm=None):
     u = C[l]["ui"]
     redirect = ""
     if root_redirect:
@@ -199,7 +204,10 @@ def foot(l, root_redirect=False):
                     "const ok=" + json.dumps(LANGS) + ";let t=p;if(!t){const ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en'];"
                     "for(const x of ls){let n=x.toLowerCase().slice(0,2);if(n==='in')n='id';if(n==='iw')n='he';if(ok.includes(n)){t=n;break}}}"
                     "if(t&&t!=='en'&&ok.includes(t))location.replace(t+'/');})();")
-    return f"""<footer>{u["footer"]}</footer>
+    kw = ""
+    if frm is not None:
+        kw = f'<br><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a> · <a href="{rel(frm, routes_path(l))}">{C[l]["routes"]["h1"]}</a>'
+    return f"""<footer>{u["footer"]}{kw}</footer>
 {floats(l)}
 <div class="lb" id="lb"><img alt=""></div>
 <script>
@@ -292,7 +300,7 @@ def page_home(l):
  <section><h2>{h["h_contacts"]}</h2>{contacts(l)}</section>
 </main>
 """
-    return head(l, "home", None, h["title"], h["desc"], [business_ld(l, url), faq_ld]) + body + foot(l)
+    return head(l, "home", None, h["title"], h["desc"], [business_ld(l, url), faq_ld]) + body + foot(l, frm=me)
 
 def crumbs(l, me, items):
     u = C[l]["ui"]
@@ -330,7 +338,7 @@ def page_routes(l):
  <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:6])}</section>
 </main>
 """
-    return head(l, "routes", None, r["title"], r["desc"], [art, crumbs_ld(l, [(u["crumbs_routes"], me)])], "airblade") + body + foot(l)
+    return head(l, "routes", None, r["title"], r["desc"], [art, crumbs_ld(l, [(u["crumbs_routes"], me)])], "airblade") + body + foot(l, frm=me)
 
 def page_blog(l):
     b, u = C[l]["blog"], C[l]["ui"]
@@ -347,7 +355,7 @@ def page_blog(l):
  <section>{contact_box(l)}{cta_box(l, me)}</section>
 </main>
 """
-    return head(l, "blog", None, b["title"], b["desc"], [crumbs_ld(l, [(u["crumbs_blog"], me)])]) + body + foot(l)
+    return head(l, "blog", None, b["title"], b["desc"], [crumbs_ld(l, [(u["crumbs_blog"], me)])]) + body + foot(l, frm=me)
 
 def page_article(l, k):
     slug, title, h1, desc, lead, img, html = C[l]["articles"][k]
@@ -372,7 +380,7 @@ def page_article(l, k):
  <section><h2>{u["read_also"]}</h2>{posts(l, me, others)}</section>
 </main>
 """
-    return head(l, "art", k, title, desc, [art, crumbs_ld(l, [(u["crumbs_blog"], blog_path(l)), (h1, me)])], img) + body + foot(l)
+    return head(l, "art", k, title, desc, [art, crumbs_ld(l, [(u["crumbs_blog"], blog_path(l)), (h1, me)])], img) + body + foot(l, frm=me)
 
 # old URLs from the previous site on this domain -> new pages
 OLD = {"thuexemaydalat/": ("vi", "home"), "motorbike-rental-in-dalat-for-foreigners-easy-safe-fast/": ("en", "home")}
@@ -436,7 +444,7 @@ def page_ev(l):
  <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:3])}</section>
 </main>
 """
-    return head(l, "ev", None, e["title"], e["desc"], [svc, faq_ld, crumbs_ld(l, [(e["crumb"], me)])], "electric-row") + body + foot(l)
+    return head(l, "ev", None, e["title"], e["desc"], [svc, faq_ld, crumbs_ld(l, [(e["crumb"], me)])], "electric-row") + body + foot(l, frm=me)
 
 # ------------------------------------------------------------------ write
 def write(path, html):
