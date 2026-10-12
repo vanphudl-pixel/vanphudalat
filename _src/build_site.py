@@ -175,7 +175,7 @@ def head(l, kind, key, title, desc, ld, img="electric-row"):
     return f"""<!doctype html>
 <html lang="{l}"{' dir="rtl"' if l == "he" else ""}>
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
@@ -379,7 +379,7 @@ OLD = {"thuexemaydalat/": ("vi", "home"), "motorbike-rental-in-dalat-for-foreign
 
 def page_redirect_to(l, to):
     return f"""<!doctype html>
-<html lang="{l}"><head><meta charset="utf-8">
+<html lang="{l}"><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
 <title>{C[l]["home"]["title"]}</title>
 <link rel="canonical" href="{BASE + to}">
 <meta name="robots" content="noindex">
@@ -399,7 +399,7 @@ def page_redirect(l):
               "for(var i=0;i<ls.length;i++){var n=ls[i].toLowerCase().slice(0,2);if(n==='in')n='id';if(n==='iw')n='he';if(m[n]){t=n;break}}}"
               "if(!m[t])t='en';location.replace('/'+m[t]);})();</script>")
     return f"""<!doctype html>
-<html lang="{l}"><head><meta charset="utf-8">
+<html lang="{l}"><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
 <title>{C[l]["home"]["title"]}</title>
 <link rel="canonical" href="{BASE + to}">
 <meta name="robots" content="noindex">
