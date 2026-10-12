@@ -23,6 +23,11 @@ WA2 = "https://wa.me/84834662149"
 
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
 from content.ev import EV
+from content.extra_a import ART as _A
+from content.extra_b import ART as _B
+for _l in LANGS:
+    C[_l]["articles"].update({**_A, **_B}[_l])
+C["en"]["dates"].update({"price": "2026-10-12", "evgas": "2026-10-12"})
 
 TPL = (HERE / "template.html").read_text(encoding="utf-8")
 # article order = order in content/en.py (oldest first); every language must have every key
@@ -362,7 +367,7 @@ def page_article(l, k):
     u = C[l]["ui"]
     me = art_path(l, k)
     pre = "../" * me.count("/")
-    html = html.replace("{ROUTES}", rel(me, routes_path(l)))
+    html = html.replace("{ROUTES}", rel(me, routes_path(l))).replace("{HOME}", rel(me, home_path(l))).replace("{EV}", rel(me, ev_path(l)))
     art = {"@context": "https://schema.org", "@type": "Article", "headline": h1, "description": desc, "inLanguage": l,
            "mainEntityOfPage": BASE + me, "image": f"{BASE}img/{img}.jpg", "datePublished": adate(k),
            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"},
