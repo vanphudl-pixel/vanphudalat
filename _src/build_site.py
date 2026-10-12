@@ -22,6 +22,7 @@ ZALO = "https://zalo.me/0944081101"
 WA2 = "https://wa.me/84834662149"
 
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
+from content.ev import EV
 
 TPL = (HERE / "template.html").read_text(encoding="utf-8")
 # article order = order in content/en.py (oldest first); every language must have every key
@@ -87,10 +88,11 @@ def lang_root(l): return "" if l == "en" else f"{l}/"
 def home_path(l): return lang_root(l) + RENT[l] + "/"
 def routes_path(l): return lang_root(l) + C[l]["routes"]["slug"] + "/"
 def blog_path(l): return lang_root(l) + "blog/"
+def ev_path(l): return lang_root(l) + EV[l]["slug"] + "/"
 def art_path(l, k): return blog_path(l) + C[l]["articles"][k][0] + "/"
 
 def path_of(l, kind, key=None):
-    return {"home": home_path, "routes": routes_path, "blog": blog_path}[kind](l) if kind != "art" else art_path(l, key)
+    return {"home": home_path, "routes": routes_path, "blog": blog_path, "ev": ev_path}[kind](l) if kind != "art" else art_path(l, key)
 
 def rel(frm, to):
     """relative link from page path `frm` to page path `to` (both like 'ru/blog/x/')."""
@@ -276,7 +278,7 @@ def page_home(l):
  <section><h2>{h["h_fleet"]}</h2><div class="grid">
   <div class="card"><img src="{pre}img/vision-white.jpg" alt="Honda Vision 110 — {alt}" loading="lazy"><b>Honda Vision 110</b><span>{h["vision"]}</span></div>
   <div class="card"><img src="{pre}img/airblade.jpg" alt="Honda Air Blade 125 — {alt}" loading="lazy"><b>Honda Air Blade 125</b><span>{h["airblade"]}</span></div>
-  <div class="card"><img src="{pre}img/electric-helmets.jpg" alt="{h["electric_name"]} — {alt}" loading="lazy"><b>{h["electric_name"]}</b><span>{h["electric"]}</span></div>
+  <div class="card"><img src="{pre}img/electric-helmets.jpg" alt="{h["electric_name"]} — {alt}" loading="lazy"><b><a href="{rel(me, ev_path(l))}">{h["electric_name"]}</a></b><span>{h["electric"]} <a href="{rel(me, ev_path(l))}">{EV[l]["more"]}</a></span></div>
  </div></section>
  <section><h2>{h["h_how"]}</h2><ol>{steps}</ol></section>
  <section><h2>{h["h_rules"]}</h2><div class="rules">{rules}</div></section>
@@ -392,6 +394,37 @@ def page_redirect(l):
 </head><body><a href="{BASE + to}">{C[l]["home"]["title"]}</a></body></html>
 """
 
+def page_ev(l):
+    e, u = EV[l], C[l]["ui"]
+    me = ev_path(l)
+    pre = rel(me, "")
+    facts = "".join(f"<tr><td>{k}</td><td><b>{v}</b></td></tr>" for k, v in e["facts"])
+    good = "".join(f"<li>{t}</li>" for t in e["good"])
+    notes = "".join(f"<li>{t}</li>" for t in e["notes"])
+    faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in e["faq"])
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in e["faq"]]}
+    svc = {"@context": "https://schema.org", "@type": "Service", "name": e["h1"], "serviceType": "Electric scooter rental",
+           "provider": {"@id": BASE + "#business"}, "areaServed": "Da Lat, Vietnam", "url": BASE + me,
+           "offers": {"@type": "Offer", "price": "150000", "priceCurrency": "VND"}}
+    body = f"""
+<header><div class="wrap">{langbar(l, "ev", None, me)}
+<div class="hero">{crumbs(l, me, [(e["crumb"], None)])}
+ <h1>{e["h1"]}</h1><p class="lead">{e["lead"]}</p>
+ <div class="cta">{hero_btns(l)}</div>
+</div></div></header>
+<main class="wrap">
+ <section><img src="{pre}img/electric-row.jpg" alt="{e["h1"]}" style="width:100%;border-radius:12px" loading="lazy"></section>
+ <section><h2>{e["h_facts"]}</h2><table class="price">{facts}</table></section>
+ <section><h2>{e["h_good"]}</h2><ul class="checks">{good}</ul></section>
+ <section><h2>{e["h_note"]}</h2><ul class="checks">{notes}</ul></section>
+ <section><h2>{e["h_faq"]}</h2>{faq}</section>
+ <section>{contact_box(l)}{cta_box(l, me)}</section>
+ <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:3])}</section>
+</main>
+"""
+    return head(l, "ev", None, e["title"], e["desc"], [svc, faq_ld, crumbs_ld(l, [(e["crumb"], me)])], "electric-row") + body + foot(l)
+
 # ------------------------------------------------------------------ write
 def write(path, html):
     p = OUT / path / "index.html"
@@ -400,12 +433,13 @@ def write(path, html):
 
 # images live in <repo>/img and are referenced directly; nothing is deleted here
 
-groups = [("home", None), ("routes", None), ("blog", None)] + [("art", k) for k in ARTICLES]
+groups = [("home", None), ("ev", None), ("routes", None), ("blog", None)] + [("art", k) for k in ARTICLES]
 for l in LANGS:
     write(home_path(l), page_home(l))
     write(lang_root(l), page_redirect(l))
     write(routes_path(l), page_routes(l))
     write(blog_path(l), page_blog(l))
+    write(ev_path(l), page_ev(l))
     for k in ARTICLES:
         write(art_path(l, k), page_article(l, k))
 
@@ -435,6 +469,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
 ## Pages
 - [Home (English)]({BASE}): prices, bikes, FAQ, map
+- [Electric scooter rental (no license needed, about 40 km per charge)]({BASE + ev_path("en")})
 - [Motorbike routes around Da Lat]({BASE + routes_path("en")})
 - [Travel blog]({BASE + blog_path("en")})
 """ + "".join(f"- [{LABEL[x]} home]({BASE + home_path(x)})\n" for x in LANGS if x != "en")
