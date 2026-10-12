@@ -77,9 +77,16 @@ html[dir=rtl] .langs,html[dir=rtl] .price,html[dir=rtl] table.price th,html[dir=
 """
 
 # ------------------------------------------------------------------ URLs
-def home_path(l): return "" if l == "en" else f"{l}/"
-def routes_path(l): return home_path(l) + C[l]["routes"]["slug"] + "/"
-def blog_path(l): return home_path(l) + "blog/"
+# keyword slug of the rental landing page in each language
+RENT = {"en": "dalat-motorbike-rental", "vi": "thue-xe-may-da-lat", "ru": "arenda-bayka-dalat",
+        "zh": "dalat-motorbike-rental", "ko": "dalat-motorbike-rental", "ja": "dalat-motorbike-rental",
+        "th": "dalat-motorbike-rental", "id": "sewa-motor-dalat", "ms": "sewa-motosikal-dalat",
+        "de": "roller-mieten-dalat", "fr": "location-scooter-dalat", "es": "alquiler-moto-dalat",
+        "he": "dalat-motorbike-rental"}
+def lang_root(l): return "" if l == "en" else f"{l}/"
+def home_path(l): return lang_root(l) + RENT[l] + "/"
+def routes_path(l): return lang_root(l) + C[l]["routes"]["slug"] + "/"
+def blog_path(l): return lang_root(l) + "blog/"
 def art_path(l, k): return blog_path(l) + C[l]["articles"][k][0] + "/"
 
 def path_of(l, kind, key=None):
@@ -283,7 +290,7 @@ def page_home(l):
  <section><h2>{h["h_contacts"]}</h2>{contacts(l)}</section>
 </main>
 """
-    return head(l, "home", None, h["title"], h["desc"], [business_ld(l, url), faq_ld]) + body + foot(l, root_redirect=(l == "en"))
+    return head(l, "home", None, h["title"], h["desc"], [business_ld(l, url), faq_ld]) + body + foot(l)
 
 def crumbs(l, me, items):
     u = C[l]["ui"]
@@ -365,6 +372,26 @@ def page_article(l, k):
 """
     return head(l, "art", k, title, desc, [art, crumbs_ld(l, [(u["crumbs_blog"], blog_path(l)), (h1, me)])], img) + body + foot(l)
 
+def page_redirect(l):
+    """language root (/, /vi/, /ru/...) -> keyword rental page. Meta refresh 0 is read by
+    Google/Yandex/Bing as a permanent redirect; '/' also picks the visitor's language."""
+    to = home_path(l)
+    js = ""
+    if l == "en":
+        js = ("<script>(function(){var p=null;try{p=localStorage.getItem('lang')}catch(e){}"
+              "var m=" + json.dumps({x: home_path(x) for x in LANGS}) + ";var t=p;"
+              "if(!t){var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en'];"
+              "for(var i=0;i<ls.length;i++){var n=ls[i].toLowerCase().slice(0,2);if(n==='in')n='id';if(n==='iw')n='he';if(m[n]){t=n;break}}}"
+              "if(!m[t])t='en';location.replace('/'+m[t]);})();</script>")
+    return f"""<!doctype html>
+<html lang="{l}"><head><meta charset="utf-8">
+<title>{C[l]["home"]["title"]}</title>
+<link rel="canonical" href="{BASE + to}">
+<meta name="robots" content="noindex">
+{js}<meta http-equiv="refresh" content="0; url={BASE + to}">
+</head><body><a href="{BASE + to}">{C[l]["home"]["title"]}</a></body></html>
+"""
+
 # ------------------------------------------------------------------ write
 def write(path, html):
     p = OUT / path / "index.html"
@@ -376,6 +403,7 @@ def write(path, html):
 groups = [("home", None), ("routes", None), ("blog", None)] + [("art", k) for k in ARTICLES]
 for l in LANGS:
     write(home_path(l), page_home(l))
+    write(lang_root(l), page_redirect(l))
     write(routes_path(l), page_routes(l))
     write(blog_path(l), page_blog(l))
     for k in ARTICLES:
