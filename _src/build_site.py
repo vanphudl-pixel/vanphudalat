@@ -209,6 +209,9 @@ def business_ld(l, url):
             "name": "Van Phu Dalat Motorbike Rental", "alternateName": ["Thuê xe máy Đà Lạt Văn Phú", "Văn Phú Đà Lạt", "Dalat Motorbike Rental"],
             "areaServed": {"@type": "City", "name": "Da Lat", "alternateName": ["Đà Lạt", "Dalat"]},
             "currenciesAccepted": "VND",
+            "openingHoursSpecification": [{"@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "04:30", "closes": "21:00"}],
             "knowsAbout": ["motorbike rental", "scooter rental", "electric scooter rental", "Da Lat motorbike routes"],
             "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": n, "value": True} for n in
                                ["Free helmet", "Phone holder", "1 liter of fuel (gas scooters)", "Free hotel delivery in central Da Lat (2+ days)", "No cash deposit (passport or ID held)"]],
@@ -393,6 +396,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 ## Key facts
 - Address: 1/15/5 Thông Thiên Học, Đà Lạt, Vietnam ({GMAPS})
 - Price: 150,000 VND/day for every bike, fixed, no hidden fees
+- Opening hours: every day 4:30 AM – 9:00 PM
 - Rental day: from pickup until 9:00 PM the same day
 - Deposit: no cash deposit; the guest leaves a passport or ID card; rental fee paid upfront
 - Included: free helmet and phone holder with every bike; gas scooters come with 1 liter of fuel
