@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /_src/
 
-Sitemap: https://vanphudl-pixel.github.io/sitemap.xml
+Sitemap: https://vanphudalat.com/sitemap.xml

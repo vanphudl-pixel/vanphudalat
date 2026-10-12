@@ -9,7 +9,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(HERE))
 LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he"]
-BASE = "https://vanphudl-pixel.github.io/"
+BASE = "https://vanphudalat.com/"
 problems = []
 
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}

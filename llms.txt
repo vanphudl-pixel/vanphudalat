@@ -15,18 +15,18 @@
 - Languages on the website: EN, RU, 中文, 한국어, 日本語, ไทย, ID, MY, VI, DE, FR, ES, עב
 
 ## Pages
-- [Home (English)](https://vanphudl-pixel.github.io/): prices, bikes, FAQ, map
-- [Motorbike routes around Da Lat](https://vanphudl-pixel.github.io/routes/)
-- [Travel blog](https://vanphudl-pixel.github.io/blog/)
-- [RU home](https://vanphudl-pixel.github.io/ru/)
-- [中文 home](https://vanphudl-pixel.github.io/zh/)
-- [한국어 home](https://vanphudl-pixel.github.io/ko/)
-- [日本語 home](https://vanphudl-pixel.github.io/ja/)
-- [ไทย home](https://vanphudl-pixel.github.io/th/)
-- [ID home](https://vanphudl-pixel.github.io/id/)
-- [MY home](https://vanphudl-pixel.github.io/ms/)
-- [VI home](https://vanphudl-pixel.github.io/vi/)
-- [DE home](https://vanphudl-pixel.github.io/de/)
-- [FR home](https://vanphudl-pixel.github.io/fr/)
-- [ES home](https://vanphudl-pixel.github.io/es/)
-- [עב home](https://vanphudl-pixel.github.io/he/)
+- [Home (English)](https://vanphudalat.com/): prices, bikes, FAQ, map
+- [Motorbike routes around Da Lat](https://vanphudalat.com/routes/)
+- [Travel blog](https://vanphudalat.com/blog/)
+- [RU home](https://vanphudalat.com/ru/)
+- [中文 home](https://vanphudalat.com/zh/)
+- [한국어 home](https://vanphudalat.com/ko/)
+- [日本語 home](https://vanphudalat.com/ja/)
+- [ไทย home](https://vanphudalat.com/th/)
+- [ID home](https://vanphudalat.com/id/)
+- [MY home](https://vanphudalat.com/ms/)
+- [VI home](https://vanphudalat.com/vi/)
+- [DE home](https://vanphudalat.com/de/)
+- [FR home](https://vanphudalat.com/fr/)
+- [ES home](https://vanphudalat.com/es/)
+- [עב home](https://vanphudalat.com/he/)
