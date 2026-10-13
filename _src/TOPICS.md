@@ -1,9 +1,9 @@
-# SEO content plan — Văn Phú Đà Lạt (vanphudl-pixel.github.io)
+# SEO content plan — Văn Phú Đà Lạt (https://vanphudalat.com/)
 
 Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 
 ## How a new article is added
-1. Pick the first unchecked topic in "Backlog" (season-aware: skip ahead if a seasonal topic is due within ~4 weeks).
+1. Pick the first unchecked topic in "Backlog". The backlog is a dated daily calendar (one article per day); follow its order. If a day was missed, just take the next unchecked one. Topics marked (publish ~date) wait until that date.
 2. Add the article to **every** file in `content/` (en, ru, zh, ko, ja, th, id, ms, vi, de, fr, es, he) under the **same key**, appended at the END of `C["articles"]` (order = publish order).
    Tuple: `(slug, title_tag, h1, meta_description, lead, image_name, html_body)`
    - slug: en/zh/ko/ja/th/id/ms/de/fr/es/he → same English kebab slug; ru → transliterated Russian slug; vi → Vietnamese kebab slug without diacritics.
@@ -33,20 +33,36 @@ Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 - 2026-10-11 wildsunflower — Wild sunflower (dã quỳ) season around Da Lat by motorbike
 - 2026-10-12 waterfalls — Waterfalls near Da Lat by motorbike (Datanla, Prenn, Elephant Falls, Pongour)
 
-## Backlog (top = next)
-- [ ] caudat — Cau Dat tea hills: complete sunrise guide
-- [ ] electric — Electric scooter rental in Da Lat: why it's great for the city (no range, no licence talk)
-- [ ] nightmarket — Da Lat night market guide: what to eat and buy
-- [ ] coffee — Coffee with a view: Da Lat cafés reachable by bike (describe types/areas, avoid naming specific businesses unless very famous)
-- [ ] christmas — Da Lat in December: Christmas, cool weather, early cherry blossom (publish early Dec)
-- [ ] rainyday — What to do in Da Lat on a rainy day
-- [ ] photospots — Best photo spots in Da Lat by motorbike
-- [ ] flowers — Flower villages and farms around Da Lat (Van Thanh etc.)
-- [ ] tet — Tết (Lunar New Year) in Da Lat: tips for travellers (publish early Jan)
-- [ ] langbiang — Lang Biang Mountain guide
-- [ ] tuyenlam — Tuyen Lam Lake & Truc Lam Monastery guide
-- [ ] kids — Da Lat with kids
-- [ ] where-to-stay — Where to stay in Da Lat: areas compared (no specific hotel claims)
-- [ ] strawberries — Strawberry farms and local produce
-- [ ] budget — Planning a Da Lat trip budget (only own rental price is exact; others described qualitatively)
-- [ ] passes — Scenic mountain roads around Da Lat (Prenn, Mimosa) — safety focus
+## Backlog (top = next) — daily calendar from 2026-10-14
+- [ ] 14/10 caudat — Cau Dat tea hills: complete sunrise guide
+- [ ] 15/10 cloudhunt — Cloud hunting (săn mây) around Da Lat: where, what time, riding there before dawn
+- [ ] 16/10 nightmarket — Da Lat night market guide: what to eat and buy
+- [ ] 17/10 langbiang — Lang Biang Mountain guide by motorbike
+- [ ] 18/10 electric — Electric scooter rental in Da Lat: why it's great for the city (no range, no licence talk)
+- [ ] 19/10 coffee — Coffee with a view: Da Lat cafés reachable by bike (types/areas, only very famous names)
+- [ ] 20/10 rainyday — What to do in Da Lat on a rainy day
+- [ ] 21/10 tuyenlam — Tuyen Lam Lake & Truc Lam Monastery guide
+- [ ] 22/10 photospots — Best photo spots in Da Lat by motorbike
+- [ ] 23/10 flowers — Flower villages and farms around Da Lat (Van Thanh etc.)
+- [ ] 24/10 thingstodo — Things to do in central Da Lat: Xuan Huong Lake, Da Lat Station, Crazy House, Domaine de Marie
+- [ ] 25/10 oneday — Da Lat in 1 day by motorbike: a full loop
+- [ ] 26/10 strawberries — Strawberry farms and local produce
+- [ ] 27/10 where-to-stay — Where to stay in Da Lat: areas compared (no specific hotel claims)
+- [ ] 28/10 budget — Planning a Da Lat trip budget (only own rental price exact; others qualitative)
+- [ ] 29/10 passes — Scenic mountain roads around Da Lat (Prenn, Mimosa) — safety focus
+- [ ] 30/10 kids — Da Lat with kids
+- [ ] 31/10 pinkgrass — Pink grass (cỏ hồng) season around Da Lat: where to see it by bike
+- [ ] 01/11 november — Da Lat in November: weather, what's in season, what to pack
+- [ ] 02/11 days2 — Da Lat in 2 days 1 night by motorbike
+- [ ] 03/11 sunrise-sunset — Best sunrise and sunset spots around Da Lat
+- [ ] 04/11 station — Da Lat Railway Station and the train to Trai Mat & Linh Phuoc (Ve Chai) pagoda
+- [ ] 05/11 phrases — Useful Vietnamese phrases for renting a bike, eating and shopping in Da Lat
+- [ ] 06/11 parking-fuel — Practical riding in Da Lat: parking, fuel stations, charging, helmets, rain gear
+- [ ] 07/11 pagodas — Temples and pagodas of Da Lat worth a ride
+- [ ] 08/11 danhia — Dankia Lake & Golden Stream (Suoi Vang) by motorbike
+- [ ] 09/11 solo — Da Lat for solo travellers
+- [ ] 10/11 vegetarian — Vegetarian and vegan food in Da Lat
+- [ ] 11/11 souvenirs — What to buy in Da Lat: local souvenirs and specialties
+- [ ] 12/11 december — Da Lat in December & the Flower Festival (tell readers to check official festival dates; never invent dates)
+- [ ] christmas — Da Lat in December: Christmas, cool weather, early cherry blossom (publish ~early Dec)
+- [ ] tet — Tết (Lunar New Year) in Da Lat: tips for travellers (publish ~early Jan)
