@@ -39,6 +39,7 @@ from content import busmap as BU
 from content import danangbusmap as DN
 from content import festivalmap as FE
 from content import placeshub as HUB
+from content import placeshub_price as HUBP
 from content import routenew as RN
 from content import routecheckin as RC
 from content import dayhub as DAY
@@ -751,7 +752,7 @@ def page_hub(l):
             if M is not None: links += f' · <a href="{rel(me, map_path(M, l))}">🗺 {t["themap"]}: {M.T[l]["h1"]}</a>'
             if ak: links += f' · <a href="{rel(me, art_path(l, ak))}">📖 {t["guide"]}</a>'
             km_ = pm_km((LAT, LON), (lat, lng))
-            rows += (f'<li><span class="pmn {"ev" if ev else "gas"}">{i}</span><div><b>{name}</b><br><small>≈ {km_:.1f} {t["km"]} · {t["hours"]}: {hr} · {t["best"]}: {best}</small><br>{d}<br>{links}</div></li>')
+            rows += (f'<li><span class="pmn {"ev" if ev else "gas"}">{i}</span><div><b>{name}</b><br><small>≈ {km_:.1f} {t["km"]} · {t["hours"]}: {hr} · {t["best"]}: {best}</small><br>{d}{(f"<br>🎟 <b>{HUBP.LABEL[l]}:</b> " + HUBP.PRICE[l][sid]) if sid in HUBP.PRICE.get(l, {}) else ""}<br>{links}</div></li>')
             pts.append({"i": i, "n": nm, "lat": lat, "lng": lng, "ev": ev, "g": g, "b": best, "h": hr})
         q, sub = t["zones"][z]
         secs += f'<section id="{z}"><h2>{q}</h2><p>{sub}</p><ol class="hublist">{rows}</ol></section>'
@@ -790,7 +791,7 @@ def page_hub(l):
 <section><h2>{t["toc"]}</h2><ol class="toc">{toc}</ol></section>
 <section><h2>{t["map_h"]}</h2><div id="pmap" role="img" aria-label="{t["map_h"]}"></div>
 <div class="pmleg"><span><span class="pmn ev" style="display:inline-flex;width:14px;height:14px"></span> {t["ev"]}</span><span><span class="pmn gas" style="display:inline-flex;width:14px;height:14px"></span> {t["gas"]}</span></div>
-<p class="note">{pm["check"]} · ≈ {t["km"]}</p></section>
+<p class="note">{pm["check"]} · ≈ {t["km"]}{(" · " + HUBP.NOTE[l]) if l in HUBP.NOTE else ""}</p></section>
 {secs}
 <section><h2>{t["faq_h"]}</h2></section>
 {faq_html}
