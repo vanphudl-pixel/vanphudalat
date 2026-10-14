@@ -1,0 +1,258 @@
+"""Da Lat – Saigon bus map — shared data for the website page (/saigon-bus-map/) and the printable PDF.
+The Da Lat bus station and the Da Lat offices of the bus companies on the Saigon (Ho Chi Minh City) route; coordinates,
+place links (cid) and opening hours taken from Google Maps on 2026-10-14. No fares or timetables: they change often."""
+from content import photomap as _PM
+
+# id, lat, lng, Google Maps cid, ok on electric scooter, hours
+SPOTS = [
+    ("benxe",     11.9269457, 108.4457730, "2479135965201090611",  True, "24h"),
+    ("futa",      11.9412629, 108.4312390, "10374163189818018703", True, "day"),
+    ("thanhbuoi", 11.9502422, 108.4639255, "3783376988442650066",  True, "24h"),
+    ("phongphu",  11.9594470, 108.4289710, "2469918002035607884",  True, "24h"),
+    ("dienlinh",  11.9403460, 108.4540902, "18161923377788419911", True, "24h"),
+    ("longvan",   11.9404135, 108.4544798, "4035985898091450004",  True, "24h"),
+    ("lachong",   11.9415908, 108.4247341, "1393837743236578364",  True, "24h"),
+    ("venus",     11.9403387, 108.4486115, "4743753256561370553",  True, "24h"),
+    ("sinh",      11.9442863, 108.4401768, "15597752318739666503", True, "08:00–17:00"),
+]
+CENTER = _PM.CENTER
+SLUG = "saigon-bus-map"
+PDF = "VanPhu-Dalat-Saigon-Bus-Map"
+GUIDES = {}
+LANGS = list(_PM.LANGS)
+NCENTER = 9
+LEGW = 200
+MAPH = 560
+H1PT = 22
+MAXKM = 4.0
+RINGS = (1, 2, 3)
+SIDE = {}
+JITTER = {"dienlinh": (-12, 10), "longvan": (12, -10), "phongphu": (18, 0), "sinh": (10, 16)}
+SHARED = ["pdf", "dir", "hours", "best", "km", "photo", "ev", "gas", "h", "check", "map_note", "cta_h", "cta", "addr", "qr", "shop"]
+
+def _mk(title, h1, desc, lead, center, season_h, season, tips_h, tips, s):
+    return {"title": title, "h1": h1, "desc": desc, "lead": lead, "center": center, "season_h": season_h, "season": season,
+            "tips_h": tips_h, "tips": tips, "s": dict(zip([x[0] for x in SPOTS], s))}
+
+T = {}
+T["en"] = _mk("Da Lat to Saigon Bus: Map of Bus Stations & Offices | Van Phu", "Da Lat – Saigon Bus Map",
+ "Map of the Da Lat bus station and the Da Lat offices of 8 bus companies to Saigon (Ho Chi Minh City) — FUTA, Thanh Buoi, Phong Phu and more — with directions and a free PDF.",
+ "Heading to Saigon? Here is the Da Lat intercity bus station and the Da Lat offices of 8 bus companies on the Saigon route, with one-tap directions. Fares and timetables change often, so check with the company when you book.",
+ "In Da Lat (1–9)", "Good to know",
+ [("Travel time", "about 6–8 hours via Bao Loc Pass, longer with many stops"), ("Shuttle", "most companies run a shuttle van between central hotels and their station — ask when you book"), ("Night buses", "often arrive in Saigon around 4–5 am"), ("Holidays", "book a few days ahead at weekends and holidays")],
+ "Tips",
+ ["Arrive 30 minutes early; the shuttle may pick you up before the departure time.", "Keep your passport, phone and money with you, not in the luggage hold.", "The air-conditioning is cold at night — bring a jacket.", "Several offices (5–6, 8) are close together near Pham Hong Thai Street."],
+ [("Da Lat Intercity Bus Station", "Day & night", "Main bus station on To Hien Thanh Street; FUTA buses leave from here. Ticket counters and restrooms."),
+  ("FUTA (Phuong Trang) office", "Daytime", "FUTA ticket office on Le Quy Don Street; a shuttle van takes you to the bus station."),
+  ("Thanh Buoi bus station", "Day & night", "Thanh Buoi's own station on Lu Gia Street; sleeper buses to Saigon."),
+  ("Phong Phu Limousine", "Day & night", "Waiting lounge north of the centre; limousine cabin buses."),
+  ("Dien Linh (Pham Hong Thai)", "Day & night", "Dien Linh office in the Pham Hong Thai area; sleeper and cabin buses."),
+  ("Long Van Limousine", "Day & night", "Office in the Pham Hong Thai area with a café and restrooms; cabin buses."),
+  ("Lac Hong Limousine", "Day & night", "Office on Hoang Dieu Street; limousine vans with seats."),
+  ("Venus Limousine", "Day & night", "Office on Nguyen Van Troi Street; double-cabin sleeper buses."),
+  ("The Sinh Tourist Da Lat", "Daytime", "Travel agency on Bui Thi Xuan Street selling open-bus tickets and tours.")])
+T["vi"] = _mk("Xe Đà Lạt đi Sài Gòn: bản đồ bến xe và văn phòng nhà xe | Văn Phú", "Bản đồ nhà xe Đà Lạt – Sài Gòn",
+ "Bản đồ bến xe liên tỉnh Đà Lạt và văn phòng tại Đà Lạt của 8 nhà xe tuyến Sài Gòn — Phương Trang, Thành Bưởi, Phong Phú… — có chỉ đường và PDF miễn phí.",
+ "Về Sài Gòn? Đây là bến xe liên tỉnh Đà Lạt và văn phòng tại Đà Lạt của 8 nhà xe tuyến Sài Gòn, có nút chỉ đường. Giá vé và giờ chạy thay đổi thường xuyên, nên hỏi nhà xe khi đặt vé.",
+ "Tại Đà Lạt (1–9)", "Nên biết",
+ [("Thời gian", "khoảng 6–8 tiếng qua đèo Bảo Lộc, lâu hơn nếu dừng nhiều"), ("Trung chuyển", "đa số nhà xe có xe trung chuyển từ khách sạn trung tâm ra bến — hỏi khi đặt vé"), ("Xe đêm", "thường tới Sài Gòn khoảng 4–5 giờ sáng"), ("Ngày lễ", "cuối tuần và lễ nên đặt trước vài ngày")],
+ "Lưu ý",
+ ["Có mặt sớm 30 phút; xe trung chuyển có thể đón trước giờ xe chạy.", "Giữ hộ chiếu, điện thoại và tiền bên người, không để trong khoang hành lý.", "Máy lạnh ban đêm rất lạnh — mang theo áo khoác.", "Khu Phạm Hồng Thái có nhiều văn phòng nhà xe gần nhau (5–6, 8)."],
+ [("Bến xe Liên tỉnh Đà Lạt", "Cả ngày đêm", "Bến xe chính trên đường Tô Hiến Thành; xe Phương Trang xuất bến tại đây. Có quầy vé và nhà vệ sinh."),
+  ("Văn phòng Phương Trang (FUTA)", "Ban ngày", "Phòng vé Phương Trang trên đường Lê Quý Đôn; có xe trung chuyển ra bến xe."),
+  ("Bến xe Thành Bưởi", "Cả ngày đêm", "Bến riêng của Thành Bưởi trên đường Lữ Gia; xe giường nằm đi Sài Gòn."),
+  ("Phong Phú Limousine", "Cả ngày đêm", "Phòng chờ phía bắc trung tâm; xe limousine giường phòng."),
+  ("Điền Linh (Phạm Hồng Thái)", "Cả ngày đêm", "Văn phòng Điền Linh ở khu Phạm Hồng Thái; xe giường nằm và giường phòng."),
+  ("Long Vân Limousine", "Cả ngày đêm", "Văn phòng ở khu Phạm Hồng Thái, có quán cà phê và nhà vệ sinh; xe giường phòng."),
+  ("Lạc Hồng Limousine", "Cả ngày đêm", "Văn phòng trên đường Hoàng Diệu; xe limousine ghế ngồi."),
+  ("Venus Limousine", "Cả ngày đêm", "Văn phòng trên đường Nguyễn Văn Trỗi; xe phòng đôi."),
+  ("The Sinh Tourist Đà Lạt", "Ban ngày", "Đại lý du lịch trên đường Bùi Thị Xuân, bán vé xe open bus và tour.")])
+T["ru"] = _mk("Автобус Далат – Сайгон: карта автовокзала и офисов перевозчиков | Van Phu", "Карта автобусов Далат – Сайгон",
+ "Карта автовокзала Далата и далатских офисов 8 автобусных компаний до Сайгона (Хошимина) — FUTA, Thanh Buoi, Phong Phu и другие — с маршрутом и бесплатным PDF.",
+ "Едете в Сайгон? Здесь автовокзал Далата и далатские офисы 8 компаний на маршруте до Сайгона, с маршрутом в одно касание. Цены и расписание часто меняются — уточняйте у перевозчика при бронировании.",
+ "В Далате (1–9)", "Полезно знать",
+ [("В пути", "около 6–8 часов через перевал Баолок, дольше при частых остановках"), ("Трансфер", "у большинства компаний есть шаттл от отелей в центре до их станции — спросите при бронировании"), ("Ночные автобусы", "часто прибывают в Сайгон около 4–5 утра"), ("Праздники", "в выходные и праздники бронируйте за несколько дней")],
+ "Советы",
+ ["Приходите за 30 минут: шаттл может забрать раньше времени отправления.", "Паспорт, телефон и деньги держите при себе, не в багажном отсеке.", "Ночью кондиционер дует холодно — возьмите куртку.", "Несколько офисов (5–6, 8) рядом друг с другом у улицы Фамхонгтхай."],
+ [("Автовокзал Далата", "Днём и ночью", "Главный автовокзал на улице Тохиентхань; отсюда отправляются автобусы FUTA. Кассы и туалеты."),
+  ("Офис FUTA (Phuong Trang)", "Днём", "Касса FUTA на улице Леквидон; шаттл довозит до автовокзала."),
+  ("Станция Thanh Buoi", "Днём и ночью", "Собственная станция Thanh Buoi на улице Лузя; спальные автобусы до Сайгона."),
+  ("Phong Phu Limousine", "Днём и ночью", "Зал ожидания к северу от центра; автобусы-лимузины с капсулами."),
+  ("Dien Linh (Pham Hong Thai)", "Днём и ночью", "Офис Dien Linh у улицы Фамхонгтхай; спальные автобусы и капсулы."),
+  ("Long Van Limousine", "Днём и ночью", "Офис у улицы Фамхонгтхай с кафе и туалетами; автобусы с капсулами."),
+  ("Lac Hong Limousine", "Днём и ночью", "Офис на улице Хоангзьеу; микроавтобусы-лимузины с креслами."),
+  ("Venus Limousine", "Днём и ночью", "Офис на улице Нгуенвантчой; автобусы с двухместными капсулами."),
+  ("The Sinh Tourist Da Lat", "Днём", "Турагентство на улице Буйтхисуан: билеты open bus и экскурсии.")])
+T["zh"] = _mk("大叻到西贡巴士：车站与客运公司办事处地图 | Van Phu", "大叻 – 西贡巴士地图",
+ "大叻长途汽车站及 8 家西贡（胡志明市）线路客运公司在大叻的办事处地图——FUTA、Thanh Buoi、Phong Phu 等——附导航和免费 PDF。",
+ "要去西贡？这里是大叻长途汽车站和 8 家西贡线路客运公司在大叻的办事处，一键导航。票价和班次常有变化，订票时请向客运公司确认。",
+ "大叻（1–9）", "须知",
+ [("车程", "经保禄山口约 6–8 小时，停靠多则更久"), ("接驳", "多数公司有从市中心酒店到车站的接驳车——订票时询问"), ("夜班车", "通常凌晨 4–5 点到达西贡"), ("节假日", "周末和节假日请提前几天订票")],
+ "提示",
+ ["提前 30 分钟到；接驳车可能比发车时间早来接。", "护照、手机和钱随身携带，不要放在行李舱。", "夜间空调很冷——带件外套。", "范鸿泰路一带有几家办事处挨在一起（5–6、8）。"],
+ [("大叻长途汽车站", "全天", "苏宪诚路上的主要汽车站；FUTA 巴士从这里发车。有售票处和洗手间。"),
+  ("FUTA（Phuong Trang）办事处", "白天", "黎贵惇路上的 FUTA 售票处；有接驳车送到汽车站。"),
+  ("Thanh Buoi 车站", "全天", "Thanh Buoi 在吕家路的自有车站；卧铺车开往西贡。"),
+  ("Phong Phu Limousine", "全天", "市中心北边的候车厅；豪华包厢巴士。"),
+  ("Dien Linh（范鸿泰）", "全天", "范鸿泰一带的 Dien Linh 办事处；卧铺和包厢巴士。"),
+  ("Long Van Limousine", "全天", "范鸿泰一带的办事处，有咖啡馆和洗手间；包厢巴士。"),
+  ("Lac Hong Limousine", "全天", "黄耀路上的办事处；座位式豪华面包车。"),
+  ("Venus Limousine", "全天", "阮文追路上的办事处；双人包厢卧铺车。"),
+  ("The Sinh Tourist Da Lat", "白天", "裴氏春路上的旅行社，出售 open bus 车票和旅游团。")])
+T["ko"] = _mk("달랏–사이공 버스: 버스터미널·버스회사 사무실 지도 | Van Phu", "달랏 – 사이공 버스 지도",
+ "달랏 시외버스터미널과 사이공(호찌민) 노선 버스회사 8곳의 달랏 사무실 지도 — FUTA, Thanh Buoi, Phong Phu 등 — 길찾기와 무료 PDF.",
+ "사이공에 가시나요? 달랏 시외버스터미널과 사이공 노선 버스회사 8곳의 달랏 사무실을 원터치 길찾기와 함께 정리했습니다. 요금과 시간표는 자주 바뀌니 예약할 때 확인하세요.",
+ "달랏 (1–9)", "알아두세요",
+ [("소요 시간", "바오록 고개를 지나 약 6–8시간, 정차가 많으면 더 걸림"), ("셔틀", "대부분 시내 호텔과 자사 정류장을 잇는 셔틀 밴 운영 — 예약 시 문의"), ("야간 버스", "보통 새벽 4–5시에 사이공 도착"), ("연휴", "주말과 연휴에는 며칠 전에 예약")],
+ "팁",
+ ["30분 일찍 도착하세요. 셔틀이 출발 시간보다 먼저 올 수 있어요.", "여권, 휴대폰, 돈은 짐칸이 아니라 몸에 지니세요.", "밤에는 에어컨이 추우니 겉옷을 챙기세요.", "팜홍타이 거리 근처에 사무실 여러 곳이 모여 있어요 (5–6, 8)."],
+ [("달랏 시외버스터미널", "주야", "또히엔타인 거리의 주 터미널; FUTA 버스가 여기서 출발. 매표소와 화장실."),
+  ("FUTA (Phuong Trang) 사무실", "낮", "레꾸이돈 거리의 FUTA 매표소; 셔틀 밴으로 터미널까지 이동."),
+  ("Thanh Buoi 정류장", "주야", "르쟈 거리의 Thanh Buoi 전용 정류장; 사이공행 슬리퍼 버스."),
+  ("Phong Phu Limousine", "주야", "시내 북쪽의 대기 라운지; 리무진 캐빈 버스."),
+  ("Dien Linh (팜홍타이)", "주야", "팜홍타이 지역의 Dien Linh 사무실; 슬리퍼·캐빈 버스."),
+  ("Long Van Limousine", "주야", "팜홍타이 지역 사무실, 카페와 화장실 있음; 캐빈 버스."),
+  ("Lac Hong Limousine", "주야", "호앙지에우 거리의 사무실; 좌석형 리무진 밴."),
+  ("Venus Limousine", "주야", "응우옌반쪼이 거리의 사무실; 2인 캐빈 슬리퍼 버스."),
+  ("The Sinh Tourist Da Lat", "낮", "부이티쑤언 거리의 여행사; 오픈버스 티켓과 투어 판매.")])
+T["ja"] = _mk("ダラット–サイゴンのバス：バスターミナルと各社オフィスの地図 | Van Phu", "ダラット – サイゴン バスマップ",
+ "ダラット長距離バスターミナルと、サイゴン（ホーチミン）行きバス会社8社のダラットのオフィスの地図。FUTA、Thanh Buoi、Phong Phuなど。ルート案内と無料PDF付き。",
+ "サイゴンへ向かう方へ。ダラット長距離バスターミナルと、サイゴン路線のバス会社8社のダラットのオフィスをワンタップのルート案内付きでまとめました。運賃や時刻表はよく変わるので、予約時に確認してください。",
+ "ダラット（1–9）", "知っておきたいこと",
+ [("所要時間", "バオロック峠経由で約6–8時間、停車が多いともっとかかる"), ("送迎", "多くの会社が市内のホテルと自社乗り場を結ぶ送迎バンを運行 — 予約時に確認"), ("夜行バス", "サイゴン到着は朝4–5時ごろが多い"), ("連休", "週末や連休は数日前に予約を")],
+ "ヒント",
+ ["30分前には着いておきましょう。送迎は出発時刻より早く来ることがあります。", "パスポート・スマホ・お金は荷物室に入れず身につけて。", "夜はエアコンが寒いので上着を。", "ファムホンタイ通り周辺に複数のオフィスが集まっています（5–6、8）。"],
+ [("ダラット長距離バスターミナル", "昼夜", "トーヒエンタイン通りのメインターミナル。FUTAのバスはここから出発。切符売り場とトイレあり。"),
+  ("FUTA（Phuong Trang）オフィス", "日中", "レークイドン通りのFUTA切符売り場。送迎バンでターミナルへ。"),
+  ("Thanh Buoi 乗り場", "昼夜", "ルーザー通りのThanh Buoi専用乗り場。サイゴン行き寝台バス。"),
+  ("Phong Phu Limousine", "昼夜", "中心部の北にある待合ラウンジ。リムジンのキャビンバス。"),
+  ("Dien Linh（ファムホンタイ）", "昼夜", "ファムホンタイ地区のDien Linhオフィス。寝台・キャビンバス。"),
+  ("Long Van Limousine", "昼夜", "ファムホンタイ地区のオフィス、カフェとトイレあり。キャビンバス。"),
+  ("Lac Hong Limousine", "昼夜", "ホアンジエウ通りのオフィス。座席タイプのリムジンバン。"),
+  ("Venus Limousine", "昼夜", "グエンヴァンチョイ通りのオフィス。2人用キャビンの寝台バス。"),
+  ("The Sinh Tourist Da Lat", "日中", "ブイティスアン通りの旅行会社。オープンバスのチケットとツアーを販売。")])
+T["th"] = _mk("รถบัสดาลัด–ไซ่ง่อน: แผนที่สถานีและสำนักงานบริษัทรถ | Van Phu", "แผนที่รถบัสดาลัด – ไซ่ง่อน",
+ "แผนที่สถานีขนส่งดาลัดและสำนักงานในดาลัดของบริษัทรถ 8 แห่งที่วิ่งไปไซ่ง่อน (โฮจิมินห์) เช่น FUTA, Thanh Buoi, Phong Phu พร้อมเส้นทางและ PDF ฟรี",
+ "จะไปไซ่ง่อน? นี่คือสถานีขนส่งระหว่างเมืองดาลัดและสำนักงานในดาลัดของบริษัทรถ 8 แห่งในเส้นทางไซ่ง่อน กดนำทางได้ทันที ราคาและตารางเวลาเปลี่ยนบ่อย ควรสอบถามบริษัทตอนจอง",
+ "ในดาลัด (1–9)", "ควรรู้",
+ [("ระยะเวลา", "ประมาณ 6–8 ชั่วโมงผ่านช่องเขาบ๋าวล็อก นานกว่านี้ถ้าจอดบ่อย"), ("รถรับส่ง", "บริษัทส่วนใหญ่มีรถตู้รับส่งระหว่างโรงแรมในเมืองกับจุดขึ้นรถ — ถามตอนจอง"), ("รถกลางคืน", "มักถึงไซ่ง่อนราวตี 4–5"), ("วันหยุด", "สุดสัปดาห์และวันหยุดควรจองล่วงหน้าหลายวัน")],
+ "เคล็ดลับ",
+ ["มาก่อน 30 นาที รถรับส่งอาจมารับก่อนเวลารถออก", "เก็บพาสปอร์ต โทรศัพท์ และเงินไว้กับตัว ไม่ใส่ในช่องเก็บสัมภาระ", "แอร์ตอนกลางคืนหนาว — พกเสื้อกันหนาว", "แถวถนนฝ่ามห่งท้ายมีสำนักงานหลายแห่งอยู่ใกล้กัน (5–6, 8)"],
+ [("สถานีขนส่งระหว่างเมืองดาลัด", "ทั้งวันทั้งคืน", "สถานีหลักบนถนนโตเหียนแทงห์ รถ FUTA ออกจากที่นี่ มีจุดขายตั๋วและห้องน้ำ"),
+  ("สำนักงาน FUTA (Phuong Trang)", "กลางวัน", "จุดขายตั๋ว FUTA บนถนนเลกวีโดน มีรถตู้รับส่งไปสถานี"),
+  ("สถานี Thanh Buoi", "ทั้งวันทั้งคืน", "สถานีของ Thanh Buoi บนถนนลือซา รถนอนไปไซ่ง่อน"),
+  ("Phong Phu Limousine", "ทั้งวันทั้งคืน", "ห้องรอรถทางเหนือของตัวเมือง รถลีมูซีนแบบห้องนอน"),
+  ("Dien Linh (ฝ่ามห่งท้าย)", "ทั้งวันทั้งคืน", "สำนักงาน Dien Linh ย่านฝ่ามห่งท้าย รถนอนและรถห้องนอน"),
+  ("Long Van Limousine", "ทั้งวันทั้งคืน", "สำนักงานย่านฝ่ามห่งท้าย มีคาเฟ่และห้องน้ำ รถห้องนอน"),
+  ("Lac Hong Limousine", "ทั้งวันทั้งคืน", "สำนักงานบนถนนหว่างซิ่ว รถตู้ลีมูซีนแบบที่นั่ง"),
+  ("Venus Limousine", "ทั้งวันทั้งคืน", "สำนักงานบนถนนเหงียนวันจ๋อย รถนอนห้องคู่"),
+  ("The Sinh Tourist Da Lat", "กลางวัน", "บริษัทท่องเที่ยวบนถนนบุ่ยถิซวน ขายตั๋ว open bus และทัวร์")])
+T["id"] = _mk("Bus Da Lat ke Saigon: Peta Terminal & Kantor Bus | Van Phu", "Peta Bus Da Lat – Saigon",
+ "Peta terminal bus Da Lat dan kantor di Da Lat milik 8 perusahaan bus ke Saigon (Ho Chi Minh City) — FUTA, Thanh Buoi, Phong Phu dan lainnya — dengan petunjuk arah dan PDF gratis.",
+ "Mau ke Saigon? Inilah terminal bus antarkota Da Lat dan kantor di Da Lat milik 8 perusahaan bus rute Saigon, dengan petunjuk arah sekali ketuk. Harga dan jadwal sering berubah, jadi tanyakan saat memesan.",
+ "Di Da Lat (1–9)", "Perlu diketahui",
+ [("Lama perjalanan", "sekitar 6–8 jam lewat Celah Bao Loc, lebih lama jika banyak berhenti"), ("Antar-jemput", "kebanyakan perusahaan punya van antar-jemput dari hotel di pusat ke pool mereka — tanyakan saat memesan"), ("Bus malam", "sering tiba di Saigon sekitar pukul 4–5 pagi"), ("Hari libur", "pesan beberapa hari sebelumnya saat akhir pekan dan libur")],
+ "Tips",
+ ["Datang 30 menit lebih awal; van bisa menjemput sebelum jam berangkat.", "Simpan paspor, ponsel, dan uang di badan, bukan di bagasi.", "AC malam hari dingin — bawa jaket.", "Beberapa kantor (5–6, 8) berdekatan di sekitar Jalan Pham Hong Thai."],
+ [("Terminal Bus Antarkota Da Lat", "Siang & malam", "Terminal utama di Jalan To Hien Thanh; bus FUTA berangkat dari sini. Loket tiket dan toilet."),
+  ("Kantor FUTA (Phuong Trang)", "Siang", "Loket FUTA di Jalan Le Quy Don; van antar ke terminal."),
+  ("Pool Thanh Buoi", "Siang & malam", "Pool milik Thanh Buoi di Jalan Lu Gia; bus tidur ke Saigon."),
+  ("Phong Phu Limousine", "Siang & malam", "Ruang tunggu di utara pusat kota; bus limousine kabin."),
+  ("Dien Linh (Pham Hong Thai)", "Siang & malam", "Kantor Dien Linh di area Pham Hong Thai; bus tidur dan kabin."),
+  ("Long Van Limousine", "Siang & malam", "Kantor di area Pham Hong Thai dengan kafe dan toilet; bus kabin."),
+  ("Lac Hong Limousine", "Siang & malam", "Kantor di Jalan Hoang Dieu; van limousine dengan kursi."),
+  ("Venus Limousine", "Siang & malam", "Kantor di Jalan Nguyen Van Troi; bus tidur kabin ganda."),
+  ("The Sinh Tourist Da Lat", "Siang", "Agen perjalanan di Jalan Bui Thi Xuan yang menjual tiket open bus dan tur.")])
+T["ms"] = _mk("Bas Da Lat ke Saigon: Peta Stesen & Pejabat Bas | Van Phu", "Peta Bas Da Lat – Saigon",
+ "Peta stesen bas Da Lat dan pejabat di Da Lat bagi 8 syarikat bas ke Saigon (Ho Chi Minh City) — FUTA, Thanh Buoi, Phong Phu dan lain-lain — dengan arah dan PDF percuma.",
+ "Mahu ke Saigon? Inilah stesen bas antara bandar Da Lat dan pejabat di Da Lat bagi 8 syarikat bas laluan Saigon, dengan arah satu ketikan. Tambang dan jadual kerap berubah, jadi semak dengan syarikat semasa menempah.",
+ "Di Da Lat (1–9)", "Perlu tahu",
+ [("Masa perjalanan", "kira-kira 6–8 jam melalui Laluan Bao Loc, lebih lama jika banyak berhenti"), ("Van pengantar", "kebanyakan syarikat ada van antara hotel di pusat bandar dengan stesen mereka — tanya semasa menempah"), ("Bas malam", "selalunya tiba di Saigon sekitar 4–5 pagi"), ("Cuti", "tempah beberapa hari lebih awal pada hujung minggu dan cuti")],
+ "Tip",
+ ["Tiba 30 minit lebih awal; van mungkin menjemput sebelum waktu bertolak.", "Simpan pasport, telefon dan wang pada badan, bukan dalam ruang bagasi.", "Penghawa dingin waktu malam sejuk — bawa jaket.", "Beberapa pejabat (5–6, 8) berdekatan di sekitar Jalan Pham Hong Thai."],
+ [("Stesen Bas Antara Bandar Da Lat", "Siang & malam", "Stesen utama di Jalan To Hien Thanh; bas FUTA bertolak dari sini. Kaunter tiket dan tandas."),
+  ("Pejabat FUTA (Phuong Trang)", "Siang", "Kaunter FUTA di Jalan Le Quy Don; van menghantar ke stesen bas."),
+  ("Stesen Thanh Buoi", "Siang & malam", "Stesen sendiri Thanh Buoi di Jalan Lu Gia; bas tidur ke Saigon."),
+  ("Phong Phu Limousine", "Siang & malam", "Ruang menunggu di utara pusat bandar; bas limousine berkabin."),
+  ("Dien Linh (Pham Hong Thai)", "Siang & malam", "Pejabat Dien Linh di kawasan Pham Hong Thai; bas tidur dan berkabin."),
+  ("Long Van Limousine", "Siang & malam", "Pejabat di kawasan Pham Hong Thai dengan kafe dan tandas; bas berkabin."),
+  ("Lac Hong Limousine", "Siang & malam", "Pejabat di Jalan Hoang Dieu; van limousine bertempat duduk."),
+  ("Venus Limousine", "Siang & malam", "Pejabat di Jalan Nguyen Van Troi; bas tidur kabin berdua."),
+  ("The Sinh Tourist Da Lat", "Siang", "Agensi pelancongan di Jalan Bui Thi Xuan yang menjual tiket open bus dan lawatan.")])
+T["de"] = _mk("Bus Da Lat – Saigon: Karte von Busbahnhof und Busbüros | Van Phu", "Busse Da Lat – Saigon: Karte",
+ "Karte des Busbahnhofs Da Lat und der Büros von 8 Busunternehmen nach Saigon (Ho-Chi-Minh-Stadt) in Da Lat — FUTA, Thanh Buoi, Phong Phu und weitere — mit Route und kostenlosem PDF.",
+ "Weiter nach Saigon? Hier sind der Fernbusbahnhof von Da Lat und die Büros von 8 Busunternehmen auf der Saigon-Strecke in Da Lat, mit Route per Fingertipp. Preise und Fahrpläne ändern sich oft — bei der Buchung beim Unternehmen nachfragen.",
+ "In Da Lat (1–9)", "Gut zu wissen",
+ [("Fahrzeit", "etwa 6–8 Stunden über den Bao-Loc-Pass, mit vielen Stopps länger"), ("Shuttle", "die meisten Unternehmen fahren mit einem Shuttle-Van zwischen Hotels im Zentrum und ihrer Station — bei der Buchung fragen"), ("Nachtbusse", "kommen oft gegen 4–5 Uhr morgens in Saigon an"), ("Feiertage", "an Wochenenden und Feiertagen einige Tage vorher buchen")],
+ "Tipps",
+ ["30 Minuten früher da sein — der Shuttle kann vor der Abfahrtszeit kommen.", "Pass, Handy und Geld am Körper tragen, nicht im Gepäckraum.", "Die Klimaanlage ist nachts kalt — eine Jacke mitnehmen.", "Mehrere Büros (5–6, 8) liegen nah beieinander an der Pham-Hong-Thai-Straße."],
+ [("Fernbusbahnhof Da Lat", "Tag & Nacht", "Hauptbusbahnhof an der To-Hien-Thanh-Straße; hier fahren die FUTA-Busse ab. Schalter und Toiletten."),
+  ("FUTA-Büro (Phuong Trang)", "Tagsüber", "FUTA-Ticketbüro an der Le-Quy-Don-Straße; ein Shuttle-Van bringt Sie zum Busbahnhof."),
+  ("Thanh-Buoi-Station", "Tag & Nacht", "Eigene Station von Thanh Buoi an der Lu-Gia-Straße; Schlafbusse nach Saigon."),
+  ("Phong Phu Limousine", "Tag & Nacht", "Wartelounge nördlich des Zentrums; Limousinenbusse mit Kabinen."),
+  ("Dien Linh (Pham Hong Thai)", "Tag & Nacht", "Büro von Dien Linh im Viertel Pham Hong Thai; Schlaf- und Kabinenbusse."),
+  ("Long Van Limousine", "Tag & Nacht", "Büro im Viertel Pham Hong Thai mit Café und Toiletten; Kabinenbusse."),
+  ("Lac Hong Limousine", "Tag & Nacht", "Büro an der Hoang-Dieu-Straße; Limousinen-Vans mit Sitzen."),
+  ("Venus Limousine", "Tag & Nacht", "Büro an der Nguyen-Van-Troi-Straße; Schlafbusse mit Doppelkabinen."),
+  ("The Sinh Tourist Da Lat", "Tagsüber", "Reisebüro an der Bui-Thi-Xuan-Straße mit Open-Bus-Tickets und Touren.")])
+T["fr"] = _mk("Bus Da Lat – Saigon : carte de la gare routière et des agences | Van Phu", "Carte des bus Da Lat – Saigon",
+ "Carte de la gare routière de Da Lat et des agences à Da Lat de 8 compagnies de bus vers Saigon (Hô Chi Minh-Ville) — FUTA, Thanh Buoi, Phong Phu et d'autres — avec itinéraire et PDF gratuit.",
+ "Direction Saigon ? Voici la gare routière interurbaine de Da Lat et les agences à Da Lat de 8 compagnies de bus sur la ligne de Saigon, avec itinéraire en un clic. Prix et horaires changent souvent : vérifiez auprès de la compagnie à la réservation.",
+ "À Da Lat (1–9)", "Bon à savoir",
+ [("Durée", "environ 6 à 8 heures par le col de Bao Loc, plus avec de nombreux arrêts"), ("Navette", "la plupart des compagnies ont un minibus entre les hôtels du centre et leur station — demandez à la réservation"), ("Bus de nuit", "arrivent souvent à Saigon vers 4–5 h du matin"), ("Jours fériés", "réservez quelques jours à l'avance le week-end et les jours fériés")],
+ "Conseils",
+ ["Arrivez 30 minutes en avance : la navette peut passer avant l'heure de départ.", "Gardez passeport, téléphone et argent sur vous, pas dans la soute.", "La climatisation est froide la nuit — prenez une veste.", "Plusieurs agences (5–6, 8) sont proches les unes des autres vers la rue Pham Hong Thai."],
+ [("Gare routière interurbaine de Da Lat", "Jour et nuit", "Gare principale rue To Hien Thanh ; les bus FUTA partent d'ici. Guichets et toilettes."),
+  ("Agence FUTA (Phuong Trang)", "Journée", "Guichet FUTA rue Le Quy Don ; un minibus vous emmène à la gare routière."),
+  ("Station Thanh Buoi", "Jour et nuit", "Station propre à Thanh Buoi rue Lu Gia ; bus couchettes vers Saigon."),
+  ("Phong Phu Limousine", "Jour et nuit", "Salon d'attente au nord du centre ; bus limousine à cabines."),
+  ("Dien Linh (Pham Hong Thai)", "Jour et nuit", "Agence Dien Linh dans le quartier Pham Hong Thai ; bus couchettes et cabines."),
+  ("Long Van Limousine", "Jour et nuit", "Agence dans le quartier Pham Hong Thai avec café et toilettes ; bus à cabines."),
+  ("Lac Hong Limousine", "Jour et nuit", "Agence rue Hoang Dieu ; minibus limousine à sièges."),
+  ("Venus Limousine", "Jour et nuit", "Agence rue Nguyen Van Troi ; bus couchettes à cabines doubles."),
+  ("The Sinh Tourist Da Lat", "Journée", "Agence de voyages rue Bui Thi Xuan : billets open bus et excursions.")])
+T["es"] = _mk("Autobús Da Lat – Saigón: mapa de la estación y las oficinas | Van Phu", "Mapa de autobuses Da Lat – Saigón",
+ "Mapa de la estación de autobuses de Da Lat y de las oficinas en Da Lat de 8 compañías con ruta a Saigón (Ciudad Ho Chi Minh) — FUTA, Thanh Buoi, Phong Phu y más — con cómo llegar y PDF gratis.",
+ "¿Vas a Saigón? Aquí tienes la estación interurbana de Da Lat y las oficinas en Da Lat de 8 compañías de autobús de la ruta a Saigón, con ruta en un toque. Precios y horarios cambian a menudo: confírmalos con la compañía al reservar.",
+ "En Da Lat (1–9)", "Bueno saber",
+ [("Duración", "unas 6–8 horas por el paso de Bao Loc, más si hay muchas paradas"), ("Traslado", "la mayoría de las compañías tienen una furgoneta entre los hoteles del centro y su estación — pregunta al reservar"), ("Autobuses nocturnos", "suelen llegar a Saigón hacia las 4–5 de la mañana"), ("Festivos", "reserva con unos días de antelación en fines de semana y festivos")],
+ "Consejos",
+ ["Llega 30 minutos antes: la furgoneta puede recogerte antes de la hora de salida.", "Lleva pasaporte, móvil y dinero contigo, no en el maletero.", "El aire acondicionado es frío de noche — lleva una chaqueta.", "Varias oficinas (5–6, 8) están juntas cerca de la calle Pham Hong Thai."],
+ [("Estación interurbana de Da Lat", "Día y noche", "Estación principal en la calle To Hien Thanh; de aquí salen los autobuses FUTA. Taquillas y baños."),
+  ("Oficina de FUTA (Phuong Trang)", "Durante el día", "Taquilla de FUTA en la calle Le Quy Don; una furgoneta te lleva a la estación."),
+  ("Estación de Thanh Buoi", "Día y noche", "Estación propia de Thanh Buoi en la calle Lu Gia; autobuses cama a Saigón."),
+  ("Phong Phu Limousine", "Día y noche", "Sala de espera al norte del centro; autobuses limusina con cabinas."),
+  ("Dien Linh (Pham Hong Thai)", "Día y noche", "Oficina de Dien Linh en la zona de Pham Hong Thai; autobuses cama y con cabinas."),
+  ("Long Van Limousine", "Día y noche", "Oficina en la zona de Pham Hong Thai con café y baños; autobuses con cabinas."),
+  ("Lac Hong Limousine", "Día y noche", "Oficina en la calle Hoang Dieu; furgonetas limusina con asientos."),
+  ("Venus Limousine", "Día y noche", "Oficina en la calle Nguyen Van Troi; autobuses cama con cabinas dobles."),
+  ("The Sinh Tourist Da Lat", "Durante el día", "Agencia de viajes en la calle Bui Thi Xuan que vende billetes de open bus y excursiones.")])
+T["he"] = _mk("אוטובוס מדלאט לסייגון: מפת התחנה המרכזית ומשרדי החברות | Van Phu", "מפת אוטובוסים דלאט – סייגון",
+ "מפה של התחנה המרכזית בדלאט ושל משרדי 8 חברות אוטובוסים לסייגון (הו צ'י מין) בדלאט — FUTA, Thanh Buoi, Phong Phu ועוד — עם ניווט ו-PDF בחינם.",
+ "נוסעים לסייגון? הנה התחנה הבין-עירונית של דלאט ומשרדי 8 חברות האוטובוסים בקו סייגון בדלאט, עם ניווט בלחיצה אחת. מחירים ולוחות זמנים משתנים לעיתים קרובות — בדקו מול החברה בהזמנה.",
+ "בדלאט (1–9)", "כדאי לדעת",
+ [("משך הנסיעה", "בערך 6–8 שעות דרך מעבר באו לוק, יותר עם הרבה עצירות"), ("הסעה", "לרוב החברות יש ואן הסעה בין מלונות במרכז לתחנה שלהן — שאלו בהזמנה"), ("אוטובוסי לילה", "מגיעים לסייגון לרוב בסביבות 4–5 לפנות בוקר"), ("חגים", "בסופי שבוע ובחגים הזמינו כמה ימים מראש")],
+ "טיפים",
+ ["הגיעו 30 דקות מוקדם — ההסעה עשויה להגיע לפני שעת היציאה.", "דרכון, טלפון וכסף — עליכם, לא בתא המטען.", "המזגן קר בלילה — קחו מעיל.", "כמה משרדים (5–6, 8) קרובים זה לזה ליד רחוב פאם הונג טאי."],
+ [("התחנה הבין-עירונית של דלאט", "יום ולילה", "התחנה הראשית ברחוב טו הייאן טאן; אוטובוסי FUTA יוצאים מכאן. קופות ושירותים."),
+  ("משרד FUTA (Phuong Trang)", "במשך היום", "קופת FUTA ברחוב לה קוי דון; ואן הסעה מביא לתחנה המרכזית."),
+  ("תחנת Thanh Buoi", "יום ולילה", "התחנה הפרטית של Thanh Buoi ברחוב לו זיא; אוטובוסי שינה לסייגון."),
+  ("Phong Phu Limousine", "יום ולילה", "טרקלין המתנה צפונית למרכז; אוטובוסי לימוזינה עם תאים."),
+  ("Dien Linh (פאם הונג טאי)", "יום ולילה", "משרד Dien Linh באזור פאם הונג טאי; אוטובוסי שינה ותאים."),
+  ("Long Van Limousine", "יום ולילה", "משרד באזור פאם הונג טאי עם בית קפה ושירותים; אוטובוסי תאים."),
+  ("Lac Hong Limousine", "יום ולילה", "משרד ברחוב הואנג זיאו; ואני לימוזינה עם מושבים."),
+  ("Venus Limousine", "יום ולילה", "משרד ברחוב נגוין ואן צ'וי; אוטובוסי שינה עם תאים זוגיים."),
+  ("The Sinh Tourist Da Lat", "במשך היום", "סוכנות נסיעות ברחוב בוי טי שואן: כרטיסי open bus וסיורים.")])
+
+for _l in LANGS:
+    for _k in SHARED:
+        T[_l][_k] = _PM.T[_l][_k]
+    assert set(T[_l]["s"]) == {x[0] for x in SPOTS}, _l
+
+_Q = {"benxe": "Bến xe liên tỉnh Đà Lạt", "futa": "FUTA Phương Trang Lê Quý Đôn", "thanhbuoi": "Thành Bưởi Lữ Gia",
+      "phongphu": "Phong Phú Limousine", "dienlinh": "Điền Linh Phạm Hồng Thái", "longvan": "Long Vân Limousine",
+      "lachong": "Lạc Hồng Limousine", "venus": "Venus Limousine", "sinh": "The Sinh Tourist"}
+def img_link(sid):
+    """Temporary photo link: Google Images search for the place name."""
+    from urllib.parse import quote
+    return "https://www.google.com/search?tbm=isch&q=" + quote(_Q[sid] + " Đà Lạt")

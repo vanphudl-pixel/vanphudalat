@@ -33,6 +33,7 @@ from content import bbqmap as BB
 from content import hotelmap as HT
 from content import fourstarmap as H4
 from content import threestarmap as H3
+from content import busmap as BU
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
 for _l in LANGS:
@@ -181,7 +182,8 @@ def pm_section(l, me):
             f'<a class="btn alt" href="{rel(me, map_path(BB, l))}" style="border:1px solid var(--line)">🍖 {BB.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(HT, l))}" style="border:1px solid var(--line)">🏨 {HT.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(H4, l))}" style="border:1px solid var(--line)">🛎️ {H4.T[l]["h1"]} →</a> '
-            f'<a class="btn alt" href="{rel(me, map_path(H3, l))}" style="border:1px solid var(--line)">🛏️ {H3.T[l]["h1"]} →</a></p></section>')
+            f'<a class="btn alt" href="{rel(me, map_path(H3, l))}" style="border:1px solid var(--line)">🛏️ {H3.T[l]["h1"]} →</a> '
+            f'<a class="btn alt" href="{rel(me, map_path(BU, l))}" style="border:1px solid var(--line)">🚌 {BU.T[l]["h1"]} →</a></p></section>')
 # Real Google Maps reviews, quoted verbatim (excerpts marked with …), shown in the original language.
 # Shown as visible quotes only: no Review/AggregateRating schema, because Google's rules forbid
 # marking up reviews copied from another site (Google Maps). Add new ones only from real reviews.
@@ -655,7 +657,7 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
-for _M in (PG, CH, SF, CL, CF, BB, HT, H4, H3):
+for _M in (PG, CH, SF, CL, CF, BB, HT, H4, H3, BU):
     for l in _M.LANGS:
         write(map_path(_M, l), page_photomap(l, _M))
 
@@ -669,7 +671,7 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
-for _M in (PG, CH, SF, CL, CF, BB, HT, H4, H3):
+for _M in (PG, CH, SF, CL, CF, BB, HT, H4, H3, BU):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
@@ -703,6 +705,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Da Lat 5-star hotels — map of 8 hotels and resorts listed as 5-star, free PDF]({BASE + map_path(HT, "en")})
 - [Da Lat 4-star hotels — map of 10 popular 4-star hotels and resorts, free PDF]({BASE + map_path(H4, "en")})
 - [Da Lat 3-star hotels — map of 8 popular 3-star hotels near the night market, free PDF]({BASE + map_path(H3, "en")})
+- [Da Lat to Saigon bus — map of the Da Lat bus station and 8 bus company offices, free PDF]({BASE + map_path(BU, "en")})
 - [Motorbike routes around Da Lat]({BASE + routes_path("en")})
 - [Travel blog]({BASE + blog_path("en")})
 """ + "".join(f"- [{LABEL[x]} home]({BASE + home_path(x)})\n" for x in LANGS if x != "en")
