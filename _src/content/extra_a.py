@@ -23,14 +23,13 @@ ART["en"] = {
 <h2>How a rental day works</h2>
 <p>We open every day at 4:30 AM — handy if you want to catch sunrise. A rental day runs from the moment you pick up the bike until 9:00 PM the same day.</p>
 <h2>What you pay on top</h2>
-<p>The only extra cost is fuel for gas scooters: refill at any gas station, they're everywhere in town. Electric scooters need no fuel at all, but have a range of about 40 km per charge — see our <a href="{EV}">electric scooter rental page</a>.</p>
+<p>The only extra cost is fuel for gas scooters: refill at any gas station, they're everywhere in town. Electric scooters need no fuel at all; one battery lasts about 35–40 km and a battery swap at our shop costs 20,000 VND — see our <a href="{EV}">electric scooter rental page</a>.</p>
 <h2>How to avoid surprises at any rental shop</h2>
 <ul>
 <li>Ask what the deposit is and when you get it back.</li>
 <li>Film the bike before riding — scratches, mirrors, lights.</li>
 <li>Check brakes and tires; Da Lat has many steep hills.</li>
 <li>Ask the exact return time and what happens if you're late.</li>
-<li>Gas scooters require a driver's license; our electric scooters don't.</li>
 </ul>
 <h2>Book in one message</h2>
 <p>Send us your dates on WhatsApp and we'll keep a bike for you. Full details are on our <a href="{HOME}">Da Lat motorbike rental</a> page, and ideas for where to ride are in <a href="{ROUTES}">5 routes around Da Lat</a>.</p>
@@ -38,18 +37,17 @@ ART["en"] = {
 "evgas": ("electric-or-gas-scooter-dalat",
  "Electric Scooter or Gas Scooter in Da Lat? Which One to Rent | Van Phu",
  "Electric Scooter or Gas Scooter: Which One to Rent in Da Lat?",
- "Electric scooter rental in Da Lat vs a gas scooter: range, power on hills, license rules and price. A simple guide to choosing the right bike for your trip.",
+ "Electric scooter rental in Da Lat vs a gas scooter: range, power on hills and price. A simple guide to choosing the right bike for your trip.",
  "Both cost 120,000–150,000 VND per day, but they suit very different days. Here's how to choose between an electric scooter and a gas scooter in Da Lat.",
  "electric-helmets", """
 <h2>The short answer</h2>
-<p>Staying in town and riding short distances? An <b>electric scooter</b> is quiet, easy and needs no license. Planning hills, passes or trips out of the city? Take a <b>gas scooter</b>, ideally the Honda Air Blade 125cc.</p>
+<p>Staying in town and riding short distances? An <b>electric scooter</b> is quiet and easy. Planning hills, passes or trips out of the city? Take a <b>gas scooter</b>, ideally the Honda Air Blade 125cc.</p>
 <h2>Electric scooter: pros and limits</h2>
 <ul>
-<li><b>No driver's license needed</b> to rent one from us.</li>
 <li>Quiet, no gears, no fuel stops.</li>
-<li>Range of about <b>40 km per charge</b> — enough for the center and nearby sights.</li>
+<li>One battery lasts about <b>35–40 km</b> (battery swap at our shop: 20,000 VND) — enough for the center and nearby sights.</li>
 <li>Low power: slow on steep hills and passes.</li>
-<li>Two riders only if your combined weight is under 120 kg.</li>
+<li>Two riders only if your combined weight is under 100 kg.</li>
 </ul>
 <p>More details: <a href="{EV}">electric scooter rental in Da Lat</a>.</p>
 <h2>Gas scooter: pros and limits</h2>
@@ -57,7 +55,6 @@ ART["en"] = {
 <li>Plenty of power for Da Lat's hills — the Air Blade 125cc is the strongest climber we have.</li>
 <li>No range worries: refuel at any gas station.</li>
 <li>Best for the Cau Dat tea hills, Lang Biang and waterfall loops.</li>
-<li>A valid driver's license is required.</li>
 </ul>
 <h2>Which bike for which day</h2>
 <ul>
@@ -92,14 +89,13 @@ ART["vi"] = {
 <h2>Một ngày thuê tính thế nào</h2>
 <p>Tiệm mở cửa từ 4:30 sáng mỗi ngày, tiện cho ai muốn đi săn bình minh. Một ngày thuê tính từ lúc nhận xe đến 21:00 cùng ngày.</p>
 <h2>Chi phí thêm</h2>
-<p>Chỉ có tiền xăng với xe xăng, đổ ở bất kỳ cây xăng nào. Xe máy điện thì không tốn xăng, nhưng mỗi lần sạc đi được khoảng 40 km — xem thêm trang <a href="{EV}">thuê xe máy điện Đà Lạt</a>.</p>
+<p>Chỉ có tiền xăng với xe xăng, đổ ở bất kỳ cây xăng nào. Xe máy điện thì không tốn xăng; 1 cục pin đi được khoảng 35–40 km, đổi pin tại cửa hàng 20.000 VND/lần — xem thêm trang <a href="{EV}">thuê xe máy điện Đà Lạt</a>.</p>
 <h2>Kinh nghiệm tránh phát sinh khi thuê xe</h2>
 <ul>
 <li>Hỏi rõ cọc gì và khi nào được trả lại.</li>
 <li>Quay video xe trước khi chạy: trầy xước, gương, đèn.</li>
 <li>Thử phanh và lốp — Đà Lạt nhiều dốc.</li>
 <li>Hỏi giờ trả xe và quy định nếu trả muộn.</li>
-<li>Xe xăng cần bằng lái hợp lệ; xe máy điện ở Văn Phú thì không cần.</li>
 </ul>
 <h2>Đặt xe chỉ với một tin nhắn</h2>
 <p>Nhắn Zalo hoặc WhatsApp ngày bạn cần, Văn Phú giữ xe cho bạn. Thông tin đầy đủ ở trang <a href="{HOME}">thuê xe máy Đà Lạt</a>, còn gợi ý đi đâu thì xem <a href="{ROUTES}">5 lộ trình quanh Đà Lạt</a>.</p>
@@ -107,18 +103,17 @@ ART["vi"] = {
 "evgas": ("thue-xe-may-dien-hay-xe-xang-da-lat",
  "Thuê xe máy điện hay xe xăng ở Đà Lạt? Nên chọn xe nào | Văn Phú",
  "Thuê xe máy điện hay xe xăng ở Đà Lạt: Nên chọn xe nào?",
- "Thuê xe máy điện Đà Lạt hay xe tay ga xăng? So sánh quãng đường, sức leo dốc, bằng lái và giá để chọn đúng xe cho chuyến đi của bạn.",
+ "Thuê xe máy điện Đà Lạt hay xe tay ga xăng? So sánh quãng đường, sức leo dốc và giá để chọn đúng xe cho chuyến đi của bạn.",
  "Cả hai đều 120.000–150.000 VND/ngày nhưng hợp với những kiểu đi rất khác nhau. Đây là cách chọn giữa xe máy điện và xe xăng khi ở Đà Lạt.",
  "electric-helmets", """
 <h2>Trả lời nhanh</h2>
-<p>Đi loanh quanh trung tâm, quãng ngắn? Chọn <b>xe máy điện</b>: êm, dễ đi, không cần bằng lái. Đi đèo, dốc hoặc ra ngoại ô? Chọn <b>xe xăng</b>, tốt nhất là Honda Air Blade 125cc.</p>
+<p>Đi loanh quanh trung tâm, quãng ngắn? Chọn <b>xe máy điện</b>: êm, dễ đi. Đi đèo, dốc hoặc ra ngoại ô? Chọn <b>xe xăng</b>, tốt nhất là Honda Air Blade 125cc.</p>
 <h2>Xe máy điện: ưu điểm và giới hạn</h2>
 <ul>
-<li><b>Không cần bằng lái</b> khi thuê ở Văn Phú.</li>
 <li>Êm, không số, không phải đổ xăng.</li>
-<li>Đi khoảng <b>40 km mỗi lần sạc</b>, đủ cho trung tâm và các điểm gần.</li>
+<li>1 cục pin đi được khoảng <b>35–40 km</b> (đổi pin tại cửa hàng 20.000 VND/lần), đủ cho trung tâm và các điểm gần.</li>
 <li>Công suất thấp, leo dốc và đèo sẽ chậm.</li>
-<li>Chở 2 người khi tổng cân nặng dưới 120 kg.</li>
+<li>Chở 2 người khi tổng cân nặng dưới 100 kg.</li>
 </ul>
 <p>Xem chi tiết: <a href="{EV}">thuê xe máy điện Đà Lạt</a>.</p>
 <h2>Xe xăng: ưu điểm và giới hạn</h2>
@@ -126,7 +121,6 @@ ART["vi"] = {
 <li>Khỏe, leo dốc Đà Lạt thoải mái — Air Blade 125cc leo dốc tốt nhất.</li>
 <li>Không lo hết pin, đổ xăng ở đâu cũng có.</li>
 <li>Hợp đi đồi chè Cầu Đất, Langbiang, các thác ngoại ô.</li>
-<li>Cần bằng lái hợp lệ.</li>
 </ul>
 <h2>Đi đâu chọn xe nào</h2>
 <ul>
@@ -161,14 +155,13 @@ ART["ru"] = {
 <h2>Как считается день аренды</h2>
 <p>Мы открываемся каждый день в 4:30 — удобно, если хотите встретить рассвет. День аренды длится с момента получения байка до 21:00 того же дня.</p>
 <h2>Дополнительные расходы</h2>
-<p>Только бензин для бензиновых скутеров — заправки есть по всему городу. Электроскутеру топливо не нужно, но запас хода около 40 км — подробнее на странице <a href="{EV}">аренда электроскутера в Далате</a>.</p>
+<p>Только бензин для бензиновых скутеров — заправки есть по всему городу. Электроскутеру топливо не нужно; одной батареи хватает примерно на 35–40 км, замена батареи у нас — 20 000 VND — подробнее на странице <a href="{EV}">аренда электроскутера в Далате</a>.</p>
 <h2>Как избежать сюрпризов в любом прокате</h2>
 <ul>
 <li>Уточните, какой залог и когда его вернут.</li>
 <li>Снимите байк на видео до поездки: царапины, зеркала, фары.</li>
 <li>Проверьте тормоза и шины — в Далате много крутых подъёмов.</li>
 <li>Уточните время возврата и что будет при опоздании.</li>
-<li>Для бензиновых скутеров нужны права; для наших электроскутеров — нет.</li>
 </ul>
 <h2>Бронь одним сообщением</h2>
 <p>Напишите нам в Telegram или WhatsApp даты — и мы оставим байк за вами. Все условия — на странице <a href="{HOME}">аренда байка в Далате</a>, идеи маршрутов — в статье <a href="{ROUTES}">5 маршрутов по Далату</a>.</p>
@@ -176,18 +169,17 @@ ART["ru"] = {
 "evgas": ("elektroskuter-ili-benzinovyy-dalat",
  "Электроскутер или бензиновый скутер в Далате: что арендовать | Van Phu",
  "Электроскутер или бензиновый скутер: что арендовать в Далате?",
- "Аренда электроскутера в Далате или бензинового байка? Сравниваем запас хода, тягу на подъёмах, требования к правам и цену.",
+ "Аренда электроскутера в Далате или бензинового байка? Сравниваем запас хода, тягу на подъёмах и цену.",
  "Оба стоят 120 000–150 000 VND в день, но подходят для совсем разных поездок. Как выбрать между электроскутером и бензиновым скутером в Далате.",
  "electric-helmets", """
 <h2>Коротко</h2>
 <p>Катаетесь по центру и недалеко? Берите <b>электроскутер</b>: тихо, просто и без прав. Собираетесь в горы, на перевалы и за город? Берите <b>бензиновый скутер</b>, лучше Honda Air Blade 125cc.</p>
 <h2>Электроскутер: плюсы и ограничения</h2>
 <ul>
-<li><b>Права не нужны</b> для аренды у нас.</li>
 <li>Тихий, без передач и заправок.</li>
-<li>Запас хода около <b>40 км</b> — хватит на центр и ближайшие места.</li>
+<li>Одной батареи хватает примерно на <b>35–40 км</b> (замена батареи у нас — 20 000 VND) — хватит на центр и ближайшие места.</li>
 <li>Небольшая мощность: медленно едет в крутые подъёмы.</li>
-<li>Вдвоём — только если общий вес меньше 120 кг.</li>
+<li>Вдвоём — только если общий вес меньше 100 кг.</li>
 </ul>
 <p>Подробнее: <a href="{EV}">аренда электроскутера в Далате</a>.</p>
 <h2>Бензиновый скутер: плюсы и ограничения</h2>
@@ -195,7 +187,6 @@ ART["ru"] = {
 <li>Хватает мощности для холмов Далата — Air Blade 125cc лучше всех берёт подъёмы.</li>
 <li>Нет забот с зарядом: заправки везде.</li>
 <li>Лучший выбор для чайных холмов Каудат, Лангбианга и водопадов.</li>
-<li>Нужны действующие права.</li>
 </ul>
 <h2>Какой байк для какого дня</h2>
 <ul>
@@ -230,14 +221,13 @@ ART["zh"] = {
 <h2>租期怎么算</h2>
 <p>我们每天早上 4:30 开门，方便看日出。租期从取车开始到当天 21:00。</p>
 <h2>额外费用</h2>
-<p>只有汽油车的油费，市区到处都有加油站。电动车不用加油，但充满电约跑 40 公里——详见<a href="{EV}">大叻电动车租赁</a>。</p>
+<p>只有汽油车的油费，市区到处都有加油站。电动车不用加油；一块电池约可行驶 35–40 公里，店内换电池每次 20,000 VND——详见<a href="{EV}">大叻电动车租赁</a>。</p>
 <h2>在任何租车店避免意外费用</h2>
 <ul>
 <li>问清楚押金是什么、什么时候退还。</li>
 <li>骑车前拍视频：划痕、后视镜、车灯。</li>
 <li>检查刹车和轮胎——大叻坡多。</li>
 <li>问清还车时间和超时规定。</li>
-<li>汽油车需要有效驾照；我们的电动车无需驾照。</li>
 </ul>
 <h2>一条消息就能订车</h2>
 <p>通过微信 vanphudalat 或 WhatsApp 发送日期，我们为您保留车辆。完整信息见<a href="{HOME}">大叻租摩托车</a>页面，路线建议见<a href="{ROUTES}">大叻 5 条骑行路线</a>。</p>
@@ -245,18 +235,17 @@ ART["zh"] = {
 "evgas": ("electric-or-gas-scooter-dalat",
  "大叻租电动车还是汽油车？怎么选 | Van Phu",
  "大叻租电动车还是汽油车：怎么选？",
- "大叻电动车出租和汽油摩托车对比：续航、爬坡能力、驾照要求和价格，帮您选对车。",
+ "大叻电动车出租和汽油摩托车对比：续航、爬坡能力和价格，帮您选对车。",
  "两种车都是每天 120,000–150,000 VND，但适合完全不同的行程。教您在大叻如何选择电动车或汽油车。",
  "electric-helmets", """
 <h2>简单回答</h2>
-<p>只在市中心短途游玩？选<b>电动车</b>：安静、好骑、无需驾照。要上山、走山路或出城？选<b>汽油车</b>，最好是本田 Air Blade 125cc。</p>
+<p>只在市中心短途游玩？选<b>电动车</b>：安静、好骑。要上山、走山路或出城？选<b>汽油车</b>，最好是本田 Air Blade 125cc。</p>
 <h2>电动车：优点与限制</h2>
 <ul>
-<li>在我们这里租<b>无需驾照</b>。</li>
 <li>安静，无需换挡，不用加油。</li>
-<li>充满电约 <b>40 公里</b>，足够市中心和附近景点。</li>
+<li>一块电池约可行驶 <b>35–40 公里</b>（店内换电池每次 20,000 VND），足够市中心和附近景点。</li>
 <li>功率小，陡坡和山路较慢。</li>
-<li>两人总体重低于 120 公斤才能双人骑行。</li>
+<li>两人总体重低于 100 公斤才能双人骑行。</li>
 </ul>
 <p>详情：<a href="{EV}">大叻电动车租赁</a>。</p>
 <h2>汽油车：优点与限制</h2>
@@ -264,7 +253,6 @@ ART["zh"] = {
 <li>动力足，适合大叻的坡道——Air Blade 125cc 爬坡最好。</li>
 <li>不担心续航，到处可加油。</li>
 <li>适合求德茶山、浪必安山和瀑布路线。</li>
-<li>需要有效驾照。</li>
 </ul>
 <h2>去哪里选哪种车</h2>
 <ul>
@@ -299,14 +287,13 @@ ART["ko"] = {
 <h2>대여 시간</h2>
 <p>매일 오전 4:30에 문을 열어 일출 보러 가기에도 좋습니다. 하루 대여는 수령 시점부터 당일 21:00까지입니다.</p>
 <h2>추가 비용</h2>
-<p>가솔린 스쿠터의 주유비뿐입니다. 전기 스쿠터는 주유가 필요 없지만 1회 충전 약 40km를 갑니다 — <a href="{EV}">달랏 전기 스쿠터 렌탈</a>을 참고하세요.</p>
+<p>가솔린 스쿠터의 주유비뿐입니다. 전기 스쿠터는 주유가 필요 없지만 배터리 1개로 약 35–40km를 가며, 매장에서 배터리 교체는 20,000 VND입니다 — <a href="{EV}">달랏 전기 스쿠터 렌탈</a>을 참고하세요.</p>
 <h2>어느 렌탈샵에서든 확인할 것</h2>
 <ul>
 <li>보증금이 무엇이고 언제 돌려받는지.</li>
 <li>출발 전 영상 촬영: 흠집, 미러, 라이트.</li>
 <li>브레이크와 타이어 점검 — 달랏은 언덕이 많습니다.</li>
 <li>반납 시간과 지연 시 규정.</li>
-<li>가솔린 스쿠터는 면허 필요, 저희 전기 스쿠터는 면허 불필요.</li>
 </ul>
 <h2>메시지 하나로 예약</h2>
 <p>WhatsApp으로 날짜를 보내 주시면 차량을 잡아 드립니다. 자세한 내용은 <a href="{HOME}">달랏 오토바이 렌탈</a> 페이지, 코스 추천은 <a href="{ROUTES}">달랏 5가지 루트</a>에서 확인하세요.</p>
@@ -314,18 +301,17 @@ ART["ko"] = {
 "evgas": ("electric-or-gas-scooter-dalat",
  "달랏에서 전기 스쿠터 vs 가솔린 스쿠터, 무엇을 빌릴까 | Van Phu",
  "전기 스쿠터와 가솔린 스쿠터, 달랏에서는 무엇을 빌릴까?",
- "달랏 전기 스쿠터 렌탈과 가솔린 스쿠터 비교: 주행거리, 언덕 주행, 면허, 가격까지 한눈에.",
+ "달랏 전기 스쿠터 렌탈과 가솔린 스쿠터 비교: 주행거리, 언덕 주행, 가격까지 한눈에.",
  "둘 다 1일 120,000–150,000 VND이지만 어울리는 여행이 전혀 다릅니다. 달랏에서 전기 스쿠터와 가솔린 스쿠터 중 고르는 법.",
  "electric-helmets", """
 <h2>한 줄 요약</h2>
-<p>시내 위주로 짧게 다닌다면 <b>전기 스쿠터</b>: 조용하고 쉽고 면허가 필요 없습니다. 언덕, 고개, 외곽 여행이라면 <b>가솔린 스쿠터</b>, 가능하면 혼다 에어블레이드 125cc.</p>
+<p>시내 위주로 짧게 다닌다면 <b>전기 스쿠터</b>: 조용하고 쉽습니다. 언덕, 고개, 외곽 여행이라면 <b>가솔린 스쿠터</b>, 가능하면 혼다 에어블레이드 125cc.</p>
 <h2>전기 스쿠터: 장점과 한계</h2>
 <ul>
-<li>저희 매장에서는 <b>면허 없이</b> 대여 가능.</li>
 <li>조용하고 기어·주유가 필요 없음.</li>
-<li>1회 충전 약 <b>40km</b> — 시내와 근교에 충분.</li>
+<li>배터리 1개로 약 <b>35–40km</b> 주행(매장에서 배터리 교체 20,000 VND) — 시내와 근교에 충분.</li>
 <li>출력이 낮아 가파른 언덕에서 느림.</li>
-<li>두 사람 총 체중 120kg 미만일 때만 2인 탑승.</li>
+<li>두 사람 총 체중 100kg 미만일 때만 2인 탑승.</li>
 </ul>
 <p>자세히: <a href="{EV}">달랏 전기 스쿠터 렌탈</a>.</p>
 <h2>가솔린 스쿠터: 장점과 한계</h2>
@@ -333,7 +319,6 @@ ART["ko"] = {
 <li>달랏 언덕에 충분한 힘 — 에어블레이드 125cc가 가장 잘 올라갑니다.</li>
 <li>배터리 걱정 없이 어디서나 주유.</li>
 <li>꺼우닷 차밭, 랑비앙, 폭포 투어에 적합.</li>
-<li>유효한 운전면허 필요.</li>
 </ul>
 <h2>일정별 추천</h2>
 <ul>
@@ -368,14 +353,13 @@ ART["ja"] = {
 <h2>レンタル時間</h2>
 <p>毎日朝4:30から営業しているので、日の出を見に行くのにも便利です。1日のレンタルは受け取りから当日21:00までです。</p>
 <h2>追加でかかる費用</h2>
-<p>ガソリンスクーターの燃料代だけです。電動スクーターは給油不要ですが、満充電で約40km走れます——<a href="{EV}">ダラットの電動スクーターレンタル</a>をご覧ください。</p>
+<p>ガソリンスクーターの燃料代だけです。電動スクーターは給油不要ですが、バッテリー1個で約35–40km走れ、店頭でのバッテリー交換は20,000 VNDです——<a href="{EV}">ダラットの電動スクーターレンタル</a>をご覧ください。</p>
 <h2>どのお店でも確認したいこと</h2>
 <ul>
 <li>デポジットの内容と返却のタイミング。</li>
 <li>出発前に動画を撮る：傷、ミラー、ライト。</li>
 <li>ブレーキとタイヤを確認——ダラットは坂が多いです。</li>
 <li>返却時間と遅れた場合のルール。</li>
-<li>ガソリンスクーターは免許が必要、当店の電動スクーターは免許不要。</li>
 </ul>
 <h2>メッセージ1つで予約</h2>
 <p>WhatsAppで日程を送っていただければバイクを確保します。詳しくは<a href="{HOME}">ダラットのレンタルバイク</a>ページ、ルートのアイデアは<a href="{ROUTES}">ダラット5つのルート</a>へ。</p>
@@ -383,18 +367,17 @@ ART["ja"] = {
 "evgas": ("electric-or-gas-scooter-dalat",
  "ダラットで借りるなら電動スクーター？ガソリン？選び方 | Van Phu",
  "電動スクーターとガソリンスクーター、ダラットで借りるならどっち？",
- "ダラットの電動スクーターレンタルとガソリンスクーターを比較：航続距離、坂道でのパワー、免許、料金。",
+ "ダラットの電動スクーターレンタルとガソリンスクーターを比較：航続距離、坂道でのパワー、料金。",
  "どちらも1日120,000–150,000 VNDですが、向いている旅はまったく違います。ダラットでの選び方を紹介します。",
  "electric-helmets", """
 <h2>結論</h2>
-<p>中心部を短い距離で回るなら<b>電動スクーター</b>：静かで簡単、免許も不要。坂道や峠、郊外へ行くなら<b>ガソリンスクーター</b>、できればホンダ エアブレード125cc。</p>
+<p>中心部を短い距離で回るなら<b>電動スクーター</b>：静かで簡単。坂道や峠、郊外へ行くなら<b>ガソリンスクーター</b>、できればホンダ エアブレード125cc。</p>
 <h2>電動スクーター：長所と限界</h2>
 <ul>
-<li>当店では<b>免許なし</b>で借りられます。</li>
 <li>静かでギアも給油も不要。</li>
-<li>満充電で約<b>40km</b>——中心部と近場には十分。</li>
+<li>バッテリー1個で約<b>35–40km</b>（店頭でのバッテリー交換は20,000 VND）——中心部と近場には十分。</li>
 <li>パワーが小さく、急な坂ではゆっくり。</li>
-<li>2人の合計体重が120kg未満の場合のみ2人乗り可。</li>
+<li>2人の合計体重が100kg未満の場合のみ2人乗り可。</li>
 </ul>
 <p>詳しくは<a href="{EV}">ダラットの電動スクーターレンタル</a>へ。</p>
 <h2>ガソリンスクーター：長所と限界</h2>
@@ -402,7 +385,6 @@ ART["ja"] = {
 <li>ダラットの坂でも力十分——エアブレード125ccが一番よく登ります。</li>
 <li>電池切れの心配なし、どこでも給油可能。</li>
 <li>カウダット茶畑、ランビアン山、滝めぐりに最適。</li>
-<li>有効な運転免許が必要。</li>
 </ul>
 <h2>行き先別おすすめ</h2>
 <ul>
@@ -437,14 +419,13 @@ ART["th"] = {
 <h2>เวลาเช่า</h2>
 <p>ร้านเปิดทุกวันตั้งแต่ 4:30 น. สะดวกสำหรับคนที่อยากไปดูพระอาทิตย์ขึ้น หนึ่งวันเช่าคือตั้งแต่รับรถถึง 21:00 น. ของวันเดียวกัน</p>
 <h2>ค่าใช้จ่ายเพิ่มเติม</h2>
-<p>มีแค่ค่าน้ำมันสำหรับรถน้ำมัน ปั๊มมีทั่วเมือง สกู๊ตเตอร์ไฟฟ้าไม่ต้องเติมน้ำมัน แต่ชาร์จเต็มวิ่งได้ประมาณ 40 กม. ดูเพิ่มที่ <a href="{EV}">เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด</a></p>
+<p>มีแค่ค่าน้ำมันสำหรับรถน้ำมัน ปั๊มมีทั่วเมือง สกู๊ตเตอร์ไฟฟ้าไม่ต้องเติมน้ำมัน แบต 1 ก้อนวิ่งได้ประมาณ 35–40 กม. เปลี่ยนแบตที่ร้าน 20,000 VND ดูเพิ่มที่ <a href="{EV}">เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด</a></p>
 <h2>สิ่งที่ควรเช็กทุกร้าน</h2>
 <ul>
 <li>ถามว่ามัดจำอะไร และคืนเมื่อไหร่</li>
 <li>ถ่ายวิดีโอรถก่อนขับ: รอยขีดข่วน กระจก ไฟ</li>
 <li>เช็กเบรกและยาง ดาลัดมีเนินเยอะ</li>
 <li>ถามเวลาคืนรถและกฎถ้าคืนช้า</li>
-<li>รถน้ำมันต้องมีใบขับขี่ สกู๊ตเตอร์ไฟฟ้าของเราไม่ต้อง</li>
 </ul>
 <h2>จองได้ในข้อความเดียว</h2>
 <p>ส่งวันที่ต้องการทาง WhatsApp แล้วเราจะเก็บรถไว้ให้ ดูรายละเอียดทั้งหมดที่หน้า <a href="{HOME}">เช่ามอเตอร์ไซค์ดาลัด</a> และไอเดียเส้นทางที่ <a href="{ROUTES}">5 เส้นทางรอบดาลัด</a></p>
@@ -452,18 +433,17 @@ ART["th"] = {
 "evgas": ("electric-or-gas-scooter-dalat",
  "สกู๊ตเตอร์ไฟฟ้าหรือรถน้ำมัน เช่าแบบไหนดีในดาลัด | Van Phu",
  "สกู๊ตเตอร์ไฟฟ้าหรือรถน้ำมัน: เช่าแบบไหนดีในดาลัด?",
- "เปรียบเทียบการเช่าสกู๊ตเตอร์ไฟฟ้าในดาลัดกับรถน้ำมัน: ระยะทาง กำลังขึ้นเนิน ใบขับขี่ และราคา",
+ "เปรียบเทียบการเช่าสกู๊ตเตอร์ไฟฟ้าในดาลัดกับรถน้ำมัน: ระยะทาง กำลังขึ้นเนิน และราคา",
  "ทั้งสองแบบราคาวันละ 120,000–150,000 VND แต่เหมาะกับทริปต่างกันมาก นี่คือวิธีเลือกในดาลัด",
  "electric-helmets", """
 <h2>สรุปสั้น ๆ</h2>
-<p>เที่ยวในเมืองระยะสั้น เลือก <b>สกู๊ตเตอร์ไฟฟ้า</b>: เงียบ ขับง่าย ไม่ต้องมีใบขับขี่ ถ้าจะขึ้นเขา ทางชัน หรือออกนอกเมือง เลือก <b>รถน้ำมัน</b> ดีที่สุดคือ Honda Air Blade 125cc</p>
+<p>เที่ยวในเมืองระยะสั้น เลือก <b>สกู๊ตเตอร์ไฟฟ้า</b>: เงียบ ขับง่าย ถ้าจะขึ้นเขา ทางชัน หรือออกนอกเมือง เลือก <b>รถน้ำมัน</b> ดีที่สุดคือ Honda Air Blade 125cc</p>
 <h2>สกู๊ตเตอร์ไฟฟ้า: ข้อดีและข้อจำกัด</h2>
 <ul>
-<li>เช่ากับเรา <b>ไม่ต้องมีใบขับขี่</b></li>
 <li>เงียบ ไม่มีเกียร์ ไม่ต้องเติมน้ำมัน</li>
-<li>ชาร์จเต็มวิ่งได้ประมาณ <b>40 กม.</b> พอสำหรับในเมืองและที่ใกล้ ๆ</li>
+<li>แบต 1 ก้อนวิ่งได้ประมาณ <b>35–40 กม.</b> (เปลี่ยนแบตที่ร้าน 20,000 VND) พอสำหรับในเมืองและที่ใกล้ ๆ</li>
 <li>กำลังน้อย ขึ้นเนินชันช้า</li>
-<li>ซ้อนสองคนได้เมื่อน้ำหนักรวมไม่เกิน 120 กก.</li>
+<li>ซ้อนสองคนได้เมื่อน้ำหนักรวมไม่เกิน 100 กก.</li>
 </ul>
 <p>รายละเอียด: <a href="{EV}">เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด</a></p>
 <h2>รถน้ำมัน: ข้อดีและข้อจำกัด</h2>
@@ -471,7 +451,6 @@ ART["th"] = {
 <li>แรงพอสำหรับเนินในดาลัด Air Blade 125cc ขึ้นเนินดีที่สุด</li>
 <li>ไม่ต้องห่วงแบตหมด เติมน้ำมันได้ทุกที่</li>
 <li>เหมาะกับไร่ชาเกิ่วดั๊ต ภูเขาลางเบียง และเที่ยวน้ำตก</li>
-<li>ต้องมีใบขับขี่ที่ใช้ได้</li>
 </ul>
 <h2>ไปที่ไหน ใช้รถแบบไหน</h2>
 <ul>

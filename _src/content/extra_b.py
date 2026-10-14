@@ -22,14 +22,13 @@ ART["id"] = {
 <h2>Waktu sewa</h2>
 <p>Kami buka setiap hari mulai pukul 04.30 — pas untuk mengejar matahari terbit. Satu hari sewa dihitung dari pengambilan motor sampai pukul 21.00 hari yang sama.</p>
 <h2>Biaya tambahan</h2>
-<p>Hanya bensin untuk motor bensin; SPBU ada di mana-mana. Motor listrik tidak perlu bensin, tapi jarak tempuhnya sekitar 40 km sekali isi — lihat <a href="{EV}">sewa motor listrik di Da Lat</a>.</p>
+<p>Hanya bensin untuk motor bensin; SPBU ada di mana-mana. Motor listrik tidak perlu bensin, satu baterai cukup untuk sekitar 35–40 km dan tukar baterai di toko kami 20.000 VND — lihat <a href="{EV}">sewa motor listrik di Da Lat</a>.</p>
 <h2>Tips di tempat sewa mana pun</h2>
 <ul>
 <li>Tanyakan jaminannya apa dan kapan dikembalikan.</li>
 <li>Rekam video motor sebelum jalan: goresan, spion, lampu.</li>
 <li>Cek rem dan ban — Da Lat banyak tanjakan.</li>
 <li>Tanyakan jam pengembalian dan aturan jika terlambat.</li>
-<li>Motor bensin wajib SIM; motor listrik kami tidak.</li>
 </ul>
 <h2>Pesan cukup satu pesan</h2>
 <p>Kirim tanggal Anda lewat WhatsApp dan kami siapkan motornya. Info lengkap di halaman <a href="{HOME}">sewa motor Da Lat</a>, ide rute di <a href="{ROUTES}">5 rute keliling Da Lat</a>.</p>
@@ -37,18 +36,17 @@ ART["id"] = {
 "evgas": ("motor-listrik-atau-bensin-dalat",
  "Sewa Motor Listrik atau Motor Bensin di Da Lat? Pilih yang Mana | Van Phu",
  "Motor Listrik atau Motor Bensin: Sewa yang Mana di Da Lat?",
- "Sewa motor listrik di Da Lat atau motor bensin? Perbandingan jarak tempuh, tenaga di tanjakan, aturan SIM dan harga.",
+ "Sewa motor listrik di Da Lat atau motor bensin? Perbandingan jarak tempuh, tenaga di tanjakan dan harga.",
  "Keduanya 120.000–150.000 VND per hari, tapi cocok untuk perjalanan yang sangat berbeda. Ini cara memilihnya di Da Lat.",
  "electric-helmets", """
 <h2>Jawaban singkat</h2>
-<p>Keliling pusat kota dengan jarak pendek? Pilih <b>motor listrik</b>: senyap, mudah dan tanpa SIM. Mau ke bukit, jalan pegunungan atau luar kota? Pilih <b>motor bensin</b>, sebaiknya Honda Air Blade 125cc.</p>
+<p>Keliling pusat kota dengan jarak pendek? Pilih <b>motor listrik</b>: senyap dan mudah. Mau ke bukit, jalan pegunungan atau luar kota? Pilih <b>motor bensin</b>, sebaiknya Honda Air Blade 125cc.</p>
 <h2>Motor listrik: kelebihan dan batasan</h2>
 <ul>
-<li><b>Tanpa SIM</b> jika sewa di tempat kami.</li>
 <li>Senyap, tanpa gigi, tanpa isi bensin.</li>
-<li>Jarak tempuh sekitar <b>40 km</b> sekali isi — cukup untuk kota dan sekitarnya.</li>
+<li>Satu baterai cukup untuk sekitar <b>35–40 km</b> (tukar baterai di toko kami 20.000 VND) — cukup untuk kota dan sekitarnya.</li>
 <li>Tenaga kecil: pelan di tanjakan curam.</li>
-<li>Berboncengan hanya jika total berat di bawah 120 kg.</li>
+<li>Berboncengan hanya jika total berat di bawah 100 kg.</li>
 </ul>
 <p>Selengkapnya: <a href="{EV}">sewa motor listrik di Da Lat</a>.</p>
 <h2>Motor bensin: kelebihan dan batasan</h2>
@@ -56,7 +54,6 @@ ART["id"] = {
 <li>Tenaga cukup untuk tanjakan Da Lat — Air Blade 125cc paling kuat menanjak.</li>
 <li>Tidak khawatir baterai habis, bensin ada di mana-mana.</li>
 <li>Cocok ke kebun teh Cau Dat, Lang Biang dan tur air terjun.</li>
-<li>Wajib SIM yang berlaku.</li>
 </ul>
 <h2>Tujuan dan motor yang cocok</h2>
 <ul>
@@ -91,14 +88,13 @@ ART["ms"] = {
 <h2>Tempoh sewa</h2>
 <p>Kami buka setiap hari dari 4:30 pagi — sesuai untuk mengejar matahari terbit. Satu hari sewa dikira dari ambil motosikal hingga 9:00 malam hari yang sama.</p>
 <h2>Kos tambahan</h2>
-<p>Hanya minyak untuk skuter petrol; stesen minyak ada di mana-mana. Skuter elektrik tidak perlu minyak, tetapi jaraknya kira-kira 40 km setiap cas — lihat <a href="{EV}">sewa skuter elektrik di Da Lat</a>.</p>
+<p>Hanya minyak untuk skuter petrol; stesen minyak ada di mana-mana. Skuter elektrik tidak perlu minyak, satu bateri boleh pergi kira-kira 35–40 km dan tukar bateri di kedai kami 20,000 VND — lihat <a href="{EV}">sewa skuter elektrik di Da Lat</a>.</p>
 <h2>Tip di mana-mana kedai sewa</h2>
 <ul>
 <li>Tanya deposit apa dan bila dipulangkan.</li>
 <li>Rakam video motosikal sebelum menunggang: calar, cermin, lampu.</li>
 <li>Periksa brek dan tayar — Da Lat banyak bukit.</li>
 <li>Tanya masa pulang dan peraturan jika lewat.</li>
-<li>Skuter petrol perlukan lesen; skuter elektrik kami tidak.</li>
 </ul>
 <h2>Tempah dengan satu mesej</h2>
 <p>Hantar tarikh anda melalui WhatsApp dan kami simpan motosikal untuk anda. Maklumat penuh di halaman <a href="{HOME}">sewa motosikal Da Lat</a>, idea laluan di <a href="{ROUTES}">5 laluan sekitar Da Lat</a>.</p>
@@ -106,18 +102,17 @@ ART["ms"] = {
 "evgas": ("skuter-elektrik-atau-petrol-dalat",
  "Sewa Skuter Elektrik atau Petrol di Da Lat? Mana Satu | Van Phu",
  "Skuter Elektrik atau Skuter Petrol: Sewa Mana Satu di Da Lat?",
- "Sewa skuter elektrik di Da Lat atau skuter petrol? Perbandingan jarak, kuasa mendaki bukit, peraturan lesen dan harga.",
+ "Sewa skuter elektrik di Da Lat atau skuter petrol? Perbandingan jarak, kuasa mendaki bukit dan harga.",
  "Kedua-duanya 120,000–150,000 VND sehari, tetapi sesuai untuk perjalanan yang sangat berbeza. Ini cara memilih di Da Lat.",
  "electric-helmets", """
 <h2>Jawapan ringkas</h2>
-<p>Bersiar di pusat bandar dengan jarak dekat? Pilih <b>skuter elektrik</b>: senyap, mudah dan tanpa lesen. Mahu ke bukit, jalan gunung atau luar bandar? Pilih <b>skuter petrol</b>, sebaiknya Honda Air Blade 125cc.</p>
+<p>Bersiar di pusat bandar dengan jarak dekat? Pilih <b>skuter elektrik</b>: senyap dan mudah. Mahu ke bukit, jalan gunung atau luar bandar? Pilih <b>skuter petrol</b>, sebaiknya Honda Air Blade 125cc.</p>
 <h2>Skuter elektrik: kelebihan dan had</h2>
 <ul>
-<li><b>Tiada lesen diperlukan</b> jika sewa dengan kami.</li>
 <li>Senyap, tiada gear, tiada isi minyak.</li>
-<li>Jarak kira-kira <b>40 km</b> setiap cas — cukup untuk bandar dan sekitarnya.</li>
+<li>Satu bateri boleh pergi kira-kira <b>35–40 km</b> (tukar bateri di kedai kami 20,000 VND) — cukup untuk bandar dan sekitarnya.</li>
 <li>Kuasa rendah: perlahan di bukit curam.</li>
-<li>Berdua hanya jika jumlah berat bawah 120 kg.</li>
+<li>Berdua hanya jika jumlah berat bawah 100 kg.</li>
 </ul>
 <p>Lagi maklumat: <a href="{EV}">sewa skuter elektrik di Da Lat</a>.</p>
 <h2>Skuter petrol: kelebihan dan had</h2>
@@ -125,7 +120,6 @@ ART["ms"] = {
 <li>Kuasa cukup untuk bukit Da Lat — Air Blade 125cc paling kuat mendaki.</li>
 <li>Tiada risau bateri, minyak ada di mana-mana.</li>
 <li>Sesuai ke ladang teh Cau Dat, Lang Biang dan lawatan air terjun.</li>
-<li>Perlu lesen memandu yang sah.</li>
 </ul>
 <h2>Destinasi dan motosikal yang sesuai</h2>
 <ul>
@@ -160,14 +154,13 @@ ART["de"] = {
 <h2>So läuft ein Miettag</h2>
 <p>Wir öffnen täglich um 4:30 Uhr – praktisch für den Sonnenaufgang. Ein Miettag läuft ab Abholung bis 21:00 Uhr am selben Tag.</p>
 <h2>Zusätzliche Kosten</h2>
-<p>Nur Benzin für Benzinroller; Tankstellen gibt es überall. E-Roller brauchen kein Benzin, schaffen aber nur ca. 40 km pro Ladung – mehr dazu unter <a href="{EV}">E-Roller mieten in Da Lat</a>.</p>
+<p>Nur Benzin für Benzinroller; Tankstellen gibt es überall. E-Roller brauchen kein Benzin, ein Akku reicht für etwa 35–40 km, der Akkutausch bei uns kostet 20.000 VND – mehr dazu unter <a href="{EV}">E-Roller mieten in Da Lat</a>.</p>
 <h2>Tipps für jeden Verleih</h2>
 <ul>
 <li>Fragen Sie, welche Kaution verlangt wird und wann Sie sie zurückbekommen.</li>
 <li>Filmen Sie den Roller vor der Fahrt: Kratzer, Spiegel, Licht.</li>
 <li>Prüfen Sie Bremsen und Reifen – Da Lat ist sehr hügelig.</li>
 <li>Klären Sie die Rückgabezeit und was bei Verspätung gilt.</li>
-<li>Für Benzinroller brauchen Sie einen Führerschein, für unsere E-Roller nicht.</li>
 </ul>
 <h2>Mit einer Nachricht buchen</h2>
 <p>Schicken Sie uns Ihre Daten per WhatsApp, wir reservieren Ihren Roller. Alle Infos auf der Seite <a href="{HOME}">Roller mieten in Da Lat</a>, Tourenideen in <a href="{ROUTES}">5 Routen rund um Da Lat</a>.</p>
@@ -175,18 +168,17 @@ ART["de"] = {
 "evgas": ("e-roller-oder-benzinroller-dalat",
  "E-Roller oder Benzinroller in Da Lat? Was mieten | Van Phu",
  "E-Roller oder Benzinroller: Was sollte man in Da Lat mieten?",
- "E-Roller mieten in Da Lat oder doch einen Benzinroller? Vergleich von Reichweite, Kraft am Berg, Führerscheinregeln und Preis.",
+ "E-Roller mieten in Da Lat oder doch einen Benzinroller? Vergleich von Reichweite, Kraft am Berg und Preis.",
  "Beide kosten 120.000–150.000 VND pro Tag, passen aber zu ganz unterschiedlichen Tagen. So wählen Sie in Da Lat das richtige Modell.",
  "electric-helmets", """
 <h2>Die kurze Antwort</h2>
-<p>Unterwegs im Zentrum und auf kurzen Strecken? Ein <b>E-Roller</b> ist leise, einfach und ohne Führerschein. Hügel, Pässe oder Ausflüge aus der Stadt? Dann einen <b>Benzinroller</b>, am besten die Honda Air Blade 125cc.</p>
+<p>Unterwegs im Zentrum und auf kurzen Strecken? Ein <b>E-Roller</b> ist leise und einfach. Hügel, Pässe oder Ausflüge aus der Stadt? Dann einen <b>Benzinroller</b>, am besten die Honda Air Blade 125cc.</p>
 <h2>E-Roller: Vorteile und Grenzen</h2>
 <ul>
-<li><b>Kein Führerschein nötig</b> bei uns.</li>
 <li>Leise, ohne Schalten und Tanken.</li>
-<li>Reichweite ca. <b>40 km</b> pro Ladung – genug für Zentrum und Umgebung.</li>
+<li>Ein Akku reicht für etwa <b>35–40 km</b> (Akkutausch bei uns 20.000 VND) – genug für Zentrum und Umgebung.</li>
 <li>Wenig Leistung: langsam an steilen Hängen.</li>
-<li>Zu zweit nur, wenn beide zusammen unter 120 kg wiegen.</li>
+<li>Zu zweit nur, wenn beide zusammen unter 100 kg wiegen.</li>
 </ul>
 <p>Mehr dazu: <a href="{EV}">E-Roller mieten in Da Lat</a>.</p>
 <h2>Benzinroller: Vorteile und Grenzen</h2>
@@ -194,7 +186,6 @@ ART["de"] = {
 <li>Genug Kraft für Da Lats Hügel – die Air Blade 125cc klettert am besten.</li>
 <li>Keine Reichweitensorgen, getankt wird überall.</li>
 <li>Ideal für die Teehügel von Cau Dat, Lang Biang und Wasserfall-Touren.</li>
-<li>Gültiger Führerschein erforderlich.</li>
 </ul>
 <h2>Welches Modell für welchen Tag</h2>
 <ul>
@@ -229,14 +220,13 @@ ART["fr"] = {
 <h2>Durée d'une journée de location</h2>
 <p>Nous ouvrons tous les jours à 4 h 30, pratique pour le lever du soleil. Une journée de location va de la prise du scooter jusqu'à 21 h le même jour.</p>
 <h2>Frais en plus</h2>
-<p>Seulement l'essence pour les scooters thermiques ; les stations sont partout. Les scooters électriques n'ont pas besoin d'essence mais ont environ 40 km d'autonomie — voir <a href="{EV}">location de scooter électrique à Da Lat</a>.</p>
+<p>Seulement l'essence pour les scooters thermiques ; les stations sont partout. Les scooters électriques n'ont pas besoin d'essence ; une batterie permet environ 35–40 km et l'échange de batterie chez nous coûte 20 000 VND — voir <a href="{EV}">location de scooter électrique à Da Lat</a>.</p>
 <h2>À vérifier dans toute agence</h2>
 <ul>
 <li>Demandez quelle caution est exigée et quand elle est rendue.</li>
 <li>Filmez le scooter avant de partir : rayures, rétroviseurs, phares.</li>
 <li>Vérifiez freins et pneus — Da Lat est très vallonnée.</li>
 <li>Demandez l'heure de retour et ce qui se passe en cas de retard.</li>
-<li>Le permis est obligatoire pour les scooters à essence, pas pour nos scooters électriques.</li>
 </ul>
 <h2>Réserver en un message</h2>
 <p>Envoyez-nous vos dates sur WhatsApp et nous vous gardons un scooter. Toutes les infos sur la page <a href="{HOME}">location de scooter à Da Lat</a>, des idées d'itinéraires dans <a href="{ROUTES}">5 itinéraires autour de Da Lat</a>.</p>
@@ -244,18 +234,17 @@ ART["fr"] = {
 "evgas": ("scooter-electrique-ou-essence-dalat",
  "Scooter électrique ou à essence à Da Lat : lequel louer ? | Van Phu",
  "Scooter électrique ou à essence : lequel louer à Da Lat ?",
- "Location de scooter électrique à Da Lat ou scooter à essence ? Autonomie, puissance en côte, permis et prix comparés.",
+ "Location de scooter électrique à Da Lat ou scooter à essence ? Autonomie, puissance en côte et prix comparés.",
  "Les deux coûtent 120 000–150 000 VND par jour, mais ils conviennent à des journées très différentes. Voici comment choisir à Da Lat.",
  "electric-helmets", """
 <h2>En bref</h2>
-<p>Vous restez dans le centre sur de courtes distances ? Prenez un <b>scooter électrique</b> : silencieux, simple, sans permis. Collines, cols ou sorties hors de la ville ? Prenez un <b>scooter à essence</b>, idéalement la Honda Air Blade 125cc.</p>
+<p>Vous restez dans le centre sur de courtes distances ? Prenez un <b>scooter électrique</b> : silencieux et simple. Collines, cols ou sorties hors de la ville ? Prenez un <b>scooter à essence</b>, idéalement la Honda Air Blade 125cc.</p>
 <h2>Scooter électrique : atouts et limites</h2>
 <ul>
-<li><b>Sans permis</b> chez nous.</li>
 <li>Silencieux, sans vitesses ni plein.</li>
-<li>Environ <b>40 km</b> d'autonomie — assez pour le centre et les environs.</li>
+<li>Une batterie permet environ <b>35–40 km</b> (échange de batterie chez nous : 20 000 VND) — assez pour le centre et les environs.</li>
 <li>Peu puissant : lent dans les côtes raides.</li>
-<li>À deux seulement si le poids total est inférieur à 120 kg.</li>
+<li>À deux seulement si le poids total est inférieur à 100 kg.</li>
 </ul>
 <p>Plus de détails : <a href="{EV}">location de scooter électrique à Da Lat</a>.</p>
 <h2>Scooter à essence : atouts et limites</h2>
@@ -263,7 +252,6 @@ ART["fr"] = {
 <li>Assez de puissance pour les collines de Da Lat — l'Air Blade 125cc grimpe le mieux.</li>
 <li>Aucun souci d'autonomie, stations partout.</li>
 <li>Idéal pour les collines de thé de Cau Dat, Lang Biang et les cascades.</li>
-<li>Permis de conduire valide obligatoire.</li>
 </ul>
 <h2>Quel scooter pour quelle sortie</h2>
 <ul>
@@ -298,14 +286,13 @@ ART["es"] = {
 <h2>Cómo funciona un día de alquiler</h2>
 <p>Abrimos todos los días a las 4:30, ideal para ver el amanecer. Un día de alquiler va desde la recogida hasta las 21:00 del mismo día.</p>
 <h2>Gastos extra</h2>
-<p>Solo la gasolina de los scooters de gasolina; hay gasolineras por todas partes. Los eléctricos no necesitan gasolina, pero tienen unos 40 km de autonomía — mira <a href="{EV}">alquiler de scooter eléctrico en Da Lat</a>.</p>
+<p>Solo la gasolina de los scooters de gasolina; hay gasolineras por todas partes. Los eléctricos no necesitan gasolina, y una batería da para unos 35–40 km; el cambio de batería en nuestra tienda cuesta 20.000 VND — mira <a href="{EV}">alquiler de scooter eléctrico en Da Lat</a>.</p>
 <h2>Qué comprobar en cualquier alquiler</h2>
 <ul>
 <li>Pregunta qué depósito piden y cuándo lo devuelven.</li>
 <li>Graba la moto antes de salir: arañazos, espejos, luces.</li>
 <li>Revisa frenos y neumáticos: Da Lat tiene muchas cuestas.</li>
 <li>Pregunta la hora de devolución y qué pasa si llegas tarde.</li>
-<li>Los scooters de gasolina requieren carné; nuestros eléctricos no.</li>
 </ul>
 <h2>Reserva con un mensaje</h2>
 <p>Envíanos tus fechas por WhatsApp y te guardamos la moto. Toda la información en la página <a href="{HOME}">alquiler de motos en Da Lat</a> e ideas de rutas en <a href="{ROUTES}">5 rutas por Da Lat</a>.</p>
@@ -313,18 +300,17 @@ ART["es"] = {
 "evgas": ("scooter-electrico-o-gasolina-dalat",
  "¿Scooter eléctrico o de gasolina en Da Lat? Cuál alquilar | Van Phu",
  "Scooter eléctrico o de gasolina: ¿cuál alquilar en Da Lat?",
- "Alquiler de scooter eléctrico en Da Lat o scooter de gasolina: autonomía, fuerza en cuestas, carné y precio comparados.",
+ "Alquiler de scooter eléctrico en Da Lat o scooter de gasolina: autonomía, fuerza en cuestas y precio comparados.",
  "Los dos cuestan 120.000–150.000 VND al día, pero sirven para días muy distintos. Así se elige en Da Lat.",
  "electric-helmets", """
 <h2>Respuesta corta</h2>
-<p>¿Te mueves por el centro y en distancias cortas? Un <b>scooter eléctrico</b>: silencioso, fácil y sin carné. ¿Cuestas, puertos o salidas fuera de la ciudad? Un <b>scooter de gasolina</b>, mejor la Honda Air Blade 125cc.</p>
+<p>¿Te mueves por el centro y en distancias cortas? Un <b>scooter eléctrico</b>: silencioso y fácil. ¿Cuestas, puertos o salidas fuera de la ciudad? Un <b>scooter de gasolina</b>, mejor la Honda Air Blade 125cc.</p>
 <h2>Scooter eléctrico: ventajas y límites</h2>
 <ul>
-<li><b>Sin carné</b> con nosotros.</li>
 <li>Silencioso, sin marchas ni repostajes.</li>
-<li>Unos <b>40 km</b> de autonomía, suficiente para el centro y alrededores.</li>
+<li>Una batería da para unos <b>35–40 km</b> (cambio de batería en nuestra tienda: 20.000 VND), suficiente para el centro y alrededores.</li>
 <li>Poca potencia: lento en cuestas empinadas.</li>
-<li>Para dos solo si el peso total es inferior a 120 kg.</li>
+<li>Para dos solo si el peso total es inferior a 100 kg.</li>
 </ul>
 <p>Más detalles: <a href="{EV}">alquiler de scooter eléctrico en Da Lat</a>.</p>
 <h2>Scooter de gasolina: ventajas y límites</h2>
@@ -332,7 +318,6 @@ ART["es"] = {
 <li>Potencia de sobra para las colinas de Da Lat; la Air Blade 125cc es la que mejor sube.</li>
 <li>Sin preocuparse por la batería, hay gasolineras en todas partes.</li>
 <li>Ideal para las colinas de té de Cau Dat, Lang Biang y las cascadas.</li>
-<li>Requiere carné de conducir válido.</li>
 </ul>
 <h2>Qué moto para cada plan</h2>
 <ul>
@@ -367,14 +352,13 @@ ART["he"] = {
 <h2>איך נספר יום השכרה</h2>
 <p>אנחנו פותחים כל יום ב-4:30 – נוח למי שרוצה לתפוס זריחה. יום השכרה הוא מרגע האיסוף ועד 21:00 באותו יום.</p>
 <h2>עלויות נוספות</h2>
-<p>רק דלק לקטנועי בנזין; יש תחנות בכל העיר. קטנוע חשמלי לא צריך דלק, אבל הטווח שלו כ-40 ק"מ – ראו <a href="{EV}">השכרת קטנוע חשמלי בדאלאט</a>.</p>
+<p>רק דלק לקטנועי בנזין; יש תחנות בכל העיר. קטנוע חשמלי לא צריך דלק, סוללה אחת מספיקה לכ-35–40 ק"מ, והחלפת סוללה אצלנו עולה 20,000 VND – ראו <a href="{EV}">השכרת קטנוע חשמלי בדאלאט</a>.</p>
 <h2>מה לבדוק בכל השכרה</h2>
 <ul>
 <li>שאלו איזה פיקדון נדרש ומתי מקבלים אותו בחזרה.</li>
 <li>צלמו את הקטנוע לפני היציאה: שריטות, מראות, פנסים.</li>
 <li>בדקו בלמים וצמיגים – בדאלאט יש הרבה עליות.</li>
 <li>שאלו מה שעת ההחזרה ומה קורה באיחור.</li>
-<li>לקטנועי בנזין צריך רישיון; לקטנועים החשמליים שלנו לא.</li>
 </ul>
 <h2>הזמנה בהודעה אחת</h2>
 <p>שלחו לנו את התאריכים בוואטסאפ ונשמור לכם קטנוע. כל הפרטים בעמוד <a href="{HOME}">השכרת קטנועים בדאלאט</a>, ורעיונות למסלולים ב<a href="{ROUTES}">5 מסלולים סביב דאלאט</a>.</p>
@@ -382,18 +366,17 @@ ART["he"] = {
 "evgas": ("electric-or-gas-scooter-dalat",
  "קטנוע חשמלי או בנזין בדאלאט? מה לשכור | Van Phu",
  "קטנוע חשמלי או קטנוע בנזין: מה לשכור בדאלאט?",
- "השכרת קטנוע חשמלי בדאלאט מול קטנוע בנזין: טווח, כוח בעליות, רישיון ומחיר.",
+ "השכרת קטנוע חשמלי בדאלאט מול קטנוע בנזין: טווח, כוח בעליות ומחיר.",
  "שניהם עולים 120,000–150,000 VND ליום, אבל מתאימים לימים שונים מאוד. כך בוחרים בדאלאט.",
  "electric-helmets", """
 <h2>בקצרה</h2>
-<p>מסתובבים במרכז ובמרחקים קצרים? קחו <b>קטנוע חשמלי</b>: שקט, פשוט ובלי רישיון. עליות, מעברי הרים או יציאה מהעיר? קחו <b>קטנוע בנזין</b>, עדיף הונדה אייר בלייד 125.</p>
+<p>מסתובבים במרכז ובמרחקים קצרים? קחו <b>קטנוע חשמלי</b>: שקט ופשוט. עליות, מעברי הרים או יציאה מהעיר? קחו <b>קטנוע בנזין</b>, עדיף הונדה אייר בלייד 125.</p>
 <h2>קטנוע חשמלי: יתרונות ומגבלות</h2>
 <ul>
-<li><b>בלי רישיון</b> אצלנו.</li>
 <li>שקט, בלי הילוכים ובלי תדלוק.</li>
-<li>טווח של כ-<b>40 ק"מ</b> – מספיק למרכז ולסביבה.</li>
+<li>סוללה אחת מספיקה לכ-<b>35–40 ק"מ</b> (החלפת סוללה אצלנו: 20,000 VND) – מספיק למרכז ולסביבה.</li>
 <li>הספק נמוך: איטי בעליות תלולות.</li>
-<li>בשניים רק אם המשקל הכולל מתחת ל-120 ק"ג.</li>
+<li>בשניים רק אם המשקל הכולל מתחת ל-100 ק"ג.</li>
 </ul>
 <p>עוד פרטים: <a href="{EV}">השכרת קטנוע חשמלי בדאלאט</a>.</p>
 <h2>קטנוע בנזין: יתרונות ומגבלות</h2>
@@ -401,7 +384,6 @@ ART["he"] = {
 <li>מספיק כוח לגבעות של דאלאט – האייר בלייד 125 מטפס הכי טוב.</li>
 <li>בלי דאגות לסוללה, תחנות דלק בכל מקום.</li>
 <li>מתאים לגבעות התה של קאו דאט, לאנג ביאנג ולמפלים.</li>
-<li>נדרש רישיון נהיגה בתוקף.</li>
 </ul>
 <h2>איזה קטנוע לאיזה יום</h2>
 <ul>

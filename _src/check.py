@@ -13,6 +13,9 @@ BASE = "https://vanphudalat.com/"
 problems = []
 
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
+_EV = importlib.import_module("content.ev").EV
+_XA = importlib.import_module("content.extra_a").ART
+_XB = importlib.import_module("content.extra_b").ART
 ref = C["en"]
 for l in LANGS:
     c = C[l]
@@ -31,9 +34,13 @@ for l in LANGS:
         elif not (HERE.parent / "img" / f"{a[5]}.jpg").exists():
             problems.append(f"{l}/{k}: image img/{a[5]}.jpg does not exist")
     # Business rules: never mention driving licences, never state electric-scooter range in km
-    txt = repr(c)
-    for pat in [r"licen", r"права", r"驾照", r"면허", r"免許", r"ใบขับขี่", r"\bSIM\b", r"lesen memandu", r"tanpa lesen", r"perlu lesen", r"bằng lái", r"Führerschein", r"\bpermis\b", r"licencia", r"carnet de conducir", r"רישיון",
-                r"\d+\s?(km|公里|км|กม|킬로)\s*(per charge|на заряд|充电|충전|充電|ต่อการชาร์จ|mỗi lần sạc)"]:
+    # covers the language file, the electric-scooter page (ev.py) and the extra rental articles (extra_a/extra_b)
+    txt = repr(c) + repr(_EV.get(l)) + repr(_XA.get(l)) + repr(_XB.get(l))
+    for pat in [r"licen", r"(?<!с)права", r"驾照", r"면허", r"免許", r"ใบขับขี่", r"\bSIM\b", r"\blesen\b", r"bằng lái", r"Führerschein", r"\bpermis\b", r"licencia", r"carnet de conducir", r"carné", r"רישיון",
+                r"\d+\s?(km|公里|км|กม|킬로)\s*(per charge|на заряд|充电|충전|充電|ต่อการชาร์จ|mỗi lần sạc)",
+                r"(per charge|par charge|por carga|pro (Akku)?ladung|mỗi lần sạc|на (одном |полном )?заряде|充满电约|満充電で約|완충 시 약|1회 충전 약|ชาร์จเต็มวิ่ง|sekali isi|setiap cas|בטעינה|לטעינה)",
+                r"120\s?(kg|кг|公斤|กก|ק\"ג)",
+                r"\d[\d.,\u00a0\u202f ]*\d\s?(đ\b|₫|донг|ดอง|דונג|越南盾|ドン)", r"(?<![–\d.,  ])150[.,\u00a0\u202f ]?000(?!–)"]:
         if re.search(pat, txt, re.I):
             problems.append(f"{l}: forbidden wording /{pat}/")
 
