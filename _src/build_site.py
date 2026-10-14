@@ -34,6 +34,7 @@ from content import hotelmap as HT
 from content import fourstarmap as H4
 from content import threestarmap as H3
 from content import busmap as BU
+from content import festivalmap as FE
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
 for _l in LANGS:
@@ -173,7 +174,7 @@ def pm_section(l, me):
     if l not in PM.LANGS: return ""
     t = PM.T[l]
     g = PG.T[l]
-    return (f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">{t["h1"]} →</a> '
+    return (f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn" href="{rel(me, map_path(FE, l))}">🌸 {FE.T[l]["h1"]} →</a> <a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">{t["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(PG, l))}" style="border:1px solid var(--line)">🛕 {g["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(CH, l))}" style="border:1px solid var(--line)">⛪ {CH.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(SF, l))}" style="border:1px solid var(--line)">🌼 {SF.T[l]["h1"]} →</a> '
@@ -353,6 +354,7 @@ def page_home(l):
  <img class="heroimg" src="{pre}img/electric-row.jpg" alt="{alt}" width="1200" height="675">
 </div></div></header>
 <main class="wrap">
+ <section class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px"><p>{FE.T[l]["desc"]}</p><p><a class="btn" href="{rel(me, map_path(FE, l))}">🌸 {FE.T[l]["h1"]} →</a></p></section>
  <section><h2>{h["h_prices"]}</h2>
   <table class="price"><tr><th>{h["th_bike"]}</th><th>{h["th_price"]}</th></tr>
   <tr><td>Honda Vision 110cc</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr>
@@ -657,7 +659,7 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
-for _M in (PG, CH, SF, CL, CF, BB, HT, H4, H3, BU):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU):
     for l in _M.LANGS:
         write(map_path(_M, l), page_photomap(l, _M))
 
@@ -671,7 +673,7 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
-for _M in (PG, CH, SF, CL, CF, BB, HT, H4, H3, BU):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
@@ -706,6 +708,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Da Lat 4-star hotels — map of 10 popular 4-star hotels and resorts, free PDF]({BASE + map_path(H4, "en")})
 - [Da Lat 3-star hotels — map of 8 popular 3-star hotels near the night market, free PDF]({BASE + map_path(H3, "en")})
 - [Da Lat to Saigon bus — map of the Da Lat bus station and 12 bus company offices, free PDF]({BASE + map_path(BU, "en")})
+- [Da Lat Flower Festival 2026 — planned 19–31 Dec 2026: programme, venue map, free PDF]({BASE + map_path(FE, "en")})
 - [Motorbike routes around Da Lat]({BASE + routes_path("en")})
 - [Travel blog]({BASE + blog_path("en")})
 """ + "".join(f"- [{LABEL[x]} home]({BASE + home_path(x)})\n" for x in LANGS if x != "en")
