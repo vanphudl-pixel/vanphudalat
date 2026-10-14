@@ -37,15 +37,15 @@ T = {
  "season": [("8:00", "Lạc Hư Cổ Trấn — phố cổ kiểu Á Đông, hồ và cầu"), ("9:30", "Trạm Ký Ức (Memory Station) — đường ray, hồ nhỏ, nhiều hoa"), ("12:00", "ăn trưa ở trung tâm; xe máy điện ghé tiệm đổi pin (20.000 VND)"), ("13:30", "Suối Bình Yên — suối, rừng thông, có quán ăn"), ("15:30", "Happy Hill — đồi hoa nhìn hồ Tuyền Lâm; trả xe trước 21:00")],
  "tips_h": "Lưu ý",
  "tips": [f"Cả vòng khoảng {TOTAL} km đường chim bay, đường thực tế dài hơn — xe máy điện cần đổi pin buổi trưa (một pin khoảng 35–40 km), hoặc đi Honda Air Blade 125cc cho thoải mái.",
-          "Các điểm đều bán vé vào cửa kèm đồ uống hoặc combo (theo đánh giá của khách) — xem giá tại cổng.",
+          "Giá vé ghi ở mỗi điểm là giá tham khảo (tổng hợp tháng 10/2026), thường đã kèm đồ uống — có thể thay đổi, kiểm tra tại cổng.",
           "Happy Hill rất đông cuối tuần — đi ngày thường hoặc đến sớm.",
           "Đường vào Suối Bình Yên và Happy Hill có đoạn hẹp, dốc — chạy chậm, nhất là khi mưa."],
- "leg": "từ điểm trước", "total": "Cả vòng (tiệm → các điểm → tiệm): khoảng {km} km đường chim bay",
+ "price_l": "Giá vé tham khảo", "leg": "từ điểm trước", "total": "Cả vòng (tiệm → các điểm → tiệm): khoảng {km} km đường chim bay",
  "s": {
   "lachu": ("Lạc Hư Cổ Trấn", "Buổi sáng", "Phố cổ phong cách Á Đông với hồ và cầu ở phía Đông thành phố; buổi tối lên đèn đẹp (theo đánh giá của khách)."),
   "memory": ("Trạm Ký Ức (Memory Station)", "Buổi sáng", "Không gian mở trên đồi với đường ray, hồ nhỏ và nhiều hoa, nhìn xuống thung lũng; đẹp cả lúc hoàng hôn."),
   "binhyen": ("Suối Bình Yên", "Buổi chiều", "Suối và vườn hoa trong rừng thông gần Thiền viện Trúc Lâm; có quán ăn, nhiều góc chụp; tránh giờ trưa đông khách."),
-  "happyhill": ("Happy Hill (đảo trái tim hồ Tuyền Lâm)", "Buổi chiều", "Đồi hoa nhìn ra hồ Tuyền Lâm; vé kèm đồ uống; rất đông cuối tuần."),
+  "happyhill": ("Happy Hill (đảo trái tim hồ Tuyền Lâm)", "Buổi chiều", "Đồi hoa nhìn ra hồ Tuyền Lâm; rất đông cuối tuần."),
  }},
 "en": {
  "title": "Da Lat Day Trip by Motorbike: Hot Check-in Spots Route | Van Phu",
@@ -57,16 +57,26 @@ T = {
  "season": [("8:00", "Lac Hu Co Tran — Asian-style old town with a lake and bridges"), ("9:30", "Memory Station (Tram Ky Uc) — rail track, small lake, lots of flowers"), ("12:00", "lunch in the centre; electric scooters can swap the battery at our shop (20,000 VND)"), ("13:30", "Suoi Binh Yen — stream and pine forest, food on site"), ("15:30", "Happy Hill — flower hill over Tuyen Lam Lake; return the bike before 21:00")],
  "tips_h": "Good to know",
  "tips": [f"The loop is about {TOTAL} km in a straight line, longer by road — on an electric scooter swap the battery at lunch (one battery is about 35–40 km), or take a Honda Air Blade 125cc for comfort.",
-          "Every stop sells an entrance ticket with a drink or combo (according to visitor reviews) — check prices at the gate.",
+          "Ticket prices shown for each stop are for reference (collected October 2026), usually with a drink — they can change, check at the gate.",
           "Happy Hill is very busy at weekends — go on a weekday or arrive early.",
           "The access roads to Suoi Binh Yen and Happy Hill are narrow and steep in places — ride slowly, especially in the rain."],
- "leg": "from the previous stop", "total": "Whole loop (shop → stops → shop): about {km} km in a straight line",
+ "price_l": "Reference price", "leg": "from the previous stop", "total": "Whole loop (shop → stops → shop): about {km} km in a straight line",
  "s": {
   "lachu": ("Lac Hu Co Tran", "Morning", "Asian-style old town with a lake and bridges east of the city; pretty when lit up in the evening (according to visitor reviews)."),
   "memory": ("Memory Station (Tram Ky Uc)", "Morning", "Open-air hilltop spot with a rail track, a small lake and lots of flowers over the valley; lovely at sunset too."),
   "binhyen": ("Suoi Binh Yen", "Afternoon", "Stream and flower gardens in pine forest near Truc Lam Monastery; food on site and many photo spots; avoid the lunchtime crowd."),
-  "happyhill": ("Happy Hill (heart island, Tuyen Lam Lake)", "Afternoon", "Flower hill overlooking Tuyen Lam Lake; the ticket includes a drink; very busy at weekends."),
+  "happyhill": ("Happy Hill (heart island, Tuyen Lam Lake)", "Afternoon", "Flower hill overlooking Tuyen Lam Lake; very busy at weekends."),
  }},
+}
+PRICE = {
+ "vi": {"lachu": "khoảng 120.000–130.000 VND, kèm đồ uống và món ăn nhẹ",
+        "memory": "khoảng 90.000–140.000 VND tùy gói, phổ biến 120.000 VND kèm 1 đồ uống hoặc bánh",
+        "binhyen": "120.000 VND kèm 1 đồ uống; combo cùng Vườn Địa Đàng 150.000 VND (đồ uống + 1 xiên nướng)",
+        "happyhill": "khoảng 110.000–120.000 VND kèm 1 đồ uống"},
+ "en": {"lachu": "about 120,000–130,000 VND with a drink and a light snack",
+        "memory": "about 90,000–140,000 VND depending on the option, usually 120,000 VND with a drink or cake",
+        "binhyen": "120,000 VND with a drink; combo with Vuon Dia Dang 150,000 VND (drink + a grilled skewer)",
+        "happyhill": "about 110,000–120,000 VND with a drink"},
 }
 for _l in LANGS:
     for _k in SHARED:

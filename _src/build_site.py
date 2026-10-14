@@ -667,7 +667,7 @@ def page_photomap(l, M=PM):
         guide = getattr(M, "GUIDES", {"pink": "domainedemarie"}).get(sid)
         nm = f'<a href="{rel(me, art_path(l, guide))}">{n}</a>' if guide and guide in C[l]["articles"] else n
         rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{nm}</b><br><small>{(f"+{_legs[i-1]:.1f} km {t['leg']} · ") if _route else f"≈ {pm_km(M.CENTER, (lat, lng)):.1f} km · "}{t["hours"]}: {hr} · {t["best"]}: {best}</small>'
-                 f'<br>{d}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · <a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a></div></li>')
+                 f'<br>{d}{(f"<br>🎟 <b>{t[chr(112)+chr(114)+chr(105)+chr(99)+chr(101)+chr(95)+chr(108)]}:</b> " + M.PRICE[l][sid]) if l in getattr(M, "PRICE", {}) else ""}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · <a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a></div></li>')
     seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t["season"])
     tips = "".join(f"<li>{x}</li>" for x in t["tips"])
     pdf = f"{pre}files/{getattr(M, 'PDF', 'VanPhu-Dalat-Photo-Map')}-{l.upper()}.pdf"
@@ -824,8 +824,6 @@ def page_day(l):
         cards += (f'<div class="route"><h3><a href="{rel(me, map_path(M, l))}">{mt["h1"]}</a></h3><div class="meta">{t["km"].format(km=M.TOTAL)}</div>'
                   f'<p><b>{t["stops"]}:</b> {stops}</p><p>{t["verdict"][name]}</p><ul>{plan}</ul>'
                   f'<p><a class="btn wa" href="{rel(me, map_path(M, l))}">🗺 {t["open"]} →</a> <a class="btn alt" href="{pdf}" download style="border:1px solid var(--line)">⬇ {t["pdf"]}</a></p></div>')
-    c0, c1, c2 = t["cmp_cols"]
-    cmp = f"<tr><th>{c0}</th><th>{c1}</th><th>{c2}</th></tr>" + "".join(f"<tr><td><b>{a}</b></td><td>{b}</td><td>{c}</td></tr>" for a, b, c in t["cmp"])
     more = "".join(f'<a href="{hub_link(l, me, k)}">{x} →</a>' for k, x in t["more"])
     faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in t["faq"])
     lds = [{"@context": "https://schema.org", "@type": "Article", "headline": t["h1"], "description": t["desc"], "inLanguage": l, "mainEntityOfPage": BASE + me,
@@ -842,15 +840,12 @@ def page_day(l):
 {alts}<meta property="og:type" content="article"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/airblade.jpg">
 {"".join(ldjson(x) for x in lds)}
 <style>{CSS}
-table.cmp{{width:100%;border-collapse:collapse;font-size:15px}} table.cmp td,table.cmp th{{border:1px solid var(--line);padding:8px;vertical-align:top;text-align:left}}
-.tw{{overflow-x:auto}}
 </style></head><body>
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
 <div class="hero">{crumbs(l, me, [(t["h1"], None)])}<h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p><p class="upd"><time datetime="{DAY.UPDATED}">{UPD[l]}: {fdate(l, DAY.UPDATED)}</time></p>
 <div class="cta">{hero_btns(l)}</div></div></div></header>
 <main class="wrap">
 <section><h2>{t["routes_h"]}</h2>{cards}</section>
-<section><h2>{t["cmp_h"]}</h2><div class="tw"><table class="cmp">{cmp}</table></div></section>
 <section><h2>{t["more_h"]}</h2><p class="chips">{more}</p></section>
 <section class="faq"><h2>{t["faq_h"]}</h2>{faq}</section>
 <section>{contact_box(l)}{cta_box(l, me)}</section>

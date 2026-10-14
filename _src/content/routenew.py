@@ -37,14 +37,14 @@ T = {
  "season": [("7:30", "nhận xe tại tiệm hoặc khách sạn, chạy lên Langbiang Land"), ("10:00", "sang Mongo Land ở Tà Nung — máng trượt 150 m, đồi cỏ, thú"), ("12:30", "ăn trưa trên đường về trung tâm"), ("14:00", "Hoàng Long Ohayo trên đèo Mimosa"), ("16:00", "hái dâu ở vườn dâu, trả xe trước 21:00")],
  "tips_h": "Lưu ý",
  "tips": [f"Cả vòng khoảng {TOTAL} km đường chim bay, đường thực tế dài hơn và nhiều dốc (Tà Nung, đèo Mimosa) — nên đi Honda Air Blade 125cc; một pin xe máy điện (khoảng 35–40 km) không đủ.",
-          "Vé vào cửa mua tại cổng từng điểm; nhiều nơi kèm một đồ uống (theo đánh giá của khách) — xem giá tại điểm.",
+          "Giá vé ghi ở mỗi điểm là giá tham khảo (tổng hợp tháng 10/2026) — có thể thay đổi, kiểm tra tại cổng.",
           "Đổ đầy xăng trước khi lên Tà Nung — trên đèo ít cây xăng.",
           "Đường Tà Nung và đèo Mimosa nhiều khúc cua — chạy chậm, không vượt ở khúc cua."],
- "leg": "từ điểm trước", "total": "Cả vòng (tiệm → các điểm → tiệm): khoảng {km} km đường chim bay",
+ "price_l": "Giá vé tham khảo", "leg": "từ điểm trước", "total": "Cả vòng (tiệm → các điểm → tiệm): khoảng {km} km đường chim bay",
  "s": {
   "lbland": ("Langbiang Land", "Buổi sáng", "Khu vui chơi gia đình gần chân Langbiang: máng trượt, xe go-kart, vườn thú nhỏ, công viên khủng long, hồ cá koi và khu hái dâu (theo đánh giá của khách)."),
   "mongo": ("Mongo Land", "Buổi sáng", "Khu vui chơi giữa đồi thông ở Tà Nung: máng trượt phao khô dài khoảng 150 m, máng trượt cầu vồng, trượt cỏ, thú như capybara, lạc đà; cách trung tâm khoảng nửa giờ chạy xe."),
-  "ohayo": ("Hoàng Long Ohayo", "Buổi chiều", "Vườn phong cách Nhật trên đèo Mimosa: bonsai, hồ cá koi, nhiều góc chụp ảnh; vé kèm đồ uống (theo đánh giá của khách)."),
+  "ohayo": ("Hoàng Long Ohayo", "Buổi chiều", "Vườn phong cách Nhật trên đèo Mimosa: bonsai, hồ cá koi, nhiều góc chụp ảnh."),
   "otome": ("Vườn dâu Otome Farm", "Chiều muộn", "Vườn dâu và atiso có mái che gần trung tâm — tự hái, trả tiền theo cân; trời mưa vẫn đi được."),
  }},
 "en": {
@@ -57,16 +57,26 @@ T = {
  "season": [("7:30", "pick up the bike at our shop or your hotel, ride to Langbiang Land"), ("10:00", "on to Mongo Land in Ta Nung — 150 m slide, grass hills, animals"), ("12:30", "lunch on the way back towards the centre"), ("14:00", "Hoang Long Ohayo on Mimosa Pass"), ("16:00", "pick strawberries at the farm, return the bike before 21:00")],
  "tips_h": "Good to know",
  "tips": [f"The loop is about {TOTAL} km in a straight line, longer by road and hilly (Ta Nung, Mimosa Pass) — take a Honda Air Blade 125cc; one electric-scooter battery (about 35–40 km) is not enough.",
-          "Entrance tickets are sold at each gate; many include a drink (according to visitor reviews) — check prices on site.",
+          "Ticket prices shown for each stop are for reference (collected October 2026) — they can change, check at the gate.",
           "Fill up before Ta Nung — few petrol stations on the pass.",
           "The Ta Nung road and Mimosa Pass have many bends — ride slowly and never overtake on a bend."],
- "leg": "from the previous stop", "total": "Whole loop (shop → stops → shop): about {km} km in a straight line",
+ "price_l": "Reference price", "leg": "from the previous stop", "total": "Whole loop (shop → stops → shop): about {km} km in a straight line",
  "s": {
   "lbland": ("Langbiang Land", "Morning", "Family theme park near the foot of Lang Biang: slides, go-karts, a small zoo, a dinosaur park, a koi pond and strawberry picking (according to visitor reviews)."),
   "mongo": ("Mongo Land", "Morning", "Theme park among pine hills in Ta Nung: a dry float slide about 150 m long, rainbow slide, grass sledding, animals such as capybaras and a camel; about half an hour's ride from the centre."),
-  "ohayo": ("Hoang Long Ohayo", "Afternoon", "Japanese-style garden on Mimosa Pass: bonsai, koi ponds, many photo spots; the ticket includes a drink (according to visitor reviews)."),
+  "ohayo": ("Hoang Long Ohayo", "Afternoon", "Japanese-style garden on Mimosa Pass: bonsai, koi ponds, many photo spots."),
   "otome": ("Otome Farm strawberries", "Late afternoon", "Covered strawberry and artichoke farm near the centre — pick your own, pay by weight; fine on a rainy day."),
  }},
+}
+PRICE = {
+ "vi": {"lbland": "vé vào từ khoảng 50.000 VND; combo trò chơi khoảng 115.000–300.000 VND",
+        "mongo": "khoảng 120.000–140.000 VND người lớn (kèm nước, một số trò nhẹ); trẻ cao 0,9–1,3 m khoảng 60.000–80.000 VND; dưới 0,9 m miễn phí",
+        "ohayo": "100.000 VND người lớn (kèm nước suối), 120.000 VND kèm đồ uống; trẻ 1–1,3 m 50.000–80.000 VND; dưới 1 m miễn phí",
+        "otome": "hái dâu trả tiền theo cân, khách ghi nhận khoảng 300.000 VND/kg (thay đổi theo mùa)"},
+ "en": {"lbland": "entry from about 50,000 VND; game combos about 115,000–300,000 VND",
+        "mongo": "about 120,000–140,000 VND per adult (water and some light games included); children 0.9–1.3 m about 60,000–80,000 VND; under 0.9 m free",
+        "ohayo": "100,000 VND per adult (bottled water), 120,000 VND with a drink; children 1–1.3 m 50,000–80,000 VND; under 1 m free",
+        "otome": "pick your own and pay by weight — visitors report about 300,000 VND per kg (varies by season)"},
 }
 for _l in LANGS:
     for _k in SHARED:
