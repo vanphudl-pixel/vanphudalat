@@ -36,6 +36,31 @@ Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 - 2026-10-14 evrules — Electric scooter rental rules (owner's official rules; link to it from electric-scooter articles)
 - 2026-10-14 caudat — Cau Dat tea hills: complete sunrise guide
 
+## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
+Purpose: rank for longer, less competitive rental searches in every language. Rules for these articles:
+- Each article answers ONE specific search intent with practical, honest info (≈450–650 words in en). Never a near-copy of the main rental page or of existing articles `price` (rental prices) and `evgas` (electric vs gas) — link to them instead.
+- Title/H1/meta built around the natural local phrase for that intent in EACH language (research how people really search it in that language, e.g. vi "thuê xe máy Đà Lạt không cần cọc", ru "аренда байка в Далате без залога", zh "大叻租摩托车 不用押金", th "เช่ามอเตอร์ไซค์ดาลัด ไม่ต้องมัดจำ"). Use the phrase naturally 2–4 times; no stuffing.
+- Link to the main rental page with <a href="{HOME}">…</a> and, for electric topics, to <a href="{EV}">…</a>.
+- All Hard rules apply (no licence wording in any language, no invented facts, no competitor claims). Do not promise hotel delivery in these articles.
+- [ ] lt-nodeposit — Renting a motorbike in Da Lat with no cash deposit (passport or ID card instead; how it works, what to bring)
+- [ ] lt-procedure — How to rent a motorbike in Da Lat step by step (message, pick-up, test ride + video, return before 21:00)
+- [ ] lt-center — Motorbike rental in central Da Lat near the market and Xuan Huong Lake (where the shop is, getting there on foot/Grab; approximate distances only)
+- [ ] lt-ev-foreigners — Electric scooter rental in Da Lat for foreigners (quiet, easy, battery about 35–40 km, swap 20,000 VND, under 100 kg for two)
+- [ ] lt-airblade — Renting a Honda Air Blade 125cc in Da Lat (for passes, two riders, longer day trips)
+- [ ] lt-vision — Renting a Honda Vision 110cc in Da Lat (light, easy automatic for beginners and city riding)
+- [ ] lt-early — Early-morning motorbike rental in Da Lat (shop opens 4:30 am — cloud hunting and sunrise rides)
+- [ ] lt-multiday — Renting a motorbike in Da Lat for several days or a week (fixed 150,000 VND/day, how days are counted, tips)
+- [ ] lt-two — Motorbike rental in Da Lat for two people / couples (which bike, comfort, safety)
+- [ ] lt-checklist — 10 things to check before renting a motorbike in Da Lat (brakes, tyres, lights, helmet, video) — no claims about other shops
+- [ ] lt-rainy — Renting a motorbike in Da Lat in the rainy season (raincoat, slippery hills, what to avoid)
+- [ ] lt-backpacker — Motorbike rental in Da Lat for backpackers and budget travellers
+- [ ] lt-booking — How to book a motorbike in Da Lat online (WhatsApp, Zalo, WeChat, Telegram — what to send)
+- [ ] lt-ev-city — Where to go in Da Lat on an electric scooter (central sights within battery range; avoid long passes)
+- [ ] lt-reliable — How to choose a reliable motorbike rental in Da Lat (transparent price, no hidden fees, written rules) — generic advice, no competitor claims
+- [ ] lt-first-time — First time riding a scooter in Da Lat: is it hard? (practice, quiet streets, traffic on the right)
+- [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
+- [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
+
 ## Backlog (top = next) — daily calendar from 2026-10-14
 - [ ] 15/10 cloudhunt — Cloud hunting (săn mây) around Da Lat: where, what time, riding there before dawn
 - [ ] 16/10 nightmarket — Da Lat night market guide: what to eat and buy
