@@ -161,6 +161,7 @@ var m=L.map('pmap',{scrollWheelZoom:false});L.tileLayer('https://{s}.tile.openst
 var b=[];P.forEach(function(p){var c=p.ev?'#0f7a4f':'#c06a00';var k=L.marker([p.lat,p.lng],{icon:L.divIcon({className:'pmk',html:'<span style="background:'+c+'">'+p.i+'</span>',iconSize:[26,26],iconAnchor:[13,13]})}).addTo(m);
 k.bindPopup('<b>'+p.i+'. '+p.n+'</b><br>ເວລາເປີດ: '+p.h+'<br>ເວລາທີ່ດີທີ່ສຸດ: '+p.b+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>📍 ນຳທາງ</a> · <a href='+JSON.stringify(p.p)+' target=_blank rel=noopener>📷 ເບິ່ງຮູບ</a>');b.push([p.lat,p.lng]);});
 L.marker([11.9510676,108.4384077],{icon:L.divIcon({className:'pmk',html:'<span style="background:#1a1a1a;width:auto;padding:0 8px;border-radius:12px">Van Phu</span>',iconSize:[70,26],iconAnchor:[35,13]})}).addTo(m).bindPopup('<b>ຮ້ານ Van Phu</b><br><a href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener">ນຳທາງ →</a>');
+
 m.fitBounds(b,{padding:[20,20]});})();
 </script>
 <footer>© Văn Phú Đà Lạt — ບໍລິການເຊົ່າລົດຈັກ ແລະ ສະກູດເຕີຢູ່ດາລາດ ປະເທດຫວຽດນາມ<br><a href="../../lo/dalat-motorbike-rental/">ເຊົ່າລົດຈັກດາລາດ</a> · <a href="../../lo/electric-scooter-rental-dalat/">ເຊົ່າລົດຈັກໄຟຟ້າຢູ່ດາລາດ</a> · <a href="../../lo/routes/">ມີຫຍັງໜ້າເບິ່ງຢູ່ດາລາດດ້ວຍລົດຈັກ: 5 ເສັ້ນທາງ</a></footer>

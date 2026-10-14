@@ -161,6 +161,7 @@ var m=L.map('pmap',{scrollWheelZoom:false});L.tileLayer('https://{s}.tile.openst
 var b=[];P.forEach(function(p){var c=p.ev?'#0f7a4f':'#c06a00';var k=L.marker([p.lat,p.lng],{icon:L.divIcon({className:'pmk',html:'<span style="background:'+c+'">'+p.i+'</span>',iconSize:[26,26],iconAnchor:[13,13]})}).addTo(m);
 k.bindPopup('<b>'+p.i+'. '+p.n+'</b><br>Horario: '+p.h+'<br>Mejor hora: '+p.b+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>📍 Cómo llegar</a> · <a href='+JSON.stringify(p.p)+' target=_blank rel=noopener>📷 Ver fotos</a>');b.push([p.lat,p.lng]);});
 L.marker([11.9510676,108.4384077],{icon:L.divIcon({className:'pmk',html:'<span style="background:#1a1a1a;width:auto;padding:0 8px;border-radius:12px">Van Phu</span>',iconSize:[70,26],iconAnchor:[35,13]})}).addTo(m).bindPopup('<b>Tienda Van Phu</b><br><a href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener">Cómo llegar →</a>');
+
 m.fitBounds(b,{padding:[20,20]});})();
 </script>
 <footer>© Văn Phú Đà Lạt — alquiler de motos y scooters en Da Lat, Vietnam<br><a href="../../es/alquiler-moto-dalat/">Alquiler de motos Da Lat</a> · <a href="../../es/alquiler-scooter-electrico-dalat/">Alquiler de scooter eléctrico en Da Lat</a> · <a href="../../es/routes/">Qué ver en Da Lat en moto: 5 rutas</a></footer>

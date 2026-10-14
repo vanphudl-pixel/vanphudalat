@@ -161,6 +161,7 @@ var m=L.map('pmap',{scrollWheelZoom:false});L.tileLayer('https://{s}.tile.openst
 var b=[];P.forEach(function(p){var c=p.ev?'#0f7a4f':'#c06a00';var k=L.marker([p.lat,p.lng],{icon:L.divIcon({className:'pmk',html:'<span style="background:'+c+'">'+p.i+'</span>',iconSize:[26,26],iconAnchor:[13,13]})}).addTo(m);
 k.bindPopup('<b>'+p.i+'. '+p.n+'</b><br>เวลาเปิด: '+p.h+'<br>เวลาที่ดีที่สุด: '+p.b+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>📍 นำทาง</a> · <a href='+JSON.stringify(p.p)+' target=_blank rel=noopener>📷 ดูรูป</a>');b.push([p.lat,p.lng]);});
 L.marker([11.9510676,108.4384077],{icon:L.divIcon({className:'pmk',html:'<span style="background:#1a1a1a;width:auto;padding:0 8px;border-radius:12px">Van Phu</span>',iconSize:[70,26],iconAnchor:[35,13]})}).addTo(m).bindPopup('<b>ร้าน Van Phu</b><br><a href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener">นำทาง →</a>');
+
 m.fitBounds(b,{padding:[20,20]});})();
 </script>
 <footer>© Văn Phú Đà Lạt — เช่ามอเตอร์ไซค์และสกูตเตอร์ในดาลัด เวียดนาม<br><a href="../../th/dalat-motorbike-rental/">เช่ามอเตอร์ไซค์ดาลัด</a> · <a href="../../th/electric-scooter-rental-dalat/">เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด</a> · <a href="../../th/routes/">ขี่มอเตอร์ไซค์เที่ยวดาลัด: 5 เส้นทางแนะนำ</a></footer>

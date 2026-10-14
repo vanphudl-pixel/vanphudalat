@@ -162,6 +162,7 @@ var m=L.map('pmap',{scrollWheelZoom:false});L.tileLayer('https://{s}.tile.openst
 var b=[];P.forEach(function(p){var c=p.ev?'#0f7a4f':'#c06a00';var k=L.marker([p.lat,p.lng],{icon:L.divIcon({className:'pmk',html:'<span style="background:'+c+'">'+p.i+'</span>',iconSize:[26,26],iconAnchor:[13,13]})}).addTo(m);
 k.bindPopup('<b>'+p.i+'. '+p.n+'</b><br>开放: '+p.h+'<br>最佳时间: '+p.b+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>📍 导航</a> · <a href='+JSON.stringify(p.p)+' target=_blank rel=noopener>📷 看照片</a>');b.push([p.lat,p.lng]);});
 L.marker([11.9510676,108.4384077],{icon:L.divIcon({className:'pmk',html:'<span style="background:#1a1a1a;width:auto;padding:0 8px;border-radius:12px">Van Phu</span>',iconSize:[70,26],iconAnchor:[35,13]})}).addTo(m).bindPopup('<b>Van Phu 租车店</b><br><a href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener">导航 →</a>');
+
 m.fitBounds(b,{padding:[20,20]});})();
 </script>
 <footer>© Văn Phú Đà Lạt — 越南大叻摩托车、电动车租赁<br><a href="../../zh/dalat-motorbike-rental/">大叻租摩托车</a> · <a href="../../zh/electric-scooter-rental-dalat/">大叻电动车租赁</a> · <a href="../../zh/routes/">大叻骑摩托车去哪玩：5 条骑行路线</a></footer>

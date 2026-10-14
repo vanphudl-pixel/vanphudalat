@@ -39,6 +39,9 @@ from content import busmap as BU
 from content import danangbusmap as DN
 from content import festivalmap as FE
 from content import placeshub as HUB
+from content import routenew as RN
+from content import routecheckin as RC
+from content._route import legs as route_legs
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
 for _l in LANGS:
@@ -209,7 +212,8 @@ def pm_section(l, me):
             f'<a class="btn alt" href="{rel(me, map_path(H4, l))}" style="border:1px solid var(--line)">🛎️ {H4.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(H3, l))}" style="border:1px solid var(--line)">🛏️ {H3.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(BU, l))}" style="border:1px solid var(--line)">🚌 {BU.T[l]["h1"]} →</a> '
-            f'<a class="btn alt" href="{rel(me, map_path(DN, l))}" style="border:1px solid var(--line)">🚌 {DN.T[l]["h1"]} →</a></p></section>')
+            f'<a class="btn alt" href="{rel(me, map_path(DN, l))}" style="border:1px solid var(--line)">🚌 {DN.T[l]["h1"]} →</a>'
+            + "".join(f' <a class="btn alt" href="{rel(me, map_path(_R, l))}" style="border:1px solid var(--line)">🛵 {_R.T[l]["h1"]} →</a>' for _R in (RN, RC) if l in _R.LANGS) + '</p></section>')
 # Real Google Maps reviews, quoted verbatim (excerpts marked with …), shown in the original language.
 # Shown as visible quotes only: no Review/AggregateRating schema, because Google's rules forbid
 # marking up reviews copied from another site (Google Maps). Add new ones only from real reviews.
@@ -647,6 +651,8 @@ def page_photomap(l, M=PM):
     alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + map_path(M, x)}">\n' for x in M.LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + map_path(M, "en")}">\n'
     pts = []
     rows = ""
+    _route = getattr(M, "ROUTE", False)
+    _legs = route_legs(M.SPOTS) if _route else []
     for i, (sid, lat, lng, cid, ev, h) in enumerate(M.SPOTS, 1):
         n, best, d = t["s"][sid]
         hr = t["h"].get(h, h)
@@ -657,7 +663,7 @@ def page_photomap(l, M=PM):
         pts.append({"i": i, "n": n, "lat": lat, "lng": lng, "ev": ev, "g": g, "b": best, "h": hr, "p": ph})
         guide = getattr(M, "GUIDES", {"pink": "domainedemarie"}).get(sid)
         nm = f'<a href="{rel(me, art_path(l, guide))}">{n}</a>' if guide and guide in C[l]["articles"] else n
-        rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{nm}</b><br><small>≈ {pm_km(M.CENTER, (lat, lng)):.1f} km · {t["hours"]}: {hr} · {t["best"]}: {best}</small>'
+        rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{nm}</b><br><small>{(f"+{_legs[i-1]:.1f} km {t['leg']} · ") if _route else f"≈ {pm_km(M.CENTER, (lat, lng)):.1f} km · "}{t["hours"]}: {hr} · {t["best"]}: {best}</small>'
                  f'<br>{d}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · <a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a></div></li>')
     seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t["season"])
     tips = "".join(f"<li>{x}</li>" for x in t["tips"])
@@ -687,7 +693,7 @@ def page_photomap(l, M=PM):
 <main class="wrap">
 <section><div id="pmap" role="img" aria-label="{t["h1"]}"></div>
 <div class="pmleg"><span><span class="pmn ev" style="display:inline-flex;width:14px;height:14px"></span> {t["ev"]}</span><span><span class="pmn gas" style="display:inline-flex;width:14px;height:14px"></span> {t["gas"]}</span></div>
-<p class="note">{t["check"]} · ≈ {t["km"]}</p></section>
+<p class="note">{(t["total"].format(km=round(sum(_legs))) + " · ") if _route else ""}{t["check"]} · ≈ {t["km"]}</p></section>
 <section><ol class="pmlist">{rows}</ol></section>
 <section class="prose"><h2>{t["season_h"]}</h2><ul>{seasons}</ul><h2>{t["tips_h"]}</h2><ul>{tips}</ul></section>
 <section>{cta_box(l, me)}</section>
@@ -699,12 +705,13 @@ var m=L.map('pmap',{{scrollWheelZoom:false}});L.tileLayer('https://{{s}}.tile.op
 var b=[];P.forEach(function(p){{var c=p.ev?'#0f7a4f':'#c06a00';var k=L.marker([p.lat,p.lng],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:'+c+'">'+p.i+'</span>',iconSize:[26,26],iconAnchor:[13,13]}})}}).addTo(m);
 k.bindPopup('<b>'+p.i+'. '+p.n+'</b><br>{t["hours"]}: '+p.h+'<br>{t["best"]}: '+p.b+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>📍 {t["dir"]}</a> · <a href='+JSON.stringify(p.p)+' target=_blank rel=noopener>📷 {t["photo"]}</a>');b.push([p.lat,p.lng]);}});
 L.marker([{LAT},{LON}],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:#1a1a1a;width:auto;padding:0 8px;border-radius:12px">Van Phu</span>',iconSize:[70,26],iconAnchor:[35,13]}})}}).addTo(m).bindPopup('<b>{t["shop"]}</b><br><a href="{GMAPS}" target="_blank" rel="noopener">{t["dir"]} →</a>');
+{'L.polyline([['+str(LAT)+','+str(LON)+']].concat(b).concat([['+str(LAT)+','+str(LON)+']]),{color:\'#0f7a4f\',weight:3,opacity:.55,dashArray:\'6 8\'}).addTo(m);' if _route else ''}
 m.fitBounds(b,{{padding:[20,20]}});}})();
 </script>
 """ + foot(l, frm=me)
 
 # ------------------------------------------------------------------ places hub (pillar page, vi + en)
-THEMES = [PM, PG, CH, SF, CL, CF, BB, FE, HT, H4, H3, BU, DN]
+THEMES = [RN, RC, PM, PG, CH, SF, CL, CF, BB, FE, HT, H4, H3, BU, DN]
 _TNAME = {M.__name__.split(".")[-1]: M for M in THEMES}
 def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
 def hub_link(l, me, key):
@@ -743,7 +750,7 @@ def page_hub(l):
     faqs = [(q, a.format(**fill), lk) for q, a, lk in t["faq"]]
     faq_html = "".join(f'<section id="q{j}"><h2>{q}</h2><p>{a}</p>' + (('<p class="chips">' + "".join(f'<a href="{hub_link(l, me, k)}">{x} →</a>' for k, x in lk) + "</p>") if lk else "") + "</section>" for j, (q, a, lk) in enumerate(faqs, 1))
     toc = "".join(f'<li><a href="#{z}">{t["zones"][z][0]}</a></li>' for z in HUB.ZONES) + "".join(f'<li><a href="#q{j}">{q}</a></li>' for j, (q, a, lk) in enumerate(faqs, 1))
-    themes = "".join(f'<a href="{rel(me, map_path(M, l))}">{M.T[l]["h1"]}</a>' for M in THEMES)
+    themes = "".join(f'<a href="{rel(me, map_path(M, l))}">{M.T[l]["h1"]}</a>' for M in THEMES if l in M.LANGS)
     title, h1, desc = t["title"].format(**fill), t["h1"].format(**fill), t["desc"].format(**fill)
     lds = [{"@context": "https://schema.org", "@type": "Article", "headline": h1, "description": desc, "inLanguage": l, "mainEntityOfPage": BASE + me,
             "image": BASE + "img/airblade.jpg", "datePublished": HUB.UPDATED, "dateModified": HUB.UPDATED,
@@ -798,7 +805,7 @@ for l in HUB.LANGS:
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC):
     for l in _M.LANGS:
         write(map_path(_M, l), page_photomap(l, _M))
 
@@ -812,7 +819,7 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
@@ -850,6 +857,8 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Da Lat 4-star hotels — map of 10 popular 4-star hotels and resorts, free PDF]({BASE + map_path(H4, "en")})
 - [Da Lat 3-star hotels — map of 8 popular 3-star hotels near the night market, free PDF]({BASE + map_path(H3, "en")})
 - [Places to visit in Da Lat by motorbike — every sight from our maps grouped by direction, with distance, hours and electric-scooter suitability]({BASE + "places-to-visit-in-da-lat/"}) (Vietnamese: {BASE + "vi/dia-diem-du-lich-da-lat/"})
+- [Self-guided Da Lat day trip by motorbike: new attractions 2026 (Langbiang Land, Mongo Land, Hoang Long Ohayo, strawberry farm) — ordered route, times, free PDF]({BASE + map_path(RN, "en")})
+- [Self-guided Da Lat day trip by motorbike: hot check-in spots (Lac Hu Co Tran, Memory Station, Suoi Binh Yen, Happy Hill) — ordered route, times, free PDF]({BASE + map_path(RC, "en")})
 - [Da Lat to Saigon bus — map of the Da Lat bus station and 12 bus company offices, free PDF]({BASE + map_path(BU, "en")})
 - [Da Lat to Da Nang bus — map of the Da Lat bus station and 6 bus company offices on the Da Nang / Hoi An route, free PDF]({BASE + map_path(DN, "en")})
 - [Da Lat Flower Festival 2026 — planned 19–31 Dec 2026: programme, venue map, free PDF]({BASE + map_path(FE, "en")})
