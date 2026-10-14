@@ -23,6 +23,7 @@ WA2 = "https://wa.me/84834622149"
 
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
 from content.ev import EV
+from content import photomap as PM
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
 for _l in LANGS:
@@ -149,6 +150,11 @@ REV = {
  "he": ("ביקורות של לקוחות", "קראו ביקורות אמיתיות של הלקוחות שלנו ב-Google Maps — והשאירו ביקורת משלכם אחרי הנסיעה.", "★ ביקורות ב-Google Maps"),
 }
 def rev_btn(l): return f'<a class="btn alt" href="{GMAPS}" target="_blank" rel="noopener" style="border:1px solid var(--line)">{REV[l][2]}</a>'
+def pm_path(l): return lang_root(l) + PM.SLUG + "/"
+def pm_section(l, me):
+    if l not in PM.LANGS: return ""
+    t = PM.T[l]
+    return f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">{t["h1"]} →</a></p></section>'
 def rev_section(l): return f'<section><h2>{REV[l][0]}</h2><p>{REV[l][1]}</p><p>{rev_btn(l)}</p></section>'
 
 def contact_box(l):
@@ -319,6 +325,7 @@ def page_home(l):
   <p><a class="btn alt" href="{rel(me, routes_path(l))}" style="border:1px solid var(--line)">{h["routes_btn"]}</a></p></section>
  <section><h2>{h["h_photos"]}</h2><div class="gallery">{gallery}</div></section>
  {rev_section(l)}
+ {pm_section(l, me)}
  <section class="faq"><h2>{h["h_faq"]}</h2>{faq}</section>
  <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:6])}</section>
  <section><h2>{h["h_map"]}</h2>{mp}</section>
@@ -493,6 +500,73 @@ for l in LANGS:
     for k in ARTICLES:
         write(art_path(l, k), page_article(l, k))
 
+
+# ------------------------------------------------------------------ photo-spot map (en / vi / th)
+def pm_km(a, b):
+    import math
+    la1, lo1, la2, lo2 = map(math.radians, (*a, *b))
+    h = math.sin((la2 - la1) / 2) ** 2 + math.cos(la1) * math.cos(la2) * math.sin((lo2 - lo1) / 2) ** 2
+    return 6371 * 2 * math.asin(math.sqrt(h))
+def page_photomap(l):
+    t = PM.T[l]; me = pm_path(l)
+    pre = rel(me, "")
+    bar = "".join(f'<a href="{rel(me, pm_path(x))}" hreflang="{x}" data-l="{x}"{" class=\"on\" aria-current=\"page\"" if x == l else ""}>{LABEL[x]}</a>' for x in PM.LANGS)
+    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}">\n' for x in PM.LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + pm_path("en")}">\n'
+    pts = []
+    rows = ""
+    for i, (sid, lat, lng, cid, ev, h) in enumerate(PM.SPOTS, 1):
+        n, best, d = t["s"][sid]
+        hr = t["h"].get(h, h)
+        g = f"https://maps.google.com/?cid={cid}"
+        pts.append({"i": i, "n": n, "lat": lat, "lng": lng, "ev": ev, "g": g, "b": best, "h": hr})
+        rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span><div><b>{n}</b><br><small>≈ {pm_km(PM.CENTER, (lat, lng)):.1f} km · {t["hours"]}: {hr} · {t["best"]}: {best}</small>'
+                 f'<br>{d} <a href="{g}" target="_blank" rel="noopener">{t["dir"]} →</a></div></li>')
+    seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t["season"])
+    tips = "".join(f"<li>{x}</li>" for x in t["tips"])
+    pdf = f"{pre}files/VanPhu-Dalat-Photo-Map-{l.upper()}.pdf"
+    ld = {"@context": "https://schema.org", "@type": "ItemList", "name": t["h1"], "itemListElement": [
+        {"@type": "ListItem", "position": p["i"], "item": {"@type": "TouristAttraction", "name": p["n"], "geo": {"@type": "GeoCoordinates", "latitude": p["lat"], "longitude": p["lng"]}, "hasMap": p["g"]}} for p in pts]}
+    js = json.dumps(pts, ensure_ascii=False)
+    return f"""<!doctype html>
+<html lang="{l}"><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>{t["title"]}</title>
+<meta name="description" content="{t["desc"]}"><link rel="canonical" href="{BASE + me}">
+{alts}<meta property="og:type" content="website"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/electric-row.jpg">
+{ldjson(ld)}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>{CSS}
+#pmap{{height:460px;border-radius:14px;border:1px solid var(--line)}}
+.pmlist{{list-style:none;padding:0;display:grid;gap:10px}} .pmlist li{{display:flex;gap:10px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:10px}}
+.pmn{{flex:none;width:28px;height:28px;border-radius:50%;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}} .pmn.ev{{background:#0f7a4f}} .pmn.gas{{background:#c06a00}}
+.pmk{{background:none;border:none}} .pmk span{{display:flex;width:26px;height:26px;border-radius:50%;color:#fff;font:700 12px sans-serif;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}}
+.pmleg{{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin:8px 0}}
+</style></head><body>
+<header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
+<div class="hero"><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p>
+<div class="cta"><a class="btn wa" href="{pdf}" download>⬇ {t["pdf"]}</a><a class="btn alt" href="{rel(me, home_path(l))}">{t["cta_h"]}</a></div></div></div></header>
+<main class="wrap">
+<section><div id="pmap" role="img" aria-label="{t["h1"]}"></div>
+<div class="pmleg"><span><span class="pmn ev" style="display:inline-flex;width:14px;height:14px"></span> {t["ev"]}</span><span><span class="pmn gas" style="display:inline-flex;width:14px;height:14px"></span> {t["gas"]}</span></div>
+<p class="note">{t["check"]} · ≈ {t["km"]}</p></section>
+<section><ol class="pmlist">{rows}</ol></section>
+<section class="prose"><h2>{t["season_h"]}</h2><ul>{seasons}</ul><h2>{t["tips_h"]}</h2><ul>{tips}</ul></section>
+<section>{cta_box(l, me)}</section>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){{if(!window.L)return;var P={js};
+var m=L.map('pmap',{{scrollWheelZoom:false}});L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:18,attribution:'&copy; OpenStreetMap'}}).addTo(m);
+var b=[];P.forEach(function(p){{var c=p.ev?'#0f7a4f':'#c06a00';var k=L.marker([p.lat,p.lng],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:'+c+'">'+p.i+'</span>',iconSize:[26,26],iconAnchor:[13,13]}})}}).addTo(m);
+k.bindPopup('<b>'+p.i+'. '+p.n+'</b><br>{t["hours"]}: '+p.h+'<br>{t["best"]}: '+p.b+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>{t["dir"]} →</a>');b.push([p.lat,p.lng]);}});
+L.marker([{LAT},{LON}],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:#1a1a1a;width:auto;padding:0 8px;border-radius:12px">Van Phu</span>',iconSize:[70,26],iconAnchor:[35,13]}})}}).addTo(m).bindPopup('<b>{t["shop"]}</b><br><a href="{GMAPS}" target="_blank" rel="noopener">{t["dir"]} →</a>');
+m.fitBounds(b,{{padding:[20,20]}});}})();
+</script>
+""" + foot(l, frm=me)
+
+(OUT / "files").mkdir(exist_ok=True)
+for l in PM.LANGS:
+    write(pm_path(l), page_photomap(l))
+
 urls = ""
 for kind, key in groups:
     alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + path_of(x, kind, key)}"/>\n' for x in LANGS)
@@ -500,6 +574,9 @@ for kind, key in groups:
     lm = adate(key) if kind == "art" else max([adate(k) for k in ARTICLES] + ["2026-10-10"])
     for l in LANGS:
         urls += f"  <url>\n    <loc>{BASE + path_of(l, kind, key)}</loc>\n{alts}    <lastmod>{lm}</lastmod>\n  </url>\n"
+_pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
+for l in PM.LANGS:
+    urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
@@ -519,7 +596,8 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
 ## Pages
 - [Home (English)]({BASE}): prices, bikes, FAQ, map
-- [Electric scooter rental (no license needed, about 40 km per charge)]({BASE + ev_path("en")})
+- [Electric scooter rental (one battery about 35–40 km; battery swap 20,000 VND)]({BASE + ev_path("en")})
+- [Da Lat photo spot map (16 places, opening hours, free PDF)]({BASE + pm_path("en")})
 - [Motorbike routes around Da Lat]({BASE + routes_path("en")})
 - [Travel blog]({BASE + blog_path("en")})
 """ + "".join(f"- [{LABEL[x]} home]({BASE + home_path(x)})\n" for x in LANGS if x != "en")

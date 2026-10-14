@@ -25,6 +25,8 @@ Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 - Hebrew (he) is right-to-left; write natural Israeli Hebrew, plural address (אתם), avoid recommending pork dishes. German/French/Spanish: natural, informal-friendly tone (du / vous / tú).
 - Malay: avoid pork dishes as recommendations; mention halal where food is discussed. Thai/Malay/Indonesian readers drive on the left at home — remind "Vietnam drives on the right" if riding is discussed.
 
+- Photo-spot map page (/photo-map/ in en, vi, th) is built from `content/photomap.py`; its PDFs live in `/files/`. Do not delete them. Articles about sights may link to it with a relative link to `photo-map/` in their language when that language has it.
+
 ## Published
 - 2026-10-10 weather — Da Lat weather by month
 - 2026-10-10 getting — How to get to Da Lat (Nha Trang, HCMC, Mui Ne)

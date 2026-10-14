@@ -3510,4 +3510,25 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vanphudalat.com/blog/electric-or-gas-scooter-dalat/"/>
     <lastmod>2026-10-12</lastmod>
   </url>
+  <url>
+    <loc>https://vanphudalat.com/photo-map/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vanphudalat.com/photo-map/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://vanphudalat.com/vi/photo-map/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://vanphudalat.com/th/photo-map/"/>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://vanphudalat.com/vi/photo-map/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vanphudalat.com/photo-map/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://vanphudalat.com/vi/photo-map/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://vanphudalat.com/th/photo-map/"/>
+    <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://vanphudalat.com/th/photo-map/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vanphudalat.com/photo-map/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://vanphudalat.com/vi/photo-map/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://vanphudalat.com/th/photo-map/"/>
+    <lastmod>2026-10-14</lastmod>
+  </url>
 </urlset>
