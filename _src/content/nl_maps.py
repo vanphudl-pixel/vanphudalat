@@ -276,3 +276,23 @@ MAPS["festivalmap"] = {
   "tqtpark": ("Tran Quoc Toan-park", "Overdag", "Internationale orchideeëntentoonstelling van Lam Dong, 1–25 dec. (gepland)."),
   "xuanhuong": ("Xuan Huong-meer", "Altijd", "Bloeminstallaties en fotoplekken rond het meer."),
  }}
+
+MAPS["danangbusmap"] = {
+ "title": "Bus van Da Lat naar Da Nang: kaart met busstation en kantoren | Van Phu",
+ "h1": "Buskaart Da Lat – Da Nang",
+ "desc": "Kaart van het busstation van Da Lat en de kantoren in Da Lat van 6 busmaatschappijen naar Da Nang en Hoi An — An Phu, Thanh Thuy, Tan Kim Chi, Tan Quang Dung en meer — met route en een gratis PDF.",
+ "lead": "Op weg naar het noorden, naar Da Nang of Hoi An? Hier vind je het streekbusstation van Da Lat, waar FUTA (Phuong Trang) en andere maatschappijen vertrekken, en de kantoren in Da Lat van 6 busmaatschappijen op de route naar Da Nang, met route met één tik. Prijzen en dienstregelingen veranderen vaak, dus check bij de maatschappij als je boekt.",
+ "center": "In Da Lat (1–7)",
+ "season_h": "Goed om te weten",
+ "season": [("Reistijd", "ongeveer 12–14 uur, langer met veel stops"), ("Vertrek", "de meeste bussen vertrekken 's middags of vroeg in de avond uit Da Lat en komen de volgende ochtend in Da Nang aan"), ("Hoi An", "sommige bussen stoppen ook in Hoi An — vraag ernaar als je boekt"), ("Ophalen", "veel maatschappijen halen op bij hotels in het centrum — vraag ernaar als je boekt")],
+ "tips_h": "Tips",
+ "tips": ["Vraag bij zo'n lange rit of de bus een toilet heeft.", "Houd je paspoort, telefoon en geld bij je, niet in het bagageruim.", "De airco is 's nachts koud — neem een jas mee.", "In veel cabinebussen laat je je schoenen bij de deur — trek sokken aan."],
+ "s": {
+  "benxe": ("Streekbusstation Da Lat", "Dag en nacht", "Hoofdbusstation aan de To Hien Thanh-straat; hier vertrekken FUTA (Phuong Trang), Cuc Tung en andere maatschappijen naar Da Nang. Loketten en toiletten."),
+  "anphu": ("An Phu Travel", "Dag en avond", "Kantoor aan de Pham Ngu Lao-straat met wachtruimte; slaapbussen met VIP-cabines en tweepersoonscabines naar Da Nang en Hoi An."),
+  "thanhthuy": ("Thanh Thuy", "Overdag", "Kantoor aan de Nguyen Tu Luc-straat, ten noorden van het centrum; slaapbussen en tweepersoonscabines naar Da Nang."),
+  "tankimchi": ("Tan Kim Chi Limousine", "—", "Kantoor aan de Mai Anh Dao-straat, ten noorden van het centrum; limousines met tweepersoonscabines en toilet aan boord."),
+  "tanquangdung": ("Tan Quang Dung", "Dag en nacht", "Kantoor bij het sportcomplex van Lam Dong, ten noordwesten van het centrum; limousines met tweepersoonscabines en toilet aan boord."),
+  "hm": ("HM Happycar (Hoang Minh)", "—", "Kantoor in de wijk Pham Hong Thai; bussen met tweepersoonscabines."),
+  "vietlao": ("Viet Lao Travel", "Overdag", "Kantoor aan de Mai Hac De-straat; bussen met tweepersoonscabines."),
+ }}

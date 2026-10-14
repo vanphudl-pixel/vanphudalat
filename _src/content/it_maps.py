@@ -277,3 +277,23 @@ MAPS["festivalmap"] = {
 
 MAPS["sunflowermap"]["check"] = "La fioritura cambia ogni anno con la pioggia — guarda foto recenti prima di andare. Tutti i posti sono aree aperte a bordo strada."
 MAPS["cloudmap"]["check"] = "Le nuvole non sono mai garantite — dipendono dal meteo di quella mattina. Gli orari sono di Google Maps (ottobre 2026)."
+
+MAPS["danangbusmap"] = {
+ "title": "Autobus da Da Lat a Da Nang: mappa della stazione e degli uffici | Van Phu",
+ "h1": "Mappa degli autobus Da Lat – Da Nang",
+ "desc": "Mappa della stazione degli autobus di Da Lat e degli uffici a Da Lat di 6 compagnie di autobus per Da Nang e Hoi An — An Phu, Thanh Thuy, Tan Kim Chi, Tan Quang Dung e altre — con indicazioni e un PDF gratuito.",
+ "lead": "Vai a nord, a Da Nang o Hoi An? Ecco la stazione degli autobus interurbani di Da Lat, da cui partono FUTA (Phuong Trang) e altre compagnie, e gli uffici a Da Lat di 6 compagnie sulla tratta per Da Nang, con le indicazioni con un tocco. Prezzi e orari cambiano spesso, quindi verifica con la compagnia quando prenoti.",
+ "center": "A Da Lat (1–7)",
+ "season_h": "Da sapere",
+ "season": [("Durata", "circa 12–14 ore, di più con tante fermate"), ("Partenze", "quasi tutti gli autobus lasciano Da Lat nel pomeriggio o in prima serata e arrivano a Da Nang la mattina dopo"), ("Hoi An", "alcuni autobus si fermano anche a Hoi An — chiedi quando prenoti"), ("Navetta", "molte compagnie passano a prenderti negli hotel del centro — chiedi quando prenoti")],
+ "tips_h": "Consigli",
+ "tips": ["Per un viaggio così lungo, chiedi se l'autobus ha il bagno.", "Tieni passaporto, telefono e soldi con te, non nel bagagliaio.", "Di notte l'aria condizionata è fredda — porta una giacca.", "Su molti autobus a cabine si lasciano le scarpe all'ingresso — metti le calze."],
+ "s": {
+  "benxe": ("Stazione degli autobus interurbani di Da Lat", "Giorno e notte", "Stazione principale in via To Hien Thanh; da qui partono per Da Nang FUTA (Phuong Trang), Cuc Tung e altre compagnie. Biglietterie e bagni."),
+  "anphu": ("An Phu Travel", "Giorno e sera", "Ufficio in via Pham Ngu Lao con sala d'attesa; autobus con cabine VIP e cabine doppie per Da Nang e Hoi An."),
+  "thanhthuy": ("Thanh Thuy", "Di giorno", "Ufficio in via Nguyen Tu Luc, a nord del centro; autobus letto e cabine doppie per Da Nang."),
+  "tankimchi": ("Tan Kim Chi Limousine", "—", "Ufficio in via Mai Anh Dao, a nord del centro; limousine con cabine doppie e bagno a bordo."),
+  "tanquangdung": ("Tan Quang Dung", "Giorno e notte", "Ufficio vicino al complesso sportivo di Lam Dong, a nord-ovest del centro; limousine con cabine doppie e bagno a bordo."),
+  "hm": ("HM Happycar (Hoang Minh)", "—", "Ufficio nella zona di Pham Hong Thai; autobus con cabine doppie."),
+  "vietlao": ("Viet Lao Travel", "Di giorno", "Ufficio in via Mai Hac De; autobus con cabine doppie."),
+ }}
