@@ -77,6 +77,7 @@ html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 .map{width:100%;height:340px;border:0;border-radius:12px;display:block}
 @media (max-width:480px){.hero h1{font-size:25px}}
 
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -136,7 +137,7 @@ footer a{color:inherit;text-decoration:underline}
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs"><a href="../../../blog/cau-dat-tea-hills-sunrise/" hreflang="en" data-l="en">EN</a><a href="../../../ru/blog/chainye-holmy-kaudat-rassvet/" hreflang="ru" data-l="ru">RU</a><a href="../../../zh/blog/cau-dat-tea-hills-sunrise/" hreflang="zh" data-l="zh">中文</a><a href="../../../ko/blog/cau-dat-tea-hills-sunrise/" hreflang="ko" data-l="ko">한국어</a><a href="../../../ja/blog/cau-dat-tea-hills-sunrise/" hreflang="ja" data-l="ja">日本語</a><a href="../../../th/blog/cau-dat-tea-hills-sunrise/" hreflang="th" data-l="th">ไทย</a><a href="../../../id/blog/cau-dat-tea-hills-sunrise/" hreflang="id" data-l="id">ID</a><a href="../../../ms/blog/cau-dat-tea-hills-sunrise/" hreflang="ms" data-l="ms">MY</a><a href="../../../vi/blog/doi-che-cau-dat-ngam-binh-minh/" hreflang="vi" data-l="vi">VI</a><a href="../../../de/blog/cau-dat-tea-hills-sunrise/" hreflang="de" data-l="de">DE</a><a href="../../../fr/blog/cau-dat-tea-hills-sunrise/" hreflang="fr" data-l="fr">FR</a><a href="../../../es/blog/cau-dat-tea-hills-sunrise/" hreflang="es" data-l="es">ES</a><a href="../../../he/blog/cau-dat-tea-hills-sunrise/" hreflang="he" data-l="he" class="on" aria-current="page">עב</a></div></div>
 <div class="hero"><div class="crumbs"><a href="../../../he/dalat-motorbike-rental/">השכרת קטנועים בדאלאט</a> › <a href="../../../he/blog/">בלוג</a></div>
  <h1>גבעות התה של קאו דאט (Cau Dat) בזריחה: המדריך המלא לרכיבה על קטנוע</h1><p class="lead">גבעות התה של קאו דאט נמצאות כ-20–25 ק"מ ממרכז דאלאט, ונחשבות לאחד המקומות היפים ברמה לראות את השמש עולה מעל שורות התה והעננים. ככה מתכננים את היציאה המוקדמת.</p>
- <img class="heroimg" src="../../../img/airblade.jpg" alt="גבעות התה של קאו דאט (Cau Dat) בזריחה: המדריך המלא לרכיבה על קטנוע" width="1200" height="675">
+ <img class="heroimg" src="../../../img/w/airblade.webp" alt="גבעות התה של קאו דאט (Cau Dat) בזריחה: המדריך המלא לרכיבה על קטנוע" width="1200" height="675" fetchpriority="high" decoding="async">
 </div></div></header>
 <main class="wrap">
  <section class="prose">
@@ -182,7 +183,7 @@ footer a{color:inherit;text-decoration:underline}
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.dataset.l)}catch(e){}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText('vanphudalat')}catch(e){};b.textContent="מזהה WeChat הועתק!";setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
 
 </script>
 </body>

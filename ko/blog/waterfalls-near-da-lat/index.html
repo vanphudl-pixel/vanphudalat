@@ -77,6 +77,7 @@ html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 .map{width:100%;height:340px;border:0;border-radius:12px;display:block}
 @media (max-width:480px){.hero h1{font-size:25px}}
 
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -136,7 +137,7 @@ footer a{color:inherit;text-decoration:underline}
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs"><a href="../../../blog/waterfalls-near-da-lat/" hreflang="en" data-l="en">EN</a><a href="../../../ru/blog/vodopady-dalata/" hreflang="ru" data-l="ru">RU</a><a href="../../../zh/blog/waterfalls-near-da-lat/" hreflang="zh" data-l="zh">中文</a><a href="../../../ko/blog/waterfalls-near-da-lat/" hreflang="ko" data-l="ko" class="on" aria-current="page">한국어</a><a href="../../../ja/blog/waterfalls-near-da-lat/" hreflang="ja" data-l="ja">日本語</a><a href="../../../th/blog/waterfalls-near-da-lat/" hreflang="th" data-l="th">ไทย</a><a href="../../../id/blog/waterfalls-near-da-lat/" hreflang="id" data-l="id">ID</a><a href="../../../ms/blog/waterfalls-near-da-lat/" hreflang="ms" data-l="ms">MY</a><a href="../../../vi/blog/thac-nuoc-gan-da-lat/" hreflang="vi" data-l="vi">VI</a><a href="../../../de/blog/waterfalls-near-da-lat/" hreflang="de" data-l="de">DE</a><a href="../../../fr/blog/waterfalls-near-da-lat/" hreflang="fr" data-l="fr">FR</a><a href="../../../es/blog/waterfalls-near-da-lat/" hreflang="es" data-l="es">ES</a><a href="../../../he/blog/waterfalls-near-da-lat/" hreflang="he" data-l="he">עב</a></div></div>
 <div class="hero"><div class="crumbs"><a href="../../../ko/dalat-motorbike-rental/">달랏 오토바이 렌탈</a> › <a href="../../../ko/blog/">블로그</a></div>
  <h1>오토바이로 달랏 근교 폭포 여행: 다딴라, 프렌, 코끼리 폭포, 퐁구르</h1><p class="lead">달랏 주변에는 시내 바로 옆 다딴라부터 한 시간 정도 거리의 넓은 퐁구르까지 폭포가 많습니다. 어떤 폭포를 고를지, 오토바이로 어떻게 가는지, 미끄러운 바위에서 안전하게 다니는 법을 알려드립니다.</p>
- <img class="heroimg" src="../../../img/fleet-gas.jpg" alt="오토바이로 달랏 근교 폭포 여행: 다딴라, 프렌, 코끼리 폭포, 퐁구르" width="1200" height="675">
+ <img class="heroimg" src="../../../img/w/fleet-gas.webp" alt="오토바이로 달랏 근교 폭포 여행: 다딴라, 프렌, 코끼리 폭포, 퐁구르" width="1200" height="675" fetchpriority="high" decoding="async">
 </div></div></header>
 <main class="wrap">
  <section class="prose">
@@ -184,7 +185,7 @@ footer a{color:inherit;text-decoration:underline}
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.dataset.l)}catch(e){}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText('vanphudalat')}catch(e){};b.textContent="WeChat ID가 복사되었습니다!";setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
 
 </script>
 </body>

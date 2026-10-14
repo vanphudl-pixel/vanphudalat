@@ -77,6 +77,7 @@ html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 .map{width:100%;height:340px;border:0;border-radius:12px;display:block}
 @media (max-width:480px){.hero h1{font-size:25px}}
 
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -140,7 +141,7 @@ footer a{color:inherit;text-decoration:underline}
 <a class="btn alt" href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener">Googleマップで開く</a></div>
 </div></div></header>
 <main class="wrap">
- <section><img src="../../img/electric-row.jpg" alt="ダラットの電動スクーターレンタル" style="width:100%;border-radius:12px" loading="lazy"></section>
+ <section><img src="../../img/t/electric-row.webp" alt="ダラットの電動スクーターレンタル" style="width:100%;border-radius:12px" loading="lazy" width="560" height="315" decoding="async" data-full="../../img/w/electric-row.webp"></section>
  <section><h2>電動スクーターの概要</h2><table class="price"><tr><td>料金</td><td><b>1日150,000ドン（固定）</b></td></tr><tr><td>航続距離</td><td><b>満充電で約40km</b></td></tr><tr><td>運転免許</td><td><b>不要</b></td></tr><tr><td>乗車</td><td><b>最大2人、合計体重120kg未満</b></td></tr><tr><td>レンタル時間</td><td><b>受け取りから当日21:00まで／朝4:30オープン</b></td></tr><tr><td>デポジット</td><td><b>現金なし — パスポートまたはIDカードを預けます</b></td></tr><tr><td>付属品</td><td><b>ヘルメットとスマホホルダー無料</b></td></tr><tr><td>配車</td><td><b>2日以上のレンタルで中心部ホテルへ無料配達</b></td></tr></table></section>
  <section><h2>こんな方におすすめ</h2><ul class="checks"><li>中心部の観光：スアンフーン湖、ナイトマーケット、クレイジーハウス、カフェ。</li><li>近場のスポット：ダタンラの滝（約5〜7km）、リンフオック寺（約8km）。</li><li>バイクの免許を持っていない旅行者。</li><li>ギアも給油もいらない、静かで簡単な運転をしたい方。</li></ul></section>
  <section><h2>出発前に知っておきたいこと</h2><ul class="checks"><li>電動スクーターはパワーが小さく、急な坂や峠ではゆっくりになります。</li><li>航続距離は約40kmなので、その範囲でルートを組み、電池が減る前に戻ってください。</li><li>カウダット茶畑、ランビアン山、滝めぐりなどの遠出にはホンダ エアブレード125ccがおすすめです。</li><li>2人の合計体重が120kg未満なら2人乗りできます。</li></ul></section>
@@ -159,7 +160,7 @@ footer a{color:inherit;text-decoration:underline}
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.dataset.l)}catch(e){}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText('vanphudalat')}catch(e){};b.textContent="WeChat IDをコピーしました！";setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
 
 </script>
 </body>

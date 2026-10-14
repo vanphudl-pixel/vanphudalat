@@ -77,6 +77,7 @@ html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 .map{width:100%;height:340px;border:0;border-radius:12px;display:block}
 @media (max-width:480px){.hero h1{font-size:25px}}
 
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -140,7 +141,7 @@ footer a{color:inherit;text-decoration:underline}
 <a class="btn alt" href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener">Open in Google Maps</a></div>
 </div></div></header>
 <main class="wrap">
- <section><img src="../img/electric-row.jpg" alt="Electric Scooter Rental in Da Lat" style="width:100%;border-radius:12px" loading="lazy"></section>
+ <section><img src="../img/t/electric-row.webp" alt="Electric Scooter Rental in Da Lat" style="width:100%;border-radius:12px" loading="lazy" width="560" height="315" decoding="async" data-full="../img/w/electric-row.webp"></section>
  <section><h2>Electric scooter at a glance</h2><table class="price"><tr><td>Price</td><td><b>150,000 VND per day, fixed</b></td></tr><tr><td>Range</td><td><b>about 40 km per full charge</b></td></tr><tr><td>Driver's license</td><td><b>not required</b></td></tr><tr><td>Load</td><td><b>max. 2 people, total weight under 120 kg</b></td></tr><tr><td>Rental day</td><td><b>from pickup until 9:00 PM; shop opens 4:30 AM</b></td></tr><tr><td>Deposit</td><td><b>no cash — leave your passport or ID card</b></td></tr><tr><td>Included</td><td><b>free helmet and phone holder</b></td></tr><tr><td>Delivery</td><td><b>free to central Da Lat hotels for rentals of 2+ days</b></td></tr></table></section>
  <section><h2>Great for</h2><ul class="checks"><li>Riding around the center: Xuan Huong Lake, the night market, Crazy House, cafés.</li><li>Short trips nearby, such as Datanla Waterfall (about 5–7 km) or Linh Phuoc Pagoda (about 8 km).</li><li>Travelers without a motorbike license.</li><li>Anyone who wants a quiet, simple ride — no gears, no fuel stops.</li></ul></section>
  <section><h2>Good to know before you ride</h2><ul class="checks"><li>Electric scooters have low power: they climb slowly on steep hills and passes.</li><li>With about 40 km per charge, plan your day within that distance and come back before the battery runs low.</li><li>For long trips such as the Cau Dat tea hills, Lang Biang or waterfall loops, choose the Honda Air Blade 125cc instead.</li><li>Two riders are fine only if your combined weight is under 120 kg.</li></ul></section>
@@ -159,7 +160,7 @@ footer a{color:inherit;text-decoration:underline}
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.dataset.l)}catch(e){}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText('vanphudalat')}catch(e){};b.textContent="WeChat ID copied!";setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
 
 </script>
 </body>

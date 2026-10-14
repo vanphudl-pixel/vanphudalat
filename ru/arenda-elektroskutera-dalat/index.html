@@ -77,6 +77,7 @@ html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 .map{width:100%;height:340px;border:0;border-radius:12px;display:block}
 @media (max-width:480px){.hero h1{font-size:25px}}
 
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -142,7 +143,7 @@ footer a{color:inherit;text-decoration:underline}
 <button class="btn wechat wcbtn" type="button">WeChat: vanphudalat</button></div>
 </div></div></header>
 <main class="wrap">
- <section><img src="../../img/electric-row.jpg" alt="Аренда электроскутера в Далате" style="width:100%;border-radius:12px" loading="lazy"></section>
+ <section><img src="../../img/t/electric-row.webp" alt="Аренда электроскутера в Далате" style="width:100%;border-radius:12px" loading="lazy" width="560" height="315" decoding="async" data-full="../../img/w/electric-row.webp"></section>
  <section><h2>Коротко об электроскутере</h2><table class="price"><tr><td>Цена</td><td><b>150 000 донгов в день, фиксированная</b></td></tr><tr><td>Запас хода</td><td><b>около 40 км на полном заряде</b></td></tr><tr><td>Права</td><td><b>не нужны</b></td></tr><tr><td>Нагрузка</td><td><b>максимум 2 человека, общий вес до 120 кг</b></td></tr><tr><td>День аренды</td><td><b>с момента получения до 21:00; открываемся в 4:30</b></td></tr><tr><td>Залог</td><td><b>без денег — оставляете паспорт или ID-карту</b></td></tr><tr><td>Включено</td><td><b>шлем и держатель для телефона бесплатно</b></td></tr><tr><td>Доставка</td><td><b>бесплатно в отели центра при аренде от 2 дней</b></td></tr></table></section>
  <section><h2>Подходит для</h2><ul class="checks"><li>Поездок по центру: озеро Суан Хыонг, ночной рынок, Сумасшедший дом, кафе.</li><li>Коротких выездов: водопад Датанла (около 5–7 км), пагода Линьфуок (около 8 км).</li><li>Туристов без мотоциклетных прав.</li><li>Тех, кто хочет тихую и простую езду — без передач и заправок.</li></ul></section>
  <section><h2>Важно знать</h2><ul class="checks"><li>У электроскутера небольшая мощность: на крутых подъёмах и перевалах он едет медленно.</li><li>Запас хода около 40 км — планируйте маршрут в этих пределах и возвращайтесь до разряда батареи.</li><li>Для дальних поездок (чайные холмы Каудат, Лангбианг, водопады) лучше взять Honda Air Blade 125cc.</li><li>Вдвоём можно, если общий вес меньше 120 кг.</li></ul></section>
@@ -163,7 +164,7 @@ footer a{color:inherit;text-decoration:underline}
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.dataset.l)}catch(e){}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText('vanphudalat')}catch(e){};b.textContent="WeChat ID скопирован!";setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
 
 </script>
 </body>

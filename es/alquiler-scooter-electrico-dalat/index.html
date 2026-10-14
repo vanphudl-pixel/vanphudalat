@@ -77,6 +77,7 @@ html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 .map{width:100%;height:340px;border:0;border-radius:12px;display:block}
 @media (max-width:480px){.hero h1{font-size:25px}}
 
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -140,7 +141,7 @@ footer a{color:inherit;text-decoration:underline}
 <a class="btn alt" href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener">Abrir en Google Maps</a></div>
 </div></div></header>
 <main class="wrap">
- <section><img src="../../img/electric-row.jpg" alt="Alquiler de scooter eléctrico en Da Lat" style="width:100%;border-radius:12px" loading="lazy"></section>
+ <section><img src="../../img/t/electric-row.webp" alt="Alquiler de scooter eléctrico en Da Lat" style="width:100%;border-radius:12px" loading="lazy" width="560" height="315" decoding="async" data-full="../../img/w/electric-row.webp"></section>
  <section><h2>El scooter eléctrico en resumen</h2><table class="price"><tr><td>Precio</td><td><b>150.000 VND al día, precio fijo</b></td></tr><tr><td>Autonomía</td><td><b>unos 40 km por carga completa</b></td></tr><tr><td>Carné</td><td><b>no es necesario</b></td></tr><tr><td>Carga</td><td><b>máx. 2 personas, peso total inferior a 120 kg</b></td></tr><tr><td>Día de alquiler</td><td><b>desde la recogida hasta las 21:00; abrimos a las 4:30</b></td></tr><tr><td>Depósito</td><td><b>sin efectivo: deja tu pasaporte o documento de identidad</b></td></tr><tr><td>Incluido</td><td><b>casco y soporte para el móvil gratis</b></td></tr><tr><td>Entrega</td><td><b>gratis en hoteles del centro a partir de 2 días</b></td></tr></table></section>
  <section><h2>Ideal para</h2><ul class="checks"><li>Moverse por el centro: lago Xuan Huong, mercado nocturno, Crazy House, cafés.</li><li>Salidas cortas como la cascada de Datanla (unos 5–7 km) o la pagoda Linh Phuoc (unos 8 km).</li><li>Viajeros sin carné de moto.</li><li>Quien quiera una conducción sencilla y silenciosa: sin marchas y sin gasolina.</li></ul></section>
  <section><h2>Antes de salir</h2><ul class="checks"><li>El scooter eléctrico tiene poca potencia y sube despacio las cuestas empinadas y los puertos.</li><li>Con unos 40 km de autonomía, planifica la ruta dentro de esa distancia y vuelve antes de que se agote la batería.</li><li>Para viajes largos como las colinas de té de Cau Dat, Lang Biang o la ruta de cascadas, mejor la Honda Air Blade 125cc.</li><li>Se puede ir de dos si el peso total es inferior a 120 kg.</li></ul></section>
@@ -159,7 +160,7 @@ footer a{color:inherit;text-decoration:underline}
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.dataset.l)}catch(e){}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText('vanphudalat')}catch(e){};b.textContent="¡ID de WeChat copiado!";setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
 
 </script>
 </body>

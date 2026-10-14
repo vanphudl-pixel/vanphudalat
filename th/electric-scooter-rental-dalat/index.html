@@ -77,6 +77,7 @@ html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 .map{width:100%;height:340px;border:0;border-radius:12px;display:block}
 @media (max-width:480px){.hero h1{font-size:25px}}
 
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -140,7 +141,7 @@ footer a{color:inherit;text-decoration:underline}
 <a class="btn alt" href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener">เปิดใน Google Maps</a></div>
 </div></div></header>
 <main class="wrap">
- <section><img src="../../img/electric-row.jpg" alt="เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด" style="width:100%;border-radius:12px" loading="lazy"></section>
+ <section><img src="../../img/t/electric-row.webp" alt="เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด" style="width:100%;border-radius:12px" loading="lazy" width="560" height="315" decoding="async" data-full="../../img/w/electric-row.webp"></section>
  <section><h2>ข้อมูลสกู๊ตเตอร์ไฟฟ้า</h2><table class="price"><tr><td>ราคา</td><td><b>วันละ 150,000 ดอง ราคาคงที่</b></td></tr><tr><td>ระยะทาง</td><td><b>ประมาณ 40 กม. ต่อการชาร์จเต็ม</b></td></tr><tr><td>ใบขับขี่</td><td><b>ไม่จำเป็น</b></td></tr><tr><td>น้ำหนักบรรทุก</td><td><b>สูงสุด 2 คน น้ำหนักรวมไม่เกิน 120 กก.</b></td></tr><tr><td>เวลาเช่า</td><td><b>ตั้งแต่รับรถถึง 21:00 น. ร้านเปิด 4:30 น.</b></td></tr><tr><td>มัดจำ</td><td><b>ไม่ต้องใช้เงินสด ฝากพาสปอร์ตหรือบัตรประชาชน</b></td></tr><tr><td>ฟรี</td><td><b>หมวกกันน็อกและที่จับโทรศัพท์</b></td></tr><tr><td>ส่งรถ</td><td><b>ส่งฟรีถึงโรงแรมในตัวเมืองเมื่อเช่า 2 วันขึ้นไป</b></td></tr></table></section>
  <section><h2>เหมาะสำหรับ</h2><ul class="checks"><li>เที่ยวในเมือง: ทะเลสาบซวนเฮือง ตลาดกลางคืน Crazy House คาเฟ่</li><li>ที่เที่ยวใกล้ ๆ เช่น น้ำตกดาตันลา (ประมาณ 5–7 กม.) วัดลินห์เฟือก (ประมาณ 8 กม.)</li><li>นักท่องเที่ยวที่ไม่มีใบขับขี่รถจักรยานยนต์</li><li>คนที่อยากขับง่าย ๆ เงียบ ๆ ไม่ต้องเปลี่ยนเกียร์ ไม่ต้องเติมน้ำมัน</li></ul></section>
  <section><h2>ข้อควรรู้ก่อนออกเดินทาง</h2><ul class="checks"><li>สกู๊ตเตอร์ไฟฟ้ามีกำลังน้อย ขึ้นเนินชันและทางขึ้นเขาจะช้า</li><li>ชาร์จเต็มวิ่งได้ประมาณ 40 กม. วางแผนเส้นทางให้อยู่ในระยะนี้และกลับก่อนแบตหมด</li><li>ถ้าจะไปไกล เช่น ไร่ชาเกิ่วดั๊ต ภูเขาลางเบียง หรือเที่ยวน้ำตก แนะนำ Honda Air Blade 125cc</li><li>ซ้อน 2 คนได้ถ้าน้ำหนักรวมไม่เกิน 120 กก.</li></ul></section>
@@ -159,7 +160,7 @@ footer a{color:inherit;text-decoration:underline}
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.dataset.l)}catch(e){}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText('vanphudalat')}catch(e){};b.textContent="คัดลอก WeChat ID แล้ว!";setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
 
 </script>
 </body>

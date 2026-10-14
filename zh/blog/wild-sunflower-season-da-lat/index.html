@@ -77,6 +77,7 @@ html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 .map{width:100%;height:340px;border:0;border-radius:12px;display:block}
 @media (max-width:480px){.hero h1{font-size:25px}}
 
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -136,7 +137,7 @@ footer a{color:inherit;text-decoration:underline}
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs"><a href="../../../blog/wild-sunflower-season-da-lat/" hreflang="en" data-l="en">EN</a><a href="../../../ru/blog/dikie-podsolnukhi-dalat/" hreflang="ru" data-l="ru">RU</a><a href="../../../zh/blog/wild-sunflower-season-da-lat/" hreflang="zh" data-l="zh" class="on" aria-current="page">中文</a><a href="../../../ko/blog/wild-sunflower-season-da-lat/" hreflang="ko" data-l="ko">한국어</a><a href="../../../ja/blog/wild-sunflower-season-da-lat/" hreflang="ja" data-l="ja">日本語</a><a href="../../../th/blog/wild-sunflower-season-da-lat/" hreflang="th" data-l="th">ไทย</a><a href="../../../id/blog/wild-sunflower-season-da-lat/" hreflang="id" data-l="id">ID</a><a href="../../../ms/blog/wild-sunflower-season-da-lat/" hreflang="ms" data-l="ms">MY</a><a href="../../../vi/blog/mua-hoa-da-quy-da-lat/" hreflang="vi" data-l="vi">VI</a><a href="../../../de/blog/wild-sunflower-season-da-lat/" hreflang="de" data-l="de">DE</a><a href="../../../fr/blog/wild-sunflower-season-da-lat/" hreflang="fr" data-l="fr">FR</a><a href="../../../es/blog/wild-sunflower-season-da-lat/" hreflang="es" data-l="es">ES</a><a href="../../../he/blog/wild-sunflower-season-da-lat/" hreflang="he" data-l="he">עב</a></div></div>
 <div class="hero"><div class="crumbs"><a href="../../../zh/dalat-motorbike-rental/">大叻摩托车租赁</a> › <a href="../../../zh/blog/">攻略</a></div>
  <h1>大叻野葵花（Dã Quỳ）花季：骑摩托车去哪里看</h1><p class="lead">每年11月，大叻周围的山坡都会被金黄色的野葵花（越南语dã quỳ）点亮。下面告诉你花期、骑车去哪里看，以及怎样安全出行。</p>
- <img class="heroimg" src="../../../img/airblade.jpg" alt="大叻野葵花（Dã Quỳ）花季：骑摩托车去哪里看" width="1200" height="675">
+ <img class="heroimg" src="../../../img/w/airblade.webp" alt="大叻野葵花（Dã Quỳ）花季：骑摩托车去哪里看" width="1200" height="675" fetchpriority="high" decoding="async">
 </div></div></header>
 <main class="wrap">
  <section class="prose">
@@ -186,7 +187,7 @@ footer a{color:inherit;text-decoration:underline}
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.dataset.l)}catch(e){}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText('vanphudalat')}catch(e){};b.textContent="已复制微信号！";setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
 
 </script>
 </body>

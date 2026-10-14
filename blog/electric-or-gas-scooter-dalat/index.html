@@ -77,6 +77,7 @@ html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 .map{width:100%;height:340px;border:0;border-radius:12px;display:block}
 @media (max-width:480px){.hero h1{font-size:25px}}
 
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -136,7 +137,7 @@ footer a{color:inherit;text-decoration:underline}
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs"><a href="../../blog/electric-or-gas-scooter-dalat/" hreflang="en" data-l="en" class="on" aria-current="page">EN</a><a href="../../ru/blog/elektroskuter-ili-benzinovyy-dalat/" hreflang="ru" data-l="ru">RU</a><a href="../../zh/blog/electric-or-gas-scooter-dalat/" hreflang="zh" data-l="zh">中文</a><a href="../../ko/blog/electric-or-gas-scooter-dalat/" hreflang="ko" data-l="ko">한국어</a><a href="../../ja/blog/electric-or-gas-scooter-dalat/" hreflang="ja" data-l="ja">日本語</a><a href="../../th/blog/electric-or-gas-scooter-dalat/" hreflang="th" data-l="th">ไทย</a><a href="../../id/blog/motor-listrik-atau-bensin-dalat/" hreflang="id" data-l="id">ID</a><a href="../../ms/blog/skuter-elektrik-atau-petrol-dalat/" hreflang="ms" data-l="ms">MY</a><a href="../../vi/blog/thue-xe-may-dien-hay-xe-xang-da-lat/" hreflang="vi" data-l="vi">VI</a><a href="../../de/blog/e-roller-oder-benzinroller-dalat/" hreflang="de" data-l="de">DE</a><a href="../../fr/blog/scooter-electrique-ou-essence-dalat/" hreflang="fr" data-l="fr">FR</a><a href="../../es/blog/scooter-electrico-o-gasolina-dalat/" hreflang="es" data-l="es">ES</a><a href="../../he/blog/electric-or-gas-scooter-dalat/" hreflang="he" data-l="he">עב</a></div></div>
 <div class="hero"><div class="crumbs"><a href="../../dalat-motorbike-rental/">Motorbike rental Da Lat</a> › <a href="../../blog/">Blog</a></div>
  <h1>Electric Scooter or Gas Scooter: Which One to Rent in Da Lat?</h1><p class="lead">Both cost 150,000 VND per day, but they suit very different days. Here's how to choose between an electric scooter and a gas scooter in Da Lat.</p>
- <img class="heroimg" src="../../img/electric-helmets.jpg" alt="Electric Scooter or Gas Scooter: Which One to Rent in Da Lat?" width="1200" height="675">
+ <img class="heroimg" src="../../img/w/electric-helmets.webp" alt="Electric Scooter or Gas Scooter: Which One to Rent in Da Lat?" width="1200" height="675" fetchpriority="high" decoding="async">
 </div></div></header>
 <main class="wrap">
  <section class="prose">
@@ -181,7 +182,7 @@ footer a{color:inherit;text-decoration:underline}
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.dataset.l)}catch(e){}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText('vanphudalat')}catch(e){};b.textContent="WeChat ID copied!";setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
 
 </script>
 </body>

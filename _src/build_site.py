@@ -36,6 +36,7 @@ ARTICLES = list(C["en"]["articles"].keys())
 DATES = C["en"].get("dates", {})
 def adate(k): return DATES.get(k, "2026-10-10")
 CSS = re.search(r"<style>(.*?)</style>", TPL, re.S).group(1) + """
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -267,7 +268,7 @@ def foot(l, root_redirect=False, frm=None):
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{{try{{localStorage.setItem('lang',a.dataset.l)}}catch(e){{}}}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{{try{{navigator.clipboard.writeText('vanphudalat')}}catch(e){{}};b.textContent={json.dumps(u["copied"], ensure_ascii=False)};setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)}});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{{lb.querySelector('img').src=i.src;lb.classList.add('on')}});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')}});lb.onclick=()=>lb.classList.remove('on');
 {redirect}
 </script>
 </body>
@@ -504,7 +505,44 @@ def page_ev(l):
     return head(l, "ev", None, e["title"], e["desc"], [svc, faq_ld, crumbs_ld(l, [(e["crumb"], me)])], "electric-row") + body + foot(l, frm=me)
 
 # ------------------------------------------------------------------ write
+# ---- speed: serve WebP copies of every JPG (full size for the hero, small for lazy images)
+from PIL import Image as _Im
+_WEBP = {}
+def _webp(name, kind):
+    """img/<name>.jpg -> img/w/<name>.webp (<=1200px) or img/t/<name>.webp (<=560px); returns (path, w, h) or None"""
+    key = (name, kind)
+    if key in _WEBP: return _WEBP[key]
+    src = OUT / "img" / (name + ".jpg")
+    if not src.exists(): _WEBP[key] = None; return None
+    dst = OUT / "img" / kind / (name + ".webp")
+    im = _Im.open(src); w0, h0 = im.size
+    mx = 1200 if kind == "w" else 560
+    w, h = (w0, h0) if w0 <= mx else (mx, round(h0 * mx / w0))
+    if not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime:
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        im.convert("RGB").resize((w, h), _Im.LANCZOS).save(dst, "WEBP", quality=70 if kind == "w" else 66, method=6)
+    _WEBP[key] = (f"{kind}/{name}.webp", w, h); return _WEBP[key]
+_IMG_RE = re.compile(r'<img ([^>]*?)src="([^"]*?)img/([a-z0-9/_-]+)\.jpg"([^>]*)>')
+def speed(html):
+    def sub(m):
+        a, pre, name, b = m.groups(); attrs = a + b
+        hero = "heroimg" in attrs
+        r = _webp(name, "w" if hero else "t")
+        if not r: return m.group(0)
+        path, w, h = r
+        extra = ""
+        if "width=" not in attrs: extra += f' width="{w}" height="{h}"'
+        if hero: extra += ' fetchpriority="high" decoding="async"'
+        else:
+            extra += ' decoding="async"'
+            if "loading=" not in attrs: extra += ' loading="lazy"'
+            full = _webp(name, "w")
+            if full: extra += f' data-full="{pre}img/{full[0]}"'
+        return f'<img {a}src="{pre}img/{path}"{b}{extra}>'
+    return _IMG_RE.sub(sub, html)
+
 def write(path, html):
+    html = speed(html)
     p = OUT / path / "index.html"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(html, encoding="utf-8")

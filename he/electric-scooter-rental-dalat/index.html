@@ -77,6 +77,7 @@ html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 .map{width:100%;height:340px;border:0;border-radius:12px;display:block}
 @media (max-width:480px){.hero h1{font-size:25px}}
 
+img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
 .langs a.on{background:#fff;color:var(--brand)}
@@ -140,7 +141,7 @@ footer a{color:inherit;text-decoration:underline}
 <a class="btn alt" href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener">פתיחה ב-Google Maps</a></div>
 </div></div></header>
 <main class="wrap">
- <section><img src="../../img/electric-row.jpg" alt="השכרת קטנוע חשמלי בדאלאט" style="width:100%;border-radius:12px" loading="lazy"></section>
+ <section><img src="../../img/t/electric-row.webp" alt="השכרת קטנוע חשמלי בדאלאט" style="width:100%;border-radius:12px" loading="lazy" width="560" height="315" decoding="async" data-full="../../img/w/electric-row.webp"></section>
  <section><h2>הקטנוע החשמלי בקצרה</h2><table class="price"><tr><td>מחיר</td><td><b>150,000 דונג ליום, מחיר קבוע</b></td></tr><tr><td>טווח</td><td><b>כ-40 ק"מ בטעינה מלאה</b></td></tr><tr><td>רישיון נהיגה</td><td><b>לא נדרש</b></td></tr><tr><td>משקל</td><td><b>עד 2 רוכבים, משקל כולל מתחת ל-120 ק"ג</b></td></tr><tr><td>יום השכרה</td><td><b>מרגע האיסוף עד 21:00; החנות נפתחת ב-4:30</b></td></tr><tr><td>פיקדון</td><td><b>ללא מזומן – משאירים דרכון או תעודה מזהה</b></td></tr><tr><td>כלול</td><td><b>קסדה ומחזיק לטלפון בחינם</b></td></tr><tr><td>משלוח</td><td><b>חינם למלונות במרכז בהשכרה של יומיים ומעלה</b></td></tr></table></section>
  <section><h2>מתאים ל</h2><ul class="checks"><li>סיבוב במרכז: אגם שואן הואנג, שוק הלילה, הבית המטורף, בתי קפה.</li><li>יציאות קצרות כמו מפל דטנלה (כ-5–7 ק"מ) או פגודת לין פואוק (כ-8 ק"מ).</li><li>מטיילים ללא רישיון לאופנוע.</li><li>מי שרוצה רכיבה שקטה ופשוטה – בלי הילוכים ובלי תדלוק.</li></ul></section>
  <section><h2>כדאי לדעת לפני היציאה</h2><ul class="checks"><li>לקטנוע החשמלי הספק נמוך, ולכן הוא איטי בעליות תלולות ובמעברי הרים.</li><li>עם טווח של כ-40 ק"מ, תכננו את המסלול בטווח הזה וחזרו לפני שהסוללה נגמרת.</li><li>לטיולים ארוכים כמו גבעות התה של קאו דאט, לאנג ביאנג או סיבוב המפלים, עדיף להונדה אייר בלייד 125.</li><li>אפשר לרכוב בשניים אם המשקל הכולל מתחת ל-120 ק"ג.</li></ul></section>
@@ -159,7 +160,7 @@ footer a{color:inherit;text-decoration:underline}
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.dataset.l)}catch(e){}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{try{navigator.clipboard.writeText('vanphudalat')}catch(e){};b.textContent="מזהה WeChat הועתק!";setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)});
-const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
+const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');
 
 </script>
 </body>
