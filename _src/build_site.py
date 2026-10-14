@@ -347,7 +347,17 @@ def page_home(l):
     else:
         mp = f'<iframe class="map" src="https://maps.google.com/maps?q={LAT},{LON}&hl={l}&z=17&output=embed" loading="lazy" title="Google Maps"></iframe><p class="note"><a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a>' + (f' · <a href="{AMAP}" target="_blank" rel="noopener">高德地图</a>' if l == "zh" else "") + '</p>'
     imgs = [("electric-row", 1), ("airblade", 2), ("electric-helmets", 3), ("fleet-gas", 4), ("vision-white", 5), ("guest-1", 6), ("guest-2", 7)]
-    gallery = "".join(f'<img src="{pre}img/{n}.jpg" alt="{alt} {i}" loading="lazy">' for n, i in imgs)
+    galts = h.get("gallery_alts")
+    gallery = "".join(f'<img src="{pre}img/{n}.jpg" alt="{galts[i-1] if galts else f"{alt} {i}"}" loading="lazy">' for n, i in imgs)
+    cmp_sec = ""
+    if h.get("compare"):
+        hd = "".join(f"<th>{c}</th>" for c in h["compare_head"])
+        rows = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in h["compare"])
+        cmp_sec = f'<section><h2>{h["h_compare"]}</h2><div style="overflow-x:auto"><table class="price">{"<tr>"+hd+"</tr>"}{rows}</table></div></section>'
+    tips_sec = ""
+    if h.get("tips"):
+        tips_sec = '<section class="prose"><h2>' + h["h_tips"] + '</h2><ul>' + "".join(f"<li><b>{b}</b> — {t}</li>" for b, t in h["tips"]) + "</ul></section>"
+    upd = f'<p class="note">{h["updated"]}</p>' if h.get("updated") else ""
     body = f"""
 <header><div class="wrap">{langbar(l, "home", None, me)}
 <div class="hero">
@@ -363,14 +373,16 @@ def page_home(l):
   <tr><td>Honda Vision 110cc</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr>
   <tr><td>Honda Air Blade 125cc</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr>
   <tr><td>{h["electric_name"]}</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr></table>
-  <p class="note">{h["price_note"]}</p></section>
+  <p class="note">{h["price_note"]}</p>{upd}</section>
  <section><h2>{h["h_conditions"]}</h2><ul class="checks">{conds}</ul></section>
+ {cmp_sec}
  <section><h2>{h["h_fleet"]}</h2><div class="grid">
   <div class="card"><img src="{pre}img/vision-white.jpg" alt="Honda Vision 110cc — {alt}" loading="lazy"><b>Honda Vision 110cc</b><span>{h["vision"]}</span></div>
   <div class="card"><img src="{pre}img/airblade.jpg" alt="Honda Air Blade 125cc — {alt}" loading="lazy"><b>Honda Air Blade 125cc</b><span>{h["airblade"]}</span></div>
   <div class="card"><img src="{pre}img/electric-helmets.jpg" alt="{h["electric_name"]} — {alt}" loading="lazy"><b><a href="{rel(me, ev_path(l))}">{h["electric_name"]}</a></b><span>{h["electric"]} <a href="{rel(me, ev_path(l))}">{EV[l]["more"]}</a></span></div>
  </div></section>
  <section><h2>{h["h_how"]}</h2><ol>{steps}</ol></section>
+ {tips_sec}
  <section><h2>{h["h_rules"]}</h2><div class="rules">{rules}</div></section>
  <section class="prose"><h2>{h["h_why"]}</h2>{why}
   <p><a class="btn alt" href="{rel(me, routes_path(l))}" style="border:1px solid var(--line)">{h["routes_btn"]}</a></p></section>
