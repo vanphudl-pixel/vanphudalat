@@ -1,0 +1,320 @@
+"""Dutch blog articles — same keys and order as content/en.py: (slug, title, h1, desc, lead, image, html)."""
+ARTICLES = {
+"weather": ("weer-dalat", "Het weer in Da Lat per maand: wanneer ga je? | Van Phu",
+ "Het weer in Da Lat per maand: wanneer ga je?",
+ "Hoe het weer in Da Lat is per maand, wanneer het droge en het natte seizoen zijn, wat je inpakt en wanneer je het best scooter rijdt.",
+ "Da Lat ligt op ongeveer 1.500 meter hoogte, dus de hitte van de kust heb je hier niet. Vietnamezen noemen het de stad van de eeuwige lente.",
+ "electric-row", """
+<h2>Het klimaat van Da Lat in het kort</h2>
+<p>Overdag is het in Da Lat meestal aangenaam — rond de 20–25 °C. 's Avonds en 's nachts is het duidelijk koeler, vooral in het droge seizoen, wanneer het kan zakken tot ongeveer 10–15 °C. Neem dus zelfs in de zomer een jas of warme trui mee.</p>
+<h2>Droog seizoen: december tot april</h2>
+<p>De zonnigste en meest stabiele tijd. Heldere luchten, weinig regen en droge wegen — ideaal om de stad uit te rijden naar de theeheuvels van Cau Dat, de Lang Biang-berg en de watervallen. De ochtenden kunnen fris en mistig zijn en warmen tegen de middag op.</p>
+<p>In januari en februari bloeien de wilde Himalaya-kersenbomen en kleurt de stad roze — een van de mooiste momenten van het jaar.</p>
+<h2>Regenseizoen: mei tot november</h2>
+<p>Regen valt meestal in de tweede helft van de dag en kan hevig maar kort zijn. De ochtenden zijn meestal helder, dus plan lange ritten in de eerste helft van de dag. Daar staat tegenover dat er minder toeristen zijn, alles groen is en de watervallen op hun volst zijn.</p>
+<h2>Wanneer het het drukst is in Da Lat</h2>
+<ul>
+<li><b>Tết (Vietnamees Nieuwjaar, januari–februari)</b> — hoogseizoen met bezoekers uit het hele land; boek hotels en vervoer op tijd.</li>
+<li><b>Weekenden</b> — veel bezoekers uit Ho Chi Minh-stad, met meer auto's en scooters in het centrum.</li>
+<li><b>Doordeweekse dagen</b> — de rustigste tijd, vooral in het regenseizoen.</li>
+</ul>
+<h2>Wat pak je in</h2>
+<ul>
+<li>Een jas of windjack voor de avonden en de ritten.</li>
+<li>Een regenjas — overal in Da Lat te koop en goedkoop.</li>
+<li>Dichte schoenen voor heuvels en watervallen.</li>
+<li>Zonnebrandcrème — op hoogte is de zon sterker dan je denkt.</li>
+</ul>
+<h2>Weer en scooterrijden</h2>
+<p>In het droge seizoen kun je zonder zorgen hele dagen rijden. In het regenseizoen vertrek je vroeg en ben je terug voor de lunch; rijd bij mist langzaam en met je lichten aan. Als het giet, wacht je het af in een café — meestal stopt het binnen een uur of twee.</p>
+"""),
+"getting": ("hoe-kom-je-in-dalat", "Hoe kom je in Da Lat vanuit Nha Trang, Ho Chi Minh-stad en Mui Ne | Van Phu",
+ "Hoe kom je in Da Lat vanuit Nha Trang, Ho Chi Minh-stad en Mui Ne",
+ "Zo kom je in Da Lat vanuit Nha Trang, Ho Chi Minh-stad en Mui Ne: bussen, limousinebusjes en vluchten. Reistijden en tips.",
+ "Da Lat ligt in de bergen en er is geen spoorlijn vanuit de grote steden. Je komt er met de bus, een minibusje of het vliegtuig — dit is het handigst.",
+ "fleet-gas", """
+<h2>Vanuit Nha Trang</h2>
+<p>Een erg populaire route. Het is ongeveer 135–140 km over een mooie bergweg met een pas, zo'n 3,5–4 uur.</p>
+<ul>
+<li><b>Bus</b> — meerdere vertrekken per dag van verschillende maatschappijen, bijvoorbeeld Futa (Phương Trang).</li>
+<li><b>Limousinebusje</b> — kleine minibusjes met comfortabele stoelen die je vaak bij je hotel ophalen.</li>
+</ul>
+<p>Tip: de weg is bochtig — word je snel wagenziek, ga dan voorin zitten en eet geen zware maaltijd voor vertrek.</p>
+<h2>Vanuit Ho Chi Minh-stad</h2>
+<p>Ongeveer 300 km.</p>
+<ul>
+<li><b>Nachtbus met slaapplaatsen</b> — ongeveer 6–8 uur, en je bespaart een hotelnacht.</li>
+<li><b>Vliegtuig</b> — ongeveer een uur naar luchthaven Lien Khuong. Van de luchthaven naar het centrum van Da Lat is het ongeveer 30 km met een taxi of shuttle.</li>
+</ul>
+<h2>Vanuit Mui Ne</h2>
+<p>Ongeveer 160 km, zo'n 4 uur met de bus of een minibusje. De weg klimt van de zee de bergen in en het wordt merkbaar koeler — houd een trui bij de hand.</p>
+<h2>Waar koop je kaartjes</h2>
+<p>Buskaartjes koop je bij de kantoren van de busmaatschappijen, in apps en bij de meeste hotels en reisbureaus. Op feestdagen en tijdens Tết zijn ze snel uitverkocht — boek vooraf.</p>
+<h2>Je scooter bij aankomst</h2>
+<p>Bussen komen meestal aan bij het busstation of bij de kantoren van de maatschappijen in Da Lat. Huur je een scooter voor 2 dagen of meer, dan bezorgen we hem gratis bij je hotel in het centrum — je hoeft nergens heen. Stuur ons vooraf je aankomstdatum en de naam van je hotel.</p>
+"""),
+"days3": ("dalat-in-3-dagen", "Da Lat in 3 dagen per scooter: een kant-en-klaar reisschema | Van Phu",
+ "Da Lat in 3 dagen per scooter: een kant-en-klaar reisschema",
+ "Wat zie je in Da Lat in 3 dagen: een reisschema per dag op de scooter — het centrum, de Datanla-waterval, het Tuyen Lam-meer, de theeheuvels van Cau Dat en de Linh Phuoc-pagode.",
+ "Drie dagen is precies genoeg om in een rustig tempo de hoogtepunten van Da Lat en omgeving te zien. Dit is het schema dat we onze gasten aanraden.",
+ "airblade", """
+<h2>Dag 1. Het centrum van Da Lat</h2>
+<ul>
+<li><b>Ochtend:</b> een rondje om het Xuan Huong-meer en koffie aan het water.</li>
+<li><b>Middag:</b> het Crazy House, een bijzonder galerie-huis, en daarna het oude, door de Fransen gebouwde treinstation.</li>
+<li><b>Avond:</b> de avondmarkt bij de centrale markt — streetfood, souvenirs en warme sojamelk.</li>
+</ul>
+<p>In het centrum zijn de afstanden kort, dus voor deze dag is elke scooter geschikt, ook een elektrische.</p>
+<h2>Dag 2. Watervallen, een meer en een klooster</h2>
+<ul>
+<li><b>Ochtend:</b> de Datanla-waterval ten zuiden van de stad — neem de rodelbaan naar het water.</li>
+<li><b>Middag:</b> de kabelbaan van Robin Hill naar het Truc Lam-klooster en het Tuyen Lam-meer.</li>
+<li><b>Avond:</b> zonsondergang in een café tussen de dennen.</li>
+</ul>
+<h2>Dag 3. Zonsopkomst boven de theeheuvels</h2>
+<ul>
+<li><b>Zonsopkomst:</b> de theeheuvels van Cau Dat — mist boven de heuvels en verse thee in een plantagecafé.</li>
+<li><b>Middag:</b> op de terugweg de mozaïekpagode Linh Phuoc in Trai Mat.</li>
+<li><b>Avond:</b> de Valley of Love of de Lang Biang-berg ten noorden van de stad.</li>
+</ul>
+<p>Voor dag drie raden we de Honda Air Blade 125cc aan — die gaat zelfverzekerder op lange klimmen.</p>
+<h2>Goed om te weten</h2>
+<ul>
+<li>Begin vroeg: minder toeristen en mooier licht voor foto's.</li>
+<li>Plan in het regenseizoen lange ritten in de eerste helft van de dag.</li>
+<li>Zet je scooter op een betaalde, bewaakte parkeerplaats — dat is goedkoop.</li>
+</ul>
+<p>Meer over elke plek in onze gids <a href="{ROUTES}">"Wat te zien in Da Lat per scooter: 5 routes"</a>.</p>
+"""),
+"food": ("wat-te-eten-in-dalat", "Wat eet je in Da Lat: lokale gerechten en cafés | Van Phu",
+ "Wat eet je in Da Lat: lokale gerechten en cafés",
+ "Gerechten die je in Da Lat moet proberen: bánh tráng nướng, bánh căn, nem nướng, lẩu gà lá é, avocado-ijs, aardbeien en artisjokthee. Waar en wanneer je ze proeft.",
+ "Da Lat is de culinaire hoofdstad van de Vietnamese hooglanden. Een koel klimaat, verse producten van lokale boerderijen — en een eigen keuken die je moet proeven.",
+ "electric-helmets", """
+<h2>Bánh tráng nướng — de "pizza van Da Lat"</h2>
+<p>Dun rijstpapier gegrild boven houtskool met ei, lente-ui, gedroogde garnalen en sauzen. Het populairste streetfood van Da Lat — zoek ernaar 's avonds op de avondmarkt en in de steegjes rond het centrum.</p>
+<h2>Bánh căn</h2>
+<p>Kleine rijstpannenkoekjes gebakken in kleivormpjes, geserveerd met vissaus, gehaktballetjes en kruiden. Perfect als ontbijt of als snack op een koele avond.</p>
+<h2>Nem nướng</h2>
+<p>Gegrilde varkensworstjes in rijstpapier met kruiden, komkommer en krokant deeg, gedoopt in een dikke saus.</p>
+<h2>Lẩu gà lá é</h2>
+<p>Een hotpot met kip en geurige é-bladeren — hét gerecht voor koele avonden in Da Lat. Meestal bestel je het om te delen.</p>
+<h2>Warme sojamelk</h2>
+<p>'s Avonds verkopen straatverkopers warme sojamelk met kleine gebakjes — de locals drinken het om op te warmen.</p>
+<h2>Zoetigheid en fruit</h2>
+<ul>
+<li><b>Avocado-ijs</b> — geprakte avocado met kokosijs.</li>
+<li><b>Aardbeien</b> — Da Lat is beroemd om zijn aardbeienkwekerijen; je vindt ze vers, als jam en gedroogd.</li>
+<li><b>Artisjokthee</b> — een lokale kruidenthee en een populair souvenir.</li>
+</ul>
+<h2>Koffie</h2>
+<p>Rond Da Lat liggen veel koffieplantages. Probeer Vietnamese koffie met gecondenseerde melk in een café met uitzicht over de dennenheuvels — makkelijk te bereiken met de scooter.</p>
+<h2>Tips</h2>
+<ul>
+<li>De avondmarkt komt 's avonds tot leven — de beste tijd voor streetfood.</li>
+<li>Check op toeristische plekken de prijzen voordat je bestelt.</li>
+<li>De avonden zijn koel — neem een jas mee, ook al was de dag warm.</li>
+</ul>
+"""),
+"riding": ("tips-scooterrijden-vietnam", "Scooterrijden in Vietnam: tips voor toeristen | Van Phu",
+ "Scooterrijden in Vietnam: tips voor toeristen",
+ "Tips voor toeristen die een scooter huren in Vietnam en Da Lat: helmen, alcohol, verkeersregels, bergwegen, regen en mist, parkeren.",
+ "Een scooter is de handigste manier om je in Vietnam te verplaatsen, maar het lokale verkeer voelt in het begin chaotisch. Met deze eenvoudige regels rijd je rustig en veilig.",
+ "vision-white", """
+<h2>De belangrijkste regels</h2>
+<ul>
+<li><b>Een helm is verplicht</b> voor bestuurder en passagier. Bij elke scooter krijg je een gratis helm.</li>
+<li><b>Geen alcohol als je rijdt</b>, ook geen bier. Vietnam straft dit streng en het is verboden volgens onze huurregels.</li>
+<li><b>Er wordt rechts gereden.</b></li>
+<li><b>Houd je aan de Vietnamese verkeersregels</b>: verkeerslichten, wegmarkeringen en snelheidslimieten.</li>
+</ul>
+<h2>Hoe het verkeer werkt</h2>
+<ul>
+<li>Toeteren is geen agressie — het betekent "ik ben hier, let op".</li>
+<li>Rijd soepel en voorspelbaar, zonder plotselinge bewegingen — zo kunnen anderen je makkelijk passeren.</li>
+<li>Rem af bij kruispunten en rotondes en kijk om je heen, ook bij groen.</li>
+<li>Houd afstand — de scooter voor je kan plotseling stoppen.</li>
+</ul>
+<h2>De bergwegen van Da Lat</h2>
+<ul>
+<li>Rem op lange afdalingen zacht met beide remmen en houd ze niet constant ingeknepen.</li>
+<li>Haal niet in in bochten — vrachtwagens en bussen kunnen eromheen opduiken.</li>
+<li>Voor tochten buiten de stad met klimmen is de Honda Air Blade 125cc de comfortabelere keuze.</li>
+</ul>
+<h2>Regen en mist</h2>
+<ul>
+<li>Natte wegen en wegmarkeringen zijn glad — rijd langzamer.</li>
+<li>Doe bij mist je lichten aan en houd rechts.</li>
+<li>Wacht een flinke stortbui af in een café.</li>
+<li>Rijd na zonsondergang liever niet in de bergen.</li>
+</ul>
+<h2>Parkeren en tanken</h2>
+<ul>
+<li>Zet je scooter op een bewaakte parkeerplaats — je krijgt een bonnetje, bewaar het.</li>
+<li>Tankstations zijn overal in de stad; meestal betaal je contant (VND).</li>
+</ul>
+<h2>Voordat je gaat rijden</h2>
+<p>Voor de huur controleren we de scooter samen: je maakt een proefrit en we filmen de staat ervan. Gebeurt er onderweg iets, stuur ons dan meteen een bericht via WhatsApp of Zalo.</p>
+"""),
+"wildsunflower": ("wilde-zonnebloemen-seizoen-dalat", "Wilde zonnebloemen in Da Lat (Dã Quỳ): waar je ze per scooter ziet | Van Phu",
+ "Het seizoen van de wilde zonnebloemen (Dã Quỳ) in Da Lat: waar je ze per scooter ziet",
+ "Wanneer de wilde zonnebloemen (dã quỳ) rond Da Lat bloeien, de beste wegen om ze per scooter te zien, fototips en veiligheidsadvies voor het seizoen in november.",
+ "Elke november kleuren de heuvels rond Da Lat geel van de dã quỳ — wilde zonnebloemen. Zo weet je wanneer ze bloeien, waar je ze per scooter vindt en hoe je er veilig komt.",
+ "airblade", """
+<h2>Wat dã quỳ is en wanneer het bloeit</h2>
+<p>Dã quỳ (Tithonia diversifolia), vaak wilde zonnebloem of Mexicaanse zonnebloem genoemd, is een hoge struik met felgele bloemen die in het wild groeit langs wegen, hellingen en bosranden in de hele Centrale Hooglanden van Vietnam. Rond Da Lat bloeit hij meestal van eind oktober tot december, met de volste bloei rond half november. De timing verschuift elk jaar wat, afhankelijk van de regen, dus vraag de locals hoe het er nu voor staat — wij vertellen het je graag.</p>
+<p>De bloei komt aan het eind van het regenseizoen: de buien worden minder, de ochtenden zijn vaak helder en de lucht is diepblauw — perfect voor foto's van gele bloemen tegen groene dennenheuvels.</p>
+<h2>Waar zie je wilde zonnebloemen rond Da Lat</h2>
+<p>Je hebt geen speciale boerderij of kaartje nodig — dã quỳ groeit langs veel wegen net buiten de stad. Een paar makkelijke richtingen:</p>
+<ul>
+<li><b>Richting het Tuyen Lam-meer</b> (zuid, ongeveer 5–7 km) — struiken langs de weg tussen de dennenbossen; makkelijk te combineren met de Datanla-waterval en het Truc Lam-klooster.</li>
+<li><b>Trai Mat en de Linh Phuoc-pagode</b> (oost, ongeveer 8 km) — rustige dorpsweggetjes met bloemen op de hellingen.</li>
+<li><b>Richting de Lang Biang en Lac Duong</b> (noord, ongeveer 10–12 km) — open valleien en hellingen met gele vlekken.</li>
+<li><b>De weg naar de theeheuvels van Cau Dat</b> (oost, ongeveer 20–25 km) — een langere rit met thee, dennen en bloemen onderweg.</li>
+</ul>
+<p>Onze pagina <a href="{ROUTES}">Wat te zien in Da Lat per scooter: 5 routes</a> beschrijft deze richtingen uitgebreider.</p>
+<h2>Een halve dag zonnebloemen</h2>
+<p>Een ontspannen plan: vertrek rond 7–8 uur uit het centrum, rijd richting het Tuyen Lam-meer en stop voor foto's waar de bloemen het dichtst staan. Drink koffie aan het meer en ga terug voor de lunch — in november zijn middagbuien nog mogelijk. Heb je een hele dag, voeg dan 's middags Trai Mat of de theeheuvels toe als het droog blijft.</p>
+<h2>Fototips</h2>
+<ul>
+<li>Het mooiste licht is vroeg in de ochtend en laat in de middag; midden op de dag ziet het geel er vlak uit.</li>
+<li>Fotografeer vanuit een lage hoek tegen de lucht, of gebruik een dennenbos als achtergrond.</li>
+<li>Bijen zijn dol op dã quỳ — beweeg rustig en zwaai niet met je handen bij de bloemen.</li>
+<li>Veel struiken groeien op privégrond en aan de rand van akkers: vertrap geen gewassen, klim niet over hekken en pluk alsjeblieft geen bloemen.</li>
+</ul>
+<h2>Veilig op de weg</h2>
+<ul>
+<li>Stop nooit in een bocht of midden op de weg voor een foto — ga helemaal van de weg af waar anderen je van beide kanten zien.</li>
+<li>In het bloeiseizoen remmen veel rijders plotseling af om naar de bloemen te kijken, dus houd afstand.</li>
+<li>Novemberochtenden zijn koel: neem een jas en handschoenen mee en houd een regenjas onder het zadel.</li>
+<li>Voor heuvelachtige wegen buiten de stad is de Honda Air Blade 125cc de comfortabelste keuze.</li>
+<li>Geen alcohol als je rijdt, en houd je strikt aan de Vietnamese verkeersregels.</li>
+</ul>
+<h2>Een scooter huren voor het bloeiseizoen</h2>
+<p>Al onze scooters — Honda Vision, Honda Air Blade 125cc en elektrische scooters — kosten 150,000 VND per dag, zonder borg in contanten (je laat je paspoort of ID-kaart achter) en met een gratis helm. Bij huur van 2 dagen of meer bezorgen we de scooter gratis bij hotels in het centrum van Da Lat. Stuur ons je data via WhatsApp en we vertellen je ook waar de bloemen die week het mooist zijn.</p>
+"""),
+"waterfalls": ("watervallen-bij-dalat", "Watervallen bij Da Lat per scooter: Datanla, Prenn, Elephant, Pongour | Van Phu",
+ "Watervallen bij Da Lat per scooter: Datanla, Prenn, Elephant en Pongour",
+ "De mooiste watervallen bij Da Lat per scooter: Datanla, Prenn, Elephant en Pongour — afstanden, een dagtocht, het beste seizoen en veiligheidstips.",
+ "Da Lat is omringd door watervallen, van Datanla net buiten de stad tot de brede Pongour op ongeveer een uur rijden. Zo zie je ze per scooter, welke je kiest en hoe je veilig blijft op natte rotsen.",
+ "fleet-gas", """
+<h2>Waarom de watervallen per scooter</h2>
+<p>De meeste bekende watervallen van Da Lat liggen ten zuiden en zuidwesten van de stad, langs wegen met dennenbossen, koffieplantages en groentekassen. Met je eigen scooter stop je waar je wilt, ben je er voor de toerbussen en combineer je twee of drie watervallen op een dag in je eigen tempo.</p>
+<h2>De Datanla-waterval — de dichtstbijzijnde</h2>
+<p>Datanla ligt ongeveer 5–7 km ten zuiden van het centrum, aan de weg richting de Prenn-pas en het Tuyen Lam-meer. Het is een makkelijke rit van 15 minuten, dus het past zelfs in een halve dag. Naast de cascades in het bos is Datanla beroemd om zijn rodelbaan — een karretje dat door de bomen naar de waterval suist, populair bij gezinnen. Er is een toegangskaartje; koop het bij de ingang.</p>
+<h2>De Prenn-waterval — aan de voet van de pas</h2>
+<p>Verder op dezelfde hoofdweg, onderaan de Prenn-pas (ongeveer 10–12 km van het centrum), ligt de Prenn-waterval. Het is een parkachtig terrein met tuinen en wandelpaden, en via een looppad kun je achter het watergordijn lopen. Datanla en Prenn liggen aan dezelfde weg, dus het ligt voor de hand om ze allebei op één ochtend te bezoeken.</p>
+<h2>De Elephant-waterval — wild en krachtig</h2>
+<p>De Elephant-waterval (Thác Voi) ligt bij het dorp Nam Ban, ongeveer 25–30 km ten zuidwesten van Da Lat. De gebruikelijke route gaat over de Ta Nung-pasweg door heuvels, koffieplantages en bloementuinen — een mooie maar bochtige rit. De waterval is breed en luid, en veel minder "aangelegd" dan Datanla: het pad naar beneden is steil, met ruwe treden en natte rotsen. Vlak naast de waterval ligt de Linh An-pagode met haar grote Boeddhabeeld, een korte stop waard.</p>
+<h2>De Pongour-waterval — de breedste</h2>
+<p>Pongour ligt ongeveer 45–50 km ten zuidwesten van het centrum, voorbij luchthaven Lien Khuong. Hij staat bekend om het water dat over vele brede rotsterrassen stroomt — een van de indrukwekkendste watervallen van de Centrale Hooglanden. De rit gaat grotendeels over de hoofdweg, dus reken op ongeveer 1–1,5 uur per richting. Pongour is een goede keuze als je een hele dag hebt en iets echt groots wilt zien.</p>
+<h2>Een watervaltocht van een dag</h2>
+<ul>
+<li><b>Ochtend:</b> vertrek rond 7:30, rijd via Ta Nung naar de Elephant-waterval, bezoek de waterval en de Linh An-pagode.</li>
+<li><b>Middag:</b> rijd door naar Pongour (ongeveer 30 km) en lunch onderweg in een lokaal eethuisje.</li>
+<li><b>Namiddag:</b> rijd over de hoofdweg terug naar Da Lat en stop, als je nog energie hebt, bij Prenn of Datanla op weg de stad in.</li>
+</ul>
+<p>De hele tocht is ongeveer 100–120 km. Met minder tijd doe je gewoon Datanla + Prenn op een ochtend. Meer ideeën staan op onze pagina <a href="{ROUTES}">Wat te zien in Da Lat per scooter: 5 routes</a>.</p>
+<h2>Het beste seizoen</h2>
+<p>De watervallen hebben het meeste water in het regenseizoen, ongeveer mei tot oktober–november: luid en spectaculair, maar het water is vaak bruin en de paden zijn glad. In het droge seizoen (december–april) is het water helderder en zijn de wegen droog, al worden sommige watervallen dunner. Nu, in oktober, zijn ze op hun volst — ga 's ochtends, want de buien komen meestal 's middags.</p>
+<h2>Veiligheidstips</h2>
+<ul>
+<li>Draag schoenen met goede grip, geen slippers; rotsen bij het water zijn altijd glad.</li>
+<li>Zwem niet en klim niet over hekken — de stroming onder watervallen is sterk, vooral na regen.</li>
+<li>Houd een regenjas onder het zadel en vertrek bij de watervallen voor het donker wordt.</li>
+<li>Rem op de Ta Nung-pasweg en de Prenn-pas af voor de bochten en houd rechts.</li>
+<li>Voor langere tochten is de Honda Air Blade 125cc het comfortabelst; check je brandstof voordat je de stad verlaat.</li>
+<li>Geen alcohol als je rijdt, en houd je strikt aan de Vietnamese verkeersregels.</li>
+</ul>
+<h2>Een scooter huren voor je watervaltocht</h2>
+<p>Al onze scooters — Honda Vision 110cc, Honda Air Blade 125cc en elektrische scooters — kosten 150,000 VND per dag. Geen borg in contanten (je laat je paspoort of ID-kaart achter), een gratis helm en telefoonhouder op elke scooter; benzinescooters krijgen 1 liter brandstof mee. Bij huur van 2 dagen of meer bezorgen we de scooter gratis bij hotels in het centrum van Da Lat. Stuur ons een bericht via WhatsApp en we helpen je de route te plannen.</p>
+"""),
+"evrules": ("regels-elektrische-scooter-huren", "Regels voor het huren van een elektrische scooter in Da Lat | Van Phu",
+ "Regels voor het huren van een elektrische scooter – Van Phu Da Lat",
+ "De regels voor het huren van een elektrische scooter bij Van Phu in Da Lat: prijs, huurdag, gewichtslimiet, accuwissel, veiligheid, schade en contact.",
+ "Onze elektrische scooters zijn licht, stil en gemaakt om door Da Lat te rijden. Dit zijn de simpele regels voor het huren bij Van Phu — lees ze voordat je je scooter ophaalt.",
+ "electric-row", """
+<h2>Prijs en ophalen</h2>
+<ul>
+<li>150,000 VND per dag, volledig te betalen bij het ophalen. Geen borg in contanten.</li>
+<li>Laat je originele paspoort of ID-kaart achter. Je krijgt het terug als je de scooter in dezelfde staat inlevert.</li>
+<li>Voor vertrek maak je een proefrit en filmen we samen de staat van de scooter (carrosserie, spiegels, lampen, accu). Bij het inleveren vergelijken we met deze video.</li>
+<li>Helmen en een telefoonhouder zijn inbegrepen.</li>
+</ul>
+<h2>Huurtijd</h2>
+<ul>
+<li>Een huurdag loopt van het ophalen tot 21:00 dezelfde dag.</li>
+<li>Terugbrengen om 21:00 de volgende dag telt als 2 dagen, enzovoort.</li>
+<li>Terugbrengen na 21:00 kost een extra dag. Wil je verlengen? Stuur ons eerst een bericht.</li>
+</ul>
+<h2>Rijregels</h2>
+<ul>
+<li>Maximaal 2 personen, met een totaalgewicht onder 100 kg. Geen zware lading.</li>
+<li>Bestuurder en passagier dragen altijd een helm.</li>
+<li>Geen alcohol of bier als je rijdt.</li>
+<li>Houd je strikt aan de Vietnamese verkeersregels: rechts rijden, stoppen bij rood, geen telefoon tijdens het rijden.</li>
+<li>Leen de scooter niet uit aan iemand anders.</li>
+<li>Rijd niet door diep water. Rem af in de regen — de heuvels van Da Lat worden glad.</li>
+<li>Parkeer op een bewaakte parkeerplaats en zet de scooter goed op slot.</li>
+</ul>
+<h2>Accu</h2>
+<ul>
+<li>Eén accu gaat ongeveer 35–40 km mee, en je begint met een volle.</li>
+<li>Meer nodig? Breng de scooter naar onze winkel en we zetten er een volle accu in voor 20,000 VND.</li>
+<li>Is er nog ongeveer een derde over, rijd dan terug of bel ons. Laat de accu nooit helemaal leeglopen — heuvels en twee rijders kosten meer stroom.</li>
+<li>Vermijd lange, steile klimmen zoals de Prenn-pas, de Mimosa-pas en de weg naar de Lang Biang. Voor langere tochten is een Honda Air Blade 125cc de betere keuze.</li>
+<li>Gebruik geen andere opladers en haal de accu niet zelf uit de scooter.</li>
+</ul>
+<h2>Schade, verlies en lekke banden</h2>
+<ul>
+<li>Nieuwe schade ten opzichte van de video bij het ophalen: je betaalt de werkelijke reparatiekosten.</li>
+<li>Helm, telefoonhouder of sleutel kwijt: je betaalt de vervangingsprijs.</li>
+<li>Scooter kwijt of gestolen: meld het meteen bij ons en het dichtstbijzijnde politiebureau. Je betaalt de waarde van de scooter zoals bij de huur afgesproken.</li>
+<li>Lekke band: stop, duw de scooter naar de dichtstbijzijnde bandenplakker en betaal de reparatie. Doorrijden met een lekke band beschadigt de velg, en die schade betaal je.</li>
+</ul>
+<h2>Contact en inleveren</h2>
+<p>Winkel: 1/15/5 Thong Thien Hoc, Da Lat — elke dag open vanaf 4:30. Breng de scooter graag voor 21:00 terug. WhatsApp/Zalo +84 944 081 101 · WhatsApp +84 834 622 149 · Telegram @vanphudalat · WeChat vanphudalat.</p>
+<p>Meer over onze elektrische scooters: <a href="{EV}">elektrische scooter huren in Da Lat</a>. Ideeën waar je heen kunt: <a href="{ROUTES}">scooterroutes rond Da Lat</a>.</p>
+"""),
+"caudat": ("theeheuvels-cau-dat-zonsopkomst", "Zonsopkomst bij de theeheuvels van Cau Dat: complete gids per scooter | Van Phu",
+ "Zonsopkomst bij de theeheuvels van Cau Dat: complete gids per scooter",
+ "Zo zie je de zonsopkomst boven de theeheuvels van Cau Dat bij Da Lat: afstand, route, hoe laat je vertrekt, het beste seizoen voor wolken, wat je aantrekt en veiligheidstips voor de rit in het donker.",
+ "De theeheuvels van Cau Dat, ongeveer 20–25 km van het centrum van Da Lat, zijn een van de mooiste plekken in de hooglanden om de zon te zien opkomen boven rijen thee en drijvende wolken. Zo plan je de vroege rit.",
+ "airblade", """
+<h2>Wat Cau Dat is</h2>
+<p>Cau Dat (Cầu Đất) is een landbouwgebied in de hooglanden bij Xuan Truong en Tram Hanh, ten oosten van Da Lat. Er wordt hier al thee verbouwd sinds de Franse koloniale tijd in de jaren 1920, en nu zijn de hellingen bedekt met nette, bochtige rijen theestruiken, met dennenbos en groentetuinen eromheen. Op sommige nabijgelegen bergruggen staan windturbines. Omdat het gebied hoog op het plateau ligt, zijn de ochtenden vaak mistig en op goede dagen vullen de valleien eronder zich met een zee van wolken.</p>
+<h2>Hoe ver het is en hoe je er komt</h2>
+<p>De theeheuvels liggen ongeveer 20–25 km van het centrum — zo'n 40–60 minuten met de scooter, in het donker iets langer. De gebruikelijke weg gaat naar het oosten langs Trai Mat en dan door Xuan Tho en Xuan Truong over een bochtige landweg met zachte klimmen. Gebruik Google Maps en zoek op "Cầu Đất" of "đồi chè Cầu Đất"; sla de route offline op voordat je vertrekt, want in de heuvels kan het bereik zwak zijn. Meer ideeën voor deze richting staan op onze pagina <a href="{ROUTES}">Wat te zien in Da Lat per scooter: 5 routes</a>.</p>
+<h2>Hoe laat je vertrekt</h2>
+<p>De zon komt in Da Lat meestal op tussen ongeveer 5:15 en 6:00, afhankelijk van de tijd van het jaar. Om in het zachte licht voor zonsopkomst aan te komen en een goed plekje te vinden, vertrek je rond 4:30–4:45 uit het centrum. Het eerste licht achter de heuvels is vaak het mooiste moment, dus plan niet om precies bij zonsopkomst aan te komen. Als de zon op is, gloeien de theerijen nog zo'n uur na — perfect voor foto's voordat het licht hard wordt.</p>
+<h2>Het beste seizoen voor wolken</h2>
+<p>Wolken zijn nooit gegarandeerd — ze hangen af van de vochtigheid, de wind en de nacht ervoor. Over het algemeen is de kans het grootst op koele, windstille ochtenden na regen; daarom zijn het eind van het regenseizoen en het begin van het droge seizoen (ongeveer oktober tot januari) populair bij wolkenjagers. Midden in het droge seizoen is de lucht vaak helder: minder wolken, maar scherpe uitzichten en droge wegen. Vraag het de avond ervoor aan de locals — wij vertellen je graag hoe de ochtenden die week waren.</p>
+<h2>Wat neem je mee</h2>
+<ul>
+<li>Een warme jas, een lange broek en handschoenen — voor zonsopkomst is het veel kouder dan in de stad, en door de wind op de scooter voelt het nog kouder.</li>
+<li>Een regenjas onder het zadel en dichte schoenen; de paden tussen de theerijen kunnen modderig zijn.</li>
+<li>Een opgeladen telefoon, een kleine powerbank en water.</li>
+<li>Wat contant geld: sommige plantages en uitzichtpunten vragen een kleine toegangsprijs.</li>
+</ul>
+<h2>Respecteer de plantages</h2>
+<p>De theeheuvels zijn werkende plantages, geen park. Loop alleen op bestaande paden, ga niet op de theestruiken staan en pluk ze niet, vlieg niet zonder te vragen met drones boven andermans grond en neem al je afval weer mee. Heeft een plantage een hek of kassa, gebruik die dan.</p>
+<h2>Veilig rijden in het donker</h2>
+<ul>
+<li>Rijd langzaam in het donker en in de mist, met je koplamp aan; houd goed rechts en let op vrachtwagens met groente vroeg in de ochtend.</li>
+<li>Reken na regen op een natte, gladde weg en rem af voor elke bocht.</li>
+<li>Stop nooit op de weg voor foto's — ga helemaal van de weg af waar anderen je kunnen zien.</li>
+<li>Geen alcohol of bier als je rijdt, en houd je strikt aan de Vietnamese verkeersregels.</li>
+</ul>
+<h2>Maak er een ochtendrondje van</h2>
+<p>Stop op de terugweg bij de Linh Phuoc-pagode in Trai Mat (ongeveer 8 km van het centrum), beroemd om haar mozaïekversiering, en ben terug in de stad voor een laat ontbijt. Laat in het najaar zie je langs de weg misschien ook gele wilde zonnebloemen.</p>
+<h2>Welke scooter neem je</h2>
+<p>Heen en terug is ongeveer 50 km met heuvels, dus een benzinescooter is de juiste keuze — de Honda Air Blade 125cc is het comfortabelst voor deze rit. Een elektrische scooter is niet geschikt: één accu gaat ongeveer 35–40 km mee. Onze winkel opent om 4:30, maar het is het makkelijkst om je scooter de dag ervoor op te halen. Alle scooters kosten 150,000 VND per dag, zonder borg in contanten (je laat je paspoort of ID-kaart achter), met een gratis helm en telefoonhouder; benzinescooters krijgen 1 liter brandstof mee. Stuur ons een bericht via WhatsApp en we helpen je je zonsopkomstrit te plannen.</p>
+"""),
+"domainedemarie": ("domaine-de-marie-kerk-dalat", "Domaine de Marie-kerk in Da Lat: openingstijden, toegang en hoe je er komt | Van Phu",
+ "Domaine de Marie (Roze Kerk) in Da Lat: openingstijden, toegang, geschiedenis en fotoplekken",
+ "De roze kerk Domaine de Marie in Da Lat: openingstijden, gratis toegang, hoe je er per scooter komt, een korte geschiedenis, de architectuur en de beste fotoplekken — met echte foto's.",
+ "De roze kerk op de heuvel is een van de meest gefotografeerde gebouwen van Da Lat — en hij is gratis. Openingstijden, hoe je erheen rijdt, een korte geschiedenis en de beste fotoplekken, met onze eigen foto's van oktober 2026.",
+ "domaine-de-marie", """
+<h2>In het kort</h2><ul><li>Adres: 1 Ngo Quyen, Da Lat — op een kleine heuvel ten westen van de markt</li><li>Open 7:30–11:30 en 13:30–17:30, elke dag (Google Maps, oktober 2026); tijdens de mis gesloten voor bezichtiging</li><li>Toegang: gratis, met een collectebus</li><li>Ongeveer 1 km van de markt van Da Lat en 1,6 km van het Xuan Huong-meer (hemelsbreed) — minder dan 1 km van onze winkel</li><li>Kleding: schouders en knieën bedekt om de kerk in te gaan</li><li>Per scooter: makkelijk met elke scooter, ook een elektrische</li></ul><figure style="margin:18px 0"><img src="{IMG}spots/pink-church.webp" alt="Roze kerk Domaine de Marie Da Lat" width="750" height="1000" loading="lazy" style="width:100%;height:auto;border-radius:12px"><figcaption style="font-size:14px;color:#666;margin-top:6px">De trap aan de voorkant van Domaine de Marie in de ochtendzon.</figcaption></figure><h2>Openingstijden en mistijden</h2><p>Tijdens de tijden hierboven kun je over het terrein lopen. De kerk is een gebedshuis dat in gebruik is: tijdens de mis is hij gesloten voor bezichtiging, en zondagochtend is het het drukst. Mistijden veranderen af en toe, dus kijk op het mededelingenbord bij de poort.</p><h2>Toegang en parkeren</h2><p>De toegang is gratis; een collectebus helpt de zusters het terrein te onderhouden. Er is parkeerruimte voor scooters ter plaatse — volg de aanwijzingen van het personeel en zet je scooter op slot.</p><h2>Hoe kom je er per scooter</h2><p>Vanaf de markt van Da Lat is het maar ongeveer 1 km — zo'n 5 minuten met de scooter. Zoek in Google Maps op "Domaine de Marie" of "1 Ngo Quyen". De kerk staat op een kleine heuvel, dus het laatste stuk klimt zacht: prima met een elektrische scooter (twee rijders samen onder 100 kg) en makkelijk met een Honda Vision 110cc of Air Blade 125cc.</p><h2>Een korte geschiedenis</h2><p>De bouw begon in 1940 en de kerk werd in 1942 ingewijd. Hij hoort bij de Dochters van Liefde van Vincentius a Paulo, een katholieke orde waarvan de zusters nog steeds in het klooster wonen. Het 3 meter hoge Mariabeeld werd in 1943 ontworpen door de Franse architect Jonchère en geschonken door Suzanne Decoux, de vrouw van de gouverneur-generaal van Frans-Indochina; zij overleed in 1944 en haar graf ligt achter de kerk.</p><h2>Architectuur</h2><p>Domaine de Marie combineert Franse kerkarchitectuur met Vietnamese accenten. De roze muren hebben een ruwe, gestructureerde afwerking; de voorgevel is een hoge driehoek met een kruis erop, een rond roosvenster en rijen kleine spitsboogvensters. De daken doen denken aan de nhà rông, het gemeenschapshuis op palen van de Centrale Hooglanden. Let binnen op het houten balkenplafond, de glas-in-loodramen en het Mariabeeld op een wereldbol, met een Vietnamees ogend gezicht.</p><figure style="margin:18px 0"><img src="{IMG}spots/pink-convent.webp" alt="Roze kerk Domaine de Marie Da Lat" width="1000" height="750" loading="lazy" style="width:100%;height:auto;border-radius:12px"><figcaption style="font-size:14px;color:#666;margin-top:6px">De binnenplaats van het klooster met het pad vol bloemen.</figcaption></figure><h2>De beste fotoplekken</h2><ul><li>De trap aan de voorkant vanuit een lage hoek — de driehoekige gevel tegen een blauwe lucht; het mooist 's ochtends, als de zon op de voorkant staat.</li><li>Het roosvenster en het balkon met de boog — doe een stap terug en zoom in.</li><li>De binnenplaats van het klooster — het rechte pad met bloempotten langs de kant.</li><li>De arcade — spitsbogen en rode stenen zuilen langs het klooster.</li><li>Hortensia's en witte urnen voor de veranda van het klooster.</li></ul><figure style="margin:18px 0"><img src="{IMG}spots/pink-hydrangea.webp" alt="Roze kerk Domaine de Marie Da Lat" width="750" height="1000" loading="lazy" style="width:100%;height:auto;border-radius:12px"><figcaption style="font-size:14px;color:#666;margin-top:6px">Hortensia's voor de veranda van het klooster.</figcaption></figure><h2>Wees respectvol</h2><p>Dit is een plek van gebed en het thuis van de zusters. Praat zacht, pluk geen bloemen en loop niet over het gras (de bordjes vragen dat), en vraag eerst toestemming voor een bruiloftsshoot of het vliegen met een drone.</p><h2>In de buurt: een ontspannen halve dag</h2><p>Domaine de Marie 's ochtends → het bloemendorp Van Thanh (ongeveer 2 km) → de Hanenkerk, de kathedraal van Da Lat (ongeveer 2 km) → lunch rond de markt van Da Lat. Bekijk alle 16 plekken op onze <a href="{PM}">kaart met fotoplekken in Da Lat</a>.</p><h2>FAQ</h2><p><b>Is de toegang tot Domaine de Marie gratis?</b><br>Ja, de toegang is gratis. Er is een collectebus.</p><p><b>Hoe laat gaat Domaine de Marie open?</b><br>Meestal 7:30–11:30 en 13:30–17:30, elke dag (Google Maps, oktober 2026). Tijdens de mis is hij gesloten voor bezichtiging.</p><p><b>Wanneer is Domaine de Marie gebouwd?</b><br>De bouw begon in 1940; de kerk werd in 1942 ingewijd.</p><p><b>Is er een kledingvoorschrift?</b><br>Ja — schouders en knieën bedekt om de kerk in te gaan.</p><p><b>Kan ik er met een elektrische scooter heen?</b><br>Ja. Het is ongeveer 1 km van de markt en het laatste stuk is een zachte klim.</p><h2>Een scooter huren om er te komen</h2><p>Onze winkel ligt op minder dan 1 km van Domaine de Marie. Elke scooter — Honda Vision 110cc, Honda Air Blade 125cc en elektrische scooters — kost 150,000 VND per dag, zonder borg in contanten (je laat je paspoort of ID-kaart achter), met een gratis helm en telefoonhouder. Prijzen en boeken: <a href="{HOME}">scooter huren in Da Lat</a>.</p>
+"""),
+}

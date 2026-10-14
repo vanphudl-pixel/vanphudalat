@@ -12,7 +12,7 @@
 - Delivery: free to hotels in central Da Lat for rentals of 2 days or more
 - Before renting: test ride and a video of the bike's condition, filmed together
 - Booking: WhatsApp +84 944 081 101 or +84 834 622 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat
-- Languages on the website: EN, RU, 中文, 한국어, 日本語, ไทย, ID, MY, VI, DE, FR, ES, עב, IT
+- Languages on the website: EN, RU, 中文, 한국어, 日本語, ไทย, ID, MY, VI, DE, FR, ES, עב, IT, NL
 
 ## Pages
 - [Home (English)](https://vanphudalat.com/): prices, bikes, FAQ, map
@@ -44,3 +44,4 @@
 - [ES home](https://vanphudalat.com/es/alquiler-moto-dalat/)
 - [עב home](https://vanphudalat.com/he/dalat-motorbike-rental/)
 - [IT home](https://vanphudalat.com/it/noleggio-scooter-dalat/)
+- [NL home](https://vanphudalat.com/nl/scooter-huren-dalat/)
