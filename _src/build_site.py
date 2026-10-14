@@ -159,7 +159,7 @@ def cta_box(l, frm):
 
 def contacts(l):
     h = C[l]["home"]
-    rows = [f'<p><b>WhatsApp:</b> <a href="{wa_link(l)}">+84 944 081 101</a> · <a href="{WA2}">+84 834 622 149</a></p>',
+    rows = [f'<p><b>WhatsApp:</b> <a href="{wa_link(l)}">+84 944 081 101</a> · <a href="{WA2}">+84 834 662 149</a></p>',
             f'<p><b>Zalo:</b> <a href="{ZALO}">0944 081 101</a></p>',
             f'<p><b>Telegram:</b> <a href="{TG}">@vanphudalat</a></p>']
     if l == "ru":
@@ -493,7 +493,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - Included: free helmet and phone holder with every bike; gas scooters come with 1 liter of fuel
 - Delivery: free to hotels in central Da Lat for rentals of 2 days or more
 - Before renting: test ride and a video of the bike's condition, filmed together
-- Booking: WhatsApp +84 944 081 101 or +84 834 622 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat
+- Booking: WhatsApp +84 944 081 101 or +84 834 662 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat
 - Languages on the website: {", ".join(LABEL.values())}
 
 ## Pages

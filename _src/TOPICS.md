@@ -15,9 +15,10 @@ Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 
 ## Hard rules (business owner's decisions — never break)
 - NEVER mention driving licences/permits in any language (no "license", "права", "驾照", "bằng lái", etc.).
-- NEVER state an electric-scooter range in km.
+- Electric-scooter range: only as the owner-approved figure "one battery lasts about 35–40 km" (battery swap at the shop 20,000 VND). Never any other number, never "per charge" wording.
+- Electric scooters: max 2 riders with combined weight under 100 kg; avoid long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade 125 for long trips.
 - Prices: 150,000 VND/day for every bike (Honda Vision 110, Honda Air Blade 125, electric scooter). No cash deposit — guest leaves passport or ID card. Free helmet. Phone holder on every bike; gas scooters come with 1 liter of fuel. Free hotel delivery in central Da Lat for 2+ days. Rental day = pickup until 21:00. Test ride + video of bike condition before rental.
-- Contacts: WhatsApp +84 944 081 101 / +84 834 622 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat, Russian Telegram channel t.me/dalat_life_vietnam. Shop: 1/15/5 Thông Thiên Học, Đà Lạt.
+- Contacts: WhatsApp +84 944 081 101 / +84 834 662 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat, Russian Telegram channel t.me/dalat_life_vietnam. Shop: 1/15/5 Thông Thiên Học, Đà Lạt.
 - Rules to mention where natural: no alcohol/beer when riding; strictly follow Vietnamese traffic law.
 - Facts about places: only well-established ones; distances/times as approximate ("about", "около", "约"). No invented prices of tickets/hotels, no invented opening hours, no fake reviews or quotes, no claims about competitors.
 - Write each language natively (not word-for-word); keep the article genuinely useful to a traveller (≈450–700 words in en). Avoid keyword stuffing.
@@ -32,13 +33,14 @@ Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 - 2026-10-10 riding — Riding a motorbike in Vietnam: tips
 - 2026-10-11 wildsunflower — Wild sunflower (dã quỳ) season around Da Lat by motorbike
 - 2026-10-12 waterfalls — Waterfalls near Da Lat by motorbike (Datanla, Prenn, Elephant Falls, Pongour)
+- 2026-10-14 evrules — Electric scooter rental rules (owner's official rules; link to it from electric-scooter articles)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
 - [ ] 14/10 caudat — Cau Dat tea hills: complete sunrise guide
 - [ ] 15/10 cloudhunt — Cloud hunting (săn mây) around Da Lat: where, what time, riding there before dawn
 - [ ] 16/10 nightmarket — Da Lat night market guide: what to eat and buy
 - [ ] 17/10 langbiang — Lang Biang Mountain guide by motorbike
-- [ ] 18/10 electric — Electric scooter rental in Da Lat: why it's great for the city (no range, no licence talk)
+- [ ] 18/10 electric — Electric scooter rental in Da Lat: why it's great for the city (no licence talk; link to the evrules article)
 - [ ] 19/10 coffee — Coffee with a view: Da Lat cafés reachable by bike (types/areas, only very famous names)
 - [ ] 20/10 rainyday — What to do in Da Lat on a rainy day
 - [ ] 21/10 tuyenlam — Tuyen Lam Lake & Truc Lam Monastery guide
