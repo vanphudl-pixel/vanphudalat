@@ -1,6 +1,6 @@
 """Build the whole multilingual site (home, routes, blog + 5 articles per language)
 from content/<lang>.py. Output: /home/claude/site"""
-import importlib, json, re, shutil, sys
+import importlib, math, json, re, shutil, sys
 from pathlib import Path
 from urllib.parse import quote
 
@@ -38,6 +38,7 @@ from content import threestarmap as H3
 from content import busmap as BU
 from content import danangbusmap as DN
 from content import festivalmap as FE
+from content import placeshub as HUB
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
 for _l in LANGS:
@@ -49,7 +50,22 @@ TPL = (HERE / "template.html").read_text(encoding="utf-8")
 ARTICLES = list(C["en"]["articles"].keys())
 DATES = C["en"].get("dates", {})
 def adate(k): return DATES.get(k, "2026-10-10")
+from content.artfaq import FAQ as AFAQ, UPDATED as AUPD, H as AFAQ_H
+def mdate(l, k): return max(adate(k), AUPD.get(l, {}).get(k, adate(k)))
+UPD = {"en": "Updated", "vi": "Cập nhật", "ru": "Обновлено", "zh": "更新于", "ko": "업데이트", "ja": "更新日", "th": "อัปเดต", "id": "Diperbarui",
+       "ms": "Dikemas kini", "de": "Aktualisiert", "fr": "Mis à jour", "es": "Actualizado", "he": "עודכן", "it": "Aggiornato", "nl": "Bijgewerkt",
+       "km": "ធ្វើបច្ចុប្បន្នភាព", "lo": "ອັບເດດ", "my": "နောက်ဆုံးပြင်ဆင်"}
+_MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+def fdate(l, d):
+    y, m, dd = d.split("-")
+    if l == "en": return f"{_MON[int(m) - 1]} {int(dd)}, {y}"
+    if l in ("zh", "ja", "ko"): return d
+    return f"{dd}/{m}/{y}"
 CSS = re.search(r"<style>(.*?)</style>", TPL, re.S).group(1) + """
+.upd{font-size:14px;opacity:.85;margin:6px 0 0}
+.toc{columns:2;font-size:15px;padding-left:18px} .toc li{margin:2px 0}
+.hublist{list-style:none;padding:0;display:grid;gap:10px} .hublist li{display:flex;gap:10px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px} .chips a{border:1px solid var(--line);border-radius:999px;padding:6px 12px;text-decoration:none;font-size:14px}
 img{height:auto}
 .lead{font-size:17px}
 .langs a{border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;text-decoration:none}
@@ -175,11 +191,14 @@ for _l in _NEWL: REV[_l] = importlib.import_module(f"content.{_l}").REV_
 def rev_btn(l): return f'<a class="btn alt" href="{GMAPS}" target="_blank" rel="noopener" style="border:1px solid var(--line)">{REV[l][2]}</a>'
 def map_path(M, l): return lang_root(l) + M.SLUG + "/"
 def pm_path(l): return map_path(PM, l)
+def hub_btn(l, me):
+    if l not in HUB.LANGS: return ""
+    return f'<a class="btn" href="{rel(me, lang_root(l) + HUB.SLUG[l] + "/")}">🧭 {HUB.T[l]["h1"].format(n=len(HUB.spots(l)))} →</a> '
 def pm_section(l, me):
     if l not in PM.LANGS: return ""
     t = PM.T[l]
     g = PG.T[l]
-    return (f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn" href="{rel(me, pm_path(l))}">{t["h1"]} →</a> '
+    return (f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p>{hub_btn(l, me)}<a class="btn" href="{rel(me, pm_path(l))}">{t["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(PG, l))}" style="border:1px solid var(--line)">🛕 {g["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(CH, l))}" style="border:1px solid var(--line)">⛪ {CH.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(SF, l))}" style="border:1px solid var(--line)">🌼 {SF.T[l]["h1"]} →</a> '
@@ -444,6 +463,9 @@ def page_blog(l):
     me = blog_path(l)
     r = C[l]["routes"]
     extra = f'<a class="post" href="{rel(me, routes_path(l))}"><b>{r["h1"]}</b><span>{r["desc"]}</span></a>'
+    if l in HUB.LANGS:
+        _n = len(HUB.spots(l)); _t = HUB.T[l]
+        extra = f'<a class="post" href="{rel(me, lang_root(l) + HUB.SLUG[l] + "/")}"><b>{_t["h1"].format(n=_n)}</b><span>{_t["desc"].format(n=_n)}</span></a>' + extra
     body = f"""
 <header><div class="wrap">{langbar(l, "blog", None, me)}
 <div class="hero">{crumbs(l, me, [(u["crumbs_blog"], None)])}
@@ -463,23 +485,30 @@ def page_article(l, k):
     pre = "../" * me.count("/")
     html = html.replace("{ROUTES}", rel(me, routes_path(l))).replace("{HOME}", rel(me, home_path(l))).replace("{EV}", rel(me, ev_path(l))).replace("{IMG}", pre + "img/").replace("{PM}", rel(me, pm_path(l)))
     art = {"@context": "https://schema.org", "@type": "Article", "headline": h1, "description": desc, "inLanguage": l,
-           "mainEntityOfPage": BASE + me, "image": f"{BASE}img/{img}.jpg", "datePublished": adate(k),
+           "mainEntityOfPage": BASE + me, "image": f"{BASE}img/{img}.jpg", "datePublished": adate(k), "dateModified": mdate(l, k),
            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"},
            "publisher": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}}
     others = [x for x in ARTICLES[::-1] if x != k][:3]
+    qa = AFAQ.get(l, {}).get(k, [])
+    faq_html = (f'<section class="faq"><h2>{AFAQ_H[l]}</h2>' + "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in qa) + "</section>") if qa else ""
+    lds = [art, crumbs_ld(l, [(u["crumbs_blog"], blog_path(l)), (h1, me)])]
+    if qa:
+        lds.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qa]})
     body = f"""
 <header><div class="wrap">{langbar(l, "art", k, me)}
 <div class="hero">{crumbs(l, me, [(u["crumbs_blog"], blog_path(l))])}
- <h1>{h1}</h1><p class="lead">{lead}</p>
+ <h1>{h1}</h1><p class="lead">{lead}</p><p class="upd"><time datetime="{mdate(l, k)}">{UPD[l]}: {fdate(l, mdate(l, k))}</time></p>
  <img class="heroimg" src="{pre}img/{img}.jpg" alt="{h1}" width="1200" height="675">
 </div></div></header>
 <main class="wrap">
  <section class="prose">{html}</section>
+ {faq_html}
  <section>{contact_box(l)}{cta_box(l, me)}</section>
  <section><h2>{u["read_also"]}</h2>{posts(l, me, others)}</section>
 </main>
 """
-    return head(l, "art", k, title, desc, [art, crumbs_ld(l, [(u["crumbs_blog"], blog_path(l)), (h1, me)])], img) + body + foot(l, frm=me)
+    return head(l, "art", k, title, desc, lds, img) + body + foot(l, frm=me)
 
 # old URLs from the previous site on this domain -> new pages
 OLD = {"thuexemaydalat/": ("vi", "home"), "motorbike-rental-in-dalat-for-foreigners-easy-safe-fast/": ("en", "home")}
@@ -674,6 +703,98 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 </script>
 """ + foot(l, frm=me)
 
+# ------------------------------------------------------------------ places hub (pillar page, vi + en)
+THEMES = [PM, PG, CH, SF, CL, CF, BB, FE, HT, H4, H3, BU, DN]
+_TNAME = {M.__name__.split(".")[-1]: M for M in THEMES}
+def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
+def hub_link(l, me, key):
+    if key == "routes": return rel(me, routes_path(l))
+    if key == "ev": return rel(me, ev_path(l))
+    if key.startswith("art:"): return rel(me, art_path(l, key[4:]))
+    if key.startswith("map:"): return rel(me, map_path(_TNAME[key[4:]], l))
+    raise KeyError(key)
+def page_hub(l):
+    t = HUB.T[l]; me = hub_path(l); pre = rel(me, "")
+    sp = HUB.spots(l); n = len(sp)
+    far = max(sp, key=lambda x: pm_km((LAT, LON), (x[1], x[2])))
+    gas = [x[6][0].split(" (")[0] for x in sp if not x[4]]
+    fill = {"n": n, "ev_n": sum(1 for x in sp if x[4]), "gas_names": ", ".join(gas), "far_name": far[6][0].split(" (")[0], "far_km": f"{pm_km((LAT, LON), (far[1], far[2])):.0f}", "center_max": f"{math.ceil(max(pm_km((LAT, LON), (x[1], x[2])) for x in sp if x[7] == "center")):.0f}"}
+    bar = "".join(f'<a href="{rel(me, hub_path(x))}" hreflang="{x}" data-l="{x}"{" class=\"on\" aria-current=\"page\"" if x == l else ""}>{LABEL[x]}</a>' for x in HUB.LANGS)
+    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + hub_path(x)}">\n' for x in HUB.LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + hub_path("en")}">\n'
+    pts, secs, i = [], "", 0
+    for z in HUB.ZONES:
+        zs = sorted([x for x in sp if x[7] == z], key=lambda x: pm_km((LAT, LON), (x[1], x[2])))
+        if not zs: continue
+        rows = ""
+        for sid, lat, lng, cid, ev, h, (nm, best, d), _z, M in zs:
+            i += 1
+            g = f"https://maps.google.com/?cid={cid}"
+            hr = PM.T[l]["h"].get(h, h)
+            ak = HUB.GUIDE.get(sid)
+            name = f'<a href="{rel(me, art_path(l, ak))}">{nm}</a>' if ak else nm
+            links = f'<a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a>'
+            if M is not None: links += f' · <a href="{rel(me, map_path(M, l))}">🗺 {t["themap"]}: {M.T[l]["h1"]}</a>'
+            if ak: links += f' · <a href="{rel(me, art_path(l, ak))}">📖 {t["guide"]}</a>'
+            km_ = pm_km((LAT, LON), (lat, lng))
+            rows += (f'<li><span class="pmn {"ev" if ev else "gas"}">{i}</span><div><b>{name}</b><br><small>≈ {km_:.1f} {t["km"]} · {t["hours"]}: {hr} · {t["best"]}: {best}</small><br>{d}<br>{links}</div></li>')
+            pts.append({"i": i, "n": nm, "lat": lat, "lng": lng, "ev": ev, "g": g, "b": best, "h": hr})
+        q, sub = t["zones"][z]
+        secs += f'<section id="{z}"><h2>{q}</h2><p>{sub}</p><ol class="hublist">{rows}</ol></section>'
+    faqs = [(q, a.format(**fill), lk) for q, a, lk in t["faq"]]
+    faq_html = "".join(f'<section id="q{j}"><h2>{q}</h2><p>{a}</p>' + (('<p class="chips">' + "".join(f'<a href="{hub_link(l, me, k)}">{x} →</a>' for k, x in lk) + "</p>") if lk else "") + "</section>" for j, (q, a, lk) in enumerate(faqs, 1))
+    toc = "".join(f'<li><a href="#{z}">{t["zones"][z][0]}</a></li>' for z in HUB.ZONES) + "".join(f'<li><a href="#q{j}">{q}</a></li>' for j, (q, a, lk) in enumerate(faqs, 1))
+    themes = "".join(f'<a href="{rel(me, map_path(M, l))}">{M.T[l]["h1"]}</a>' for M in THEMES)
+    title, h1, desc = t["title"].format(**fill), t["h1"].format(**fill), t["desc"].format(**fill)
+    lds = [{"@context": "https://schema.org", "@type": "Article", "headline": h1, "description": desc, "inLanguage": l, "mainEntityOfPage": BASE + me,
+            "image": BASE + "img/airblade.jpg", "datePublished": HUB.UPDATED, "dateModified": HUB.UPDATED,
+            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}, "publisher": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}},
+           {"@context": "https://schema.org", "@type": "ItemList", "name": h1, "itemListElement": [
+            {"@type": "ListItem", "position": p["i"], "item": {"@type": "TouristAttraction", "name": p["n"], "geo": {"@type": "GeoCoordinates", "latitude": p["lat"], "longitude": p["lng"]}, "hasMap": p["g"]}} for p in pts]},
+           {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a, lk in faqs]},
+           crumbs_ld(l, [(h1, me)])]
+    js = json.dumps(pts, ensure_ascii=False)
+    pm = PM.T[l]
+    return f"""<!doctype html>
+<html lang="{l}"><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>{title}</title>
+<meta name="description" content="{desc}"><link rel="canonical" href="{BASE + me}">
+{alts}<meta property="og:type" content="article"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/airblade.jpg">
+{"".join(ldjson(x) for x in lds)}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>{CSS}
+#pmap{{height:480px;border-radius:14px;border:1px solid var(--line)}}
+.pmn{{flex:none;width:28px;height:28px;border-radius:50%;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}} .pmn.ev{{background:#0f7a4f}} .pmn.gas{{background:#c06a00}}
+.pmk{{background:none;border:none}} .pmk span{{display:flex;width:24px;height:24px;border-radius:50%;color:#fff;font:700 11px sans-serif;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}}
+.pmleg{{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin:8px 0}}
+@media(max-width:640px){{.toc{{columns:1}}}}
+</style></head><body>
+<header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
+<div class="hero">{crumbs(l, me, [(h1, None)])}<h1>{h1}</h1><p class="lead">{t["lead"]}</p><p class="upd"><time datetime="{HUB.UPDATED}">{UPD[l]}: {fdate(l, HUB.UPDATED)}</time></p>
+<div class="cta">{hero_btns(l)}</div></div></div></header>
+<main class="wrap">
+<section><h2>{t["toc"]}</h2><ol class="toc">{toc}</ol></section>
+<section><h2>{t["map_h"]}</h2><div id="pmap" role="img" aria-label="{t["map_h"]}"></div>
+<div class="pmleg"><span><span class="pmn ev" style="display:inline-flex;width:14px;height:14px"></span> {t["ev"]}</span><span><span class="pmn gas" style="display:inline-flex;width:14px;height:14px"></span> {t["gas"]}</span></div>
+<p class="note">{pm["check"]} · ≈ {t["km"]}</p></section>
+{secs}
+<section><h2>{t["faq_h"]}</h2></section>
+{faq_html}
+<section><h2>{t["themes_h"]}</h2><p class="chips">{themes}</p></section>
+<section class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px"><h2>{t["cta_h"]}</h2><p>{t["cta"]}</p><p><a class="btn" href="{rel(me, home_path(l))}">{kw_rent(l)} →</a> <a class="btn alt" href="{rel(me, ev_path(l))}" style="border:1px solid var(--line)">{EV[l]["h1"]} →</a></p></section>
+<section>{contact_box(l)}</section>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){{if(!window.L)return;var P={js};
+var m=L.map('pmap',{{scrollWheelZoom:false}});L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:18,attribution:'&copy; OpenStreetMap'}}).addTo(m);
+var b=[];P.forEach(function(p){{var c=p.ev?'#0f7a4f':'#c06a00';var k=L.marker([p.lat,p.lng],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:'+c+'">'+p.i+'</span>',iconSize:[24,24],iconAnchor:[12,12]}})}}).addTo(m);
+k.bindPopup('<b>'+p.i+'. '+p.n+'</b><br>{t["hours"]}: '+p.h+'<br>{t["best"]}: '+p.b+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>📍 {t["dir"]}</a>');b.push([p.lat,p.lng]);}});
+L.marker([{LAT},{LON}],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:#1a1a1a;width:auto;padding:0 8px;border-radius:12px">Van Phu</span>',iconSize:[70,26],iconAnchor:[35,13]}})}}).addTo(m).bindPopup('<b>{pm["shop"]}</b><br><a href="{GMAPS}" target="_blank" rel="noopener">{t["dir"]} →</a>');
+m.fitBounds(b,{{padding:[20,20]}});}})();
+</script>
+""" + foot(l, frm=me)
+for l in HUB.LANGS:
+    write(hub_path(l), page_hub(l))
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
@@ -685,8 +806,8 @@ urls = ""
 for kind, key in groups:
     alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + path_of(x, kind, key)}"/>\n' for x in LANGS)
     alts += f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + path_of("en", kind, key)}"/>\n'
-    lm = adate(key) if kind == "art" else max([adate(k) for k in ARTICLES] + ["2026-10-10"])
     for l in LANGS:
+        lm = mdate(l, key) if kind == "art" else max([adate(k) for k in ARTICLES] + ["2026-10-10"])
         urls += f"  <url>\n    <loc>{BASE + path_of(l, kind, key)}</loc>\n{alts}    <lastmod>{lm}</lastmod>\n  </url>\n"
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
@@ -695,6 +816,9 @@ for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
+_hub_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + hub_path(x)}"/>\n' for x in HUB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + hub_path("en")}"/>\n'
+for l in HUB.LANGS:
+    urls += f"  <url>\n    <loc>{BASE + hub_path(l)}</loc>\n{_hub_alts}    <lastmod>{HUB.UPDATED}</lastmod>\n  </url>\n"
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
@@ -725,6 +849,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Da Lat 5-star hotels — map of 8 hotels and resorts listed as 5-star, free PDF]({BASE + map_path(HT, "en")})
 - [Da Lat 4-star hotels — map of 10 popular 4-star hotels and resorts, free PDF]({BASE + map_path(H4, "en")})
 - [Da Lat 3-star hotels — map of 8 popular 3-star hotels near the night market, free PDF]({BASE + map_path(H3, "en")})
+- [Places to visit in Da Lat by motorbike — every sight from our maps grouped by direction, with distance, hours and electric-scooter suitability]({BASE + "places-to-visit-in-da-lat/"}) (Vietnamese: {BASE + "vi/dia-diem-du-lich-da-lat/"})
 - [Da Lat to Saigon bus — map of the Da Lat bus station and 12 bus company offices, free PDF]({BASE + map_path(BU, "en")})
 - [Da Lat to Da Nang bus — map of the Da Lat bus station and 6 bus company offices on the Da Nang / Hoi An route, free PDF]({BASE + map_path(DN, "en")})
 - [Da Lat Flower Festival 2026 — planned 19–31 Dec 2026: programme, venue map, free PDF]({BASE + map_path(FE, "en")})
