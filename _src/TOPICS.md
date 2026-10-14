@@ -35,8 +35,11 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-10-10 riding — Riding a motorbike in Vietnam: tips
 - 2026-10-11 wildsunflower — Wild sunflower (dã quỳ) season around Da Lat by motorbike
 - 2026-10-12 waterfalls — Waterfalls near Da Lat by motorbike (Datanla, Prenn, Elephant Falls, Pongour)
+- 2026-10-14 domainedemarie — Domaine de Marie pink church guide (owner's photos)
 - 2026-10-14 evrules — Electric scooter rental rules (owner's official rules; link to it from electric-scooter articles)
 - 2026-10-14 caudat — Cau Dat tea hills: complete sunrise guide
+
+- Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
 Purpose: rank for longer, less competitive rental searches in every language. Rules for these articles:

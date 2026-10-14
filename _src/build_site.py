@@ -395,7 +395,7 @@ def page_article(l, k):
     u = C[l]["ui"]
     me = art_path(l, k)
     pre = "../" * me.count("/")
-    html = html.replace("{ROUTES}", rel(me, routes_path(l))).replace("{HOME}", rel(me, home_path(l))).replace("{EV}", rel(me, ev_path(l)))
+    html = html.replace("{ROUTES}", rel(me, routes_path(l))).replace("{HOME}", rel(me, home_path(l))).replace("{EV}", rel(me, ev_path(l))).replace("{IMG}", pre + "img/").replace("{PM}", rel(me, pm_path(l)))
     art = {"@context": "https://schema.org", "@type": "Article", "headline": h1, "description": desc, "inLanguage": l,
            "mainEntityOfPage": BASE + me, "image": f"{BASE}img/{img}.jpg", "datePublished": adate(k),
            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"},
@@ -522,7 +522,9 @@ def page_photomap(l):
         own = (OUT / "img" / "spots" / f"{sid}.jpg").exists()
         thumb = f'<img src="{pre}img/spots/{sid}.jpg" alt="{n}" loading="lazy" style="width:96px;height:72px;object-fit:cover;border-radius:8px;flex:none">' if own else ""
         pts.append({"i": i, "n": n, "lat": lat, "lng": lng, "ev": ev, "g": g, "b": best, "h": hr, "p": ph})
-        rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{n}</b><br><small>≈ {pm_km(PM.CENTER, (lat, lng)):.1f} km · {t["hours"]}: {hr} · {t["best"]}: {best}</small>'
+        guide = {"pink": "domainedemarie"}.get(sid)
+        nm = f'<a href="{rel(me, art_path(l, guide))}">{n}</a>' if guide and guide in C[l]["articles"] else n
+        rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{nm}</b><br><small>≈ {pm_km(PM.CENTER, (lat, lng)):.1f} km · {t["hours"]}: {hr} · {t["best"]}: {best}</small>'
                  f'<br>{d}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · <a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a></div></li>')
     seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t["season"])
     tips = "".join(f"<li>{x}</li>" for x in t["tips"])
