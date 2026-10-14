@@ -1,6 +1,6 @@
 # SEO content plan — Văn Phú Đà Lạt (https://vanphudalat.com/)
 
-Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
+Owner: Phú. Report language: Vietnamese.
 
 ## How a new article is added
 1. Pick the first unchecked topic in "Backlog". The backlog is a dated daily calendar (one article per day); follow its order. If a day was missed, just take the next unchecked one. Topics marked (publish ~date) wait until that date.
