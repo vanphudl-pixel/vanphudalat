@@ -124,3 +124,12 @@ T = {
  "cta": "150,000 VND per day for every bike · no cash deposit (we hold your passport or ID card) · free delivery to central hotels for 2+ days · shop opens at 4:30 am.",
 },
 }
+
+# other languages
+from content import placeshub_tr1 as _t1, placeshub_tr2 as _t2
+for _m in (_t1, _t2):
+    SLUG.update(_m.SLUG); EXTRA_T.update(_m.EXTRA); T.update(_m.T)
+LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he", "it", "nl", "km", "lo", "my"]
+for _l in LANGS:
+    assert set(T[_l]) == set(T["en"]), _l
+    assert set(T[_l]["zones"]) == set(ZONES) and len(T[_l]["faq"]) == len(T["en"]["faq"]), _l

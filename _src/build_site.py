@@ -755,7 +755,7 @@ def page_hub(l):
     js = json.dumps(pts, ensure_ascii=False)
     pm = PM.T[l]
     return f"""<!doctype html>
-<html lang="{l}"><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
+<html lang="{l}"{' dir="rtl"' if l == "he" else ""}><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>{title}</title>
 <meta name="description" content="{desc}"><link rel="canonical" href="{BASE + me}">
 {alts}<meta property="og:type" content="article"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/airblade.jpg">

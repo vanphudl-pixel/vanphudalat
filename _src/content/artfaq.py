@@ -129,5 +129,10 @@ FAQ = {
  ],
 },
 }
-UPDATED = {l: {k: "2026-10-15" for k in FAQ[l]} for l in FAQ}
 H = {"vi": "Câu hỏi thường gặp", "en": "Frequently asked questions"}
+from content import artfaq_tr1 as _t1, artfaq_tr2 as _t2, artfaq_tr3 as _t3, artfaq_tr4 as _t4
+for _m in (_t1, _t2, _t3, _t4):
+    FAQ.update(_m.FAQ); H.update(_m.H)
+for _l in FAQ:
+    assert list(FAQ[_l]) == list(FAQ["en"]), _l
+UPDATED = {l: {k: "2026-10-15" for k in FAQ[l]} for l in FAQ}

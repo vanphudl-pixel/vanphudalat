@@ -17,6 +17,8 @@ C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
 _EV = importlib.import_module("content.ev").EV
 _XA = importlib.import_module("content.extra_a").ART
 _XB = importlib.import_module("content.extra_b").ART
+_HUB = importlib.import_module("content.placeshub")
+_FAQ = importlib.import_module("content.artfaq").FAQ
 ref = C["en"]
 for l in LANGS:
     c = C[l]
@@ -36,7 +38,7 @@ for l in LANGS:
             problems.append(f"{l}/{k}: image img/{a[5]}.jpg does not exist")
     # Business rules: never mention driving licences, never state electric-scooter range in km
     # covers the language file, the electric-scooter page (ev.py) and the extra rental articles (extra_a/extra_b)
-    txt = repr(c) + repr(_EV.get(l)) + repr(_XA.get(l)) + repr(_XB.get(l))
+    txt = repr(c) + repr(_EV.get(l)) + repr(_XA.get(l)) + repr(_XB.get(l)) + repr(_HUB.T.get(l)) + repr(_HUB.EXTRA_T.get(l)) + repr(_FAQ.get(l))
     for pat in [r"licen", r"(?<!с)права", r"驾照", r"면허", r"免許", r"ใบขับขี่", r"\bSIM\b", r"\blesen\b", r"bằng lái", r"Führerschein", r"\bpermis\b", r"licencia", r"carnet de conducir", r"carné", r"רישיון", r"patente", r"rijbewijs", r"ប័ណ្ណបើកបរ", r"ໃບຂັບຂີ່", r"လိုင်စင်", r"per carica", r"per lading", r"ដុង", r"ດົ່ງ", r"ဒေါင်",
                 r"\d+\s?(km|公里|км|กม|킬로)\s*(per charge|на заряд|充电|충전|充電|ต่อการชาร์จ|mỗi lần sạc)",
                 r"(per charge|par charge|por carga|pro (Akku)?ladung|mỗi lần sạc|на (одном |полном )?заряде|充满电约|満充電で約|완충 시 약|1회 충전 약|ชาร์จเต็มวิ่ง|sekali isi|setiap cas|בטעינה|לטעינה)",
