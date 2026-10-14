@@ -288,11 +288,11 @@ def business_ld(l, url):
             "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": n, "value": True} for n in
                                ["Free helmet", "Phone holder", "1 liter of fuel (gas scooters)", "Free hotel delivery in central Da Lat (2+ days)", "No cash deposit (passport or ID held)"]],
             "description": h["desc"], "url": url, "image": BASE + "img/electric-row.jpg",
-            "telephone": "+84944081101", "priceRange": "150,000 VND",
+            "telephone": "+84944081101", "priceRange": "120,000–150,000 VND",
             "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Đà Lạt", "addressCountry": "VN"},
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
             "sameAs": ["https://www.facebook.com/vanphudalat", "https://www.tiktok.com/@bietthudalat", TG, ZALO],
-            "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
+            "makesOffer": [{"@type": "Offer", "name": n, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 120000, "maxPrice": 150000, "priceCurrency": "VND", "unitText": "DAY"}, "priceCurrency": "VND"}
                            for n in ["Honda Vision 110cc", "Honda Air Blade 125cc", h["electric_name"]]]}
 
 def posts(l, frm, keys):
@@ -333,9 +333,9 @@ def page_home(l):
 <main class="wrap">
  <section><h2>{h["h_prices"]}</h2>
   <table class="price"><tr><th>{h["th_bike"]}</th><th>{h["th_price"]}</th></tr>
-  <tr><td>Honda Vision 110cc</td><td><b>{h.get("price_cell", "150,000 ₫")}</b></td></tr>
-  <tr><td>Honda Air Blade 125cc</td><td><b>{h.get("price_cell", "150,000 ₫")}</b></td></tr>
-  <tr><td>{h["electric_name"]}</td><td><b>{h.get("price_cell", "150,000 ₫")}</b></td></tr></table>
+  <tr><td>Honda Vision 110cc</td><td><b>{h.get("price_cell", "120,000–150,000 VND")}</b></td></tr>
+  <tr><td>Honda Air Blade 125cc</td><td><b>{h.get("price_cell", "120,000–150,000 VND")}</b></td></tr>
+  <tr><td>{h["electric_name"]}</td><td><b>{h.get("price_cell", "120,000–150,000 VND")}</b></td></tr></table>
   <p class="note">{h["price_note"]}</p></section>
  <section><h2>{h["h_conditions"]}</h2><ul class="checks">{conds}</ul></section>
  <section><h2>{h["h_fleet"]}</h2><div class="grid">
@@ -484,7 +484,7 @@ def page_ev(l):
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in e["faq"]]}
     svc = {"@context": "https://schema.org", "@type": "Service", "name": e["h1"], "serviceType": "Electric scooter rental",
            "provider": {"@id": BASE + "#business"}, "areaServed": "Da Lat, Vietnam", "url": BASE + me,
-           "offers": {"@type": "Offer", "price": "150000", "priceCurrency": "VND"}}
+           "offers": {"@type": "Offer", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 120000, "maxPrice": 150000, "priceCurrency": "VND", "unitText": "DAY"}, "priceCurrency": "VND"}}
     body = f"""
 <header><div class="wrap">{langbar(l, "ev", None, me)}
 <div class="hero">{crumbs(l, me, [(e["crumb"], None)])}
@@ -647,11 +647,11 @@ for l in PM.LANGS:
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
-> Local motorbike and scooter rental in Da Lat (Đà Lạt), Vietnam. Honda Vision 110cc, Honda Air Blade 125cc and electric scooters, all 150,000 VND per day. No cash deposit, free hotel delivery in central Da Lat for rentals of 2+ days.
+> Local motorbike and scooter rental in Da Lat (Đà Lạt), Vietnam. Honda Vision 110cc, Honda Air Blade 125cc and electric scooters, 120,000–150,000 VND per day. No cash deposit, free hotel delivery in central Da Lat for rentals of 2+ days.
 
 ## Key facts
 - Address: 1/15/5 Thông Thiên Học, Đà Lạt, Vietnam ({GMAPS})
-- Price: 150,000 VND/day for every bike, fixed, no hidden fees
+- Price: 120,000–150,000 VND/day, fixed prices, no hidden fees
 - Opening hours: every day 4:30 AM – 9:00 PM
 - Rental day: from pickup until 9:00 PM the same day
 - Deposit: no cash deposit; the guest leaves a passport or ID card; rental fee paid upfront
