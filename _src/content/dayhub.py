@@ -50,3 +50,9 @@ T = {
  ],
 },
 }
+
+from content import daytr as _DT
+_s, _t = _DT.day(); SLUG.update(_s); T.update(_t)
+LANGS = ["vi", "en"] + _DT.LANGS
+for _l in LANGS:
+    assert set(T[_l]) == set(T["en"]) and set(T[_l]["verdict"]) == set(T["en"]["verdict"]) and len(T[_l]["more"]) == len(T["en"]["more"]), _l

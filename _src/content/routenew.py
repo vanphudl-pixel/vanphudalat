@@ -78,6 +78,9 @@ PRICE = {
         "ohayo": "100,000 VND per adult (bottled water), 120,000 VND with a drink; children 1–1.3 m 50,000–80,000 VND; under 1 m free",
         "otome": "pick your own and pay by weight — visitors report about 300,000 VND per kg (varies by season)"},
 }
+from content import daytr as _DT
+T.update(_DT.route("rn", TOTAL)); PRICE.update(_DT.route_price("rn"))
+LANGS = ["vi", "en"] + _DT.LANGS
 for _l in LANGS:
     for _k in SHARED:
         T[_l][_k] = _PM.T[_l][_k]

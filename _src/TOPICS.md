@@ -103,3 +103,5 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 - Languages: 13 original + it, nl, km, lo, my via `content/_langs.py` (NEW/META); each new language needs `<l>.py`, `<l>_art.py`, `<l>_maps.py` (one MAPS entry per map module). Khmer, Lao and Myanmar texts await a native-speaker check.
 - PDFs: built with Chromium, then shrunk with ghostscript + qpdf (font subsets merged); CJK PDFs use fontsource Noto Sans SC/JP/KR (TrueType) instead of the system .ttc fonts, which Chromium embedded as large Type 3 fonts.
+
+- Day-trip set (route maps routenew/routecheckin, day hub, hub reference prices) in 16 more languages: one file per language _src/content/dt_<l>.py, loaded by content/daytr.py. Route PDFs: MAPMOD=routenew|routecheckin pdf.py for all 18.

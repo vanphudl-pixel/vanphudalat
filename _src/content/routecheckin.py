@@ -78,6 +78,9 @@ PRICE = {
         "binhyen": "120,000 VND with a drink; combo with Vuon Dia Dang 150,000 VND (drink + a grilled skewer)",
         "happyhill": "about 110,000–120,000 VND with a drink"},
 }
+from content import daytr as _DT
+T.update(_DT.route("rc", TOTAL)); PRICE.update(_DT.route_price("rc"))
+LANGS = ["vi", "en"] + _DT.LANGS
 for _l in LANGS:
     for _k in SHARED:
         T[_l][_k] = _PM.T[_l][_k]

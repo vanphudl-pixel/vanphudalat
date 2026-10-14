@@ -53,3 +53,8 @@ PRICE = {
 LABEL = {"vi": "Giá vé tham khảo", "en": "Reference price"}
 NOTE = {"vi": "Giá vé là giá tham khảo tổng hợp tháng 10/2026 từ các bảng giá du lịch và đánh giá của khách — có thể thay đổi, kiểm tra tại cổng.",
         "en": "Ticket prices are for reference, collected in October 2026 from travel price lists and visitor reviews — they can change, check at the gate."}
+
+from content import daytr as _DT
+_p, _lb, _n = _DT.hub_price(); PRICE.update(_p); LABEL.update(_lb); NOTE.update(_n)
+for _l in PRICE:
+    assert set(PRICE[_l]) == set(PRICE["en"]), _l

@@ -669,7 +669,7 @@ def page_photomap(l, M=PM):
         nm = f'<a href="{rel(me, art_path(l, guide))}">{n}</a>' if guide and guide in C[l]["articles"] else n
         rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{nm}</b><br><small>{(f"+{_legs[i-1]:.1f} km {t['leg']} · ") if _route else f"≈ {pm_km(M.CENTER, (lat, lng)):.1f} km · "}{t["hours"]}: {hr} · {t["best"]}: {best}</small>'
                  f'<br>{d}{(f"<br>🎟 <b>{t[chr(112)+chr(114)+chr(105)+chr(99)+chr(101)+chr(95)+chr(108)]}:</b> " + M.PRICE[l][sid]) if l in getattr(M, "PRICE", {}) else ""}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · <a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a></div></li>')
-    seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t["season"])
+    seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t.get("season", []))
     tips = "".join(f"<li>{x}</li>" for x in t["tips"])
     pdf = f"{pre}files/{getattr(M, 'PDF', 'VanPhu-Dalat-Photo-Map')}-{l.upper()}.pdf"
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": t["h1"], "itemListElement": [
