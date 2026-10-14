@@ -24,6 +24,7 @@ WA2 = "https://wa.me/84834622149"
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
 from content.ev import EV
 from content import photomap as PM
+from content import pagodamap as PG
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
 for _l in LANGS:
@@ -157,11 +158,14 @@ REV = {
  "he": ("ביקורות של לקוחות", "קראו ביקורות אמיתיות של הלקוחות שלנו ב-Google Maps — והשאירו ביקורת משלכם אחרי הנסיעה.", "★ ביקורות ב-Google Maps"),
 }
 def rev_btn(l): return f'<a class="btn alt" href="{GMAPS}" target="_blank" rel="noopener" style="border:1px solid var(--line)">{REV[l][2]}</a>'
-def pm_path(l): return lang_root(l) + PM.SLUG + "/"
+def map_path(M, l): return lang_root(l) + M.SLUG + "/"
+def pm_path(l): return map_path(PM, l)
 def pm_section(l, me):
     if l not in PM.LANGS: return ""
     t = PM.T[l]
-    return f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">{t["h1"]} →</a></p></section>'
+    g = PG.T[l]
+    return (f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">{t["h1"]} →</a> '
+            f'<a class="btn alt" href="{rel(me, map_path(PG, l))}" style="border:1px solid var(--line)">🛕 {g["h1"]} →</a></p></section>')
 # Real Google Maps reviews, quoted verbatim (excerpts marked with …), shown in the original language.
 # Shown as visible quotes only: no Review/AggregateRating schema, because Google's rules forbid
 # marking up reviews copied from another site (Google Maps). Add new ones only from real reviews.
@@ -569,28 +573,28 @@ def pm_km(a, b):
     la1, lo1, la2, lo2 = map(math.radians, (*a, *b))
     h = math.sin((la2 - la1) / 2) ** 2 + math.cos(la1) * math.cos(la2) * math.sin((lo2 - lo1) / 2) ** 2
     return 6371 * 2 * math.asin(math.sqrt(h))
-def page_photomap(l):
-    t = PM.T[l]; me = pm_path(l)
+def page_photomap(l, M=PM):
+    t = M.T[l]; me = map_path(M, l)
     pre = rel(me, "")
-    bar = "".join(f'<a href="{rel(me, pm_path(x))}" hreflang="{x}" data-l="{x}"{" class=\"on\" aria-current=\"page\"" if x == l else ""}>{LABEL[x]}</a>' for x in PM.LANGS)
-    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}">\n' for x in PM.LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + pm_path("en")}">\n'
+    bar = "".join(f'<a href="{rel(me, map_path(M, x))}" hreflang="{x}" data-l="{x}"{" class=\"on\" aria-current=\"page\"" if x == l else ""}>{LABEL[x]}</a>' for x in M.LANGS)
+    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + map_path(M, x)}">\n' for x in M.LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + map_path(M, "en")}">\n'
     pts = []
     rows = ""
-    for i, (sid, lat, lng, cid, ev, h) in enumerate(PM.SPOTS, 1):
+    for i, (sid, lat, lng, cid, ev, h) in enumerate(M.SPOTS, 1):
         n, best, d = t["s"][sid]
         hr = t["h"].get(h, h)
         g = f"https://maps.google.com/?cid={cid}"
-        ph = PM.img_link(sid)
+        ph = M.img_link(sid)
         own = (OUT / "img" / "spots" / f"{sid}.jpg").exists()
         thumb = f'<img src="{pre}img/spots/{sid}.jpg" alt="{n}" loading="lazy" style="width:96px;height:72px;object-fit:cover;border-radius:8px;flex:none">' if own else ""
         pts.append({"i": i, "n": n, "lat": lat, "lng": lng, "ev": ev, "g": g, "b": best, "h": hr, "p": ph})
-        guide = {"pink": "domainedemarie"}.get(sid)
+        guide = getattr(M, "GUIDES", {"pink": "domainedemarie"}).get(sid)
         nm = f'<a href="{rel(me, art_path(l, guide))}">{n}</a>' if guide and guide in C[l]["articles"] else n
-        rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{nm}</b><br><small>≈ {pm_km(PM.CENTER, (lat, lng)):.1f} km · {t["hours"]}: {hr} · {t["best"]}: {best}</small>'
+        rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{nm}</b><br><small>≈ {pm_km(M.CENTER, (lat, lng)):.1f} km · {t["hours"]}: {hr} · {t["best"]}: {best}</small>'
                  f'<br>{d}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · <a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a></div></li>')
     seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t["season"])
     tips = "".join(f"<li>{x}</li>" for x in t["tips"])
-    pdf = f"{pre}files/VanPhu-Dalat-Photo-Map-{l.upper()}.pdf"
+    pdf = f"{pre}files/{getattr(M, 'PDF', 'VanPhu-Dalat-Photo-Map')}-{l.upper()}.pdf"
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": t["h1"], "itemListElement": [
         {"@type": "ListItem", "position": p["i"], "item": {"@type": "TouristAttraction", "name": p["n"], "geo": {"@type": "GeoCoordinates", "latitude": p["lat"], "longitude": p["lng"]}, "hasMap": p["g"]}} for p in pts]}
     js = json.dumps(pts, ensure_ascii=False)
@@ -633,6 +637,8 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
+for l in PG.LANGS:
+    write(map_path(PG, l), page_photomap(l, PG))
 
 urls = ""
 for kind, key in groups:
@@ -644,6 +650,9 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
+_pg_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(PG, x)}"/>\n' for x in PG.LANGS)
+for l in PG.LANGS:
+    urls += f"  <url>\n    <loc>{BASE + map_path(PG, l)}</loc>\n{_pg_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
@@ -665,6 +674,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Home (English)]({BASE}): prices, bikes, FAQ, map
 - [Electric scooter rental (one battery about 35–40 km; battery swap 20,000 VND)]({BASE + ev_path("en")})
 - [Da Lat photo spot map (16 places, opening hours, free PDF)]({BASE + pm_path("en")})
+- [Da Lat pagoda map (7 pagodas and Zen monasteries, opening hours, free PDF)]({BASE + map_path(PG, "en")})
 - [Motorbike routes around Da Lat]({BASE + routes_path("en")})
 - [Travel blog]({BASE + blog_path("en")})
 """ + "".join(f"- [{LABEL[x]} home]({BASE + home_path(x)})\n" for x in LANGS if x != "en")
