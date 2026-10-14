@@ -26,6 +26,7 @@ from content.ev import EV
 from content import photomap as PM
 from content import pagodamap as PG
 from content import churchmap as CH
+from content import sunflowermap as SF
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
 for _l in LANGS:
@@ -167,7 +168,8 @@ def pm_section(l, me):
     g = PG.T[l]
     return (f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">{t["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(PG, l))}" style="border:1px solid var(--line)">🛕 {g["h1"]} →</a> '
-            f'<a class="btn alt" href="{rel(me, map_path(CH, l))}" style="border:1px solid var(--line)">⛪ {CH.T[l]["h1"]} →</a></p></section>')
+            f'<a class="btn alt" href="{rel(me, map_path(CH, l))}" style="border:1px solid var(--line)">⛪ {CH.T[l]["h1"]} →</a> '
+            f'<a class="btn alt" href="{rel(me, map_path(SF, l))}" style="border:1px solid var(--line)">🌼 {SF.T[l]["h1"]} →</a></p></section>')
 # Real Google Maps reviews, quoted verbatim (excerpts marked with …), shown in the original language.
 # Shown as visible quotes only: no Review/AggregateRating schema, because Google's rules forbid
 # marking up reviews copied from another site (Google Maps). Add new ones only from real reviews.
@@ -600,6 +602,8 @@ def page_photomap(l, M=PM):
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": t["h1"], "itemListElement": [
         {"@type": "ListItem", "position": p["i"], "item": {"@type": "TouristAttraction", "name": p["n"], "geo": {"@type": "GeoCoordinates", "latitude": p["lat"], "longitude": p["lng"]}, "hasMap": p["g"]}} for p in pts]}
     js = json.dumps(pts, ensure_ascii=False)
+    _ak = getattr(M, "ARTICLE", None)
+    art_link = f' <a href="{rel(me, art_path(l, _ak))}" style="color:#fff;text-decoration:underline">{C[l]["articles"][_ak][2]} →</a>' if _ak and _ak in C[l]["articles"] else ""
     return f"""<!doctype html>
 <html lang="{l}"{' dir="rtl"' if l == "he" else ""}><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>{t["title"]}</title>
@@ -615,7 +619,7 @@ def page_photomap(l, M=PM):
 .pmleg{{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin:8px 0}}
 </style></head><body>
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
-<div class="hero"><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p>
+<div class="hero"><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}{art_link}</p>
 <div class="cta"><a class="btn wa" href="{pdf}" download>⬇ {t["pdf"]}</a><a class="btn alt" href="{rel(me, home_path(l))}">{t["cta_h"]}</a></div></div></div></header>
 <main class="wrap">
 <section><div id="pmap" role="img" aria-label="{t["h1"]}"></div>
@@ -639,7 +643,7 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
-for _M in (PG, CH):
+for _M in (PG, CH, SF):
     for l in _M.LANGS:
         write(map_path(_M, l), page_photomap(l, _M))
 
@@ -653,7 +657,7 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
-for _M in (PG, CH):
+for _M in (PG, CH, SF):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
@@ -680,6 +684,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Da Lat photo spot map (16 places, opening hours, free PDF)]({BASE + pm_path("en")})
 - [Da Lat pagoda map (7 pagodas and Zen monasteries, opening hours, free PDF)]({BASE + map_path(PG, "en")})
 - [Da Lat church map (6 churches incl. the Rooster Church and Domaine de Marie, opening hours, free PDF)]({BASE + map_path(CH, "en")})
+- [Da Lat wild sunflower (dã quỳ) map — 9 spots, late Oct–Dec, free PDF]({BASE + map_path(SF, "en")})
 - [Motorbike routes around Da Lat]({BASE + routes_path("en")})
 - [Travel blog]({BASE + blog_path("en")})
 """ + "".join(f"- [{LABEL[x]} home]({BASE + home_path(x)})\n" for x in LANGS if x != "en")
