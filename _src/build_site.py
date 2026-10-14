@@ -820,10 +820,9 @@ def page_day(l):
     for M in (RC, RN):
         mt = M.T[l]; name = M.__name__.split(".")[-1]
         stops = " → ".join(mt["s"][x[0]][0] for x in M.SPOTS)
-        plan = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in mt["season"])
         pdf = rel(me, f"files/{M.PDF}-{l.upper()}.pdf")
         cards += (f'<div class="route"><h3><a href="{rel(me, map_path(M, l))}">{mt["h1"]}</a></h3><div class="meta">{t["km"].format(km=M.TOTAL)}</div>'
-                  f'<p><b>{t["stops"]}:</b> {stops}</p><p>{t["verdict"][name]}</p><ul>{plan}</ul>'
+                  f'<p><b>{t["stops"]}:</b> {stops}</p><p>{t["verdict"][name]}</p>'
                   f'<p><a class="btn wa" href="{rel(me, map_path(M, l))}">🗺 {t["open"]} →</a> <a class="btn alt" href="{pdf}" download style="border:1px solid var(--line)">⬇ {t["pdf"]}</a></p></div>')
     more = "".join(f'<a href="{hub_link(l, me, k)}">{x} →</a>' for k, x in t["more"])
     faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in t["faq"])
