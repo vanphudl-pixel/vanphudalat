@@ -73,7 +73,7 @@ T = {
  "faq_h": "Hỏi nhanh",
  "faq": [
   ("Đi Đà Lạt 1 ngày bằng xe máy nên đi những đâu?",
-   "Buổi sáng dạo hồ Xuân Hương, chợ Đà Lạt và Crazy House ở trung tâm; buổi chiều xuống phía Nam: thác Datanla, hồ Tuyền Lâm và Thiền viện Trúc Lâm (khoảng 5–7 km). Có 2–3 ngày thì thêm bình minh ở đồi chè Cầu Đất và núi Langbiang.", [("routes", "5 cung đường xe máy"), ("art:days3", "Lịch trình 3 ngày")]),
+   "Buổi sáng dạo hồ Xuân Hương, chợ Đà Lạt và Crazy House ở trung tâm; buổi chiều xuống phía Nam: thác Datanla, hồ Tuyền Lâm và Thiền viện Trúc Lâm (khoảng 5–7 km). Có 2–3 ngày thì thêm bình minh ở đồi chè Cầu Đất và núi Langbiang.", [("day", "Đà Lạt 1 ngày tự túc"), ("routes", "5 cung đường xe máy"), ("art:days3", "Lịch trình 3 ngày")]),
   ("Đi xe máy điện được những điểm nào?",
    "{ev_n} trong {n} điểm (chấm xanh) đi xe máy điện thoải mái — chủ yếu ở trung tâm và các điểm gần. Một pin đi khoảng 35–40 km, đổi pin tại tiệm 20.000 VND. Các điểm xa hoặc dốc nên đi Honda Air Blade 125cc: {gas_names}.", [("ev", "Thuê xe máy điện Đà Lạt")]),
   ("Trời mưa ở Đà Lạt nên đi đâu?",
@@ -108,7 +108,7 @@ T = {
  "faq_h": "Quick answers",
  "faq": [
   ("What should I see in Da Lat in one day by motorbike?",
-   "In the morning, Xuan Huong Lake, Da Lat Market and Crazy House in the centre; in the afternoon ride south to Datanla Waterfall, Tuyen Lam Lake and Truc Lam Monastery (about 5–7 km). With 2–3 days, add sunrise at the Cau Dat tea hills and Lang Biang Mountain.", [("routes", "5 motorbike routes"), ("art:days3", "3-day itinerary")]),
+   "In the morning, Xuan Huong Lake, Da Lat Market and Crazy House in the centre; in the afternoon ride south to Datanla Waterfall, Tuyen Lam Lake and Truc Lam Monastery (about 5–7 km). With 2–3 days, add sunrise at the Cau Dat tea hills and Lang Biang Mountain.", [("day", "Day trip on your own"), ("routes", "5 motorbike routes"), ("art:days3", "3-day itinerary")]),
   ("Which places can I reach on an electric scooter?",
    "{ev_n} of the {n} places (green dots) are fine on an electric scooter — mostly in the centre and nearby. One battery lasts about 35–40 km, and a battery swap at our shop costs 20,000 VND. For far or steep places take a Honda Air Blade 125cc: {gas_names}.", [("ev", "Electric scooter rental in Da Lat")]),
   ("Where should I go in Da Lat when it rains?",

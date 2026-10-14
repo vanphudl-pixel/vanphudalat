@@ -41,6 +41,7 @@ from content import festivalmap as FE
 from content import placeshub as HUB
 from content import routenew as RN
 from content import routecheckin as RC
+from content import dayhub as DAY
 from content._route import legs as route_legs
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
@@ -213,7 +214,7 @@ def pm_section(l, me):
             f'<a class="btn alt" href="{rel(me, map_path(H3, l))}" style="border:1px solid var(--line)">🛏️ {H3.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(BU, l))}" style="border:1px solid var(--line)">🚌 {BU.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(DN, l))}" style="border:1px solid var(--line)">🚌 {DN.T[l]["h1"]} →</a>'
-            + "".join(f' <a class="btn alt" href="{rel(me, map_path(_R, l))}" style="border:1px solid var(--line)">🛵 {_R.T[l]["h1"]} →</a>' for _R in (RN, RC) if l in _R.LANGS) + '</p></section>')
+            + (f' <a class="btn alt" href="{rel(me, lang_root(l) + DAY.SLUG[l] + "/")}" style="border:1px solid var(--line)">🛵 {DAY.T[l]["h1"]} →</a>' if l in DAY.LANGS else "") + '</p></section>')
 # Real Google Maps reviews, quoted verbatim (excerpts marked with …), shown in the original language.
 # Shown as visible quotes only: no Review/AggregateRating schema, because Google's rules forbid
 # marking up reviews copied from another site (Google Maps). Add new ones only from real reviews.
@@ -467,6 +468,8 @@ def page_blog(l):
     me = blog_path(l)
     r = C[l]["routes"]
     extra = f'<a class="post" href="{rel(me, routes_path(l))}"><b>{r["h1"]}</b><span>{r["desc"]}</span></a>'
+    if l in DAY.LANGS:
+        extra = f'<a class="post" href="{rel(me, lang_root(l) + DAY.SLUG[l] + "/")}"><b>{DAY.T[l]["h1"]}</b><span>{DAY.T[l]["desc"]}</span></a>' + extra
     if l in HUB.LANGS:
         _n = len(HUB.spots(l)); _t = HUB.T[l]
         extra = f'<a class="post" href="{rel(me, lang_root(l) + HUB.SLUG[l] + "/")}"><b>{_t["h1"].format(n=_n)}</b><span>{_t["desc"].format(n=_n)}</span></a>' + extra
@@ -673,6 +676,8 @@ def page_photomap(l, M=PM):
     js = json.dumps(pts, ensure_ascii=False)
     _ak = getattr(M, "ARTICLE", None)
     art_link = f' <a href="{rel(me, art_path(l, _ak))}" style="color:#fff;text-decoration:underline">{C[l]["articles"][_ak][2]} →</a>' if _ak and _ak in C[l]["articles"] else ""
+    if getattr(M, "ROUTE", False) and l in DAY.LANGS:
+        art_link = f' <a href="{rel(me, lang_root(l) + DAY.SLUG[l] + "/")}" style="color:#fff;text-decoration:underline">{DAY.T[l]["h1"]} →</a>'
     return f"""<!doctype html>
 <html lang="{l}"{' dir="rtl"' if l == "he" else ""}><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>{t["title"]}</title>
@@ -714,9 +719,12 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 THEMES = [RN, RC, PM, PG, CH, SF, CL, CF, BB, FE, HT, H4, H3, BU, DN]
 _TNAME = {M.__name__.split(".")[-1]: M for M in THEMES}
 def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
+def day_path(l): return lang_root(l) + DAY.SLUG[l] + "/"
 def hub_link(l, me, key):
     if key == "routes": return rel(me, routes_path(l))
     if key == "ev": return rel(me, ev_path(l))
+    if key == "hub": return rel(me, hub_path(l))
+    if key == "day": return rel(me, day_path(l))
     if key.startswith("art:"): return rel(me, art_path(l, key[4:]))
     if key.startswith("map:"): return rel(me, map_path(_TNAME[key[4:]], l))
     raise KeyError(key)
@@ -802,6 +810,54 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 """ + foot(l, frm=me)
 for l in HUB.LANGS:
     write(hub_path(l), page_hub(l))
+# ------------------------------------------------------------------ day-trip hub (self-drive routes, vi + en)
+def page_day(l):
+    t = DAY.T[l]; me = day_path(l)
+    bar = "".join(f'<a href="{rel(me, day_path(x))}" hreflang="{x}" data-l="{x}"{" class=\"on\" aria-current=\"page\"" if x == l else ""}>{LABEL[x]}</a>' for x in DAY.LANGS)
+    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + day_path(x)}">\n' for x in DAY.LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + day_path("en")}">\n'
+    cards = ""
+    for M in (RC, RN):
+        mt = M.T[l]; name = M.__name__.split(".")[-1]
+        stops = " → ".join(mt["s"][x[0]][0] for x in M.SPOTS)
+        plan = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in mt["season"])
+        pdf = rel(me, f"files/{M.PDF}-{l.upper()}.pdf")
+        cards += (f'<div class="route"><h3><a href="{rel(me, map_path(M, l))}">{mt["h1"]}</a></h3><div class="meta">{t["km"].format(km=M.TOTAL)}</div>'
+                  f'<p><b>{t["stops"]}:</b> {stops}</p><p>{t["verdict"][name]}</p><ul>{plan}</ul>'
+                  f'<p><a class="btn wa" href="{rel(me, map_path(M, l))}">🗺 {t["open"]} →</a> <a class="btn alt" href="{pdf}" download style="border:1px solid var(--line)">⬇ {t["pdf"]}</a></p></div>')
+    c0, c1, c2 = t["cmp_cols"]
+    cmp = f"<tr><th>{c0}</th><th>{c1}</th><th>{c2}</th></tr>" + "".join(f"<tr><td><b>{a}</b></td><td>{b}</td><td>{c}</td></tr>" for a, b, c in t["cmp"])
+    more = "".join(f'<a href="{hub_link(l, me, k)}">{x} →</a>' for k, x in t["more"])
+    faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in t["faq"])
+    lds = [{"@context": "https://schema.org", "@type": "Article", "headline": t["h1"], "description": t["desc"], "inLanguage": l, "mainEntityOfPage": BASE + me,
+            "image": BASE + "img/airblade.jpg", "datePublished": DAY.UPDATED, "dateModified": DAY.UPDATED,
+            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}, "publisher": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}},
+           {"@context": "https://schema.org", "@type": "ItemList", "name": t["routes_h"], "itemListElement": [
+            {"@type": "ListItem", "position": i, "url": BASE + map_path(M, l), "name": M.T[l]["h1"]} for i, M in enumerate((RC, RN), 1)]},
+           {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]},
+           crumbs_ld(l, [(t["h1"], me)])]
+    return f"""<!doctype html>
+<html lang="{l}"><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>{t["title"]}</title>
+<meta name="description" content="{t["desc"]}"><link rel="canonical" href="{BASE + me}">
+{alts}<meta property="og:type" content="article"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/airblade.jpg">
+{"".join(ldjson(x) for x in lds)}
+<style>{CSS}
+table.cmp{{width:100%;border-collapse:collapse;font-size:15px}} table.cmp td,table.cmp th{{border:1px solid var(--line);padding:8px;vertical-align:top;text-align:left}}
+.tw{{overflow-x:auto}}
+</style></head><body>
+<header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
+<div class="hero">{crumbs(l, me, [(t["h1"], None)])}<h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p><p class="upd"><time datetime="{DAY.UPDATED}">{UPD[l]}: {fdate(l, DAY.UPDATED)}</time></p>
+<div class="cta">{hero_btns(l)}</div></div></div></header>
+<main class="wrap">
+<section><h2>{t["routes_h"]}</h2>{cards}</section>
+<section><h2>{t["cmp_h"]}</h2><div class="tw"><table class="cmp">{cmp}</table></div></section>
+<section><h2>{t["more_h"]}</h2><p class="chips">{more}</p></section>
+<section class="faq"><h2>{t["faq_h"]}</h2>{faq}</section>
+<section>{contact_box(l)}{cta_box(l, me)}</section>
+</main>
+""" + foot(l, frm=me)
+for l in DAY.LANGS:
+    write(day_path(l), page_day(l))
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
@@ -823,6 +879,9 @@ for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
+_day_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + day_path(x)}"/>\n' for x in DAY.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + day_path("en")}"/>\n'
+for l in DAY.LANGS:
+    urls += f"  <url>\n    <loc>{BASE + day_path(l)}</loc>\n{_day_alts}    <lastmod>{DAY.UPDATED}</lastmod>\n  </url>\n"
 _hub_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + hub_path(x)}"/>\n' for x in HUB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + hub_path("en")}"/>\n'
 for l in HUB.LANGS:
     urls += f"  <url>\n    <loc>{BASE + hub_path(l)}</loc>\n{_hub_alts}    <lastmod>{HUB.UPDATED}</lastmod>\n  </url>\n"
@@ -857,6 +916,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Da Lat 4-star hotels — map of 10 popular 4-star hotels and resorts, free PDF]({BASE + map_path(H4, "en")})
 - [Da Lat 3-star hotels — map of 8 popular 3-star hotels near the night market, free PDF]({BASE + map_path(H3, "en")})
 - [Places to visit in Da Lat by motorbike — every sight from our maps grouped by direction, with distance, hours and electric-scooter suitability]({BASE + "places-to-visit-in-da-lat/"}) (Vietnamese: {BASE + "vi/dia-diem-du-lich-da-lat/"})
+- [Da Lat day trip on your own by motorbike — self-guided versions of the popular 1-day group tours, tour vs. own bike comparison]({BASE + "da-lat-day-trip-by-motorbike/"}) (Vietnamese: {BASE + "vi/da-lat-1-ngay-tu-tuc/"})
 - [Self-guided Da Lat day trip by motorbike: new attractions 2026 (Langbiang Land, Mongo Land, Hoang Long Ohayo, strawberry farm) — ordered route, times, free PDF]({BASE + map_path(RN, "en")})
 - [Self-guided Da Lat day trip by motorbike: hot check-in spots (Lac Hu Co Tran, Memory Station, Suoi Binh Yen, Happy Hill) — ordered route, times, free PDF]({BASE + map_path(RC, "en")})
 - [Da Lat to Saigon bus — map of the Da Lat bus station and 12 bus company offices, free PDF]({BASE + map_path(BU, "en")})
