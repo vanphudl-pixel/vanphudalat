@@ -27,6 +27,8 @@ Owner: Phú. Report language: Vietnamese.
 
 - Photo-spot map page (/photo-map/ in en, vi, th) is built from `content/photomap.py`; its PDFs live in `/files/`. Do not delete them. Articles about sights may link to it with a relative link to `photo-map/` in their language when that language has it.
 
+- `/go/` is the QR landing page printed on bike stickers (hand-written HTML, not built by build_site.py). Never delete it; community links are in the COMMUNITY block at the top of its script.
+
 ## Published
 - 2026-10-10 weather — Da Lat weather by month
 - 2026-10-10 getting — How to get to Da Lat (Nha Trang, HCMC, Mui Ne)

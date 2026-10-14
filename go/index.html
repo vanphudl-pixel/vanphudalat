@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Van Phu Dalat — Help, photos & map</title>
+<style>
+:root{--bg:#f7f5f0;--card:#fff;--ink:#1d2a24;--muted:#5b6b63;--brand:#2f6b4f;--line:#e3e0d8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;line-height:1.45}
+header{background:var(--brand);color:#fff;padding:18px 16px 20px}
+.wrap{max-width:520px;margin:0 auto}
+.logo{font-weight:700;font-size:15px;opacity:.9}
+h1{font-size:24px;margin:8px 0 4px}
+.sub{opacity:.9;font-size:15px;margin:0}
+.langs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.langs button{border:1px solid rgba(255,255,255,.5);background:none;color:#fff;border-radius:6px;padding:4px 8px;font-size:13px;cursor:pointer}
+.langs button.on{background:#fff;color:var(--brand)}
+main{padding:16px}
+.card{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px;text-decoration:none;color:var(--ink)}
+.card .ic{font-size:26px;width:36px;text-align:center;flex:none}
+.card b{display:block;font-size:16px}
+.card span{color:var(--muted);font-size:14px}
+.card.main{background:#2f6b4f;color:#fff;border-color:#2f6b4f}.card.main span{color:#e3efe8}
+.card.help{border-color:#25d366}
+.row{display:flex;gap:8px;margin:-2px 0 10px 48px;flex-wrap:wrap}
+.row a{font-size:14px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;text-decoration:none;color:var(--ink)}
+.note{background:#fff4e5;border:1px solid #f2c98a;border-radius:12px;padding:12px 14px;font-size:14px;margin-top:6px}
+.tag{font-weight:700}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:10px 16px 28px}
+[dir=rtl] .row{margin:-2px 48px 10px 0}
+</style></head>
+<body>
+<header><div class="wrap">
+ <div class="logo">Văn Phú Đà Lạt</div>
+ <h1 id="t_h1"></h1><p class="sub" id="t_sub"></p>
+ <div class="langs" id="langs"></div>
+</div></header>
+<main class="wrap">
+ <a class="card main" id="share" target="_blank" rel="noopener"><div class="ic">📸</div><div><b id="t_share"></b><span id="t_share2"></span></div></a>
+ <a class="card help" id="wa" target="_blank" rel="noopener"><div class="ic">🆘</div><div><b id="t_help"></b><span id="t_help2"></span></div></a>
+ <div class="row"><a id="zalo" href="https://zalo.me/0944081101" target="_blank" rel="noopener">Zalo</a><a id="tg" href="https://t.me/vanphudalat" target="_blank" rel="noopener">Telegram</a><a href="tel:+84944081101">☎ +84 944 081 101</a><a href="https://wa.me/84834622149" target="_blank" rel="noopener">WhatsApp 2</a></div>
+ <a class="card" id="map"><div class="ic">🗺️</div><div><b id="t_map"></b><span id="t_map2"></span></div></a>
+ <a class="card" id="rev" href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener"><div class="ic">⭐</div><div><b id="t_rev"></b><span id="t_rev2"></span></div></a>
+ <a class="card" id="shop" href="https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6" target="_blank" rel="noopener"><div class="ic">📍</div><div><b id="t_shop"></b><span>1/15/5 Thông Thiên Học, Đà Lạt</span></div></a>
+ <div class="note" id="t_note"></div>
+</main>
+<footer>vanphudalat.com · #VanPhuDalat</footer>
+<script>
+/* ====== EDIT HERE: community link per language (change later without reprinting stickers) ====== */
+var COMMUNITY = {
+  th: "https://www.facebook.com/vanphudalat",      // TODO: Thai Facebook group link
+  zh: "weixin://",                                  // WeChat ID vanphudalat (RedNote link can be added)
+  ru: "https://t.me/dalat_life_vietnam",
+  vi: "https://zalo.me/0944081101",
+  _default: "https://www.facebook.com/vanphudalat" // TODO: international Facebook group link
+};
+var WA = "https://wa.me/84944081101?text=";
+var MAP = {en:"photo-map/",vi:"vi/photo-map/",th:"th/photo-map/",zh:"zh/photo-map/",ru:"ru/photo-map/",ko:"ko/photo-map/",ja:"ja/photo-map/",id:"id/photo-map/",ms:"ms/photo-map/",de:"de/photo-map/",fr:"fr/photo-map/",es:"es/photo-map/",he:"he/photo-map/"};
+var NAMES = {en:"EN",vi:"VI",th:"ไทย",zh:"中文",ru:"RU",ko:"한국어",ja:"日本語",id:"ID",ms:"MY",de:"DE",fr:"FR",es:"ES",he:"עב"};
+var T = {
+ en:{h1:"Hi! Enjoy your ride 🛵",sub:"Help, photo sharing and maps — all in one place.",share:"Share your Da Lat photos",share2:"Post in our community with #VanPhuDalat",help:"Need help? Chat with us",help2:"WhatsApp · flat tyre, battery, directions",map:"Photo spot map",map2:"16 beautiful places, opening hours, directions",rev:"Leave us a Google review",rev2:"Thank you — it really helps a small local shop!",shop:"Return to the shop",note:"<span class='tag'>⏰ Return before 21:00.</span> Flat tyre: stop and push to the nearest repair shop. No alcohol when riding · ride on the right.",wa:"Hi Van Phu! I rented a bike and need help: "},
+ vi:{h1:"Chào bạn! Chúc chuyến đi vui 🛵",sub:"Hỗ trợ, chia sẻ ảnh và bản đồ — tất cả ở đây.",share:"Chia sẻ ảnh Đà Lạt của bạn",share2:"Đăng vào cộng đồng kèm #VanPhuDalat",help:"Cần hỗ trợ? Nhắn ngay",help2:"Zalo/WhatsApp · lủng lốp, pin, đường đi",map:"Bản đồ điểm chụp ảnh",map2:"16 điểm đẹp, giờ mở cửa, chỉ đường",rev:"Đánh giá Văn Phú trên Google",rev2:"Cảm ơn bạn — giúp cửa hàng nhỏ rất nhiều!",shop:"Đường về cửa hàng",note:"<span class='tag'>⏰ Trả xe trước 21:00.</span> Lủng lốp: dừng xe, dắt đến tiệm vá gần nhất. Không rượu bia khi lái · đi bên phải.",wa:"Chào Văn Phú, mình đang thuê xe và cần hỗ trợ: "},
+ th:{h1:"สวัสดี! ขอให้สนุกกับการขี่ 🛵",sub:"ความช่วยเหลือ แชร์รูป และแผนที่ ครบในที่เดียว",share:"แชร์รูปดาลัดของคุณ",share2:"โพสต์ในกลุ่มของเรา พร้อม #VanPhuDalat",help:"ต้องการความช่วยเหลือ? ทักเลย",help2:"WhatsApp · ยางรั่ว แบตเตอรี่ เส้นทาง",map:"แผนที่จุดถ่ายรูป",map2:"16 จุดสวย เวลาเปิด นำทาง",rev:"รีวิวเราบน Google",rev2:"ขอบคุณมาก ช่วยร้านเล็ก ๆ ได้เยอะเลย!",shop:"กลับร้าน",note:"<span class='tag'>⏰ คืนรถก่อน 21:00</span> ยางรั่ว: หยุดรถแล้วเข็นไปร้านปะยางใกล้ที่สุด ห้ามดื่มแล้วขับ · เวียดนามขับชิดขวา",wa:"สวัสดีค่ะ/ครับ Van Phu ฉันเช่ารถอยู่และต้องการความช่วยเหลือ: "},
+ zh:{h1:"你好！祝骑行愉快 🛵",sub:"求助、分享照片、地图，一页搞定。",share:"分享你的大叻照片",share2:"加微信 vanphudalat，或在小红书带 #VanPhuDalat",help:"需要帮助？马上联系",help2:"WhatsApp / 微信 · 爆胎、电池、问路",map:"拍照打卡地图",map2:"16个美景点、开放时间、导航",rev:"在谷歌地图给我们好评",rev2:"谢谢！对小店帮助很大！",shop:"回店的路",note:"<span class='tag'>⏰ 请在21:00前还车。</span>爆胎：停车推到最近的补胎店。骑车不喝酒 · 靠右行驶。",wa:"你好 Van Phu，我租了车，需要帮助："},
+ ru:{h1:"Привет! Хорошей поездки 🛵",sub:"Помощь, фото и карты — всё в одном месте.",share:"Поделитесь фото Далата",share2:"В нашем Telegram-канале с #VanPhuDalat",help:"Нужна помощь? Напишите нам",help2:"WhatsApp / Telegram · прокол, батарея, дорога",map:"Карта фотоспотов",map2:"16 красивых мест, часы работы, маршрут",rev:"Оставьте отзыв в Google",rev2:"Спасибо — это очень помогает маленькому прокату!",shop:"Дорога обратно в прокат",note:"<span class='tag'>⏰ Верните байк до 21:00.</span> Прокол: остановитесь и докатите до ближайшей шиномонтажки. Без алкоголя за рулём · правостороннее движение.",wa:"Здравствуйте, Van Phu! Я арендовал байк, нужна помощь: "},
+ ko:{h1:"안녕하세요! 즐거운 라이딩 되세요 🛵",sub:"도움, 사진 공유, 지도를 한 곳에서.",share:"달랏 사진 공유하기",share2:"#VanPhuDalat 와 함께 커뮤니티에 올려 주세요",help:"도움이 필요하세요? 바로 연락",help2:"WhatsApp · 펑크, 배터리, 길 안내",map:"사진 명소 지도",map2:"16곳, 운영시간, 길찾기",rev:"구글 리뷰 남기기",rev2:"감사합니다 — 작은 가게에 큰 힘이 돼요!",shop:"매장으로 돌아가기",note:"<span class='tag'>⏰ 21:00 전 반납.</span> 펑크: 멈추고 가까운 수리점까지 끌고 가세요. 음주운전 금지 · 우측 통행.",wa:"안녕하세요 Van Phu, 스쿠터 대여 중인데 도움이 필요해요: "},
+ ja:{h1:"こんにちは！楽しいライドを 🛵",sub:"サポート・写真シェア・地図がひとつに。",share:"ダラットの写真をシェア",share2:"#VanPhuDalat をつけてコミュニティに投稿",help:"困ったときはこちら",help2:"WhatsApp · パンク、バッテリー、道案内",map:"写真スポットマップ",map2:"16か所、営業時間、ルート",rev:"Googleでレビューを書く",rev2:"ありがとう！小さなお店の大きな力になります。",shop:"お店への道",note:"<span class='tag'>⏰ 21:00までに返却。</span>パンク：止まって近くの修理店まで押してください。飲酒運転禁止 · 右側通行。",wa:"こんにちは Van Phu、レンタル中ですが助けてください："},
+ id:{h1:"Halo! Selamat berkendara 🛵",sub:"Bantuan, berbagi foto dan peta — semua di sini.",share:"Bagikan foto Da Lat Anda",share2:"Posting di komunitas kami dengan #VanPhuDalat",help:"Butuh bantuan? Chat kami",help2:"WhatsApp · ban bocor, baterai, arah jalan",map:"Peta spot foto",map2:"16 tempat indah, jam buka, petunjuk arah",rev:"Beri ulasan di Google",rev2:"Terima kasih — sangat membantu toko kecil kami!",shop:"Kembali ke toko",note:"<span class='tag'>⏰ Kembalikan sebelum 21:00.</span> Ban bocor: berhenti dan dorong ke tukang tambal terdekat. Tanpa alkohol · lajur kanan.",wa:"Halo Van Phu, saya sedang menyewa motor dan butuh bantuan: "},
+ ms:{h1:"Hai! Selamat menunggang 🛵",sub:"Bantuan, kongsi foto dan peta — semuanya di sini.",share:"Kongsi foto Da Lat anda",share2:"Siarkan dalam komuniti kami dengan #VanPhuDalat",help:"Perlu bantuan? Hubungi kami",help2:"WhatsApp · tayar pancit, bateri, arah",map:"Peta spot foto",map2:"16 tempat cantik, waktu buka, arah",rev:"Beri ulasan di Google",rev2:"Terima kasih — sangat membantu kedai kecil kami!",shop:"Kembali ke kedai",note:"<span class='tag'>⏰ Pulangkan sebelum 21:00.</span> Tayar pancit: berhenti dan tolak ke kedai tayar terdekat. Tiada alkohol · pandu di kanan.",wa:"Hai Van Phu, saya sedang menyewa motosikal dan perlukan bantuan: "},
+ de:{h1:"Hallo! Gute Fahrt 🛵",sub:"Hilfe, Fotos teilen und Karten — alles an einem Ort.",share:"Teile deine Da-Lat-Fotos",share2:"In unserer Community mit #VanPhuDalat",help:"Hilfe nötig? Schreib uns",help2:"WhatsApp · Platten, Akku, Weg",map:"Fotospot-Karte",map2:"16 schöne Orte, Öffnungszeiten, Route",rev:"Bewerte uns bei Google",rev2:"Danke — das hilft einem kleinen Laden sehr!",shop:"Zurück zum Laden",note:"<span class='tag'>⏰ Rückgabe vor 21:00.</span> Platten: anhalten und zur nächsten Werkstatt schieben. Kein Alkohol · rechts fahren.",wa:"Hallo Van Phu, ich habe einen Roller gemietet und brauche Hilfe: "},
+ fr:{h1:"Bonjour ! Bonne balade 🛵",sub:"Aide, partage de photos et cartes — tout au même endroit.",share:"Partagez vos photos de Da Lat",share2:"Dans notre communauté avec #VanPhuDalat",help:"Besoin d'aide ? Écrivez-nous",help2:"WhatsApp · crevaison, batterie, itinéraire",map:"Carte des spots photo",map2:"16 beaux lieux, horaires, itinéraire",rev:"Laissez-nous un avis Google",rev2:"Merci — ça aide beaucoup une petite boutique !",shop:"Retour à la boutique",note:"<span class='tag'>⏰ Retour avant 21h.</span> Crevaison : arrêtez-vous et poussez jusqu'au réparateur le plus proche. Pas d'alcool · on roule à droite.",wa:"Bonjour Van Phu, je loue un scooter et j'ai besoin d'aide : "},
+ es:{h1:"¡Hola! Disfruta la ruta 🛵",sub:"Ayuda, fotos y mapas, todo en un solo lugar.",share:"Comparte tus fotos de Da Lat",share2:"En nuestra comunidad con #VanPhuDalat",help:"¿Necesitas ayuda? Escríbenos",help2:"WhatsApp · pinchazo, batería, cómo llegar",map:"Mapa de spots para fotos",map2:"16 lugares bonitos, horarios, cómo llegar",rev:"Déjanos una reseña en Google",rev2:"¡Gracias! Ayuda mucho a una tienda pequeña.",shop:"Volver a la tienda",note:"<span class='tag'>⏰ Devuelve antes de las 21:00.</span> Pinchazo: para y empuja hasta el taller más cercano. Sin alcohol · circula por la derecha.",wa:"Hola Van Phu, alquilé una moto y necesito ayuda: "},
+ he:{h1:"שלום! נסיעה נעימה 🛵",sub:"עזרה, שיתוף תמונות ומפות — הכול במקום אחד.",share:"שתפו את התמונות שלכם מדלאט",share2:"בקהילה שלנו עם #VanPhuDalat",help:"צריכים עזרה? כתבו לנו",help2:"WhatsApp · פנצ'ר, סוללה, כיוונים",map:"מפת ספוטים לצילום",map2:"16 מקומות יפים, שעות פתיחה, ניווט",rev:"השאירו לנו ביקורת בגוגל",rev2:"תודה — זה עוזר מאוד לחנות קטנה!",shop:"חזרה לחנות",note:"<span class='tag'>⏰ החזירו עד 21:00.</span> פנצ'ר: עצרו ודחפו לפנצ'רייה הקרובה. בלי אלכוהול · נוסעים בימין.",wa:"שלום Van Phu, שכרתי קטנוע ואני צריך/ה עזרה: "}
+};
+function pick(){var p=null;try{p=localStorage.getItem('lang')}catch(e){}if(p&&T[p])return p;
+ var q=(new URLSearchParams(location.search)).get('l');if(q&&T[q])return q;
+ var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en'];
+ for(var i=0;i<ls.length;i++){var n=ls[i].toLowerCase().slice(0,2);if(n==='in')n='id';if(n==='iw')n='he';if(T[n])return n;}return 'en';}
+function show(l){var t=T[l];document.documentElement.lang=l;document.documentElement.dir=(l==='he'?'rtl':'ltr');
+ ['h1','sub','share','share2','help','help2','map','map2','rev','rev2','shop'].forEach(function(k){document.getElementById('t_'+k).textContent=t[k];});
+ document.getElementById('t_note').innerHTML=t.note;
+ var c=COMMUNITY[l]||COMMUNITY._default;var s=document.getElementById('share');
+ if(c==='weixin://'){s.removeAttribute('target');s.href='#';s.onclick=function(e){e.preventDefault();try{navigator.clipboard.writeText('vanphudalat')}catch(x){}alert('微信号 WeChat ID: vanphudalat (已复制)');};}
+ else{s.onclick=null;s.target='_blank';s.href=c+(c.indexOf('?')>-1?'&':'?')+'ref=bike';}
+ document.getElementById('wa').href=(l==='vi'?'https://zalo.me/0944081101':WA+encodeURIComponent(t.wa));
+ document.getElementById('map').href='../'+MAP[l];
+ document.querySelectorAll('#langs button').forEach(function(b){b.className=(b.dataset.l===l?'on':'');});}
+var box=document.getElementById('langs');Object.keys(NAMES).forEach(function(k){var b=document.createElement('button');b.textContent=NAMES[k];b.dataset.l=k;b.onclick=function(){try{localStorage.setItem('lang',k)}catch(e){}show(k);};box.appendChild(b);});
+show(pick());
+</script>
+</body></html>
