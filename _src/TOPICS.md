@@ -34,9 +34,9 @@ Owner: Phú (vanphudl@gmail.com). Report language: Vietnamese.
 - 2026-10-11 wildsunflower — Wild sunflower (dã quỳ) season around Da Lat by motorbike
 - 2026-10-12 waterfalls — Waterfalls near Da Lat by motorbike (Datanla, Prenn, Elephant Falls, Pongour)
 - 2026-10-14 evrules — Electric scooter rental rules (owner's official rules; link to it from electric-scooter articles)
+- 2026-10-14 caudat — Cau Dat tea hills: complete sunrise guide
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 14/10 caudat — Cau Dat tea hills: complete sunrise guide
 - [ ] 15/10 cloudhunt — Cloud hunting (săn mây) around Da Lat: where, what time, riding there before dawn
 - [ ] 16/10 nightmarket — Da Lat night market guide: what to eat and buy
 - [ ] 17/10 langbiang — Lang Biang Mountain guide by motorbike
