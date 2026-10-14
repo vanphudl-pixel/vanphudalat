@@ -132,6 +132,25 @@ def floats(l):
         return f'<a class="float f2 zf" href="{ZALO}" target="_blank" rel="noopener">Zalo</a>\n<a class="float" href="{wa_link(l)}" target="_blank" rel="noopener">WhatsApp</a>'
     return f'<a class="float" href="{wa_link(l)}" target="_blank" rel="noopener">WhatsApp</a>'
 
+# Google Maps reviews block (real reviews only — never on-site star widgets)
+REV = {
+ "en": ("Guest reviews", "Read what real guests say about us on Google Maps — and leave your own review after your ride.", "★ Read reviews on Google Maps"),
+ "ru": ("Отзывы гостей", "Почитайте настоящие отзывы наших гостей в Google Maps — и оставьте свой после поездки.", "★ Отзывы в Google Maps"),
+ "zh": ("客人评价", "在 Google 地图上查看真实客人的评价，骑行结束后也欢迎留下您的评价。", "★ 查看 Google 地图评价"),
+ "ko": ("고객 리뷰", "Google 지도에서 실제 고객들의 리뷰를 확인하고, 여행 후 리뷰도 남겨 주세요.", "★ Google 지도 리뷰 보기"),
+ "ja": ("お客様の口コミ", "Googleマップで実際のお客様の口コミをご覧ください。ご利用後のレビューも大歓迎です。", "★ Googleマップの口コミを見る"),
+ "th": ("รีวิวจากลูกค้า", "อ่านรีวิวจริงจากลูกค้าของเราบน Google Maps และฝากรีวิวของคุณหลังขี่เสร็จได้เลย", "★ อ่านรีวิวบน Google Maps"),
+ "id": ("Ulasan tamu", "Baca ulasan asli dari tamu kami di Google Maps — dan tinggalkan ulasan Anda setelah berkendara.", "★ Lihat ulasan di Google Maps"),
+ "ms": ("Ulasan pelanggan", "Baca ulasan sebenar pelanggan kami di Google Maps — dan tinggalkan ulasan anda selepas menunggang.", "★ Baca ulasan di Google Maps"),
+ "vi": ("Đánh giá của khách", "Xem đánh giá thật của khách trên Google Maps — và để lại đánh giá của bạn sau chuyến đi.", "★ Xem đánh giá trên Google Maps"),
+ "de": ("Bewertungen unserer Gäste", "Lies echte Bewertungen unserer Gäste auf Google Maps — und hinterlass deine eigene nach der Tour.", "★ Bewertungen auf Google Maps"),
+ "fr": ("Avis de nos clients", "Lisez les vrais avis de nos clients sur Google Maps — et laissez le vôtre après votre balade.", "★ Voir les avis sur Google Maps"),
+ "es": ("Opiniones de clientes", "Lee opiniones reales de nuestros clientes en Google Maps — y deja la tuya después de tu ruta.", "★ Ver opiniones en Google Maps"),
+ "he": ("ביקורות של לקוחות", "קראו ביקורות אמיתיות של הלקוחות שלנו ב-Google Maps — והשאירו ביקורת משלכם אחרי הנסיעה.", "★ ביקורות ב-Google Maps"),
+}
+def rev_btn(l): return f'<a class="btn alt" href="{GMAPS}" target="_blank" rel="noopener" style="border:1px solid var(--line)">{REV[l][2]}</a>'
+def rev_section(l): return f'<section><h2>{REV[l][0]}</h2><p>{REV[l][1]}</p><p>{rev_btn(l)}</p></section>'
+
 def contact_box(l):
     u = C[l]["ui"]
     if l == "ru":
@@ -154,7 +173,8 @@ def cta_box(l, frm):
     btns = (btn(first, l) + "\n" if first else "") + btn("wa", l)
     return f"""<div class="cta-box"><h2>{u["cta_title"]}</h2><p>{u["cta_text"]}</p>
 <div class="cta">{btns}
-<a class="btn alt" href="{rel(frm, home_path(l))}">{u["cta_prices"]}</a></div>
+<a class="btn alt" href="{rel(frm, home_path(l))}">{u["cta_prices"]}</a>
+{rev_btn(l)}</div>
 <p class="kw"><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a></p></div>"""
 
 def contacts(l):
@@ -298,6 +318,7 @@ def page_home(l):
  <section class="prose"><h2>{h["h_why"]}</h2>{why}
   <p><a class="btn alt" href="{rel(me, routes_path(l))}" style="border:1px solid var(--line)">{h["routes_btn"]}</a></p></section>
  <section><h2>{h["h_photos"]}</h2><div class="gallery">{gallery}</div></section>
+ {rev_section(l)}
  <section class="faq"><h2>{h["h_faq"]}</h2>{faq}</section>
  <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:6])}</section>
  <section><h2>{h["h_map"]}</h2>{mp}</section>
