@@ -25,7 +25,7 @@ Owner: Phú. Report language: Vietnamese.
 - Hebrew (he) is right-to-left; write natural Israeli Hebrew, plural address (אתם), avoid recommending pork dishes. German/French/Spanish: natural, informal-friendly tone (du / vous / tú).
 - Malay: avoid pork dishes as recommendations; mention halal where food is discussed. Thai/Malay/Indonesian readers drive on the left at home — remind "Vietnam drives on the right" if riding is discussed.
 
-- Photo-spot map page (/photo-map/, all 13 languages) is built from `content/photomap.py`; the pagoda map (/pagoda-map/, 7 pagodas, all 13 languages) from `content/pagodamap.py`. Their PDFs live in `/files/` (VanPhu-Dalat-Photo-Map-XX.pdf, VanPhu-Dalat-Pagoda-Map-XX.pdf). Do not delete them. Articles about sights or pagodas may link to them with a relative link to `photo-map/` or `pagoda-map/` in their language.
+- Photo-spot map page (/photo-map/, all 13 languages) is built from `content/photomap.py`; the pagoda map (/pagoda-map/, 7 pagodas) from `content/pagodamap.py`, the church map (/church-map/, 6 churches) from `content/churchmap.py`, all 13 languages. Their PDFs live in `/files/` (VanPhu-Dalat-Photo-Map-XX.pdf, VanPhu-Dalat-Pagoda-Map-XX.pdf, VanPhu-Dalat-Church-Map-XX.pdf). Do not delete them. Articles about sights or pagodas may link to them with a relative link to `photo-map/` or `pagoda-map/` in their language.
 
 - `/go/` is the QR landing page printed on bike stickers (hand-written HTML, not built by build_site.py). Never delete it; community links are in the COMMUNITY block at the top of its script.
 

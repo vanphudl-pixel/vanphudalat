@@ -25,6 +25,7 @@ C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
 from content.ev import EV
 from content import photomap as PM
 from content import pagodamap as PG
+from content import churchmap as CH
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
 for _l in LANGS:
@@ -165,7 +166,8 @@ def pm_section(l, me):
     t = PM.T[l]
     g = PG.T[l]
     return (f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">{t["h1"]} →</a> '
-            f'<a class="btn alt" href="{rel(me, map_path(PG, l))}" style="border:1px solid var(--line)">🛕 {g["h1"]} →</a></p></section>')
+            f'<a class="btn alt" href="{rel(me, map_path(PG, l))}" style="border:1px solid var(--line)">🛕 {g["h1"]} →</a> '
+            f'<a class="btn alt" href="{rel(me, map_path(CH, l))}" style="border:1px solid var(--line)">⛪ {CH.T[l]["h1"]} →</a></p></section>')
 # Real Google Maps reviews, quoted verbatim (excerpts marked with …), shown in the original language.
 # Shown as visible quotes only: no Review/AggregateRating schema, because Google's rules forbid
 # marking up reviews copied from another site (Google Maps). Add new ones only from real reviews.
@@ -637,8 +639,9 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
-for l in PG.LANGS:
-    write(map_path(PG, l), page_photomap(l, PG))
+for _M in (PG, CH):
+    for l in _M.LANGS:
+        write(map_path(_M, l), page_photomap(l, _M))
 
 urls = ""
 for kind, key in groups:
@@ -650,9 +653,10 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
-_pg_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(PG, x)}"/>\n' for x in PG.LANGS)
-for l in PG.LANGS:
-    urls += f"  <url>\n    <loc>{BASE + map_path(PG, l)}</loc>\n{_pg_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
+for _M in (PG, CH):
+    _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
+    for l in _M.LANGS:
+        urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
@@ -675,6 +679,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Electric scooter rental (one battery about 35–40 km; battery swap 20,000 VND)]({BASE + ev_path("en")})
 - [Da Lat photo spot map (16 places, opening hours, free PDF)]({BASE + pm_path("en")})
 - [Da Lat pagoda map (7 pagodas and Zen monasteries, opening hours, free PDF)]({BASE + map_path(PG, "en")})
+- [Da Lat church map (6 churches incl. the Rooster Church and Domaine de Marie, opening hours, free PDF)]({BASE + map_path(CH, "en")})
 - [Motorbike routes around Da Lat]({BASE + routes_path("en")})
 - [Travel blog]({BASE + blog_path("en")})
 """ + "".join(f"- [{LABEL[x]} home]({BASE + home_path(x)})\n" for x in LANGS if x != "en")
