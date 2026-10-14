@@ -1,0 +1,256 @@
+"""Da Lat cafés with a view — shared data for the website page (/cafe-view-map/) and the printable PDF.
+Cafés chosen by number of Google Maps reviews among view cafés; coordinates, place links (cid) and opening hours
+taken from Google Maps on 2026-10-14. Prices quoted only as "guests report" ranges from Google reviews.
+Shared labels (directions, legend, CTA, address…) are reused from the photo-spot map."""
+from content import photomap as _PM
+
+# id, lat, lng, Google Maps cid, ok on electric scooter, hours
+SPOTS = [
+    ("thos",     11.9442015, 108.4382829, "15694977348363059231", True,  "7:00–22:00"),
+    ("xhgarden", 11.9438705, 108.4496602, "17078195388765322945", True,  "7:00–22:00"),
+    ("dart",     11.9438105, 108.4500065, "4699544118266304546",  True,  "7:00–22:00"),
+    ("horizon",  11.9238342, 108.4483607, "420763296067155251",   True,  "7:00–19:00"),
+    ("lululola", 11.9199832, 108.4421036, "8903335299318330644",  True,  "8:00–22:00"),
+    ("tuimoto",  11.9409956, 108.4836846, "13657969286274687421", True,  "7:30–21:30"),
+    ("antl",     11.8988988, 108.4377292, "2575432770828521116",  True,  "8:00–19:00"),
+    ("panorama", 11.9466682, 108.4902526, "5915360938369336967",  True,  "day"),
+    ("melinh",   11.9001793, 108.3467509, "10903860802514097433", False, "7:30–17:00"),
+]
+CENTER = _PM.CENTER
+SLUG = "cafe-view-map"
+PDF = "VanPhu-Dalat-Cafe-View-Map"
+GUIDES = {}
+LANGS = list(_PM.LANGS)
+NCENTER = 5
+LEGW = 300
+MAPH = 560
+H1PT = 21
+SIDE = {"tuimoto": "b", "antl": "r", "panorama": "t", "melinh": "t"}
+SHARED = ["pdf", "dir", "hours", "best", "km", "photo", "ev", "gas", "h", "check", "map_note", "cta_h", "cta", "addr", "qr", "shop"]
+
+def _mk(title, h1, desc, lead, center, season_h, season, tips_h, tips, s):
+    return {"title": title, "h1": h1, "desc": desc, "lead": lead, "center": center, "season_h": season_h, "season": season,
+            "tips_h": tips_h, "tips": tips, "s": dict(zip([x[0] for x in SPOTS], s))}
+
+T = {}
+T["en"] = _mk("Da Lat Cafés with a View: Map of the 9 Best | Van Phu", "Da Lat Cafés with a View",
+ "Map of 9 popular Da Lat cafés with a view — valley, pine forest, lake and rooftop — with opening hours, best time to go and directions, plus a free PDF.",
+ "Coffee with a view is half the reason people come to Da Lat. Here are 9 of the most-reviewed view cafés on Google Maps — over the lake, the valleys and the pine hills — with one-tap directions.",
+ "Lake & centre (1–5)", "Good to know",
+ [("Best time", "late afternoon to sunset for the valley cafés; mornings for mist"), ("Crowds", "weekends and evenings are busy — weekday mornings are calmest"), ("Prices", "guests report about 45,000–70,000 VND for a coffee"), ("Ordering", "some cafés ask for one drink per person to sit")],
+ "Café route ideas",
+ ["Lake: Thô's rooftop, then Xuan Huong Garden or D'Art by the water.", "South: Horizon and Lululola on 3/4 Street — go for sunset.", "East: Túi Mơ To, then Panorama in Trai Mat.", "Me Linh coffee farm is 11 km out near Ta Nung: take a Honda Air Blade 125cc."],
+ [("Thô's Artisan Coffee (rooftop)", "Evening", "Rooftop in the city centre with a panoramic view; staff take you up in the lift."),
+  ("Xuan Huong Garden Coffee", "Morning", "Big garden café by Xuan Huong Lake with a koi pond and windmill."),
+  ("D'Art Café", "Evening", "Stylish café with a terrace looking over the lake and hills."),
+  ("Horizon Coffee", "Sunset", "Wide view over pine hills and the valley; also does BBQ."),
+  ("Lululola", "Sunset", "Valley-view café known for evening live-music shows."),
+  ("Túi Mơ To", "Morning", "Garden café with flower beds and a view over the hills and greenhouses."),
+  ("An – Tuyen Lam", "Morning", "Simple tables right on the edge of Tuyen Lam Lake, near the Alpine Coaster."),
+  ("Panorama Cafe (Trai Mat)", "Sunset", "Rooftop over the greenhouse valley at Trai Mat."),
+  ("Me Linh Coffee Garden", "Morning", "Coffee farm with valley views; see how the beans are grown.")])
+T["vi"] = _mk("Quán cà phê view đẹp Đà Lạt: bản đồ 9 quán nổi tiếng | Văn Phú", "Bản đồ quán cà phê view đẹp Đà Lạt",
+ "Bản đồ 9 quán cà phê view đẹp nổi tiếng Đà Lạt — view thung lũng, rừng thông, hồ và rooftop — giờ mở cửa, giờ đẹp, chỉ đường và PDF miễn phí.",
+ "Ngồi cà phê ngắm view là một nửa lý do người ta lên Đà Lạt. Đây là 9 quán view đẹp có nhiều đánh giá nhất trên Google Maps — view hồ, thung lũng, đồi thông — có nút chỉ đường.",
+ "Quanh hồ và trung tâm (1–5)", "Nên biết",
+ [("Giờ đẹp", "chiều muộn đến hoàng hôn với quán view thung lũng; buổi sáng để ngắm sương"), ("Đông khách", "cuối tuần và buổi tối rất đông — sáng ngày thường vắng nhất"), ("Giá", "khách cho biết khoảng 45.000–70.000 VND một ly cà phê"), ("Gọi món", "một số quán yêu cầu mỗi người gọi một món")],
+ "Gợi ý lộ trình cà phê",
+ ["Quanh hồ: rooftop Thô's, rồi Xuân Hương Garden hoặc D'Art bên hồ.", "Phía nam: Horizon và Lululola trên đường 3/4 — đi lúc hoàng hôn.", "Phía đông: Túi Mơ To, rồi Panorama ở Trại Mát.", "Mê Linh Coffee Garden cách 11 km gần Tà Nung: nên đi Air Blade 125cc."],
+ [("Thô's Artisan Coffee (rooftop)", "Buổi tối", "Rooftop ngay trung tâm, view toàn cảnh; nhân viên đưa lên bằng thang máy."),
+  ("Xuân Hương Garden Coffee", "Buổi sáng", "Quán sân vườn rộng bên hồ Xuân Hương, có hồ cá koi và cối xay gió."),
+  ("D'Art Café", "Buổi tối", "Quán đẹp có ban công nhìn ra hồ và đồi."),
+  ("Horizon Coffee", "Hoàng hôn", "View rộng ra đồi thông và thung lũng; có cả BBQ."),
+  ("Lululola", "Hoàng hôn", "Quán view thung lũng, nổi tiếng với show nhạc sống buổi tối."),
+  ("Túi Mơ To", "Buổi sáng", "Quán sân vườn nhiều hoa, nhìn ra đồi và nhà kính."),
+  ("An – Tuyền Lâm", "Buổi sáng", "Bàn ghế đơn giản sát mép hồ Tuyền Lâm, gần máng trượt Alpine Coaster."),
+  ("Panorama Cafe (Trại Mát)", "Hoàng hôn", "Rooftop nhìn ra thung lũng nhà kính ở Trại Mát."),
+  ("Mê Linh Coffee Garden", "Buổi sáng", "Trang trại cà phê view thung lũng; xem cách trồng và chế biến cà phê.")])
+T["ru"] = _mk("Кафе с видом в Далате: карта 9 лучших | Van Phu", "Кафе с видом в Далате",
+ "Карта 9 популярных кафе с видом в Далате — долины, сосновый лес, озеро и крыши — с часами работы, лучшим временем и маршрутом, плюс бесплатный PDF.",
+ "Кофе с видом — половина причин поехать в Далат. Вот 9 кафе с видом с наибольшим числом отзывов в Google Maps — на озеро, долины и сосновые холмы — с маршрутом в одно касание.",
+ "Озеро и центр (1–5)", "Полезно знать",
+ [("Лучшее время", "ближе к вечеру и закат — для кафе с видом на долину; утро — для тумана"), ("Люди", "в выходные и вечером многолюдно — спокойнее всего утром в будни"), ("Цены", "гости пишут о 45 000–70 000 VND за кофе"), ("Заказ", "в некоторых кафе просят один напиток на человека")],
+ "Идеи кофейных маршрутов",
+ ["Озеро: крыша Thô's, затем Xuan Huong Garden или D'Art у воды.", "Юг: Horizon и Lululola на улице 3/4 — к закату.", "Восток: Túi Mơ To, затем Panorama в Чаймате.", "Кофейная ферма Me Linh в 11 км у Танунга: лучше на Honda Air Blade 125cc."],
+ [("Thô's Artisan Coffee (крыша)", "Вечер", "Кафе на крыше в центре с панорамой; персонал поднимает на лифте."),
+  ("Xuan Huong Garden Coffee", "Утро", "Большое садовое кафе у озера Сюанхыонг с прудом кои и мельницей."),
+  ("D'Art Café", "Вечер", "Стильное кафе с террасой на озеро и холмы."),
+  ("Horizon Coffee", "Закат", "Широкий вид на сосновые холмы и долину; есть барбекю."),
+  ("Lululola", "Закат", "Кафе с видом на долину, известно вечерними живыми концертами."),
+  ("Túi Mơ To", "Утро", "Садовое кафе с цветами и видом на холмы и теплицы."),
+  ("An – Туйенлам", "Утро", "Простые столики прямо у кромки озера Туйенлам, рядом с горками Alpine Coaster."),
+  ("Panorama Cafe (Чаймат)", "Закат", "Крыша с видом на долину теплиц в Чаймате."),
+  ("Me Linh Coffee Garden", "Утро", "Кофейная ферма с видом на долину; можно увидеть, как растёт кофе.")])
+T["zh"] = _mk("大叻景观咖啡馆：9家人气最高的咖啡馆地图 | Van Phu", "大叻景观咖啡馆地图",
+ "大叻9家人气景观咖啡馆地图——山谷、松林、湖景和屋顶——附营业时间、最佳时段和导航，还可免费下载 PDF。",
+ "在大叻，一杯咖啡配一片风景是很多人来的理由。这里是 Google 地图上评价最多的9家景观咖啡馆——湖景、山谷、松林——一键导航。",
+ "湖边和市中心（1–5）", "实用信息",
+ [("最佳时间", "山谷景观咖啡馆：傍晚到日落；想看薄雾就早上去"), ("人流", "周末和晚上人很多——工作日早上最清静"), ("价格", "有游客提到一杯咖啡约 45,000–70,000 VND"), ("点单", "有些店要求每人至少点一杯")],
+ "咖啡路线建议",
+ ["湖边：Thô's 屋顶，再去湖边的 Xuan Huong Garden 或 D'Art。", "南线：3/4 路上的 Horizon 和 Lululola——傍晚去看日落。", "东线：Túi Mơ To，再去 Trai Mat 的 Panorama。", "Me Linh 咖啡庄园在 Ta Nung 附近 11 公里：建议骑 Honda Air Blade 125cc。"],
+ [("Thô's Artisan Coffee（屋顶）", "晚上", "市中心屋顶咖啡馆，全景视野；店员会带你坐电梯上去。"),
+  ("Xuan Huong Garden Coffee", "上午", "春香湖边的大花园咖啡馆，有锦鲤池和风车。"),
+  ("D'Art Café", "晚上", "时尚咖啡馆，露台可看湖景和山丘。"),
+  ("Horizon Coffee", "日落", "开阔的松林山谷景观；也有烧烤。"),
+  ("Lululola", "日落", "山谷景观咖啡馆，以晚上的现场音乐演出出名。"),
+  ("Túi Mơ To", "上午", "花园咖啡馆，鲜花遍布，可看山丘和温室。"),
+  ("An – 宣林湖", "上午", "简单的桌椅就在宣林湖边，靠近高山滑车。"),
+  ("Panorama Cafe（Trai Mat）", "日落", "屋顶可俯瞰 Trai Mat 的温室山谷。"),
+  ("Me Linh Coffee Garden", "上午", "山谷景观的咖啡庄园；可以看咖啡怎么种和加工。")])
+T["ko"] = _mk("달랏 뷰 맛집 카페: 인기 카페 9곳 지도 | Van Phu", "달랏 뷰 카페 지도",
+ "달랏의 인기 뷰 카페 9곳 지도 — 계곡, 소나무 숲, 호수, 루프톱 — 운영 시간, 추천 시간대, 길찾기와 무료 PDF.",
+ "뷰 좋은 카페는 달랏 여행의 절반이에요. Google 지도에서 리뷰가 가장 많은 뷰 카페 9곳 — 호수, 계곡, 소나무 언덕 뷰 — 을 원터치 길찾기와 함께 소개합니다.",
+ "호수 & 시내 (1–5)", "알아두면 좋아요",
+ [("추천 시간", "계곡 뷰 카페는 늦은 오후~일몰, 안개는 아침"), ("혼잡", "주말과 저녁은 붐벼요 — 평일 아침이 가장 한산"), ("가격", "커피 한 잔 약 45,000–70,000 VND라는 후기"), ("주문", "1인 1음료를 요청하는 카페도 있어요")],
+ "카페 코스 추천",
+ ["호수: Thô's 루프톱, 그다음 호숫가 Xuan Huong Garden 또는 D'Art.", "남쪽: 3/4 거리의 Horizon과 Lululola — 일몰 시간에.", "동쪽: Túi Mơ To, 그다음 짜이맛의 Panorama.", "Me Linh 커피 농장은 따눙 근처 11km: 혼다 에어블레이드 125cc 추천."],
+ [("Thô's Artisan Coffee (루프톱)", "저녁", "시내 중심 루프톱, 파노라마 뷰; 직원이 엘리베이터로 안내해요."),
+  ("Xuan Huong Garden Coffee", "오전", "쑤언흐엉 호숫가의 넓은 정원 카페, 잉어 연못과 풍차."),
+  ("D'Art Café", "저녁", "호수와 언덕이 보이는 테라스가 있는 세련된 카페."),
+  ("Horizon Coffee", "일몰", "소나무 언덕과 계곡이 시원하게 보이는 뷰; BBQ도 가능."),
+  ("Lululola", "일몰", "계곡 뷰 카페, 저녁 라이브 공연으로 유명."),
+  ("Túi Mơ To", "오전", "꽃이 가득한 정원 카페, 언덕과 비닐하우스 뷰."),
+  ("An – 뚜옌럼", "오전", "뚜옌럼 호수 바로 앞의 소박한 테이블, 알파인 코스터 근처."),
+  ("Panorama Cafe (짜이맛)", "일몰", "짜이맛 비닐하우스 계곡이 내려다보이는 루프톱."),
+  ("Me Linh Coffee Garden", "오전", "계곡 뷰 커피 농장; 커피 재배와 가공을 볼 수 있어요.")])
+T["ja"] = _mk("ダラットの絶景カフェ：人気9店マップ | Van Phu", "ダラット絶景カフェマップ",
+ "ダラットの人気絶景カフェ9店のマップ — 谷、松林、湖、ルーフトップ — 営業時間、おすすめの時間帯、道案内、無料PDF付き。",
+ "景色のいいカフェでのコーヒーはダラット旅の楽しみの半分。Googleマップで口コミの多い絶景カフェ9店 — 湖、谷、松の丘 — をワンタップ道案内付きで紹介します。",
+ "湖と中心部（1–5）", "知っておきたいこと",
+ [("ベストタイム", "谷が見えるカフェは夕方〜日没、霧なら朝"), ("混雑", "週末と夜は混む — 平日の朝がいちばん静か"), ("値段", "コーヒー1杯およそ45,000〜70,000 VNDとの口コミ"), ("注文", "1人1ドリンクを求める店もあります")],
+ "カフェめぐりルート",
+ ["湖：Thô's のルーフトップ、次に湖畔の Xuan Huong Garden か D'Art。", "南：3/4通りの Horizon と Lululola — 夕日の時間に。", "東：Túi Mơ To、続いてチャイマットの Panorama。", "Me Linh コーヒー農園はタヌン近くで11km：ホンダ エアブレード125ccで。"],
+ [("Thô's Artisan Coffee（ルーフトップ）", "夜", "街の中心のルーフトップでパノラマ。スタッフがエレベーターで案内。"),
+  ("Xuan Huong Garden Coffee", "午前", "スアンフオン湖畔の広い庭園カフェ。鯉の池と風車。"),
+  ("D'Art Café", "夜", "湖と丘を望むテラスのあるおしゃれなカフェ。"),
+  ("Horizon Coffee", "夕日", "松の丘と谷が広がる眺め。BBQも。"),
+  ("Lululola", "夕日", "谷を望むカフェ。夜のライブ音楽で有名。"),
+  ("Túi Mơ To", "午前", "花いっぱいの庭園カフェ。丘とビニールハウスの眺め。"),
+  ("An – トゥエンラム", "午前", "トゥエンラム湖のすぐ岸辺にあるシンプルな席。アルペンコースターの近く。"),
+  ("Panorama Cafe（チャイマット）", "夕日", "チャイマットのビニールハウスの谷を見下ろすルーフトップ。"),
+  ("Me Linh Coffee Garden", "午前", "谷を望むコーヒー農園。栽培や加工も見学できます。")])
+T["th"] = _mk("คาเฟ่วิวสวยดาลัด: แผนที่ 9 ร้านยอดนิยม | Van Phu", "แผนที่คาเฟ่วิวสวยดาลัด",
+ "แผนที่ 9 คาเฟ่วิวสวยยอดนิยมในดาลัด — วิวหุบเขา ป่าสน ทะเลสาบ และรูฟท็อป — พร้อมเวลาเปิด ช่วงเวลาดีที่สุด เส้นทาง และ PDF ฟรี",
+ "จิบกาแฟชมวิวคือครึ่งหนึ่งของเหตุผลที่คนมาดาลัด นี่คือ 9 คาเฟ่วิวสวยที่มีรีวิวบน Google Maps มากที่สุด — วิวทะเลสาบ หุบเขา เนินสน — พร้อมนำทางแตะเดียว",
+ "ทะเลสาบและใจกลางเมือง (1–5)", "ควรรู้",
+ [("ช่วงเวลาดี", "คาเฟ่วิวหุบเขา: บ่ายแก่ ๆ ถึงพระอาทิตย์ตก ถ้าอยากเห็นหมอกให้ไปตอนเช้า"), ("คนเยอะ", "เสาร์อาทิตย์และตอนค่ำคนเยอะ — เช้าวันธรรมดาเงียบที่สุด"), ("ราคา", "มีรีวิวว่ากาแฟแก้วละประมาณ 45,000–70,000 VND"), ("การสั่ง", "บางร้านให้สั่งคนละ 1 แก้วถึงจะนั่งได้")],
+ "ไอเดียเส้นทางคาเฟ่",
+ ["ทะเลสาบ: รูฟท็อป Thô's แล้วต่อ Xuan Huong Garden หรือ D'Art ริมน้ำ", "ใต้: Horizon และ Lululola บนถนน 3/4 — ไปช่วงพระอาทิตย์ตก", "ตะวันออก: Túi Mơ To แล้วต่อ Panorama ที่ Trai Mat", "ไร่กาแฟ Me Linh อยู่ห่าง 11 กม. ใกล้ Ta Nung: ขี่ Honda Air Blade 125cc"],
+ [("Thô's Artisan Coffee (รูฟท็อป)", "ช่วงค่ำ", "รูฟท็อปกลางเมือง วิวพาโนรามา พนักงานพาขึ้นลิฟต์"),
+  ("Xuan Huong Garden Coffee", "ช่วงเช้า", "คาเฟ่สวนใหญ่ริมทะเลสาบซวนเฮือง มีบ่อปลาคาร์ปและกังหันลม"),
+  ("D'Art Café", "ช่วงค่ำ", "คาเฟ่สวย มีระเบียงมองเห็นทะเลสาบและเนินเขา"),
+  ("Horizon Coffee", "พระอาทิตย์ตก", "วิวกว้างของเนินสนและหุบเขา มีบาร์บีคิวด้วย"),
+  ("Lululola", "พระอาทิตย์ตก", "คาเฟ่วิวหุบเขา ขึ้นชื่อเรื่องดนตรีสดตอนค่ำ"),
+  ("Túi Mơ To", "ช่วงเช้า", "คาเฟ่สวนดอกไม้ มองเห็นเนินเขาและโรงเรือน"),
+  ("An – Tuyen Lam", "ช่วงเช้า", "โต๊ะเรียบง่ายติดริมทะเลสาบเตวียนเลิม ใกล้ Alpine Coaster"),
+  ("Panorama Cafe (Trai Mat)", "พระอาทิตย์ตก", "รูฟท็อปมองหุบเขาโรงเรือนที่ Trai Mat"),
+  ("Me Linh Coffee Garden", "ช่วงเช้า", "ไร่กาแฟวิวหุบเขา ดูการปลูกและแปรรูปกาแฟได้")])
+T["id"] = _mk("Kafe dengan Pemandangan di Da Lat: Peta 9 Terbaik | Van Phu", "Peta Kafe Berpemandangan Da Lat",
+ "Peta 9 kafe berpemandangan yang populer di Da Lat — lembah, hutan pinus, danau dan rooftop — dengan jam buka, waktu terbaik, petunjuk arah dan PDF gratis.",
+ "Ngopi sambil menikmati pemandangan adalah separuh alasan orang datang ke Da Lat. Ini 9 kafe berpemandangan dengan ulasan terbanyak di Google Maps — danau, lembah, bukit pinus — dengan petunjuk arah sekali ketuk.",
+ "Danau & pusat kota (1–5)", "Perlu diketahui",
+ [("Waktu terbaik", "sore hingga matahari terbenam untuk kafe lembah; pagi untuk kabut"), ("Keramaian", "akhir pekan dan malam ramai — pagi hari kerja paling tenang"), ("Harga", "tamu menyebut sekitar 45.000–70.000 VND untuk segelas kopi"), ("Pemesanan", "beberapa kafe meminta satu minuman per orang")],
+ "Ide rute kafe",
+ ["Danau: rooftop Thô's, lalu Xuan Huong Garden atau D'Art di tepi air.", "Selatan: Horizon dan Lululola di Jalan 3/4 — datang saat senja.", "Timur: Túi Mơ To, lalu Panorama di Trai Mat.", "Kebun kopi Me Linh 11 km dekat Ta Nung: naik Honda Air Blade 125cc."],
+ [("Thô's Artisan Coffee (rooftop)", "Malam", "Rooftop di pusat kota dengan panorama; staf mengantar naik lift."),
+  ("Xuan Huong Garden Coffee", "Pagi", "Kafe taman luas di tepi Danau Xuan Huong dengan kolam koi dan kincir angin."),
+  ("D'Art Café", "Malam", "Kafe bergaya dengan teras menghadap danau dan bukit."),
+  ("Horizon Coffee", "Senja", "Pemandangan luas bukit pinus dan lembah; ada BBQ juga."),
+  ("Lululola", "Senja", "Kafe pemandangan lembah, terkenal dengan musik live malam hari."),
+  ("Túi Mơ To", "Pagi", "Kafe taman penuh bunga dengan pemandangan bukit dan rumah kaca."),
+  ("An – Tuyen Lam", "Pagi", "Meja sederhana tepat di tepi Danau Tuyen Lam, dekat Alpine Coaster."),
+  ("Panorama Cafe (Trai Mat)", "Senja", "Rooftop menghadap lembah rumah kaca di Trai Mat."),
+  ("Me Linh Coffee Garden", "Pagi", "Kebun kopi dengan pemandangan lembah; lihat cara kopi ditanam dan diolah.")])
+T["ms"] = _mk("Kafe Berpemandangan di Da Lat: Peta 9 Terbaik | Van Phu", "Peta Kafe Berpemandangan Da Lat",
+ "Peta 9 kafe berpemandangan popular di Da Lat — lembah, hutan pain, tasik dan rooftop — dengan waktu buka, masa terbaik, arah dan PDF percuma.",
+ "Minum kopi sambil menikmati pemandangan ialah separuh sebab orang datang ke Da Lat. Ini 9 kafe berpemandangan dengan ulasan terbanyak di Google Maps — tasik, lembah, bukit pain — dengan arah sekali sentuh.",
+ "Tasik & pusat bandar (1–5)", "Perlu tahu",
+ [("Masa terbaik", "lewat petang hingga matahari terbenam untuk kafe lembah; pagi untuk kabus"), ("Kesesakan", "hujung minggu dan malam sesak — pagi hari bekerja paling tenang"), ("Harga", "pelawat menyebut kira-kira 45,000–70,000 VND untuk secawan kopi"), ("Pesanan", "sesetengah kafe minta satu minuman seorang")],
+ "Cadangan laluan kafe",
+ ["Tasik: rooftop Thô's, kemudian Xuan Huong Garden atau D'Art di tepi air.", "Selatan: Horizon dan Lululola di Jalan 3/4 — pergi waktu senja.", "Timur: Túi Mơ To, kemudian Panorama di Trai Mat.", "Ladang kopi Me Linh 11 km dekat Ta Nung: tunggang Honda Air Blade 125cc."],
+ [("Thô's Artisan Coffee (rooftop)", "Malam", "Rooftop di pusat bandar dengan panorama; kakitangan bawa naik lif."),
+  ("Xuan Huong Garden Coffee", "Pagi", "Kafe taman luas di tepi Tasik Xuan Huong dengan kolam koi dan kincir angin."),
+  ("D'Art Café", "Malam", "Kafe bergaya dengan teres menghadap tasik dan bukit."),
+  ("Horizon Coffee", "Senja", "Pemandangan luas bukit pain dan lembah; ada BBQ juga."),
+  ("Lululola", "Senja", "Kafe pemandangan lembah, terkenal dengan muzik secara langsung waktu malam."),
+  ("Túi Mơ To", "Pagi", "Kafe taman penuh bunga dengan pemandangan bukit dan rumah hijau."),
+  ("An – Tuyen Lam", "Pagi", "Meja ringkas betul-betul di tepi Tasik Tuyen Lam, dekat Alpine Coaster."),
+  ("Panorama Cafe (Trai Mat)", "Senja", "Rooftop menghadap lembah rumah hijau di Trai Mat."),
+  ("Me Linh Coffee Garden", "Pagi", "Ladang kopi dengan pemandangan lembah; lihat cara kopi ditanam dan diproses.")])
+T["de"] = _mk("Cafés mit Aussicht in Da Lat: Karte der 9 besten | Van Phu", "Cafés mit Aussicht in Da Lat",
+ "Karte mit 9 beliebten Cafés mit Aussicht in Da Lat – Tal, Kiefernwald, See und Dachterrasse – mit Öffnungszeiten, bester Zeit, Route und kostenlosem PDF.",
+ "Kaffee mit Aussicht ist der halbe Grund, nach Da Lat zu kommen. Hier sind 9 der meistbewerteten Aussichts-Cafés auf Google Maps – über See, Täler und Kiefernhügel – mit Route per Fingertipp.",
+ "See & Zentrum (1–5)", "Gut zu wissen",
+ [("Beste Zeit", "später Nachmittag bis Sonnenuntergang für die Tal-Cafés; morgens für Nebel"), ("Andrang", "am Wochenende und abends voll – werktags morgens am ruhigsten"), ("Preise", "Gäste nennen etwa 45.000–70.000 VND für einen Kaffee"), ("Bestellen", "manche Cafés verlangen ein Getränk pro Person")],
+ "Café-Routen",
+ ["See: Dachterrasse von Thô's, dann Xuan Huong Garden oder D'Art am Wasser.", "Süden: Horizon und Lululola an der 3/4-Straße – zum Sonnenuntergang.", "Osten: Túi Mơ To, dann Panorama in Trai Mat.", "Die Kaffeefarm Me Linh liegt 11 km entfernt bei Ta Nung: mit der Honda Air Blade 125cc."],
+ [("Thô's Artisan Coffee (Dachterrasse)", "Abend", "Dachterrasse im Zentrum mit Rundumblick; das Personal fährt Sie mit dem Lift hoch."),
+  ("Xuan Huong Garden Coffee", "Vormittag", "Großes Garten-Café am Xuan-Huong-See mit Koi-Teich und Windmühle."),
+  ("D'Art Café", "Abend", "Schickes Café mit Terrasse über See und Hügeln."),
+  ("Horizon Coffee", "Sonnenuntergang", "Weiter Blick über Kiefernhügel und Tal; auch BBQ."),
+  ("Lululola", "Sonnenuntergang", "Café mit Talblick, bekannt für Live-Musik am Abend."),
+  ("Túi Mơ To", "Vormittag", "Garten-Café voller Blumen mit Blick auf Hügel und Gewächshäuser."),
+  ("An – Tuyen Lam", "Vormittag", "Einfache Tische direkt am Ufer des Tuyen-Lam-Sees, nahe dem Alpine Coaster."),
+  ("Panorama Cafe (Trai Mat)", "Sonnenuntergang", "Dachterrasse über dem Gewächshaustal von Trai Mat."),
+  ("Me Linh Coffee Garden", "Vormittag", "Kaffeefarm mit Talblick; man sieht, wie Kaffee angebaut wird.")])
+T["fr"] = _mk("Cafés avec vue à Da Lat : carte des 9 meilleurs | Van Phu", "Cafés avec vue à Da Lat",
+ "Carte de 9 cafés avec vue populaires à Da Lat — vallée, forêt de pins, lac et rooftop — avec horaires, meilleur moment, itinéraire et PDF gratuit.",
+ "Un café avec vue, c'est la moitié du plaisir à Da Lat. Voici 9 des cafés avec vue les plus notés sur Google Maps — sur le lac, les vallées et les collines de pins — avec itinéraire en un clic.",
+ "Lac & centre (1–5)", "Bon à savoir",
+ [("Meilleur moment", "fin d'après-midi jusqu'au coucher du soleil pour les cafés sur la vallée ; le matin pour la brume"), ("Affluence", "monde le week-end et le soir — matins de semaine plus calmes"), ("Prix", "les visiteurs indiquent environ 45 000–70 000 VND le café"), ("Commande", "certains cafés demandent une boisson par personne")],
+ "Idées de parcours",
+ ["Lac : rooftop de Thô's, puis Xuan Huong Garden ou D'Art au bord de l'eau.", "Sud : Horizon et Lululola rue 3/4 — pour le coucher du soleil.", "Est : Túi Mơ To, puis Panorama à Trai Mat.", "La ferme de café Me Linh est à 11 km près de Ta Nung : en Honda Air Blade 125cc."],
+ [("Thô's Artisan Coffee (rooftop)", "Soir", "Rooftop en plein centre avec vue panoramique ; le personnel vous monte en ascenseur."),
+  ("Xuan Huong Garden Coffee", "Matin", "Grand café-jardin au bord du lac Xuan Huong, avec bassin de carpes koï et moulin."),
+  ("D'Art Café", "Soir", "Café élégant avec terrasse sur le lac et les collines."),
+  ("Horizon Coffee", "Coucher du soleil", "Large vue sur les collines de pins et la vallée ; barbecue aussi."),
+  ("Lululola", "Coucher du soleil", "Café avec vue sur la vallée, connu pour ses concerts le soir."),
+  ("Túi Mơ To", "Matin", "Café-jardin fleuri avec vue sur les collines et les serres."),
+  ("An – Tuyen Lam", "Matin", "Tables simples au bord du lac Tuyen Lam, près de l'Alpine Coaster."),
+  ("Panorama Cafe (Trai Mat)", "Coucher du soleil", "Rooftop sur la vallée des serres de Trai Mat."),
+  ("Me Linh Coffee Garden", "Matin", "Ferme de café avec vue sur la vallée ; on y voit la culture du café.")])
+T["es"] = _mk("Cafés con vistas en Da Lat: mapa de los 9 mejores | Van Phu", "Cafés con vistas en Da Lat",
+ "Mapa de 9 cafés con vistas populares en Da Lat — valle, pinar, lago y azotea — con horarios, mejor momento, cómo llegar y PDF gratis.",
+ "Tomar café con vistas es la mitad del encanto de Da Lat. Aquí tienes 9 de los cafés con vistas con más reseñas en Google Maps — sobre el lago, los valles y las colinas de pinos — con ruta en un toque.",
+ "Lago y centro (1–5)", "Conviene saber",
+ [("Mejor momento", "media tarde hasta la puesta de sol en los cafés del valle; mañanas para la niebla"), ("Gente", "fines de semana y noches con mucha gente; entre semana por la mañana, más tranquilo"), ("Precios", "los visitantes hablan de unos 45.000–70.000 VND por café"), ("Pedido", "algunos cafés piden una bebida por persona")],
+ "Rutas de cafés",
+ ["Lago: azotea de Thô's y luego Xuan Huong Garden o D'Art junto al agua.", "Sur: Horizon y Lululola en la calle 3/4, a la puesta de sol.", "Este: Túi Mơ To y después Panorama en Trai Mat.", "La finca de café Me Linh está a 11 km, cerca de Ta Nung: ve en Honda Air Blade 125cc."],
+ [("Thô's Artisan Coffee (azotea)", "Noche", "Azotea en pleno centro con vistas panorámicas; el personal te sube en ascensor."),
+  ("Xuan Huong Garden Coffee", "Mañana", "Gran café jardín junto al lago Xuan Huong, con estanque de carpas koi y molino."),
+  ("D'Art Café", "Noche", "Café con estilo y terraza sobre el lago y las colinas."),
+  ("Horizon Coffee", "Puesta de sol", "Amplias vistas de colinas de pinos y el valle; también barbacoa."),
+  ("Lululola", "Puesta de sol", "Café con vistas al valle, conocido por su música en directo por la noche."),
+  ("Túi Mơ To", "Mañana", "Café jardín lleno de flores con vistas a colinas e invernaderos."),
+  ("An – Tuyen Lam", "Mañana", "Mesas sencillas en la misma orilla del lago Tuyen Lam, cerca del Alpine Coaster."),
+  ("Panorama Cafe (Trai Mat)", "Puesta de sol", "Azotea sobre el valle de invernaderos de Trai Mat."),
+  ("Me Linh Coffee Garden", "Mañana", "Finca de café con vistas al valle; puedes ver cómo se cultiva el café.")])
+T["he"] = _mk("בתי קפה עם נוף בדלאט: מפה של 9 הטובים ביותר | Van Phu", "בתי קפה עם נוף בדלאט",
+ "מפה של 9 בתי קפה עם נוף פופולריים בדלאט — עמק, יער אורנים, אגם וגג — עם שעות פתיחה, הזמן הכי טוב, ניווט ו-PDF בחינם.",
+ "קפה עם נוף הוא חצי מהסיבה להגיע לדלאט. הנה 9 בתי הקפה עם הנוף עם הכי הרבה ביקורות ב-Google Maps — על האגם, העמקים וגבעות האורנים — עם ניווט בלחיצה אחת.",
+ "האגם והמרכז (1–5)", "כדאי לדעת",
+ [("הזמן הכי טוב", "אחר הצהריים עד השקיעה בבתי הקפה עם נוף לעמק; בוקר לערפל"), ("עומס", "בסופי שבוע ובערב עמוס — בבוקר של יום חול הכי שקט"), ("מחירים", "מבקרים מציינים כ-45,000–70,000 VND לכוס קפה"), ("הזמנה", "בחלק מהמקומות מבקשים משקה אחד לאדם")],
+ "רעיונות למסלול בתי קפה",
+ ["האגם: הגג של Thô's, ואז Xuan Huong Garden או D'Art על המים.", "דרום: Horizon ו-Lululola ברחוב 3/4 — לשקיעה.", "מזרח: Túi Mơ To, ואז Panorama בטראי מאט.", "חוות הקפה Me Linh נמצאת 11 ק\"מ ליד טה נונג: עם Honda Air Blade 125cc."],
+ [("Thô's Artisan Coffee (גג)", "ערב", "בית קפה על גג במרכז העיר עם נוף פנורמי; הצוות מעלה אתכם במעלית."),
+  ("Xuan Huong Garden Coffee", "בוקר", "בית קפה גדול בגן ליד אגם שואן הואנג, עם בריכת קוי וטחנת רוח."),
+  ("D'Art Café", "ערב", "בית קפה מעוצב עם מרפסת לאגם ולגבעות."),
+  ("Horizon Coffee", "שקיעה", "נוף רחב לגבעות האורנים ולעמק; יש גם ברביקיו."),
+  ("Lululola", "שקיעה", "בית קפה עם נוף לעמק, מפורסם בהופעות חיות בערב."),
+  ("Túi Mơ To", "בוקר", "בית קפה בגן מלא פרחים עם נוף לגבעות ולחממות."),
+  ("An – טויין לאם", "בוקר", "שולחנות פשוטים ממש על שפת אגם טויין לאם, ליד ה-Alpine Coaster."),
+  ("Panorama Cafe (טראי מאט)", "שקיעה", "גג מעל עמק החממות בטראי מאט."),
+  ("Me Linh Coffee Garden", "בוקר", "חוות קפה עם נוף לעמק; רואים איך מגדלים ומעבדים קפה.")])
+
+for _l in LANGS:
+    for _k in SHARED:
+        T[_l][_k] = _PM.T[_l][_k]
+    assert set(T[_l]["s"]) == {x[0] for x in SPOTS}, _l
+
+_VI = {"thos": "Thô's Artisan Coffee Đà Lạt", "xhgarden": "Xuân Hương Garden Coffee", "dart": "D'Art Café Đà Lạt", "horizon": "Horizon Coffee Đà Lạt",
+       "lululola": "Lululola Coffee", "tuimoto": "Túi Mơ To", "antl": "An Tuyền Lâm cafe", "panorama": "Panorama Cafe Trại Mát", "melinh": "Mê Linh Coffee Garden"}
+def img_link(sid):
+    """Temporary photo link: Google Images search for the café name."""
+    from urllib.parse import quote
+    return "https://www.google.com/search?tbm=isch&q=" + quote(_VI[sid] + " Đà Lạt")
+JITTER = {"xhgarden": (-14, -14)}
