@@ -8,8 +8,8 @@ T = {
 "vi": {
  "title": "Đà Lạt 1 ngày tự túc bằng xe máy: lộ trình như tour, tự chọn giờ | Văn Phú",
  "h1": "Đà Lạt 1 ngày tự túc bằng xe máy",
- "desc": "Lộ trình Đà Lạt 1 ngày tự túc bằng xe máy, đi đúng các điểm như tour ghép: thứ tự đi, giờ gợi ý, số km, xe nào phù hợp và bản đồ PDF miễn phí. Thuê xe 150.000 VND/ngày.",
- "lead": "Thay vì đi tour ghép, bạn tự chạy xe máy theo đúng lộ trình các tour 1 ngày phổ biến — tự chọn giờ xuất phát, ở lại lâu ở điểm mình thích, bỏ qua điểm không hợp. Mỗi lộ trình có bản đồ đánh số theo thứ tự, giờ gợi ý, số km và gợi ý nên đi xe nào.",
+ "desc": "Lộ trình Đà Lạt 1 ngày tự túc bằng xe máy, đi đúng các điểm như tour ghép: thứ tự đi, số km, xe nào phù hợp và bản đồ PDF miễn phí. Thuê xe 150.000 VND/ngày.",
+ "lead": "Thay vì đi tour ghép, bạn tự chạy xe máy theo đúng lộ trình các tour 1 ngày phổ biến — tự chọn giờ xuất phát, ở lại lâu ở điểm mình thích, bỏ qua điểm không hợp. Mỗi lộ trình có bản đồ đánh số theo thứ tự, số km và gợi ý nên đi xe nào.",
  "routes_h": "Chọn lộ trình",
  "stops": "Các điểm", "km": "Cả vòng khoảng {km} km đường chim bay (tiệm → các điểm → tiệm)", "open": "Xem bản đồ lộ trình", "pdf": "Tải PDF",
  "verdict": {
@@ -30,8 +30,8 @@ T = {
 "en": {
  "title": "Da Lat Day Trip by Motorbike: Tour Routes on Your Own | Van Phu",
  "h1": "Da Lat Day Trip on Your Own by Motorbike",
- "desc": "Self-guided Da Lat day trips by motorbike that follow the popular group tours: stop order, suggested times, distances, which bike to take and free PDF maps. Bike rental 150,000 VND per day.",
- "lead": "Instead of a group tour, ride the same day-tour routes on your own motorbike — start when you like, stay longer where you like, skip what you don't. Each route has a numbered map in riding order, suggested times, distances and which bike to take.",
+ "desc": "Self-guided Da Lat day trips by motorbike that follow the popular group tours: stop order, distances, which bike to take and free PDF maps. Bike rental 150,000 VND per day.",
+ "lead": "Instead of a group tour, ride the same day-tour routes on your own motorbike — start when you like, stay longer where you like, skip what you don't. Each route has a numbered map in riding order, distances and which bike to take.",
  "routes_h": "Choose a route",
  "stops": "Stops", "km": "Whole loop about {km} km in a straight line (shop → stops → shop)", "open": "Open the route map", "pdf": "Download PDF",
  "verdict": {

@@ -30,7 +30,7 @@ T = {
 "vi": {
  "title": "Đà Lạt 1 ngày tự túc: lộ trình check-in điểm hot bằng xe máy | Văn Phú",
  "h1": "Đà Lạt 1 ngày tự túc: lộ trình check-in điểm hot",
- "desc": "Tự chạy xe máy 4 điểm check-in hot ở Đà Lạt: Lạc Hư Cổ Trấn, Trạm Ký Ức (Memory Station), Suối Bình Yên và Happy Hill hồ Tuyền Lâm — thứ tự, giờ gợi ý, khoảng cách, chỉ đường và PDF miễn phí.",
+ "desc": "Tự chạy xe máy 4 điểm check-in hot ở Đà Lạt: Lạc Hư Cổ Trấn, Trạm Ký Ức (Memory Station), Suối Bình Yên và Happy Hill hồ Tuyền Lâm — thứ tự, khoảng cách, chỉ đường và PDF miễn phí.",
  "lead": "Lộ trình giống các tour check-in 1 ngày, nhưng bạn tự chạy xe máy: buổi sáng 2 điểm phía Đông (hướng Trại Mát), buổi chiều 2 điểm phía Nam quanh hồ Tuyền Lâm. Trưa đi ngang trung tâm — tiện ăn trưa và ghé tiệm đổi pin nếu đi xe máy điện.",
  "center": "Thứ tự đi (1–4)",
  "season_h": "Lịch trình gợi ý",
@@ -50,7 +50,7 @@ T = {
 "en": {
  "title": "Da Lat Day Trip by Motorbike: Hot Check-in Spots Route | Van Phu",
  "h1": "Da Lat Self-Guided Day Trip: Hot Check-in Spots",
- "desc": "Ride Da Lat's 4 hottest photo spots yourself: Lac Hu Co Tran, Memory Station (Tram Ky Uc), Suoi Binh Yen and Happy Hill at Tuyen Lam Lake — stop order, suggested times, distances, directions and a free PDF.",
+ "desc": "Ride Da Lat's 4 hottest photo spots yourself: Lac Hu Co Tran, Memory Station (Tram Ky Uc), Suoi Binh Yen and Happy Hill at Tuyen Lam Lake — stop order, distances, directions and a free PDF.",
  "lead": "The same day out as the popular check-in group tours, but on your own motorbike: two stops east of town (towards Trai Mat) in the morning, two around Tuyen Lam Lake in the afternoon. At lunchtime you pass the centre — handy for food and a battery swap at our shop if you ride electric.",
  "center": "Stop order (1–4)",
  "season_h": "Suggested plan",

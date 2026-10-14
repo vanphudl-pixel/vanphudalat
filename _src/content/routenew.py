@@ -30,7 +30,7 @@ T = {
 "vi": {
  "title": "Đà Lạt 1 ngày tự túc: lộ trình các điểm mới 2026 bằng xe máy | Văn Phú",
  "h1": "Đà Lạt 1 ngày tự túc: lộ trình điểm mới 2026",
- "desc": "Tự chạy xe máy lộ trình các khu vui chơi mới ở Đà Lạt: Langbiang Land, Mongo Land, Hoàng Long Ohayo và vườn dâu — thứ tự đi, giờ gợi ý, khoảng cách, chỉ đường và PDF miễn phí.",
+ "desc": "Tự chạy xe máy lộ trình các khu vui chơi mới ở Đà Lạt: Langbiang Land, Mongo Land, Hoàng Long Ohayo và vườn dâu — thứ tự đi, khoảng cách, chỉ đường và PDF miễn phí.",
  "lead": "Lộ trình 1 ngày giống các tour \"điểm mới\", nhưng bạn tự chạy xe máy, tự chọn giờ và ở lại bao lâu tùy thích. 4 điểm theo thứ tự hợp lý: lên phía Bắc tới Langbiang Land, vòng sang Tà Nung, xuống đèo Mimosa và ghé vườn dâu trên đường về.",
  "center": "Thứ tự đi (1–4)",
  "season_h": "Lịch trình gợi ý",
@@ -50,7 +50,7 @@ T = {
 "en": {
  "title": "Da Lat Day Trip by Motorbike: New Attractions 2026 Route | Van Phu",
  "h1": "Da Lat Self-Guided Day Trip: New Attractions 2026",
- "desc": "Ride the Da Lat 'new attractions' day tour yourself: Langbiang Land, Mongo Land, Hoang Long Ohayo and a strawberry farm — stop order, suggested times, distances, directions and a free PDF.",
+ "desc": "Ride the Da Lat 'new attractions' day tour yourself: Langbiang Land, Mongo Land, Hoang Long Ohayo and a strawberry farm — stop order, distances, directions and a free PDF.",
  "lead": "The same day out as the popular 'new attractions' group tours, but on your own motorbike — your timing, as long as you like at each stop. 4 stops in a sensible order: north to Langbiang Land, across to Ta Nung, down Mimosa Pass and a strawberry farm on the way back.",
  "center": "Stop order (1–4)",
  "season_h": "Suggested plan",

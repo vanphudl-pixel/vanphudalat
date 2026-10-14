@@ -701,7 +701,7 @@ def page_photomap(l, M=PM):
 <div class="pmleg"><span><span class="pmn ev" style="display:inline-flex;width:14px;height:14px"></span> {t["ev"]}</span><span><span class="pmn gas" style="display:inline-flex;width:14px;height:14px"></span> {t["gas"]}</span></div>
 <p class="note">{(t["total"].format(km=round(sum(_legs))) + " · ") if _route else ""}{t["check"]} · ≈ {t["km"]}</p></section>
 <section><ol class="pmlist">{rows}</ol></section>
-<section class="prose"><h2>{t["season_h"]}</h2><ul>{seasons}</ul><h2>{t["tips_h"]}</h2><ul>{tips}</ul></section>
+<section class="prose">{"" if _route else f'<h2>{t["season_h"]}</h2><ul>{seasons}</ul>'}<h2>{t["tips_h"]}</h2><ul>{tips}</ul></section>
 <section>{cta_box(l, me)}</section>
 </main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
