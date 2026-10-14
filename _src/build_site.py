@@ -178,7 +178,7 @@ def pm_section(l, me):
     if l not in PM.LANGS: return ""
     t = PM.T[l]
     g = PG.T[l]
-    return (f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn" href="{rel(me, map_path(FE, l))}">🌸 {FE.T[l]["h1"]} →</a> <a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">{t["h1"]} →</a> '
+    return (f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn" href="{rel(me, pm_path(l))}">{t["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(PG, l))}" style="border:1px solid var(--line)">🛕 {g["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(CH, l))}" style="border:1px solid var(--line)">⛪ {CH.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(SF, l))}" style="border:1px solid var(--line)">🌼 {SF.T[l]["h1"]} →</a> '
@@ -358,7 +358,6 @@ def page_home(l):
  <img class="heroimg" src="{pre}img/electric-row.jpg" alt="{alt}" width="1200" height="675">
 </div></div></header>
 <main class="wrap">
- <section class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px"><p>{FE.T[l]["desc"]}</p><p><a class="btn" href="{rel(me, map_path(FE, l))}">🌸 {FE.T[l]["h1"]} →</a></p></section>
  <section><h2>{h["h_prices"]}</h2>
   <table class="price"><tr><th>{h["th_bike"]}</th><th>{h["th_price"]}</th></tr>
   <tr><td>Honda Vision 110cc</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr>
@@ -378,6 +377,7 @@ def page_home(l):
  <section><h2>{h["h_photos"]}</h2><div class="gallery">{gallery}</div></section>
  {rev_section(l)}
  {pm_section(l, me)}
+ <section class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px"><p>{FE.T[l]["desc"]}</p><p><a class="btn" href="{rel(me, map_path(FE, l))}">🌸 {FE.T[l]["h1"]} →</a></p></section>
  <section class="faq"><h2>{h["h_faq"]}</h2>{faq}</section>
  <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:6])}</section>
  <section><h2>{h["h_map"]}</h2>{mp}</section>
