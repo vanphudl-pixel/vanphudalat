@@ -30,14 +30,18 @@ print(f"{len(urls)} URLs")
 if not urls:
     sys.exit(0)
 body = json.dumps({"host": HOST, "key": KEY, "keyLocation": f"{BASE}{KEY}.txt", "urlList": urls[:10000]}).encode()
+ok = 0
 for ep in ["https://api.indexnow.org/indexnow", "https://yandex.com/indexnow", "https://www.bing.com/indexnow"]:
     req = urllib.request.Request(ep, data=body, headers={"Content-Type": "application/json; charset=utf-8"})
     try:
         with urllib.request.urlopen(req, timeout=30) as r:
             print(ep, r.status)
+            ok += r.status in (200, 202)
     except urllib.error.HTTPError as e:
         print(ep, e.code, e.read()[:200])
     except Exception as e:
         print(ep, "ERR", e)
 for u in urls[:20]:
     print(" ", u)
+if not ok:
+    sys.exit("IndexNow: no endpoint accepted the URLs")
