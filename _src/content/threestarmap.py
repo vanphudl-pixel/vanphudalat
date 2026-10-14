@@ -230,6 +230,8 @@ T["he"] = _mk("מלונות 3 כוכבים בדלאט: מפה של 8 מלונו�
   ("Ky Hoa Garden Villages Hotel", "בכל שעה", "וילות בסגנון צרפתי עם גינות, צפונית למרכז."),
   ("Dalat De Charme Village", "שקיעה", "חדרים בעיצוב נושאי וגינה מדורגת, מזרחית למרכז.")])
 
+from content._langs import inject as _inject
+_inject(T, __name__)
 for _l in LANGS:
     for _k in SHARED:
         T[_l][_k] = _PM.T[_l][_k]

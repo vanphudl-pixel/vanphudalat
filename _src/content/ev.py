@@ -439,3 +439,9 @@ EV["he"] = dict(
  ('כמה זה עולה?', '150,000 VND ליום, כמו קטנועי הבנזין. בלי עלויות נסתרות.'),
  ('אפשר לרכוב בשניים?', 'כן, אם המשקל הכולל של שניכם מתחת ל-100 ק"ג.')],
 )
+
+# languages added later keep their texts in content/<l>.py
+import importlib as _il
+from content._langs import NEW as _NEWL
+for _l in _NEWL:
+    EV[_l] = getattr(_il.import_module(f'content.{_l}'), 'EV_')

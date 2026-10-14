@@ -8,7 +8,8 @@ from urllib.parse import urljoin, urlparse
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(HERE))
-LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he"]
+from content._langs import NEW as _NEWL
+LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he"] + _NEWL
 BASE = "https://vanphudalat.com/"
 problems = []
 
@@ -36,7 +37,7 @@ for l in LANGS:
     # Business rules: never mention driving licences, never state electric-scooter range in km
     # covers the language file, the electric-scooter page (ev.py) and the extra rental articles (extra_a/extra_b)
     txt = repr(c) + repr(_EV.get(l)) + repr(_XA.get(l)) + repr(_XB.get(l))
-    for pat in [r"licen", r"(?<!с)права", r"驾照", r"면허", r"免許", r"ใบขับขี่", r"\bSIM\b", r"\blesen\b", r"bằng lái", r"Führerschein", r"\bpermis\b", r"licencia", r"carnet de conducir", r"carné", r"רישיון",
+    for pat in [r"licen", r"(?<!с)права", r"驾照", r"면허", r"免許", r"ใบขับขี่", r"\bSIM\b", r"\blesen\b", r"bằng lái", r"Führerschein", r"\bpermis\b", r"licencia", r"carnet de conducir", r"carné", r"רישיון", r"patente", r"rijbewijs", r"ប័ណ្ណបើកបរ", r"ໃບຂັບຂີ່", r"လိုင်စင်", r"per carica", r"per lading", r"ដុង", r"ດົ່ງ", r"ဒေါင်",
                 r"\d+\s?(km|公里|км|กม|킬로)\s*(per charge|на заряд|充电|충전|充電|ต่อการชาร์จ|mỗi lần sạc)",
                 r"(per charge|par charge|por carga|pro (Akku)?ladung|mỗi lần sạc|на (одном |полном )?заряде|充满电约|満充電で約|완충 시 약|1회 충전 약|ชาร์จเต็มวิ่ง|sekali isi|setiap cas|בטעינה|לטעינה)",
                 r"120\s?(kg|кг|公斤|กก|ק\"ג)",

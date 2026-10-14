@@ -396,3 +396,9 @@ ART["he"] = {
 <p>כל הדגמים 150,000 VND ליום, קסדה ומחזיק לטלפון בחינם, בלי פיקדון במזומן (דרכון או תעודה מזהה), משלוח חינם למלונות במרכז מיומיים. ראו את עמוד <a href="{HOME}">השכרת קטנועים בדאלאט</a> או כתבו לנו בוואטסאפ.</p>
 """),
 }
+
+# languages added later keep their texts in content/<l>.py
+import importlib as _il
+from content._langs import NEW as _NEWL
+for _l in _NEWL:
+    ART[_l] = getattr(_il.import_module(f'content.{_l}'), 'ART_')

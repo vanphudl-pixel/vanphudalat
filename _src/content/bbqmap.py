@@ -244,6 +244,8 @@ T["he"] = _mk("הברביקיו הכי טוב בדלאט: מפה של 9 מסעד
   ("Tiệm nướng Hoàng Hôn", "שקיעה", "גריל על צלע גבעה במזרח העיר, מפורסם בנוף השקיעה."),
   ("Túi Mơ To Garden Restaurant", "שקיעה", "מסעדת גן מלאה פרחים עם נוף לגבעות; ברביקיו והוט-פוט.")])
 
+from content._langs import inject as _inject
+_inject(T, __name__)
 for _l in LANGS:
     for _k in SHARED:
         T[_l][_k] = _PM.T[_l][_k]

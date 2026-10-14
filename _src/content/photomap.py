@@ -453,7 +453,9 @@ T["he"] = _mk("מפת ספוטים לצילום בדלאט: 16 המקומות ה
   ("הר לאנג ביאנג", "בוקר", "תצפית רחבה על עמק לאק זואונג; עלייה תלולה."),
   ("גבעות התה קאו דאט", "מוקדם בבוקר", "שורות תה ועננים בבוקר; פתוח מ-6:00.")])
 
-LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he"]
+from content._langs import NEW as _NEWL, inject as _inject
+LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he"] + _NEWL
+_inject(T, __name__)
 for _l in LANGS:
     T[_l].setdefault("center", T["en"]["center"])
     assert set(T[_l]["s"]) == {x[0] for x in SPOTS}, _l

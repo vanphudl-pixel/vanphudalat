@@ -8,9 +8,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 BASE = "https://vanphudalat.com/"
 OUT = HERE.parent  # repo root = published site
-LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he"]
+from content._langs import NEW as _NEWL, META as _META
+LANGS = ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he"] + _NEWL
 LABEL = {"en": "EN", "ru": "RU", "zh": "中文", "ko": "한국어", "ja": "日本語", "th": "ไทย", "id": "ID", "ms": "MY", "vi": "VI", "de": "DE", "fr": "FR", "es": "ES", "he": "עב"}
 LOCALE = {"en": "en_US", "ru": "ru_RU", "zh": "zh_CN", "ko": "ko_KR", "ja": "ja_JP", "th": "th_TH", "id": "id_ID", "ms": "ms_MY", "vi": "vi_VN", "de": "de_DE", "fr": "fr_FR", "es": "es_ES", "he": "he_IL"}
+for _l in _NEWL: LABEL[_l], LOCALE[_l] = _META[_l][0], _META[_l][1]
 LAT, LON = 11.9510676, 108.4384077
 GMAPS = "https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6"
 YA_LINK = f"https://yandex.ru/maps/?pt={LON},{LAT}&z=17&l=map"
@@ -110,6 +112,7 @@ RENT = {"en": "dalat-motorbike-rental", "vi": "thue-xe-may-da-lat", "ru": "arend
         "th": "dalat-motorbike-rental", "id": "sewa-motor-dalat", "ms": "sewa-motosikal-dalat",
         "de": "roller-mieten-dalat", "fr": "location-scooter-dalat", "es": "alquiler-moto-dalat",
         "he": "dalat-motorbike-rental"}
+for _l in _NEWL: RENT[_l] = _META[_l][2]
 def lang_root(l): return "" if l == "en" else f"{l}/"
 def home_path(l): return lang_root(l) + RENT[l] + "/"
 def routes_path(l): return lang_root(l) + C[l]["routes"]["slug"] + "/"
@@ -167,6 +170,7 @@ REV = {
  "es": ("Opiniones de clientes", "Lee opiniones reales de nuestros clientes en Google Maps — y deja la tuya después de tu ruta.", "★ Ver opiniones en Google Maps"),
  "he": ("ביקורות של לקוחות", "קראו ביקורות אמיתיות של הלקוחות שלנו ב-Google Maps — והשאירו ביקורת משלכם אחרי הנסיעה.", "★ ביקורות ב-Google Maps"),
 }
+for _l in _NEWL: REV[_l] = importlib.import_module(f"content.{_l}").REV_
 def rev_btn(l): return f'<a class="btn alt" href="{GMAPS}" target="_blank" rel="noopener" style="border:1px solid var(--line)">{REV[l][2]}</a>'
 def map_path(M, l): return lang_root(l) + M.SLUG + "/"
 def pm_path(l): return map_path(PM, l)

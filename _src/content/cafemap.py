@@ -289,8 +289,10 @@ _ADD = {
         ("Dalat View cafe", "שקיעה", "בית קפה ומסעדה על גבעה מול יער האורנים, עמק החממות ואורות העיר."),
         ("Lung Chung", "בוקר", "בית קפה רב-קומות חבוי ביער אורנים מתחת לרחוב 3/4; הירידה תלולה.")],
 }
+from content._langs import inject as _inject
+_inject(T, __name__)
 for _l in LANGS:
-    T[_l]["s"].update(zip(_NEW, _ADD[_l]))
+    if _l in _ADD: T[_l]["s"].update(zip(_NEW, _ADD[_l]))
     for _k in SHARED:
         T[_l][_k] = _PM.T[_l][_k]
     assert set(T[_l]["s"]) == {x[0] for x in SPOTS}, _l

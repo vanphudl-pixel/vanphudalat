@@ -306,10 +306,12 @@ _ADD = {
         ("Da Lat Oi", "יום ולילה", "משרד באזור פאם הונג טאי; אוטובוסים עם תאים זוגיים.")],
 }
 SPOTS += _NEW
-for _l in LANGS:
+for _l in _ADD:
     for _row, _v in zip(_NEW, _ADD[_l]):
         T[_l]["s"][_row[0]] = _v
 
+from content._langs import inject as _inject
+_inject(T, __name__)
 for _l in LANGS:
     for _k in SHARED:
         T[_l][_k] = _PM.T[_l][_k]

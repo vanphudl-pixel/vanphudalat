@@ -259,8 +259,10 @@ _HONBO = {
  "es": ("Colina Hon Bo", "Antes del amanecer", "La colina más alta al este de la ciudad; amanecer y nubes sobre el pueblo de flores de Thai Phien. El último tramo es tierra roja empinada: súbelo a pie."),
  "he": ("גבעת הון בו", "לפני הזריחה", "הגבעה הגבוהה ביותר במזרח העיר; זריחה ועננים מעל כפר הפרחים טאי פיין. הקטע האחרון עפר אדום תלול — עדיף ברגל."),
 }
+from content._langs import inject as _inject
+_inject(T, __name__)
 for _l in LANGS:
-    T[_l]["s"]["honbo"] = _HONBO[_l]
+    if _l in _HONBO: T[_l]["s"]["honbo"] = _HONBO[_l]
     for _k in SHARED:
         T[_l][_k] = _PM.T[_l][_k]
     assert set(T[_l]["s"]) == {x[0] for x in SPOTS}, _l
