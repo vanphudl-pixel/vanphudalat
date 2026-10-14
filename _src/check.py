@@ -40,7 +40,7 @@ for l in LANGS:
                 r"\d+\s?(km|公里|км|กม|킬로)\s*(per charge|на заряд|充电|충전|充電|ต่อการชาร์จ|mỗi lần sạc)",
                 r"(per charge|par charge|por carga|pro (Akku)?ladung|mỗi lần sạc|на (одном |полном )?заряде|充满电约|満充電で約|완충 시 약|1회 충전 약|ชาร์จเต็มวิ่ง|sekali isi|setiap cas|בטעינה|לטעינה)",
                 r"120\s?(kg|кг|公斤|กก|ק\"ג)",
-                r"\d[\d.,\u00a0\u202f ]*\d\s?(đ\b|₫|донг|ดอง|דונג|越南盾|ドン)", r"(?<![–\d.,  ])150[.,\u00a0\u202f ]?000(?!–)"]:
+                r"\d[\d.,\u00a0\u202f ]*\d\s?(đ\b|₫|донг|ดอง|דונג|越南盾|ドン)", r"120[.,\u00a0\u202f ]?000\s?VND|\b120k\b"]:
         if re.search(pat, txt, re.I):
             problems.append(f"{l}: forbidden wording /{pat}/")
 

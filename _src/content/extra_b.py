@@ -5,11 +5,11 @@ ART["id"] = {
 "price": ("harga-sewa-motor-dalat",
  "Harga Sewa Motor di Da Lat 2026: Berapa per Hari? | Van Phu",
  "Harga Sewa Motor di Da Lat 2026: Berapa per Hari?",
- "Harga sewa motor di Da Lat 2026: 120.000–150.000 VND/hari, termasuk helm, tanpa deposit uang tunai. Tips menghindari biaya tersembunyi.",
+ "Harga sewa motor di Da Lat 2026: 150.000 VND/hari, termasuk helm, tanpa deposit uang tunai. Tips menghindari biaya tersembunyi.",
  "Sebelum sewa skuter di Da Lat, sebaiknya tahu apa saja yang termasuk dalam harga. Begini cara kami menghitung harga dan hal yang perlu ditanyakan di tempat sewa mana pun.",
  "fleet-gas", """
-<h2>Harga: 120.000–150.000 VND per hari</h2>
-<p>Di Van Phu harga sewa <b>120.000–150.000 VND per hari</b> — Honda Vision 110cc, Honda Air Blade 125cc dan motor listrik. Harga tetap, tanpa kenaikan musim ramai dan tanpa biaya tersembunyi. Tidak ada diskon sewa lama, jadi hitungannya mudah: jumlah hari × harga harian.</p>
+<h2>Harga: 150.000 VND per hari</h2>
+<p>Di Van Phu harga sewa <b>150.000 VND per hari</b> — Honda Vision 110cc, Honda Air Blade 125cc dan motor listrik. Harga tetap, tanpa kenaikan musim ramai dan tanpa biaya tersembunyi. Tidak ada diskon sewa lama, jadi hitungannya mudah: jumlah hari × harga harian.</p>
 <h2>Sudah termasuk</h2>
 <ul>
 <li>Helm dan dudukan HP gratis.</li>
@@ -37,7 +37,7 @@ ART["id"] = {
  "Sewa Motor Listrik atau Motor Bensin di Da Lat? Pilih yang Mana | Van Phu",
  "Motor Listrik atau Motor Bensin: Sewa yang Mana di Da Lat?",
  "Sewa motor listrik di Da Lat atau motor bensin? Perbandingan jarak tempuh, tenaga di tanjakan dan harga.",
- "Keduanya 120.000–150.000 VND per hari, tapi cocok untuk perjalanan yang sangat berbeda. Ini cara memilihnya di Da Lat.",
+ "Keduanya 150.000 VND per hari, tapi cocok untuk perjalanan yang sangat berbeda. Ini cara memilihnya di Da Lat.",
  "electric-helmets", """
 <h2>Jawaban singkat</h2>
 <p>Keliling pusat kota dengan jarak pendek? Pilih <b>motor listrik</b>: senyap dan mudah. Mau ke bukit, jalan pegunungan atau luar kota? Pilih <b>motor bensin</b>, sebaiknya Honda Air Blade 125cc.</p>
@@ -63,7 +63,7 @@ ART["id"] = {
 </ul>
 <p>Rute dengan jarak ada di <a href="{ROUTES}">5 rute keliling Da Lat</a>.</p>
 <h2>Harga dan layanan sama</h2>
-<p>Semua motor 120.000–150.000 VND per hari, helm dan dudukan HP gratis, tanpa deposit uang (tinggalkan paspor atau KTP), antar gratis ke hotel di pusat kota untuk 2 hari ke atas. Lihat halaman <a href="{HOME}">sewa motor Da Lat</a> atau hubungi kami lewat WhatsApp.</p>
+<p>Semua motor 150.000 VND per hari, helm dan dudukan HP gratis, tanpa deposit uang (tinggalkan paspor atau KTP), antar gratis ke hotel di pusat kota untuk 2 hari ke atas. Lihat halaman <a href="{HOME}">sewa motor Da Lat</a> atau hubungi kami lewat WhatsApp.</p>
 """),
 }
 
@@ -71,11 +71,11 @@ ART["ms"] = {
 "price": ("harga-sewa-motosikal-dalat",
  "Harga Sewa Motosikal di Da Lat 2026: Berapa Sehari? | Van Phu",
  "Harga Sewa Motosikal di Da Lat 2026: Berapa Sehari?",
- "Harga sewa motosikal di Da Lat 2026: 120,000–150,000 VND sehari, termasuk topi keledar, tiada deposit tunai. Tip elak kos tersembunyi.",
+ "Harga sewa motosikal di Da Lat 2026: 150,000 VND sehari, termasuk topi keledar, tiada deposit tunai. Tip elak kos tersembunyi.",
  "Sebelum menyewa skuter di Da Lat, elok tahu apa yang termasuk dalam harga. Ini cara kami mengira harga dan perkara yang patut ditanya di mana-mana kedai sewa.",
  "fleet-gas", """
-<h2>Harga: 120,000–150,000 VND sehari</h2>
-<p>Di Van Phu harga sewa <b>120,000–150,000 VND sehari</b> — Honda Vision 110cc, Honda Air Blade 125cc dan skuter elektrik. Harga tetap, tiada caj musim puncak dan tiada kos tersembunyi. Tiada diskaun sewa lama, jadi kiraannya mudah: bilangan hari × harga sehari.</p>
+<h2>Harga: 150,000 VND sehari</h2>
+<p>Di Van Phu harga sewa <b>150,000 VND sehari</b> — Honda Vision 110cc, Honda Air Blade 125cc dan skuter elektrik. Harga tetap, tiada caj musim puncak dan tiada kos tersembunyi. Tiada diskaun sewa lama, jadi kiraannya mudah: bilangan hari × harga sehari.</p>
 <h2>Sudah termasuk</h2>
 <ul>
 <li>Topi keledar dan pemegang telefon percuma.</li>
@@ -103,7 +103,7 @@ ART["ms"] = {
  "Sewa Skuter Elektrik atau Petrol di Da Lat? Mana Satu | Van Phu",
  "Skuter Elektrik atau Skuter Petrol: Sewa Mana Satu di Da Lat?",
  "Sewa skuter elektrik di Da Lat atau skuter petrol? Perbandingan jarak, kuasa mendaki bukit dan harga.",
- "Kedua-duanya 120,000–150,000 VND sehari, tetapi sesuai untuk perjalanan yang sangat berbeza. Ini cara memilih di Da Lat.",
+ "Kedua-duanya 150,000 VND sehari, tetapi sesuai untuk perjalanan yang sangat berbeza. Ini cara memilih di Da Lat.",
  "electric-helmets", """
 <h2>Jawapan ringkas</h2>
 <p>Bersiar di pusat bandar dengan jarak dekat? Pilih <b>skuter elektrik</b>: senyap dan mudah. Mahu ke bukit, jalan gunung atau luar bandar? Pilih <b>skuter petrol</b>, sebaiknya Honda Air Blade 125cc.</p>
@@ -129,7 +129,7 @@ ART["ms"] = {
 </ul>
 <p>Laluan dengan jarak ada di <a href="{ROUTES}">5 laluan sekitar Da Lat</a>.</p>
 <h2>Harga dan servis yang sama</h2>
-<p>Semua motosikal 120,000–150,000 VND sehari, topi keledar dan pemegang telefon percuma, tiada deposit tunai (pasport atau kad pengenalan), penghantaran percuma ke hotel pusat bandar untuk 2 hari ke atas. Lihat halaman <a href="{HOME}">sewa motosikal Da Lat</a> atau hubungi kami di WhatsApp.</p>
+<p>Semua motosikal 150,000 VND sehari, topi keledar dan pemegang telefon percuma, tiada deposit tunai (pasport atau kad pengenalan), penghantaran percuma ke hotel pusat bandar untuk 2 hari ke atas. Lihat halaman <a href="{HOME}">sewa motosikal Da Lat</a> atau hubungi kami di WhatsApp.</p>
 """),
 }
 
@@ -137,11 +137,11 @@ ART["de"] = {
 "price": ("roller-mieten-dalat-preise",
  "Roller mieten in Da Lat 2026: Preise pro Tag | Van Phu",
  "Roller mieten in Da Lat: Preise 2026 und was enthalten ist",
- "Was kostet es, in Da Lat einen Roller zu mieten? 2026: 120.000–150.000 VND pro Tag, Helm inklusive, keine Barkaution. Tipps gegen versteckte Kosten.",
+ "Was kostet es, in Da Lat einen Roller zu mieten? 2026: 150.000 VND pro Tag, Helm inklusive, keine Barkaution. Tipps gegen versteckte Kosten.",
  "Bevor Sie in Da Lat einen Roller mieten, lohnt sich ein Blick darauf, was im Preis steckt. So funktionieren unsere Preise – und das sollten Sie bei jedem Verleih fragen.",
  "fleet-gas", """
-<h2>Preis: 120.000–150.000 VND pro Tag</h2>
-<p>Bei Van Phu kostet die Miete <b>120.000–150.000 VND pro Tag</b> – Honda Vision 110cc, Honda Air Blade 125cc und E-Roller. Festpreis, kein Saisonaufschlag, keine versteckten Gebühren. Mehrtagesrabatte gibt es nicht, die Rechnung ist also einfach: Anzahl Tage × Tagespreis.</p>
+<h2>Preis: 150.000 VND pro Tag</h2>
+<p>Bei Van Phu kostet die Miete <b>150.000 VND pro Tag</b> – Honda Vision 110cc, Honda Air Blade 125cc und E-Roller. Festpreis, kein Saisonaufschlag, keine versteckten Gebühren. Mehrtagesrabatte gibt es nicht, die Rechnung ist also einfach: Anzahl Tage × Tagespreis.</p>
 <h2>Im Preis enthalten</h2>
 <ul>
 <li>Helm und Handyhalterung gratis.</li>
@@ -169,7 +169,7 @@ ART["de"] = {
  "E-Roller oder Benzinroller in Da Lat? Was mieten | Van Phu",
  "E-Roller oder Benzinroller: Was sollte man in Da Lat mieten?",
  "E-Roller mieten in Da Lat oder doch einen Benzinroller? Vergleich von Reichweite, Kraft am Berg und Preis.",
- "Beide kosten 120.000–150.000 VND pro Tag, passen aber zu ganz unterschiedlichen Tagen. So wählen Sie in Da Lat das richtige Modell.",
+ "Beide kosten 150.000 VND pro Tag, passen aber zu ganz unterschiedlichen Tagen. So wählen Sie in Da Lat das richtige Modell.",
  "electric-helmets", """
 <h2>Die kurze Antwort</h2>
 <p>Unterwegs im Zentrum und auf kurzen Strecken? Ein <b>E-Roller</b> ist leise und einfach. Hügel, Pässe oder Ausflüge aus der Stadt? Dann einen <b>Benzinroller</b>, am besten die Honda Air Blade 125cc.</p>
@@ -195,7 +195,7 @@ ART["de"] = {
 </ul>
 <p>Routen mit Entfernungen finden Sie in <a href="{ROUTES}">5 Routen rund um Da Lat</a>.</p>
 <h2>Gleicher Service für jedes Modell</h2>
-<p>Jedes Modell 120.000–150.000 VND pro Tag, Helm und Handyhalterung gratis, keine Barkaution (Reisepass oder Ausweis), kostenlose Hotellieferung im Zentrum ab 2 Tagen. Mehr auf der Seite <a href="{HOME}">Roller mieten in Da Lat</a> oder schreiben Sie uns per WhatsApp.</p>
+<p>Jedes Modell 150.000 VND pro Tag, Helm und Handyhalterung gratis, keine Barkaution (Reisepass oder Ausweis), kostenlose Hotellieferung im Zentrum ab 2 Tagen. Mehr auf der Seite <a href="{HOME}">Roller mieten in Da Lat</a> oder schreiben Sie uns per WhatsApp.</p>
 """),
 }
 
@@ -203,11 +203,11 @@ ART["fr"] = {
 "price": ("prix-location-scooter-dalat",
  "Prix de location de scooter à Da Lat en 2026 : combien par jour ? | Van Phu",
  "Prix de la location de scooter à Da Lat en 2026 : combien par jour ?",
- "Combien coûte la location de scooter à Da Lat en 2026 ? 120 000–150 000 VND par jour, casque inclus, sans caution en espèces. Conseils pour éviter les frais cachés.",
+ "Combien coûte la location de scooter à Da Lat en 2026 ? 150 000 VND par jour, casque inclus, sans caution en espèces. Conseils pour éviter les frais cachés.",
  "Avant de louer un scooter à Da Lat, mieux vaut savoir ce que comprend le prix. Voici comment fonctionnent nos tarifs et ce qu'il faut demander dans n'importe quelle agence.",
  "fleet-gas", """
-<h2>Prix : 120 000–150 000 VND par jour</h2>
-<p>Chez Van Phu, la location coûte <b>120 000–150 000 VND par jour</b> — Honda Vision 110cc, Honda Air Blade 125cc et scooters électriques. Tarif fixe, sans majoration en haute saison ni frais cachés. Pas de réduction à la semaine : le calcul est simple, nombre de jours × prix du jour.</p>
+<h2>Prix : 150 000 VND par jour</h2>
+<p>Chez Van Phu, la location coûte <b>150 000 VND par jour</b> — Honda Vision 110cc, Honda Air Blade 125cc et scooters électriques. Tarif fixe, sans majoration en haute saison ni frais cachés. Pas de réduction à la semaine : le calcul est simple, nombre de jours × prix du jour.</p>
 <h2>Ce qui est inclus</h2>
 <ul>
 <li>Casque et support de téléphone offerts.</li>
@@ -235,7 +235,7 @@ ART["fr"] = {
  "Scooter électrique ou à essence à Da Lat : lequel louer ? | Van Phu",
  "Scooter électrique ou à essence : lequel louer à Da Lat ?",
  "Location de scooter électrique à Da Lat ou scooter à essence ? Autonomie, puissance en côte et prix comparés.",
- "Les deux coûtent 120 000–150 000 VND par jour, mais ils conviennent à des journées très différentes. Voici comment choisir à Da Lat.",
+ "Les deux coûtent 150 000 VND par jour, mais ils conviennent à des journées très différentes. Voici comment choisir à Da Lat.",
  "electric-helmets", """
 <h2>En bref</h2>
 <p>Vous restez dans le centre sur de courtes distances ? Prenez un <b>scooter électrique</b> : silencieux et simple. Collines, cols ou sorties hors de la ville ? Prenez un <b>scooter à essence</b>, idéalement la Honda Air Blade 125cc.</p>
@@ -261,7 +261,7 @@ ART["fr"] = {
 </ul>
 <p>Itinéraires avec distances dans <a href="{ROUTES}">5 itinéraires autour de Da Lat</a>.</p>
 <h2>Le même service pour chaque scooter</h2>
-<p>Tous les modèles à 120 000–150 000 VND par jour, casque et support de téléphone offerts, sans caution en espèces (passeport ou carte d'identité), livraison gratuite dans les hôtels du centre dès 2 jours. Voir la page <a href="{HOME}">location de scooter à Da Lat</a> ou écrivez-nous sur WhatsApp.</p>
+<p>Tous les modèles à 150 000 VND par jour, casque et support de téléphone offerts, sans caution en espèces (passeport ou carte d'identité), livraison gratuite dans les hôtels du centre dès 2 jours. Voir la page <a href="{HOME}">location de scooter à Da Lat</a> ou écrivez-nous sur WhatsApp.</p>
 """),
 }
 
@@ -269,11 +269,11 @@ ART["es"] = {
 "price": ("precio-alquiler-moto-dalat",
  "Precio del alquiler de motos en Da Lat 2026: ¿cuánto al día? | Van Phu",
  "Precio del alquiler de motos en Da Lat (2026): ¿cuánto cuesta al día?",
- "¿Cuánto cuesta alquilar una moto en Da Lat en 2026? 120.000–150.000 VND al día, casco incluido, sin depósito en efectivo. Consejos para evitar costes ocultos.",
+ "¿Cuánto cuesta alquilar una moto en Da Lat en 2026? 150.000 VND al día, casco incluido, sin depósito en efectivo. Consejos para evitar costes ocultos.",
  "Antes de alquilar un scooter en Da Lat conviene saber qué incluye el precio. Así funcionan nuestras tarifas y esto es lo que hay que preguntar en cualquier alquiler.",
  "fleet-gas", """
-<h2>Precio: 120.000–150.000 VND al día</h2>
-<p>En Van Phu el alquiler cuesta <b>120.000–150.000 VND al día</b> — Honda Vision 110cc, Honda Air Blade 125cc y scooters eléctricos. Precio fijo, sin recargo en temporada alta ni costes ocultos. No hay descuento por varios días, así que la cuenta es fácil: días × precio diario.</p>
+<h2>Precio: 150.000 VND al día</h2>
+<p>En Van Phu el alquiler cuesta <b>150.000 VND al día</b> — Honda Vision 110cc, Honda Air Blade 125cc y scooters eléctricos. Precio fijo, sin recargo en temporada alta ni costes ocultos. No hay descuento por varios días, así que la cuenta es fácil: días × precio diario.</p>
 <h2>Qué incluye</h2>
 <ul>
 <li>Casco y soporte para el móvil gratis.</li>
@@ -301,7 +301,7 @@ ART["es"] = {
  "¿Scooter eléctrico o de gasolina en Da Lat? Cuál alquilar | Van Phu",
  "Scooter eléctrico o de gasolina: ¿cuál alquilar en Da Lat?",
  "Alquiler de scooter eléctrico en Da Lat o scooter de gasolina: autonomía, fuerza en cuestas y precio comparados.",
- "Los dos cuestan 120.000–150.000 VND al día, pero sirven para días muy distintos. Así se elige en Da Lat.",
+ "Los dos cuestan 150.000 VND al día, pero sirven para días muy distintos. Así se elige en Da Lat.",
  "electric-helmets", """
 <h2>Respuesta corta</h2>
 <p>¿Te mueves por el centro y en distancias cortas? Un <b>scooter eléctrico</b>: silencioso y fácil. ¿Cuestas, puertos o salidas fuera de la ciudad? Un <b>scooter de gasolina</b>, mejor la Honda Air Blade 125cc.</p>
@@ -327,7 +327,7 @@ ART["es"] = {
 </ul>
 <p>Rutas con distancias en <a href="{ROUTES}">5 rutas por Da Lat</a>.</p>
 <h2>El mismo servicio en cada moto</h2>
-<p>Todos los modelos a 120.000–150.000 VND al día, casco y soporte para el móvil gratis, sin depósito en efectivo (pasaporte o documento de identidad), entrega gratis en hoteles del centro a partir de 2 días. Mira la página <a href="{HOME}">alquiler de motos en Da Lat</a> o escríbenos por WhatsApp.</p>
+<p>Todos los modelos a 150.000 VND al día, casco y soporte para el móvil gratis, sin depósito en efectivo (pasaporte o documento de identidad), entrega gratis en hoteles del centro a partir de 2 días. Mira la página <a href="{HOME}">alquiler de motos en Da Lat</a> o escríbenos por WhatsApp.</p>
 """),
 }
 
@@ -335,11 +335,11 @@ ART["he"] = {
 "price": ("dalat-motorbike-rental-price",
  "מחירי השכרת קטנוע בדאלאט 2026: כמה עולה ליום? | Van Phu",
  "מחירי השכרת קטנוע בדאלאט 2026: כמה זה עולה ליום?",
- "כמה עולה השכרת קטנוע בדאלאט ב-2026? 120,000–150,000 VND ליום, קסדה כלולה, בלי פיקדון במזומן. טיפים להימנע מעלויות נסתרות.",
+ "כמה עולה השכרת קטנוע בדאלאט ב-2026? 150,000 VND ליום, קסדה כלולה, בלי פיקדון במזומן. טיפים להימנע מעלויות נסתרות.",
  "לפני ששוכרים קטנוע בדאלאט כדאי לדעת מה כלול במחיר. כך עובד התמחור שלנו, ואלה השאלות ששווה לשאול בכל השכרה.",
  "fleet-gas", """
-<h2>מחיר: 120,000–150,000 VND ליום</h2>
-<p>אצל Van Phu ההשכרה עולה <b>120,000–150,000 VND ליום</b> – הונדה ויז'ן 110, הונדה אייר בלייד 125 וקטנועים חשמליים. מחיר קבוע, בלי תוספת בעונה ובלי עמלות נסתרות. אין הנחה על כמה ימים, אז החישוב פשוט: מספר ימים × המחיר ליום.</p>
+<h2>מחיר: 150,000 VND ליום</h2>
+<p>אצל Van Phu ההשכרה עולה <b>150,000 VND ליום</b> – הונדה ויז'ן 110, הונדה אייר בלייד 125 וקטנועים חשמליים. מחיר קבוע, בלי תוספת בעונה ובלי עמלות נסתרות. אין הנחה על כמה ימים, אז החישוב פשוט: מספר ימים × המחיר ליום.</p>
 <h2>מה כלול</h2>
 <ul>
 <li>קסדה ומחזיק לטלפון בחינם.</li>
@@ -367,7 +367,7 @@ ART["he"] = {
  "קטנוע חשמלי או בנזין בדאלאט? מה לשכור | Van Phu",
  "קטנוע חשמלי או קטנוע בנזין: מה לשכור בדאלאט?",
  "השכרת קטנוע חשמלי בדאלאט מול קטנוע בנזין: טווח, כוח בעליות ומחיר.",
- "שניהם עולים 120,000–150,000 VND ליום, אבל מתאימים לימים שונים מאוד. כך בוחרים בדאלאט.",
+ "שניהם עולים 150,000 VND ליום, אבל מתאימים לימים שונים מאוד. כך בוחרים בדאלאט.",
  "electric-helmets", """
 <h2>בקצרה</h2>
 <p>מסתובבים במרכז ובמרחקים קצרים? קחו <b>קטנוע חשמלי</b>: שקט ופשוט. עליות, מעברי הרים או יציאה מהעיר? קחו <b>קטנוע בנזין</b>, עדיף הונדה אייר בלייד 125.</p>
@@ -393,6 +393,6 @@ ART["he"] = {
 </ul>
 <p>מסלולים עם מרחקים ב<a href="{ROUTES}">5 מסלולים סביב דאלאט</a>.</p>
 <h2>אותו שירות לכל קטנוע</h2>
-<p>כל הדגמים 120,000–150,000 VND ליום, קסדה ומחזיק לטלפון בחינם, בלי פיקדון במזומן (דרכון או תעודה מזהה), משלוח חינם למלונות במרכז מיומיים. ראו את עמוד <a href="{HOME}">השכרת קטנועים בדאלאט</a> או כתבו לנו בוואטסאפ.</p>
+<p>כל הדגמים 150,000 VND ליום, קסדה ומחזיק לטלפון בחינם, בלי פיקדון במזומן (דרכון או תעודה מזהה), משלוח חינם למלונות במרכז מיומיים. ראו את עמוד <a href="{HOME}">השכרת קטנועים בדאלאט</a> או כתבו לנו בוואטסאפ.</p>
 """),
 }
