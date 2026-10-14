@@ -9,7 +9,7 @@ ART["id"] = {
  "Sebelum sewa skuter di Da Lat, sebaiknya tahu apa saja yang termasuk dalam harga. Begini cara kami menghitung harga dan hal yang perlu ditanyakan di tempat sewa mana pun.",
  "fleet-gas", """
 <h2>Harga: 150.000 VND per hari untuk semua motor</h2>
-<p>Di Van Phu semua motor sama harganya: <b>150.000 VND per hari</b> — Honda Vision 110, Honda Air Blade 125 dan motor listrik. Harga tetap, tanpa kenaikan musim ramai dan tanpa biaya tersembunyi. Tidak ada diskon sewa lama, jadi hitungannya mudah: jumlah hari × 150.000 VND.</p>
+<p>Di Van Phu semua motor sama harganya: <b>150.000 VND per hari</b> — Honda Vision 110cc, Honda Air Blade 125cc dan motor listrik. Harga tetap, tanpa kenaikan musim ramai dan tanpa biaya tersembunyi. Tidak ada diskon sewa lama, jadi hitungannya mudah: jumlah hari × 150.000 VND.</p>
 <h2>Sudah termasuk</h2>
 <ul>
 <li>Helm dan dudukan HP gratis.</li>
@@ -41,7 +41,7 @@ ART["id"] = {
  "Keduanya 150.000 VND per hari, tapi cocok untuk perjalanan yang sangat berbeda. Ini cara memilihnya di Da Lat.",
  "electric-helmets", """
 <h2>Jawaban singkat</h2>
-<p>Keliling pusat kota dengan jarak pendek? Pilih <b>motor listrik</b>: senyap, mudah dan tanpa SIM. Mau ke bukit, jalan pegunungan atau luar kota? Pilih <b>motor bensin</b>, sebaiknya Honda Air Blade 125.</p>
+<p>Keliling pusat kota dengan jarak pendek? Pilih <b>motor listrik</b>: senyap, mudah dan tanpa SIM. Mau ke bukit, jalan pegunungan atau luar kota? Pilih <b>motor bensin</b>, sebaiknya Honda Air Blade 125cc.</p>
 <h2>Motor listrik: kelebihan dan batasan</h2>
 <ul>
 <li><b>Tanpa SIM</b> jika sewa di tempat kami.</li>
@@ -53,7 +53,7 @@ ART["id"] = {
 <p>Selengkapnya: <a href="{EV}">sewa motor listrik di Da Lat</a>.</p>
 <h2>Motor bensin: kelebihan dan batasan</h2>
 <ul>
-<li>Tenaga cukup untuk tanjakan Da Lat — Air Blade 125 paling kuat menanjak.</li>
+<li>Tenaga cukup untuk tanjakan Da Lat — Air Blade 125cc paling kuat menanjak.</li>
 <li>Tidak khawatir baterai habis, bensin ada di mana-mana.</li>
 <li>Cocok ke kebun teh Cau Dat, Lang Biang dan tur air terjun.</li>
 <li>Wajib SIM yang berlaku.</li>
@@ -62,7 +62,7 @@ ART["id"] = {
 <ul>
 <li><b>Pusat kota, danau, pasar malam, kafe:</b> listrik atau Honda Vision.</li>
 <li><b>Air Terjun Datanla, Pagoda Linh Phuoc:</b> keduanya bisa.</li>
-<li><b>Kebun teh, Lang Biang, Air Terjun Gajah, Pongour:</b> bensin, sebaiknya Air Blade 125.</li>
+<li><b>Kebun teh, Lang Biang, Air Terjun Gajah, Pongour:</b> bensin, sebaiknya Air Blade 125cc.</li>
 </ul>
 <p>Rute dengan jarak ada di <a href="{ROUTES}">5 rute keliling Da Lat</a>.</p>
 <h2>Harga dan layanan sama</h2>
@@ -78,7 +78,7 @@ ART["ms"] = {
  "Sebelum menyewa skuter di Da Lat, elok tahu apa yang termasuk dalam harga. Ini cara kami mengira harga dan perkara yang patut ditanya di mana-mana kedai sewa.",
  "fleet-gas", """
 <h2>Harga: 150,000 VND sehari untuk semua motosikal</h2>
-<p>Di Van Phu semua motosikal sama harga: <b>150,000 VND sehari</b> — Honda Vision 110, Honda Air Blade 125 dan skuter elektrik. Harga tetap, tiada caj musim puncak dan tiada kos tersembunyi. Tiada diskaun sewa lama, jadi kiraannya mudah: bilangan hari × 150,000 VND.</p>
+<p>Di Van Phu semua motosikal sama harga: <b>150,000 VND sehari</b> — Honda Vision 110cc, Honda Air Blade 125cc dan skuter elektrik. Harga tetap, tiada caj musim puncak dan tiada kos tersembunyi. Tiada diskaun sewa lama, jadi kiraannya mudah: bilangan hari × 150,000 VND.</p>
 <h2>Sudah termasuk</h2>
 <ul>
 <li>Topi keledar dan pemegang telefon percuma.</li>
@@ -110,7 +110,7 @@ ART["ms"] = {
  "Kedua-duanya 150,000 VND sehari, tetapi sesuai untuk perjalanan yang sangat berbeza. Ini cara memilih di Da Lat.",
  "electric-helmets", """
 <h2>Jawapan ringkas</h2>
-<p>Bersiar di pusat bandar dengan jarak dekat? Pilih <b>skuter elektrik</b>: senyap, mudah dan tanpa lesen. Mahu ke bukit, jalan gunung atau luar bandar? Pilih <b>skuter petrol</b>, sebaiknya Honda Air Blade 125.</p>
+<p>Bersiar di pusat bandar dengan jarak dekat? Pilih <b>skuter elektrik</b>: senyap, mudah dan tanpa lesen. Mahu ke bukit, jalan gunung atau luar bandar? Pilih <b>skuter petrol</b>, sebaiknya Honda Air Blade 125cc.</p>
 <h2>Skuter elektrik: kelebihan dan had</h2>
 <ul>
 <li><b>Tiada lesen diperlukan</b> jika sewa dengan kami.</li>
@@ -122,7 +122,7 @@ ART["ms"] = {
 <p>Lagi maklumat: <a href="{EV}">sewa skuter elektrik di Da Lat</a>.</p>
 <h2>Skuter petrol: kelebihan dan had</h2>
 <ul>
-<li>Kuasa cukup untuk bukit Da Lat — Air Blade 125 paling kuat mendaki.</li>
+<li>Kuasa cukup untuk bukit Da Lat — Air Blade 125cc paling kuat mendaki.</li>
 <li>Tiada risau bateri, minyak ada di mana-mana.</li>
 <li>Sesuai ke ladang teh Cau Dat, Lang Biang dan lawatan air terjun.</li>
 <li>Perlu lesen memandu yang sah.</li>
@@ -131,7 +131,7 @@ ART["ms"] = {
 <ul>
 <li><b>Pusat bandar, tasik, pasar malam, kafe:</b> elektrik atau Honda Vision.</li>
 <li><b>Air Terjun Datanla, Pagoda Linh Phuoc:</b> kedua-duanya boleh.</li>
-<li><b>Ladang teh, Lang Biang, Air Terjun Gajah, Pongour:</b> petrol, sebaiknya Air Blade 125.</li>
+<li><b>Ladang teh, Lang Biang, Air Terjun Gajah, Pongour:</b> petrol, sebaiknya Air Blade 125cc.</li>
 </ul>
 <p>Laluan dengan jarak ada di <a href="{ROUTES}">5 laluan sekitar Da Lat</a>.</p>
 <h2>Harga dan servis yang sama</h2>
@@ -147,7 +147,7 @@ ART["de"] = {
  "Bevor Sie in Da Lat einen Roller mieten, lohnt sich ein Blick darauf, was im Preis steckt. So funktionieren unsere Preise – und das sollten Sie bei jedem Verleih fragen.",
  "fleet-gas", """
 <h2>Preis: 150.000 VND pro Tag für jeden Roller</h2>
-<p>Bei Van Phu kostet jedes Modell gleich viel: <b>150.000 VND pro Tag</b> – Honda Vision 110, Honda Air Blade 125 und E-Roller. Festpreis, kein Saisonaufschlag, keine versteckten Gebühren. Mehrtagesrabatte gibt es nicht, die Rechnung ist also einfach: Anzahl Tage × 150.000 VND.</p>
+<p>Bei Van Phu kostet jedes Modell gleich viel: <b>150.000 VND pro Tag</b> – Honda Vision 110cc, Honda Air Blade 125cc und E-Roller. Festpreis, kein Saisonaufschlag, keine versteckten Gebühren. Mehrtagesrabatte gibt es nicht, die Rechnung ist also einfach: Anzahl Tage × 150.000 VND.</p>
 <h2>Im Preis enthalten</h2>
 <ul>
 <li>Helm und Handyhalterung gratis.</li>
@@ -179,7 +179,7 @@ ART["de"] = {
  "Beide kosten 150.000 VND pro Tag, passen aber zu ganz unterschiedlichen Tagen. So wählen Sie in Da Lat das richtige Modell.",
  "electric-helmets", """
 <h2>Die kurze Antwort</h2>
-<p>Unterwegs im Zentrum und auf kurzen Strecken? Ein <b>E-Roller</b> ist leise, einfach und ohne Führerschein. Hügel, Pässe oder Ausflüge aus der Stadt? Dann einen <b>Benzinroller</b>, am besten die Honda Air Blade 125.</p>
+<p>Unterwegs im Zentrum und auf kurzen Strecken? Ein <b>E-Roller</b> ist leise, einfach und ohne Führerschein. Hügel, Pässe oder Ausflüge aus der Stadt? Dann einen <b>Benzinroller</b>, am besten die Honda Air Blade 125cc.</p>
 <h2>E-Roller: Vorteile und Grenzen</h2>
 <ul>
 <li><b>Kein Führerschein nötig</b> bei uns.</li>
@@ -191,7 +191,7 @@ ART["de"] = {
 <p>Mehr dazu: <a href="{EV}">E-Roller mieten in Da Lat</a>.</p>
 <h2>Benzinroller: Vorteile und Grenzen</h2>
 <ul>
-<li>Genug Kraft für Da Lats Hügel – die Air Blade 125 klettert am besten.</li>
+<li>Genug Kraft für Da Lats Hügel – die Air Blade 125cc klettert am besten.</li>
 <li>Keine Reichweitensorgen, getankt wird überall.</li>
 <li>Ideal für die Teehügel von Cau Dat, Lang Biang und Wasserfall-Touren.</li>
 <li>Gültiger Führerschein erforderlich.</li>
@@ -200,7 +200,7 @@ ART["de"] = {
 <ul>
 <li><b>Zentrum, See, Nachtmarkt, Cafés:</b> E-Roller oder Honda Vision.</li>
 <li><b>Datanla-Wasserfall, Linh-Phuoc-Pagode:</b> beides geht.</li>
-<li><b>Teehügel, Lang Biang, Elefantenfälle, Pongour:</b> Benzin, am besten Air Blade 125.</li>
+<li><b>Teehügel, Lang Biang, Elefantenfälle, Pongour:</b> Benzin, am besten Air Blade 125cc.</li>
 </ul>
 <p>Routen mit Entfernungen finden Sie in <a href="{ROUTES}">5 Routen rund um Da Lat</a>.</p>
 <h2>Gleicher Preis, gleicher Service</h2>
@@ -216,7 +216,7 @@ ART["fr"] = {
  "Avant de louer un scooter à Da Lat, mieux vaut savoir ce que comprend le prix. Voici comment fonctionnent nos tarifs et ce qu'il faut demander dans n'importe quelle agence.",
  "fleet-gas", """
 <h2>Prix : 150 000 VND par jour pour tous les scooters</h2>
-<p>Chez Van Phu, tous les modèles ont le même prix : <b>150 000 VND par jour</b> — Honda Vision 110, Honda Air Blade 125 et scooters électriques. Tarif fixe, sans majoration en haute saison ni frais cachés. Pas de réduction à la semaine : le calcul est simple, nombre de jours × 150 000 VND.</p>
+<p>Chez Van Phu, tous les modèles ont le même prix : <b>150 000 VND par jour</b> — Honda Vision 110cc, Honda Air Blade 125cc et scooters électriques. Tarif fixe, sans majoration en haute saison ni frais cachés. Pas de réduction à la semaine : le calcul est simple, nombre de jours × 150 000 VND.</p>
 <h2>Ce qui est inclus</h2>
 <ul>
 <li>Casque et support de téléphone offerts.</li>
@@ -248,7 +248,7 @@ ART["fr"] = {
  "Les deux coûtent 150 000 VND par jour, mais ils conviennent à des journées très différentes. Voici comment choisir à Da Lat.",
  "electric-helmets", """
 <h2>En bref</h2>
-<p>Vous restez dans le centre sur de courtes distances ? Prenez un <b>scooter électrique</b> : silencieux, simple, sans permis. Collines, cols ou sorties hors de la ville ? Prenez un <b>scooter à essence</b>, idéalement la Honda Air Blade 125.</p>
+<p>Vous restez dans le centre sur de courtes distances ? Prenez un <b>scooter électrique</b> : silencieux, simple, sans permis. Collines, cols ou sorties hors de la ville ? Prenez un <b>scooter à essence</b>, idéalement la Honda Air Blade 125cc.</p>
 <h2>Scooter électrique : atouts et limites</h2>
 <ul>
 <li><b>Sans permis</b> chez nous.</li>
@@ -260,7 +260,7 @@ ART["fr"] = {
 <p>Plus de détails : <a href="{EV}">location de scooter électrique à Da Lat</a>.</p>
 <h2>Scooter à essence : atouts et limites</h2>
 <ul>
-<li>Assez de puissance pour les collines de Da Lat — l'Air Blade 125 grimpe le mieux.</li>
+<li>Assez de puissance pour les collines de Da Lat — l'Air Blade 125cc grimpe le mieux.</li>
 <li>Aucun souci d'autonomie, stations partout.</li>
 <li>Idéal pour les collines de thé de Cau Dat, Lang Biang et les cascades.</li>
 <li>Permis de conduire valide obligatoire.</li>
@@ -269,7 +269,7 @@ ART["fr"] = {
 <ul>
 <li><b>Centre, lac, marché de nuit, cafés :</b> électrique ou Honda Vision.</li>
 <li><b>Cascade de Datanla, pagode Linh Phuoc :</b> les deux conviennent.</li>
-<li><b>Collines de thé, Lang Biang, chutes de l'Éléphant, Pongour :</b> essence, de préférence Air Blade 125.</li>
+<li><b>Collines de thé, Lang Biang, chutes de l'Éléphant, Pongour :</b> essence, de préférence Air Blade 125cc.</li>
 </ul>
 <p>Itinéraires avec distances dans <a href="{ROUTES}">5 itinéraires autour de Da Lat</a>.</p>
 <h2>Même prix, même service</h2>
@@ -285,7 +285,7 @@ ART["es"] = {
  "Antes de alquilar un scooter en Da Lat conviene saber qué incluye el precio. Así funcionan nuestras tarifas y esto es lo que hay que preguntar en cualquier alquiler.",
  "fleet-gas", """
 <h2>Precio: 150.000 VND al día por cualquier moto</h2>
-<p>En Van Phu todos los modelos cuestan lo mismo: <b>150.000 VND al día</b> — Honda Vision 110, Honda Air Blade 125 y scooters eléctricos. Precio fijo, sin recargo en temporada alta ni costes ocultos. No hay descuento por varios días, así que la cuenta es fácil: días × 150.000 VND.</p>
+<p>En Van Phu todos los modelos cuestan lo mismo: <b>150.000 VND al día</b> — Honda Vision 110cc, Honda Air Blade 125cc y scooters eléctricos. Precio fijo, sin recargo en temporada alta ni costes ocultos. No hay descuento por varios días, así que la cuenta es fácil: días × 150.000 VND.</p>
 <h2>Qué incluye</h2>
 <ul>
 <li>Casco y soporte para el móvil gratis.</li>
@@ -317,7 +317,7 @@ ART["es"] = {
  "Los dos cuestan 150.000 VND al día, pero sirven para días muy distintos. Así se elige en Da Lat.",
  "electric-helmets", """
 <h2>Respuesta corta</h2>
-<p>¿Te mueves por el centro y en distancias cortas? Un <b>scooter eléctrico</b>: silencioso, fácil y sin carné. ¿Cuestas, puertos o salidas fuera de la ciudad? Un <b>scooter de gasolina</b>, mejor la Honda Air Blade 125.</p>
+<p>¿Te mueves por el centro y en distancias cortas? Un <b>scooter eléctrico</b>: silencioso, fácil y sin carné. ¿Cuestas, puertos o salidas fuera de la ciudad? Un <b>scooter de gasolina</b>, mejor la Honda Air Blade 125cc.</p>
 <h2>Scooter eléctrico: ventajas y límites</h2>
 <ul>
 <li><b>Sin carné</b> con nosotros.</li>
@@ -329,7 +329,7 @@ ART["es"] = {
 <p>Más detalles: <a href="{EV}">alquiler de scooter eléctrico en Da Lat</a>.</p>
 <h2>Scooter de gasolina: ventajas y límites</h2>
 <ul>
-<li>Potencia de sobra para las colinas de Da Lat; la Air Blade 125 es la que mejor sube.</li>
+<li>Potencia de sobra para las colinas de Da Lat; la Air Blade 125cc es la que mejor sube.</li>
 <li>Sin preocuparse por la batería, hay gasolineras en todas partes.</li>
 <li>Ideal para las colinas de té de Cau Dat, Lang Biang y las cascadas.</li>
 <li>Requiere carné de conducir válido.</li>
@@ -338,7 +338,7 @@ ART["es"] = {
 <ul>
 <li><b>Centro, lago, mercado nocturno, cafés:</b> eléctrico o Honda Vision.</li>
 <li><b>Cascada de Datanla, pagoda Linh Phuoc:</b> cualquiera.</li>
-<li><b>Colinas de té, Lang Biang, cascadas del Elefante y Pongour:</b> gasolina, mejor Air Blade 125.</li>
+<li><b>Colinas de té, Lang Biang, cascadas del Elefante y Pongour:</b> gasolina, mejor Air Blade 125cc.</li>
 </ul>
 <p>Rutas con distancias en <a href="{ROUTES}">5 rutas por Da Lat</a>.</p>
 <h2>Mismo precio, mismo servicio</h2>

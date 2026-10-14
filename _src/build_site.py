@@ -243,7 +243,7 @@ def business_ld(l, url):
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
             "sameAs": ["https://www.facebook.com/vanphudalat", "https://www.tiktok.com/@bietthudalat", TG, ZALO],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
-                           for n in ["Honda Vision 110", "Honda Air Blade 125", h["electric_name"]]]}
+                           for n in ["Honda Vision 110cc", "Honda Air Blade 125cc", h["electric_name"]]]}
 
 def posts(l, frm, keys):
     a = C[l]["articles"]
@@ -283,14 +283,14 @@ def page_home(l):
 <main class="wrap">
  <section><h2>{h["h_prices"]}</h2>
   <table class="price"><tr><th>{h["th_bike"]}</th><th>{h["th_price"]}</th></tr>
-  <tr><td>Honda Vision 110</td><td><b>{h.get("price_cell", "150,000 ₫")}</b></td></tr>
-  <tr><td>Honda Air Blade 125</td><td><b>{h.get("price_cell", "150,000 ₫")}</b></td></tr>
+  <tr><td>Honda Vision 110cc</td><td><b>{h.get("price_cell", "150,000 ₫")}</b></td></tr>
+  <tr><td>Honda Air Blade 125cc</td><td><b>{h.get("price_cell", "150,000 ₫")}</b></td></tr>
   <tr><td>{h["electric_name"]}</td><td><b>{h.get("price_cell", "150,000 ₫")}</b></td></tr></table>
   <p class="note">{h["price_note"]}</p></section>
  <section><h2>{h["h_conditions"]}</h2><ul class="checks">{conds}</ul></section>
  <section><h2>{h["h_fleet"]}</h2><div class="grid">
-  <div class="card"><img src="{pre}img/vision-white.jpg" alt="Honda Vision 110 — {alt}" loading="lazy"><b>Honda Vision 110</b><span>{h["vision"]}</span></div>
-  <div class="card"><img src="{pre}img/airblade.jpg" alt="Honda Air Blade 125 — {alt}" loading="lazy"><b>Honda Air Blade 125</b><span>{h["airblade"]}</span></div>
+  <div class="card"><img src="{pre}img/vision-white.jpg" alt="Honda Vision 110cc — {alt}" loading="lazy"><b>Honda Vision 110cc</b><span>{h["vision"]}</span></div>
+  <div class="card"><img src="{pre}img/airblade.jpg" alt="Honda Air Blade 125cc — {alt}" loading="lazy"><b>Honda Air Blade 125cc</b><span>{h["airblade"]}</span></div>
   <div class="card"><img src="{pre}img/electric-helmets.jpg" alt="{h["electric_name"]} — {alt}" loading="lazy"><b><a href="{rel(me, ev_path(l))}">{h["electric_name"]}</a></b><span>{h["electric"]} <a href="{rel(me, ev_path(l))}">{EV[l]["more"]}</a></span></div>
  </div></section>
  <section><h2>{h["h_how"]}</h2><ol>{steps}</ol></section>
@@ -482,7 +482,7 @@ for kind, key in groups:
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
-> Local motorbike and scooter rental in Da Lat (Đà Lạt), Vietnam. Honda Vision 110, Honda Air Blade 125 and electric scooters, all 150,000 VND per day. No cash deposit, free hotel delivery in central Da Lat for rentals of 2+ days.
+> Local motorbike and scooter rental in Da Lat (Đà Lạt), Vietnam. Honda Vision 110cc, Honda Air Blade 125cc and electric scooters, all 150,000 VND per day. No cash deposit, free hotel delivery in central Da Lat for rentals of 2+ days.
 
 ## Key facts
 - Address: 1/15/5 Thông Thiên Học, Đà Lạt, Vietnam ({GMAPS})

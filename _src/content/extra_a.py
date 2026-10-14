@@ -10,7 +10,7 @@ ART["en"] = {
  "Before you rent a scooter in Da Lat, it helps to know exactly what the price covers. Here is how our pricing works, what's included and what to check at any rental shop.",
  "fleet-gas", """
 <h2>Our price: 150,000 VND per day for every bike</h2>
-<p>At Van Phu, every bike costs the same: <b>150,000 VND per day</b>. That's the Honda Vision 110, the Honda Air Blade 125 and our electric scooters. The price is fixed — no high-season surcharge and no hidden fees. There is also no multi-day discount, so the price is simple: number of days × 150,000 VND.</p>
+<p>At Van Phu, every bike costs the same: <b>150,000 VND per day</b>. That's the Honda Vision 110cc, the Honda Air Blade 125cc and our electric scooters. The price is fixed — no high-season surcharge and no hidden fees. There is also no multi-day discount, so the price is simple: number of days × 150,000 VND.</p>
 <h2>What's included</h2>
 <ul>
 <li>A helmet and a phone holder on every bike, free.</li>
@@ -42,7 +42,7 @@ ART["en"] = {
  "Both cost 150,000 VND per day, but they suit very different days. Here's how to choose between an electric scooter and a gas scooter in Da Lat.",
  "electric-helmets", """
 <h2>The short answer</h2>
-<p>Staying in town and riding short distances? An <b>electric scooter</b> is quiet, easy and needs no license. Planning hills, passes or trips out of the city? Take a <b>gas scooter</b>, ideally the Honda Air Blade 125.</p>
+<p>Staying in town and riding short distances? An <b>electric scooter</b> is quiet, easy and needs no license. Planning hills, passes or trips out of the city? Take a <b>gas scooter</b>, ideally the Honda Air Blade 125cc.</p>
 <h2>Electric scooter: pros and limits</h2>
 <ul>
 <li><b>No driver's license needed</b> to rent one from us.</li>
@@ -54,7 +54,7 @@ ART["en"] = {
 <p>More details: <a href="{EV}">electric scooter rental in Da Lat</a>.</p>
 <h2>Gas scooter: pros and limits</h2>
 <ul>
-<li>Plenty of power for Da Lat's hills — the Air Blade 125 is the strongest climber we have.</li>
+<li>Plenty of power for Da Lat's hills — the Air Blade 125cc is the strongest climber we have.</li>
 <li>No range worries: refuel at any gas station.</li>
 <li>Best for the Cau Dat tea hills, Lang Biang and waterfall loops.</li>
 <li>A valid driver's license is required.</li>
@@ -63,7 +63,7 @@ ART["en"] = {
 <ul>
 <li><b>Center, lake, night market, cafés:</b> electric or Honda Vision.</li>
 <li><b>Datanla Waterfall, Linh Phuoc Pagoda:</b> either works.</li>
-<li><b>Tea hills, Lang Biang, Elephant Falls, Pongour:</b> gas, preferably Air Blade 125.</li>
+<li><b>Tea hills, Lang Biang, Elephant Falls, Pongour:</b> gas, preferably Air Blade 125cc.</li>
 </ul>
 <p>Route ideas with distances are on our page <a href="{ROUTES}">5 routes around Da Lat</a>.</p>
 <h2>Same price, same service</h2>
@@ -79,7 +79,7 @@ ART["vi"] = {
  "Trước khi thuê xe máy ở Đà Lạt, nên biết rõ giá đã gồm những gì. Đây là cách tính giá ở Văn Phú và những điều cần hỏi ở bất kỳ tiệm thuê xe nào.",
  "fleet-gas", """
 <h2>Giá thuê: 150.000đ/ngày cho mọi loại xe</h2>
-<p>Ở Văn Phú, xe nào cũng một giá: <b>150.000đ/ngày</b>, gồm Honda Vision 110, Honda Air Blade 125 và xe máy điện. Giá cố định, không tăng giá mùa cao điểm, không phụ phí. Không có giảm giá theo số ngày, nên rất dễ tính: số ngày × 150.000đ.</p>
+<p>Ở Văn Phú, xe nào cũng một giá: <b>150.000đ/ngày</b>, gồm Honda Vision 110cc, Honda Air Blade 125cc và xe máy điện. Giá cố định, không tăng giá mùa cao điểm, không phụ phí. Không có giảm giá theo số ngày, nên rất dễ tính: số ngày × 150.000đ.</p>
 <h2>Giá đã bao gồm</h2>
 <ul>
 <li>Mũ bảo hiểm và giá đỡ điện thoại miễn phí.</li>
@@ -111,7 +111,7 @@ ART["vi"] = {
  "Cả hai đều 150.000đ/ngày nhưng hợp với những kiểu đi rất khác nhau. Đây là cách chọn giữa xe máy điện và xe xăng khi ở Đà Lạt.",
  "electric-helmets", """
 <h2>Trả lời nhanh</h2>
-<p>Đi loanh quanh trung tâm, quãng ngắn? Chọn <b>xe máy điện</b>: êm, dễ đi, không cần bằng lái. Đi đèo, dốc hoặc ra ngoại ô? Chọn <b>xe xăng</b>, tốt nhất là Honda Air Blade 125.</p>
+<p>Đi loanh quanh trung tâm, quãng ngắn? Chọn <b>xe máy điện</b>: êm, dễ đi, không cần bằng lái. Đi đèo, dốc hoặc ra ngoại ô? Chọn <b>xe xăng</b>, tốt nhất là Honda Air Blade 125cc.</p>
 <h2>Xe máy điện: ưu điểm và giới hạn</h2>
 <ul>
 <li><b>Không cần bằng lái</b> khi thuê ở Văn Phú.</li>
@@ -123,7 +123,7 @@ ART["vi"] = {
 <p>Xem chi tiết: <a href="{EV}">thuê xe máy điện Đà Lạt</a>.</p>
 <h2>Xe xăng: ưu điểm và giới hạn</h2>
 <ul>
-<li>Khỏe, leo dốc Đà Lạt thoải mái — Air Blade 125 leo dốc tốt nhất.</li>
+<li>Khỏe, leo dốc Đà Lạt thoải mái — Air Blade 125cc leo dốc tốt nhất.</li>
 <li>Không lo hết pin, đổ xăng ở đâu cũng có.</li>
 <li>Hợp đi đồi chè Cầu Đất, Langbiang, các thác ngoại ô.</li>
 <li>Cần bằng lái hợp lệ.</li>
@@ -132,7 +132,7 @@ ART["vi"] = {
 <ul>
 <li><b>Trung tâm, hồ Xuân Hương, chợ đêm, cà phê:</b> xe điện hoặc Honda Vision.</li>
 <li><b>Thác Datanla, chùa Linh Phước:</b> xe nào cũng được.</li>
-<li><b>Đồi chè, Langbiang, thác Voi, thác Pongour:</b> xe xăng, nên chọn Air Blade 125.</li>
+<li><b>Đồi chè, Langbiang, thác Voi, thác Pongour:</b> xe xăng, nên chọn Air Blade 125cc.</li>
 </ul>
 <p>Gợi ý lộ trình kèm khoảng cách ở trang <a href="{ROUTES}">5 lộ trình quanh Đà Lạt</a>.</p>
 <h2>Cùng giá, cùng dịch vụ</h2>
@@ -148,7 +148,7 @@ ART["ru"] = {
  "Перед арендой скутера в Далате полезно знать, что именно входит в цену. Рассказываем, как устроены наши цены и что уточнить в любом прокате.",
  "fleet-gas", """
 <h2>Цена: 150 000 донгов в день за любой байк</h2>
-<p>У нас все байки стоят одинаково — <b>150 000 донгов в день</b>: Honda Vision 110, Honda Air Blade 125 и электроскутеры. Цена фиксированная, без наценок в сезон и скрытых платежей. Скидок за несколько дней нет, поэтому считать просто: число дней × 150 000 донгов.</p>
+<p>У нас все байки стоят одинаково — <b>150 000 донгов в день</b>: Honda Vision 110cc, Honda Air Blade 125cc и электроскутеры. Цена фиксированная, без наценок в сезон и скрытых платежей. Скидок за несколько дней нет, поэтому считать просто: число дней × 150 000 донгов.</p>
 <h2>Что входит в цену</h2>
 <ul>
 <li>Шлем и держатель для телефона — бесплатно.</li>
@@ -180,7 +180,7 @@ ART["ru"] = {
  "Оба стоят 150 000 донгов в день, но подходят для совсем разных поездок. Как выбрать между электроскутером и бензиновым скутером в Далате.",
  "electric-helmets", """
 <h2>Коротко</h2>
-<p>Катаетесь по центру и недалеко? Берите <b>электроскутер</b>: тихо, просто и без прав. Собираетесь в горы, на перевалы и за город? Берите <b>бензиновый скутер</b>, лучше Honda Air Blade 125.</p>
+<p>Катаетесь по центру и недалеко? Берите <b>электроскутер</b>: тихо, просто и без прав. Собираетесь в горы, на перевалы и за город? Берите <b>бензиновый скутер</b>, лучше Honda Air Blade 125cc.</p>
 <h2>Электроскутер: плюсы и ограничения</h2>
 <ul>
 <li><b>Права не нужны</b> для аренды у нас.</li>
@@ -192,7 +192,7 @@ ART["ru"] = {
 <p>Подробнее: <a href="{EV}">аренда электроскутера в Далате</a>.</p>
 <h2>Бензиновый скутер: плюсы и ограничения</h2>
 <ul>
-<li>Хватает мощности для холмов Далата — Air Blade 125 лучше всех берёт подъёмы.</li>
+<li>Хватает мощности для холмов Далата — Air Blade 125cc лучше всех берёт подъёмы.</li>
 <li>Нет забот с зарядом: заправки везде.</li>
 <li>Лучший выбор для чайных холмов Каудат, Лангбианга и водопадов.</li>
 <li>Нужны действующие права.</li>
@@ -201,7 +201,7 @@ ART["ru"] = {
 <ul>
 <li><b>Центр, озеро, ночной рынок, кафе:</b> электроскутер или Honda Vision.</li>
 <li><b>Водопад Датанла, пагода Линьфуок:</b> подойдёт любой.</li>
-<li><b>Чайные холмы, Лангбианг, водопады Слона и Понгур:</b> бензиновый, лучше Air Blade 125.</li>
+<li><b>Чайные холмы, Лангбианг, водопады Слона и Понгур:</b> бензиновый, лучше Air Blade 125cc.</li>
 </ul>
 <p>Маршруты с расстояниями — в статье <a href="{ROUTES}">5 маршрутов по Далату</a>.</p>
 <h2>Одна цена, один сервис</h2>
@@ -217,7 +217,7 @@ ART["zh"] = {
  "在大叻租摩托车之前，最好先弄清楚价格包含什么。下面是我们的收费方式，以及在任何租车店都该问清楚的事项。",
  "fleet-gas", """
 <h2>价格：所有车型每天 150,000 越南盾</h2>
-<p>在 Van Phu，所有车型同价：<b>每天 150,000 越南盾</b>，包括本田 Vision 110、本田 Air Blade 125 和电动车。价格固定，旺季不加价，无隐藏费用。多天租车不打折，计算很简单：天数 × 150,000 越南盾。</p>
+<p>在 Van Phu，所有车型同价：<b>每天 150,000 越南盾</b>，包括本田 Vision 110cc、本田 Air Blade 125cc 和电动车。价格固定，旺季不加价，无隐藏费用。多天租车不打折，计算很简单：天数 × 150,000 越南盾。</p>
 <h2>价格包含</h2>
 <ul>
 <li>免费头盔和手机支架。</li>
@@ -249,7 +249,7 @@ ART["zh"] = {
  "两种车都是每天 150,000 越南盾，但适合完全不同的行程。教您在大叻如何选择电动车或汽油车。",
  "electric-helmets", """
 <h2>简单回答</h2>
-<p>只在市中心短途游玩？选<b>电动车</b>：安静、好骑、无需驾照。要上山、走山路或出城？选<b>汽油车</b>，最好是本田 Air Blade 125。</p>
+<p>只在市中心短途游玩？选<b>电动车</b>：安静、好骑、无需驾照。要上山、走山路或出城？选<b>汽油车</b>，最好是本田 Air Blade 125cc。</p>
 <h2>电动车：优点与限制</h2>
 <ul>
 <li>在我们这里租<b>无需驾照</b>。</li>
@@ -261,7 +261,7 @@ ART["zh"] = {
 <p>详情：<a href="{EV}">大叻电动车租赁</a>。</p>
 <h2>汽油车：优点与限制</h2>
 <ul>
-<li>动力足，适合大叻的坡道——Air Blade 125 爬坡最好。</li>
+<li>动力足，适合大叻的坡道——Air Blade 125cc 爬坡最好。</li>
 <li>不担心续航，到处可加油。</li>
 <li>适合求德茶山、浪必安山和瀑布路线。</li>
 <li>需要有效驾照。</li>
@@ -270,7 +270,7 @@ ART["zh"] = {
 <ul>
 <li><b>市中心、春香湖、夜市、咖啡馆：</b>电动车或本田 Vision。</li>
 <li><b>达坦拉瀑布、灵福寺：</b>两种都可以。</li>
-<li><b>茶山、浪必安、大象瀑布、蓬古尔瀑布：</b>汽油车，建议 Air Blade 125。</li>
+<li><b>茶山、浪必安、大象瀑布、蓬古尔瀑布：</b>汽油车，建议 Air Blade 125cc。</li>
 </ul>
 <p>带距离的路线建议见<a href="{ROUTES}">大叻 5 条骑行路线</a>。</p>
 <h2>同价同服务</h2>
@@ -286,7 +286,7 @@ ART["ko"] = {
  "달랏에서 스쿠터를 빌리기 전에 가격에 무엇이 포함되는지 알아두면 좋습니다. 저희 요금 방식과 어느 렌탈샵에서든 확인할 점을 정리했습니다.",
  "fleet-gas", """
 <h2>요금: 모든 차종 1일 150,000동</h2>
-<p>Van Phu는 혼다 비전 110, 혼다 에어블레이드 125, 전기 스쿠터 모두 <b>1일 150,000동</b>입니다. 고정 가격으로 성수기 할증이나 숨은 비용이 없습니다. 장기 할인은 없어서 계산이 간단합니다: 일수 × 150,000동.</p>
+<p>Van Phu는 혼다 비전 110cc, 혼다 에어블레이드 125cc, 전기 스쿠터 모두 <b>1일 150,000동</b>입니다. 고정 가격으로 성수기 할증이나 숨은 비용이 없습니다. 장기 할인은 없어서 계산이 간단합니다: 일수 × 150,000동.</p>
 <h2>포함 사항</h2>
 <ul>
 <li>헬멧과 휴대폰 거치대 무료.</li>
@@ -318,7 +318,7 @@ ART["ko"] = {
  "둘 다 1일 150,000동이지만 어울리는 여행이 전혀 다릅니다. 달랏에서 전기 스쿠터와 가솔린 스쿠터 중 고르는 법.",
  "electric-helmets", """
 <h2>한 줄 요약</h2>
-<p>시내 위주로 짧게 다닌다면 <b>전기 스쿠터</b>: 조용하고 쉽고 면허가 필요 없습니다. 언덕, 고개, 외곽 여행이라면 <b>가솔린 스쿠터</b>, 가능하면 혼다 에어블레이드 125.</p>
+<p>시내 위주로 짧게 다닌다면 <b>전기 스쿠터</b>: 조용하고 쉽고 면허가 필요 없습니다. 언덕, 고개, 외곽 여행이라면 <b>가솔린 스쿠터</b>, 가능하면 혼다 에어블레이드 125cc.</p>
 <h2>전기 스쿠터: 장점과 한계</h2>
 <ul>
 <li>저희 매장에서는 <b>면허 없이</b> 대여 가능.</li>
@@ -330,7 +330,7 @@ ART["ko"] = {
 <p>자세히: <a href="{EV}">달랏 전기 스쿠터 렌탈</a>.</p>
 <h2>가솔린 스쿠터: 장점과 한계</h2>
 <ul>
-<li>달랏 언덕에 충분한 힘 — 에어블레이드 125가 가장 잘 올라갑니다.</li>
+<li>달랏 언덕에 충분한 힘 — 에어블레이드 125cc가 가장 잘 올라갑니다.</li>
 <li>배터리 걱정 없이 어디서나 주유.</li>
 <li>꺼우닷 차밭, 랑비앙, 폭포 투어에 적합.</li>
 <li>유효한 운전면허 필요.</li>
@@ -339,7 +339,7 @@ ART["ko"] = {
 <ul>
 <li><b>시내, 호수, 야시장, 카페:</b> 전기 스쿠터 또는 혼다 비전.</li>
 <li><b>다딴라 폭포, 린프억 사원:</b> 둘 다 OK.</li>
-<li><b>차밭, 랑비앙, 코끼리 폭포, 퐁구르 폭포:</b> 가솔린, 에어블레이드 125 추천.</li>
+<li><b>차밭, 랑비앙, 코끼리 폭포, 퐁구르 폭포:</b> 가솔린, 에어블레이드 125cc 추천.</li>
 </ul>
 <p>거리 정보가 있는 코스는 <a href="{ROUTES}">달랏 5가지 루트</a>에서 볼 수 있습니다.</p>
 <h2>같은 가격, 같은 서비스</h2>
@@ -355,7 +355,7 @@ ART["ja"] = {
  "ダラットでスクーターを借りる前に、料金に何が含まれるか知っておくと安心です。当店の料金の仕組みと、どのお店でも確認したいポイントをまとめました。",
  "fleet-gas", """
 <h2>料金：全車種1日150,000ドン</h2>
-<p>Van Phuではホンダ ビジョン110、ホンダ エアブレード125、電動スクーターのどれも<b>1日150,000ドン</b>です。固定料金で、繁忙期の割増や隠れた費用はありません。連泊割引はないので、計算は「日数×150,000ドン」だけです。</p>
+<p>Van Phuではホンダ ビジョン110cc、ホンダ エアブレード125cc、電動スクーターのどれも<b>1日150,000ドン</b>です。固定料金で、繁忙期の割増や隠れた費用はありません。連泊割引はないので、計算は「日数×150,000ドン」だけです。</p>
 <h2>料金に含まれるもの</h2>
 <ul>
 <li>ヘルメットとスマホホルダーは無料。</li>
@@ -387,7 +387,7 @@ ART["ja"] = {
  "どちらも1日150,000ドンですが、向いている旅はまったく違います。ダラットでの選び方を紹介します。",
  "electric-helmets", """
 <h2>結論</h2>
-<p>中心部を短い距離で回るなら<b>電動スクーター</b>：静かで簡単、免許も不要。坂道や峠、郊外へ行くなら<b>ガソリンスクーター</b>、できればホンダ エアブレード125。</p>
+<p>中心部を短い距離で回るなら<b>電動スクーター</b>：静かで簡単、免許も不要。坂道や峠、郊外へ行くなら<b>ガソリンスクーター</b>、できればホンダ エアブレード125cc。</p>
 <h2>電動スクーター：長所と限界</h2>
 <ul>
 <li>当店では<b>免許なし</b>で借りられます。</li>
@@ -399,7 +399,7 @@ ART["ja"] = {
 <p>詳しくは<a href="{EV}">ダラットの電動スクーターレンタル</a>へ。</p>
 <h2>ガソリンスクーター：長所と限界</h2>
 <ul>
-<li>ダラットの坂でも力十分——エアブレード125が一番よく登ります。</li>
+<li>ダラットの坂でも力十分——エアブレード125ccが一番よく登ります。</li>
 <li>電池切れの心配なし、どこでも給油可能。</li>
 <li>カウダット茶畑、ランビアン山、滝めぐりに最適。</li>
 <li>有効な運転免許が必要。</li>
@@ -408,7 +408,7 @@ ART["ja"] = {
 <ul>
 <li><b>中心部・湖・ナイトマーケット・カフェ：</b>電動またはホンダ ビジョン。</li>
 <li><b>ダタンラの滝・リンフオック寺：</b>どちらでもOK。</li>
-<li><b>茶畑・ランビアン・象の滝・ポンガーの滝：</b>ガソリン、エアブレード125がおすすめ。</li>
+<li><b>茶畑・ランビアン・象の滝・ポンガーの滝：</b>ガソリン、エアブレード125ccがおすすめ。</li>
 </ul>
 <p>距離つきのルートは<a href="{ROUTES}">ダラット5つのルート</a>で紹介しています。</p>
 <h2>同じ料金、同じサービス</h2>
@@ -424,7 +424,7 @@ ART["th"] = {
  "ก่อนเช่าสกู๊ตเตอร์ในดาลัด ควรรู้ว่าราคารวมอะไรบ้าง นี่คือวิธีคิดราคาของเราและสิ่งที่ควรถามทุกร้านเช่า",
  "fleet-gas", """
 <h2>ราคา: ทุกรุ่นวันละ 150,000 ดอง</h2>
-<p>ที่ Van Phu ทุกคันราคาเดียวกัน <b>วันละ 150,000 ดอง</b> ทั้ง Honda Vision 110, Honda Air Blade 125 และสกู๊ตเตอร์ไฟฟ้า ราคาคงที่ ไม่ขึ้นราคาช่วงไฮซีซั่น ไม่มีค่าใช้จ่ายแฝง ไม่มีส่วนลดหลายวัน คิดง่าย ๆ คือ จำนวนวัน × 150,000 ดอง</p>
+<p>ที่ Van Phu ทุกคันราคาเดียวกัน <b>วันละ 150,000 ดอง</b> ทั้ง Honda Vision 110cc, Honda Air Blade 125cc และสกู๊ตเตอร์ไฟฟ้า ราคาคงที่ ไม่ขึ้นราคาช่วงไฮซีซั่น ไม่มีค่าใช้จ่ายแฝง ไม่มีส่วนลดหลายวัน คิดง่าย ๆ คือ จำนวนวัน × 150,000 ดอง</p>
 <h2>ราคานี้รวม</h2>
 <ul>
 <li>หมวกกันน็อกและที่จับโทรศัพท์ฟรี</li>
@@ -456,7 +456,7 @@ ART["th"] = {
  "ทั้งสองแบบราคาวันละ 150,000 ดอง แต่เหมาะกับทริปต่างกันมาก นี่คือวิธีเลือกในดาลัด",
  "electric-helmets", """
 <h2>สรุปสั้น ๆ</h2>
-<p>เที่ยวในเมืองระยะสั้น เลือก <b>สกู๊ตเตอร์ไฟฟ้า</b>: เงียบ ขับง่าย ไม่ต้องมีใบขับขี่ ถ้าจะขึ้นเขา ทางชัน หรือออกนอกเมือง เลือก <b>รถน้ำมัน</b> ดีที่สุดคือ Honda Air Blade 125</p>
+<p>เที่ยวในเมืองระยะสั้น เลือก <b>สกู๊ตเตอร์ไฟฟ้า</b>: เงียบ ขับง่าย ไม่ต้องมีใบขับขี่ ถ้าจะขึ้นเขา ทางชัน หรือออกนอกเมือง เลือก <b>รถน้ำมัน</b> ดีที่สุดคือ Honda Air Blade 125cc</p>
 <h2>สกู๊ตเตอร์ไฟฟ้า: ข้อดีและข้อจำกัด</h2>
 <ul>
 <li>เช่ากับเรา <b>ไม่ต้องมีใบขับขี่</b></li>
@@ -468,7 +468,7 @@ ART["th"] = {
 <p>รายละเอียด: <a href="{EV}">เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด</a></p>
 <h2>รถน้ำมัน: ข้อดีและข้อจำกัด</h2>
 <ul>
-<li>แรงพอสำหรับเนินในดาลัด Air Blade 125 ขึ้นเนินดีที่สุด</li>
+<li>แรงพอสำหรับเนินในดาลัด Air Blade 125cc ขึ้นเนินดีที่สุด</li>
 <li>ไม่ต้องห่วงแบตหมด เติมน้ำมันได้ทุกที่</li>
 <li>เหมาะกับไร่ชาเกิ่วดั๊ต ภูเขาลางเบียง และเที่ยวน้ำตก</li>
 <li>ต้องมีใบขับขี่ที่ใช้ได้</li>
@@ -477,7 +477,7 @@ ART["th"] = {
 <ul>
 <li><b>ในเมือง ทะเลสาบ ตลาดกลางคืน คาเฟ่:</b> ไฟฟ้าหรือ Honda Vision</li>
 <li><b>น้ำตกดาตันลา วัดลินห์เฟือก:</b> แบบไหนก็ได้</li>
-<li><b>ไร่ชา ลางเบียง น้ำตกช้าง น้ำตกปองกูร์:</b> รถน้ำมัน แนะนำ Air Blade 125</li>
+<li><b>ไร่ชา ลางเบียง น้ำตกช้าง น้ำตกปองกูร์:</b> รถน้ำมัน แนะนำ Air Blade 125cc</li>
 </ul>
 <p>เส้นทางพร้อมระยะทางดูได้ที่ <a href="{ROUTES}">5 เส้นทางรอบดาลัด</a></p>
 <h2>ราคาเดียวกัน บริการเดียวกัน</h2>
