@@ -62,6 +62,12 @@ table.price tr:last-child td{border-bottom:0}
 .rules{display:grid;gap:10px}
 .rule{display:flex;align-items:center;gap:12px;background:#fff4e5;border:1px solid #f2c98a;border-radius:12px;padding:14px 16px}
 .rule .ic{font-size:24px;flex:none}
+.revs{display:grid;gap:12px;margin:10px 0 14px}
+@media(min-width:720px){.revs{grid-template-columns:1fr 1fr}}
+.rv{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.rv .st{color:#f5a623;letter-spacing:2px;font-size:15px}
+.rv blockquote{margin:6px 0 8px;font-style:italic}
+.rv figcaption{font-size:13px;color:var(--muted)}
 .box{background:#e8f5fc;border:1px solid #9fd4ef;border-radius:14px;padding:18px;margin:8px 0 18px}
 .box h2{font-size:19px;margin:0 0 6px}
 .box p{margin:0 0 12px}
@@ -155,7 +161,24 @@ def pm_section(l, me):
     if l not in PM.LANGS: return ""
     t = PM.T[l]
     return f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p><a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">{t["h1"]} →</a></p></section>'
-def rev_section(l): return f'<section><h2>{REV[l][0]}</h2><p>{REV[l][1]}</p><p>{rev_btn(l)}</p></section>'
+# Real Google Maps reviews, quoted verbatim (excerpts marked with …), shown in the original language.
+# Shown as visible quotes only: no Review/AggregateRating schema, because Google's rules forbid
+# marking up reviews copied from another site (Google Maps). Add new ones only from real reviews.
+REVIEWS = [
+ ("jan", "Jan B. P.", "en", "Best motorbike renting site in Da Lat. Motorbikes were really good (air blade 125cc). Phu was fenomenal. We highly recommend this place."),
+ ("keziah", "Keziah S.", "en", "It's great to rent a motorbike to explore Dalat for flexible plans! Mr. Phu was very accommodating to my requests (regarding the timing) and even extension. He's also punctual and motorbike was in very good condition ❤"),
+ ("marina", "Марина М.", "ru", "Брали 2 байка, оба в отличном состоянии, новые, плавные, тянут любую горку, тормоза хорошие… Владелец всегда на связи, приятные люди."),
+ ("elvan", "Elvan T.", "en", "This is a highly recommended motorbike rental service in Dalat, everything is just so easy and owner Phu send the motorbike to my hotel as I have contacted him few days before I checked in hotel. Phu is friendly and humble… everything just settled at the door step."),
+ ("peter", "Peter C.", "en", "Good bike and good experience with the owner. Will rent here again."),
+]
+def rev_cards(ids=None):
+    out = []
+    for rid, who, rl, txt in REVIEWS:
+        if ids and rid not in ids: continue
+        out.append(f'<figure class="rv"><div class="st" aria-label="5/5">★★★★★</div><blockquote lang="{rl}" dir="ltr">“{txt}”</blockquote>'
+                   f'<figcaption dir="ltr">— {who} · <a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a></figcaption></figure>')
+    return '<div class="revs">' + "".join(out) + '</div>'
+def rev_section(l, ids=None): return f'<section><h2>{REV[l][0]}</h2><p>{REV[l][1]}</p>{rev_cards(ids)}<p>{rev_btn(l)}</p></section>'
 
 def contact_box(l):
     u = C[l]["ui"]
@@ -473,6 +496,7 @@ def page_ev(l):
  <section><h2>{e["h_good"]}</h2><ul class="checks">{good}</ul></section>
  <section><h2>{e["h_note"]}</h2><ul class="checks">{notes}</ul></section>
  <section><h2>{e["h_faq"]}</h2>{faq}</section>
+ {rev_section(l, ("keziah", "peter", "jan"))}
  <section>{contact_box(l)}{cta_box(l, me)}</section>
  <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:3])}</section>
 </main>
