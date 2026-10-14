@@ -518,9 +518,12 @@ def page_photomap(l):
         n, best, d = t["s"][sid]
         hr = t["h"].get(h, h)
         g = f"https://maps.google.com/?cid={cid}"
-        pts.append({"i": i, "n": n, "lat": lat, "lng": lng, "ev": ev, "g": g, "b": best, "h": hr})
-        rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span><div><b>{n}</b><br><small>≈ {pm_km(PM.CENTER, (lat, lng)):.1f} km · {t["hours"]}: {hr} · {t["best"]}: {best}</small>'
-                 f'<br>{d} <a href="{g}" target="_blank" rel="noopener">{t["dir"]} →</a></div></li>')
+        ph = PM.img_link(sid)
+        own = (OUT / "img" / "spots" / f"{sid}.jpg").exists()
+        thumb = f'<img src="{pre}img/spots/{sid}.jpg" alt="{n}" loading="lazy" style="width:96px;height:72px;object-fit:cover;border-radius:8px;flex:none">' if own else ""
+        pts.append({"i": i, "n": n, "lat": lat, "lng": lng, "ev": ev, "g": g, "b": best, "h": hr, "p": ph})
+        rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{n}</b><br><small>≈ {pm_km(PM.CENTER, (lat, lng)):.1f} km · {t["hours"]}: {hr} · {t["best"]}: {best}</small>'
+                 f'<br>{d}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · <a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a></div></li>')
     seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t["season"])
     tips = "".join(f"<li>{x}</li>" for x in t["tips"])
     pdf = f"{pre}files/VanPhu-Dalat-Photo-Map-{l.upper()}.pdf"
@@ -528,7 +531,7 @@ def page_photomap(l):
         {"@type": "ListItem", "position": p["i"], "item": {"@type": "TouristAttraction", "name": p["n"], "geo": {"@type": "GeoCoordinates", "latitude": p["lat"], "longitude": p["lng"]}, "hasMap": p["g"]}} for p in pts]}
     js = json.dumps(pts, ensure_ascii=False)
     return f"""<!doctype html>
-<html lang="{l}"><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
+<html lang="{l}"{' dir="rtl"' if l == "he" else ""}><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>{t["title"]}</title>
 <meta name="description" content="{t["desc"]}"><link rel="canonical" href="{BASE + me}">
 {alts}<meta property="og:type" content="website"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/electric-row.jpg">
@@ -557,7 +560,7 @@ def page_photomap(l):
 (function(){{if(!window.L)return;var P={js};
 var m=L.map('pmap',{{scrollWheelZoom:false}});L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:18,attribution:'&copy; OpenStreetMap'}}).addTo(m);
 var b=[];P.forEach(function(p){{var c=p.ev?'#0f7a4f':'#c06a00';var k=L.marker([p.lat,p.lng],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:'+c+'">'+p.i+'</span>',iconSize:[26,26],iconAnchor:[13,13]}})}}).addTo(m);
-k.bindPopup('<b>'+p.i+'. '+p.n+'</b><br>{t["hours"]}: '+p.h+'<br>{t["best"]}: '+p.b+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>{t["dir"]} →</a>');b.push([p.lat,p.lng]);}});
+k.bindPopup('<b>'+p.i+'. '+p.n+'</b><br>{t["hours"]}: '+p.h+'<br>{t["best"]}: '+p.b+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>📍 {t["dir"]}</a> · <a href='+JSON.stringify(p.p)+' target=_blank rel=noopener>📷 {t["photo"]}</a>');b.push([p.lat,p.lng]);}});
 L.marker([{LAT},{LON}],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:#1a1a1a;width:auto;padding:0 8px;border-radius:12px">Van Phu</span>',iconSize:[70,26],iconAnchor:[35,13]}})}}).addTo(m).bindPopup('<b>{t["shop"]}</b><br><a href="{GMAPS}" target="_blank" rel="noopener">{t["dir"]} →</a>');
 m.fitBounds(b,{{padding:[20,20]}});}})();
 </script>
