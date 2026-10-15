@@ -106,3 +106,4 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 - Day-trip set (route maps routenew/routecheckin, day hub, hub reference prices) in 16 more languages: one file per language _src/content/dt_<l>.py, loaded by content/daytr.py. Route PDFs: MAPMOD=routenew|routecheckin pdf.py for all 18.
 - Waterfalls map (waterfallmap.py + waterfallmap_tr/_tr2, 18 langs): 6 open waterfalls; Hang Cop, Gougah closed (2026), Tam Tham/Ankroet/Bobla left out.
+- Night-view café map (nightcafemap.py + _tr/_tr2, 18 langs): 6 cafés on east hills chosen by owner; PDF uses PROJ_CENTER (cluster) and no rings.
