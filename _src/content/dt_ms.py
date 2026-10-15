@@ -61,7 +61,7 @@ DAY = {
   ("Perlu tempah motosikal awal?", "Sebaiknya mesej kami di WhatsApp, Zalo atau WeChat untuk simpan motosikal. Sewa 2 hari atau lebih, kami hantar percuma ke hotel di pusat bandar."),
  ]}
 FREE = "Percuma"
-FREE_REL = "Percuma (ada peti derma)"
+FREE_REL = FREE
 MARKET = "Masuk percuma"
 HP = {
  "truclam": "Biara percuma; kereta kabel dari Bukit Robin kira-kira 120,000 VND sehala, 150,000 VND pergi balik",

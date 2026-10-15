@@ -61,7 +61,7 @@ DAY = {
   ("Muss ich den Roller vorher buchen?", "Am besten schreiben Sie uns per WhatsApp, Zalo oder WeChat, damit wir einen Roller reservieren. Ab 2 Tagen liefern wir kostenlos zu Hotels im Zentrum."),
  ]}
 FREE = "Kostenlos"
-FREE_REL = "Kostenlos (Spendenbox)"
+FREE_REL = FREE
 MARKET = "Eintritt frei"
 HP = {
  "truclam": "Kloster kostenlos; Seilbahn vom Robin-Hügel etwa 120.000 VND einfach, 150.000 VND hin und zurück",

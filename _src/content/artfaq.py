@@ -51,7 +51,7 @@ FAQ = {
  ],
  "domainedemarie": [
   ("Nhà thờ Domaine de Marie mở cửa mấy giờ?", "Thường 7:30–11:30 và 13:30–17:30 hằng ngày (Google Maps, tháng 10/2026); đóng cửa tham quan trong giờ lễ."),
-  ("Vào nhà thờ Domaine de Marie có mất vé không?", "Không, vào cửa miễn phí; có hòm công đức."),
+  ("Vào nhà thờ Domaine de Marie có mất vé không?", "Không, vào cửa miễn phí."),
   ("Đi xe máy điện tới Domaine de Marie được không?", "Được — cách chợ Đà Lạt khoảng 1 km, đoạn cuối lên dốc nhẹ."),
  ],
  "price": [
@@ -114,7 +114,7 @@ FAQ = {
  ],
  "domainedemarie": [
   ("What are Domaine de Marie's opening hours?", "Usually 7:30–11:30 and 13:30–17:30 every day (Google Maps, October 2026); closed to sightseeing during Mass."),
-  ("Is Domaine de Marie free to enter?", "Yes, entry is free; there is a donation box."),
+  ("Is Domaine de Marie free to enter?", "Yes, entry is free."),
   ("Can I ride there on an electric scooter?", "Yes — it's about 1 km from Da Lat Market, with a gentle climb at the end."),
  ],
  "price": [

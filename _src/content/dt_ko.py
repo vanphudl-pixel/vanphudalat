@@ -61,7 +61,7 @@ DAY = {
   ("미리 예약해야 하나요?", "WhatsApp, Zalo, WeChat으로 미리 연락 주시면 오토바이를 맡아 둡니다. 2일 이상 렌트하면 시내 호텔까지 무료로 배달해 드려요."),
  ]}
 FREE = "무료"
-FREE_REL = "무료 (헌금함 있음)"
+FREE_REL = FREE
 MARKET = "입장 무료"
 HP = {
  "truclam": "선원 무료; Robin 언덕에서 케이블카 편도 약 120,000 VND, 왕복 150,000 VND",

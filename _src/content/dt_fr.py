@@ -61,7 +61,7 @@ DAY = {
   ("Faut-il réserver le scooter à l'avance ?", "Mieux vaut nous écrire sur WhatsApp, Zalo ou WeChat pour réserver un deux-roues. À partir de 2 jours, livraison gratuite à votre hôtel dans le centre."),
  ]}
 FREE = "Gratuit"
-FREE_REL = "Gratuit (tronc pour les dons)"
+FREE_REL = FREE
 MARKET = "Entrée libre"
 HP = {
  "truclam": "Monastère gratuit ; téléphérique depuis la colline Robin environ 120 000 VND l'aller, 150 000 VND aller-retour",

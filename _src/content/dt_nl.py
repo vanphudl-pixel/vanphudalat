@@ -61,7 +61,7 @@ DAY = {
   ("Moet ik de scooter vooraf reserveren?", "Stuur ons het liefst een bericht via WhatsApp, Zalo of WeChat, dan houden we een scooter voor je vrij. Vanaf 2 dagen bezorgen we gratis bij hotels in het centrum."),
  ]}
 FREE = "Gratis"
-FREE_REL = "Gratis (offerblok)"
+FREE_REL = FREE
 MARKET = "Vrij toegankelijk"
 HP = {
  "truclam": "Klooster gratis; kabelbaan vanaf de Robin-heuvel ongeveer 120,000 VND enkele reis, 150,000 VND retour",

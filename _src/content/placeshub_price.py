@@ -3,9 +3,9 @@ Sources: lamdongtours.com/ve (2026), intour.com.vn price list (updated 01/07/202
 Google Maps visitor reviews (2025–2026). Places with no reliable price are left out (no line shown).
 Religious sites and public spaces: free. Add a language by adding a dict keyed by spot id."""
 _FREE_VI = "Miễn phí"
-_FREE_REL_VI = "Miễn phí (có hòm công đức)"
+_FREE_REL_VI = _FREE_VI
 _FREE_EN = "Free"
-_FREE_REL_EN = "Free (donation box)"
+_FREE_REL_EN = _FREE_EN
 PRICE = {
 "vi": {
  "lake": _FREE_VI, "square": _FREE_VI, "market": "Miễn phí vào chợ",

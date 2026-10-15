@@ -45,7 +45,7 @@ MAPS["pagodamap"] = {
  "lead": "De 7 pagodes en zenkloosters die reizigers het meest bezoeken in en rond Da Lat — met openingstijden, het beste moment en route met één tik. Rijd er zelf heen met de scooter.",
  "center": "Pagodes in de stad (1–6)",
  "season_h": "Gedrag in tempels",
- "season": [("Kleding", "schouders en knieën bedekt; geen korte broek in de hoofdzalen"), ("Schoenen", "doe ze uit voordat je een zaal binnengaat"), ("Stilte", "praat zacht en vraag eerst voordat je monniken fotografeert"), ("Toegang", "de meeste pagodes zijn gratis; een collectebus is vrijblijvend")],
+ "season": [("Kleding", "schouders en knieën bedekt; geen korte broek in de hoofdzalen"), ("Schoenen", "doe ze uit voordat je een zaal binnengaat"), ("Stilte", "praat zacht en vraag eerst voordat je monniken fotografeert"), ("Toegang", "de meeste pagodes zijn gratis")],
  "tips_h": "Route-ideeën",
  "tips": ["Noordelijke ronde: Linh Son → Linh Quang → Van Hanh (ongeveer 1,5 uur).", "Zuid: Chua Tau, daarna Truc Lam boven het Tuyen Lam-meer.", "Oost: Linh Phuoc — of neem de oude trein naar Trai Mat.", "Linh An ligt naast de Elephant-waterval: ga met een Honda Air Blade 125cc."],
  "s": {

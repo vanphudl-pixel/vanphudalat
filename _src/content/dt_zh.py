@@ -61,7 +61,7 @@ DAY = {
   ("需要提前订车吗？", "建议提前通过 WhatsApp、Zalo 或微信联系我们留车。租 2 天以上免费送车到市中心酒店。"),
  ]}
 FREE = "免费"
-FREE_REL = "免费（设有功德箱）"
+FREE_REL = FREE
 MARKET = "免费入场"
 HP = {
  "truclam": "禅院免费；从 Robin 山坐缆车单程约 120,000 VND，往返 150,000 VND",

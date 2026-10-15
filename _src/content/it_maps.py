@@ -45,7 +45,7 @@ MAPS["pagodamap"] = {
  "lead": "Le 7 pagode e i monasteri zen più visitati dai viaggiatori dentro e intorno a Da Lat — con orari, il momento migliore e le indicazioni con un tocco. Arrivaci da solo in scooter.",
  "center": "Pagode in città (1–6)",
  "season_h": "Galateo nei templi",
- "season": [("Abbigliamento", "spalle e ginocchia coperte; niente pantaloncini nelle sale principali"), ("Scarpe", "toglile prima di entrare in una sala"), ("Silenzio", "parla piano e chiedi prima di fotografare i monaci"), ("Ingresso", "quasi tutte le pagode sono gratuite; la cassetta delle offerte è facoltativa")],
+ "season": [("Abbigliamento", "spalle e ginocchia coperte; niente pantaloncini nelle sale principali"), ("Scarpe", "toglile prima di entrare in una sala"), ("Silenzio", "parla piano e chiedi prima di fotografare i monaci"), ("Ingresso", "quasi tutte le pagode sono gratuite")],
  "tips_h": "Idee di percorso",
  "tips": ["Giro nord: Linh Son → Linh Quang → Van Hanh (circa 1,5 ore).", "Sud: Chua Tau, poi Truc Lam sopra il lago Tuyen Lam.", "Est: Linh Phuoc — oppure prendi il vecchio treno per Trai Mat.", "Linh An è accanto alla cascata Elephant: vai con una Honda Air Blade 125cc."],
  "s": {
