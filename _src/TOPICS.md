@@ -40,6 +40,8 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-10-14 domainedemarie — Domaine de Marie pink church guide (owner's photos)
 - 2026-10-14 evrules — Electric scooter rental rules (owner's official rules; link to it from electric-scooter articles)
 - 2026-10-14 caudat — Cau Dat tea hills: complete sunrise guide
+- 2026-10-15 cloudhunt — Cloud hunting (săn mây) around Da Lat: where, when, riding there before dawn (links to cloud-hunting-map and caudat)
+- 2026-10-15 lt-nodeposit — Long-tail: motorbike rental in Da Lat with no cash deposit (passport/ID card; links to price article)
 
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
@@ -49,7 +51,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - Title/H1/meta built around the natural local phrase for that intent in EACH language (research how people really search it in that language, e.g. vi "thuê xe máy Đà Lạt không cần cọc", ru "аренда байка в Далате без залога", zh "大叻租摩托车 不用押金", th "เช่ามอเตอร์ไซค์ดาลัด ไม่ต้องมัดจำ"). Use the phrase naturally 2–4 times; no stuffing.
 - Link to the main rental page with <a href="{HOME}">…</a> and, for electric topics, to <a href="{EV}">…</a>.
 - All Hard rules apply (no licence wording in any language, no invented facts, no competitor claims). Do not promise hotel delivery in these articles.
-- [ ] lt-nodeposit — Renting a motorbike in Da Lat with no cash deposit (passport or ID card instead; how it works, what to bring)
 - [ ] lt-procedure — How to rent a motorbike in Da Lat step by step (message, pick-up, test ride + video, return before 21:00)
 - [ ] lt-center — Motorbike rental in central Da Lat near the market and Xuan Huong Lake (where the shop is, getting there on foot/Grab; approximate distances only)
 - [ ] lt-ev-foreigners — Electric scooter rental in Da Lat for foreigners (quiet, easy, battery about 35–40 km, swap 20,000 VND, under 100 kg for two)
@@ -69,7 +70,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 15/10 cloudhunt — Cloud hunting (săn mây) around Da Lat: where, what time, riding there before dawn
 - [ ] 16/10 nightmarket — Da Lat night market guide: what to eat and buy
 - [ ] 17/10 langbiang — Lang Biang Mountain guide by motorbike
 - [ ] 18/10 electric — Electric scooter rental in Da Lat: why it's great for the city (no licence talk; link to the evrules article)
