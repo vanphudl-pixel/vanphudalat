@@ -37,6 +37,7 @@ from content import fourstarmap as H4
 from content import threestarmap as H3
 from content import busmap as BU
 from content import danangbusmap as DN
+from content import waterfallmap as WF
 from content import festivalmap as FE
 from content import placeshub as HUB
 from content import placeshub_price as HUBP
@@ -208,6 +209,7 @@ def pm_section(l, me):
             f'<a class="btn alt" href="{rel(me, map_path(CH, l))}" style="border:1px solid var(--line)">⛪ {CH.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(SF, l))}" style="border:1px solid var(--line)">🌼 {SF.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(CL, l))}" style="border:1px solid var(--line)">☁️ {CL.T[l]["h1"]} →</a> '
+            f'<a class="btn alt" href="{rel(me, map_path(WF, l))}" style="border:1px solid var(--line)">💧 {WF.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(CF, l))}" style="border:1px solid var(--line)">☕ {CF.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(BB, l))}" style="border:1px solid var(--line)">🍖 {BB.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(HT, l))}" style="border:1px solid var(--line)">🏨 {HT.T[l]["h1"]} →</a> '
@@ -717,7 +719,7 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 """ + foot(l, frm=me)
 
 # ------------------------------------------------------------------ places hub (pillar page, vi + en)
-THEMES = [RN, RC, PM, PG, CH, SF, CL, CF, BB, FE, HT, H4, H3, BU, DN]
+THEMES = [RN, RC, PM, WF, PG, CH, SF, CL, CF, BB, FE, HT, H4, H3, BU, DN]
 _TNAME = {M.__name__.split(".")[-1]: M for M in THEMES}
 def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
 def day_path(l): return lang_root(l) + DAY.SLUG[l] + "/"
@@ -856,7 +858,7 @@ for l in DAY.LANGS:
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF):
     for l in _M.LANGS:
         write(map_path(_M, l), page_photomap(l, _M))
 
@@ -870,7 +872,7 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
@@ -911,9 +913,10 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Da Lat 4-star hotels — map of 10 popular 4-star hotels and resorts, free PDF]({BASE + map_path(H4, "en")})
 - [Da Lat 3-star hotels — map of 8 popular 3-star hotels near the night market, free PDF]({BASE + map_path(H3, "en")})
 - [Places to visit in Da Lat by motorbike — every sight from our maps grouped by direction, with distance, hours and electric-scooter suitability]({BASE + "places-to-visit-in-da-lat/"}) (Vietnamese: {BASE + "vi/dia-diem-du-lich-da-lat/"})
-- [Da Lat day trip on your own by motorbike — self-guided versions of the popular 1-day group tours, tour vs. own bike comparison]({BASE + "da-lat-day-trip-by-motorbike/"}) (Vietnamese: {BASE + "vi/da-lat-1-ngay-tu-tuc/"})
-- [Self-guided Da Lat day trip by motorbike: new attractions 2026 (Langbiang Land, Mongo Land, Hoang Long Ohayo, strawberry farm) — ordered route, times, free PDF]({BASE + map_path(RN, "en")})
-- [Self-guided Da Lat day trip by motorbike: hot check-in spots (Lac Hu Co Tran, Memory Station, Suoi Binh Yen, Happy Hill) — ordered route, times, free PDF]({BASE + map_path(RC, "en")})
+- [Da Lat day trip on your own by motorbike — self-guided versions of the popular 1-day group tours]({BASE + "da-lat-day-trip-by-motorbike/"}) (Vietnamese: {BASE + "vi/da-lat-1-ngay-tu-tuc/"})
+- [Self-guided Da Lat day trip by motorbike: new attractions 2026 (Langbiang Land, Mongo Land, Hoang Long Ohayo, strawberry farm) — ordered route, distances, free PDF]({BASE + map_path(RN, "en")})
+- [Self-guided Da Lat day trip by motorbike: hot check-in spots (Lac Hu Co Tran, Memory Station, Suoi Binh Yen, Happy Hill) — ordered route, distances, free PDF]({BASE + map_path(RC, "en")})
+- [Da Lat waterfalls map — 6 waterfalls open to visitors (Datanla, Prenn, Cam Ly, Lien Khuong, Elephant Falls, Pongour) with hours, reference ticket prices, free PDF]({BASE + map_path(WF, "en")})
 - [Da Lat to Saigon bus — map of the Da Lat bus station and 12 bus company offices, free PDF]({BASE + map_path(BU, "en")})
 - [Da Lat to Da Nang bus — map of the Da Lat bus station and 6 bus company offices on the Da Nang / Hoi An route, free PDF]({BASE + map_path(DN, "en")})
 - [Da Lat Flower Festival 2026 — planned 19–31 Dec 2026: programme, venue map, free PDF]({BASE + map_path(FE, "en")})
