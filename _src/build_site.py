@@ -126,6 +126,63 @@ html[dir=rtl] .prose ul{padding-left:0;padding-right:20px}
 html[dir=rtl] .langs,html[dir=rtl] .price,html[dir=rtl] table.price th,html[dir=rtl] table.price td{text-align:right}
 footer a{color:inherit;text-decoration:underline}
 .kw{margin:12px 0 0;font-size:14px}
+
+/* ---- 2026-10 redesign: pine + dã quỳ ---- */
+:root{--bg:#eef3ef;--ink:#16241d;--muted:#55655c;--brand:#2f6b4f;--pine:#173d2d;--brand2:#e3ede6;--accent:#f2b632;--line:#d6dfd8}
+body{font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","Noto Sans Thai",sans-serif}
+h1,h2,h3{letter-spacing:-.01em}
+h2{font-weight:800}
+.btn{border-radius:12px;transition:transform .12s ease}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media(max-width:720px){.langs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%;padding-bottom:2px}.langs::-webkit-scrollbar{display:none}.langs a{flex:none}}
+header{background:var(--pine)}
+footer{background:var(--pine);color:#cfe0d5;padding:28px 16px 96px}
+/* home */
+.hh{background:var(--pine);color:#fff}
+.hh .top{padding:12px 0}
+.hh-hero{position:relative;min-height:min(78vh,640px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hh-hero .heroimg{position:absolute;inset:0;width:100%;height:100%;margin:0;border-radius:0;aspect-ratio:auto;object-fit:cover;z-index:-2}
+.hh-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,36,27,.88) 0%,rgba(14,36,27,.55) 45%,rgba(14,36,27,.05) 80%),linear-gradient(180deg,rgba(14,36,27,0) 40%,rgba(14,36,27,.85) 100%)}
+@media(max-width:720px){.hh-hero:after{background:linear-gradient(180deg,rgba(14,36,27,.25) 0%,rgba(14,36,27,.7) 40%,rgba(14,36,27,.95) 100%)}}
+.hh .wrap{max-width:1040px}
+.hh-in{padding:48px 16px 40px;width:100%}
+.hh h1{font-size:clamp(34px,6vw,60px);line-height:1.05;font-weight:800;margin:0 0 14px;max-width:14ch;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+.hh .lead{max-width:56ch;margin:0 0 22px;font-size:18px;opacity:.96}
+.ticket{display:inline-flex;align-items:baseline;gap:8px;background:var(--accent);color:var(--pine);font-weight:800;font-size:clamp(20px,3vw,26px);padding:10px 22px 10px 26px;margin:0 0 22px;border-radius:6px;
+ -webkit-mask:radial-gradient(circle 9px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;
+ mask:radial-gradient(circle 9px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat}
+.hh .cta .btn.alt{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+.facts{background:var(--pine);color:#fff;border-top:1px solid rgba(255,255,255,.12)}
+.facts ul{list-style:none;margin:0 auto;padding:14px 16px;max-width:1040px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px 18px}
+.facts li{font-weight:600;font-size:15px;display:flex;gap:8px;align-items:center}
+.facts li:before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+@media(max-width:720px){.facts ul{grid-template-columns:1fr 1fr}.hh-hero{min-height:560px}.hh .lead{font-size:16px}}
+main.home{max-width:1040px}
+main.home>section{padding:40px 0 8px}
+table.price{display:table;padding:0;margin:0;font-weight:400;color:var(--ink)}
+table.price th{font-weight:600}
+main.home h2{font-size:clamp(23px,3vw,30px);margin-bottom:16px}
+main.home table.price{font-size:17px}
+main.home table.price td b{color:var(--pine);background:#fdf1cf;padding:3px 10px;border-radius:6px;white-space:nowrap}
+@media(min-width:820px){main.home .checks{grid-template-columns:1fr 1fr}.two{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}.two>section{padding-top:0}main.home .two .checks{grid-template-columns:1fr}}
+main.home>.two{padding-top:40px}
+main.home .card{padding:0 0 16px;overflow:hidden}
+main.home .card img{width:100%;margin:0 0 12px;border-radius:0}
+main.home .card b,main.home .card span{display:block;padding:0 16px}
+main.home .card b{font-size:18px;color:var(--pine)}
+ol.steps{list-style:none;padding:0;margin:0;display:grid;gap:12px;counter-reset:st}
+@media(min-width:820px){ol.steps{grid-template-columns:repeat(4,1fr)}}
+ol.steps li{counter-increment:st;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin:0}
+ol.steps li:before{content:counter(st);display:flex;width:34px;height:34px;border-radius:50%;background:var(--pine);color:var(--accent);font-weight:800;align-items:center;justify-content:center;margin-bottom:10px}
+main.home .gallery{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+main.home .gallery img{border-radius:14px}
+.pmsec p .btn{margin:0 6px 8px 0}
+main.home .faq details{border-radius:12px;padding:14px 16px}
+main.home .faq details[open]{border-color:var(--brand)}
+main.home .posts{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+html[dir=rtl] .hh h1,html[dir=rtl] .hh .lead{margin-left:auto}
+html[dir=rtl] ol.steps{padding-right:0}
 """
 
 # ------------------------------------------------------------------ URLs
@@ -204,7 +261,7 @@ def pm_section(l, me):
     if l not in PM.LANGS: return ""
     t = PM.T[l]
     g = PG.T[l]
-    return (f'<section><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p>{hub_btn(l, me)}<a class="btn" href="{rel(me, pm_path(l))}">{t["h1"]} →</a> '
+    return (f'<section class="pmsec"><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p>{hub_btn(l, me)}<a class="btn" href="{rel(me, pm_path(l))}">{t["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(PG, l))}" style="border:1px solid var(--line)">🛕 {g["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(CH, l))}" style="border:1px solid var(--line)">⛪ {CH.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(SF, l))}" style="border:1px solid var(--line)">🌼 {SF.T[l]["h1"]} →</a> '
@@ -303,6 +360,7 @@ def head(l, kind, key, title, desc, ld, img="electric-row"):
 <meta property="og:url" content="{BASE + me}">
 <meta property="og:image" content="{BASE}img/{img}.jpg">
 {"".join(ldjson(x) for x in ld)}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
 <style>{CSS}</style>
 </head>
 <body>"""
@@ -368,6 +426,7 @@ def page_home(l):
     alt = u["alt"]
     conds = "".join(f"<li><b>{b}</b> — {t}</li>" for b, t in h["conditions"])
     steps = "".join(f"<li>{s}</li>" for s in h["steps"])
+    facts = "".join(f"<li>{h['conditions'][i][0]}</li>" for i in (0, 2, 3, 4))
     rules = "".join(f'<div class="rule"><span class="ic">{ic}</span><b>{r}</b></div>' for ic, r in zip(["🚫🍺", "🚦"], h["rules"]))
     why = "".join(f"<p>{p}</p>" for p in h["why"])
     faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in h["faq"])
@@ -388,29 +447,31 @@ def page_home(l):
         tips_sec = '<section class="prose"><h2>' + h["h_tips"] + '</h2><ul>' + "".join(f"<li><b>{b}</b> — {t}</li>" for b, t in h["tips"]) + "</ul></section>"
     upd = f'<p class="note">{h["updated"]}</p>' if h.get("updated") else ""
     body = f"""
-<header><div class="wrap">{langbar(l, "home", None, me)}
-<div class="hero">
+<header class="hh"><div class="wrap">{langbar(l, "home", None, me)}</div>
+<div class="hh-hero">
+ <img class="heroimg" src="{pre}img/electric-row.jpg" alt="{alt}" width="1200" height="675">
+ <div class="wrap hh-in">
  <h1>{h["h1"]}</h1>
  <p class="lead">{h["lead"]}</p>
- <div class="price">{h["price_badge"]}</div>
+ <div class="ticket">{h["price_badge"]}</div>
  <div class="cta">{hero_btns(l)}</div>
- <img class="heroimg" src="{pre}img/electric-row.jpg" alt="{alt}" width="1200" height="675">
-</div></div></header>
-<main class="wrap">
- <section><h2>{h["h_prices"]}</h2>
+</div></div>
+<div class="facts"><ul>{facts}</ul></div></header>
+<main class="wrap home">
+ <div class="two"><section><h2>{h["h_prices"]}</h2>
   <table class="price"><tr><th>{h["th_bike"]}</th><th>{h["th_price"]}</th></tr>
   <tr><td>Honda Vision 110cc</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr>
   <tr><td>Honda Air Blade 125cc</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr>
   <tr><td>{h["electric_name"]}</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr></table>
   <p class="note">{h["price_note"]}</p>{upd}</section>
- <section><h2>{h["h_conditions"]}</h2><ul class="checks">{conds}</ul></section>
+ <section><h2>{h["h_conditions"]}</h2><ul class="checks">{conds}</ul></section></div>
  {cmp_sec}
  <section><h2>{h["h_fleet"]}</h2><div class="grid">
   <div class="card"><img src="{pre}img/vision-white.jpg" alt="Honda Vision 110cc — {alt}" loading="lazy"><b>Honda Vision 110cc</b><span>{h["vision"]}</span></div>
   <div class="card"><img src="{pre}img/airblade.jpg" alt="Honda Air Blade 125cc — {alt}" loading="lazy"><b>Honda Air Blade 125cc</b><span>{h["airblade"]}</span></div>
   <div class="card"><img src="{pre}img/electric-helmets.jpg" alt="{h["electric_name"]} — {alt}" loading="lazy"><b><a href="{rel(me, ev_path(l))}">{h["electric_name"]}</a></b><span>{h["electric"]} <a href="{rel(me, ev_path(l))}">{EV[l]["more"]}</a></span></div>
  </div></section>
- <section><h2>{h["h_how"]}</h2><ol>{steps}</ol></section>
+ <section><h2>{h["h_how"]}</h2><ol class="steps">{steps}</ol></section>
  {tips_sec}
  <section><h2>{h["h_rules"]}</h2><div class="rules">{rules}</div></section>
  <section class="prose"><h2>{h["h_why"]}</h2>{why}
@@ -688,6 +749,7 @@ def page_photomap(l, M=PM):
 {alts}<meta property="og:type" content="website"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/electric-row.jpg">
 {ldjson(ld)}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
 <style>{CSS}
 #pmap{{height:460px;border-radius:14px;border:1px solid var(--line)}}
 .pmlist{{list-style:none;padding:0;display:grid;gap:10px}} .pmlist li{{display:flex;gap:10px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:10px}}
@@ -779,6 +841,7 @@ def page_hub(l):
 {alts}<meta property="og:type" content="article"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/airblade.jpg">
 {"".join(ldjson(x) for x in lds)}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
 <style>{CSS}
 #pmap{{height:480px;border-radius:14px;border:1px solid var(--line)}}
 .pmn{{flex:none;width:28px;height:28px;border-radius:50%;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}} .pmn.ev{{background:#0f7a4f}} .pmn.gas{{background:#c06a00}}
@@ -841,6 +904,7 @@ def page_day(l):
 <meta name="description" content="{t["desc"]}"><link rel="canonical" href="{BASE + me}">
 {alts}<meta property="og:type" content="article"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/airblade.jpg">
 {"".join(ldjson(x) for x in lds)}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
 <style>{CSS}
 </style></head><body>
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
