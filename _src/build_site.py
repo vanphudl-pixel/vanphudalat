@@ -135,7 +135,7 @@ h2{font-weight:800}
 .btn{border-radius:12px;transition:transform .12s ease}
 .btn:active{transform:translateY(1px)}
 .btn:focus-visible,a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-@media(max-width:720px){.langs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%;padding-bottom:2px}.langs::-webkit-scrollbar{display:none}.langs a{flex:none}}
+@media(max-width:720px){.top{flex-direction:column;align-items:stretch}.langs{display:flex;flex-wrap:wrap;gap:4px;width:100%}.langs a{flex:1 0 auto;padding:6px 4px;text-align:center;font-size:12px;white-space:nowrap}}
 header{background:var(--pine)}
 footer{background:var(--pine);color:#cfe0d5;padding:28px 16px 96px}
 /* home */
