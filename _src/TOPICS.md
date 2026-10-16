@@ -15,7 +15,7 @@ Owner: Phú. Report language: Vietnamese.
 
 ## Hard rules (business owner's decisions — never break)
 - NEVER mention driving licences/permits in any language (no "license", "права", "驾照", "bằng lái", etc.).
-- Electric-scooter range: only as the owner-approved figure "one battery lasts about 35–40 km" (battery swap at the shop 20,000 VND). Never any other number, never "per charge" wording.
+- Electric-scooter range: only as the owner-approved figures "one battery lasts about 35–40 km; each scooter comes with 2 batteries, about 60–70 km in total" (battery swap at the shop 20,000 VND). Never any other number, never "per charge" wording.
 - Electric scooters: max 2 riders with combined weight under 100 kg; avoid long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade 125cc for long trips.
 - Prices: 150,000 VND/day for every bike, fixed, no discounts (never advertise a lower or "from" price — the owner always charges 150,000 VND). Always write the currency as "VND" in every language — never đ, ₫, донг, ดอง, 동, ドン, 越南盾, דונג. Bikes: Honda Vision 110cc, Honda Air Blade 125cc, electric scooter. No cash deposit — guest leaves passport or ID card. Free helmet. Phone holder on every bike; gas scooters come with 1 liter of fuel. Free hotel delivery in central Da Lat for 2+ days. Rental day = pickup until 21:00. Test ride + video of bike condition before rental.
 - Contacts: WhatsApp +84 944 081 101 / +84 834 622 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat, Russian Telegram channel t.me/dalat_life_vietnam. Shop: 1/15/5 Thông Thiên Học, Đà Lạt.
@@ -44,6 +44,7 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-10-15 lt-nodeposit — Long-tail: motorbike rental in Da Lat with no cash deposit (passport/ID card; links to price article)
 - 2026-10-16 nightmarket — Da Lat night market guide: what to eat and buy (18 languages)
 - 2026-10-16 lt-procedure — Long-tail: how to rent a motorbike in Da Lat step by step (18 languages)
+- 2026-10-16 lt-ev-foreigners — EV long-tail: electric scooter rental in Da Lat for foreigners (18 languages; first article of the daily EV series)
 
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
@@ -54,7 +55,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - Link to the main rental page with <a href="{HOME}">…</a> and, for electric topics, to <a href="{EV}">…</a>.
 - All Hard rules apply (no licence wording in any language, no invented facts, no competitor claims). Do not promise hotel delivery in these articles.
 - [ ] lt-center — Motorbike rental in central Da Lat near the market and Xuan Huong Lake (where the shop is, getting there on foot/Grab; approximate distances only)
-- [ ] lt-ev-foreigners — Electric scooter rental in Da Lat for foreigners (quiet, easy, battery about 35–40 km, swap 20,000 VND, under 100 kg for two)
 - [ ] lt-airblade — Renting a Honda Air Blade 125cc in Da Lat (for passes, two riders, longer day trips)
 - [ ] lt-vision — Renting a Honda Vision 110cc in Da Lat (light, easy automatic for beginners and city riding)
 - [ ] lt-early — Early-morning motorbike rental in Da Lat (shop opens 4:30 am — cloud hunting and sunrise rides)
@@ -64,11 +64,35 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-rainy — Renting a motorbike in Da Lat in the rainy season (raincoat, slippery hills, what to avoid)
 - [ ] lt-backpacker — Motorbike rental in Da Lat for backpackers and budget travellers
 - [ ] lt-booking — How to book a motorbike in Da Lat online (WhatsApp, Zalo, WeChat, Telegram — what to send)
-- [ ] lt-ev-city — Where to go in Da Lat on an electric scooter (central sights within battery range; avoid long passes)
 - [ ] lt-reliable — How to choose a reliable motorbike rental in Da Lat (transparent price, no hidden fees, written rules) — generic advice, no competitor claims
 - [ ] lt-first-time — First time riding a scooter in Da Lat: is it hard? (practice, quiet streets, traffic on the right)
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
+
+## Photos — owner's real photos (use them in every new article)
+- Library: `img/<name>.jpg` (EXIF/GPS stripped, ≤1200 px, ~150–240 KB; the build serves WebP copies of ~20–75 KB automatically). Alt texts in all languages: `content/photos.py` ALT[lang][name].
+- Landscape 1200x675 (can be the article hero = image_name): van-phu-shop-early-pickup-air-blade, honda-vision-girls-helmets-dalat, van-phu-shop-busy-morning-vision-air-blade, friends-air-blade-van-phu-gate, group-rental-air-blade-van-phu-morning, honda-air-blade-vision-fleet-van-phu, vision-air-blade-villa-delivery-dalat, white-honda-vision-sidewalk-dalat, electric-scooters-van-phu-shop, electric-scooters-helmets-van-phu.
+- Portrait (inline only): van-phu-guest-air-blade-thumbs-up, air-blade-handover-dalat-homestay, guest-white-honda-vision-van-phu-shop, honda-vision-cafe-garden-dalat, couple-air-blade-dalat-center-street, honda-vision-hotel-delivery-dalat, evening-pickup-van-phu-1-15-5-thong-thien-hoc, honda-vision-bui-thi-xuan-street-dalat, guest-white-electric-scooter-dalat.
+- In an article body put `{PHOTO:<name>}` on its own line between blocks (1–2 per article, matching the topic: electric photos for EV articles). Link another article with `<a href="{ART:<key>}">`. Older articles get photos via HERO/INLINE in photos.py.
+- New photos from the owner: save as `img/<descriptive-english-kebab-name>.jpg` (landscape cropped to 1200x675, portrait max 900x1200, quality ~78, no EXIF) and add ALT for all 18 languages.
+
+## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
+Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 100 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
+- [ ] lt-ev-city — Where to go in Da Lat on an electric scooter (central sights; plan around the battery, swap at the shop; avoid long passes)
+- [ ] lt-ev-price — Electric scooter rental price in Da Lat (150,000 VND/day, what's included, battery swap 20,000 VND) — link to price article, don't copy it
+- [ ] lt-ev-battery — Electric scooter battery in Da Lat: how far you can go, when to swap, tips for hills and two riders
+- [ ] lt-ev-couples — Electric scooter for two in Da Lat (combined under 100 kg, comfort, when to pick the Air Blade instead)
+- [ ] lt-ev-beginners — Electric scooter for beginners in Da Lat (no gears, quiet, first ride tips, Vietnam drives on the right)
+- [ ] lt-ev-cafes — Café hopping in Da Lat by electric scooter (areas, parking, short hops)
+- [ ] lt-ev-night — Riding an electric scooter in Da Lat in the evening (lights, cold, night market, return before 21:00)
+- [ ] lt-ev-rain — Electric scooter in Da Lat in the rain (slippery hills, no deep water, raincoat)
+- [ ] lt-ev-vs-grab — Electric scooter rental vs Grab/taxi for getting around Da Lat (honest comparison, no invented fares)
+- [ ] lt-ev-eco — Eco-friendly travel in Da Lat: quiet electric scooter, no fuel, cleaner air
+- [ ] lt-ev-parking — Parking an electric scooter in Da Lat (guarded lots, gửi xe tickets, locking)
+- [ ] lt-ev-halfday — Half-day city loop in Da Lat by electric scooter (central sights only)
+- [ ] lt-ev-checklist — What to check when picking up an electric scooter in Da Lat (battery level, brakes, lights, video)
+- [ ] lt-ev-families — Electric scooter in Da Lat for families and older travellers (gentle, quiet; safety)
+- [ ] lt-ev-faq — Electric scooter rental in Da Lat: 10 common questions answered
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
 - [ ] 17/10 langbiang — Lang Biang Mountain guide by motorbike

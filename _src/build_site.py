@@ -25,6 +25,14 @@ WA2 = "https://wa.me/84834622149"
 
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
 from content.ev import EV
+from content.photos import ALT as PHOTO_ALT, HERO as PHOTO_HERO, INLINE as PHOTO_INLINE
+import html as _html
+def _esc(t): return _html.escape(t, quote=True)
+def _ph_style(name):
+    """portrait photos are capped in width so they don't fill a whole screen"""
+    from PIL import Image as _I
+    w, h = _I.open(Path(__file__).resolve().parent.parent / "img" / (name + ".jpg")).size
+    return "width:100%;height:auto;border-radius:12px" + (";max-width:440px;display:block;margin:0 auto" if h > w else "")
 from content import photomap as PM
 from content import pagodamap as PG
 from content import churchmap as CH
@@ -565,12 +573,19 @@ def page_blog(l):
 
 def page_article(l, k):
     slug, title, h1, desc, lead, img, html = C[l]["articles"][k]
+    img = PHOTO_HERO.get(k, img)
+    for n, ph in sorted(PHOTO_INLINE.get(k, []), key=lambda x: -x[0] if x[0] >= 0 else 10**6):
+        pos = [m.start() for m in re.finditer("<h2", html)]
+        if pos: i = pos[n] if -len(pos) <= n < len(pos) else pos[-1]; html = html[:i] + "{PHOTO:" + ph + "}\n" + html[i:]
     u = C[l]["ui"]
     me = art_path(l, k)
     pre = "../" * me.count("/")
     html = html.replace("{ROUTES}", rel(me, routes_path(l))).replace("{HOME}", rel(me, home_path(l))).replace("{EV}", rel(me, ev_path(l))).replace("{IMG}", pre + "img/").replace("{PM}", rel(me, pm_path(l)))
+    html = re.sub(r"\{ART:([a-z0-9-]+)\}", lambda m: rel(me, art_path(l, m.group(1))), html)
+    _phs = re.findall(r"\{PHOTO:([a-z0-9-]+)\}", html)
+    html = re.sub(r"\{PHOTO:([a-z0-9-]+)\}", lambda m: f'<p><img src="{pre}img/{m.group(1)}.jpg" alt="{_esc(PHOTO_ALT.get(l, {}).get(m.group(1)) or PHOTO_ALT["en"][m.group(1)])}" loading="lazy" style="{_ph_style(m.group(1))}"></p>', html)
     art = {"@context": "https://schema.org", "@type": "Article", "headline": h1, "description": desc, "inLanguage": l,
-           "mainEntityOfPage": BASE + me, "image": f"{BASE}img/{img}.jpg", "datePublished": adate(k), "dateModified": mdate(l, k),
+           "mainEntityOfPage": BASE + me, "image": [f"{BASE}img/{x}.jpg" for x in dict.fromkeys([img] + _phs)], "datePublished": adate(k), "dateModified": mdate(l, k),
            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"},
            "publisher": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}}
     others = [x for x in ARTICLES[::-1] if x != k][:3]

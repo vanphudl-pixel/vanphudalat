@@ -136,3 +136,8 @@ for _m in (_t1, _t2, _t3, _t4):
 for _l in FAQ:
     assert list(FAQ[_l]) == list(FAQ["en"]), _l
 UPDATED = {l: {k: "2026-10-15" for k in FAQ[l]} for l in FAQ}
+
+# 2026-10-16: owner's real photos added to these articles (content/photos.py)
+for _l in ["en", "ru", "zh", "ko", "ja", "th", "id", "ms", "vi", "de", "fr", "es", "he", "it", "nl", "km", "lo", "my"]:
+    for _k in ["weather", "getting", "days3", "food", "riding", "wildsunflower", "waterfalls", "evrules", "caudat", "cloudhunt", "lt-nodeposit"]:
+        UPDATED.setdefault(_l, {})[_k] = "2026-10-16"
