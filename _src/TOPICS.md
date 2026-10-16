@@ -103,7 +103,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
 - [ ] 17/10 langbiang — Lang Biang Mountain guide by motorbike
-- [ ] 18/10 electric — Electric scooter rental in Da Lat: why it's great for the city (no licence talk; link to the evrules article)
 - [ ] 19/10 coffee — Coffee with a view: Da Lat cafés reachable by bike (types/areas, only very famous names)
 - [ ] 20/10 rainyday — What to do in Da Lat on a rainy day
 - [ ] 21/10 tuyenlam — Tuyen Lam Lake & Truc Lam Monastery guide
