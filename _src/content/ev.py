@@ -5,7 +5,7 @@ EV = {}
 EV["en"] = dict(
  slug='electric-scooter-rental-dalat',
  title='Electric Scooter Rental Da Lat – 150,000 VND/day | Van Phu',
- desc=('Rent an electric scooter in Da Lat: 150,000 VND/day, one battery lasts about 35–40 km, battery swap 20,000 VND, no cash deposit, free '
+ desc=('Rent an electric scooter in Da Lat: 150,000 VND/day, one battery lasts about 35–40 km (each bike comes with 2 batteries, about 60–70 km in total), battery swap 20,000 VND, no cash deposit, free '
  'helmet. Book on WhatsApp.'),
  h1='Electric Scooter Rental in Da Lat',
  lead='Quiet, light and easy to ride — our electric scooters are made for exploring central Da Lat. 150,000 VND per day.',
@@ -13,7 +13,7 @@ EV["en"] = dict(
  more='Electric scooter rental: range, rules, FAQ →',
  h_facts='Electric scooter at a glance',
  facts=[('Price', '150,000 VND per day, fixed'),
- ('Range', 'one battery lasts about 35–40 km; battery swap at the shop 20,000 VND'),
+ ('Range', 'one battery lasts about 35–40 km (each bike comes with 2 batteries, about 60–70 km in total); battery swap at the shop 20,000 VND'),
  ('Load', 'max. 2 people, total weight under 100 kg'),
  ('Rental day', 'from pickup until 9:00 PM; shop opens 4:30 AM'),
  ('Deposit', 'no cash — leave your passport or ID card'),
@@ -25,14 +25,14 @@ EV["en"] = dict(
  'Anyone who wants a quiet, simple ride — no gears, no fuel stops.'],
  h_note='Good to know before you ride',
  notes=['Electric scooters have low power: they climb slowly on steep hills and passes.',
- 'One battery lasts about 35–40 km: plan your day within that distance and come back to the shop for a battery swap (20,000 VND) before it runs low.',
+ 'One battery lasts about 35–40 km (each bike comes with 2 batteries, about 60–70 km in total): plan your day within that distance and come back to the shop for a battery swap (20,000 VND) before it runs low.',
  'For long trips such as the Cau Dat tea hills, Lang Biang or waterfall loops, choose the Honda Air Blade 125cc instead.',
  'Two riders are fine only if your combined weight is under 100 kg.'],
  h_faq='Electric scooter FAQ',
  faq=[('What do I need to rent an electric scooter in Da Lat?',
   'Just your passport or ID card, which we keep during the rental — no cash deposit. You pay the rental at pick-up.'),
  ('How far can I go on one battery?',
-  "One battery lasts about 35–40 km. That's enough for the center and nearby sights; for more, swap for a full battery at our shop for 20,000 VND."),
+  "One battery lasts about 35–40 km (each bike comes with 2 batteries, about 60–70 km in total). That's enough for the center and nearby sights; for more, swap for a full battery at our shop for 20,000 VND."),
  ('How much does it cost?', '150,000 VND per day — the same fixed price as our gas scooters, no hidden fees.'),
  ('Can two people ride?', 'Yes, as long as the total weight of both riders is under 100 kg.')],
 )
@@ -40,7 +40,7 @@ EV["en"] = dict(
 EV["vi"] = dict(
  slug='thue-xe-may-dien-da-lat',
  title='Thuê xe máy điện Đà Lạt 150.000 VND/ngày | Văn Phú',
- desc=('Thuê xe máy điện Đà Lạt 150.000 VND/ngày, 1 cục pin đi khoảng 35–40 km, đổi pin 20.000 VND/lần, không cọc tiền, kèm mũ bảo hiểm. Đặt xe '
+ desc=('Thuê xe máy điện Đà Lạt 150.000 VND/ngày, 1 cục pin đi khoảng 35–40 km (mỗi xe có 2 pin, tổng khoảng 60–70 km), đổi pin 20.000 VND/lần, không cọc tiền, kèm mũ bảo hiểm. Đặt xe '
  'qua Zalo/WhatsApp 0944 081 101.'),
  h1='Thuê xe máy điện Đà Lạt',
  lead='Êm, nhẹ, dễ chạy — xe máy điện ở Văn Phú rất hợp để dạo quanh trung tâm Đà Lạt. Giá 150.000 VND/ngày.',
@@ -48,7 +48,7 @@ EV["vi"] = dict(
  more='Thuê xe máy điện: quãng đường, lưu ý, hỏi đáp →',
  h_facts='Thông tin xe máy điện',
  facts=[('Giá thuê', '150.000 VND/ngày, giá cố định'),
- ('Quãng đường', '1 cục pin đi khoảng 35–40 km; đổi pin tại cửa hàng 20.000 VND/lần'),
+ ('Quãng đường', '1 cục pin đi khoảng 35–40 km (mỗi xe có 2 pin, tổng khoảng 60–70 km); đổi pin tại cửa hàng 20.000 VND/lần'),
  ('Tải trọng', 'tối đa 2 người, tổng cân nặng dưới 100 kg'),
  ('Thời gian thuê', 'từ lúc nhận xe đến 21:00; tiệm mở cửa từ 4:30 sáng'),
  ('Đặt cọc', 'không cọc tiền — gửi hộ chiếu hoặc CCCD'),
@@ -60,12 +60,12 @@ EV["vi"] = dict(
  'Ai thích xe êm, dễ đi — không số, không phải đổ xăng.'],
  h_note='Lưu ý trước khi đi',
  notes=['Xe máy điện công suất thấp, leo dốc và đèo sẽ chậm.',
- '1 cục pin đi được khoảng 35–40 km, nên tính lộ trình trong khoảng đó và về cửa hàng đổi pin (20.000 VND/lần) trước khi hết pin.',
+ '1 cục pin đi được khoảng 35–40 km (mỗi xe có 2 pin, tổng khoảng 60–70 km), nên tính lộ trình trong khoảng đó và về cửa hàng đổi pin (20.000 VND/lần) trước khi hết pin.',
  'Đi xa như đồi chè Cầu Đất, Langbiang hay vòng các thác thì nên thuê Honda Air Blade 125cc.',
  'Chở 2 người được nếu tổng cân nặng dưới 100 kg.'],
  h_faq='Hỏi đáp về xe máy điện',
  faq=[('Thuê xe máy điện ở Đà Lạt cần những gì?', 'Chỉ cần để lại hộ chiếu hoặc CCCD trong thời gian thuê, không cọc tiền. Trả tiền thuê khi nhận xe.'),
- ('1 cục pin đi được bao xa?', 'Khoảng 35–40 km, đủ để dạo trung tâm và các điểm gần. Cần đi thêm thì ghé cửa hàng đổi pin đầy, 20.000 VND/lần.'),
+ ('1 cục pin đi được bao xa?', 'Khoảng 35–40 km (mỗi xe có 2 pin, tổng khoảng 60–70 km), đủ để dạo trung tâm và các điểm gần. Cần đi thêm thì ghé cửa hàng đổi pin đầy, 20.000 VND/lần.'),
  ('Giá thuê bao nhiêu?', '150.000 VND/ngày, bằng giá xe xăng. Giá cố định, không phụ phí.'),
  ('Chở 2 người được không?', 'Được, miễn tổng cân nặng hai người dưới 100 kg.')],
 )
@@ -73,7 +73,7 @@ EV["vi"] = dict(
 EV["ru"] = dict(
  slug='arenda-elektroskutera-dalat',
  title='Аренда электроскутера в Далате — 150 000 VND в день | Van Phu',
- desc=('Аренда электроскутера в Далате: 150 000 VND в день, одной батареи хватает примерно на 35–40 км, замена батареи 20 000 VND, без денежного '
+ desc=('Аренда электроскутера в Далате: 150 000 VND в день, одной батареи хватает примерно на 35–40 км (на каждом байке 2 батареи — всего около 60–70 км), замена батареи 20 000 VND, без денежного '
  'залога, шлем в подарок. Бронь в WhatsApp.'),
  h1='Аренда электроскутера в Далате',
  lead='Тихий, лёгкий и простой в управлении — электроскутер идеально подходит для прогулок по центру Далата. 150 000 VND в день.',
@@ -81,7 +81,7 @@ EV["ru"] = dict(
  more='Аренда электроскутера: запас хода, правила, FAQ →',
  h_facts='Коротко об электроскутере',
  facts=[('Цена', '150 000 VND в день, фиксированная'),
- ('Запас хода', 'одной батареи хватает примерно на 35–40 км; замена батареи у нас — 20 000 VND'),
+ ('Запас хода', 'одной батареи хватает примерно на 35–40 км (на каждом байке 2 батареи — всего около 60–70 км); замена батареи у нас — 20 000 VND'),
  ('Нагрузка', 'максимум 2 человека, общий вес до 100 кг'),
  ('День аренды', 'с момента получения до 21:00; открываемся в 4:30'),
  ('Залог', 'без денег — оставляете паспорт или ID-карту'),
@@ -93,14 +93,14 @@ EV["ru"] = dict(
  'Тех, кто хочет тихую и простую езду — без передач и заправок.'],
  h_note='Важно знать',
  notes=['У электроскутера небольшая мощность: на крутых подъёмах и перевалах он едет медленно.',
- 'Одной батареи хватает примерно на 35–40 км — планируйте маршрут в этих пределах и заезжайте к нам заменить батарею (20 000 VND), пока она не села.',
+ 'Одной батареи хватает примерно на 35–40 км (на каждом байке 2 батареи — всего около 60–70 км) — планируйте маршрут в этих пределах и заезжайте к нам заменить батарею (20 000 VND), пока она не села.',
  'Для дальних поездок (чайные холмы Каудат, Лангбианг, водопады) лучше взять Honda Air Blade 125cc.',
  'Вдвоём можно, если общий вес меньше 100 кг.'],
  h_faq='Вопросы об электроскутере',
  faq=[('Что нужно, чтобы арендовать электроскутер в Далате?',
   'Только паспорт или удостоверение личности — мы храним его на время аренды, денежный залог не нужен. Оплата при получении скутера.'),
  ('Сколько можно проехать на одной батарее?',
-  'Примерно 35–40 км — хватит на центр и ближайшие места. Нужно больше — замените батарею на полную у нас за 20 000 VND.'),
+  'Примерно 35–40 км (на каждом байке 2 батареи — всего около 60–70 км) — хватит на центр и ближайшие места. Нужно больше — замените батарею на полную у нас за 20 000 VND.'),
  ('Сколько стоит аренда?', '150 000 VND в день — как и бензиновые скутеры. Без скрытых платежей.'),
  ('Можно ли ездить вдвоём?', 'Да, если общий вес двух человек меньше 100 кг.')],
 )
@@ -108,14 +108,14 @@ EV["ru"] = dict(
 EV["zh"] = dict(
  slug='electric-scooter-rental-dalat',
  title='大叻电动车租赁 – 每天150,000 VND | Van Phu',
- desc='大叻电动车出租：每天 150,000 VND，一块电池约可行驶 35–40 公里，换电池每次 20,000 VND，无现金押金，免费头盔。微信 vanphudalat。',
+ desc='大叻电动车出租：每天 150,000 VND，一块电池约可行驶 35–40 公里（每辆车配 2 块电池，共约 60–70 公里），换电池每次 20,000 VND，无现金押金，免费头盔。微信 vanphudalat。',
  h1='大叻电动车租赁',
  lead='安静、轻便、好骑——我们的电动车最适合在大叻市中心游玩。每天 150,000 VND。',
  crumb='电动车',
  more='电动车租赁：续航、注意事项、常见问题 →',
  h_facts='电动车信息一览',
  facts=[('价格', '每天 150,000 VND，固定价格'),
- ('续航', '一块电池约可行驶 35–40 公里；店内换电池每次 20,000 VND'),
+ ('续航', '一块电池约可行驶 35–40 公里（每辆车配 2 块电池，共约 60–70 公里）；店内换电池每次 20,000 VND'),
  ('载重', '最多 2 人，总体重 100 公斤以下'),
  ('租期', '取车后至当晚 21:00；店铺早上 4:30 开门'),
  ('押金', '无现金押金——押护照或身份证'),
@@ -125,12 +125,12 @@ EV["zh"] = dict(
  good=['市中心游玩：春香湖、夜市、疯狂屋、咖啡馆。', '附近短途：达坦拉瀑布（约 5–7 公里）、灵福寺（约 8 公里）。', '想要安静、简单骑行的人——无需换挡，也不用加油。'],
  h_note='出发前须知',
  notes=['电动车功率较小，爬陡坡和山路会比较慢。',
- '一块电池约可行驶 35–40 公里，请在这个范围内规划路线，电量不足前回店换电池（每次 20,000 VND）。',
+ '一块电池约可行驶 35–40 公里（每辆车配 2 块电池，共约 60–70 公里），请在这个范围内规划路线，电量不足前回店换电池（每次 20,000 VND）。',
  '去求德茶山、浪必安山或瀑布环线等远途，建议租本田 Air Blade 125cc。',
  '两人总体重低于 100 公斤即可双人骑行。'],
  h_faq='电动车常见问题',
  faq=[('在大叻租电动车需要准备什么？', '只需押护照或身份证，租期结束归还，无现金押金。取车时支付租金。'),
- ('一块电池能跑多远？', '约 35–40 公里，足够市中心和周边景点。想多跑一些，可以回店换一块满电电池，每次 20,000 VND。'),
+ ('一块电池能跑多远？', '约 35–40 公里（每辆车配 2 块电池，共约 60–70 公里），足够市中心和周边景点。想多跑一些，可以回店换一块满电电池，每次 20,000 VND。'),
  ('租金多少？', '每天 150,000 VND，和汽油车同价，无隐藏费用。'),
  ('可以两个人骑吗？', '可以，只要两人总体重低于 100 公斤。')],
 )
@@ -138,14 +138,14 @@ EV["zh"] = dict(
 EV["ko"] = dict(
  slug='electric-scooter-rental-dalat',
  title='달랏 전기 스쿠터 렌탈 – 1일 150,000 VND | Van Phu',
- desc='달랏 전기 스쿠터 렌탈: 1일 150,000 VND, 배터리 1개로 약 35–40km, 배터리 교체 20,000 VND, 현금 보증금 없음, 헬멧 무료. WhatsApp으로 예약하세요.',
+ desc='달랏 전기 스쿠터 렌탈: 1일 150,000 VND, 배터리 1개로 약 35–40km(차량마다 배터리 2개, 총 약 60–70km), 배터리 교체 20,000 VND, 현금 보증금 없음, 헬멧 무료. WhatsApp으로 예약하세요.',
  h1='달랏 전기 스쿠터 렌탈',
  lead='조용하고 가볍고 타기 쉬운 전기 스쿠터는 달랏 시내 여행에 딱 맞습니다. 1일 150,000 VND.',
  crumb='전기 스쿠터',
  more='전기 스쿠터 렌탈: 주행거리, 주의사항, FAQ →',
  h_facts='전기 스쿠터 한눈에 보기',
  facts=[('가격', '1일 150,000 VND, 고정 가격'),
- ('주행거리', '배터리 1개로 약 35–40km; 매장에서 배터리 교체 20,000 VND'),
+ ('주행거리', '배터리 1개로 약 35–40km(차량마다 배터리 2개, 총 약 60–70km); 매장에서 배터리 교체 20,000 VND'),
  ('탑승', '최대 2인, 총 체중 100kg 미만'),
  ('대여 시간', '수령 후 당일 21:00까지; 오전 4:30 오픈'),
  ('보증금', '현금 없음 — 여권 또는 신분증 보관'),
@@ -155,12 +155,12 @@ EV["ko"] = dict(
  good=['시내 투어: 쑤언흐엉 호수, 야시장, 크레이지 하우스, 카페.', '가까운 명소: 다딴라 폭포(약 5–7km), 린프억 사원(약 8km).', '기어도 주유도 필요 없는 조용하고 간편한 주행을 원하는 분.'],
  h_note='출발 전 알아두세요',
  notes=['전기 스쿠터는 출력이 낮아 가파른 언덕과 고개에서 느립니다.',
- '배터리 1개로 약 35–40km를 갈 수 있으니 그 안에서 일정을 짜고, 배터리가 떨어지기 전에 매장에서 교체하세요(20,000 VND).',
+ '배터리 1개로 약 35–40km(차량마다 배터리 2개, 총 약 60–70km)를 갈 수 있으니 그 안에서 일정을 짜고, 배터리가 떨어지기 전에 매장에서 교체하세요(20,000 VND).',
  '꺼우닷 차밭, 랑비앙, 폭포 투어 같은 장거리는 혼다 에어블레이드 125cc를 추천합니다.',
  '두 사람의 총 체중이 100kg 미만이면 2인 탑승 가능합니다.'],
  h_faq='전기 스쿠터 FAQ',
  faq=[('달랏에서 전기 스쿠터를 빌리려면 무엇이 필요한가요?', '여권이나 신분증만 맡기시면 됩니다. 현금 보증금은 없고, 요금은 차량을 받을 때 결제합니다.'),
- ('배터리 1개로 얼마나 갈 수 있나요?', '약 35–40km로 시내와 근교에는 충분합니다. 더 가려면 매장에서 완충 배터리로 교체하세요(20,000 VND).'),
+ ('배터리 1개로 얼마나 갈 수 있나요?', '약 35–40km(차량마다 배터리 2개, 총 약 60–70km)로 시내와 근교에는 충분합니다. 더 가려면 매장에서 완충 배터리로 교체하세요(20,000 VND).'),
  ('요금은 얼마인가요?', '1일 150,000 VND로 가솔린 스쿠터와 같습니다. 숨은 비용은 없습니다.'),
  ('두 명이 탈 수 있나요?', '네, 두 사람의 총 체중이 100kg 미만이면 가능합니다.')],
 )
@@ -168,14 +168,14 @@ EV["ko"] = dict(
 EV["ja"] = dict(
  slug='electric-scooter-rental-dalat',
  title='ダラット電動スクーターレンタル – 1日150,000 VND | Van Phu',
- desc='ダラットの電動スクーターレンタル：1日150,000 VND、バッテリー1個で約35–40km、バッテリー交換20,000 VND、現金デポジットなし、ヘルメット無料。WhatsAppで予約。',
+ desc='ダラットの電動スクーターレンタル：1日150,000 VND、バッテリー1個で約35–40km（1台にバッテリー2個、合計約60〜70km）、バッテリー交換20,000 VND、現金デポジットなし、ヘルメット無料。WhatsAppで予約。',
  h1='ダラットの電動スクーターレンタル',
  lead='静かで軽く、運転も簡単。電動スクーターはダラット中心部の観光にぴったりです。1日150,000 VND。',
  crumb='電動スクーター',
  more='電動スクーター：航続距離・注意点・FAQ →',
  h_facts='電動スクーターの概要',
  facts=[('料金', '1日150,000 VND（固定）'),
- ('航続距離', 'バッテリー1個で約35–40km、店頭でのバッテリー交換20,000 VND'),
+ ('航続距離', 'バッテリー1個で約35–40km（1台にバッテリー2個、合計約60〜70km）、店頭でのバッテリー交換20,000 VND'),
  ('乗車', '最大2人、合計体重100kg未満'),
  ('レンタル時間', '受け取りから当日21:00まで／朝4:30オープン'),
  ('デポジット', '現金なし — パスポートまたはIDカードを預けます'),
@@ -185,12 +185,12 @@ EV["ja"] = dict(
  good=['中心部の観光：スアンフーン湖、ナイトマーケット、クレイジーハウス、カフェ。', '近場のスポット：ダタンラの滝（約5〜7km）、リンフオック寺（約8km）。', 'ギアも給油もいらない、静かで簡単な運転をしたい方。'],
  h_note='出発前に知っておきたいこと',
  notes=['電動スクーターはパワーが小さく、急な坂や峠ではゆっくりになります。',
- 'バッテリー1個で約35–40km走れます。その範囲でルートを組み、電池が減る前に店でバッテリーを交換してください（20,000 VND）。',
+ 'バッテリー1個で約35–40km（1台にバッテリー2個、合計約60〜70km）走れます。その範囲でルートを組み、電池が減る前に店でバッテリーを交換してください（20,000 VND）。',
  'カウダット茶畑、ランビアン山、滝めぐりなどの遠出にはホンダ エアブレード125ccがおすすめです。',
  '2人の合計体重が100kg未満なら2人乗りできます。'],
  h_faq='電動スクーターのよくある質問',
  faq=[('ダラットで電動スクーターを借りるには何が必要ですか？', 'パスポートまたは身分証明書を預けるだけです。現金デポジットは不要で、料金は受け取り時にお支払いください。'),
- ('バッテリー1個でどのくらい走れますか？', '約35–40kmです。中心部と近場には十分で、もっと走りたいときは店で満充電のバッテリーに交換できます（20,000 VND）。'),
+ ('バッテリー1個でどのくらい走れますか？', '約35–40km（1台にバッテリー2個、合計約60〜70km）です。中心部と近場には十分で、もっと走りたいときは店で満充電のバッテリーに交換できます（20,000 VND）。'),
  ('料金はいくらですか？', '1日150,000 VNDで、ガソリンスクーターと同じです。追加料金はありません。'),
  ('2人乗りはできますか？', 'はい、2人の合計体重が100kg未満なら可能です。')],
 )
@@ -198,7 +198,7 @@ EV["ja"] = dict(
 EV["th"] = dict(
  slug='electric-scooter-rental-dalat',
  title='เช่าสกู๊ตเตอร์ไฟฟ้าดาลัด – วันละ 150,000 VND | Van Phu',
- desc=('เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด วันละ 150,000 VND แบต 1 ก้อนวิ่งได้ประมาณ 35–40 กม. เปลี่ยนแบต 20,000 VND ไม่ต้องวางมัดจำเงินสด หมวกกันน็อกฟรี '
+ desc=('เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด วันละ 150,000 VND แบต 1 ก้อนวิ่งได้ประมาณ 35–40 กม. (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 60–70 กม.) เปลี่ยนแบต 20,000 VND ไม่ต้องวางมัดจำเงินสด หมวกกันน็อกฟรี '
  'จองทาง WhatsApp'),
  h1='เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด',
  lead='เงียบ เบา ขับง่าย สกู๊ตเตอร์ไฟฟ้าเหมาะกับการเที่ยวรอบใจกลางดาลัด ราคาวันละ 150,000 VND',
@@ -206,7 +206,7 @@ EV["th"] = dict(
  more='เช่าสกู๊ตเตอร์ไฟฟ้า: ระยะทาง ข้อควรรู้ คำถามพบบ่อย →',
  h_facts='ข้อมูลสกู๊ตเตอร์ไฟฟ้า',
  facts=[('ราคา', 'วันละ 150,000 VND ราคาคงที่'),
- ('ระยะทาง', 'แบต 1 ก้อนวิ่งได้ประมาณ 35–40 กม. เปลี่ยนแบตที่ร้าน 20,000 VND'),
+ ('ระยะทาง', 'แบต 1 ก้อนวิ่งได้ประมาณ 35–40 กม. (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 60–70 กม.) เปลี่ยนแบตที่ร้าน 20,000 VND'),
  ('น้ำหนักบรรทุก', 'สูงสุด 2 คน น้ำหนักรวมไม่เกิน 100 กก.'),
  ('เวลาเช่า', 'ตั้งแต่รับรถถึง 21:00 น. ร้านเปิด 4:30 น.'),
  ('มัดจำ', 'ไม่ต้องใช้เงินสด ฝากพาสปอร์ตหรือบัตรประชาชน'),
@@ -218,12 +218,12 @@ EV["th"] = dict(
  'คนที่อยากขับง่าย ๆ เงียบ ๆ ไม่ต้องเปลี่ยนเกียร์ ไม่ต้องเติมน้ำมัน'],
  h_note='ข้อควรรู้ก่อนออกเดินทาง',
  notes=['สกู๊ตเตอร์ไฟฟ้ามีกำลังน้อย ขึ้นเนินชันและทางขึ้นเขาจะช้า',
- 'แบต 1 ก้อนวิ่งได้ประมาณ 35–40 กม. วางแผนเส้นทางให้อยู่ในระยะนี้ และแวะเปลี่ยนแบตที่ร้าน (20,000 VND) ก่อนแบตหมด',
+ 'แบต 1 ก้อนวิ่งได้ประมาณ 35–40 กม. (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 60–70 กม.) วางแผนเส้นทางให้อยู่ในระยะนี้ และแวะเปลี่ยนแบตที่ร้าน (20,000 VND) ก่อนแบตหมด',
  'ถ้าจะไปไกล เช่น ไร่ชาเกิ่วดั๊ต ภูเขาลางเบียง หรือเที่ยวน้ำตก แนะนำ Honda Air Blade 125cc',
  'ซ้อน 2 คนได้ถ้าน้ำหนักรวมไม่เกิน 100 กก.'],
  h_faq='คำถามพบบ่อยเกี่ยวกับสกู๊ตเตอร์ไฟฟ้า',
  faq=[('เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัดต้องใช้อะไรบ้าง?', 'แค่ฝากพาสปอร์ตหรือบัตรประชาชนไว้ระหว่างเช่า ไม่ต้องวางมัดจำเงินสด ชำระค่าเช่าตอนรับรถ'),
- ('แบต 1 ก้อนวิ่งได้ไกลแค่ไหน?', 'ประมาณ 35–40 กม. พอสำหรับในเมืองและที่ใกล้ ๆ ถ้าจะไปต่อ แวะเปลี่ยนแบตเต็มที่ร้านได้ ครั้งละ 20,000 VND'),
+ ('แบต 1 ก้อนวิ่งได้ไกลแค่ไหน?', 'ประมาณ 35–40 กม. (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 60–70 กม.) พอสำหรับในเมืองและที่ใกล้ ๆ ถ้าจะไปต่อ แวะเปลี่ยนแบตเต็มที่ร้านได้ ครั้งละ 20,000 VND'),
  ('ค่าเช่าเท่าไหร่?', 'วันละ 150,000 VND เท่ากับรถน้ำมัน ไม่มีค่าใช้จ่ายแอบแฝง'),
  ('ซ้อนสองคนได้ไหม?', 'ได้ ถ้าน้ำหนักรวมของสองคนไม่เกิน 100 กก.')],
 )
@@ -231,7 +231,7 @@ EV["th"] = dict(
 EV["id"] = dict(
  slug='sewa-motor-listrik-dalat',
  title='Sewa Motor Listrik Da Lat – 150.000 VND/hari | Van Phu',
- desc=('Sewa motor listrik di Da Lat: 150.000 VND/hari, satu baterai sekitar 35–40 km, tukar baterai 20.000 VND, tanpa deposit uang tunai, helm '
+ desc=('Sewa motor listrik di Da Lat: 150.000 VND/hari, satu baterai sekitar 35–40 km (setiap motor dilengkapi 2 baterai, total sekitar 60–70 km), tukar baterai 20.000 VND, tanpa deposit uang tunai, helm '
  'gratis. Pesan lewat WhatsApp.'),
  h1='Sewa Motor Listrik di Da Lat',
  lead='Senyap, ringan dan mudah dikendarai — motor listrik kami pas untuk keliling pusat kota Da Lat. 150.000 VND per hari.',
@@ -239,7 +239,7 @@ EV["id"] = dict(
  more='Sewa motor listrik: jarak tempuh, aturan, FAQ →',
  h_facts='Info singkat motor listrik',
  facts=[('Harga', '150.000 VND per hari, tetap'),
- ('Jarak tempuh', 'satu baterai sekitar 35–40 km; tukar baterai di toko 20.000 VND'),
+ ('Jarak tempuh', 'satu baterai sekitar 35–40 km (setiap motor dilengkapi 2 baterai, total sekitar 60–70 km); tukar baterai di toko 20.000 VND'),
  ('Muatan', 'maks. 2 orang, total berat di bawah 100 kg'),
  ('Waktu sewa', 'dari pengambilan sampai pukul 21.00; toko buka 04.30'),
  ('Jaminan', 'tanpa uang tunai — tinggalkan paspor atau KTP'),
@@ -251,14 +251,14 @@ EV["id"] = dict(
  'Siapa saja yang ingin berkendara tenang dan simpel — tanpa gigi, tanpa isi bensin.'],
  h_note='Perlu diketahui',
  notes=['Motor listrik bertenaga kecil, jadi pelan di tanjakan curam dan jalan pegunungan.',
- 'Satu baterai cukup untuk sekitar 35–40 km: rencanakan rute dalam jarak itu dan mampir ke toko untuk tukar baterai (20.000 VND) sebelum habis.',
+ 'Satu baterai cukup untuk sekitar 35–40 km (setiap motor dilengkapi 2 baterai, total sekitar 60–70 km): rencanakan rute dalam jarak itu dan mampir ke toko untuk tukar baterai (20.000 VND) sebelum habis.',
  'Untuk perjalanan jauh seperti kebun teh Cau Dat, Lang Biang atau tur air terjun, pilih Honda Air Blade 125cc.',
  'Boleh berboncengan jika total berat berdua di bawah 100 kg.'],
  h_faq='FAQ motor listrik',
  faq=[('Apa yang dibutuhkan untuk sewa motor listrik di Da Lat?',
   'Cukup titipkan paspor atau KTP selama masa sewa — tanpa deposit uang tunai. Biaya sewa dibayar saat mengambil motor.'),
  ('Satu baterai bisa sejauh apa?',
-  'Sekitar 35–40 km, cukup untuk pusat kota dan sekitarnya. Kalau perlu lebih, tukar dengan baterai penuh di toko kami seharga 20.000 VND.'),
+  'Sekitar 35–40 km (setiap motor dilengkapi 2 baterai, total sekitar 60–70 km), cukup untuk pusat kota dan sekitarnya. Kalau perlu lebih, tukar dengan baterai penuh di toko kami seharga 20.000 VND.'),
  ('Berapa harganya?', '150.000 VND per hari, sama dengan motor bensin. Tanpa biaya tersembunyi.'),
  ('Bisa berboncengan?', 'Bisa, asalkan total berat berdua di bawah 100 kg.')],
 )
@@ -266,7 +266,7 @@ EV["id"] = dict(
 EV["ms"] = dict(
  slug='sewa-skuter-elektrik-dalat',
  title='Sewa Skuter Elektrik Da Lat – 150,000 VND/hari | Van Phu',
- desc=('Sewa skuter elektrik di Da Lat: 150,000 VND sehari, satu bateri kira-kira 35–40 km, tukar bateri 20,000 VND, tiada deposit tunai, topi '
+ desc=('Sewa skuter elektrik di Da Lat: 150,000 VND sehari, satu bateri kira-kira 35–40 km (setiap skuter ada 2 bateri, jumlah kira-kira 60–70 km), tukar bateri 20,000 VND, tiada deposit tunai, topi '
  'keledar percuma. Tempah melalui WhatsApp.'),
  h1='Sewa Skuter Elektrik di Da Lat',
  lead='Senyap, ringan dan mudah ditunggang — skuter elektrik kami sesuai untuk meneroka pusat bandar Da Lat. 150,000 VND sehari.',
@@ -274,7 +274,7 @@ EV["ms"] = dict(
  more='Sewa skuter elektrik: jarak, peraturan, soalan lazim →',
  h_facts='Ringkasan skuter elektrik',
  facts=[('Harga', '150,000 VND sehari, harga tetap'),
- ('Jarak', 'satu bateri kira-kira 35–40 km; tukar bateri di kedai 20,000 VND'),
+ ('Jarak', 'satu bateri kira-kira 35–40 km (setiap skuter ada 2 bateri, jumlah kira-kira 60–70 km); tukar bateri di kedai 20,000 VND'),
  ('Muatan', 'maks. 2 orang, jumlah berat bawah 100 kg'),
  ('Tempoh sewa', 'dari ambil motor hingga 9:00 malam; kedai buka 4:30 pagi'),
  ('Deposit', 'tiada wang tunai — tinggalkan pasport atau kad pengenalan'),
@@ -286,14 +286,14 @@ EV["ms"] = dict(
  'Sesiapa yang mahu tunggangan senyap dan mudah — tiada gear, tiada isi minyak.'],
  h_note='Perlu tahu sebelum bertolak',
  notes=['Skuter elektrik berkuasa rendah, jadi perlahan di bukit curam dan jalan gunung.',
- 'Satu bateri boleh pergi kira-kira 35–40 km: rancang laluan dalam jarak itu dan singgah di kedai untuk tukar bateri (20,000 VND) sebelum habis.',
+ 'Satu bateri boleh pergi kira-kira 35–40 km (setiap skuter ada 2 bateri, jumlah kira-kira 60–70 km): rancang laluan dalam jarak itu dan singgah di kedai untuk tukar bateri (20,000 VND) sebelum habis.',
  'Untuk perjalanan jauh seperti ladang teh Cau Dat, Lang Biang atau lawatan air terjun, pilih Honda Air Blade 125cc.',
  'Boleh membonceng jika jumlah berat berdua di bawah 100 kg.'],
  h_faq='Soalan lazim skuter elektrik',
  faq=[('Apa yang diperlukan untuk sewa skuter elektrik di Da Lat?',
   'Hanya tinggalkan pasport atau kad pengenalan sepanjang tempoh sewa — tiada deposit tunai. Bayaran sewa dibuat semasa mengambil skuter.'),
  ('Berapa jauh satu bateri?',
-  'Kira-kira 35–40 km, cukup untuk pusat bandar dan kawasan berdekatan. Perlu lebih? Tukar bateri penuh di kedai kami dengan 20,000 VND.'),
+  'Kira-kira 35–40 km (setiap skuter ada 2 bateri, jumlah kira-kira 60–70 km), cukup untuk pusat bandar dan kawasan berdekatan. Perlu lebih? Tukar bateri penuh di kedai kami dengan 20,000 VND.'),
  ('Berapa harganya?', '150,000 VND sehari, sama dengan skuter petrol. Tiada caj tersembunyi.'),
  ('Boleh berdua?', 'Boleh, asalkan jumlah berat berdua di bawah 100 kg.')],
 )
@@ -301,7 +301,7 @@ EV["ms"] = dict(
 EV["de"] = dict(
  slug='e-roller-mieten-dalat',
  title='E-Roller mieten in Da Lat – 150.000 VND/Tag | Van Phu',
- desc=('E-Roller mieten in Da Lat: 150.000 VND pro Tag, ein Akku reicht für etwa 35–40 km, Akkutausch 20.000 VND, keine Barkaution, Helm gratis. '
+ desc=('E-Roller mieten in Da Lat: 150.000 VND pro Tag, ein Akku reicht für etwa 35–40 km (jeder Roller hat 2 Akkus, zusammen etwa 60–70 km), Akkutausch 20.000 VND, keine Barkaution, Helm gratis. '
  'Buchung per WhatsApp.'),
  h1='E-Roller mieten in Da Lat',
  lead='Leise, leicht und einfach zu fahren – unsere E-Roller sind ideal, um das Zentrum von Da Lat zu erkunden. 150.000 VND pro Tag.',
@@ -309,7 +309,7 @@ EV["de"] = dict(
  more='E-Roller mieten: Reichweite, Hinweise, FAQ →',
  h_facts='E-Roller auf einen Blick',
  facts=[('Preis', '150.000 VND pro Tag, Festpreis'),
- ('Reichweite', 'ein Akku reicht für etwa 35–40 km; Akkutausch im Shop 20.000 VND'),
+ ('Reichweite', 'ein Akku reicht für etwa 35–40 km (jeder Roller hat 2 Akkus, zusammen etwa 60–70 km); Akkutausch im Shop 20.000 VND'),
  ('Zuladung', 'max. 2 Personen, zusammen unter 100 kg'),
  ('Miettag', 'ab Abholung bis 21:00 Uhr; geöffnet ab 4:30 Uhr'),
  ('Kaution', 'kein Bargeld – Reisepass oder Ausweis wird hinterlegt'),
@@ -321,14 +321,14 @@ EV["de"] = dict(
  'Alle, die leise und einfach fahren wollen – ohne Schalten und ohne Tanken.'],
  h_note='Gut zu wissen',
  notes=['E-Roller haben wenig Leistung und fahren an steilen Hügeln und Pässen langsam.',
- 'Ein Akku reicht für etwa 35–40 km: Planen Sie Ihre Tour in diesem Rahmen und tauschen Sie den Akku bei uns (20.000 VND), bevor er leer ist.',
+ 'Ein Akku reicht für etwa 35–40 km (jeder Roller hat 2 Akkus, zusammen etwa 60–70 km): Planen Sie Ihre Tour in diesem Rahmen und tauschen Sie den Akku bei uns (20.000 VND), bevor er leer ist.',
  'Für weite Touren wie die Teehügel von Cau Dat, Lang Biang oder Wasserfall-Runden nehmen Sie besser die Honda Air Blade 125cc.',
  'Zu zweit fahren ist möglich, wenn Sie zusammen unter 100 kg wiegen.'],
  h_faq='Häufige Fragen zum E-Roller',
  faq=[('Was brauche ich, um in Da Lat einen E-Roller zu mieten?',
   'Nur Ihren Reisepass oder Ausweis, den wir während der Miete aufbewahren – keine Barkaution. Die Miete zahlen Sie bei der Abholung.'),
  ('Wie weit komme ich mit einem Akku?',
-  'Etwa 35–40 km – genug für das Zentrum und die Umgebung. Für mehr tauschen Sie bei uns gegen einen vollen Akku, 20.000 VND.'),
+  'Etwa 35–40 km (jeder Roller hat 2 Akkus, zusammen etwa 60–70 km) – genug für das Zentrum und die Umgebung. Für mehr tauschen Sie bei uns gegen einen vollen Akku, 20.000 VND.'),
  ('Was kostet die Miete?', '150.000 VND pro Tag, genauso viel wie ein Benzinroller. Keine versteckten Kosten.'),
  ('Kann man zu zweit fahren?', 'Ja, wenn beide zusammen unter 100 kg wiegen.')],
 )
@@ -336,7 +336,7 @@ EV["de"] = dict(
 EV["fr"] = dict(
  slug='location-scooter-electrique-dalat',
  title='Location de scooter électrique à Da Lat – 150 000 VND/jour | Van Phu',
- desc=('Location de scooter électrique à Da Lat : 150 000 VND par jour, une batterie permet environ 35–40 km, échange de batterie 20 000 VND, sans '
+ desc=('Location de scooter électrique à Da Lat : 150 000 VND par jour, une batterie permet environ 35–40 km (chaque scooter a 2 batteries, environ 60–70 km au total), échange de batterie 20 000 VND, sans '
  'caution en espèces, casque offert. Réservation sur WhatsApp.'),
  h1='Location de scooter électrique à Da Lat',
  lead='Silencieux, léger et facile à conduire, nos scooters électriques sont parfaits pour découvrir le centre de Da Lat. 150 000 VND par jour.',
@@ -344,7 +344,7 @@ EV["fr"] = dict(
  more='Location de scooter électrique : autonomie, conseils, FAQ →',
  h_facts='Le scooter électrique en bref',
  facts=[('Prix', '150 000 VND par jour, tarif fixe'),
- ('Autonomie', 'une batterie permet environ 35–40 km ; échange de batterie à la boutique 20 000 VND'),
+ ('Autonomie', 'une batterie permet environ 35–40 km (chaque scooter a 2 batteries, environ 60–70 km au total) ; échange de batterie à la boutique 20 000 VND'),
  ('Charge', '2 personnes max., poids total inférieur à 100 kg'),
  ('Journée de location', "de la prise du scooter jusqu'à 21 h ; ouverture à 4 h 30"),
  ('Caution', "sans espèces : vous laissez votre passeport ou carte d'identité"),
@@ -356,7 +356,7 @@ EV["fr"] = dict(
  'Tous ceux qui veulent une conduite simple et silencieuse : pas de vitesses, pas de plein.'],
  h_note='Bon à savoir',
  notes=['Le scooter électrique est peu puissant : il monte lentement les pentes raides et les cols.',
- "Une batterie permet environ 35–40 km : prévoyez votre itinéraire dans ce rayon et passez échanger la batterie chez nous (20 000 VND) avant qu'elle "
+ "Une batterie permet environ 35–40 km (chaque scooter a 2 batteries, environ 60–70 km au total) : prévoyez votre itinéraire dans ce rayon et passez échanger la batterie chez nous (20 000 VND) avant qu'elle "
  'soit vide.',
  'Pour les longues sorties (collines de thé de Cau Dat, Lang Biang, circuit des cascades), choisissez plutôt la Honda Air Blade 125cc.',
  'On peut rouler à deux si le poids total est inférieur à 100 kg.'],
@@ -365,7 +365,7 @@ EV["fr"] = dict(
   "Seulement votre passeport ou votre carte d'identité, que nous gardons pendant la location — sans caution en espèces. La location se paie à la "
   'prise du scooter.'),
  ('Quelle distance avec une batterie ?',
-  'Environ 35–40 km, assez pour le centre et les environs. Pour aller plus loin, échangez-la contre une batterie pleine chez nous pour 20 000 VND.'),
+  'Environ 35–40 km (chaque scooter a 2 batteries, environ 60–70 km au total), assez pour le centre et les environs. Pour aller plus loin, échangez-la contre une batterie pleine chez nous pour 20 000 VND.'),
  ('Combien coûte la location ?', '150 000 VND par jour, le même prix que les scooters à essence. Sans frais cachés.'),
  ('Peut-on rouler à deux ?', 'Oui, si le poids total des deux personnes est inférieur à 100 kg.')],
 )
@@ -373,7 +373,7 @@ EV["fr"] = dict(
 EV["es"] = dict(
  slug='alquiler-scooter-electrico-dalat',
  title='Alquiler de scooter eléctrico en Da Lat – 150.000 VND/día | Van Phu',
- desc=('Alquiler de scooter eléctrico en Da Lat: 150.000 VND al día, una batería da para unos 35–40 km, cambio de batería 20.000 VND, sin depósito '
+ desc=('Alquiler de scooter eléctrico en Da Lat: 150.000 VND al día, una batería da para unos 35–40 km (cada moto lleva 2 baterías, unos 60–70 km en total), cambio de batería 20.000 VND, sin depósito '
  'en efectivo, casco gratis. Reserva por WhatsApp.'),
  h1='Alquiler de scooter eléctrico en Da Lat',
  lead='Silencioso, ligero y fácil de conducir: nuestros scooters eléctricos son ideales para recorrer el centro de Da Lat. 150.000 VND al día.',
@@ -381,7 +381,7 @@ EV["es"] = dict(
  more='Alquiler de scooter eléctrico: autonomía, consejos, preguntas →',
  h_facts='El scooter eléctrico en resumen',
  facts=[('Precio', '150.000 VND al día, precio fijo'),
- ('Autonomía', 'una batería da para unos 35–40 km; cambio de batería en la tienda 20.000 VND'),
+ ('Autonomía', 'una batería da para unos 35–40 km (cada moto lleva 2 baterías, unos 60–70 km en total); cambio de batería en la tienda 20.000 VND'),
  ('Carga', 'máx. 2 personas, peso total inferior a 100 kg'),
  ('Día de alquiler', 'desde la recogida hasta las 21:00; abrimos a las 4:30'),
  ('Depósito', 'sin efectivo: deja tu pasaporte o documento de identidad'),
@@ -393,7 +393,7 @@ EV["es"] = dict(
  'Quien quiera una conducción sencilla y silenciosa: sin marchas y sin gasolina.'],
  h_note='Antes de salir',
  notes=['El scooter eléctrico tiene poca potencia y sube despacio las cuestas empinadas y los puertos.',
- 'Una batería da para unos 35–40 km: planifica la ruta dentro de esa distancia y pasa por la tienda a cambiar la batería (20.000 VND) antes de que '
+ 'Una batería da para unos 35–40 km (cada moto lleva 2 baterías, unos 60–70 km en total): planifica la ruta dentro de esa distancia y pasa por la tienda a cambiar la batería (20.000 VND) antes de que '
  'se agote.',
  'Para viajes largos como las colinas de té de Cau Dat, Lang Biang o la ruta de cascadas, mejor la Honda Air Blade 125cc.',
  'Se puede ir de dos si el peso total es inferior a 100 kg.'],
@@ -402,7 +402,7 @@ EV["es"] = dict(
   'Solo tu pasaporte o documento de identidad, que guardamos durante el alquiler; sin depósito en efectivo. El alquiler se paga al recoger el '
   'scooter.'),
  ('¿Cuánto se recorre con una batería?',
-  'Unos 35–40 km, suficiente para el centro y alrededores. Si necesitas más, cámbiala por una batería llena en nuestra tienda por 20.000 VND.'),
+  'Unos 35–40 km (cada moto lleva 2 baterías, unos 60–70 km en total), suficiente para el centro y alrededores. Si necesitas más, cámbiala por una batería llena en nuestra tienda por 20.000 VND.'),
  ('¿Cuánto cuesta?', '150.000 VND al día, el mismo precio que los scooters de gasolina. Sin costes ocultos.'),
  ('¿Pueden ir dos personas?', 'Sí, si el peso total de las dos personas es inferior a 100 kg.')],
 )
@@ -410,7 +410,7 @@ EV["es"] = dict(
 EV["he"] = dict(
  slug='electric-scooter-rental-dalat',
  title='השכרת קטנוע חשמלי בדאלאט – 150,000 VND ליום | Van Phu',
- desc=('השכרת קטנוע חשמלי בדאלאט: 150,000 VND ליום, סוללה אחת מספיקה לכ-35–40 ק"מ, החלפת סוללה 20,000 VND, ללא פיקדון במזומן, קסדה מתנה. הזמנה '
+ desc=('השכרת קטנוע חשמלי בדאלאט: 150,000 VND ליום, סוללה אחת מספיקה לכ-35–40 ק"מ (בכל קטנוע 2 סוללות, בסך הכול כ-60–70 ק״מ), החלפת סוללה 20,000 VND, ללא פיקדון במזומן, קסדה מתנה. הזמנה '
  'בוואטסאפ.'),
  h1='השכרת קטנוע חשמלי בדאלאט',
  lead='שקט, קל ונוח לרכיבה – הקטנועים החשמליים שלנו מושלמים לטיול במרכז דאלאט. 150,000 VND ליום.',
@@ -418,7 +418,7 @@ EV["he"] = dict(
  more='השכרת קטנוע חשמלי: טווח, הנחיות, שאלות נפוצות ←',
  h_facts='הקטנוע החשמלי בקצרה',
  facts=[('מחיר', '150,000 VND ליום, מחיר קבוע'),
- ('טווח', 'סוללה אחת מספיקה לכ-35–40 ק"מ; החלפת סוללה בחנות 20,000 VND'),
+ ('טווח', 'סוללה אחת מספיקה לכ-35–40 ק"מ (בכל קטנוע 2 סוללות, בסך הכול כ-60–70 ק״מ); החלפת סוללה בחנות 20,000 VND'),
  ('משקל', 'עד 2 רוכבים, משקל כולל מתחת ל-100 ק"ג'),
  ('יום השכרה', 'מרגע האיסוף עד 21:00; החנות נפתחת ב-4:30'),
  ('פיקדון', 'ללא מזומן – משאירים דרכון או תעודה מזהה'),
@@ -430,12 +430,12 @@ EV["he"] = dict(
  'מי שרוצה רכיבה שקטה ופשוטה – בלי הילוכים ובלי תדלוק.'],
  h_note='כדאי לדעת לפני היציאה',
  notes=['לקטנוע החשמלי הספק נמוך, ולכן הוא איטי בעליות תלולות ובמעברי הרים.',
- 'סוללה אחת מספיקה לכ-35–40 ק"מ: תכננו את המסלול בטווח הזה וקפצו להחליף סוללה אצלנו (20,000 VND) לפני שהיא נגמרת.',
+ 'סוללה אחת מספיקה לכ-35–40 ק"מ (בכל קטנוע 2 סוללות, בסך הכול כ-60–70 ק״מ): תכננו את המסלול בטווח הזה וקפצו להחליף סוללה אצלנו (20,000 VND) לפני שהיא נגמרת.',
  'לטיולים ארוכים כמו גבעות התה של קאו דאט, לאנג ביאנג או סיבוב המפלים, עדיף להונדה אייר בלייד 125.',
  'אפשר לרכוב בשניים אם המשקל הכולל מתחת ל-100 ק"ג.'],
  h_faq='שאלות נפוצות על קטנוע חשמלי',
  faq=[('מה צריך כדי לשכור קטנוע חשמלי בדאלאט?', 'רק דרכון או תעודת זהות, שנשמור אצלנו בזמן ההשכרה – בלי פיקדון במזומן. התשלום בעת קבלת הקטנוע.'),
- ('כמה רחוק אפשר לנסוע עם סוללה אחת?', 'כ-35–40 ק"מ – מספיק למרכז ולסביבה. צריכים יותר? מחליפים לסוללה מלאה אצלנו ב-20,000 VND.'),
+ ('כמה רחוק אפשר לנסוע עם סוללה אחת?', 'כ-35–40 ק"מ (בכל קטנוע 2 סוללות, בסך הכול כ-60–70 ק״מ) – מספיק למרכז ולסביבה. צריכים יותר? מחליפים לסוללה מלאה אצלנו ב-20,000 VND.'),
  ('כמה זה עולה?', '150,000 VND ליום, כמו קטנועי הבנזין. בלי עלויות נסתרות.'),
  ('אפשר לרכוב בשניים?', 'כן, אם המשקל הכולל של שניכם מתחת ל-100 ק"ג.')],
 )

@@ -967,7 +967,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
 ## Pages
 - [Home (English)]({BASE}): prices, bikes, FAQ, map
-- [Electric scooter rental (one battery about 35–40 km; battery swap 20,000 VND)]({BASE + ev_path("en")})
+- [Electric scooter rental (2 batteries per scooter, about 60–70 km in total — 35–40 km each; battery swap 20,000 VND)]({BASE + ev_path("en")})
 - [Da Lat photo spot map (16 places, opening hours, free PDF)]({BASE + pm_path("en")})
 - [Da Lat pagoda map (7 pagodas and Zen monasteries, opening hours, free PDF)]({BASE + map_path(PG, "en")})
 - [Da Lat church map (6 churches incl. the Rooster Church and Domaine de Marie, opening hours, free PDF)]({BASE + map_path(CH, "en")})

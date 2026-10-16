@@ -111,14 +111,14 @@ C = {
 EV_ = dict(
  slug='elektrische-scooter-huren-dalat',
  title='Elektrische Scooter Huren Da Lat – 150,000 VND/dag | Van Phu',
- desc='Huur een elektrische scooter in Da Lat: 150,000 VND/dag, één accu gaat ongeveer 35–40 km mee, accuwissel 20,000 VND, geen borg in contanten, gratis helm. Boek via WhatsApp.',
+ desc='Huur een elektrische scooter in Da Lat: 150,000 VND/dag, één accu gaat ongeveer 35–40 km (elke scooter heeft 2 accu’s, samen ongeveer 60–70 km) mee, accuwissel 20,000 VND, geen borg in contanten, gratis helm. Boek via WhatsApp.',
  h1='Elektrische scooter huren in Da Lat',
  lead='Stil, licht en makkelijk te rijden — onze elektrische scooters zijn gemaakt om het centrum van Da Lat te verkennen. 150,000 VND per dag.',
  crumb='Elektrische scooters',
  more='Elektrische scooter: actieradius, regels, FAQ →',
  h_facts='De elektrische scooter in het kort',
  facts=[('Prijs', '150,000 VND per dag, vast'),
- ('Actieradius', 'één accu gaat ongeveer 35–40 km mee; accuwissel in de winkel 20,000 VND'),
+ ('Actieradius', 'één accu gaat ongeveer 35–40 km (elke scooter heeft 2 accu’s, samen ongeveer 60–70 km) mee; accuwissel in de winkel 20,000 VND'),
  ('Belasting', 'max. 2 personen, totaalgewicht onder 100 kg'),
  ('Huurdag', 'van het ophalen tot 21:00; de winkel opent om 4:30'),
  ('Borg', 'geen contanten — laat je paspoort of ID-kaart achter'),
@@ -130,14 +130,14 @@ EV_ = dict(
  'Iedereen die rustig en simpel wil rijden — geen versnellingen, geen tankstops.'],
  h_note='Goed om te weten voor je vertrekt',
  notes=['Elektrische scooters hebben weinig vermogen: ze klimmen langzaam op steile heuvels en passen.',
- 'Eén accu gaat ongeveer 35–40 km mee: plan je dag binnen die afstand en kom terug naar de winkel voor een accuwissel (20,000 VND) voordat hij leeg raakt.',
+ 'Eén accu gaat ongeveer 35–40 km (elke scooter heeft 2 accu’s, samen ongeveer 60–70 km) mee: plan je dag binnen die afstand en kom terug naar de winkel voor een accuwissel (20,000 VND) voordat hij leeg raakt.',
  'Kies voor lange tochten zoals de theeheuvels van Cau Dat, de Lang Biang of watervaltochten liever de Honda Air Blade 125cc.',
  'Met z\'n tweeën kan alleen als jullie samen minder dan 100 kg wegen.'],
  h_faq='Veelgestelde vragen over de elektrische scooter',
  faq=[('Wat heb ik nodig om een elektrische scooter te huren in Da Lat?',
   'Alleen je paspoort of ID-kaart, die we tijdens de huur bewaren — geen borg in contanten. Je betaalt de huur bij het ophalen.'),
  ('Hoe ver kom ik met één accu?',
-  'Eén accu gaat ongeveer 35–40 km mee. Genoeg voor het centrum en de bezienswaardigheden in de buurt; wil je verder, wissel dan in onze winkel voor een volle accu voor 20,000 VND.'),
+  'Eén accu gaat ongeveer 35–40 km (elke scooter heeft 2 accu’s, samen ongeveer 60–70 km) mee. Genoeg voor het centrum en de bezienswaardigheden in de buurt; wil je verder, wissel dan in onze winkel voor een volle accu voor 20,000 VND.'),
  ('Wat kost het?', '150,000 VND per dag — dezelfde vaste prijs als onze benzinescooters, geen verborgen kosten.'),
  ('Kunnen we met z\'n tweeën rijden?', 'Ja, zolang het totaalgewicht van beide rijders onder 100 kg is.')],
 )
@@ -163,7 +163,7 @@ ART_ = {
 <h2>Hoe een huurdag werkt</h2>
 <p>We gaan elke dag om 4:30 open — handig als je de zonsopkomst wilt zien. Een huurdag loopt van het moment dat je de scooter ophaalt tot 21:00 uur dezelfde dag.</p>
 <h2>Wat je extra betaalt</h2>
-<p>De enige extra kosten zijn brandstof voor benzinescooters: tank bij elk tankstation, ze zijn overal in de stad. Elektrische scooters hebben geen brandstof nodig; één accu gaat ongeveer 35–40 km mee en een accuwissel in onze winkel kost 20,000 VND — zie onze <a href="{EV}">pagina over de elektrische scooter</a>.</p>
+<p>De enige extra kosten zijn brandstof voor benzinescooters: tank bij elk tankstation, ze zijn overal in de stad. Elektrische scooters hebben geen brandstof nodig; één accu gaat ongeveer 35–40 km (elke scooter heeft 2 accu’s, samen ongeveer 60–70 km) mee en een accuwissel in onze winkel kost 20,000 VND — zie onze <a href="{EV}">pagina over de elektrische scooter</a>.</p>
 <h2>Zo voorkom je verrassingen bij elke verhuurder</h2>
 <ul>
 <li>Vraag wat de borg is en wanneer je die terugkrijgt.</li>
@@ -185,7 +185,7 @@ ART_ = {
 <h2>Elektrische scooter: voordelen en grenzen</h2>
 <ul>
 <li>Stil, geen versnellingen, geen tankstops.</li>
-<li>Eén accu gaat ongeveer <b>35–40 km</b> mee (accuwissel in onze winkel: 20,000 VND) — genoeg voor het centrum en de bezienswaardigheden in de buurt.</li>
+<li>Eén accu gaat ongeveer <b>35–40 km</b> (elke scooter heeft 2 accu’s, samen ongeveer 60–70 km) mee (accuwissel in onze winkel: 20,000 VND) — genoeg voor het centrum en de bezienswaardigheden in de buurt.</li>
 <li>Weinig vermogen: langzaam op steile heuvels en passen.</li>
 <li>Met z'n tweeën alleen als jullie samen minder dan 100 kg wegen.</li>
 </ul>

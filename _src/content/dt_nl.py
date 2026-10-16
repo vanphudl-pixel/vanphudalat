@@ -5,7 +5,7 @@ RN = {
  "h1": "Da Lat in één dag op eigen houtje: nieuwe attracties 2026",
  "desc": "Rijd zelf per scooter langs de nieuwe attractieparken van Da Lat: Langbiang Land, Mongo Land, Hoang Long Ohayo en een aardbeienboerderij — volgorde, afstanden, routebeschrijving en gratis pdf.",
  "lead": "Dezelfde dag als de populaire groepstours \"nieuwe attracties\", maar op je eigen scooter — jij kiest de starttijd en hoe lang je overal blijft. 4 stops in een logische volgorde: naar het noorden naar Langbiang Land, door naar Ta Nung, de Mimosa-pas af en op de terugweg een aardbeienboerderij.",
- "tips": ["De rondrit is ongeveer {total} km in vogelvlucht, over de weg langer en heuvelachtig (Ta Nung, Mimosa-pas) — neem een Honda Air Blade 125cc; één accu van een elektrische scooter (ongeveer 35–40 km) is niet genoeg.",
+ "tips": ["De rondrit is ongeveer {total} km in vogelvlucht, over de weg langer en heuvelachtig (Ta Nung, Mimosa-pas) — neem een Honda Air Blade 125cc; ook met 2 accu’s (samen ongeveer 60–70 km) klimt een elektrische scooter traag en kan het krap worden.",
           "De prijzen bij elke stop zijn richtprijzen (verzameld in oktober 2026) — ze kunnen veranderen, check bij de ingang.",
           "Tank vol voordat je naar Ta Nung rijdt — op de pas zijn weinig tankstations.",
           "De weg naar Ta Nung en de Mimosa-pas hebben veel bochten — rijd rustig en haal niet in in bochten."],
@@ -20,7 +20,7 @@ RC = {
  "h1": "Da Lat in één dag op eigen houtje: populaire fotoplekken",
  "desc": "Rijd zelf per scooter langs de 4 populairste fotoplekken van Da Lat: Lac Hu Co Tran, Memory Station (Tram Ky Uc), Suoi Binh Yen en Happy Hill bij het Tuyen Lam-meer — volgorde, afstanden, routebeschrijving en gratis pdf.",
  "lead": "Dezelfde dag als de populaire fototours in groep, maar op je eigen scooter: 's ochtends twee stops ten oosten van de stad (richting Trai Mat), 's middags twee rond het Tuyen Lam-meer. Rond lunchtijd rijd je door het centrum — handig om te eten en je accu te wisselen in onze winkel als je elektrisch rijdt.",
- "tips": ["De rondrit is ongeveer {total} km in vogelvlucht, over de weg langer — wissel met een elektrische scooter de accu rond lunchtijd (één accu is ongeveer 35–40 km), of neem een Honda Air Blade 125cc voor het gemak.",
+ "tips": ["De rondrit is ongeveer {total} km in vogelvlucht, over de weg langer — de 2 accu’s van een elektrische scooter (samen ongeveer 60–70 km) zijn genoeg voor de hele rondrit; voor makkelijker klimmen neem je een Honda Air Blade 125cc.",
           "De prijzen bij elke stop zijn richtprijzen (verzameld in oktober 2026), meestal met een drankje — ze kunnen veranderen, check bij de ingang.",
           "Happy Hill is in het weekend erg druk — ga doordeweeks of vroeg.",
           "De toegangswegen naar Suoi Binh Yen en Happy Hill zijn op sommige stukken smal en steil — rijd rustig, zeker bij regen."],
@@ -48,7 +48,7 @@ DAY = {
  "stops": "Stops", "km": "Hele rondrit ongeveer {km} km in vogelvlucht (winkel → stops → winkel)", "open": "Open de routekaart", "pdf": "Pdf downloaden",
  "verdict": {
   "routenew": "Goed voor gezinnen met kinderen en liefhebbers van attractieparken. Lang en heuvelachtig — neem een Honda Air Blade 125cc.",
-  "routecheckin": "Goed voor fotoliefhebbers. Korter — te doen met een elektrische scooter als je rond lunchtijd in onze winkel de accu wisselt (20,000 VND), of met een Air Blade voor het gemak.",
+  "routecheckin": "Goed voor fotoliefhebbers. Korter — de 2 accu’s van een elektrische scooter (samen ongeveer 60–70 km) zijn genoeg voor de rondrit, of een Air Blade voor het gemak.",
  },
  "more_h": "Meer dagtochten op deze site",
  "more": [("art:caudat", "Wolkenzee en zonsopgang op de theeheuvels van Cau Dat"), ("art:waterfalls", "Watervallen bij Da Lat: Datanla, Prenn, Olifant, Pongour"), ("routes", "5 motorroutes rond Da Lat"), ("art:days3", "Da Lat in 3 dagen"), ("hub", "Alle bezienswaardigheden in Da Lat per richting")],
@@ -57,7 +57,7 @@ DAY = {
   ("Is Da Lat in één dag op eigen houtje per scooter moeilijk?", "Niet als je gewend bent aan automatische scooters: volg Google Maps, rijd rustig op passen en in bochten, draag een helm en houd je aan de verkeersregels. Vertrek vroeg, zeker in het regenseizoen, want het regent meestal 's middags."),
   ("Wat kost een scooter voor één dag?", "150,000 VND per dag voor elke scooter — Honda Vision, Honda Air Blade 125cc of elektrische scooter — met helm en telefoonhouder. Geen borg in contanten: je laat je paspoort of identiteitskaart achter."),
   ("Welke route kies ik?", "Houd je van foto's en wil je een compacte dag: de route langs populaire fotoplekken. Met kinderen of fan van attractieparken: de route nieuwe attracties 2026."),
-  ("Welke route kan met een elektrische scooter?", "De fotoplekkenroute, met een accuwissel rond lunchtijd in onze winkel (één accu is ongeveer 35–40 km, wisselen kost 20,000 VND). De route nieuwe attracties is lang en heuvelachtig — neem een Honda Air Blade 125cc."),
+  ("Welke route kan met een elektrische scooter?", "De fotoplekkenroute: elke elektrische scooter heeft 2 accu’s (samen ongeveer 60–70 km), genoeg voor de hele rondrit. De route nieuwe attracties is lang en heuvelachtig — neem een Honda Air Blade 125cc."),
   ("Moet ik de scooter vooraf reserveren?", "Stuur ons het liefst een bericht via WhatsApp, Zalo of WeChat, dan houden we een scooter voor je vrij. Vanaf 2 dagen bezorgen we gratis bij hotels in het centrum."),
  ]}
 FREE = "Gratis"
