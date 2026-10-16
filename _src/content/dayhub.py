@@ -56,3 +56,12 @@ _s, _t = _DT.day(); SLUG.update(_s); T.update(_t)
 LANGS = ["vi", "en"] + _DT.LANGS
 for _l in LANGS:
     assert set(T[_l]) == set(T["en"]) and set(T[_l]["verdict"]) == set(T["en"]["verdict"]) and len(T[_l]["more"]) == len(T["en"]["more"]), _l
+# No price in the search snippet (owner, 2026-10-16): drop the trailing "rent ... 150,000 VND" sentence from the description.
+def _noprice(d):
+    i = d.find("150")
+    if i < 0: return d
+    p = max((d.rfind(t, 0, i) + len(t), t) for t in (". ", "。", "។ ", "။ ", "ฟรี "))
+    return d[:p[0]].rstrip() if p[0] > len(p[1]) else d
+for _l in LANGS:
+    T[_l]["desc"] = _noprice(T[_l]["desc"])
+    assert "150" not in T[_l]["desc"], _l

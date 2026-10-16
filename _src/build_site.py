@@ -25,6 +25,10 @@ WA2 = "https://wa.me/84834622149"
 
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
 from content.ev import EV
+from content import seo_titles as _SEO
+for _l in LANGS:
+    C[_l]["home"]["title"], C[_l]["home"]["desc"] = _SEO.HOME[_l]
+    EV[_l]["title"], EV[_l]["desc"] = _SEO.EV[_l]
 from content.photos import ALT as PHOTO_ALT, HERO as PHOTO_HERO, INLINE as PHOTO_INLINE
 import html as _html
 def _esc(t): return _html.escape(t, quote=True)
