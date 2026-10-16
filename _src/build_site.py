@@ -1052,6 +1052,10 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Motorbike routes around Da Lat]({BASE + routes_path("en")})
 - [Travel blog]({BASE + blog_path("en")})
 """ + "".join(f"- [{LABEL[x]} home]({BASE + home_path(x)})\n" for x in LANGS if x != "en")
+LLMS += "\n## Quick answers\n" + "".join(f"- **{q}** {a.replace('see the map below', 'https://maps.app.goo.gl/ULvgaZFh4Q1kjTCe6')}\n" for q, a in C["en"]["home"]["faq"])
+LLMS += "\n## Rental guides and articles (newest first; Vietnamese version in brackets)\n" + "".join(
+    f"- [{C['en']['articles'][k][2]}]({BASE + art_path('en', k)}) ([VI: {C['vi']['articles'][k][2]}]({BASE + art_path('vi', k)}))\n"
+    for k in ARTICLES[::-1] if k in C["en"]["articles"] and k in C["vi"]["articles"])
 (OUT / "llms.txt").write_text(LLMS, encoding="utf-8")
 (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /_src/\n\nSitemap: {BASE}sitemap.xml\n", encoding="utf-8")
 print("pages:", sum(1 for _ in OUT.rglob("index.html")))
