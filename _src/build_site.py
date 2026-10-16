@@ -19,6 +19,7 @@ YA_LINK = f"https://yandex.ru/maps/?pt={LON},{LAT}&z=17&l=map"
 AMAP = f"https://uri.amap.com/marker?position={LON},{LAT}&name=Van%20Phu%20%E5%A4%A7%E5%8F%BB%E6%91%A9%E6%89%98%E8%BD%A6%E7%A7%9F%E8%B5%81&src=vanphudalat&coordinate=wgs84&callnative=1"
 YA_WIDGET = f"https://yandex.ru/map-widget/v1/?ll={LON}%2C{LAT}&z=16&pt={LON}%2C{LAT}%2Cpm2rdm"
 TG = "https://t.me/vanphudalat"
+YT = "https://www.youtube.com/@DalatMotorbikeRentalVanPhu"
 TG_CHANNEL = "https://t.me/dalat_life_vietnam"
 ZALO = "https://zalo.me/0944081101"
 WA2 = "https://wa.me/84834622149"
@@ -379,6 +380,7 @@ def contacts(l):
         rows.append(f'<p><b>Telegram-канал:</b> <a href="{TG_CHANNEL}">@dalat_life_vietnam</a></p>')
     rows += ['<p><b>WeChat:</b> vanphudalat</p>',
              '<p><b>Facebook:</b> <a href="https://www.facebook.com/vanphudalat">facebook.com/vanphudalat</a></p>',
+             f'<p><b>YouTube:</b> <a href="{YT}" target="_blank" rel="noopener">@DalatMotorbikeRentalVanPhu</a></p>',
              f'<p><b>{h["addr_label"]}</b> {h["address"]}</p>']
     return '<div class="contact">' + "\n".join(rows) + "</div>"
 
@@ -426,7 +428,7 @@ def foot(l, root_redirect=False, frm=None):
     kw = ""
     if frm is not None:
         kw = f'<br><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a> · <a href="{rel(frm, routes_path(l))}">{C[l]["routes"]["h1"]}</a>'
-    return f"""<footer><span class="footcall">📞 {CALL[l][1]}: <a href="{TEL}">{phone_txt(l)}</a></span>{u["footer"]}{kw}</footer>
+    return f"""<footer><span class="footcall">📞 {CALL[l][1]}: <a href="{TEL}">{phone_txt(l)}</a> · <a href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></span>{u["footer"]}{kw}</footer>
 {floats(l)}
 <div class="lb" id="lb"><img alt=""></div>
 <script>
@@ -456,7 +458,7 @@ def business_ld(l, url):
             "telephone": "+84944081101", "priceRange": "150,000 VND",
             "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Đà Lạt", "addressCountry": "VN"},
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
-            "sameAs": ["https://www.facebook.com/vanphudalat", "https://www.tiktok.com/@bietthudalat", TG, ZALO],
+            "sameAs": ["https://www.facebook.com/vanphudalat", YT, "https://www.tiktok.com/@bietthudalat", TG, ZALO],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
                            for n in ["Honda Vision 110cc", "Honda Air Blade 125cc", h["electric_name"]]]}
 
@@ -1020,7 +1022,9 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - Included: free helmet and phone holder with every bike; gas scooters come with 1 liter of fuel
 - Delivery: free to hotels in central Da Lat for rentals of 2 days or more
 - Before renting: test ride and a video of the bike's condition, filmed together
+- Phone: +84 944 081 101
 - Booking: WhatsApp +84 944 081 101 or +84 834 622 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat
+- YouTube channel: {YT}
 - Languages on the website: {", ".join(LABEL.values())}
 
 ## Pages
