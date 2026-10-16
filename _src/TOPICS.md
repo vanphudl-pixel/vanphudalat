@@ -53,11 +53,17 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - Each article answers ONE specific search intent with practical, honest info (≈450–650 words in en). Never a near-copy of the main rental page or of existing articles `price` (rental prices) and `evgas` (electric vs gas) — link to them instead.
 - Title/H1/meta built around the natural local phrase for that intent in EACH language (research how people really search it in that language, e.g. vi "thuê xe máy Đà Lạt không cần cọc", ru "аренда байка в Далате без залога", zh "大叻租摩托车 不用押金", th "เช่ามอเตอร์ไซค์ดาลัด ไม่ต้องมัดจำ"). Use the phrase naturally 2–4 times; no stuffing.
 - Link to the main rental page with <a href="{HOME}">…</a> and, for electric topics, to <a href="{EV}">…</a>.
-- All Hard rules apply (no licence wording in any language, no invented facts, no competitor claims). Do not promise hotel delivery in these articles.
-- [ ] lt-center — Motorbike rental in central Da Lat near the market and Xuan Huong Lake (where the shop is, getting there on foot/Grab; approximate distances only)
+- All Hard rules apply (no licence wording in any language, no invented facts, no competitor claims). Hotel delivery only exactly as the owner's rule: free delivery to hotels in central Da Lat for rentals of 2+ days (never promise it for 1-day rentals — say "message us").
+- OWNER'S KEYWORD PLAN (16/10/2026): focus on 4 niche groups — (1) no cash deposit & quick paperwork, (2) early opening / cloud hunting / sunrise, (3) electric scooters (EV backlog), (4) delivery & location. Each topic below lists its exact Vietnamese target keyword → the vi title_tag, H1 and meta must contain it verbatim (natural capitalisation); other languages use their own natural equivalent.
+- Internal links: add every new key to its cluster in `content/cluster.py` ("Read also" then shows cluster siblings first), and link 1–2 sibling articles in the body with <a href="{ART:<key>}">…</a>.
+- "Documents" topics: the ONLY documents are passport (foreigners) or CCCD/ID card (Vietnamese guests). Never mention any other document, licence or permit.
+- [ ] lt-documents — [Group 1] What you need to rent a motorbike in Da Lat: only a passport or CCCD, no cash deposit, payment, what to bring — vi: "thuê xe máy đà lạt cần giấy tờ gì" (link lt-nodeposit, lt-procedure)
+- [ ] lt-early — [Group 2] Early-opening motorbike rental in Da Lat: shop opens 4:30 am every day, pick up the night before or at dawn — vi: "thuê xe máy đà lạt mở cửa sớm" (also "tiệm thuê xe máy mở từ 4 giờ sáng đà lạt"; link cloudhunt)
+- [ ] lt-delivery — [Group 4] Motorbike rental with delivery to your hotel in Da Lat: free in central Da Lat for 2+ days, what to send (hotel name, time), check the bike together at handover — vi: "thuê xe máy giao tận khách sạn đà lạt"
+- [ ] lt-center — [Group 4] Motorbike rental near central Da Lat: shop at 1/15/5 Thông Thiên Học, getting there on foot/Grab from the market and Xuan Huong Lake (approximate only) — vi: "thuê xe máy gần trung tâm đà lạt"
+- [ ] lt-caudat-early — [Group 2] Renting a motorbike for a dawn ride to the Cau Dat tea hills: which bike (Air Blade), pick-up time, fuel, warm clothes — rental angle only, link the caudat guide instead of repeating it — vi: "thuê xe máy đi đồi chè cầu đất sáng sớm"
 - [ ] lt-airblade — Renting a Honda Air Blade 125cc in Da Lat (for passes, two riders, longer day trips)
 - [ ] lt-vision — Renting a Honda Vision 110cc in Da Lat (light, easy automatic for beginners and city riding)
-- [ ] lt-early — Early-morning motorbike rental in Da Lat (shop opens 4:30 am — cloud hunting and sunrise rides)
 - [ ] lt-multiday — Renting a motorbike in Da Lat for several days or a week (150,000 VND/day, how days are counted, tips)
 - [ ] lt-two — Motorbike rental in Da Lat for two people / couples (which bike, comfort, safety)
 - [ ] lt-checklist — 10 things to check before renting a motorbike in Da Lat (brakes, tyres, lights, helmet, video) — no claims about other shops
@@ -78,8 +84,9 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 100 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-city — Where to go in Da Lat on an electric scooter (central sights; plan around the battery, swap at the shop; avoid long passes)
-- [ ] lt-ev-price — Electric scooter rental price in Da Lat (150,000 VND/day, what's included, battery swap 20,000 VND) — link to price article, don't copy it
+- [ ] lt-ev-experience — [Group 3] Tips for renting an electric scooter in Da Lat (what to know before, battery, hills, parking, rules) — vi: "kinh nghiệm thuê xe điện ở đà lạt"
+- [ ] lt-ev-city — [Group 3] Exploring the city on an electric scooter: relaxed central routes, plan around the battery, swap at the shop, avoid long passes — vi: "xe điện đi dạo thành phố đà lạt"
+- [ ] lt-ev-price — [Group 3] vi: "giá thuê xe máy điện đà lạt" — Electric scooter rental price in Da Lat (150,000 VND/day, what's included, battery swap 20,000 VND) — link to price article, don't copy it
 - [ ] lt-ev-battery — Electric scooter battery in Da Lat: how far you can go, when to swap, tips for hills and two riders
 - [ ] lt-ev-couples — Electric scooter for two in Da Lat (combined under 100 kg, comfort, when to pick the Air Blade instead)
 - [ ] lt-ev-beginners — Electric scooter for beginners in Da Lat (no gears, quiet, first ride tips, Vietnam drives on the right)

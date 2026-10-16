@@ -29,6 +29,7 @@ from content import seo_titles as _SEO
 for _l in LANGS:
     C[_l]["home"]["title"], C[_l]["home"]["desc"] = _SEO.HOME[_l]
     EV[_l]["title"], EV[_l]["desc"] = _SEO.EV[_l]
+from content.cluster import GROUP as CL_GROUP
 from content.photos import ALT as PHOTO_ALT, HERO as PHOTO_HERO, INLINE as PHOTO_INLINE
 import html as _html
 def _esc(t): return _html.escape(t, quote=True)
@@ -592,7 +593,8 @@ def page_article(l, k):
            "mainEntityOfPage": BASE + me, "image": [f"{BASE}img/{x}.jpg" for x in dict.fromkeys([img] + _phs)], "datePublished": adate(k), "dateModified": mdate(l, k),
            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"},
            "publisher": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}}
-    others = [x for x in ARTICLES[::-1] if x != k][:3]
+    _sib = [x for x in ARTICLES[::-1] if x != k and k in CL_GROUP and CL_GROUP.get(x) == CL_GROUP[k]]
+    others = (_sib + [x for x in ARTICLES[::-1] if x != k and x not in _sib])[:3]
     qa = AFAQ.get(l, {}).get(k, [])
     faq_html = (f'<section class="faq"><h2>{AFAQ_H[l]}</h2>' + "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in qa) + "</section>") if qa else ""
     lds = [art, crumbs_ld(l, [(u["crumbs_blog"], blog_path(l)), (h1, me)])]
