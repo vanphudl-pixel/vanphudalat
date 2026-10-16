@@ -135,6 +135,7 @@ table.price tr:last-child td{border-bottom:0}
 .float.f3{bottom:132px}
 .float.callf{background:#f2b632;color:#173d2d}
 .btn.callb{background:#f2b632;color:#173d2d}
+.yt{margin:0 0 20px;max-width:300px} .yt a{position:relative;display:block;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000} .yt img,.yt iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0} .yt span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center} .yt figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .footcall{display:block;margin:0 0 8px;font-size:15px}.footcall a{color:#fff;font-weight:700;text-decoration:none}
 html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 html[dir=rtl] .checks li{padding:12px 40px 12px 14px}
@@ -259,6 +260,19 @@ CALL = {"vi": ("Gọi", "Điện thoại"), "en": ("Call", "Phone"), "ru": ("П�
         "ja": ("電話", "電話"), "th": ("โทร", "โทรศัพท์"), "id": ("Telepon", "Telepon"), "ms": ("Telefon", "Telefon"), "de": ("Anrufen", "Telefon"),
         "fr": ("Appeler", "Téléphone"), "es": ("Llamar", "Teléfono"), "he": ("התקשרו", "טלפון"), "it": ("Chiama", "Telefono"), "nl": ("Bellen", "Telefoon"),
         "km": ("ហៅ", "ទូរស័ព្ទ"), "lo": ("ໂທ", "ໂທລະສັບ"), "my": ("ဖုန်းခေါ်", "ဖုန်း")}
+# Owner's YouTube clips: by Google Maps cid (map/hub rows) and by article key (article pages)
+VIDEO_CID = {"10570931153699557351": "gA532ZVEENM"}   # Domaine de Marie (Mai Anh Dao church)
+VIDEO_ART = {"domainedemarie": "gA532ZVEENM"}
+VLBL = {"vi": "Xem video", "en": "Watch the video", "ru": "Смотреть видео", "zh": "观看视频", "ko": "영상 보기", "ja": "動画を見る", "th": "ดูวิดีโอ",
+        "id": "Tonton video", "ms": "Tonton video", "de": "Video ansehen", "fr": "Voir la vidéo", "es": "Ver el vídeo", "he": "צפו בסרטון",
+        "it": "Guarda il video", "nl": "Bekijk de video", "km": "មើលវីដេអូ", "lo": "ເບິ່ງວິດີໂອ", "my": "ဗီဒီယိုကြည့်ရန်"}
+def vlink(l, cid):
+    v = VIDEO_CID.get(cid)
+    return f' · <a href="https://www.youtube.com/shorts/{v}" target="_blank" rel="noopener">▶ {VLBL[l]}</a>' if v else ""
+def vbox(l, v, title):
+    return (f'<figure class="yt"><a href="https://www.youtube.com/shorts/{v}" target="_blank" rel="noopener" data-yt="{v}" aria-label="{VLBL[l]}: {title}">'
+            f'<img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="{title}" loading="lazy" width="480" height="360"><span>▶</span></a>'
+            f'<figcaption>▶ {VLBL[l]}</figcaption></figure>')
 def phone_txt(l): return "0944 081 101" if l == "vi" else "+84 944 081 101"
 def call_float(l, pos): return f'<a class="float {pos} callf" href="{TEL}" aria-label="{CALL[l][1]} {phone_txt(l)}">📞 {CALL[l][0]}</a>'
 def floats(l):
@@ -418,6 +432,7 @@ def foot(l, root_redirect=False, frm=None):
 <script>
 document.querySelectorAll('.langs a').forEach(a=>a.addEventListener('click',()=>{{try{{localStorage.setItem('lang',a.dataset.l)}}catch(e){{}}}}));
 document.querySelectorAll('.wcbtn').forEach(b=>b.onclick=()=>{{try{{navigator.clipboard.writeText('vanphudalat')}}catch(e){{}};b.textContent={json.dumps(u["copied"], ensure_ascii=False)};setTimeout(()=>b.textContent='WeChat: vanphudalat',2000)}});
+document.querySelectorAll('.yt a[data-yt]').forEach(a=>a.onclick=e=>{{e.preventDefault();a.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="video"></iframe>'}});
 const lb=document.getElementById('lb');document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{{lb.querySelector('img').src=i.dataset.full||i.src;lb.classList.add('on')}});lb.onclick=()=>lb.classList.remove('on');
 {redirect}
 </script>
@@ -617,7 +632,7 @@ def page_article(l, k):
  <img class="heroimg" src="{pre}img/{img}.jpg" alt="{h1}" width="1200" height="675">
 </div></div></header>
 <main class="wrap">
- <section class="prose">{html}</section>
+ <section class="prose">{vbox(l, VIDEO_ART[k], h1) if k in VIDEO_ART else ""}{html}</section>
  {faq_html}
  <section>{contact_box(l)}{cta_box(l, me)}</section>
  <section><h2>{u["read_also"]}</h2>{posts(l, me, others)}</section>
@@ -775,7 +790,7 @@ def page_photomap(l, M=PM):
         guide = getattr(M, "GUIDES", {"pink": "domainedemarie"}).get(sid)
         nm = f'<a href="{rel(me, art_path(l, guide))}">{n}</a>' if guide and guide in C[l]["articles"] else n
         rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{nm}</b><br><small>{(f"+{_legs[i-1]:.1f} km {t['leg']} · ") if _route else f"≈ {pm_km(M.CENTER, (lat, lng)):.1f} km · "}{t["hours"]}: {hr} · {t["best"]}: {best}</small>'
-                 f'<br>{d}{(f"<br>🎟 <b>{t[chr(112)+chr(114)+chr(105)+chr(99)+chr(101)+chr(95)+chr(108)]}:</b> " + M.PRICE[l][sid]) if l in getattr(M, "PRICE", {}) else ""}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · <a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a></div></li>')
+                 f'<br>{d}{(f"<br>🎟 <b>{t[chr(112)+chr(114)+chr(105)+chr(99)+chr(101)+chr(95)+chr(108)]}:</b> " + M.PRICE[l][sid]) if l in getattr(M, "PRICE", {}) else ""}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · <a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a>{vlink(l, cid)}</div></li>')
     seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t.get("season", []))
     tips = "".join(f"<li>{x}</li>" for x in t["tips"])
     pdf = f"{pre}files/{getattr(M, 'PDF', 'VanPhu-Dalat-Photo-Map')}-{l.upper()}.pdf"
@@ -857,6 +872,7 @@ def page_hub(l):
             ak = HUB.GUIDE.get(sid)
             name = f'<a href="{rel(me, art_path(l, ak))}">{nm}</a>' if ak else nm
             links = f'<a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a>'
+            links += vlink(l, cid)
             if M is not None: links += f' · <a href="{rel(me, map_path(M, l))}">🗺 {t["themap"]}: {M.T[l]["h1"]}</a>'
             if ak: links += f' · <a href="{rel(me, art_path(l, ak))}">📖 {t["guide"]}</a>'
             km_ = pm_km((LAT, LON), (lat, lng))
