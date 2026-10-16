@@ -146,6 +146,15 @@ footer a{color:inherit;text-decoration:underline}
 .kw{margin:12px 0 0;font-size:14px}
 
 /* ---- 2026-10 redesign: pine + dã quỳ ---- */
+@font-face{font-family:"Be Vietnam Pro";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/bvp-vietnamese-400.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:"Be Vietnam Pro";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/bvp-latin-400.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Be Vietnam Pro";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/bvp-vietnamese-600.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:"Be Vietnam Pro";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/bvp-latin-600.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Be Vietnam Pro";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/bvp-vietnamese-700.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:"Be Vietnam Pro";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/bvp-latin-700.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Be Vietnam Pro";font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/bvp-vietnamese-800.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:"Be Vietnam Pro";font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/bvp-latin-800.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 :root{--bg:#eef3ef;--ink:#16241d;--muted:#55655c;--brand:#2f6b4f;--pine:#173d2d;--brand2:#e3ede6;--accent:#f2b632;--line:#d6dfd8}
 body{font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans SC","Noto Sans Thai",sans-serif}
 h1,h2,h3{letter-spacing:-.01em}
@@ -387,7 +396,7 @@ def head(l, kind, key, title, desc, ld, img="electric-row"):
 <meta property="og:url" content="{BASE + me}">
 <meta property="og:image" content="{BASE}img/{img}.jpg">
 {"".join(ldjson(x) for x in ld)}
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
+<link rel="preload" href="/fonts/bvp-latin-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/bvp-latin-800.woff2" as="font" type="font/woff2" crossorigin>
 <style>{CSS}</style>
 </head>
 <body>"""
@@ -783,8 +792,8 @@ def page_photomap(l, M=PM):
 <meta name="description" content="{t["desc"]}"><link rel="canonical" href="{BASE + me}">
 {alts}<meta property="og:type" content="website"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/electric-row.jpg">
 {ldjson(ld)}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="preload" href="/fonts/bvp-latin-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/bvp-latin-800.woff2" as="font" type="font/woff2" crossorigin>
 <style>{CSS}
 #pmap{{height:460px;border-radius:14px;border:1px solid var(--line)}}
 .pmlist{{list-style:none;padding:0;display:grid;gap:10px}} .pmlist li{{display:flex;gap:10px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:10px}}
@@ -803,7 +812,7 @@ def page_photomap(l, M=PM):
 <section class="prose">{"" if _route else f'<h2>{t["season_h"]}</h2><ul>{seasons}</ul>'}<h2>{t["tips_h"]}</h2><ul>{tips}</ul></section>
 <section>{cta_box(l, me)}</section>
 </main>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/vendor/leaflet/leaflet.js"></script>
 <script>
 (function(){{if(!window.L)return;var P={js};
 var m=L.map('pmap',{{scrollWheelZoom:false}});L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:18,attribution:'&copy; OpenStreetMap'}}).addTo(m);
@@ -875,8 +884,8 @@ def page_hub(l):
 <meta name="description" content="{desc}"><link rel="canonical" href="{BASE + me}">
 {alts}<meta property="og:type" content="article"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/airblade.jpg">
 {"".join(ldjson(x) for x in lds)}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="preload" href="/fonts/bvp-latin-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/bvp-latin-800.woff2" as="font" type="font/woff2" crossorigin>
 <style>{CSS}
 #pmap{{height:480px;border-radius:14px;border:1px solid var(--line)}}
 .pmn{{flex:none;width:28px;height:28px;border-radius:50%;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}} .pmn.ev{{background:#0f7a4f}} .pmn.gas{{background:#c06a00}}
@@ -899,7 +908,7 @@ def page_hub(l):
 <section class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px"><h2>{t["cta_h"]}</h2><p>{t["cta"]}</p><p><a class="btn" href="{rel(me, home_path(l))}">{kw_rent(l)} →</a> <a class="btn alt" href="{rel(me, ev_path(l))}" style="border:1px solid var(--line)">{EV[l]["h1"]} →</a></p></section>
 <section>{contact_box(l)}</section>
 </main>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/vendor/leaflet/leaflet.js"></script>
 <script>
 (function(){{if(!window.L)return;var P={js};
 var m=L.map('pmap',{{scrollWheelZoom:false}});L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:18,attribution:'&copy; OpenStreetMap'}}).addTo(m);
@@ -939,7 +948,7 @@ def page_day(l):
 <meta name="description" content="{t["desc"]}"><link rel="canonical" href="{BASE + me}">
 {alts}<meta property="og:type" content="article"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/airblade.jpg">
 {"".join(ldjson(x) for x in lds)}
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
+<link rel="preload" href="/fonts/bvp-latin-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/bvp-latin-800.woff2" as="font" type="font/woff2" crossorigin>
 <style>{CSS}
 </style></head><body>
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
