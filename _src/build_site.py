@@ -119,6 +119,10 @@ table.price tr:last-child td{border-bottom:0}
 .float.f2{bottom:74px}
 .float.tgf{background:#229ED9}
 .float.zf{background:#0068FF}
+.float.f3{bottom:132px}
+.float.callf{background:#f2b632;color:#173d2d}
+.btn.callb{background:#f2b632;color:#173d2d}
+.footcall{display:block;margin:0 0 8px;font-size:15px}.footcall a{color:#fff;font-weight:700;text-decoration:none}
 html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 html[dir=rtl] .checks li{padding:12px 40px 12px 14px}
 html[dir=rtl] .checks li:before{left:auto;right:14px}
@@ -226,14 +230,21 @@ def btn(kind, l, cls_extra=""):
     raise KeyError(kind)
 
 HERO = {"ru": ["tg", "wa", "yamap", "wc"], "zh": ["wc", "wa", "amap", "gmap"], "vi": ["zalo", "wa", "gmap"]}
-def hero_btns(l): return "\n".join(btn(k, l) for k in HERO.get(l, ["wa", "gmap"]))
+def hero_btns(l): return "\n".join(btn(k, l) for k in HERO.get(l, ["wa", "gmap"])) + f'\n<a class="btn callb" href="{TEL}">📞 {CALL[l][0]} {phone_txt(l)}</a>'
 
+TEL = "tel:+84944081101"
+CALL = {"vi": ("Gọi", "Điện thoại"), "en": ("Call", "Phone"), "ru": ("Позвонить", "Телефон"), "zh": ("电话", "电话"), "ko": ("전화", "전화"),
+        "ja": ("電話", "電話"), "th": ("โทร", "โทรศัพท์"), "id": ("Telepon", "Telepon"), "ms": ("Telefon", "Telefon"), "de": ("Anrufen", "Telefon"),
+        "fr": ("Appeler", "Téléphone"), "es": ("Llamar", "Teléfono"), "he": ("התקשרו", "טלפון"), "it": ("Chiama", "Telefono"), "nl": ("Bellen", "Telefoon"),
+        "km": ("ហៅ", "ទូរស័ព្ទ"), "lo": ("ໂທ", "ໂທລະສັບ"), "my": ("ဖုန်းခေါ်", "ဖုန်း")}
+def phone_txt(l): return "0944 081 101" if l == "vi" else "+84 944 081 101"
+def call_float(l, pos): return f'<a class="float {pos} callf" href="{TEL}" aria-label="{CALL[l][1]} {phone_txt(l)}">📞 {CALL[l][0]}</a>'
 def floats(l):
     if l == "ru":
-        return f'<a class="float f2 tgf" href="{TG}" target="_blank" rel="noopener">Telegram</a>\n<a class="float" href="{wa_link(l)}" target="_blank" rel="noopener">WhatsApp</a>'
+        return call_float(l, "f3") + f'\n<a class="float f2 tgf" href="{TG}" target="_blank" rel="noopener">Telegram</a>\n<a class="float" href="{wa_link(l)}" target="_blank" rel="noopener">WhatsApp</a>'
     if l == "vi":
-        return f'<a class="float f2 zf" href="{ZALO}" target="_blank" rel="noopener">Zalo</a>\n<a class="float" href="{wa_link(l)}" target="_blank" rel="noopener">WhatsApp</a>'
-    return f'<a class="float" href="{wa_link(l)}" target="_blank" rel="noopener">WhatsApp</a>'
+        return call_float(l, "f3") + f'\n<a class="float f2 zf" href="{ZALO}" target="_blank" rel="noopener">Zalo</a>\n<a class="float" href="{wa_link(l)}" target="_blank" rel="noopener">WhatsApp</a>'
+    return call_float(l, "f2") + f'\n<a class="float" href="{wa_link(l)}" target="_blank" rel="noopener">WhatsApp</a>'
 
 # Google Maps reviews block (real reviews only — never on-site star widgets)
 REV = {
@@ -324,7 +335,8 @@ def cta_box(l, frm):
 
 def contacts(l):
     h = C[l]["home"]
-    rows = [f'<p><b>WhatsApp:</b> <a href="{wa_link(l)}">+84 944 081 101</a> · <a href="{WA2}">+84 834 622 149</a></p>',
+    rows = [f'<p><b>📞 {CALL[l][1]}:</b> <a href="{TEL}">{phone_txt(l)}</a></p>',
+            f'<p><b>WhatsApp:</b> <a href="{wa_link(l)}">+84 944 081 101</a> · <a href="{WA2}">+84 834 622 149</a></p>',
             f'<p><b>Zalo:</b> <a href="{ZALO}">0944 081 101</a></p>',
             f'<p><b>Telegram:</b> <a href="{TG}">@vanphudalat</a></p>']
     if l == "ru":
@@ -378,7 +390,7 @@ def foot(l, root_redirect=False, frm=None):
     kw = ""
     if frm is not None:
         kw = f'<br><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a> · <a href="{rel(frm, routes_path(l))}">{C[l]["routes"]["h1"]}</a>'
-    return f"""<footer>{u["footer"]}{kw}</footer>
+    return f"""<footer><span class="footcall">📞 {CALL[l][1]}: <a href="{TEL}">{phone_txt(l)}</a></span>{u["footer"]}{kw}</footer>
 {floats(l)}
 <div class="lb" id="lb"><img alt=""></div>
 <script>
