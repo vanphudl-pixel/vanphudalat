@@ -64,7 +64,7 @@ ART["en"] = {
 </ul>
 <p>Route ideas with distances are on our page <a href="{ROUTES}">5 routes around Da Lat</a>.</p>
 <h2>Same service on every bike</h2>
-<p>Every bike is 150,000 VND per day and comes with a free helmet and phone holder, no cash deposit (you leave your passport or ID card) and free hotel delivery in the center for 2+ days. See the full <a href="{HOME}">Da Lat motorbike rental</a> page or message us on WhatsApp — we'll help you pick the right bike.</p>
+<p>Every bike is 150,000 VND per day and comes with a helmet and phone holder, no cash deposit (you leave your passport or ID card) and free hotel delivery in the center for 2+ days. See the full <a href="{HOME}">Da Lat motorbike rental</a> page or message us on WhatsApp — we'll help you pick the right bike.</p>
 """),
 }
 
@@ -138,7 +138,7 @@ ART["ru"] = {
 "price": ("tseny-arenda-bayka-dalat",
  "Цены на аренду байка в Далате 2026: сколько стоит в день | Van Phu",
  "Аренда байка в Далате: цены 2026 и что входит в стоимость",
- "Сколько стоит аренда байка в Далате в 2026 году: 150 000 VND в день, шлем в подарок, без денежного залога. Как избежать скрытых расходов.",
+ "Сколько стоит аренда байка в Далате в 2026 году: 150 000 VND в день, шлем включён, без денежного залога. Как избежать скрытых расходов.",
  "Перед арендой скутера в Далате полезно знать, что именно входит в цену. Рассказываем, как устроены наши цены и что уточнить в любом прокате.",
  "fleet-gas", """
 <h2>Цена: 150 000 VND в день</h2>

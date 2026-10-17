@@ -17,7 +17,7 @@ EV["en"] = dict(
  ('Load', 'max. 2 people, total weight under 100 kg'),
  ('Rental day', 'from pickup until 9:00 PM; shop opens 4:30 AM'),
  ('Deposit', 'no cash — leave your passport or ID card'),
- ('Included', 'free helmet and phone holder'),
+ ('Included', 'helmet included and phone holder'),
  ('Delivery', 'free to central Da Lat hotels for rentals of 2+ days')],
  h_good='Great for',
  good=['Riding around the center: Xuan Huong Lake, the night market, Crazy House, cafés.',
@@ -74,7 +74,7 @@ EV["ru"] = dict(
  slug='arenda-elektroskutera-dalat',
  title='Аренда электроскутера в Далате — 150 000 VND в день | Van Phu',
  desc=('Аренда электроскутера в Далате: 150 000 VND в день, одной батареи хватает примерно на 35–40 км (на каждом байке 2 батареи — всего около 60–70 км), замена батареи 20 000 VND, без денежного '
- 'залога, шлем в подарок. Бронь в WhatsApp.'),
+ 'залога, шлем включён. Бронь в WhatsApp.'),
  h1='Аренда электроскутера в Далате',
  lead='Тихий, лёгкий и простой в управлении — электроскутер идеально подходит для прогулок по центру Далата. 150 000 VND в день.',
  crumb='Электроскутеры',
@@ -337,7 +337,7 @@ EV["fr"] = dict(
  slug='location-scooter-electrique-dalat',
  title='Location de scooter électrique à Da Lat – 150 000 VND/jour | Van Phu',
  desc=('Location de scooter électrique à Da Lat : 150 000 VND par jour, une batterie permet environ 35–40 km (chaque scooter a 2 batteries, environ 60–70 km au total), échange de batterie 20 000 VND, sans '
- 'caution en espèces, casque offert. Réservation sur WhatsApp.'),
+ 'caution en espèces, casque inclus. Réservation sur WhatsApp.'),
  h1='Location de scooter électrique à Da Lat',
  lead='Silencieux, léger et facile à conduire, nos scooters électriques sont parfaits pour découvrir le centre de Da Lat. 150 000 VND par jour.',
  crumb='Scooters électriques',
@@ -410,7 +410,7 @@ EV["es"] = dict(
 EV["he"] = dict(
  slug='electric-scooter-rental-dalat',
  title='השכרת קטנוע חשמלי בדאלאט – 150,000 VND ליום | Van Phu',
- desc=('השכרת קטנוע חשמלי בדאלאט: 150,000 VND ליום, סוללה אחת מספיקה לכ-35–40 ק"מ (בכל קטנוע 2 סוללות, בסך הכול כ-60–70 ק״מ), החלפת סוללה 20,000 VND, ללא פיקדון במזומן, קסדה מתנה. הזמנה '
+ desc=('השכרת קטנוע חשמלי בדאלאט: 150,000 VND ליום, סוללה אחת מספיקה לכ-35–40 ק"מ (בכל קטנוע 2 סוללות, בסך הכול כ-60–70 ק״מ), החלפת סוללה 20,000 VND, ללא פיקדון במזומן, קסדה כלולה. הזמנה '
  'בוואטסאפ.'),
  h1='השכרת קטנוע חשמלי בדאלאט',
  lead='שקט, קל ונוח לרכיבה – הקטנועים החשמליים שלנו מושלמים לטיול במרכז דאלאט. 150,000 VND ליום.',

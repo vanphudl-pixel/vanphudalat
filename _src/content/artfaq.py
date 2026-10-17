@@ -124,7 +124,7 @@ FAQ = {
  ],
  "evgas": [
   ("Should I rent an electric or a gas scooter in Da Lat?", "For the city and short trips, an electric scooter is quiet and easy. For passes, the Cau Dat tea hills, Lang Biang or far waterfalls, take a gas scooter — best the Honda Air Blade 125cc."),
-  ("Is there a price difference?", "No — both cost 150,000 VND per day, with a free helmet and phone holder."),
+  ("Is there a price difference?", "No — both cost 150,000 VND per day, with a helmet included and phone holder."),
   ("How far does an electric scooter go?", "About 35–40 km (each bike comes with 2 batteries, about 60–70 km in total) per battery; a battery swap at our shop costs 20,000 VND."),
  ],
 },
