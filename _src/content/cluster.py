@@ -2,7 +2,7 @@
 (newest first), then the newest other articles. Add every new article key to the right cluster."""
 CLUSTERS = {
     # Group 1 — no cash deposit & quick paperwork
-    "procedure": ["lt-nodeposit", "lt-procedure", "lt-documents", "lt-booking", "lt-checklist", "lt-reliable", "lt-first-time"],
+    "procedure": ["lt-nodeposit", "lt-procedure", "lt-documents", "lt-booking", "lt-checklist", "lt-reliable", "lt-first-time", "lt-foreigners"],
     # Group 2 — early opening / cloud hunting / sunrise
     "early": ["cloudhunt", "caudat", "lt-early", "lt-caudat-early", "langbiang"],
     # Group 3 — electric scooters
@@ -10,8 +10,8 @@ CLUSTERS = {
            "lt-ev-beginners", "lt-ev-cafes", "lt-ev-night", "lt-ev-rain", "lt-ev-vs-grab", "lt-ev-eco", "lt-ev-parking",
            "lt-ev-halfday", "lt-ev-checklist", "lt-ev-families", "lt-ev-faq"],
     # Group 4 — delivery & location
-    "location": ["lt-delivery", "lt-center", "nightmarket", "thingstodo"],
+    "location": ["lt-busstation", "lt-delivery", "lt-center", "nightmarket", "thingstodo"],
     # bikes & trip length
-    "bikes": ["lt-airblade", "lt-vision", "lt-two", "lt-multiday", "lt-backpacker", "lt-rainy", "riding"],
+    "bikes": ["lt-automatic", "lt-2days", "lt-airblade", "lt-vision", "lt-two", "lt-multiday", "lt-backpacker", "lt-rainy", "riding"],
 }
 GROUP = {k: g for g, ks in CLUSTERS.items() for k in ks}
