@@ -45,6 +45,9 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-10-16 nightmarket — Da Lat night market guide: what to eat and buy (18 languages)
 - 2026-10-16 lt-procedure — Long-tail: how to rent a motorbike in Da Lat step by step (18 languages)
 - 2026-10-16 lt-ev-foreigners — EV long-tail: electric scooter rental in Da Lat for foreigners (18 languages; first article of the daily EV series)
+- 2026-10-17 langbiang — Lang Biang Mountain guide by motorbike (Radar Peak by jeep/on foot, summit trail; 18 languages; photos group-rental-air-blade-van-phu-morning + van-phu-guest-air-blade-thumbs-up)
+- 2026-10-17 lt-documents — Long-tail: what you need to rent a motorbike in Da Lat (passport/CCCD only; vi "thuê xe máy Đà Lạt cần giấy tờ gì"; 18 languages)
+- 2026-10-17 lt-ev-experience — EV long-tail: practical tips for renting an electric scooter in Da Lat (vi "kinh nghiệm thuê xe điện ở Đà Lạt"; 18 languages)
 
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
@@ -57,7 +60,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - OWNER'S KEYWORD PLAN (16/10/2026): focus on 4 niche groups — (1) no cash deposit & quick paperwork, (2) early opening / cloud hunting / sunrise, (3) electric scooters (EV backlog), (4) delivery & location. Each topic below lists its exact Vietnamese target keyword → the vi title_tag, H1 and meta must contain it verbatim (natural capitalisation); other languages use their own natural equivalent.
 - Internal links: add every new key to its cluster in `content/cluster.py` ("Read also" then shows cluster siblings first), and link 1–2 sibling articles in the body with <a href="{ART:<key>}">…</a>.
 - "Documents" topics: the ONLY documents are passport (foreigners) or CCCD/ID card (Vietnamese guests). Never mention any other document, licence or permit.
-- [ ] lt-documents — [Group 1] What you need to rent a motorbike in Da Lat: only a passport or CCCD, no cash deposit, payment, what to bring — vi: "thuê xe máy đà lạt cần giấy tờ gì" (link lt-nodeposit, lt-procedure)
 - [ ] lt-early — [Group 2] Early-opening motorbike rental in Da Lat: shop opens 4:30 am every day, pick up the night before or at dawn — vi: "thuê xe máy đà lạt mở cửa sớm" (also "tiệm thuê xe máy mở từ 4 giờ sáng đà lạt"; link cloudhunt)
 - [ ] lt-delivery — [Group 4] Motorbike rental with delivery to your hotel in Da Lat: free in central Da Lat for 2+ days, what to send (hotel name, time), check the bike together at handover — vi: "thuê xe máy giao tận khách sạn đà lạt"
 - [ ] lt-center — [Group 4] Motorbike rental near central Da Lat: shop at 1/15/5 Thông Thiên Học, getting there on foot/Grab from the market and Xuan Huong Lake (approximate only) — vi: "thuê xe máy gần trung tâm đà lạt"
@@ -84,7 +86,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 100 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-experience — [Group 3] Tips for renting an electric scooter in Da Lat (what to know before, battery, hills, parking, rules) — vi: "kinh nghiệm thuê xe điện ở đà lạt"
 - [ ] lt-ev-city — [Group 3] Exploring the city on an electric scooter: relaxed central routes, plan around the battery, swap at the shop, avoid long passes — vi: "xe điện đi dạo thành phố đà lạt"
 - [ ] lt-ev-price — [Group 3] vi: "giá thuê xe máy điện đà lạt" — Electric scooter rental price in Da Lat (150,000 VND/day, what's included, battery swap 20,000 VND) — link to price article, don't copy it
 - [ ] lt-ev-battery — Electric scooter battery in Da Lat: how far you can go, when to swap, tips for hills and two riders
@@ -102,7 +103,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-faq — Electric scooter rental in Da Lat: 10 common questions answered
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 17/10 langbiang — Lang Biang Mountain guide by motorbike
 - [ ] 19/10 coffee — Coffee with a view: Da Lat cafés reachable by bike (types/areas, only very famous names)
 - [ ] 20/10 rainyday — What to do in Da Lat on a rainy day
 - [ ] 21/10 tuyenlam — Tuyen Lam Lake & Truc Lam Monastery guide
