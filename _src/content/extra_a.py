@@ -47,7 +47,7 @@ ART["en"] = {
 <li>Quiet, no gears, no fuel stops.</li>
 <li>One battery lasts about <b>35–40 km</b> (each bike comes with 2 batteries, about 60–70 km in total) (battery swap at our shop: 20,000 VND) — enough for the center and nearby sights.</li>
 <li>Low power: slow on steep hills and passes.</li>
-<li>Two riders only if your combined weight is under 100 kg.</li>
+<li>Two riders only if your combined weight is under 140 kg.</li>
 </ul>
 <p>More details: <a href="{EV}">electric scooter rental in Da Lat</a>.</p>
 <h2>Gas scooter: pros and limits</h2>
@@ -113,7 +113,7 @@ ART["vi"] = {
 <li>Êm, không số, không phải đổ xăng.</li>
 <li>1 cục pin đi được khoảng <b>35–40 km</b> (mỗi xe có 2 pin, tổng khoảng 60–70 km) (đổi pin tại cửa hàng 20.000 VND/lần), đủ cho trung tâm và các điểm gần.</li>
 <li>Công suất thấp, leo dốc và đèo sẽ chậm.</li>
-<li>Chở 2 người khi tổng cân nặng dưới 100 kg.</li>
+<li>Chở 2 người khi tổng cân nặng dưới 140 kg.</li>
 </ul>
 <p>Xem chi tiết: <a href="{EV}">thuê xe máy điện Đà Lạt</a>.</p>
 <h2>Xe xăng: ưu điểm và giới hạn</h2>
@@ -179,7 +179,7 @@ ART["ru"] = {
 <li>Тихий, без передач и заправок.</li>
 <li>Одной батареи хватает примерно на <b>35–40 км</b> (на каждом байке 2 батареи — всего около 60–70 км) (замена батареи у нас — 20 000 VND) — хватит на центр и ближайшие места.</li>
 <li>Небольшая мощность: медленно едет в крутые подъёмы.</li>
-<li>Вдвоём — только если общий вес меньше 100 кг.</li>
+<li>Вдвоём — только если общий вес меньше 140 кг.</li>
 </ul>
 <p>Подробнее: <a href="{EV}">аренда электроскутера в Далате</a>.</p>
 <h2>Бензиновый скутер: плюсы и ограничения</h2>
@@ -245,7 +245,7 @@ ART["zh"] = {
 <li>安静，无需换挡，不用加油。</li>
 <li>一块电池约可行驶 <b>35–40 公里</b>（每辆车配 2 块电池，共约 60–70 公里）（店内换电池每次 20,000 VND），足够市中心和附近景点。</li>
 <li>功率小，陡坡和山路较慢。</li>
-<li>两人总体重低于 100 公斤才能双人骑行。</li>
+<li>两人总体重低于 140 公斤才能双人骑行。</li>
 </ul>
 <p>详情：<a href="{EV}">大叻电动车租赁</a>。</p>
 <h2>汽油车：优点与限制</h2>
@@ -311,7 +311,7 @@ ART["ko"] = {
 <li>조용하고 기어·주유가 필요 없음.</li>
 <li>배터리 1개로 약 <b>35–40km</b>(차량마다 배터리 2개, 총 약 60–70km) 주행(매장에서 배터리 교체 20,000 VND) — 시내와 근교에 충분.</li>
 <li>출력이 낮아 가파른 언덕에서 느림.</li>
-<li>두 사람 총 체중 100kg 미만일 때만 2인 탑승.</li>
+<li>두 사람 총 체중 140kg 미만일 때만 2인 탑승.</li>
 </ul>
 <p>자세히: <a href="{EV}">달랏 전기 스쿠터 렌탈</a>.</p>
 <h2>가솔린 스쿠터: 장점과 한계</h2>
@@ -377,7 +377,7 @@ ART["ja"] = {
 <li>静かでギアも給油も不要。</li>
 <li>バッテリー1個で約<b>35–40km</b>（1台にバッテリー2個、合計約60〜70km）（店頭でのバッテリー交換は20,000 VND）——中心部と近場には十分。</li>
 <li>パワーが小さく、急な坂ではゆっくり。</li>
-<li>2人の合計体重が100kg未満の場合のみ2人乗り可。</li>
+<li>2人の合計体重が140kg未満の場合のみ2人乗り可。</li>
 </ul>
 <p>詳しくは<a href="{EV}">ダラットの電動スクーターレンタル</a>へ。</p>
 <h2>ガソリンスクーター：長所と限界</h2>
@@ -443,7 +443,7 @@ ART["th"] = {
 <li>เงียบ ไม่มีเกียร์ ไม่ต้องเติมน้ำมัน</li>
 <li>แบต 1 ก้อนวิ่งได้ประมาณ <b>35–40 กม.</b> (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 60–70 กม.) (เปลี่ยนแบตที่ร้าน 20,000 VND) พอสำหรับในเมืองและที่ใกล้ ๆ</li>
 <li>กำลังน้อย ขึ้นเนินชันช้า</li>
-<li>ซ้อนสองคนได้เมื่อน้ำหนักรวมไม่เกิน 100 กก.</li>
+<li>ซ้อนสองคนได้เมื่อน้ำหนักรวมไม่เกิน 140 กก.</li>
 </ul>
 <p>รายละเอียด: <a href="{EV}">เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด</a></p>
 <h2>รถน้ำมัน: ข้อดีและข้อจำกัด</h2>

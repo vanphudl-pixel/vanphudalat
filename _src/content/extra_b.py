@@ -46,7 +46,7 @@ ART["id"] = {
 <li>Senyap, tanpa gigi, tanpa isi bensin.</li>
 <li>Satu baterai cukup untuk sekitar <b>35–40 km</b> (setiap motor dilengkapi 2 baterai, total sekitar 60–70 km) (tukar baterai di toko kami 20.000 VND) — cukup untuk kota dan sekitarnya.</li>
 <li>Tenaga kecil: pelan di tanjakan curam.</li>
-<li>Berboncengan hanya jika total berat di bawah 100 kg.</li>
+<li>Berboncengan hanya jika total berat di bawah 140 kg.</li>
 </ul>
 <p>Selengkapnya: <a href="{EV}">sewa motor listrik di Da Lat</a>.</p>
 <h2>Motor bensin: kelebihan dan batasan</h2>
@@ -112,7 +112,7 @@ ART["ms"] = {
 <li>Senyap, tiada gear, tiada isi minyak.</li>
 <li>Satu bateri boleh pergi kira-kira <b>35–40 km</b> (setiap skuter ada 2 bateri, jumlah kira-kira 60–70 km) (tukar bateri di kedai kami 20,000 VND) — cukup untuk bandar dan sekitarnya.</li>
 <li>Kuasa rendah: perlahan di bukit curam.</li>
-<li>Berdua hanya jika jumlah berat bawah 100 kg.</li>
+<li>Berdua hanya jika jumlah berat bawah 140 kg.</li>
 </ul>
 <p>Lagi maklumat: <a href="{EV}">sewa skuter elektrik di Da Lat</a>.</p>
 <h2>Skuter petrol: kelebihan dan had</h2>
@@ -178,7 +178,7 @@ ART["de"] = {
 <li>Leise, ohne Schalten und Tanken.</li>
 <li>Ein Akku reicht für etwa <b>35–40 km</b> (jeder Roller hat 2 Akkus, zusammen etwa 60–70 km) (Akkutausch bei uns 20.000 VND) – genug für Zentrum und Umgebung.</li>
 <li>Wenig Leistung: langsam an steilen Hängen.</li>
-<li>Zu zweit nur, wenn beide zusammen unter 100 kg wiegen.</li>
+<li>Zu zweit nur, wenn beide zusammen unter 140 kg wiegen.</li>
 </ul>
 <p>Mehr dazu: <a href="{EV}">E-Roller mieten in Da Lat</a>.</p>
 <h2>Benzinroller: Vorteile und Grenzen</h2>
@@ -244,7 +244,7 @@ ART["fr"] = {
 <li>Silencieux, sans vitesses ni plein.</li>
 <li>Une batterie permet environ <b>35–40 km</b> (chaque scooter a 2 batteries, environ 60–70 km au total) (échange de batterie chez nous : 20 000 VND) — assez pour le centre et les environs.</li>
 <li>Peu puissant : lent dans les côtes raides.</li>
-<li>À deux seulement si le poids total est inférieur à 100 kg.</li>
+<li>À deux seulement si le poids total est inférieur à 140 kg.</li>
 </ul>
 <p>Plus de détails : <a href="{EV}">location de scooter électrique à Da Lat</a>.</p>
 <h2>Scooter à essence : atouts et limites</h2>
@@ -310,7 +310,7 @@ ART["es"] = {
 <li>Silencioso, sin marchas ni repostajes.</li>
 <li>Una batería da para unos <b>35–40 km</b> (cada moto lleva 2 baterías, unos 60–70 km en total) (cambio de batería en nuestra tienda: 20.000 VND), suficiente para el centro y alrededores.</li>
 <li>Poca potencia: lento en cuestas empinadas.</li>
-<li>Para dos solo si el peso total es inferior a 100 kg.</li>
+<li>Para dos solo si el peso total es inferior a 140 kg.</li>
 </ul>
 <p>Más detalles: <a href="{EV}">alquiler de scooter eléctrico en Da Lat</a>.</p>
 <h2>Scooter de gasolina: ventajas y límites</h2>
@@ -376,7 +376,7 @@ ART["he"] = {
 <li>שקט, בלי הילוכים ובלי תדלוק.</li>
 <li>סוללה אחת מספיקה לכ-<b>35–40 ק"מ</b> (בכל קטנוע 2 סוללות, בסך הכול כ-60–70 ק״מ) (החלפת סוללה אצלנו: 20,000 VND) – מספיק למרכז ולסביבה.</li>
 <li>הספק נמוך: איטי בעליות תלולות.</li>
-<li>בשניים רק אם המשקל הכולל מתחת ל-100 ק"ג.</li>
+<li>בשניים רק אם המשקל הכולל מתחת ל-140 ק"ג.</li>
 </ul>
 <p>עוד פרטים: <a href="{EV}">השכרת קטנוע חשמלי בדאלאט</a>.</p>
 <h2>קטנוע בנזין: יתרונות ומגבלות</h2>
