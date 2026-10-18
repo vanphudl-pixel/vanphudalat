@@ -48,6 +48,9 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-10-17 langbiang — Lang Biang Mountain guide by motorbike (Radar Peak by jeep/on foot, summit trail; 18 languages; photos group-rental-air-blade-van-phu-morning + van-phu-guest-air-blade-thumbs-up)
 - 2026-10-17 lt-documents — Long-tail: what you need to rent a motorbike in Da Lat (passport/CCCD only; vi "thuê xe máy Đà Lạt cần giấy tờ gì"; 18 languages)
 - 2026-10-17 lt-ev-experience — EV long-tail: practical tips for renting an electric scooter in Da Lat (vi "kinh nghiệm thuê xe điện ở Đà Lạt"; 18 languages)
+- 2026-10-18 coffee — Coffee with a view: Da Lat cafés by area by motorbike (links cafe-view-map + night-view-cafe-map, nightmarket; photos white-honda-vision-sidewalk-dalat + honda-vision-cafe-garden-dalat + couple-air-blade-dalat-center-street; 18 languages)
+- 2026-10-18 lt-early — Long-tail: early-opening motorbike rental, shop opens 4:30 am (vi "thuê xe máy Đà Lạt mở cửa sớm"; links cloudhunt, caudat, cloud-hunting-map; photos van-phu-shop-early-pickup-air-blade + evening-pickup-van-phu-1-15-5-thong-thien-hoc; 18 languages)
+- 2026-10-18 lt-ev-city — EV long-tail: exploring the city by electric scooter (vi "xe điện đi dạo thành phố Đà Lạt"; links evrules, lt-ev-experience; photos electric-scooters-van-phu-shop + guest-white-electric-scooter-dalat; 18 languages)
 
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
@@ -61,7 +64,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - OWNER'S KEYWORD PLAN 2 (17/10/2026, English-search priorities): each topic below marked [KW2] lists an exact English target phrase → the en title_tag, H1 and meta must contain it (natural capitalisation); vi and other languages use their natural equivalent. Already covered, do NOT write new articles for: "Dalat motorbike rental price" / "How much does it cost to rent a scooter in Dalat" (existing `price`), "Dalat motorbike rental requirements" (lt-documents), "Best places to visit around Dalat by scooter" (routes page + photospots), "What to know before riding a scooter in Dalat" (riding + lt-first-time). Never write "international driving permit" / "can foreigners legally ride" topics — they break the no-licence hard rule.
 - Internal links: add every new key to its cluster in `content/cluster.py` ("Read also" then shows cluster siblings first), and link 1–2 sibling articles in the body with <a href="{ART:<key>}">…</a>.
 - "Documents" topics: the ONLY documents are passport (foreigners) or CCCD/ID card (Vietnamese guests). Never mention any other document, licence or permit.
-- [ ] lt-early — [Group 2] Early-opening motorbike rental in Da Lat: shop opens 4:30 am every day, pick up the night before or at dawn — vi: "thuê xe máy đà lạt mở cửa sớm" (also "tiệm thuê xe máy mở từ 4 giờ sáng đà lạt"; link cloudhunt)
 - [ ] lt-busstation — [KW2][Group 4] Motorbike rental near Da Lat bus station: how to get from the inter-provincial bus station to our shop/the center (approximate distance, Grab/taxi/walk — no invented fares), pick up right after arriving, link saigon-bus-map — en: "motorbike rental near Dalat bus station" (also "how to get from Dalat bus station to the city center") — vi: "thuê xe máy gần bến xe đà lạt"
 - [ ] lt-automatic — [KW2] Automatic scooter rental in Da Lat: all our bikes are automatic (Honda Vision, Air Blade, electric) — no gears or clutch, which one to pick, first-ride tips; don't repeat lt-vision/lt-airblade in depth — en: "automatic scooter rental Dalat" (also "how to rent an automatic scooter in Dalat") — vi: "thuê xe tay ga đà lạt"
 - [ ] lt-2days — [KW2] Renting a scooter in Da Lat for 2 days: how the 2 days are counted (pick-up until 21:00), free hotel delivery in central Da Lat from 2 days, a simple 2-day plan linking days2 — en: "rent a scooter in Dalat for 2 days" — vi: "thuê xe máy đà lạt 2 ngày"
@@ -91,7 +93,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 100 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-city — [Group 3] Exploring the city on an electric scooter: relaxed central routes, plan around the battery, swap at the shop, avoid long passes — vi: "xe điện đi dạo thành phố đà lạt"
 - [ ] lt-ev-price — [Group 3] vi: "giá thuê xe máy điện đà lạt" — Electric scooter rental price in Da Lat (150,000 VND/day, what's included, battery swap 20,000 VND) — link to price article, don't copy it
 - [ ] lt-ev-battery — Electric scooter battery in Da Lat: how far you can go, when to swap, tips for hills and two riders
 - [ ] lt-ev-couples — Electric scooter for two in Da Lat (combined under 100 kg, comfort, when to pick the Air Blade instead)
@@ -108,7 +109,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-faq — Electric scooter rental in Da Lat: 10 common questions answered
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 19/10 coffee — Coffee with a view: Da Lat cafés reachable by bike (types/areas, only very famous names)
 - [ ] 20/10 days2 — [KW2] Da Lat in 2 days 1 night by motorbike — en: "Dalat 2 day itinerary by motorbike" (link lt-2days once published)
 - [ ] 21/10 getaround — [KW2] How to get around Da Lat without a car: walking, Grab/taxi, local buses, renting a scooter — honest pros/cons, no invented fares — en: "how to get around Dalat without a car"
 - [ ] 22/10 selfguided — [KW2] Exploring Da Lat on your own without a tour: planning a self-guided motorbike day (offline maps, fuel/battery, timing, weather, safety), linking routes page; not an itinerary (that's oneday/days2) — en: "Dalat self guided motorbike route" (also "how to explore Dalat without a tour")
