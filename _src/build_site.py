@@ -456,7 +456,7 @@ def business_ld(l, url):
                                ["Free helmet", "Phone holder", "1 liter of fuel (gas scooters)", "Free hotel delivery in central Da Lat (2+ days)", "No cash deposit (passport or ID held)"]],
             "description": h["desc"], "url": url, "image": BASE + "img/electric-row.jpg",
             "telephone": "+84944081101", "priceRange": "150,000 VND",
-            "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Đà Lạt", "addressCountry": "VN"},
+            "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Đà Lạt", "addressRegion": "Lâm Đồng", "addressCountry": "VN"},
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
             "sameAs": ["https://www.facebook.com/vanphudalat", YT, "https://www.tiktok.com/@bietthudalat", TG, ZALO],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
