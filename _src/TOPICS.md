@@ -54,6 +54,9 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-10-19 days2 — Da Lat 2 days 1 night by motorbike (en "Dalat 2 day itinerary by motorbike"; links waterfalls, nightmarket, caudat, days3; photos friends-air-blade-van-phu-gate + honda-vision-bui-thi-xuan-street-dalat + air-blade-handover-dalat-homestay; 18 languages) — add a link to lt-2days when it is published
 - 2026-10-19 lt-busstation — Long-tail: motorbike rental near Da Lat bus station (vi "thuê xe máy gần bến xe đà lạt", en "motorbike rental near Dalat bus station"; links saigon-bus-map, lt-procedure; photos honda-air-blade-vision-fleet-van-phu + honda-vision-hotel-delivery-dalat; 18 languages)
 - 2026-10-19 lt-ev-price — EV long-tail: electric scooter rental price (vi "giá thuê xe máy điện đà lạt"; links price, evrules; photos electric-scooters-helmets-van-phu + electric-scooters-van-phu-shop; 18 languages)
+- 2026-10-22 getaround — How to get around Dalat without a car (en "how to get around Dalat without a car", vi "cách di chuyển ở Đà Lạt không cần ô tô"; links days2, riding, routes; photos honda-vision-girls-helmets-dalat + couple-air-blade-dalat-center-street; 18 languages)
+- 2026-10-22 lt-automatic — Long-tail: automatic scooter rental (vi "thuê xe tay ga Đà Lạt", en "automatic scooter rental Dalat"; links lt-procedure; photos van-phu-shop-busy-morning-vision-air-blade + guest-white-honda-vision-van-phu-shop; 18 languages)
+- 2026-10-22 lt-ev-battery — EV long-tail: how far the battery goes, when to swap (vi "thuê xe máy điện Đà Lạt đi được bao xa"; links lt-ev-city, evrules; photos electric-scooters-van-phu-shop + guest-white-electric-scooter-dalat; 18 languages)
 
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
@@ -67,7 +70,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - OWNER'S KEYWORD PLAN 2 (17/10/2026, English-search priorities): each topic below marked [KW2] lists an exact English target phrase → the en title_tag, H1 and meta must contain it (natural capitalisation); vi and other languages use their natural equivalent. Already covered, do NOT write new articles for: "Dalat motorbike rental price" / "How much does it cost to rent a scooter in Dalat" (existing `price`), "Dalat motorbike rental requirements" (lt-documents), "Best places to visit around Dalat by scooter" (routes page + photospots), "What to know before riding a scooter in Dalat" (riding + lt-first-time). Never write "international driving permit" / "can foreigners legally ride" topics — they break the no-licence hard rule.
 - Internal links: add every new key to its cluster in `content/cluster.py` ("Read also" then shows cluster siblings first), and link 1–2 sibling articles in the body with <a href="{ART:<key>}">…</a>.
 - "Documents" topics: the ONLY documents are passport (foreigners) or CCCD/ID card (Vietnamese guests). Never mention any other document, licence or permit.
-- [ ] lt-automatic — [KW2] Automatic scooter rental in Da Lat: all our bikes are automatic (Honda Vision, Air Blade, electric) — no gears or clutch, which one to pick, first-ride tips; don't repeat lt-vision/lt-airblade in depth — en: "automatic scooter rental Dalat" (also "how to rent an automatic scooter in Dalat") — vi: "thuê xe tay ga đà lạt"
 - [ ] lt-2days — [KW2] Renting a scooter in Da Lat for 2 days: how the 2 days are counted (pick-up until 21:00), free hotel delivery in central Da Lat from 2 days, a simple 2-day plan linking days2 — en: "rent a scooter in Dalat for 2 days" — vi: "thuê xe máy đà lạt 2 ngày"
 - [ ] lt-foreigners — [KW2] Can foreigners rent a motorbike in Da Lat? Yes — passport only, no cash deposit, booking in English, all bike types; never discuss legality/licences; don't repeat lt-ev-foreigners (EV only), link it — en: "can foreigners rent a motorbike in Dalat" — vi: "khách nước ngoài thuê xe máy ở đà lạt"
 - [ ] lt-delivery — [Group 4] Motorbike rental with delivery to your hotel in Da Lat: free in central Da Lat for 2+ days, what to send (hotel name, time), check the bike together at handover — vi: "thuê xe máy giao tận khách sạn đà lạt"
@@ -95,7 +97,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-battery — Electric scooter battery in Da Lat: how far you can go, when to swap, tips for hills and two riders
 - [ ] lt-ev-couples — Electric scooter for two in Da Lat (combined under 140 kg, comfort, when to pick the Air Blade instead)
 - [ ] lt-ev-beginners — Electric scooter for beginners in Da Lat (no gears, quiet, first ride tips, Vietnam drives on the right)
 - [ ] lt-ev-cafes — Café hopping in Da Lat by electric scooter (areas, parking, short hops)
@@ -110,7 +111,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-faq — Electric scooter rental in Da Lat: 10 common questions answered
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 21/10 getaround — [KW2] How to get around Da Lat without a car: walking, Grab/taxi, local buses, renting a scooter — honest pros/cons, no invented fares — en: "how to get around Dalat without a car"
 - [ ] 22/10 selfguided — [KW2] Exploring Da Lat on your own without a tour: planning a self-guided motorbike day (offline maps, fuel/battery, timing, weather, safety), linking routes page; not an itinerary (that's oneday/days2) — en: "Dalat self guided motorbike route" (also "how to explore Dalat without a tour")
 - [ ] 20/10 rainyday — What to do in Da Lat on a rainy day
 - [ ] 21/10 tuyenlam — Tuyen Lam Lake & Truc Lam Monastery guide
