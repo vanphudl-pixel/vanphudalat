@@ -745,8 +745,26 @@ def speed(html):
         return f'<img {a}src="{pre}img/{path}"{b}{extra}>'
     return _IMG_RE.sub(sub, html)
 
+GA_ID = "G-EY9EPL0MQ0"
+GA = ('<script async src="https://www.googletagmanager.com/gtag/js?id=' + GA_ID + '"></script>'
+      '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
+      "gtag('js',new Date());gtag('config','" + GA_ID + "');"
+      "document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;"
+      "var h=a.getAttribute('href')||'',m=/wa\\.me|whatsapp/i.test(h)?'whatsapp':/zalo\\.me/i.test(h)?'zalo':/t\\.me\\//i.test(h)?'telegram':"
+      "/^tel:/i.test(h)?'phone':/weixin|wechat/i.test(h)?'wechat':/maps\\.app\\.goo\\.gl|google\\.[a-z.]+\\/maps/i.test(h)?'google_maps':'';"
+      "if(m)gtag('event','contact_click',{method:m,link_url:h,page_path:location.pathname});},true);</script>")
+
+def add_ga(html):
+    if "googletagmanager.com/gtag/js" in html:
+        return html
+    i = html.find('<meta charset="utf-8">')
+    if i < 0:
+        return html
+    i += len('<meta charset="utf-8">')
+    return html[:i] + GA + html[i:]
+
 def write(path, html):
-    html = speed(html)
+    html = add_ga(speed(html))
     p = OUT / path / "index.html"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(html, encoding="utf-8")
