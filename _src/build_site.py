@@ -429,6 +429,8 @@ def foot(l, root_redirect=False, frm=None):
     kw = ""
     if frm is not None:
         kw = f'<br><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a> · <a href="{rel(frm, routes_path(l))}">{C[l]["routes"]["h1"]}</a>'
+        if l == "vi":
+            kw += f' · <a href="{rel(frm, home_path("vi") + "phuong-xuan-huong/")}">Thuê xe máy theo tuyến đường phường Xuân Hương</a>'
     return f"""<footer><span class="footcall">📞 {CALL[l][1]}: <a href="{TEL}">{phone_txt(l)}</a> · <a href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></span>{u["footer"]}{kw}</footer>
 {floats(l)}
 <div class="lb" id="lb"><img alt=""></div>
@@ -586,6 +588,8 @@ def page_blog(l):
     me = blog_path(l)
     r = C[l]["routes"]
     extra = f'<a class="post" href="{rel(me, routes_path(l))}"><b>{r["h1"]}</b><span>{r["desc"]}</span></a>'
+    if l == "vi":
+        extra = f'<a class="post" href="{rel(me, home_path("vi") + "phuong-xuan-huong/")}"><b>Thuê xe máy Đà Lạt theo tuyến đường — phường Xuân Hương</b><span>Giao xe tận nơi theo từng con đường khu trung tâm: Bùi Thị Xuân, Phan Bội Châu, Trần Phú, Trương Công Định…</span></a>' + extra
     if l in DAY.LANGS:
         extra = f'<a class="post" href="{rel(me, lang_root(l) + DAY.SLUG[l] + "/")}"><b>{DAY.T[l]["h1"]}</b><span>{DAY.T[l]["desc"]}</span></a>' + extra
     if l in HUB.LANGS:
@@ -783,6 +787,121 @@ for l in LANGS:
     write(ev_path(l), page_ev(l))
     for k in ARTICLES:
         write(art_path(l, k), page_article(l, k))
+
+# ------------------------------------------------------------------ Vietnamese-only street pages (phường Xuân Hương)
+from content import streets_vi as ST
+def st_hub_path(): return home_path("vi") + ST.HUB_SLUG + "/"
+def st_path(s): return home_path("vi") + s[0] + "/"
+def st_head(me, title, desc, lds, img):
+    return f"""<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{BASE + me}">
+<meta property="og:type" content="article"><meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
+<meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/{img}.jpg">
+{"".join(ldjson(x) for x in lds)}
+<link rel="preload" href="/fonts/bvp-latin-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/bvp-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+<style>{CSS}</style>
+</head>
+<body>"""
+def st_top(me):
+    return f'<div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs"><a href="{rel(me, home_path("vi"))}" class="on" data-l="vi">VI</a></div></div>'
+def st_deliv(s):
+    if s[3]:
+        return (f"Văn Phú giao xe miễn phí tới khách sạn, homestay ở khu trung tâm Đà Lạt khi thuê từ 2 ngày. Đoạn đường {s[1]} nơi bạn ở có thể nằm ngoài vùng trung tâm — "
+                f"gọi 0944 081 101 hoặc nhắn Zalo kèm định vị để được báo ngay có giao được không. Thuê 1 ngày thì ghé tiệm 1/15/5 Thông Thiên Học (mở cửa từ 4:30 sáng).")
+    return (f"Có. Thuê từ 2 ngày, Văn Phú giao xe miễn phí tận khách sạn, homestay trên đường {s[1]} (khu trung tâm Đà Lạt). "
+            f"Thuê 1 ngày thì ghé tiệm 1/15/5 Thông Thiên Học, rất gần — tiệm mở cửa từ 4:30 sáng.")
+def page_street(i, s):
+    slug, name, area, outer, intro, tip, img = s
+    me = st_path(s)
+    pre = "../" * me.count("/")
+    alabel, ideas = ST.AREAS[area]
+    ideas_html = "".join("<li>" + re.sub(r"\{ART:([a-z0-9-]+)\}", lambda m: rel(me, art_path("vi", m.group(1))), x) + "</li>" for x in ideas)
+    h1 = f"Thuê xe máy Đà Lạt đường {name} — giao xe tận nơi"
+    title = f"Thuê xe máy Đà Lạt đường {name} | Giao xe tận nơi – Văn Phú"
+    desc = (f"Thuê xe máy ở đường {name}, Đà Lạt: Honda Vision, Air Blade 125cc, xe điện 150.000 VND/ngày. "
+            f"Không cọc tiền, kèm mũ bảo hiểm, giao xe tận khách sạn khi thuê từ 2 ngày. Gọi 0944 081 101.")
+    deliv = st_deliv(s)
+    qa = [(q.format(name=name), a.format(name=name, deliv=deliv)) for q, a in ST.FAQ]
+    same = [x for x in ST.S if x[2] == area and x[0] != slug]
+    k = [x[0] for x in ST.S].index(slug)
+    near = (same[k % max(len(same), 1):] + same[:k % max(len(same), 1)])[:4]
+    near_html = " · ".join(f'<a href="{rel(me, st_path(x))}">Thuê xe máy đường {x[1]}</a>' for x in near)
+    ev = rel(me, ev_path("vi"))
+    hub = rel(me, st_hub_path())
+    body = f"""
+<header><div class="wrap">{st_top(me)}
+<div class="hero">{crumbs("vi", me, [("Phường Xuân Hương", st_hub_path()), (f"Đường {name}", None)])}
+ <h1>{h1}</h1><p class="lead">{intro}</p><p class="upd"><time datetime="{ST.UPDATED}">{UPD["vi"]}: {fdate("vi", ST.UPDATED)}</time></p>
+ <div class="cta">{hero_btns("vi")}</div>
+</div></div></header>
+<main class="wrap">
+<section class="prose">
+<p><img src="{pre}img/{img}.jpg" alt="Thuê xe máy Đà Lạt đường {name} — Văn Phú" loading="lazy" style="{_ph_style(img)}"></p>
+<h2>Giá thuê xe máy ở đường {name}</h2>
+<table class="price"><tr><th>Xe</th><th>Giá</th></tr>
+<tr><td>Honda Vision 110cc</td><td><b>150.000 VND/ngày</b></td></tr>
+<tr><td>Honda Air Blade 125cc</td><td><b>150.000 VND/ngày</b></td></tr>
+<tr><td><a href="{ev}">Xe máy điện</a></td><td><b>150.000 VND/ngày</b></td></tr></table>
+<p>Giá cố định cho mọi xe, không phụ phí. Một ngày thuê tính từ lúc nhận xe đến 21:00 cùng ngày.</p>
+<h2>Giao xe đến đường {name}</h2>
+<p>{deliv}</p>
+<h2>Thủ tục thuê xe nhanh gọn</h2>
+<ul>
+<li>Để lại CCCD hoặc hộ chiếu — không cọc tiền mặt; tiền thuê trả trước.</li>
+<li>Chạy thử và cùng quay video tình trạng xe trước khi đi.</li>
+<li>Mỗi xe kèm mũ bảo hiểm và giá đỡ điện thoại; xe xăng giao kèm 1 lít xăng.</li>
+<li>Không uống rượu bia khi lái xe và chấp hành nghiêm luật giao thông Việt Nam.</li>
+</ul>
+<h2>Từ đường {name} đi đâu? ({alabel})</h2>
+<ul>{ideas_html}</ul>
+<p><b>Mẹo:</b> {tip}</p>
+<h2>Xe xăng hay xe điện?</h2>
+<p>Xe máy điện êm, dễ chạy, hợp dạo phố: mỗi xe có 2 pin, một pin đi được khoảng 35–40 km, tổng cộng khoảng 60–70 km; đổi pin tại tiệm 20.000 VND/lần. Xe điện chở tối đa 2 người với tổng cân nặng dưới 140 kg và không nên đi các đèo dài dốc như Prenn, Mimosa, Langbiang — những cung đó nên chọn Honda Air Blade 125cc. <a href="{ev}">Xem chi tiết xe máy điện</a>.</p>
+<p>Các đường khác gần đây: {near_html} · <a href="{hub}">Tất cả tuyến đường phường Xuân Hương</a></p>
+</section>
+<section class="faq"><h2>Câu hỏi thường gặp</h2>{"".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in qa)}</section>
+<section>{contact_box("vi")}{cta_box("vi", me)}</section>
+</main>
+"""
+    biz = business_ld("vi", BASE + home_path("vi"))
+    svc = {"@context": "https://schema.org", "@type": "Service", "name": f"Thuê xe máy Đà Lạt đường {name}", "serviceType": "Cho thuê xe máy",
+           "provider": {"@id": BASE + "#business"}, "areaServed": {"@type": "Place", "name": f"Đường {name}, phường Xuân Hương – Đà Lạt, Lâm Đồng"},
+           "offers": {"@type": "Offer", "price": "150000", "priceCurrency": "VND"}, "url": BASE + me}
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qa]}
+    lds = [biz, svc, faq_ld, crumbs_ld("vi", [("Phường Xuân Hương", st_hub_path()), (f"Đường {name}", me)])]
+    return st_head(me, title, desc, lds, img) + body + foot("vi", frm=me)
+def page_street_hub():
+    me = st_hub_path()
+    groups = ""
+    for a, (label, _) in ST.AREAS.items():
+        items = "".join(f'<a class="post" href="{rel(me, st_path(s))}"><b>Thuê xe máy đường {s[1]}</b><span>{s[4][:110].rsplit(" ", 1)[0]}…</span></a>' for s in ST.S if s[2] == a)
+        groups += f'<section><h2>{label}</h2><div class="posts">{items}</div></section>'
+    title = "Thuê xe máy Đà Lạt phường Xuân Hương — giao xe tận nơi | Văn Phú"
+    desc = "Thuê xe máy giao tận nơi theo từng tuyến đường phường Xuân Hương – Đà Lạt: Vision, Air Blade, xe điện 150.000 VND/ngày, không cọc tiền."
+    body = f"""
+<header><div class="wrap">{st_top(me)}
+<div class="hero">{crumbs("vi", me, [("Phường Xuân Hương", None)])}
+ <h1>Thuê xe máy Đà Lạt theo tuyến đường — phường Xuân Hương</h1>
+ <p class="lead">Phường Xuân Hương – Đà Lạt gồm khu trung tâm cũ (phường 1, 2, 3, 4, 10 trước đây). Chọn con đường nơi bạn ở để xem cách nhận xe, giao xe và gợi ý lộ trình. Thuê từ 2 ngày được giao xe miễn phí tận khách sạn khu trung tâm.</p>
+ <div class="cta">{hero_btns("vi")}</div>
+</div></div></header>
+<main class="wrap">{groups}
+<section>{contact_box("vi")}{cta_box("vi", me)}</section>
+</main>
+"""
+    lds = [business_ld("vi", BASE + home_path("vi")), crumbs_ld("vi", [("Phường Xuân Hương", me)])]
+    return st_head(me, title, desc, lds, "honda-vision-hotel-delivery-dalat") + body + foot("vi", frm=me)
+write(st_hub_path(), page_street_hub())
+for _i, _s in enumerate(ST.S):
+    write(st_path(_s), page_street(_i, _s))
 
 
 # ------------------------------------------------------------------ photo-spot map (en / vi / th)
@@ -1027,6 +1146,8 @@ for l in DAY.LANGS:
 _hub_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + hub_path(x)}"/>\n' for x in HUB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + hub_path("en")}"/>\n'
 for l in HUB.LANGS:
     urls += f"  <url>\n    <loc>{BASE + hub_path(l)}</loc>\n{_hub_alts}    <lastmod>{HUB.UPDATED}</lastmod>\n  </url>\n"
+for _me in [st_hub_path()] + [st_path(_s) for _s in ST.S]:
+    urls += f"  <url>\n    <loc>{BASE + _me}</loc>\n    <lastmod>{ST.UPDATED}</lastmod>\n  </url>\n"
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 

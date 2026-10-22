@@ -29,7 +29,10 @@ Owner: Phú. Report language: Vietnamese.
 
 - `/go/` is the QR landing page printed on bike stickers (hand-written HTML, not built by build_site.py). Never delete it; community links are in the COMMUNITY block at the top of its script.
 
+- Vietnamese-only street pages (owner asked: Vietnamese only, no other languages): /vi/thue-xe-may-da-lat/<duong-...>/ — one page per street of phường Xuân Hương – Đà Lạt ("Thuê xe máy Đà Lạt đường X", delivery focus) + hub /vi/thue-xe-may-da-lat/phuong-xuan-huong/. Data in `content/streets_vi.py` (unique intro + tip per street; outer=True → "gọi trước để hỏi giao xe"). Do not translate them.
+
 ## Published
+- 2026-10-22 streets-vi — 41 Vietnamese-only street landing pages + hub (phường Xuân Hương)
 - 2026-10-10 weather — Da Lat weather by month
 - 2026-10-10 getting — How to get to Da Lat (Nha Trang, HCMC, Mui Ne)
 - 2026-10-10 days3 — Da Lat in 3 days by motorbike
