@@ -10,7 +10,7 @@ CLUSTERS = {
            "lt-ev-beginners", "lt-ev-cafes", "lt-ev-night", "lt-ev-rain", "lt-ev-vs-grab", "lt-ev-eco", "lt-ev-parking",
            "lt-ev-halfday", "lt-ev-checklist", "lt-ev-families", "lt-ev-faq"],
     # Group 4 — delivery & location
-    "location": ["getaround", "lt-busstation", "lt-delivery", "lt-center", "nightmarket", "thingstodo"],
+    "location": ["getaround", "selfguided", "lt-busstation", "lt-delivery", "lt-center", "nightmarket", "thingstodo"],
     # bikes & trip length
     "bikes": ["lt-automatic", "lt-2days", "days2", "lt-airblade", "lt-vision", "lt-two", "lt-multiday", "lt-backpacker", "lt-rainy", "riding"],
 }
