@@ -23,6 +23,11 @@ YT = "https://www.youtube.com/@DalatMotorbikeRentalVanPhu"
 TG_CHANNEL = "https://t.me/dalat_life_vietnam"
 ZALO = "https://zalo.me/0944081101"
 WA2 = "https://wa.me/84834622149"
+TRIPADVISOR = "https://www.tripadvisor.com/Attraction_Review-g293922-d17622334-Reviews-Van_Phu_Dalat_Motorbike_Rental-Da_Lat_Lam_Dong_Province.html"
+YANDEX_ORG = "https://yandex.com/maps/org/van_phu/50542551609/"
+YANDEX_ORG_RU = "https://yandex.ru/maps/org/van_phu/50542551609/"
+def ya_org(l): return YANDEX_ORG_RU if l == "ru" else YANDEX_ORG
+def ya_name(l): return "Яндекс Карты" if l == "ru" else "Yandex Maps"
 
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
 from content.ev import EV
@@ -250,7 +255,7 @@ def btn(kind, l, cls_extra=""):
     if kind == "wc": return '<button class="btn wechat wcbtn" type="button">WeChat: vanphudalat</button>'
     if kind == "gmap": return f'<a class="btn alt" href="{GMAPS}" target="_blank" rel="noopener">{u["open_map"]}</a>'
     if kind == "amap": return f'<a class="btn alt" href="{AMAP}" target="_blank" rel="noopener">在高德地图中打开</a>'
-    if kind == "yamap": return f'<a class="btn alt" href="{YA_LINK}" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>'
+    if kind == "yamap": return f'<a class="btn alt" href="{YANDEX_ORG_RU}" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>'
     raise KeyError(kind)
 
 HERO = {"ru": ["tg", "wa", "yamap", "wc"], "zh": ["wc", "wa", "amap", "gmap"], "vi": ["zalo", "wa", "gmap"]}
@@ -345,7 +350,10 @@ def rev_cards(ids=None):
         out.append(f'<figure class="rv"><div class="st" aria-label="5/5">★★★★★</div><blockquote lang="{rl}" dir="ltr">“{txt}”</blockquote>'
                    f'<figcaption dir="ltr">— {who} · <a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a></figcaption></figure>')
     return '<div class="revs">' + "".join(out) + '</div>'
-def rev_section(l, ids=None): return f'<section><h2>{REV[l][0]}</h2><p>{REV[l][1]}</p>{rev_cards(ids)}<p>{rev_btn(l)}</p></section>'
+def rev_more(l):
+    b = f'<a class="btn alt" href="{TRIPADVISOR}" target="_blank" rel="noopener" style="border:1px solid var(--line)">★ Tripadvisor</a>'
+    return b + f' <a class="btn alt" href="{ya_org(l)}" target="_blank" rel="noopener" style="border:1px solid var(--line)">★ {ya_name(l)}</a>'
+def rev_section(l, ids=None): return f'<section><h2>{REV[l][0]}</h2><p>{REV[l][1]}</p>{rev_cards(ids)}<p>{rev_btn(l)} {rev_more(l)}</p></section>'
 
 def contact_box(l):
     u = C[l]["ui"]
@@ -391,6 +399,8 @@ def contacts(l):
     rows += ['<p><b>WeChat:</b> vanphudalat</p>',
              '<p><b>Facebook:</b> <a href="https://www.facebook.com/vanphudalat">facebook.com/vanphudalat</a></p>',
              f'<p><b>YouTube:</b> <a href="{YT}" target="_blank" rel="noopener">@DalatMotorbikeRentalVanPhu</a></p>',
+             f'<p><b>Tripadvisor:</b> <a href="{TRIPADVISOR}" target="_blank" rel="noopener">Van Phu Dalat Motorbike Rental</a></p>',
+             f'<p><b>{ya_name(l)}:</b> <a href="{ya_org(l)}" target="_blank" rel="noopener">Van Phu</a></p>',
              f'<p><b>{h["addr_label"]}</b> {h["address"]}</p>', old_addr_row(l)]
     return '<div class="contact">' + "\n".join(rows) + "</div>"
 
@@ -471,7 +481,7 @@ def business_ld(l, url):
             "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Xuân Hương – Đà Lạt", "addressRegion": "Lâm Đồng", "postalCode": "670000", "addressCountry": "VN"},
             "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ cũ (cùng một cửa hàng, vẫn hiển thị trên Google Maps): Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Xuân Hương – Đà Lạt, Lâm Đồng 670000.",
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
-            "sameAs": ["https://www.facebook.com/vanphudalat", YT, "https://www.tiktok.com/@bietthudalat", TG, ZALO],
+            "sameAs": ["https://www.facebook.com/vanphudalat", YT, "https://www.tiktok.com/@bietthudalat", TG, ZALO, TRIPADVISOR, YANDEX_ORG],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
                            for n in ["Honda Vision 110cc", "Honda Air Blade 125cc", h["electric_name"]]]}
 
@@ -497,7 +507,7 @@ def page_home(l):
     why = "".join(f"<p>{p}</p>" for p in h["why"])
     faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in h["faq"])
     if l == "ru":
-        mp = f'<iframe class="map" src="{YA_WIDGET}" loading="lazy" title="Яндекс Карты" allowfullscreen></iframe><p class="note"><a href="{YA_LINK}" target="_blank" rel="noopener">Яндекс Карты</a> · <a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a></p>'
+        mp = f'<iframe class="map" src="{YA_WIDGET}" loading="lazy" title="Яндекс Карты" allowfullscreen></iframe><p class="note"><a href="{YANDEX_ORG_RU}" target="_blank" rel="noopener">Яндекс Карты</a> · <a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a></p>'
     else:
         mp = f'<iframe class="map" src="https://maps.google.com/maps?q={LAT},{LON}&hl={l}&z=17&output=embed" loading="lazy" title="Google Maps"></iframe><p class="note"><a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a>' + (f' · <a href="{AMAP}" target="_blank" rel="noopener">高德地图</a>' if l == "zh" else "") + '</p>'
     imgs = [("electric-row", 1), ("airblade", 2), ("electric-helmets", 3), ("fleet-gas", 4), ("vision-white", 5), ("guest-1", 6), ("guest-2", 7)]
@@ -1173,6 +1183,8 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - Included: free helmet and phone holder with every bike; gas scooters come with 1 liter of fuel
 - Delivery: free to hotels in central Da Lat for rentals of 2 days or more
 - Before renting: test ride and a video of the bike's condition, filmed together
+- Tripadvisor: {TRIPADVISOR}
+- Yandex Maps: {YANDEX_ORG}
 - Phone: +84 944 081 101 (main) / +84 834 622 149 (second line)
 - Booking: WhatsApp +84 944 081 101 or +84 834 622 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat
 - YouTube channel: {YT}
