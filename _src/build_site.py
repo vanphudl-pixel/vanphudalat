@@ -381,9 +381,9 @@ def cta_box(l, frm):
 {rev_btn(l)}</div>
 <p class="kw"><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a></p></div>"""
 
-OLD_ADDR = "Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Phường 2, Tp. Đà Lạt, Lâm Đồng"
+OLD_ADDR = "Khu Quy Hoạch/L8 Đường Bùi Thị Xuân, Xuân Hương - Đà Lạt, Lâm Đồng 670000"
 NAP_MAP = OLD_ADDR
-NAP_REAL = "1/15/5 Thông Thiên Học, Phường 2, Tp. Đà Lạt, Lâm Đồng"
+NAP_REAL = "1/15/5 Thông Thiên Học, Xuân Hương - Đà Lạt, Lâm Đồng 670000"
 NAP_LBL = {  # (title, Google Maps address label, actual shop location label)
  "vi": ("Văn Phú Đà Lạt – Dịch vụ cho thuê xe máy uy tín", "Địa chỉ Google Maps (đồng bộ):", "Vị trí cửa hàng thực tế:"),
  "en": ("Van Phu Dalat – Motorbike Rental", "Google Maps address:", "Actual shop location:"),
@@ -505,7 +505,7 @@ def business_ld(l, url):
             "description": h["desc"], "url": url, "image": BASE + "img/electric-row.jpg",
             "telephone": "+84944081101", "contactPoint": [{"@type": "ContactPoint", "telephone": t, "contactType": "customer service", "areaServed": "VN", "availableLanguage": ["Vietnamese", "English"]} for t in ("+84944081101", "+84834622149")], "priceRange": "150,000 VND",
             "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Xuân Hương – Đà Lạt", "addressRegion": "Lâm Đồng", "postalCode": "670000", "addressCountry": "VN"},
-            "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ trên Google Maps (cùng một cửa hàng): Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Phường 2, Tp. Đà Lạt, Lâm Đồng. Vị trí thực tế: 1/15/5 Thông Thiên Học, Phường 2, Tp. Đà Lạt, Lâm Đồng.",
+            "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ trên Google Maps (cùng một cửa hàng): Khu Quy Hoạch/L8 Đường Bùi Thị Xuân, Xuân Hương - Đà Lạt, Lâm Đồng 670000. Vị trí thực tế: 1/15/5 Thông Thiên Học, Xuân Hương - Đà Lạt, Lâm Đồng 670000.",
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
             "sameAs": ["https://www.facebook.com/vanphudalat", YT, "https://www.tiktok.com/@bietthudalat", TG, ZALO, TRIPADVISOR, YANDEX_ORG],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
@@ -1201,7 +1201,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
 ## Key facts
 - Address: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng, Vietnam ({GMAPS})
-- Google Maps address of the same shop: Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Phường 2, Tp. Đà Lạt, Lâm Đồng (actual location: 1/15/5 Thông Thiên Học, Phường 2, Tp. Đà Lạt, Lâm Đồng)
+- Google Maps address of the same shop: Khu Quy Hoạch/L8 Đường Bùi Thị Xuân, Xuân Hương - Đà Lạt, Lâm Đồng 670000 (actual location: 1/15/5 Thông Thiên Học, Xuân Hương - Đà Lạt, Lâm Đồng 670000)
 - Price: 150,000 VND/day for every bike, fixed, no hidden fees
 - Opening hours: every day 4:30 AM – 9:00 PM
 - Rental day: from pickup until 9:00 PM the same day
