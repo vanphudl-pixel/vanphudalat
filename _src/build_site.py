@@ -142,7 +142,7 @@ table.price tr:last-child td{border-bottom:0}
 .float.callf{background:#f2b632;color:#173d2d}
 .btn.callb{background:#f2b632;color:#173d2d}
 .yt{margin:0 0 20px;max-width:300px} .yt a{position:relative;display:block;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000} .yt img,.yt iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0} .yt span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center} .yt figcaption{font-size:14px;color:var(--muted);margin-top:6px}
-.footcall{display:block;margin:0 0 8px;font-size:15px}.footcall a{color:#fff;font-weight:700;text-decoration:none}
+.footcall{display:block;margin:0 0 8px;font-size:15px}.nap{margin:0 0 12px;font-size:14px;line-height:1.6}.nap b{color:#fff}.footcall a{color:#fff;font-weight:700;text-decoration:none}
 html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 html[dir=rtl] .checks li{padding:12px 40px 12px 14px}
 html[dir=rtl] .checks li:before{left:auto;right:14px}
@@ -381,7 +381,33 @@ def cta_box(l, frm):
 {rev_btn(l)}</div>
 <p class="kw"><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a></p></div>"""
 
-OLD_ADDR = "Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Xuân Hương – Đà Lạt"
+OLD_ADDR = "Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Phường 2, Tp. Đà Lạt, Lâm Đồng"
+NAP_MAP = OLD_ADDR
+NAP_REAL = "1/15/5 Thông Thiên Học, Phường 2, Tp. Đà Lạt, Lâm Đồng"
+NAP_LBL = {  # (title, Google Maps address label, actual shop location label)
+ "vi": ("Văn Phú Đà Lạt – Dịch vụ cho thuê xe máy uy tín", "Địa chỉ Google Maps (đồng bộ):", "Vị trí cửa hàng thực tế:"),
+ "en": ("Van Phu Dalat – Motorbike Rental", "Google Maps address:", "Actual shop location:"),
+ "ru": ("Van Phu Dalat – аренда байков", "Адрес в Google Maps:", "Фактическое расположение:"),
+ "zh": ("Van Phu 大叻摩托车租赁", "Google 地图地址：", "店铺实际位置："),
+ "ko": ("Van Phu 달랏 오토바이 렌탈", "Google 지도 주소:", "실제 가게 위치:"),
+ "ja": ("Van Phu ダラット バイクレンタル", "Google マップの住所：", "実際の店舗所在地："),
+ "th": ("Van Phu Dalat – เช่ามอเตอร์ไซค์", "ที่อยู่ใน Google Maps:", "ที่ตั้งร้านจริง:"),
+ "id": ("Van Phu Dalat – Sewa Motor", "Alamat Google Maps:", "Lokasi toko sebenarnya:"),
+ "ms": ("Van Phu Dalat – Sewa Motosikal", "Alamat Google Maps:", "Lokasi kedai sebenar:"),
+ "de": ("Van Phu Dalat – Rollervermietung", "Adresse auf Google Maps:", "Tatsächlicher Standort:"),
+ "fr": ("Van Phu Dalat – Location de scooters", "Adresse Google Maps :", "Emplacement réel de la boutique :"),
+ "es": ("Van Phu Dalat – Alquiler de motos", "Dirección en Google Maps:", "Ubicación real de la tienda:"),
+ "he": ("Van Phu Dalat – השכרת קטנועים", "הכתובת ב-Google Maps:", "מיקום החנות בפועל:"),
+ "it": ("Van Phu Dalat – Noleggio scooter", "Indirizzo su Google Maps:", "Posizione reale del negozio:"),
+ "nl": ("Van Phu Dalat – Scooterverhuur", "Adres op Google Maps:", "Werkelijke locatie van de winkel:"),
+ "km": ("Van Phu Dalat – ជួលម៉ូតូ", "អាសយដ្ឋាន Google Maps៖", "ទីតាំងហាងពិតប្រាកដ៖"),
+ "lo": ("Van Phu Dalat – ເຊົ່າລົດຈັກ", "ທີ່ຢູ່ໃນ Google Maps:", "ທີ່ຕັ້ງຮ້ານຕົວຈິງ:"),
+ "my": ("Van Phu Dalat – ဆိုင်ကယ်ငှား", "Google Maps လိပ်စာ:", "ဆိုင်တည်နေရာအမှန်:"),
+}
+def nap_block(l):
+    t, a, b = NAP_LBL.get(l, NAP_LBL["en"])
+    return (f'<div class="nap" lang="vi"><b>{t}</b><br><span lang="{l}">{a}</span> <a href="{GMAPS}" target="_blank" rel="noopener">{NAP_MAP}</a>'
+            f'<br><span lang="{l}">{b}</span> {NAP_REAL}<br>📞 0944 081 101 · 0834 622 149</div>')
 OLD_ADDR_LBL = {"vi": "Địa chỉ cũ (trên Google Maps):", "en": "Old address (as shown on Google Maps):", "ru": "Старый адрес (как в Google Maps):",
     "zh": "旧地址（Google 地图显示）：", "ko": "이전 주소 (Google 지도 표기):", "ja": "旧住所（Google マップ表記）：", "th": "ที่อยู่เดิม (ตามที่แสดงใน Google Maps):",
     "id": "Alamat lama (di Google Maps):", "ms": "Alamat lama (di Google Maps):", "de": "Alte Adresse (so auf Google Maps):", "fr": "Ancienne adresse (affichée sur Google Maps) :",
@@ -450,7 +476,7 @@ def foot(l, root_redirect=False, frm=None):
         kw = f'<br><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a> · <a href="{rel(frm, routes_path(l))}">{C[l]["routes"]["h1"]}</a>'
         if l == "vi":
             kw += f' · <a href="{rel(frm, home_path("vi") + "phuong-xuan-huong/")}">Thuê xe máy theo tuyến đường phường Xuân Hương</a>'
-    return f"""<footer><span class="footcall">📞 {CALL[l][1]}: <a href="{TEL}">{phone_txt(l)}</a> · <a href="{TEL2}">{phone2_txt(l)}</a> · <a href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></span>{u["footer"]}{kw}</footer>
+    return f"""<footer><span class="footcall">📞 {CALL[l][1]}: <a href="{TEL}">{phone_txt(l)}</a> · <a href="{TEL2}">{phone2_txt(l)}</a> · <a href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></span>{nap_block(l)}{u["footer"]}{kw}</footer>
 {floats(l)}
 <div class="lb" id="lb"><img alt=""></div>
 <script>
@@ -479,7 +505,7 @@ def business_ld(l, url):
             "description": h["desc"], "url": url, "image": BASE + "img/electric-row.jpg",
             "telephone": "+84944081101", "contactPoint": [{"@type": "ContactPoint", "telephone": t, "contactType": "customer service", "areaServed": "VN", "availableLanguage": ["Vietnamese", "English"]} for t in ("+84944081101", "+84834622149")], "priceRange": "150,000 VND",
             "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Xuân Hương – Đà Lạt", "addressRegion": "Lâm Đồng", "postalCode": "670000", "addressCountry": "VN"},
-            "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ cũ (cùng một cửa hàng, vẫn hiển thị trên Google Maps): Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Xuân Hương – Đà Lạt, Lâm Đồng 670000.",
+            "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ trên Google Maps (cùng một cửa hàng): Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Phường 2, Tp. Đà Lạt, Lâm Đồng. Vị trí thực tế: 1/15/5 Thông Thiên Học, Phường 2, Tp. Đà Lạt, Lâm Đồng.",
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
             "sameAs": ["https://www.facebook.com/vanphudalat", YT, "https://www.tiktok.com/@bietthudalat", TG, ZALO, TRIPADVISOR, YANDEX_ORG],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
@@ -1175,7 +1201,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
 ## Key facts
 - Address: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng, Vietnam ({GMAPS})
-- Old address of the same shop (still shown on Google Maps): Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Xuân Hương – Đà Lạt, Lâm Đồng 670000
+- Google Maps address of the same shop: Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Phường 2, Tp. Đà Lạt, Lâm Đồng (actual location: 1/15/5 Thông Thiên Học, Phường 2, Tp. Đà Lạt, Lâm Đồng)
 - Price: 150,000 VND/day for every bike, fixed, no hidden fees
 - Opening hours: every day 4:30 AM – 9:00 PM
 - Rental day: from pickup until 9:00 PM the same day
