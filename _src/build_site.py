@@ -371,6 +371,13 @@ def cta_box(l, frm):
 {rev_btn(l)}</div>
 <p class="kw"><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a></p></div>"""
 
+OLD_ADDR = "Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Xuân Hương – Đà Lạt"
+OLD_ADDR_LBL = {"vi": "Địa chỉ cũ (trên Google Maps):", "en": "Old address (as shown on Google Maps):", "ru": "Старый адрес (как в Google Maps):",
+    "zh": "旧地址（Google 地图显示）：", "ko": "이전 주소 (Google 지도 표기):", "ja": "旧住所（Google マップ表記）：", "th": "ที่อยู่เดิม (ตามที่แสดงใน Google Maps):",
+    "id": "Alamat lama (di Google Maps):", "ms": "Alamat lama (di Google Maps):", "de": "Alte Adresse (so auf Google Maps):", "fr": "Ancienne adresse (affichée sur Google Maps) :",
+    "es": "Dirección antigua (como aparece en Google Maps):", "he": "כתובת קודמת (כפי שמופיעה ב-Google Maps):", "it": "Vecchio indirizzo (come su Google Maps):",
+    "nl": "Oud adres (zoals op Google Maps):", "km": "អាសយដ្ឋានចាស់ (នៅលើ Google Maps)៖", "lo": "ທີ່ຢູ່ເກົ່າ (ຕາມ Google Maps):", "my": "လိပ်စာဟောင်း (Google Maps တွင်):"}
+def old_addr_row(l): return f'<p><b>{OLD_ADDR_LBL.get(l, OLD_ADDR_LBL["en"])}</b> <a href="{GMAPS}" target="_blank" rel="noopener">{OLD_ADDR}</a></p>'
 def contacts(l):
     h = C[l]["home"]
     rows = [f'<p><b>📞 {CALL[l][1]}:</b> <a href="{TEL}">{phone_txt(l)}</a></p>',
@@ -382,7 +389,7 @@ def contacts(l):
     rows += ['<p><b>WeChat:</b> vanphudalat</p>',
              '<p><b>Facebook:</b> <a href="https://www.facebook.com/vanphudalat">facebook.com/vanphudalat</a></p>',
              f'<p><b>YouTube:</b> <a href="{YT}" target="_blank" rel="noopener">@DalatMotorbikeRentalVanPhu</a></p>',
-             f'<p><b>{h["addr_label"]}</b> {h["address"]}</p>']
+             f'<p><b>{h["addr_label"]}</b> {h["address"]}</p>', old_addr_row(l)]
     return '<div class="contact">' + "\n".join(rows) + "</div>"
 
 def langbar(l, kind, key, frm):
@@ -459,7 +466,8 @@ def business_ld(l, url):
                                ["Free helmet", "Phone holder", "1 liter of fuel (gas scooters)", "Free hotel delivery in central Da Lat (2+ days)", "No cash deposit (passport or ID held)"]],
             "description": h["desc"], "url": url, "image": BASE + "img/electric-row.jpg",
             "telephone": "+84944081101", "priceRange": "150,000 VND",
-            "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Đà Lạt", "addressRegion": "Lâm Đồng", "addressCountry": "VN"},
+            "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Xuân Hương – Đà Lạt", "addressRegion": "Lâm Đồng", "postalCode": "670000", "addressCountry": "VN"},
+            "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ cũ (cùng một cửa hàng, vẫn hiển thị trên Google Maps): Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Xuân Hương – Đà Lạt, Lâm Đồng 670000.",
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
             "sameAs": ["https://www.facebook.com/vanphudalat", YT, "https://www.tiktok.com/@bietthudalat", TG, ZALO],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
@@ -1154,7 +1162,8 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 > Local motorbike and scooter rental in Da Lat (Đà Lạt), Vietnam. Honda Vision 110cc, Honda Air Blade 125cc and electric scooters, all 150,000 VND per day. No cash deposit, free hotel delivery in central Da Lat for rentals of 2+ days.
 
 ## Key facts
-- Address: 1/15/5 Thông Thiên Học, Đà Lạt, Vietnam ({GMAPS})
+- Address: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng, Vietnam ({GMAPS})
+- Old address of the same shop (still shown on Google Maps): Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Xuân Hương – Đà Lạt, Lâm Đồng 670000
 - Price: 150,000 VND/day for every bike, fixed, no hidden fees
 - Opening hours: every day 4:30 AM – 9:00 PM
 - Rental day: from pickup until 9:00 PM the same day
