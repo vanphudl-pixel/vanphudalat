@@ -149,3 +149,5 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - Night-view café map (nightcafemap.py + _tr/_tr2, 18 langs): 6 cafés on east hills chosen by owner; PDF uses PROJ_CENTER (cluster) and no rings.
 
 - Address (owner, 2026-10-23): new address 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt is primary everywhere; the Google Business Profile still shows the OLD address "Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Xuân Hương – Đà Lạt, Lâm Đồng 670000" (same shop). Every page shows both (contacts block, schema disambiguatingDescription, llms.txt). Keep both until the owner says the GBP address was changed.
+
+- Phones (owner, 2026-10-23): two numbers on every page (contacts + footer + schema contactPoint) to match Google Maps: 0944 081 101 (main, call buttons) and 0834 622 149.

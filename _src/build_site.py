@@ -276,6 +276,8 @@ def vbox(l, v, title):
             f'<img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" alt="{title}" loading="lazy" width="480" height="360"><span>▶</span></a>'
             f'<figcaption>▶ {VLBL[l]}</figcaption></figure>')
 def phone_txt(l): return "0944 081 101" if l == "vi" else "+84 944 081 101"
+TEL2 = "tel:+84834622149"
+def phone2_txt(l): return "0834 622 149" if l == "vi" else "+84 834 622 149"
 def call_float(l, pos): return f'<a class="float {pos} callf" href="{TEL}" aria-label="{CALL[l][1]} {phone_txt(l)}">📞 {CALL[l][0]}</a>'
 def floats(l):
     if l == "ru":
@@ -380,7 +382,7 @@ OLD_ADDR_LBL = {"vi": "Địa chỉ cũ (trên Google Maps):", "en": "Old addres
 def old_addr_row(l): return f'<p><b>{OLD_ADDR_LBL.get(l, OLD_ADDR_LBL["en"])}</b> <a href="{GMAPS}" target="_blank" rel="noopener">{OLD_ADDR}</a></p>'
 def contacts(l):
     h = C[l]["home"]
-    rows = [f'<p><b>📞 {CALL[l][1]}:</b> <a href="{TEL}">{phone_txt(l)}</a></p>',
+    rows = [f'<p><b>📞 {CALL[l][1]}:</b> <a href="{TEL}">{phone_txt(l)}</a> · <a href="{TEL2}">{phone2_txt(l)}</a></p>',
             f'<p><b>WhatsApp:</b> <a href="{wa_link(l)}">+84 944 081 101</a> · <a href="{WA2}">+84 834 622 149</a></p>',
             f'<p><b>Zalo:</b> <a href="{ZALO}">0944 081 101</a></p>',
             f'<p><b>Telegram:</b> <a href="{TG}">@vanphudalat</a></p>']
@@ -438,7 +440,7 @@ def foot(l, root_redirect=False, frm=None):
         kw = f'<br><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a> · <a href="{rel(frm, routes_path(l))}">{C[l]["routes"]["h1"]}</a>'
         if l == "vi":
             kw += f' · <a href="{rel(frm, home_path("vi") + "phuong-xuan-huong/")}">Thuê xe máy theo tuyến đường phường Xuân Hương</a>'
-    return f"""<footer><span class="footcall">📞 {CALL[l][1]}: <a href="{TEL}">{phone_txt(l)}</a> · <a href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></span>{u["footer"]}{kw}</footer>
+    return f"""<footer><span class="footcall">📞 {CALL[l][1]}: <a href="{TEL}">{phone_txt(l)}</a> · <a href="{TEL2}">{phone2_txt(l)}</a> · <a href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></span>{u["footer"]}{kw}</footer>
 {floats(l)}
 <div class="lb" id="lb"><img alt=""></div>
 <script>
@@ -465,7 +467,7 @@ def business_ld(l, url):
             "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": n, "value": True} for n in
                                ["Free helmet", "Phone holder", "1 liter of fuel (gas scooters)", "Free hotel delivery in central Da Lat (2+ days)", "No cash deposit (passport or ID held)"]],
             "description": h["desc"], "url": url, "image": BASE + "img/electric-row.jpg",
-            "telephone": "+84944081101", "priceRange": "150,000 VND",
+            "telephone": "+84944081101", "contactPoint": [{"@type": "ContactPoint", "telephone": t, "contactType": "customer service", "areaServed": "VN", "availableLanguage": ["Vietnamese", "English"]} for t in ("+84944081101", "+84834622149")], "priceRange": "150,000 VND",
             "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Xuân Hương – Đà Lạt", "addressRegion": "Lâm Đồng", "postalCode": "670000", "addressCountry": "VN"},
             "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ cũ (cùng một cửa hàng, vẫn hiển thị trên Google Maps): Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Xuân Hương – Đà Lạt, Lâm Đồng 670000.",
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
@@ -822,7 +824,7 @@ def st_top(me):
 def st_deliv(s):
     if s[3]:
         return (f"Văn Phú giao xe miễn phí tới khách sạn, homestay ở khu trung tâm Đà Lạt khi thuê từ 2 ngày. Đoạn đường {s[1]} nơi bạn ở có thể nằm ngoài vùng trung tâm — "
-                f"gọi 0944 081 101 hoặc nhắn Zalo kèm định vị để được báo ngay có giao được không. Thuê 1 ngày thì ghé tiệm 1/15/5 Thông Thiên Học (mở cửa từ 4:30 sáng).")
+                f"gọi 0944 081 101 hoặc 0834 622 149, hay nhắn Zalo kèm định vị để được báo ngay có giao được không. Thuê 1 ngày thì ghé tiệm 1/15/5 Thông Thiên Học (mở cửa từ 4:30 sáng).")
     return (f"Có. Thuê từ 2 ngày, Văn Phú giao xe miễn phí tận khách sạn, homestay trên đường {s[1]} (khu trung tâm Đà Lạt). "
             f"Thuê 1 ngày thì ghé tiệm 1/15/5 Thông Thiên Học, rất gần — tiệm mở cửa từ 4:30 sáng.")
 def page_street(i, s):
@@ -1171,7 +1173,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - Included: free helmet and phone holder with every bike; gas scooters come with 1 liter of fuel
 - Delivery: free to hotels in central Da Lat for rentals of 2 days or more
 - Before renting: test ride and a video of the bike's condition, filmed together
-- Phone: +84 944 081 101
+- Phone: +84 944 081 101 (main) / +84 834 622 149 (second line)
 - Booking: WhatsApp +84 944 081 101 or +84 834 622 149, Zalo 0944 081 101, Telegram @vanphudalat, WeChat vanphudalat
 - YouTube channel: {YT}
 - Languages on the website: {", ".join(LABEL.values())}
