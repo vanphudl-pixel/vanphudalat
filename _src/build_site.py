@@ -58,6 +58,8 @@ from content import busmap as BU
 from content import danangbusmap as DN
 from content import waterfallmap as WF
 from content import nightcafemap as NC
+from content import nhatrangbusmap as NT
+from content import nightmarketmap as NM
 from content import festivalmap as FE
 from content import placeshub as HUB
 from content import placeshub_price as HUBP
@@ -273,6 +275,12 @@ VIDEO_ART = {"domainedemarie": "gA532ZVEENM"}
 VLBL = {"vi": "Xem video", "en": "Watch the video", "ru": "Смотреть видео", "zh": "观看视频", "ko": "영상 보기", "ja": "動画を見る", "th": "ดูวิดีโอ",
         "id": "Tonton video", "ms": "Tonton video", "de": "Video ansehen", "fr": "Voir la vidéo", "es": "Ver el vídeo", "he": "צפו בסרטון",
         "it": "Guarda il video", "nl": "Bekijk de video", "km": "មើលវីដេអូ", "lo": "ເບິ່ງວິດີໂອ", "my": "ဗီဒီယိုကြည့်ရန်"}
+def gmap(cid, lat=None, lng=None):
+    """Google Maps link: numeric cid, or a place_id (ChIJ…) via the official Maps URL API."""
+    if str(cid).startswith("ChIJ"):
+        return f"https://www.google.com/maps/search/?api=1&query={lat},{lng}&query_place_id={cid}"
+    return f"https://maps.google.com/?cid={cid}"
+
 def vlink(l, cid):
     v = VIDEO_CID.get(cid)
     return f' · <a href="https://www.youtube.com/shorts/{v}" target="_blank" rel="noopener">▶ {VLBL[l]}</a>' if v else ""
@@ -326,12 +334,14 @@ def pm_section(l, me):
             f'<a class="btn alt" href="{rel(me, map_path(WF, l))}" style="border:1px solid var(--line)">💧 {WF.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(CF, l))}" style="border:1px solid var(--line)">☕ {CF.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(NC, l))}" style="border:1px solid var(--line)">🌃 {NC.T[l]["h1"]} →</a> '
+            f'<a class="btn alt" href="{rel(me, map_path(NM, l))}" style="border:1px solid var(--line)">🍜 {NM.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(BB, l))}" style="border:1px solid var(--line)">🍖 {BB.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(HT, l))}" style="border:1px solid var(--line)">🏨 {HT.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(H4, l))}" style="border:1px solid var(--line)">🛎️ {H4.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(H3, l))}" style="border:1px solid var(--line)">🛏️ {H3.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(BU, l))}" style="border:1px solid var(--line)">🚌 {BU.T[l]["h1"]} →</a> '
-            f'<a class="btn alt" href="{rel(me, map_path(DN, l))}" style="border:1px solid var(--line)">🚌 {DN.T[l]["h1"]} →</a>'
+            f'<a class="btn alt" href="{rel(me, map_path(DN, l))}" style="border:1px solid var(--line)">🚌 {DN.T[l]["h1"]} →</a> '
+            f'<a class="btn alt" href="{rel(me, map_path(NT, l))}" style="border:1px solid var(--line)">🚐 {NT.T[l]["h1"]} →</a>'
             + (f' <a class="btn alt" href="{rel(me, lang_root(l) + DAY.SLUG[l] + "/")}" style="border:1px solid var(--line)">🛵 {DAY.T[l]["h1"]} →</a>' if l in DAY.LANGS else "") + '</p></section>')
 # Real Google Maps reviews, quoted verbatim (excerpts marked with …), shown in the original language.
 # Shown as visible quotes only: no Review/AggregateRating schema, because Google's rules forbid
@@ -968,7 +978,7 @@ def page_photomap(l, M=PM):
     for i, (sid, lat, lng, cid, ev, h) in enumerate(M.SPOTS, 1):
         n, best, d = t["s"][sid]
         hr = t["h"].get(h, h)
-        g = f"https://maps.google.com/?cid={cid}"
+        g = gmap(cid, lat, lng)
         ph = M.img_link(sid)
         own = (OUT / "img" / "spots" / f"{sid}.jpg").exists()
         thumb = f'<img src="{pre}img/spots/{sid}.jpg" alt="{n}" loading="lazy" style="width:96px;height:72px;object-fit:cover;border-radius:8px;flex:none">' if own else ""
@@ -1026,7 +1036,7 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 """ + foot(l, frm=me)
 
 # ------------------------------------------------------------------ places hub (pillar page, vi + en)
-THEMES = [RN, RC, PM, WF, PG, CH, SF, CL, CF, NC, BB, FE, HT, H4, H3, BU, DN]
+THEMES = [RN, RC, PM, WF, PG, CH, SF, CL, CF, NC, NM, BB, FE, HT, H4, H3, BU, DN, NT]
 _TNAME = {M.__name__.split(".")[-1]: M for M in THEMES}
 def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
 def day_path(l): return lang_root(l) + DAY.SLUG[l] + "/"
@@ -1053,7 +1063,7 @@ def page_hub(l):
         rows = ""
         for sid, lat, lng, cid, ev, h, (nm, best, d), _z, M in zs:
             i += 1
-            g = f"https://maps.google.com/?cid={cid}"
+            g = gmap(cid, lat, lng)
             hr = PM.T[l]["h"].get(h, h)
             ak = HUB.GUIDE.get(sid)
             name = f'<a href="{rel(me, art_path(l, ak))}">{nm}</a>' if ak else nm
@@ -1168,7 +1178,7 @@ for l in DAY.LANGS:
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, NC):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, NC, NT, NM):
     for l in _M.LANGS:
         write(map_path(_M, l), page_photomap(l, _M))
 
@@ -1182,7 +1192,7 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, NC):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, NC, NT, NM):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
@@ -1235,6 +1245,8 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Self-guided Da Lat day trip by motorbike: hot check-in spots (Lac Hu Co Tran, Memory Station, Suoi Binh Yen, Happy Hill) — ordered route, distances, free PDF]({BASE + map_path(RC, "en")})
 - [Da Lat waterfalls map — 6 waterfalls open to visitors (Datanla, Prenn, Cam Ly, Lien Khuong, Elephant Falls, Pongour) with hours, reference ticket prices, free PDF]({BASE + map_path(WF, "en")})
 - [Da Lat night-view cafés — map of 6 cafés overlooking the lit greenhouse valley (Chenh Venh, Chang Vang, Loi Cua Gio, Vi Yeu Ma Den, Lang Vu Thi, Nha May Cay), free PDF]({BASE + map_path(NC, "en")})
+- [How to get from Nha Trang to Da Lat — bus & limousine map: Da Lat bus station and the Da Lat offices of FUTA, The Sinh Tourist, Lac Hong, An Phu, HM; free PDF]({BASE + map_path(NT, "en")})
+- [Da Lat night market & evening food map — night market, grilled rice paper, hot soy milk, che, chicken hot pot with lemon basil; free PDF]({BASE + map_path(NM, "en")})
 - [Da Lat to Saigon bus — map of the Da Lat bus station and 12 bus company offices, free PDF]({BASE + map_path(BU, "en")})
 - [Da Lat to Da Nang bus — map of the Da Lat bus station and 6 bus company offices on the Da Nang / Hoi An route, free PDF]({BASE + map_path(DN, "en")})
 - [Da Lat Flower Festival 2026 — planned 19–31 Dec 2026: programme, venue map, free PDF]({BASE + map_path(FE, "en")})
