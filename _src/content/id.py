@@ -15,9 +15,9 @@ C = {
  "box_btn": "Chat via WhatsApp",
 },
 "home": {
- "title": "Sewa Motor Da Lat — 150.000 VND/hari | Van Phu Rental Skuter",
+ "title": "Sewa Motor Dalat Vietnam – Skuter & Motor Listrik | Van Phu",
  "desc": "Sewa motor dan skuter di Da Lat, Vietnam: Honda Vision, Honda Air Blade 125cc dan skuter listrik. 150.000 VND per hari, tanpa deposit uang, gratis antar ke hotel. Pesan via WhatsApp.",
- "h1": "Sewa Motor di Da Lat",
+ "h1": "Sewa Motor di Dalat, Vietnam",
  "lead": "Van Phu adalah rental skuter lokal di Da Lat. Honda Vision, Honda Air Blade 125cc dan skuter listrik dengan harga tetap, tanpa deposit uang.",
  "price_badge": "150.000 VND / hari", "price_cell": "150.000 VND",
  "h_prices": "Harga sewa motor di Da Lat", "th_bike": "Motor", "th_price": "Harga per hari",

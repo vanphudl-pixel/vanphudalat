@@ -16,7 +16,7 @@ HOME = {
         "ベトナム・ダラットのレンタルバイク：ホンダ Vision、Air Blade 125cc、電動スクーター。現金デポジット不要、ヘルメット無料、2日以上でホテル無料配達、朝4:30から営業。WhatsAppで予約。"),
  "th": ("เช่ามอเตอร์ไซค์ดาลัด – สกู๊ตเตอร์และสกู๊ตเตอร์ไฟฟ้า | Van Phu",
         "เช่ามอเตอร์ไซค์ในดาลัด: Honda Vision, Honda Air Blade 125cc และสกู๊ตเตอร์ไฟฟ้า ไม่ต้องวางมัดจำเงินสด หมวกกันน็อกฟรี ส่งรถถึงโรงแรมฟรีเมื่อเช่า 2 วันขึ้นไป เปิด 4:30 น. จองทาง WhatsApp"),
- "id": ("Sewa Motor Da Lat – Skuter & Motor Listrik | Van Phu",
+ "id": ("Sewa Motor Dalat Vietnam – Skuter & Motor Listrik | Van Phu",
         "Sewa motor dan skuter di Da Lat, Vietnam: Honda Vision, Honda Air Blade 125cc dan motor listrik. Tanpa deposit uang tunai, helm gratis, antar gratis ke hotel untuk 2 hari ke atas, buka mulai 4.30."),
  "ms": ("Sewa Motosikal Da Lat – Skuter & Skuter Elektrik | Van Phu",
         "Sewa motosikal dan skuter di Da Lat, Vietnam: Honda Vision, Honda Air Blade 125cc dan skuter elektrik. Tiada deposit tunai, topi keledar percuma, hantar ke hotel percuma untuk 2 hari ke atas, buka dari 4.30 pagi."),
