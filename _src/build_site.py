@@ -394,6 +394,12 @@ def cta_box(l, frm):
 OLD_ADDR = "Khu Quy Hoạch/L8 Đường Bùi Thị Xuân, Xuân Hương - Đà Lạt, Lâm Đồng 670000"
 NAP_MAP = OLD_ADDR
 NAP_REAL = "1/15/5 Thông Thiên Học, Xuân Hương - Đà Lạt, Lâm Đồng 670000"
+SHOP_ADDR_LBL = {  # label above the shop address on the rental home page (for guests booking a Grab to the shop)
+ "vi": "Địa chỉ tiệm (để đặt Grab):", "en": "Shop address (for Grab):", "ru": "Адрес магазина (для Grab):", "zh": "店铺地址（打 Grab 前往）：",
+ "ko": "가게 주소 (Grab 이용 시):", "ja": "店舗住所（Grabで行く場合）：", "th": "ที่อยู่ร้าน (สำหรับเรียก Grab):", "id": "Alamat toko (untuk Grab):",
+ "ms": "Alamat kedai (untuk Grab):", "de": "Shop-Adresse (für Grab):", "fr": "Adresse de la boutique (pour Grab) :", "es": "Dirección de la tienda (para Grab):",
+ "he": "כתובת החנות (לנסיעה ב-Grab):", "it": "Indirizzo del negozio (per Grab):", "nl": "Winkeladres (voor Grab):", "km": "អាសយដ្ឋានហាង (សម្រាប់ Grab)៖",
+ "lo": "ທີ່ຢູ່ຮ້ານ (ສຳລັບ Grab):", "my": "ဆိုင်လိပ်စာ (Grab အတွက်):"}
 NAP_LBL = {  # (title, Google Maps address label, actual shop location label)
  "vi": ("Văn Phú Đà Lạt – Dịch vụ cho thuê xe máy uy tín", "Địa chỉ Google Maps (đồng bộ):", "Vị trí cửa hàng thực tế:"),
  "en": ("Van Phu Dalat – Motorbike Rental", "Google Maps address:", "Actual shop location:"),
@@ -567,7 +573,7 @@ def page_home(l):
  <p class="lead">{h["lead"]}</p>
  <div class="ticket">{h["price_badge"]}</div>
  <div class="cta">{hero_btns(l)}</div>
-<p class="shopaddr" style="margin:12px 0 0;font-size:15px;color:#fff;opacity:.92">📍 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng</p>
+<p class="shopaddr" style="margin:12px 0 0;font-size:15px;color:#fff;opacity:.95"><b>{SHOP_ADDR_LBL.get(l, SHOP_ADDR_LBL["en"])}</b><br>1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng</p>
 </div></div>
 <div class="facts"><ul>{facts}</ul></div></header>
 <main class="wrap home">
