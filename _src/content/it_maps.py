@@ -59,11 +59,11 @@ MAPS["pagodamap"] = {
  }}
 
 MAPS["churchmap"] = {
- "title": "Mappa delle chiese di Da Lat: 6 belle chiese da visitare | Van Phu",
+ "title": "Mappa delle chiese di Da Lat: 7 belle chiese da visitare | Van Phu",
  "h1": "Mappa delle chiese di Da Lat",
- "desc": "Mappa delle 6 chiese più visitate di Da Lat — la Chiesa del Gallo, la Chiesa Rosa e altre — con orari, momento migliore e indicazioni, più un PDF gratuito.",
- "lead": "Le 6 chiese più visitate dai viaggiatori a Da Lat, dalla Chiesa del Gallo alla Chiesa Rosa — con orari, il momento migliore e le indicazioni con un tocco. Tutte entro 4 km dal lago.",
- "center": "Chiese di Da Lat (1–6)",
+ "desc": "Mappa delle 7 chiese più visitate di Da Lat — la Chiesa del Gallo, la Chiesa Rosa e altre — con orari, momento migliore e indicazioni, più un PDF gratuito.",
+ "lead": "Le 7 chiese più visitate dai viaggiatori a Da Lat, dalla Chiesa del Gallo alla Chiesa Rosa — con orari, il momento migliore e le indicazioni con un tocco. Tutte entro 4 km dal lago.",
+ "center": "Chiese di Da Lat (1–7)",
  "season_h": "Galateo in chiesa",
  "season": [("Abbigliamento", "spalle e ginocchia coperte"), ("Durante la Messa", "silenzio; niente foto né flash all'interno"), ("Apertura", "molte chiese aprono le porte solo per la Messa — il cortile si può comunque visitare"), ("Domaine de Marie", "chiuso a pranzo, 11:30–13:30")],
  "tips_h": "Idee di percorso",

@@ -270,7 +270,8 @@ CALL = {"vi": ("Gọi", "Điện thoại"), "en": ("Call", "Phone"), "ru": ("П�
         "km": ("ហៅ", "ទូរស័ព្ទ"), "lo": ("ໂທ", "ໂທລະສັບ"), "my": ("ဖုန်းခေါ်", "ဖုန်း")}
 # Owner's YouTube clips: by Google Maps cid (map/hub rows) and by article key (article pages)
 VIDEO_CID = {"10570931153699557351": "gA532ZVEENM",   # Domaine de Marie (Mai Anh Dao church)
-             "4046450182113774666": "sbj0q40Xq7w"}    # Da Lat Cathedral (Chicken church)
+             "4046450182113774666": "sbj0q40Xq7w",    # Da Lat Cathedral (Chicken church)
+             "ChIJgxSFnygTcTER6-xbx0o255o": "on6LKx_BZNo"}  # Don Bosco church (Salesian)
 VIDEO_ART = {"domainedemarie": "gA532ZVEENM"}
 VLBL = {"vi": "Xem video", "en": "Watch the video", "ru": "Смотреть видео", "zh": "观看视频", "ko": "영상 보기", "ja": "動画を見る", "th": "ดูวิดีโอ",
         "id": "Tonton video", "ms": "Tonton video", "de": "Video ansehen", "fr": "Voir la vidéo", "es": "Ver el vídeo", "he": "צפו בסרטון",

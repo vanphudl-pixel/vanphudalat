@@ -59,11 +59,11 @@ MAPS["pagodamap"] = {
  }}
 
 MAPS["churchmap"] = {
- "title": "Kaart met kerken in Da Lat: 6 mooie kerken om te bezoeken | Van Phu",
+ "title": "Kaart met kerken in Da Lat: 7 mooie kerken om te bezoeken | Van Phu",
  "h1": "Kaart met kerken in Da Lat",
- "desc": "Kaart van de 6 meest bezochte kerken in Da Lat — de Hanenkerk, de Roze Kerk en meer — met openingstijden, het beste moment en routebeschrijving, plus een gratis PDF.",
- "lead": "De 6 kerken die reizigers het meest bezoeken in Da Lat, van de Hanenkerk tot de Roze Kerk — met openingstijden, het beste moment en route met één tik. Allemaal binnen 4 km van het meer.",
- "center": "Kerken van Da Lat (1–6)",
+ "desc": "Kaart van de 7 meest bezochte kerken in Da Lat — de Hanenkerk, de Roze Kerk en meer — met openingstijden, het beste moment en routebeschrijving, plus een gratis PDF.",
+ "lead": "De 7 kerken die reizigers het meest bezoeken in Da Lat, van de Hanenkerk tot de Roze Kerk — met openingstijden, het beste moment en route met één tik. Allemaal binnen 4 km van het meer.",
+ "center": "Kerken van Da Lat (1–7)",
  "season_h": "Gedrag in de kerk",
  "season": [("Kleding", "schouders en knieën bedekt"), ("Tijdens de mis", "stil zijn; binnen geen foto's of flitser"), ("Openstelling", "veel kerken openen hun deuren alleen voor de mis — het terrein kun je wel bezoeken"), ("Domaine de Marie", "gesloten tijdens de lunch, 11:30–13:30")],
  "tips_h": "Route-ideeën",
