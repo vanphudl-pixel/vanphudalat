@@ -567,6 +567,7 @@ def page_home(l):
  <p class="lead">{h["lead"]}</p>
  <div class="ticket">{h["price_badge"]}</div>
  <div class="cta">{hero_btns(l)}</div>
+<p class="shopaddr" style="margin:12px 0 0;font-size:15px;color:#fff;opacity:.92">📍 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng</p>
 </div></div>
 <div class="facts"><ul>{facts}</ul></div></header>
 <main class="wrap home">
