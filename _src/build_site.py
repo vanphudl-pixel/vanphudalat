@@ -971,24 +971,45 @@ for _i, _s in enumerate(ST.S):
 XS_PATH = home_path("vi") + "thue-xe-so-da-lat/"
 def page_xeso():
     me = XS_PATH
-    title = "Thuê xe số Đà Lạt – xe số dễ đi, giao xe tận nơi | Văn Phú"
-    desc = "Thuê xe số ở Đà Lạt tại Văn Phú: mở cửa từ 4:30 sáng mỗi ngày, không cọc tiền, kèm mũ bảo hiểm, giao xe miễn phí tới khách sạn khi thuê từ 2 ngày."
+    title = "Thuê xe số Đà Lạt: Sirius FI, Wave RSX – giao xe tận nơi | Văn Phú"
+    desc = "Thuê xe số Sirius FI và Wave RSX ở Đà Lạt tại Văn Phú: không cọc tiền, kèm mũ bảo hiểm, mở cửa 4:30 sáng, giao xe miễn phí tới khách sạn khi thuê từ 2 ngày. Chạy thử và quay video tình trạng xe."
+    faq = [
+        ("Thuê xe số Sirius FI hay Wave RSX ở Đà Lạt?", "Sirius FI dễ đi trong phố và đường đèo nhẹ; Wave RSX gọn, nhẹ và hợp người mới chạy xe số. Bạn có thể xem cả hai xe tại tiệm 1/15/5 Thông Thiên Học và chọn xe trước khi nhận."),
+        ("Thuê xe số ở Văn Phú có cần đặt cọc tiền không?", "Không. Văn Phú không giữ tiền cọc, chỉ giữ CCCD hoặc hộ chiếu trong thời gian thuê và trả lại khi bạn trả xe."),
+        ("Có mũ bảo hiểm khi thuê xe số không?", "Có. Mỗi xe số đều kèm mũ bảo hiểm và giá đỡ điện thoại; xe được giao sẵn 1 lít xăng."),
+        ("Văn Phú có giao xe số tận khách sạn không?", "Có. Khi thuê từ 2 ngày, Văn Phú giao xe miễn phí tới khách sạn, homestay trong khu trung tâm Đà Lạt."),
+    ]
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
+    faq_html = "".join(f"<details><summary><b>{q}</b></summary><p>{a}</p></details>" for q, a in faq)
     body = f"""
 <header><div class="wrap">{st_top(me)}
 <div class="hero">{crumbs("vi", me, [("Thuê xe số Đà Lạt", None)])}
- <h1>Thuê xe số Đà Lạt</h1>
- <p class="lead">Văn Phú có xe số cho khách muốn đi xe số: xe chắc, dễ điều khiển, giá 120.000 VND/ngày. Không cọc tiền, kèm mũ bảo hiểm, mở cửa từ 4:30 sáng mỗi ngày.</p>
+ <h1>Thuê xe số Đà Lạt: Sirius FI và Wave RSX</h1>
+ <p class="lead">Văn Phú cho thuê xe số Yamaha Sirius FI và Honda Wave RSX tại Đà Lạt. Không cọc tiền, kèm mũ bảo hiểm, mở cửa từ 4:30 sáng mỗi ngày.</p>
  <div class="ticket">120.000 VND / ngày</div>
  <div class="cta">{hero_btns("vi")}</div>
 </div></div></header>
 <main class="wrap">
 <section>
- <h2>Xe số Văn Phú</h2>
- <p>Xe số ở tiệm được bảo dưỡng thường xuyên và giao sẵn 1 lít xăng. Bạn có thể xem xe trực tiếp tại tiệm 1/15/5 Thông Thiên Học, hoặc nhắn tin để chọn xe trước khi đến.</p>
+ <h2>Xe số Sirius FI và Wave RSX</h2>
+ <p>Hai dòng xe số phổ biến nhất khi đi lại ở Đà Lạt. Xe được bảo dưỡng thường xuyên và giao sẵn 1 lít xăng. Nếu chưa biết chọn xe nào, nhắn tin hoặc ghé tiệm để xem trực tiếp.</p>
  <div class="posts">
-  <figure style="margin:0"><img src="{rel(me, "/img/xeso-fleet.jpg")}" alt="Xe số cho thuê tại Văn Phú Đà Lạt" loading="lazy" style="width:100%;border-radius:12px"></figure>
-  <figure style="margin:0"><img src="{rel(me, "/img/xeso-pair.jpg")}" alt="Xe số Honda cho thuê ở Đà Lạt" loading="lazy" style="width:100%;border-radius:12px"></figure>
+  <a class="post" href="#sirius"><b>Thuê xe Sirius FI Đà Lạt</b><span>Yamaha Sirius FI, xe số phổ biến, đi trong phố và đường đèo nhẹ.</span></a>
+  <a class="post" href="#wave"><b>Thuê xe Wave RSX Đà Lạt</b><span>Honda Wave RSX, gọn và nhẹ, hợp người mới chạy xe số.</span></a>
  </div>
+ <div class="posts">
+  <figure style="margin:0"><img src="{rel(me, "/img/xeso-fleet.jpg")}" alt="Xe số Sirius FI và Wave RSX cho thuê tại Văn Phú Đà Lạt" loading="lazy" style="width:100%;border-radius:12px"></figure>
+  <figure style="margin:0"><img src="{rel(me, "/img/xeso-pair.jpg")}" alt="Honda Wave RSX cho thuê ở Đà Lạt" loading="lazy" style="width:100%;border-radius:12px"></figure>
+ </div>
+</section>
+<section id="sirius">
+ <h2>Thuê xe Sirius FI Đà Lạt</h2>
+ <p>Yamaha Sirius FI là xe số phun xăng điện tử, khởi động dễ, chạy êm trong phố. Xe phù hợp cho khách đi lại hằng ngày, đi cà phê, đi chợ đêm hoặc chạy đường đèo nhẹ quanh Đà Lạt.</p>
+</section>
+<section id="wave">
+ <h2>Thuê xe Wave RSX Đà Lạt</h2>
+ <p>Honda Wave RSX là xe số nhẹ, dễ điều khiển, phụ tùng phổ biến. Xe hợp người mới chạy xe số và khách đi quãng ngắn trong thành phố.</p>
 </section>
 <section>
  <h2>Điều kiện thuê xe số</h2>
@@ -1000,10 +1021,14 @@ def page_xeso():
   <li><b>Chạy thử và quay video</b> tình trạng xe trước khi nhận, để bảo vệ cả hai bên.</li>
  </ul>
 </section>
+<section>
+ <h2>Câu hỏi thường gặp</h2>
+ {faq_html}
+</section>
 <section>{contact_box("vi")}{cta_box("vi", me)}</section>
 </main>
 """
-    lds = [business_ld("vi", BASE + me), crumbs_ld("vi", [("Thuê xe số Đà Lạt", me)])]
+    lds = [business_ld("vi", BASE + me), crumbs_ld("vi", [("Thuê xe số Đà Lạt", me)]), faq_ld]
     return st_head(me, title, desc, lds, "xeso-fleet") + body + foot("vi", frm=me)
 write(XS_PATH, page_xeso())
 
