@@ -967,6 +967,46 @@ for _i, _s in enumerate(ST.S):
     write(st_path(_s), page_street(_i, _s))
 
 
+# ------------------------------------------------------------------ Vietnamese-only manual-bike (xe số) rental page
+XS_PATH = home_path("vi") + "thue-xe-so-da-lat/"
+def page_xeso():
+    me = XS_PATH
+    title = "Thuê xe số Đà Lạt – xe số dễ đi, giao xe tận nơi | Văn Phú"
+    desc = "Thuê xe số ở Đà Lạt tại Văn Phú: mở cửa từ 4:30 sáng mỗi ngày, không cọc tiền, kèm mũ bảo hiểm, giao xe miễn phí tới khách sạn khi thuê từ 2 ngày."
+    body = f"""
+<header><div class="wrap">{st_top(me)}
+<div class="hero">{crumbs("vi", me, [("Thuê xe số Đà Lạt", None)])}
+ <h1>Thuê xe số Đà Lạt</h1>
+ <p class="lead">Văn Phú có xe số cho khách muốn đi xe số: xe chắc, dễ điều khiển, giá 120.000 VND/ngày. Không cọc tiền, kèm mũ bảo hiểm, mở cửa từ 4:30 sáng mỗi ngày.</p>
+ <div class="ticket">120.000 VND / ngày</div>
+ <div class="cta">{hero_btns("vi")}</div>
+</div></div></header>
+<main class="wrap">
+<section>
+ <h2>Xe số Văn Phú</h2>
+ <p>Xe số ở tiệm được bảo dưỡng thường xuyên và giao sẵn 1 lít xăng. Bạn có thể xem xe trực tiếp tại tiệm 1/15/5 Thông Thiên Học, hoặc nhắn tin để chọn xe trước khi đến.</p>
+ <div class="posts">
+  <figure style="margin:0"><img src="{rel(me, "/img/xeso-fleet.jpg")}" alt="Xe số cho thuê tại Văn Phú Đà Lạt" loading="lazy" style="width:100%;border-radius:12px"></figure>
+  <figure style="margin:0"><img src="{rel(me, "/img/xeso-pair.jpg")}" alt="Xe số Honda cho thuê ở Đà Lạt" loading="lazy" style="width:100%;border-radius:12px"></figure>
+ </div>
+</section>
+<section>
+ <h2>Điều kiện thuê xe số</h2>
+ <ul>
+  <li><b>Giá 120.000 VND/ngày</b> cho mỗi xe số, thanh toán khi nhận xe.</li>
+  <li><b>Không cọc tiền:</b> chỉ giữ CCCD hoặc hộ chiếu trong thời gian thuê.</li>
+  <li><b>Kèm mũ bảo hiểm</b> và giá đỡ điện thoại; xe được giao sẵn 1 lít xăng.</li>
+  <li><b>Giao xe miễn phí</b> tới khách sạn, homestay khu trung tâm Đà Lạt khi thuê từ 2 ngày.</li>
+  <li><b>Chạy thử và quay video</b> tình trạng xe trước khi nhận, để bảo vệ cả hai bên.</li>
+ </ul>
+</section>
+<section>{contact_box("vi")}{cta_box("vi", me)}</section>
+</main>
+"""
+    lds = [business_ld("vi", BASE + me), crumbs_ld("vi", [("Thuê xe số Đà Lạt", me)])]
+    return st_head(me, title, desc, lds, "xeso-fleet") + body + foot("vi", frm=me)
+write(XS_PATH, page_xeso())
+
 # ------------------------------------------------------------------ photo-spot map (en / vi / th)
 def pm_km(a, b):
     import math
@@ -1209,7 +1249,7 @@ for l in DAY.LANGS:
 _hub_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + hub_path(x)}"/>\n' for x in HUB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + hub_path("en")}"/>\n'
 for l in HUB.LANGS:
     urls += f"  <url>\n    <loc>{BASE + hub_path(l)}</loc>\n{_hub_alts}    <lastmod>{HUB.UPDATED}</lastmod>\n  </url>\n"
-for _me in [st_hub_path()] + [st_path(_s) for _s in ST.S]:
+for _me in [st_hub_path(), XS_PATH] + [st_path(_s) for _s in ST.S]:
     urls += f"  <url>\n    <loc>{BASE + _me}</loc>\n    <lastmod>{ST.UPDATED}</lastmod>\n  </url>\n"
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
