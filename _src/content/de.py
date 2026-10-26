@@ -27,6 +27,7 @@ C = {
   ("Keine Barkaution", "du hinterlegst während der Miete nur deinen Reisepass oder Personalausweis."),
   ("Vorauszahlung", "die gesamte Miete wird bei der Übergabe bezahlt."),
   ("Kostenlose Hotellieferung", "in die Hotels im Zentrum von Da Lat ab 2 Miettagen."),
+  ("Grab zum Shop", "fahre mit Grab zu 1/15/5 Thông Thiên Học, schau dir die Roller an und fahre sie dort probe."),
   ("Helm inklusive", "bei jedem Roller."),
   ("Handyhalterung + 1 Liter Benzin", "jeder Roller hat eine Handyhalterung; Benzinroller bekommen 1 Liter Benzin bis zur nächsten Tankstelle."),
   ("Probefahrt und Video", "vor der Miete fährst du Probe und wir filmen gemeinsam den Zustand des Rollers."),

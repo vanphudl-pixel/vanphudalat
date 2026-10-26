@@ -32,6 +32,7 @@ C = {
   ("Geen borg in contanten", "je laat je paspoort of ID-kaart achter tijdens de huur."),
   ("Vooraf betalen", "de volledige huur betaal je bij het ophalen van de scooter."),
   ("Gratis bezorging bij je hotel", "bij hotels in het centrum van Da Lat bij huur van 2+ dagen."),
+  ("Grab naar de winkel", "neem een Grab naar 1/15/5 Thông Thiên Học om de scooters te bekijken en er meteen een proefrit te maken."),
   ("Helm inbegrepen", "bij elke scooter."),
   ("Telefoonhouder + 1 liter benzine", "elke scooter heeft een telefoonhouder; benzinescooters krijgen 1 liter mee tot het dichtstbijzijnde tankstation."),
   ("Proefrit en video", "je probeert de scooter en we filmen samen de staat ervan voor de huur."),

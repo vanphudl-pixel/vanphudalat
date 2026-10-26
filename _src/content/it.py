@@ -32,6 +32,7 @@ C = {
   ("Nessun deposito in contanti", "lasci il passaporto o la carta d'identità per la durata del noleggio."),
   ("Pagamento anticipato", "il noleggio si paga per intero al ritiro dello scooter."),
   ("Consegna gratuita in hotel", "negli hotel del centro di Da Lat per noleggi di 2+ giorni."),
+  ("Grab fino al negozio", "prendi un Grab fino a 1/15/5 Thông Thiên Học per vedere gli scooter e provarli lì."),
   ("Casco incluso", "con ogni mezzo."),
   ("Porta-telefono + 1 litro di benzina", "ogni mezzo ha un porta-telefono; gli scooter a benzina hanno 1 litro per arrivare al distributore più vicino."),
   ("Prova e video", "provi lo scooter e filmiamo insieme le sue condizioni prima del noleggio."),

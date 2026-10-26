@@ -27,6 +27,7 @@ C = {
   ("No cash deposit", "leave your passport or ID card during the rental."),
   ("Pay upfront", "the full rental is paid when you pick up the bike."),
   ("Free hotel delivery", "to hotels in central Da Lat for rentals of 2+ days."),
+  ("Grab to the shop", "take a Grab to 1/15/5 Thông Thiên Học to see the bikes and test-ride them on the spot."),
   ("Helmet included", "with every bike."),
   ("Phone holder + 1 liter of fuel", "every bike has a phone holder; gas scooters come with 1 liter of fuel to get you to the nearest station."),
   ("Test ride and video", "you try the bike and we film its condition together before the rental."),

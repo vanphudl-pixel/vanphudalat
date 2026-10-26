@@ -27,6 +27,7 @@ C = {
   ("Sin depósito en efectivo", "solo dejas tu pasaporte o documento de identidad durante el alquiler."),
   ("Pago por adelantado", "el alquiler se paga completo al recoger la moto."),
   ("Entrega gratis en el hotel", "en hoteles del centro de Da Lat a partir de 2 días."),
+  ("Grab hasta la tienda", "pide un Grab a 1/15/5 Thông Thiên Học para ver las motos y probarlas allí mismo."),
   ("Casco incluido", "con cada moto."),
   ("Soporte para el móvil + 1 litro de gasolina", "todas las motos llevan soporte para el móvil; las de gasolina se entregan con 1 litro para llegar a la gasolinera más cercana."),
   ("Prueba y vídeo", "antes del alquiler pruebas la moto y grabamos juntos su estado."),

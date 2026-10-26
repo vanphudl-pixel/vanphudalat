@@ -27,6 +27,7 @@ C = {
   ("Pas de caution en espèces", "vous laissez seulement votre passeport ou votre carte d'identité pendant la location."),
   ("Paiement d'avance", "la location est réglée en totalité à la prise du scooter."),
   ("Livraison gratuite à l'hôtel", "dans les hôtels du centre de Da Lat dès 2 jours de location."),
+  ("Grab jusqu'à la boutique", "prenez un Grab jusqu'au 1/15/5 Thông Thiên Học pour voir les scooters et faire un essai sur place."),
   ("Casque inclus", "avec chaque scooter."),
   ("Support téléphone + 1 litre d'essence", "chaque scooter a un support téléphone ; les scooters à essence sont livrés avec 1 litre pour rejoindre la station la plus proche."),
   ("Essai et vidéo", "avant la location, vous essayez le scooter et nous filmons ensemble son état."),
