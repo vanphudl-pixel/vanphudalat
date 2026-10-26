@@ -1032,6 +1032,64 @@ def page_xeso():
     return st_head(me, title, desc, lds, "xeso-fleet") + body + foot("vi", frm=me)
 write(XS_PATH, page_xeso())
 
+# ------------------------------------------------------------------ Vietnamese-only Honda Vision rental page
+VS_PATH = home_path("vi") + "thue-xe-honda-vision-da-lat/"
+def page_vision():
+    me = VS_PATH
+    title = "Thuê xe Honda Vision Đà Lạt – xe tay ga nhẹ, giao xe tận nơi | Văn Phú"
+    desc = "Thuê xe Honda Vision ở Đà Lạt tại Văn Phú: xe tay ga nhẹ, dễ dắt, không cọc tiền, kèm mũ bảo hiểm, mở cửa 4:30 sáng, giao xe miễn phí tới khách sạn khi thuê từ 2 ngày."
+    faq = [
+        ("Honda Vision có dễ đi cho người mới không?", "Có. Vision là xe tay ga, không cần sang số hay côn, nhẹ và dễ dắt. Xe hợp cho người mới chạy xe máy và khách đi trong phố Đà Lạt."),
+        ("Nên thuê Honda Vision hay Honda Air Blade ở Đà Lạt?", "Vision hợp đi trong phố và quãng ngắn quanh trung tâm, nhẹ và dễ dắt. Air Blade 125cc khỏe hơn, hợp đèo dốc và ngoại ô, hoặc chở 2 người leo dốc."),
+        ("Thuê Honda Vision ở Văn Phú có cần đặt cọc không?", "Không. Văn Phú không giữ tiền cọc, chỉ giữ CCCD hoặc hộ chiếu trong thời gian thuê và trả lại khi bạn trả xe."),
+        ("Có mũ bảo hiểm khi thuê Honda Vision không?", "Có. Mỗi xe đều kèm mũ bảo hiểm và giá đỡ điện thoại; xe xăng được giao sẵn 1 lít xăng."),
+    ]
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
+    faq_html = "".join(f"<details><summary><b>{q}</b></summary><p>{a}</p></details>" for q, a in faq)
+    body = f"""
+<header><div class="wrap">{st_top(me)}
+<div class="hero">{crumbs("vi", me, [("Thuê xe Honda Vision Đà Lạt", None)])}
+ <h1>Thuê xe Honda Vision Đà Lạt</h1>
+ <p class="lead">Văn Phú cho thuê Honda Vision 110cc tại Đà Lạt: xe tay ga nhẹ, dễ dắt, giá cố định. Không cọc tiền, kèm mũ bảo hiểm, mở cửa từ 4:30 sáng mỗi ngày.</p>
+ <div class="ticket">150.000 VND / ngày</div>
+ <div class="cta">{hero_btns("vi")}</div>
+</div></div></header>
+<main class="wrap">
+<section>
+ <h2>Vì sao chọn Honda Vision ở Văn Phú</h2>
+ <ul>
+  <li><b>Tay ga, không số, không côn:</b> chỉ cần ga và phanh, dễ đi cho người mới.</li>
+  <li><b>Nhẹ và dễ dắt:</b> thuận tiện khi đỗ xe, quay đầu trong phố hẹp và khu chợ.</li>
+  <li><b>Hợp đi trong phố:</b> cà phê, chợ đêm, chợ Đà Lạt và các điểm quanh trung tâm.</li>
+ </ul>
+ <div class="posts">
+  <figure style="margin:0"><img src="{rel(me, "/img/vision-white.jpg")}" alt="Honda Vision cho thuê tại Văn Phú Đà Lạt" loading="lazy" style="width:100%;border-radius:12px"></figure>
+  <figure style="margin:0"><img src="{rel(me, "/img/honda-vision-cafe-garden-dalat.jpg")}" alt="Honda Vision thuê ở Đà Lạt đậu trước quán cà phê" loading="lazy" style="width:100%;border-radius:12px"></figure>
+ </div>
+</section>
+<section>
+ <h2>Điều kiện thuê Honda Vision</h2>
+ <ul>
+  <li><b>Giá 150.000 VND/ngày</b>, thanh toán khi nhận xe, không phụ phí.</li>
+  <li><b>Không cọc tiền:</b> chỉ giữ CCCD hoặc hộ chiếu trong thời gian thuê.</li>
+  <li><b>Kèm mũ bảo hiểm</b> và giá đỡ điện thoại; xe xăng được giao sẵn 1 lít xăng.</li>
+  <li><b>Giao xe miễn phí</b> tới khách sạn, homestay khu trung tâm Đà Lạt khi thuê từ 2 ngày.</li>
+  <li><b>Chạy thử và quay video</b> tình trạng xe trước khi nhận, để bảo vệ cả hai bên.</li>
+ </ul>
+ <p>Muốn xe số thay vì tay ga? Xem <a href="{rel(me, XS_PATH)}">thuê xe số Sirius FI và Wave RSX ở Đà Lạt</a>. Xem tất cả loại xe và giá tại <a href="{rel(me, home_path("vi"))}">trang thuê xe máy Đà Lạt</a>.</p>
+</section>
+<section>
+ <h2>Câu hỏi thường gặp</h2>
+ {faq_html}
+</section>
+<section>{contact_box("vi")}{cta_box("vi", me)}</section>
+</main>
+"""
+    lds = [business_ld("vi", BASE + me), crumbs_ld("vi", [("Thuê xe Honda Vision Đà Lạt", me)]), faq_ld]
+    return st_head(me, title, desc, lds, "vision-white") + body + foot("vi", frm=me)
+write(VS_PATH, page_vision())
+
 # ------------------------------------------------------------------ photo-spot map (en / vi / th)
 def pm_km(a, b):
     import math
@@ -1274,7 +1332,7 @@ for l in DAY.LANGS:
 _hub_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + hub_path(x)}"/>\n' for x in HUB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + hub_path("en")}"/>\n'
 for l in HUB.LANGS:
     urls += f"  <url>\n    <loc>{BASE + hub_path(l)}</loc>\n{_hub_alts}    <lastmod>{HUB.UPDATED}</lastmod>\n  </url>\n"
-for _me in [st_hub_path(), XS_PATH] + [st_path(_s) for _s in ST.S]:
+for _me in [st_hub_path(), XS_PATH, VS_PATH] + [st_path(_s) for _s in ST.S]:
     urls += f"  <url>\n    <loc>{BASE + _me}</loc>\n    <lastmod>{ST.UPDATED}</lastmod>\n  </url>\n"
 # Missing pages (GitHub Pages serves /404.html for any unknown URL): send the visitor to the home page instead of a blank error.
 (OUT / "404.html").write_text(f"""<!doctype html>
