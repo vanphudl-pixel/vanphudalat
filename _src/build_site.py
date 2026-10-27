@@ -47,6 +47,7 @@ def _ph_style(name):
 from content import photomap as PM
 from content import pagodamap as PG
 from content import churchmap as CH
+from content import halalid as HI
 from content import sunflowermap as SF
 from content import cloudmap as CL
 from content import cafemap as CF
@@ -250,6 +251,7 @@ RENT = {"en": "dalat-motorbike-rental", "vi": "thue-xe-may-da-lat", "ru": "arend
 for _l in _NEWL: RENT[_l] = _META[_l][2]
 def lang_root(l): return "" if l == "en" else f"{l}/"
 def home_path(l): return lang_root(l) + RENT[l] + "/"
+def halal_path(): return home_path("id") + "restoran-halal-dalat/"  # Indonesian-only halal restaurant map
 def routes_path(l): return lang_root(l) + C[l]["routes"]["slug"] + "/"
 def blog_path(l): return lang_root(l) + "blog/"
 def ev_path(l): return lang_root(l) + EV[l]["slug"] + "/"
@@ -362,6 +364,7 @@ def pm_section(l, me):
             f'<a class="btn alt" href="{rel(me, map_path(BU, l))}" style="border:1px solid var(--line)">🚌 {BU.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(DN, l))}" style="border:1px solid var(--line)">🚌 {DN.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(NT, l))}" style="border:1px solid var(--line)">🚐 {NT.T[l]["h1"]} →</a>'
+            + (f' <a class="btn alt" href="{rel(me, halal_path())}" style="border:1px solid var(--line)">🥘 {HI.H1} →</a>' if l == "id" else "")
             + (f' <a class="btn alt" href="{rel(me, lang_root(l) + DAY.SLUG[l] + "/")}" style="border:1px solid var(--line)">🛵 {DAY.T[l]["h1"]} →</a>' if l in DAY.LANGS else "") + '</p></section>')
 # Real Google Maps reviews, quoted verbatim (excerpts marked with …), shown in the original language.
 # Shown as visible quotes only: no Review/AggregateRating schema, because Google's rules forbid
@@ -1055,6 +1058,54 @@ def page_xeso():
     return st_head(me, title, desc, lds, "xeso-fleet") + body + foot("vi", frm=me)
 write(XS_PATH, page_xeso())
 
+# ------------------------------------------------------------------ Indonesian-only halal restaurant map
+def page_halal():
+    me = halal_path()
+    def top():
+        return f'<div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs"><a href="{rel(me, home_path("id"))}" class="on" data-l="id">ID</a></div></div>'
+    cards = "".join(
+        f'<div class="card"><b>{i}. {n}</b>'
+        f'<p>⭐ {r} dari {c} ulasan Google · 🕒 {h}</p>'
+        f'<p>{d}</p><p><i>{t}</i></p>'
+        f'<p><a href="{gmap(pid, la, ln)}" target="_blank" rel="noopener">📍 Buka di Google Maps</a></p></div>'
+        for i, (n, r, c, la, ln, pid, h, d, t) in enumerate(HI.SPOTS, 1))
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in HI.FAQ]}
+    faq_html = "".join(f"<details><summary><b>{q}</b></summary><p>{a}</p></details>" for q, a in HI.FAQ)
+    tips = "".join(f"<li>{t}</li>" for t in HI.TIPS)
+    body = f"""
+<header><div class="wrap">{top()}
+<div class="hero">{crumbs("id", me, [(HI.H1, None)])}
+ <h1>{HI.H1}</h1>
+ <p class="lead">{HI.LEAD}</p>
+ <div class="cta">{hero_btns("id")}</div>
+</div></div></header>
+<main class="wrap">
+<section>
+ <h2>Peta restoran halal di Đà Lạt</h2>
+ <iframe src="https://maps.google.com/maps?q=restoran+halal+Dalat&amp;hl=id&amp;z=14&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta restoran halal di Đà Lạt" style="width:100%;height:360px;border:0;border-radius:12px"></iframe>
+ <p class="kw">Peta ini hasil pencarian Google Maps. Lima tempat di bawah adalah pilihan kami dari hasil itu.</p>
+</section>
+<section>
+ <h2>5 restoran halal di Đà Lạt</h2>
+ <div class="grid">{cards}</div>
+</section>
+<section>
+ <h2>Sebelum berkunjung</h2>
+ <ul>{tips}</ul>
+</section>
+<section>
+ <h2>Pertanyaan umum</h2>
+ {faq_html}
+</section>
+<section>{contact_box("id")}{cta_box("id", me)}</section>
+</main>
+"""
+    lds = [business_ld("id", BASE + me), crumbs_ld("id", [(HI.H1, me)]), faq_ld]
+    html = st_head(me, HI.TITLE, HI.DESC, lds, "electric-row").replace('<html lang="vi">', '<html lang="id">').replace('content="vi_VN"', 'content="id_ID"')
+    return html + body + foot("id", frm=me)
+write(halal_path(), page_halal())
+
 # ------------------------------------------------------------------ Vietnamese-only Honda Vision rental page
 VS_PATH = home_path("vi") + "thue-xe-honda-vision-da-lat/"
 def page_vision():
@@ -1355,7 +1406,7 @@ for l in DAY.LANGS:
 _hub_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + hub_path(x)}"/>\n' for x in HUB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + hub_path("en")}"/>\n'
 for l in HUB.LANGS:
     urls += f"  <url>\n    <loc>{BASE + hub_path(l)}</loc>\n{_hub_alts}    <lastmod>{HUB.UPDATED}</lastmod>\n  </url>\n"
-for _me in [st_hub_path(), XS_PATH, VS_PATH] + [st_path(_s) for _s in ST.S]:
+for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path()] + [st_path(_s) for _s in ST.S]:
     urls += f"  <url>\n    <loc>{BASE + _me}</loc>\n    <lastmod>{ST.UPDATED}</lastmod>\n  </url>\n"
 # Missing pages (GitHub Pages serves /404.html for any unknown URL): send the visitor to the home page instead of a blank error.
 (OUT / "404.html").write_text(f"""<!doctype html>
