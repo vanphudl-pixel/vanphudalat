@@ -251,7 +251,8 @@ RENT = {"en": "dalat-motorbike-rental", "vi": "thue-xe-may-da-lat", "ru": "arend
 for _l in _NEWL: RENT[_l] = _META[_l][2]
 def lang_root(l): return "" if l == "en" else f"{l}/"
 def home_path(l): return lang_root(l) + RENT[l] + "/"
-def halal_path(): return home_path("id") + "restoran-halal-dalat/"  # Indonesian-only halal restaurant map
+def halal_path(): return lang_root("id") + "restoran-halal-dalat/"  # Indonesian-only halal restaurant map (short URL)
+HALAL_OLD = "id/sewa-motor-dalat/restoran-halal-dalat/"  # previous URL, kept as a redirect
 def routes_path(l): return lang_root(l) + C[l]["routes"]["slug"] + "/"
 def blog_path(l): return lang_root(l) + "blog/"
 def ev_path(l): return lang_root(l) + EV[l]["slug"] + "/"
@@ -1105,6 +1106,13 @@ def page_halal():
     html = st_head(me, HI.TITLE, HI.DESC, lds, "electric-row").replace('<html lang="vi">', '<html lang="id">').replace('content="vi_VN"', 'content="id_ID"')
     return html + body + foot("id", frm=me)
 write(halal_path(), page_halal())
+write(HALAL_OLD, f"""<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="robots" content="noindex">
+<link rel="canonical" href="{BASE + halal_path()}">
+<meta http-equiv="refresh" content="0; url={BASE + halal_path()}">
+<title>{HI.TITLE}</title>
+<script>location.replace("/{halal_path()}"+location.search+location.hash)</script>
+</head><body><a href="/{halal_path()}">{HI.H1}</a></body></html>""")
 
 # ------------------------------------------------------------------ Vietnamese-only Honda Vision rental page
 VS_PATH = home_path("vi") + "thue-xe-honda-vision-da-lat/"
