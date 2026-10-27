@@ -3,10 +3,10 @@ Places were picked from Google Maps search results (2026-10-27) and kept only wh
 Ratings and hours are Google Maps values on that date. Văn Phú holds no halal certificate for these restaurants: guests must ask."""
 
 UPDATED = "2026-10-27"
-H1 = "Restoran Halal di Đà Lạt"
-TITLE = "Restoran Halal di Đà Lạt: Peta untuk Wisatawan Muslim | Van Phu"
+H1 = "Restoran Halal di Dalat (Đà Lạt)"
+TITLE = "Restoran Halal di Dalat: Peta Makanan Halal untuk Wisatawan Muslim | Van Phu"
 DESC = "Peta restoran halal di Đà Lạt untuk wisatawan Muslim: 5 tempat dengan jam buka, rating Google, arah ke setiap tempat dan tips sebelum makan. Gratis."
-LEAD = "Daftar dan peta restoran halal di Đà Lạt untuk wisatawan Muslim: jam buka, rating Google dan arah ke tiap tempat. Dari tiệm Văn Phú, semua tempat ini bisa dicapai dengan motor."
+LEAD = "Daftar dan peta restoran halal dan makanan halal di Dalat (Đà Lạt) untuk wisatawan Muslim: jam buka, rating Google dan arah ke tiap tempat. Dari tiệm Văn Phú, semua tempat ini bisa dicapai dengan motor."
 
 # name, rating, rating count, lat, lng, Google Maps place_id, hours, what it is, tip
 SPOTS = [
@@ -47,7 +47,7 @@ FAQ = [
 ]
 
 # --- Muslim-traveller insights (added 2026-10-28) ---
-PRAYER_H3 = "Tempat Sholat di Đà Lạt"
+PRAYER_H3 = "Tempat Sholat di Dalat (Chỗ Sholat)"
 PRAYER = [
     "ISMAEL (Cam Ly): ulasan Google menyebut ada ruang sholat untuk Muslim. Parkir motor tersedia tepat di depan.",
     "Halal Food Dalat Hajah Hawa: ulasan menyebut ada tempat sholat, dan staf membantu pengunjung mengisi daya HP.",

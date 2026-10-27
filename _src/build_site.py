@@ -1100,7 +1100,7 @@ def page_halal():
 </section>
 <section>
  <h2>Keliling Đà Lạt dengan motor</h2>
- <p>{HI.CTA_TEXT} <a href="{rel(me, home_path("id"))}">Lihat harga dan syarat sewa motor di Văn Phú</a>.</p>
+ <p>{HI.CTA_TEXT} Cek <a href="{rel(me, home_path("id"))}">sewa motor di Dalat: harga dan syarat di Văn Phú</a>.</p>
 </section>
 <section>
  <h2>Sebelum berkunjung</h2>
