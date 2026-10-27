@@ -1164,6 +1164,42 @@ def page_tour():
     html = st_head(me, HI.TOUR_TITLE, HI.TOUR_DESC, lds, "electric-row").replace('<html lang="vi">', '<html lang="id">').replace('content="vi_VN"', 'content="id_ID"')
     return html + body + foot("id", frm=me)
 write(tour_path(), page_tour())
+
+# ------------------------------------------------------------------ Guide articles (vi + en), checked against owner-confirmed rules
+from content import guides as GD
+def guide_path(l, g): return home_path(l) + g["slug"]
+def page_guide(l, i):
+    g = GD.GUIDES[l][i]
+    me = guide_path(l, g)
+    langlink = f'<div class="langs"><a href="{rel(me, home_path(l))}" class="on" data-l="{l}">{l.upper()}</a></div>'
+    top = f'<div class="top"><div class="logo">Văn Phú Đà Lạt</div>{langlink}</div>'
+    others = [o for j, o in enumerate(GD.GUIDES[l]) if j != i]
+    related = "".join(f'<li><a href="{rel(me, guide_path(l, o))}">{o["h1"]}</a></li>' for o in others)
+    secs = "".join(f"<section><h2>{h}</h2>{body}</section>" for h, body in g["sections"])
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in g["faq"]]}
+    faq_html = "".join(f"<details><summary><b>{q}</b></summary><p>{a}</p></details>" for q, a in g["faq"])
+    rel_label = {"vi": "Đọc thêm", "en": "Read more"}[l]
+    body = f"""
+<header><div class="wrap">{top}
+<div class="hero">{crumbs(l, me, [(g["h1"], None)])}
+ <h1>{g["h1"]}</h1>
+ <p class="lead">{g["lead"]}</p>
+ <div class="cta">{hero_btns(l)}</div>
+</div></div></header>
+<main class="wrap">
+{secs}
+<section><h2>{"Câu hỏi thường gặp" if l == "vi" else "Frequently asked questions"}</h2>{faq_html}</section>
+<section><h2>{rel_label}</h2><ul>{related}</ul></section>
+<section>{contact_box(l)}{cta_box(l, me)}</section>
+</main>
+"""
+    lds = [business_ld(l, BASE + me), crumbs_ld(l, [(g["h1"], me)]), faq_ld]
+    html = st_head(me, g["title"], g["desc"], lds, "electric-row").replace('<html lang="vi">', f'<html lang="{l}">').replace('content="vi_VN"', f'content="{ {"vi":"vi_VN","en":"en_US"}[l] }"')
+    return html + body + foot(l, frm=me)
+for _l in GD.GUIDES:
+    for _i in range(len(GD.GUIDES[_l])):
+        write(guide_path(_l, GD.GUIDES[_l][_i]), page_guide(_l, _i))
 write(HALAL_OLD, f"""<!doctype html>
 <html lang="id"><head><meta charset="utf-8"><meta name="robots" content="noindex">
 <link rel="canonical" href="{BASE + halal_path()}">
@@ -1472,7 +1508,7 @@ for l in DAY.LANGS:
 _hub_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + hub_path(x)}"/>\n' for x in HUB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + hub_path("en")}"/>\n'
 for l in HUB.LANGS:
     urls += f"  <url>\n    <loc>{BASE + hub_path(l)}</loc>\n{_hub_alts}    <lastmod>{HUB.UPDATED}</lastmod>\n  </url>\n"
-for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path(), tour_path()] + [st_path(_s) for _s in ST.S]:
+for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path(), tour_path()] + [guide_path(_l, _g) for _l in GD.GUIDES for _g in GD.GUIDES[_l]] + [st_path(_s) for _s in ST.S]:
     urls += f"  <url>\n    <loc>{BASE + _me}</loc>\n    <lastmod>{ST.UPDATED}</lastmod>\n  </url>\n"
 # Missing pages (GitHub Pages serves /404.html for any unknown URL): send the visitor to the home page instead of a blank error.
 (OUT / "404.html").write_text(f"""<!doctype html>
