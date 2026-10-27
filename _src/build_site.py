@@ -858,8 +858,19 @@ def add_ga(html):
     i += len('<meta charset="utf-8">')
     return html[:i] + GA + html[i:]
 
+# Content-Security-Policy (meta tag: GitHub Pages cannot send HTTP headers). Allows only what the pages use:
+# own files, inline CSS/JS already in the pages, Google Tag Manager, YouTube/Maps embeds, Zalo/WhatsApp/Telegram links (links need no CSP).
+CSP = ("default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; "
+       "style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; "
+       "frame-src https://www.youtube-nocookie.com https://www.youtube.com https://maps.google.com https://www.google.com; "
+       "connect-src 'self' https:; object-src 'none'; base-uri 'self'")
+def add_csp(html):
+    tag = f'<meta http-equiv="Content-Security-Policy" content="{CSP}">'
+    if 'http-equiv="Content-Security-Policy"' in html:
+        return html
+    return html.replace('<meta charset="utf-8">', '<meta charset="utf-8">' + tag, 1) if '<meta charset="utf-8">' in html else html
 def write(path, html):
-    html = add_ga(speed(html))
+    html = add_csp(add_ga(speed(html)))
     p = OUT / path / "index.html"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(html, encoding="utf-8")
