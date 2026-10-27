@@ -75,6 +75,9 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-10-26 flowers — Flower villages and farms around Da Lat (Van Thanh, Thai Phien, hydrangea farms Trai Mat direction, city flower garden; links domainedemarie, wildsunflower, routes; photos friends-air-blade-van-phu-gate + honda-vision-bui-thi-xuan-street-dalat; 18 languages)
 - 2026-10-26 lt-caudat-early — Long-tail [Group 2]: renting a motorbike for a dawn ride to Cau Dat (vi "thuê xe máy đi đồi chè Cầu Đất sáng sớm", en "motorbike rental for a sunrise ride to the Cau Dat tea hills"; Air Blade, pick-up 4:30 vs day before = 2 days, fuel; links caudat, lt-early, cloudhunt; photos van-phu-shop-early-pickup-air-blade + van-phu-guest-air-blade-thumbs-up; 18 languages)
 - 2026-10-26 lt-ev-rain — EV long-tail: electric scooter in the rain (vi "thuê xe máy điện Đà Lạt khi trời mưa", en "electric scooter rental in Da Lat in the rain"; links rainyday, evrules, lt-ev-city; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; 18 languages)
+- 2026-10-27 thingstodo — Things to do in central Da Lat (Xuan Huong Lake, Lam Vien Square, railway station, Crazy House, Domaine de Marie, cathedral, Bao Dai palace, market; links domainedemarie, nightmarket, photospots, photo-map, routes; photos white-honda-vision-sidewalk-dalat + honda-vision-cafe-garden-dalat; 18 languages)
+- 2026-10-27 lt-airblade — Long-tail: Honda Air Blade 125cc rental (vi "thuê xe Air Blade Đà Lạt", en "Honda Air Blade rental in Da Lat"; links lt-caudat-early, lt-automatic; photos group-rental-air-blade-van-phu-morning + air-blade-handover-dalat-homestay; 18 languages)
+- 2026-10-27 lt-ev-vs-grab — EV long-tail: electric scooter rental vs Grab/taxi (vi "thuê xe máy điện hay đi Grab ở Đà Lạt", en "electric scooter rental vs Grab in Da Lat"; links lt-ev-city, evrules; photos electric-scooters-van-phu-shop + guest-white-electric-scooter-dalat; 18 languages)
 
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
@@ -88,7 +91,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - OWNER'S KEYWORD PLAN 2 (17/10/2026, English-search priorities): each topic below marked [KW2] lists an exact English target phrase → the en title_tag, H1 and meta must contain it (natural capitalisation); vi and other languages use their natural equivalent. Already covered, do NOT write new articles for: "Dalat motorbike rental price" / "How much does it cost to rent a scooter in Dalat" (existing `price`), "Dalat motorbike rental requirements" (lt-documents), "Best places to visit around Dalat by scooter" (routes page + photospots), "What to know before riding a scooter in Dalat" (riding + lt-first-time). Never write "international driving permit" / "can foreigners legally ride" topics — they break the no-licence hard rule.
 - Internal links: add every new key to its cluster in `content/cluster.py` ("Read also" then shows cluster siblings first), and link 1–2 sibling articles in the body with <a href="{ART:<key>}">…</a>.
 - "Documents" topics: the ONLY documents are passport (foreigners) or CCCD/ID card (Vietnamese guests). Never mention any other document, licence or permit.
-- [ ] lt-airblade — Renting a Honda Air Blade 125cc in Da Lat (for passes, two riders, longer day trips)
 - [ ] lt-vision — Renting a Honda Vision 110cc in Da Lat (light, easy automatic for beginners and city riding)
 - [ ] lt-multiday — Renting a motorbike in Da Lat for a week or longer (2-day intent is lt-2days — don't repeat it) (150,000 VND/day, how days are counted, tips)
 - [ ] lt-two — Motorbike rental in Da Lat for two people / couples (which bike, comfort, safety)
@@ -110,7 +112,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-vs-grab — Electric scooter rental vs Grab/taxi for getting around Da Lat (honest comparison, no invented fares)
 - [ ] lt-ev-eco — Eco-friendly travel in Da Lat: quiet electric scooter, no fuel, cleaner air
 - [ ] lt-ev-parking — Parking an electric scooter in Da Lat (guarded lots, gửi xe tickets, locking)
 - [ ] lt-ev-halfday — Half-day city loop in Da Lat by electric scooter (central sights only)
@@ -119,7 +120,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-faq — Electric scooter rental in Da Lat: 10 common questions answered
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 24/10 thingstodo — Things to do in central Da Lat: Xuan Huong Lake, Da Lat Station, Crazy House, Domaine de Marie
 - [ ] 25/10 oneday — Da Lat in 1 day by motorbike: a full loop
 - [ ] 26/10 strawberries — Strawberry farms and local produce
 - [ ] 27/10 where-to-stay — Where to stay in Da Lat: areas compared (no specific hotel claims)
