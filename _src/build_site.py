@@ -149,6 +149,12 @@ table.price tr:last-child td{border-bottom:0}
 .fp:hover{background:rgba(255,255,255,.18)}
 .fp.call{background:#f2b632;border-color:#f2b632;color:#173d2d}
 .fp.yt{background:#c4302b;border-color:#c4302b}
+.contact{background:var(--brand2);border-radius:14px;padding:6px 18px}
+.crow{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px dashed rgba(23,61,45,.18);line-height:1.5;font-size:15px}
+.crow:first-child{border-top:0}
+.crow i{font-style:normal;flex:0 0 26px;text-align:center;font-size:18px;line-height:1.35}
+.crow div{min-width:0;overflow-wrap:anywhere}
+.crow.muted{font-size:14px;opacity:.85}
 .napbox{max-width:620px;margin:0 auto 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 16px;text-align:left;font-size:14px;line-height:1.5}
 .napbox .nt{font-weight:700;color:#fff;font-size:15px;margin-bottom:2px}
 .napbox .nl{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px dashed rgba(255,255,255,.14)}
@@ -448,19 +454,20 @@ OLD_ADDR_LBL = {"vi": "Địa chỉ cũ (trên Google Maps):", "en": "Old addres
 def old_addr_row(l): return f'<p><b>{OLD_ADDR_LBL.get(l, OLD_ADDR_LBL["en"])}</b> <a href="{GMAPS}" target="_blank" rel="noopener">{OLD_ADDR}</a></p>'
 def contacts(l):
     h = C[l]["home"]
-    rows = [f'<p><b>📞 {CALL[l][1]}:</b> <a href="{TEL}">{phone_txt(l)}</a> · <a href="{TEL2}">{phone2_txt(l)}</a></p>',
-            f'<p><b>WhatsApp:</b> <a href="{wa_link(l)}">+84 944 081 101</a> · <a href="{WA2}">+84 834 622 149</a></p>',
-            f'<p><b>Zalo:</b> <a href="{ZALO}">0944 081 101</a></p>',
-            f'<p><b>Telegram:</b> <a href="{TG}">@vanphudalat</a></p>']
+    rows = [("📞", f'<b>{CALL[l][1]}:</b> <a href="{TEL}">{phone_txt(l)}</a> · <a href="{TEL2}">{phone2_txt(l)}</a>'),
+            ("💬", f'<b>WhatsApp:</b> <a href="{wa_link(l)}">+84 944 081 101</a> · <a href="{WA2}">+84 834 622 149</a>'),
+            ("📱", f'<b>Zalo:</b> <a href="{ZALO}">0944 081 101</a>'),
+            ("✈️", f'<b>Telegram:</b> <a href="{TG}">@vanphudalat</a>')]
     if l == "ru":
-        rows.append(f'<p><b>Telegram-канал:</b> <a href="{TG_CHANNEL}">@dalat_life_vietnam</a></p>')
-    rows += ['<p><b>WeChat:</b> vanphudalat</p>',
-             '<p><b>Facebook:</b> <a href="https://www.facebook.com/vanphudalat">facebook.com/vanphudalat</a></p>',
-             f'<p><b>YouTube:</b> <a href="{YT}" target="_blank" rel="noopener">@DalatMotorbikeRentalVanPhu</a></p>',
-             f'<p><b>Tripadvisor:</b> <a href="{TRIPADVISOR}" target="_blank" rel="noopener">Van Phu Dalat Motorbike Rental</a></p>',
-             f'<p><b>{ya_name(l)}:</b> <a href="{ya_org(l)}" target="_blank" rel="noopener">Van Phu</a></p>',
-             f'<p><b>{h["addr_label"]}</b> {h["address"]}</p>', old_addr_row(l)]
-    return '<div class="contact">' + "\n".join(rows) + "</div>"
+        rows.append(("📢", f'<b>Telegram-канал:</b> <a href="{TG_CHANNEL}">@dalat_life_vietnam</a>'))
+    rows += [("🗨️", '<b>WeChat:</b> vanphudalat'),
+             ("👍", '<b>Facebook:</b> <a href="https://www.facebook.com/vanphudalat">facebook.com/vanphudalat</a>'),
+             ("▶️", f'<b>YouTube:</b> <a href="{YT}" target="_blank" rel="noopener">@DalatMotorbikeRentalVanPhu</a>'),
+             ("🦉", f'<b>Tripadvisor:</b> <a href="{TRIPADVISOR}" target="_blank" rel="noopener">Van Phu Dalat Motorbike Rental</a>'),
+             ("🧭", f'<b>{ya_name(l)}:</b> <a href="{ya_org(l)}" target="_blank" rel="noopener">Van Phu</a>'),
+             ("📍", f'<b>{h["addr_label"]}</b> {h["address"]}')]
+    out = "".join(f'<div class="crow"><i>{i}</i><div>{c}</div></div>' for i, c in rows)
+    return f'<div class="contact">{out}<div class="crow muted"><i>🗺️</i><div><b>{OLD_ADDR_LBL.get(l, OLD_ADDR_LBL["en"])}</b> <a href="{GMAPS}" target="_blank" rel="noopener">{OLD_ADDR}</a></div></div></div>'
 
 def langbar(l, kind, key, frm):
     out = ""
