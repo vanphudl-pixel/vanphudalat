@@ -1092,6 +1092,17 @@ def page_halal():
  <div class="grid">{cards}</div>
 </section>
 <section>
+ <h2>Tips untuk Muslim traveler</h2>
+ <h3>{HI.PRAYER_H3}</h3>
+ <ul>{"".join(f"<li>{x}</li>" for x in HI.PRAYER)}</ul>
+ <h3>{HI.FOOD_H3}</h3>
+ <ul>{"".join(f"<li>{x}</li>" for x in HI.FOOD_TIPS)}</ul>
+</section>
+<section>
+ <h2>Keliling Đà Lạt dengan motor</h2>
+ <p>{HI.CTA_TEXT} <a href="{rel(me, home_path("id"))}">Lihat harga dan syarat sewa motor di Văn Phú</a>.</p>
+</section>
+<section>
  <h2>Sebelum berkunjung</h2>
  <ul>{tips}</ul>
 </section>

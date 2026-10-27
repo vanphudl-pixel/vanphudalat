@@ -45,3 +45,21 @@ FAQ = [
     ("Apakah ada tempat sholat di dekat restoran?",
      "Ulasan Google menyebut ISMAEL dan Hajah Hawa menyediakan tempat sholat. Tanyakan saat datang karena ini tidak selalu tercantum di Google Maps."),
 ]
+
+# --- Muslim-traveller insights (added 2026-10-28) ---
+PRAYER_H3 = "Tempat Sholat di Đà Lạt"
+PRAYER = [
+    "ISMAEL (Cam Ly): ulasan Google menyebut ada ruang sholat untuk Muslim. Parkir motor tersedia tepat di depan.",
+    "Halal Food Dalat Hajah Hawa: ulasan menyebut ada tempat sholat, dan staf membantu pengunjung mengisi daya HP.",
+    "Restoran lain di daftar ini: belum ada informasi pasti tentang tempat sholat. Tanyakan dulu saat datang.",
+    "Kami belum punya daftar masjid yang sudah diverifikasi di Đà Lạt. Jika butuh tempat sholat saat sedang di kota, tanyakan ke restoran halal terdekat.",
+]
+FOOD_H3 = "Phở dan Bánh Mì: cara memesan dengan aman"
+FOOD_TIPS = [
+    "Phở dan bánh mì adalah makanan Vietnam yang paling umum. Nước dùng phở sering dimasak dengan kaldu tulang sapi, jadi tanyakan dulu apakah kaldunya dibuat dari sapi atau ayam halal.",
+    "Untuk bánh mì, tanyakan jenis dagingnya (sapi atau ayam) dan apakah ada pâté atau daging babi di dalamnya.",
+    "Restoran yang menampilkan label halal atau tertulis halal di Google Maps biasanya tidak menjual daging babi. Tetap konfirmasi langsung sebelum memesan.",
+]
+CTA_TEXT = ("Di Đà Lạt, naik motor adalah cara paling praktis untuk mencari makan halal. Jalan di pusat kota cukup lebar, dan banyak tempat di daftar ini "
+            "terletak dekat jalan utama. Văn Phú menyewakan xe tay ga dan xe điện dengan harga 150.000 VND/hari, tanpa cọc tiền, dan bisa diantar ke hotel "
+            "jika sewa dari 2 hari. Ambil motor di tiệm, lalu mampir ke beberapa tempat ini dalam satu hari.")
