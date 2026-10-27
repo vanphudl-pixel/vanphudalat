@@ -63,3 +63,27 @@ FOOD_TIPS = [
 CTA_TEXT = ("Di Đà Lạt, naik motor adalah cara paling praktis untuk mencari makan halal. Jalan di pusat kota cukup lebar, dan banyak tempat di daftar ini "
             "terletak dekat jalan utama. Văn Phú menyewakan xe tay ga dan xe điện dengan harga 150.000 VND/hari, tanpa cọc tiền, dan bisa diantar ke hotel "
             "jika sewa dari 2 hari. Ambil motor di tiệm, lalu mampir ke beberapa tempat ini dalam satu hari.")
+
+# --- Indonesian article: motorbike tour for Muslim travellers (added 2026-10-28) ---
+TOUR_SLUG = "tur-motor-dalat-muslim/"
+TOUR_TITLE = "Tur Motor Dalat untuk Wisatawan Muslim: Rute, Makan Halal & Sholat | Van Phu"
+TOUR_H1 = "Tur Motor Dalat untuk Wisatawan Muslim"
+TOUR_DESC = "Panduan sehari keliling Dalat dengan motor untuk wisatawan Muslim: rute yang mudah, makan halal di sepanjang jalan, tempat sholat dan tips aman berkendara."
+TOUR_LEAD = "Dalat paling enak dijelajahi dengan motor. Berikut rute sehari yang bisa diikuti, sekaligus tempat makan halal dan tempat sholat yang bisa Anda rencanakan di tengah perjalanan."
+TOUR_ROUTE = [
+    ("Pagi: ambil motor di tiệm Văn Phú", "Tiệm di 1/15/5 Thông Thiên Học buka mulai 4:30 pagi. Cek motor, pakai helm, dan minta petunjuk jalan singkat dari staf."),
+    ("Siang: makan di Sarah Halal Food", "Restoran halal di pusat kota, dekat jalan utama dan pasar malam. Staf di sini ada yang bisa berbahasa Melayu menurut ulasan."),
+    ("Sore: masuk ke pusat kota dan danau", "Berkeliling di sekitar Hồ Xuân Hương. Jalannya lebar dan datar, cocok untuk pemula."),
+    ("Malam: makan di Sagar Indian Cuisine", "Masakan India halal dengan porsi besar. Buka sampai 22:00, kecuali Selasa mulai 14:30."),
+]
+TOUR_TIPS = [
+    "Gas (xe số, tay ga 125cc) butuh SIM motor. Xe điện tidak butuh SIM.",
+    "Sebelum jalan di tanjakan, cek rem dan bahan bakar. Motor sudah diberi bensin 1 liter saat diserahkan.",
+    "Tempat sholat: ISMAEL dan Hajah Hawa disebut punya ruang sholat di ulasan Google. Panduan lengkap ada di halaman restoran halal.",
+    "Pakai jaket. Dalat lebih dingin dari kota pesisir, terutama malam hari.",
+]
+TOUR_FAQ = [
+    ("Berapa sewa motor di Văn Phú?", "150.000 VND per hari untuk setiap motor, tanpa cọc tiền. Kami hanya menahan paspor atau KTP."),
+    ("Apakah bisa diantar ke hotel?", "Bisa, gratis untuk sewa 2 hari atau lebih di pusat kota. Untuk sewa 1 hari, ambil di tiệm."),
+    ("Apakah Văn Phú menyediakan helm?", "Ya, helm sudah termasuk di setiap sewa."),
+]

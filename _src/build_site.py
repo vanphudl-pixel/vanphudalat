@@ -252,6 +252,7 @@ for _l in _NEWL: RENT[_l] = _META[_l][2]
 def lang_root(l): return "" if l == "en" else f"{l}/"
 def home_path(l): return lang_root(l) + RENT[l] + "/"
 def halal_path(): return lang_root("id") + "restoran-halal-dalat/"  # Indonesian-only halal restaurant map (short URL)
+def tour_path(): return lang_root("id") + HI.TOUR_SLUG
 HALAL_OLD = "id/sewa-motor-dalat/restoran-halal-dalat/"  # previous URL, kept as a redirect
 def routes_path(l): return lang_root(l) + C[l]["routes"]["slug"] + "/"
 def blog_path(l): return lang_root(l) + "blog/"
@@ -1100,6 +1101,7 @@ def page_halal():
 </section>
 <section>
  <h2>Keliling Đà Lạt dengan motor</h2>
+ <p>Mau rute sehari lengkap? Lihat <a href="{rel(me, tour_path())}">tur motor Dalat untuk wisatawan Muslim</a>.</p>
  <p>{HI.CTA_TEXT} Cek <a href="{rel(me, home_path("id"))}">sewa motor di Dalat: harga dan syarat di Văn Phú</a>.</p>
 </section>
 <section>
@@ -1117,6 +1119,51 @@ def page_halal():
     html = st_head(me, HI.TITLE, HI.DESC, lds, "electric-row").replace('<html lang="vi">', '<html lang="id">').replace('content="vi_VN"', 'content="id_ID"')
     return html + body + foot("id", frm=me)
 write(halal_path(), page_halal())
+
+# ------------------------------------------------------------------ Indonesian-only motorbike tour for Muslim travellers
+def page_tour():
+    me = tour_path()
+    top = f'<div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs"><a href="{rel(me, home_path("id"))}" class="on" data-l="id">ID</a></div></div>'
+    route = "".join(f"<li><b>{t}</b><br>{d}</li>" for t, d in HI.TOUR_ROUTE)
+    tips = "".join(f"<li>{t}</li>" for t in HI.TOUR_TIPS)
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in HI.TOUR_FAQ]}
+    faq_html = "".join(f"<details><summary><b>{q}</b></summary><p>{a}</p></details>" for q, a in HI.TOUR_FAQ)
+    body = f"""
+<header><div class="wrap">{top}
+<div class="hero">{crumbs("id", me, [(HI.TOUR_H1, None)])}
+ <h1>{HI.TOUR_H1}</h1>
+ <p class="lead">{HI.TOUR_LEAD}</p>
+ <div class="cta">{hero_btns("id")}</div>
+</div></div></header>
+<main class="wrap">
+<section>
+ <h2>Rute sehari di Dalat</h2>
+ <ol>{route}</ol>
+</section>
+<section>
+ <h2>Makan dan sholat di sepanjang jalan</h2>
+ <p>Semua restoran dan tempat sholat yang disebut di sini ada di <a href="{rel(me, halal_path())}">daftar restoran halal Dalat</a>, lengkap dengan jam buka dan arah ke setiap tempat.</p>
+</section>
+<section>
+ <h2>Tips berkendara</h2>
+ <ul>{tips}</ul>
+</section>
+<section>
+ <h2>Pertanyaan umum</h2>
+ {faq_html}
+</section>
+<section>
+ <h2>Sewa motor untuk tur Anda</h2>
+ <p>Ambil motor di <a href="{rel(me, home_path("id"))}">tiệm Văn Phú</a> dan mulai tur dari sana. Harga, syarat, dan pilihan motor ada di halaman sewa motor Dalat.</p>
+</section>
+<section>{contact_box("id")}{cta_box("id", me)}</section>
+</main>
+"""
+    lds = [business_ld("id", BASE + me), crumbs_ld("id", [(HI.TOUR_H1, me)]), faq_ld]
+    html = st_head(me, HI.TOUR_TITLE, HI.TOUR_DESC, lds, "electric-row").replace('<html lang="vi">', '<html lang="id">').replace('content="vi_VN"', 'content="id_ID"')
+    return html + body + foot("id", frm=me)
+write(tour_path(), page_tour())
 write(HALAL_OLD, f"""<!doctype html>
 <html lang="id"><head><meta charset="utf-8"><meta name="robots" content="noindex">
 <link rel="canonical" href="{BASE + halal_path()}">
@@ -1425,7 +1472,7 @@ for l in DAY.LANGS:
 _hub_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + hub_path(x)}"/>\n' for x in HUB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + hub_path("en")}"/>\n'
 for l in HUB.LANGS:
     urls += f"  <url>\n    <loc>{BASE + hub_path(l)}</loc>\n{_hub_alts}    <lastmod>{HUB.UPDATED}</lastmod>\n  </url>\n"
-for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path()] + [st_path(_s) for _s in ST.S]:
+for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path(), tour_path()] + [st_path(_s) for _s in ST.S]:
     urls += f"  <url>\n    <loc>{BASE + _me}</loc>\n    <lastmod>{ST.UPDATED}</lastmod>\n  </url>\n"
 # Missing pages (GitHub Pages serves /404.html for any unknown URL): send the visitor to the home page instead of a blank error.
 (OUT / "404.html").write_text(f"""<!doctype html>
