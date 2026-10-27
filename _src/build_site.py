@@ -144,6 +144,19 @@ table.price tr:last-child td{border-bottom:0}
 .float.callf{background:#f2b632;color:#173d2d}
 .btn.callb{background:#f2b632;color:#173d2d}
 .yt{margin:0 0 20px;max-width:300px} .yt a{position:relative;display:block;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000} .yt img,.yt iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0} .yt span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center} .yt figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+.fcalls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 18px}
+.fp{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.fp:hover{background:rgba(255,255,255,.18)}
+.fp.call{background:#f2b632;border-color:#f2b632;color:#173d2d}
+.fp.yt{background:#c4302b;border-color:#c4302b}
+.napbox{max-width:620px;margin:0 auto 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 16px;text-align:left;font-size:14px;line-height:1.5}
+.napbox .nt{font-weight:700;color:#fff;font-size:15px;margin-bottom:2px}
+.napbox .nl{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px dashed rgba(255,255,255,.14)}
+.napbox .nl i{font-style:normal;font-size:18px;flex:0 0 26px;text-align:center;line-height:1.3}
+.napbox .nl div{min-width:0;overflow-wrap:anywhere}
+.napbox .lbl{display:block;font-size:12px;opacity:.7;margin-bottom:1px}
+.napbox b{color:#fff}
+.napbox a{color:#fff;text-decoration:underline;text-underline-offset:2px}
 .footcall{display:block;margin:0 0 8px;font-size:15px}.nap{margin:0 0 12px;font-size:14px;line-height:1.6}.nap b{color:#fff}.footcall a{color:#fff;font-weight:700;text-decoration:none}
 html:lang(ko) h1,html:lang(ko) h2{word-break:keep-all}
 html[dir=rtl] .checks li{padding:12px 40px 12px 14px}
@@ -423,8 +436,10 @@ NAP_LBL = {  # (title, Google Maps address label, actual shop location label)
 }
 def nap_block(l):
     t, a, b = NAP_LBL.get(l, NAP_LBL["en"])
-    return (f'<div class="nap" lang="vi"><b>{t}</b><br><span lang="{l}">{a}</span> <a href="{GMAPS}" target="_blank" rel="noopener">{NAP_MAP}</a>'
-            f'<br><span lang="{l}">{b}</span> {NAP_REAL}<br>📞 0944 081 101 · 0834 622 149</div>')
+    return (f'<div class="napbox" lang="vi"><div class="nt">{t}</div>'
+            f'<div class="nl"><i>📍</i><div><span class="lbl" lang="{l}">{b}</span><b>{NAP_REAL}</b></div></div>'
+            f'<div class="nl"><i>🗺️</i><div><span class="lbl" lang="{l}">{a}</span><a href="{GMAPS}" target="_blank" rel="noopener">{NAP_MAP}</a></div></div>'
+            f'<div class="nl"><i>📞</i><div>0944 081 101 · 0834 622 149</div></div></div>')
 OLD_ADDR_LBL = {"vi": "Địa chỉ cũ (trên Google Maps):", "en": "Old address (as shown on Google Maps):", "ru": "Старый адрес (как в Google Maps):",
     "zh": "旧地址（Google 地图显示）：", "ko": "이전 주소 (Google 지도 표기):", "ja": "旧住所（Google マップ表記）：", "th": "ที่อยู่เดิม (ตามที่แสดงใน Google Maps):",
     "id": "Alamat lama (di Google Maps):", "ms": "Alamat lama (di Google Maps):", "de": "Alte Adresse (so auf Google Maps):", "fr": "Ancienne adresse (affichée sur Google Maps) :",
@@ -493,7 +508,7 @@ def foot(l, root_redirect=False, frm=None):
         kw = f'<br><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a> · <a href="{rel(frm, routes_path(l))}">{C[l]["routes"]["h1"]}</a>'
         if l == "vi":
             kw += f' · <a href="{rel(frm, home_path("vi") + "phuong-xuan-huong/")}">Thuê xe máy theo tuyến đường phường Xuân Hương</a>'
-    return f"""<footer><span class="footcall">📞 {CALL[l][1]}: <a href="{TEL}">{phone_txt(l)}</a> · <a href="{TEL2}">{phone2_txt(l)}</a> · <a href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></span>{nap_block(l)}{u["footer"]}{kw}</footer>
+    return f"""<footer><div class="fcalls"><a class="fp call" href="{TEL}">📞 {CALL[l][1]}: {phone_txt(l)}</a><a class="fp" href="{TEL2}">📞 {phone2_txt(l)}</a><a class="fp yt" href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></div>{nap_block(l)}{u["footer"]}{kw}</footer>
 {floats(l)}
 <div class="lb" id="lb"><img alt=""></div>
 <script>
