@@ -869,8 +869,17 @@ def add_csp(html):
     if 'http-equiv="Content-Security-Policy"' in html:
         return html
     return html.replace('<meta charset="utf-8">', '<meta charset="utf-8">' + tag, 1) if '<meta charset="utf-8">' in html else html
+# PWA: install-to-home-screen manifest, theme colour and offline service worker (sw.js and manifest.json live at the site root).
+PWA_HEAD = '<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#0f5c3c">'
+PWA_JS = "<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}</script>"
+def add_pwa(html):
+    if 'rel="manifest"' in html:
+        return html
+    if '<meta charset="utf-8">' in html:
+        html = html.replace('<meta charset="utf-8">', '<meta charset="utf-8">' + PWA_HEAD, 1)
+    return html.replace('</body>', PWA_JS + '</body>', 1) if '</body>' in html else html
 def write(path, html):
-    html = add_csp(add_ga(speed(html)))
+    html = add_pwa(add_csp(add_ga(speed(html))))
     p = OUT / path / "index.html"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(html, encoding="utf-8")
