@@ -3,7 +3,7 @@ price 150,000 VND/day for every bike; no cash deposit (CCCD or passport is held)
 gas scooters (Air Blade 125cc, Honda Vision 110cc) need a driver's license, electric scooters do not; helmet included;
 bike handed over with 1 litre of fuel; electric: about 50–60 km per full charge (varies with road and rider),
 battery swap 20,000 VND, max load 130 kg; shop opens 4:30 AM; rental day ends 21:00; delivery to city-centre hotels free for 2+ days.
-Anything not listed here is intentionally left out."""
+Anything not listed here is intentionally left out. Rental insurance is not mentioned on purpose: the owner asked not to write about it."""
 
 GUIDES = {
  "vi": [
@@ -15,7 +15,6 @@ GUIDES = {
    "sections": [
      ("Thuê xe ga có cần bằng lái không?", "<p>Có. Xe ga 125cc (Honda Air Blade) và Honda Vision 110cc cần bằng lái xe máy hợp lệ. <b>Xe điện không cần bằng lái</b>, nên đây là lựa chọn phù hợp nếu bạn chưa có bằng.</p>"),
      ("Có phải đặt cọc tiền không?", "<p>Không. Văn Phú <b>không giữ tiền cọc</b>. Chúng tôi chỉ giữ CCCD hoặc hộ chiếu trong thời gian thuê và trả lại khi bạn trả xe.</p>"),
-     ("Có bảo hiểm thuê xe không?", "<p><b>Văn Phú hiện không cung cấp bảo hiểm thuê xe.</b> Trước khi đi, bạn nên tự xem xét bảo hiểm du lịch hoặc bảo hiểm xe phù hợp với mình.</p>"),
      ("Thanh toán và tính tiền thế nào?", "<ul><li>Giá <b>150.000 VND/ngày</b> cho mọi xe máy, bao gồm xe ga và xe điện.</li><li>Thanh toán khi nhận xe.</li><li>Ngày thuê tính đến <b>21:00</b> cùng ngày. Trả xe sau 21:00 hôm sau sẽ tính thành 2 ngày.</li><li>Xe được giao sẵn 1 lít xăng và có mũ bảo hiểm, giá đỡ điện thoại.</li></ul>"),
      ("Giao xe tận nơi có tốn phí không?", "<p>Không tốn phí khi thuê từ 2 ngày, Văn Phú giao xe miễn phí tới khách sạn hoặc homestay khu trung tâm Đà Lạt. Thuê 1 ngày, bạn ghé tiệm tại 1/15/5 Thông Thiên Học, tiệm mở cửa từ 4:30 sáng.</p>"),
    ],
@@ -65,7 +64,6 @@ GUIDES = {
    "sections": [
      ("Do I need a driver's license?", "<p>Yes for gas scooters. The Honda Air Blade 125cc and Honda Vision 110cc need a valid motorbike driver's license. <b>Electric scooters do not need a license</b>, so they are a good choice if you don't have one.</p>"),
      ("Is there a cash deposit?", "<p>No. Van Phu <b>does not take a cash deposit</b>. We only hold your ID card or passport during the rental and return it when you bring the bike back.</p>"),
-     ("Is rental insurance included?", "<p><b>We do not offer rental insurance at the moment.</b> Before you ride, please check whether your travel or vehicle insurance covers you in Vietnam.</p>"),
      ("How does payment and the rental day work?", "<ul><li>Price: <b>150,000 VND per day</b> for every bike, gas or electric.</li><li>Pay when you pick up the bike.</li><li>A rental day runs until <b>21:00</b> on the same day. Returning after 21:00 the next day counts as 2 days.</li><li>Every bike comes with a helmet, a phone holder and 1 litre of fuel.</li></ul>"),
      ("Is hotel delivery free?", "<p>Yes, for rentals of 2 days or more we deliver free to hotels and homestays in central Da Lat. For a 1-day rental, pick up at our shop at 1/15/5 Thong Thien Hoc Street. We open at 4:30 AM.</p>"),
    ],
