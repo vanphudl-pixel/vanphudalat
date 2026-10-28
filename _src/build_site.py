@@ -342,7 +342,7 @@ REV = {
 }
 for _l in _NEWL: REV[_l] = importlib.import_module(f"content.{_l}").REV_
 def rev_btn(l): return f'<a class="btn alt" href="{GMAPS}" target="_blank" rel="noopener" style="border:1px solid var(--line)">{REV[l][2]}</a>'
-def map_path(M, l): return lang_root(l) + M.SLUG + "/"
+def map_path(M, l): return lang_root(l) + (M.SLUG[l] if isinstance(M.SLUG, dict) else M.SLUG) + "/"
 def pm_path(l): return map_path(PM, l)
 def hub_btn(l, me):
     if l not in HUB.LANGS: return ""

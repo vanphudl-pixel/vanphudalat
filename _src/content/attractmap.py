@@ -39,7 +39,7 @@ SPOTS = [
     ("tuimoto",     11.9409956, 108.4836846, "ChIJITZmC34TcTERvSGZ7bPair0", True, "7:30–21:30"),
 ]
 CENTER = _PM.CENTER
-SLUG = "self-guided-attractions"
+SLUG = {"en": "self-guided-attractions-da-lat", "vi": "diem-du-lich-tu-tuc-da-lat", "de": "ausflugsziele-da-lat-selbst-erkunden", "es": "lugares-para-visitar-por-libre-da-lat", "fr": "lieux-a-visiter-en-autonomie-da-lat", "it": "luoghi-da-visitare-da-soli-da-lat", "nl": "zelf-te-ontdekken-da-lat", "id": "tempat-wisata-mandiri-dalat", "ms": "tempat-pelancongan-layan-diri-da-lat", "ru": "dostoprimechatelnosti-dalat-samostoyatelno", "zh": "dalat-zi-zhu-you-jingdian", "ko": "dalat-jayu-yeohaeng-myeongsoo", "ja": "dalat-jiyu-sanpo-supotto", "th": "sathan-thi-thongthiao-dalat-dooay-tonaeng", "he": "atrei-tiyul-atzmaiim-dalat", "km": "tikandan-tesachon-dalat", "lo": "satan-thi-thiao-dalat", "my": "dalat-kotaing-thwarr-lyal"}
 PDF = None  # no printable PDF yet — the PDF button is hidden when this is None
 GUIDES = {}
 LANGS = list(_PM.LANGS)
