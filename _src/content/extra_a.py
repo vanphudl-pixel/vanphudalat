@@ -23,7 +23,7 @@ ART["en"] = {
 <h2>How a rental day works</h2>
 <p>We open every day at 4:30 AM — handy if you want to catch sunrise. A rental day runs from the moment you pick up the bike until 9:00 PM the same day.</p>
 <h2>What you pay on top</h2>
-<p>The only extra cost is fuel for gas scooters: refill at any gas station, they're everywhere in town. Electric scooters need no fuel at all; one battery lasts about 35–40 km (each bike comes with 2 batteries, about 60–70 km in total) and a battery swap at our shop costs 20,000 VND — see our <a href="{EV}">electric scooter rental page</a>.</p>
+<p>The only extra cost is fuel for gas scooters: refill at any gas station, they're everywhere in town. Electric scooters need no fuel at all; one battery lasts about 25–30 km (each bike comes with 2 batteries, about 50–60 km in total) and a battery swap at our shop costs 20,000 VND — see our <a href="{EV}">electric scooter rental page</a>.</p>
 <h2>How to avoid surprises at any rental shop</h2>
 <ul>
 <li>Ask what the deposit is and when you get it back.</li>
@@ -45,7 +45,7 @@ ART["en"] = {
 <h2>Electric scooter: pros and limits</h2>
 <ul>
 <li>Quiet, no gears, no fuel stops.</li>
-<li>One battery lasts about <b>35–40 km</b> (each bike comes with 2 batteries, about 60–70 km in total) (battery swap at our shop: 20,000 VND) — enough for the center and nearby sights.</li>
+<li>One battery lasts about <b>25–30 km</b> (each bike comes with 2 batteries, about 50–60 km in total) (battery swap at our shop: 20,000 VND) — enough for the center and nearby sights.</li>
 <li>Low power: slow on steep hills and passes.</li>
 <li>Two riders only if your combined weight is under 140 kg.</li>
 </ul>
@@ -89,7 +89,7 @@ ART["vi"] = {
 <h2>Một ngày thuê tính thế nào</h2>
 <p>Tiệm mở cửa từ 4:30 sáng mỗi ngày, tiện cho ai muốn đi săn bình minh. Một ngày thuê tính từ lúc nhận xe đến 21:00 cùng ngày.</p>
 <h2>Chi phí thêm</h2>
-<p>Chỉ có tiền xăng với xe xăng, đổ ở bất kỳ cây xăng nào. Xe máy điện thì không tốn xăng; 1 cục pin đi được khoảng 35–40 km (mỗi xe có 2 pin, tổng khoảng 60–70 km), đổi pin tại cửa hàng 20.000 VND/lần — xem thêm trang <a href="{EV}">thuê xe máy điện Đà Lạt</a>.</p>
+<p>Chỉ có tiền xăng với xe xăng, đổ ở bất kỳ cây xăng nào. Xe máy điện thì không tốn xăng; 1 cục pin đi được khoảng 25–30 km (mỗi xe có 2 pin, tổng khoảng 50–60 km), đổi pin tại cửa hàng 20.000 VND/lần — xem thêm trang <a href="{EV}">thuê xe máy điện Đà Lạt</a>.</p>
 <h2>Kinh nghiệm tránh phát sinh khi thuê xe</h2>
 <ul>
 <li>Hỏi rõ cọc gì và khi nào được trả lại.</li>
@@ -111,7 +111,7 @@ ART["vi"] = {
 <h2>Xe máy điện: ưu điểm và giới hạn</h2>
 <ul>
 <li>Êm, không số, không phải đổ xăng.</li>
-<li>1 cục pin đi được khoảng <b>35–40 km</b> (mỗi xe có 2 pin, tổng khoảng 60–70 km) (đổi pin tại cửa hàng 20.000 VND/lần), đủ cho trung tâm và các điểm gần.</li>
+<li>1 cục pin đi được khoảng <b>25–30 km</b> (mỗi xe có 2 pin, tổng khoảng 50–60 km) (đổi pin tại cửa hàng 20.000 VND/lần), đủ cho trung tâm và các điểm gần.</li>
 <li>Công suất thấp, leo dốc và đèo sẽ chậm.</li>
 <li>Chở 2 người khi tổng cân nặng dưới 140 kg.</li>
 </ul>
@@ -155,7 +155,7 @@ ART["ru"] = {
 <h2>Как считается день аренды</h2>
 <p>Мы открываемся каждый день в 4:30 — удобно, если хотите встретить рассвет. День аренды длится с момента получения байка до 21:00 того же дня.</p>
 <h2>Дополнительные расходы</h2>
-<p>Только бензин для бензиновых скутеров — заправки есть по всему городу. Электроскутеру топливо не нужно; одной батареи хватает примерно на 35–40 км (на каждом байке 2 батареи — всего около 60–70 км), замена батареи у нас — 20 000 VND — подробнее на странице <a href="{EV}">аренда электроскутера в Далате</a>.</p>
+<p>Только бензин для бензиновых скутеров — заправки есть по всему городу. Электроскутеру топливо не нужно; одной батареи хватает примерно на 25–30 км (на каждом байке 2 батареи — всего около 50–60 км), замена батареи у нас — 20 000 VND — подробнее на странице <a href="{EV}">аренда электроскутера в Далате</a>.</p>
 <h2>Как избежать сюрпризов в любом прокате</h2>
 <ul>
 <li>Уточните, какой залог и когда его вернут.</li>
@@ -177,7 +177,7 @@ ART["ru"] = {
 <h2>Электроскутер: плюсы и ограничения</h2>
 <ul>
 <li>Тихий, без передач и заправок.</li>
-<li>Одной батареи хватает примерно на <b>35–40 км</b> (на каждом байке 2 батареи — всего около 60–70 км) (замена батареи у нас — 20 000 VND) — хватит на центр и ближайшие места.</li>
+<li>Одной батареи хватает примерно на <b>25–30 км</b> (на каждом байке 2 батареи — всего около 50–60 км) (замена батареи у нас — 20 000 VND) — хватит на центр и ближайшие места.</li>
 <li>Небольшая мощность: медленно едет в крутые подъёмы.</li>
 <li>Вдвоём — только если общий вес меньше 140 кг.</li>
 </ul>
@@ -221,7 +221,7 @@ ART["zh"] = {
 <h2>租期怎么算</h2>
 <p>我们每天早上 4:30 开门，方便看日出。租期从取车开始到当天 21:00。</p>
 <h2>额外费用</h2>
-<p>只有汽油车的油费，市区到处都有加油站。电动车不用加油；一块电池约可行驶 35–40 公里（每辆车配 2 块电池，共约 60–70 公里），店内换电池每次 20,000 VND——详见<a href="{EV}">大叻电动车租赁</a>。</p>
+<p>只有汽油车的油费，市区到处都有加油站。电动车不用加油；一块电池约可行驶 25–30 公里（每辆车配 2 块电池，共约 50–60 公里），店内换电池每次 20,000 VND——详见<a href="{EV}">大叻电动车租赁</a>。</p>
 <h2>在任何租车店避免意外费用</h2>
 <ul>
 <li>问清楚押金是什么、什么时候退还。</li>
@@ -243,7 +243,7 @@ ART["zh"] = {
 <h2>电动车：优点与限制</h2>
 <ul>
 <li>安静，无需换挡，不用加油。</li>
-<li>一块电池约可行驶 <b>35–40 公里</b>（每辆车配 2 块电池，共约 60–70 公里）（店内换电池每次 20,000 VND），足够市中心和附近景点。</li>
+<li>一块电池约可行驶 <b>25–30 公里</b>（每辆车配 2 块电池，共约 50–60 公里）（店内换电池每次 20,000 VND），足够市中心和附近景点。</li>
 <li>功率小，陡坡和山路较慢。</li>
 <li>两人总体重低于 140 公斤才能双人骑行。</li>
 </ul>
@@ -287,7 +287,7 @@ ART["ko"] = {
 <h2>대여 시간</h2>
 <p>매일 오전 4:30에 문을 열어 일출 보러 가기에도 좋습니다. 하루 대여는 수령 시점부터 당일 21:00까지입니다.</p>
 <h2>추가 비용</h2>
-<p>가솔린 스쿠터의 주유비뿐입니다. 전기 스쿠터는 주유가 필요 없지만 배터리 1개로 약 35–40km(차량마다 배터리 2개, 총 약 60–70km)를 가며, 매장에서 배터리 교체는 20,000 VND입니다 — <a href="{EV}">달랏 전기 스쿠터 렌탈</a>을 참고하세요.</p>
+<p>가솔린 스쿠터의 주유비뿐입니다. 전기 스쿠터는 주유가 필요 없지만 배터리 1개로 약 25–30km(차량마다 배터리 2개, 총 약 50–60km)를 가며, 매장에서 배터리 교체는 20,000 VND입니다 — <a href="{EV}">달랏 전기 스쿠터 렌탈</a>을 참고하세요.</p>
 <h2>어느 렌탈샵에서든 확인할 것</h2>
 <ul>
 <li>보증금이 무엇이고 언제 돌려받는지.</li>
@@ -309,7 +309,7 @@ ART["ko"] = {
 <h2>전기 스쿠터: 장점과 한계</h2>
 <ul>
 <li>조용하고 기어·주유가 필요 없음.</li>
-<li>배터리 1개로 약 <b>35–40km</b>(차량마다 배터리 2개, 총 약 60–70km) 주행(매장에서 배터리 교체 20,000 VND) — 시내와 근교에 충분.</li>
+<li>배터리 1개로 약 <b>25–30km</b>(차량마다 배터리 2개, 총 약 50–60km) 주행(매장에서 배터리 교체 20,000 VND) — 시내와 근교에 충분.</li>
 <li>출력이 낮아 가파른 언덕에서 느림.</li>
 <li>두 사람 총 체중 140kg 미만일 때만 2인 탑승.</li>
 </ul>
@@ -353,7 +353,7 @@ ART["ja"] = {
 <h2>レンタル時間</h2>
 <p>毎日朝4:30から営業しているので、日の出を見に行くのにも便利です。1日のレンタルは受け取りから当日21:00までです。</p>
 <h2>追加でかかる費用</h2>
-<p>ガソリンスクーターの燃料代だけです。電動スクーターは給油不要ですが、バッテリー1個で約35–40km（1台にバッテリー2個、合計約60〜70km）走れ、店頭でのバッテリー交換は20,000 VNDです——<a href="{EV}">ダラットの電動スクーターレンタル</a>をご覧ください。</p>
+<p>ガソリンスクーターの燃料代だけです。電動スクーターは給油不要ですが、バッテリー1個で約25–30km（1台にバッテリー2個、合計約60〜70km）走れ、店頭でのバッテリー交換は20,000 VNDです——<a href="{EV}">ダラットの電動スクーターレンタル</a>をご覧ください。</p>
 <h2>どのお店でも確認したいこと</h2>
 <ul>
 <li>デポジットの内容と返却のタイミング。</li>
@@ -375,7 +375,7 @@ ART["ja"] = {
 <h2>電動スクーター：長所と限界</h2>
 <ul>
 <li>静かでギアも給油も不要。</li>
-<li>バッテリー1個で約<b>35–40km</b>（1台にバッテリー2個、合計約60〜70km）（店頭でのバッテリー交換は20,000 VND）——中心部と近場には十分。</li>
+<li>バッテリー1個で約<b>25–30km</b>（1台にバッテリー2個、合計約60〜70km）（店頭でのバッテリー交換は20,000 VND）——中心部と近場には十分。</li>
 <li>パワーが小さく、急な坂ではゆっくり。</li>
 <li>2人の合計体重が140kg未満の場合のみ2人乗り可。</li>
 </ul>
@@ -419,7 +419,7 @@ ART["th"] = {
 <h2>เวลาเช่า</h2>
 <p>ร้านเปิดทุกวันตั้งแต่ 4:30 น. สะดวกสำหรับคนที่อยากไปดูพระอาทิตย์ขึ้น หนึ่งวันเช่าคือตั้งแต่รับรถถึง 21:00 น. ของวันเดียวกัน</p>
 <h2>ค่าใช้จ่ายเพิ่มเติม</h2>
-<p>มีแค่ค่าน้ำมันสำหรับรถน้ำมัน ปั๊มมีทั่วเมือง สกู๊ตเตอร์ไฟฟ้าไม่ต้องเติมน้ำมัน แบต 1 ก้อนวิ่งได้ประมาณ 35–40 กม. (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 60–70 กม.) เปลี่ยนแบตที่ร้าน 20,000 VND ดูเพิ่มที่ <a href="{EV}">เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด</a></p>
+<p>มีแค่ค่าน้ำมันสำหรับรถน้ำมัน ปั๊มมีทั่วเมือง สกู๊ตเตอร์ไฟฟ้าไม่ต้องเติมน้ำมัน แบต 1 ก้อนวิ่งได้ประมาณ 25–30 กม. (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 50–60 กม.) เปลี่ยนแบตที่ร้าน 20,000 VND ดูเพิ่มที่ <a href="{EV}">เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัด</a></p>
 <h2>สิ่งที่ควรเช็กทุกร้าน</h2>
 <ul>
 <li>ถามว่ามัดจำอะไร และคืนเมื่อไหร่</li>
@@ -441,7 +441,7 @@ ART["th"] = {
 <h2>สกู๊ตเตอร์ไฟฟ้า: ข้อดีและข้อจำกัด</h2>
 <ul>
 <li>เงียบ ไม่มีเกียร์ ไม่ต้องเติมน้ำมัน</li>
-<li>แบต 1 ก้อนวิ่งได้ประมาณ <b>35–40 กม.</b> (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 60–70 กม.) (เปลี่ยนแบตที่ร้าน 20,000 VND) พอสำหรับในเมืองและที่ใกล้ ๆ</li>
+<li>แบต 1 ก้อนวิ่งได้ประมาณ <b>25–30 กม.</b> (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 50–60 กม.) (เปลี่ยนแบตที่ร้าน 20,000 VND) พอสำหรับในเมืองและที่ใกล้ ๆ</li>
 <li>กำลังน้อย ขึ้นเนินชันช้า</li>
 <li>ซ้อนสองคนได้เมื่อน้ำหนักรวมไม่เกิน 140 กก.</li>
 </ul>

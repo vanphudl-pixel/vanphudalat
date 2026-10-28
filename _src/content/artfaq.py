@@ -40,14 +40,14 @@ FAQ = {
  ],
  "evrules": [
   ("Thuê xe máy điện cần cọc không?", "Không cọc tiền mặt — bạn để lại hộ chiếu hoặc CCCD bản gốc và nhận lại khi trả xe đúng tình trạng."),
-  ("Pin xe máy điện đi được bao xa?", "Một pin đi khoảng 35–40 km (mỗi xe có 2 pin, tổng khoảng 60–70 km). Cần thêm thì mang xe về tiệm đổi pin đầy, 20.000 VND."),
+  ("Pin xe máy điện đi được bao xa?", "Một pin đi khoảng 25–30 km (mỗi xe có 2 pin, tổng khoảng 50–60 km). Cần thêm thì mang xe về tiệm đổi pin đầy, 20.000 VND."),
   ("Xe máy điện chở được mấy người?", "Tối đa 2 người, tổng cân nặng dưới 140 kg."),
   ("Trả xe muộn sau 21:00 thì sao?", "Trả sau 21:00 tính thêm một ngày. Muốn gia hạn, hãy nhắn trước cho tiệm."),
  ],
  "caudat": [
   ("Đồi chè Cầu Đất cách Đà Lạt bao xa?", "Khoảng 20–25 km từ trung tâm, chạy xe máy chừng 40–60 phút, lâu hơn khi trời tối."),
   ("Mấy giờ nên xuất phát ngắm bình minh?", "Khoảng 4:30–4:45 từ trung tâm để tới kịp lúc trời hửng sáng, trước khi mặt trời lên."),
-  ("Đi Cầu Đất bằng xe máy điện được không?", "Không nên: đi về khoảng 50 km nhiều dốc dài. Xe có 2 pin (khoảng 60–70 km) nhưng công suất thấp, leo dốc chậm và hao pin nhanh. Honda Air Blade 125cc là lựa chọn thoải mái nhất."),
+  ("Đi Cầu Đất bằng xe máy điện được không?", "Không nên: đi về khoảng 50 km nhiều dốc dài. Xe có 2 pin (khoảng 50–60 km) nhưng công suất thấp, leo dốc chậm và hao pin nhanh. Honda Air Blade 125cc là lựa chọn thoải mái nhất."),
  ],
  "domainedemarie": [
   ("Nhà thờ Domaine de Marie mở cửa mấy giờ?", "Thường 7:30–11:30 và 13:30–17:30 hằng ngày (Google Maps, tháng 10/2026); đóng cửa tham quan trong giờ lễ."),
@@ -62,7 +62,7 @@ FAQ = {
  "evgas": [
   ("Nên thuê xe máy điện hay xe xăng ở Đà Lạt?", "Đi trong thành phố và quanh gần: xe máy điện êm, dễ đi. Đi đèo, đồi chè Cầu Đất, Langbiang hay các thác xa: chọn xe xăng, tốt nhất là Honda Air Blade 125cc."),
   ("Xe máy điện và xe xăng giá có khác nhau không?", "Không — cả hai đều 150.000 VND/ngày, cùng mũ bảo hiểm và giá đỡ điện thoại miễn phí."),
-  ("Xe máy điện đi được bao xa?", "Một pin khoảng 35–40 km (mỗi xe có 2 pin, tổng khoảng 60–70 km); đổi pin tại tiệm 20.000 VND."),
+  ("Xe máy điện đi được bao xa?", "Một pin khoảng 25–30 km (mỗi xe có 2 pin, tổng khoảng 50–60 km); đổi pin tại tiệm 20.000 VND."),
  ],
 },
 "en": {
@@ -103,14 +103,14 @@ FAQ = {
  ],
  "evrules": [
   ("Is there a deposit for an electric scooter?", "No cash deposit — you leave your original passport or ID card and get it back when you return the scooter in the same condition."),
-  ("How far does one battery go?", "About 35–40 km (each bike comes with 2 batteries, about 60–70 km in total). Need more? Bring the scooter to our shop for a full battery, 20,000 VND."),
+  ("How far does one battery go?", "About 25–30 km (each bike comes with 2 batteries, about 50–60 km in total). Need more? Bring the scooter to our shop for a full battery, 20,000 VND."),
   ("How many people can ride an electric scooter?", "Maximum 2 people, with a combined weight under 140 kg."),
   ("What if I return the scooter after 21:00?", "Returning after 21:00 counts as one extra day. To extend, message us first."),
  ],
  "caudat": [
   ("How far are the Cau Dat tea hills from Da Lat?", "About 20–25 km from the centre, roughly 40–60 minutes by scooter, a little longer in the dark."),
   ("What time should I leave for sunrise?", "Around 4:30–4:45 from the centre, to arrive in the soft light before the sun comes up."),
-  ("Can I ride there on an electric scooter?", "Not recommended: the round trip is about 50 km with long climbs. The scooter has 2 batteries (about 60–70 km), but its low power makes climbs slow and drains the batteries fast. The Honda Air Blade 125cc is the most comfortable choice."),
+  ("Can I ride there on an electric scooter?", "Not recommended: the round trip is about 50 km with long climbs. The scooter has 2 batteries (about 50–60 km), but its low power makes climbs slow and drains the batteries fast. The Honda Air Blade 125cc is the most comfortable choice."),
  ],
  "domainedemarie": [
   ("What are Domaine de Marie's opening hours?", "Usually 7:30–11:30 and 13:30–17:30 every day (Google Maps, October 2026); closed to sightseeing during Mass."),
@@ -125,7 +125,7 @@ FAQ = {
  "evgas": [
   ("Should I rent an electric or a gas scooter in Da Lat?", "For the city and short trips, an electric scooter is quiet and easy. For passes, the Cau Dat tea hills, Lang Biang or far waterfalls, take a gas scooter — best the Honda Air Blade 125cc."),
   ("Is there a price difference?", "No — both cost 150,000 VND per day, with a helmet included and phone holder."),
-  ("How far does an electric scooter go?", "About 35–40 km (each bike comes with 2 batteries, about 60–70 km in total) per battery; a battery swap at our shop costs 20,000 VND."),
+  ("How far does an electric scooter go?", "About 25–30 km (each bike comes with 2 batteries, about 50–60 km in total) per battery; a battery swap at our shop costs 20,000 VND."),
  ],
 },
 }

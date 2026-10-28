@@ -22,7 +22,7 @@ ART["id"] = {
 <h2>Waktu sewa</h2>
 <p>Kami buka setiap hari mulai pukul 04.30 — pas untuk mengejar matahari terbit. Satu hari sewa dihitung dari pengambilan motor sampai pukul 21.00 hari yang sama.</p>
 <h2>Biaya tambahan</h2>
-<p>Hanya bensin untuk motor bensin; SPBU ada di mana-mana. Motor listrik tidak perlu bensin, satu baterai cukup untuk sekitar 35–40 km (setiap motor dilengkapi 2 baterai, total sekitar 60–70 km) dan tukar baterai di toko kami 20.000 VND — lihat <a href="{EV}">sewa motor listrik di Da Lat</a>.</p>
+<p>Hanya bensin untuk motor bensin; SPBU ada di mana-mana. Motor listrik tidak perlu bensin, satu baterai cukup untuk sekitar 25–30 km (setiap motor dilengkapi 2 baterai, total sekitar 50–60 km) dan tukar baterai di toko kami 20.000 VND — lihat <a href="{EV}">sewa motor listrik di Da Lat</a>.</p>
 <h2>Tips di tempat sewa mana pun</h2>
 <ul>
 <li>Tanyakan jaminannya apa dan kapan dikembalikan.</li>
@@ -44,7 +44,7 @@ ART["id"] = {
 <h2>Motor listrik: kelebihan dan batasan</h2>
 <ul>
 <li>Senyap, tanpa gigi, tanpa isi bensin.</li>
-<li>Satu baterai cukup untuk sekitar <b>35–40 km</b> (setiap motor dilengkapi 2 baterai, total sekitar 60–70 km) (tukar baterai di toko kami 20.000 VND) — cukup untuk kota dan sekitarnya.</li>
+<li>Satu baterai cukup untuk sekitar <b>25–30 km</b> (setiap motor dilengkapi 2 baterai, total sekitar 50–60 km) (tukar baterai di toko kami 20.000 VND) — cukup untuk kota dan sekitarnya.</li>
 <li>Tenaga kecil: pelan di tanjakan curam.</li>
 <li>Berboncengan hanya jika total berat di bawah 140 kg.</li>
 </ul>
@@ -88,7 +88,7 @@ ART["ms"] = {
 <h2>Tempoh sewa</h2>
 <p>Kami buka setiap hari dari 4:30 pagi — sesuai untuk mengejar matahari terbit. Satu hari sewa dikira dari ambil motosikal hingga 9:00 malam hari yang sama.</p>
 <h2>Kos tambahan</h2>
-<p>Hanya minyak untuk skuter petrol; stesen minyak ada di mana-mana. Skuter elektrik tidak perlu minyak, satu bateri boleh pergi kira-kira 35–40 km (setiap skuter ada 2 bateri, jumlah kira-kira 60–70 km) dan tukar bateri di kedai kami 20,000 VND — lihat <a href="{EV}">sewa skuter elektrik di Da Lat</a>.</p>
+<p>Hanya minyak untuk skuter petrol; stesen minyak ada di mana-mana. Skuter elektrik tidak perlu minyak, satu bateri boleh pergi kira-kira 25–30 km (setiap skuter ada 2 bateri, jumlah kira-kira 50–60 km) dan tukar bateri di kedai kami 20,000 VND — lihat <a href="{EV}">sewa skuter elektrik di Da Lat</a>.</p>
 <h2>Tip di mana-mana kedai sewa</h2>
 <ul>
 <li>Tanya deposit apa dan bila dipulangkan.</li>
@@ -110,7 +110,7 @@ ART["ms"] = {
 <h2>Skuter elektrik: kelebihan dan had</h2>
 <ul>
 <li>Senyap, tiada gear, tiada isi minyak.</li>
-<li>Satu bateri boleh pergi kira-kira <b>35–40 km</b> (setiap skuter ada 2 bateri, jumlah kira-kira 60–70 km) (tukar bateri di kedai kami 20,000 VND) — cukup untuk bandar dan sekitarnya.</li>
+<li>Satu bateri boleh pergi kira-kira <b>25–30 km</b> (setiap skuter ada 2 bateri, jumlah kira-kira 50–60 km) (tukar bateri di kedai kami 20,000 VND) — cukup untuk bandar dan sekitarnya.</li>
 <li>Kuasa rendah: perlahan di bukit curam.</li>
 <li>Berdua hanya jika jumlah berat bawah 140 kg.</li>
 </ul>
@@ -154,7 +154,7 @@ ART["de"] = {
 <h2>So läuft ein Miettag</h2>
 <p>Wir öffnen täglich um 4:30 Uhr – praktisch für den Sonnenaufgang. Ein Miettag läuft ab Abholung bis 21:00 Uhr am selben Tag.</p>
 <h2>Zusätzliche Kosten</h2>
-<p>Nur Benzin für Benzinroller; Tankstellen gibt es überall. E-Roller brauchen kein Benzin, ein Akku reicht für etwa 35–40 km (jeder Roller hat 2 Akkus, zusammen etwa 60–70 km), der Akkutausch bei uns kostet 20.000 VND – mehr dazu unter <a href="{EV}">E-Roller mieten in Da Lat</a>.</p>
+<p>Nur Benzin für Benzinroller; Tankstellen gibt es überall. E-Roller brauchen kein Benzin, ein Akku reicht für etwa 25–30 km (jeder Roller hat 2 Akkus, zusammen etwa 50–60 km), der Akkutausch bei uns kostet 20.000 VND – mehr dazu unter <a href="{EV}">E-Roller mieten in Da Lat</a>.</p>
 <h2>Tipps für jeden Verleih</h2>
 <ul>
 <li>Fragen Sie, welche Kaution verlangt wird und wann Sie sie zurückbekommen.</li>
@@ -176,7 +176,7 @@ ART["de"] = {
 <h2>E-Roller: Vorteile und Grenzen</h2>
 <ul>
 <li>Leise, ohne Schalten und Tanken.</li>
-<li>Ein Akku reicht für etwa <b>35–40 km</b> (jeder Roller hat 2 Akkus, zusammen etwa 60–70 km) (Akkutausch bei uns 20.000 VND) – genug für Zentrum und Umgebung.</li>
+<li>Ein Akku reicht für etwa <b>25–30 km</b> (jeder Roller hat 2 Akkus, zusammen etwa 50–60 km) (Akkutausch bei uns 20.000 VND) – genug für Zentrum und Umgebung.</li>
 <li>Wenig Leistung: langsam an steilen Hängen.</li>
 <li>Zu zweit nur, wenn beide zusammen unter 140 kg wiegen.</li>
 </ul>
@@ -220,7 +220,7 @@ ART["fr"] = {
 <h2>Durée d'une journée de location</h2>
 <p>Nous ouvrons tous les jours à 4 h 30, pratique pour le lever du soleil. Une journée de location va de la prise du scooter jusqu'à 21 h le même jour.</p>
 <h2>Frais en plus</h2>
-<p>Seulement l'essence pour les scooters thermiques ; les stations sont partout. Les scooters électriques n'ont pas besoin d'essence ; une batterie permet environ 35–40 km (chaque scooter a 2 batteries, environ 60–70 km au total) et l'échange de batterie chez nous coûte 20 000 VND — voir <a href="{EV}">location de scooter électrique à Da Lat</a>.</p>
+<p>Seulement l'essence pour les scooters thermiques ; les stations sont partout. Les scooters électriques n'ont pas besoin d'essence ; une batterie permet environ 25–30 km (chaque scooter a 2 batteries, environ 50–60 km au total) et l'échange de batterie chez nous coûte 20 000 VND — voir <a href="{EV}">location de scooter électrique à Da Lat</a>.</p>
 <h2>À vérifier dans toute agence</h2>
 <ul>
 <li>Demandez quelle caution est exigée et quand elle est rendue.</li>
@@ -242,7 +242,7 @@ ART["fr"] = {
 <h2>Scooter électrique : atouts et limites</h2>
 <ul>
 <li>Silencieux, sans vitesses ni plein.</li>
-<li>Une batterie permet environ <b>35–40 km</b> (chaque scooter a 2 batteries, environ 60–70 km au total) (échange de batterie chez nous : 20 000 VND) — assez pour le centre et les environs.</li>
+<li>Une batterie permet environ <b>25–30 km</b> (chaque scooter a 2 batteries, environ 50–60 km au total) (échange de batterie chez nous : 20 000 VND) — assez pour le centre et les environs.</li>
 <li>Peu puissant : lent dans les côtes raides.</li>
 <li>À deux seulement si le poids total est inférieur à 140 kg.</li>
 </ul>
@@ -286,7 +286,7 @@ ART["es"] = {
 <h2>Cómo funciona un día de alquiler</h2>
 <p>Abrimos todos los días a las 4:30, ideal para ver el amanecer. Un día de alquiler va desde la recogida hasta las 21:00 del mismo día.</p>
 <h2>Gastos extra</h2>
-<p>Solo la gasolina de los scooters de gasolina; hay gasolineras por todas partes. Los eléctricos no necesitan gasolina, y una batería da para unos 35–40 km (cada moto lleva 2 baterías, unos 60–70 km en total); el cambio de batería en nuestra tienda cuesta 20.000 VND — mira <a href="{EV}">alquiler de scooter eléctrico en Da Lat</a>.</p>
+<p>Solo la gasolina de los scooters de gasolina; hay gasolineras por todas partes. Los eléctricos no necesitan gasolina, y una batería da para unos 25–30 km (cada moto lleva 2 baterías, unos 50–60 km en total); el cambio de batería en nuestra tienda cuesta 20.000 VND — mira <a href="{EV}">alquiler de scooter eléctrico en Da Lat</a>.</p>
 <h2>Qué comprobar en cualquier alquiler</h2>
 <ul>
 <li>Pregunta qué depósito piden y cuándo lo devuelven.</li>
@@ -308,7 +308,7 @@ ART["es"] = {
 <h2>Scooter eléctrico: ventajas y límites</h2>
 <ul>
 <li>Silencioso, sin marchas ni repostajes.</li>
-<li>Una batería da para unos <b>35–40 km</b> (cada moto lleva 2 baterías, unos 60–70 km en total) (cambio de batería en nuestra tienda: 20.000 VND), suficiente para el centro y alrededores.</li>
+<li>Una batería da para unos <b>25–30 km</b> (cada moto lleva 2 baterías, unos 50–60 km en total) (cambio de batería en nuestra tienda: 20.000 VND), suficiente para el centro y alrededores.</li>
 <li>Poca potencia: lento en cuestas empinadas.</li>
 <li>Para dos solo si el peso total es inferior a 140 kg.</li>
 </ul>
@@ -352,7 +352,7 @@ ART["he"] = {
 <h2>איך נספר יום השכרה</h2>
 <p>אנחנו פותחים כל יום ב-4:30 – נוח למי שרוצה לתפוס זריחה. יום השכרה הוא מרגע האיסוף ועד 21:00 באותו יום.</p>
 <h2>עלויות נוספות</h2>
-<p>רק דלק לקטנועי בנזין; יש תחנות בכל העיר. קטנוע חשמלי לא צריך דלק, סוללה אחת מספיקה לכ-35–40 ק"מ (בכל קטנוע 2 סוללות, בסך הכול כ-60–70 ק״מ), והחלפת סוללה אצלנו עולה 20,000 VND – ראו <a href="{EV}">השכרת קטנוע חשמלי בדאלאט</a>.</p>
+<p>רק דלק לקטנועי בנזין; יש תחנות בכל העיר. קטנוע חשמלי לא צריך דלק, סוללה אחת מספיקה לכ-25–30 ק"מ (בכל קטנוע 2 סוללות, בסך הכול כ-50–60 ק״מ), והחלפת סוללה אצלנו עולה 20,000 VND – ראו <a href="{EV}">השכרת קטנוע חשמלי בדאלאט</a>.</p>
 <h2>מה לבדוק בכל השכרה</h2>
 <ul>
 <li>שאלו איזה פיקדון נדרש ומתי מקבלים אותו בחזרה.</li>
@@ -374,7 +374,7 @@ ART["he"] = {
 <h2>קטנוע חשמלי: יתרונות ומגבלות</h2>
 <ul>
 <li>שקט, בלי הילוכים ובלי תדלוק.</li>
-<li>סוללה אחת מספיקה לכ-<b>35–40 ק"מ</b> (בכל קטנוע 2 סוללות, בסך הכול כ-60–70 ק״מ) (החלפת סוללה אצלנו: 20,000 VND) – מספיק למרכז ולסביבה.</li>
+<li>סוללה אחת מספיקה לכ-<b>25–30 ק"מ</b> (בכל קטנוע 2 סוללות, בסך הכול כ-50–60 ק״מ) (החלפת סוללה אצלנו: 20,000 VND) – מספיק למרכז ולסביבה.</li>
 <li>הספק נמוך: איטי בעליות תלולות.</li>
 <li>בשניים רק אם המשקל הכולל מתחת ל-140 ק"ג.</li>
 </ul>

@@ -5,7 +5,7 @@ RN = {
  "h1": "Da Lat en un día por tu cuenta: novedades 2026",
  "desc": "Recorre tú mismo en moto los nuevos parques de Da Lat: Langbiang Land, Mongo Land, Hoang Long Ohayo y una granja de fresas — orden, distancias, cómo llegar y PDF gratis.",
  "lead": "El mismo día que las populares excursiones en grupo de \"novedades\", pero en tu propia moto — tú eliges la hora y cuánto te quedas en cada parada. 4 paradas en un orden lógico: al norte hasta Langbiang Land, hacia Ta Nung, bajada por el puerto Mimosa y una granja de fresas de vuelta.",
- "tips": ["La vuelta son unos {total} km en línea recta, más por carretera y con cuestas (Ta Nung, puerto Mimosa) — lleva una Honda Air Blade 125cc; aun con sus 2 baterías (unos 60–70 km), un scooter eléctrico sube despacio y puede quedarse corto.",
+ "tips": ["La vuelta son unos {total} km en línea recta, más por carretera y con cuestas (Ta Nung, puerto Mimosa) — lleva una Honda Air Blade 125cc; aun con sus 2 baterías (unos 50–60 km), un scooter eléctrico sube despacio y puede quedarse corto.",
           "Los precios de cada parada son orientativos (recopilados en octubre de 2026) — pueden cambiar, compruébalos en la entrada.",
           "Llena el depósito antes de subir a Ta Nung — en el puerto hay pocas gasolineras.",
           "La carretera de Ta Nung y el puerto Mimosa tienen muchas curvas — ve despacio y no adelantes en curva."],
@@ -20,7 +20,7 @@ RC = {
  "h1": "Da Lat en un día por tu cuenta: spots de fotos populares",
  "desc": "Recorre tú mismo en moto los 4 spots de fotos más populares de Da Lat: Lac Hu Co Tran, Memory Station (Tram Ky Uc), Suoi Binh Yen y Happy Hill en el lago Tuyen Lam — orden, distancias, cómo llegar y PDF gratis.",
  "lead": "El mismo día que las excursiones de fotos en grupo, pero en tu propia moto: por la mañana dos paradas al este de la ciudad (hacia Trai Mat), por la tarde dos alrededor del lago Tuyen Lam. A mediodía pasas por el centro — ideal para comer y cambiar la batería en nuestra tienda si vas en eléctrico.",
- "tips": ["La vuelta son unos {total} km en línea recta, más por carretera — las 2 baterías de un scooter eléctrico (unos 60–70 km) alcanzan para toda la vuelta; para subir más cómodo, lleva una Honda Air Blade 125cc.",
+ "tips": ["La vuelta son unos {total} km en línea recta, más por carretera — las 2 baterías de un scooter eléctrico (unos 50–60 km) alcanzan para toda la vuelta; para subir más cómodo, lleva una Honda Air Blade 125cc.",
           "Los precios de cada parada son orientativos (recopilados en octubre de 2026), normalmente con bebida — pueden cambiar, compruébalos en la entrada.",
           "Happy Hill se llena mucho los fines de semana — ve entre semana o temprano.",
           "Los accesos a Suoi Binh Yen y Happy Hill son estrechos y empinados en algunos tramos — ve despacio, sobre todo con lluvia."],
@@ -48,7 +48,7 @@ DAY = {
  "stops": "Paradas", "km": "Vuelta completa de unos {km} km en línea recta (tienda → paradas → tienda)", "open": "Abrir el mapa de la ruta", "pdf": "Descargar PDF",
  "verdict": {
   "routenew": "Para familias con niños y amantes de los parques de ocio. Larga y con cuestas — lleva una Honda Air Blade 125cc.",
-  "routecheckin": "Para amantes de la fotografía. Más corta — las 2 baterías de un scooter eléctrico (unos 60–70 km) alcanzan para la vuelta, o en Air Blade para ir cómodo.",
+  "routecheckin": "Para amantes de la fotografía. Más corta — las 2 baterías de un scooter eléctrico (unos 50–60 km) alcanzan para la vuelta, o en Air Blade para ir cómodo.",
  },
  "more_h": "Más rutas de un día en esta web",
  "more": [("art:caudat", "Mar de nubes y amanecer en las colinas de té de Cau Dat"), ("art:waterfalls", "Cascadas cerca de Da Lat: Datanla, Prenn, del Elefante, Pongour"), ("routes", "5 rutas en moto alrededor de Da Lat"), ("art:days3", "Da Lat en 3 días"), ("hub", "Todos los lugares que ver en Da Lat por dirección")],
@@ -57,7 +57,7 @@ DAY = {
   ("¿Es difícil recorrer Da Lat en un día por tu cuenta en moto?", "No, si estás acostumbrado a los scooters automáticos: sigue Google Maps, ve despacio en puertos y curvas, usa casco y respeta las normas de tráfico. Sal temprano, sobre todo en la época de lluvias, porque suele llover por la tarde."),
   ("¿Cuánto cuesta una moto para un día?", "150.000 VND al día cualquier moto — Honda Vision, Honda Air Blade 125cc o scooter eléctrico — con casco y soporte para el móvil. Sin depósito en efectivo: dejas tu pasaporte o documento de identidad."),
   ("¿Qué ruta elijo?", "Si te gusta la fotografía y quieres un día compacto: la ruta de los spots de fotos populares. Con niños o si te gustan los parques de ocio: la ruta de novedades 2026."),
-  ("¿Qué ruta se puede hacer en scooter eléctrico?", "La ruta de los spots de fotos: cada scooter eléctrico lleva 2 baterías (unos 60–70 km), suficiente para toda la vuelta. La ruta de novedades es larga y con cuestas — lleva una Honda Air Blade 125cc."),
+  ("¿Qué ruta se puede hacer en scooter eléctrico?", "La ruta de los spots de fotos: cada scooter eléctrico lleva 2 baterías (unos 50–60 km), suficiente para toda la vuelta. La ruta de novedades es larga y con cuestas — lleva una Honda Air Blade 125cc."),
   ("¿Hay que reservar la moto con antelación?", "Mejor escríbenos por WhatsApp, Zalo o WeChat para reservarte una moto. Desde 2 días, la llevamos gratis a hoteles del centro."),
  ]}
 FREE = "Gratis"

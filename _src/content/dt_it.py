@@ -5,7 +5,7 @@ RN = {
  "h1": "Da Lat in un giorno in autonomia: novità 2026",
  "desc": "Percorri da solo in scooter i nuovi parchi di Da Lat: Langbiang Land, Mongo Land, Hoang Long Ohayo e una fattoria di fragole — ordine, distanze, indicazioni e PDF gratuito.",
  "lead": "La stessa giornata delle escursioni di gruppo \"novità\" più richieste, ma sul tuo scooter — scegli tu l'orario e quanto fermarti a ogni tappa. 4 tappe in un ordine sensato: a nord fino a Langbiang Land, verso Ta Nung, giù per il passo Mimosa e una fattoria di fragole al ritorno.",
- "tips": ["Il giro è di circa {total} km in linea d'aria, di più su strada e con salite (Ta Nung, passo Mimosa) — prendi una Honda Air Blade 125cc; anche con 2 batterie (circa 60–70 km) uno scooter elettrico sale piano e può non bastare.",
+ "tips": ["Il giro è di circa {total} km in linea d'aria, di più su strada e con salite (Ta Nung, passo Mimosa) — prendi una Honda Air Blade 125cc; anche con 2 batterie (circa 50–60 km) uno scooter elettrico sale piano e può non bastare.",
           "I prezzi indicati per ogni tappa sono indicativi (raccolti a ottobre 2026) — possono cambiare, verifica all'ingresso.",
           "Fai il pieno prima di salire a Ta Nung — sul passo ci sono pochi distributori.",
           "La strada per Ta Nung e il passo Mimosa hanno molte curve — vai piano e non sorpassare in curva."],
@@ -20,7 +20,7 @@ RC = {
  "h1": "Da Lat in un giorno in autonomia: punti foto più famosi",
  "desc": "Percorri da solo in scooter i 4 punti foto più famosi di Da Lat: Lac Hu Co Tran, Memory Station (Tram Ky Uc), Suoi Binh Yen e Happy Hill al lago Tuyen Lam — ordine, distanze, indicazioni e PDF gratuito.",
  "lead": "La stessa giornata dei tour fotografici di gruppo, ma sul tuo scooter: al mattino due tappe a est della città (verso Trai Mat), al pomeriggio due intorno al lago Tuyen Lam. A pranzo passi dal centro — comodo per mangiare e cambiare la batteria al nostro negozio se guidi elettrico.",
- "tips": ["Il giro è di circa {total} km in linea d'aria, di più su strada — le 2 batterie dello scooter elettrico (circa 60–70 km) bastano per tutto il giro; per salire più comodo prendi una Honda Air Blade 125cc.",
+ "tips": ["Il giro è di circa {total} km in linea d'aria, di più su strada — le 2 batterie dello scooter elettrico (circa 50–60 km) bastano per tutto il giro; per salire più comodo prendi una Honda Air Blade 125cc.",
           "I prezzi indicati per ogni tappa sono indicativi (raccolti a ottobre 2026), di solito con una bevanda — possono cambiare, verifica all'ingresso.",
           "Happy Hill è molto affollato nel fine settimana — vai in settimana o presto.",
           "Le strade per Suoi Binh Yen e Happy Hill sono strette e ripide in alcuni tratti — vai piano, soprattutto con la pioggia."],
@@ -48,7 +48,7 @@ DAY = {
  "stops": "Tappe", "km": "Giro completo di circa {km} km in linea d'aria (negozio → tappe → negozio)", "open": "Apri la mappa dell'itinerario", "pdf": "Scarica il PDF",
  "verdict": {
   "routenew": "Ideale per famiglie con bambini e appassionati di parchi divertimento. Lungo e in salita — prendi una Honda Air Blade 125cc.",
-  "routecheckin": "Ideale per chi ama fotografare. Più corto — le 2 batterie dello scooter elettrico (circa 60–70 km) bastano per il giro, oppure in Air Blade per comodità.",
+  "routecheckin": "Ideale per chi ama fotografare. Più corto — le 2 batterie dello scooter elettrico (circa 50–60 km) bastano per il giro, oppure in Air Blade per comodità.",
  },
  "more_h": "Altre gite di un giorno su questo sito",
  "more": [("art:caudat", "Mare di nuvole e alba sulle colline del tè di Cau Dat"), ("art:waterfalls", "Cascate vicino a Da Lat: Datanla, Prenn, dell'Elefante, Pongour"), ("routes", "5 itinerari in moto intorno a Da Lat"), ("art:days3", "Da Lat in 3 giorni"), ("hub", "Tutti i luoghi da vedere a Da Lat per direzione")],
@@ -57,7 +57,7 @@ DAY = {
   ("È difficile visitare Da Lat in un giorno in autonomia in scooter?", "No, se sei abituato agli scooter automatici: segui Google Maps, vai piano sui passi e in curva, indossa il casco e rispetta il codice della strada. Parti presto, soprattutto nella stagione delle piogge, perché di solito piove nel pomeriggio."),
   ("Quanto costa uno scooter per un giorno?", "150,000 VND al giorno per ogni mezzo — Honda Vision, Honda Air Blade 125cc o scooter elettrico — con casco e supporto per il telefono. Nessun deposito in contanti: lasci il passaporto o la carta d'identità."),
   ("Quale itinerario scegliere?", "Se ami fotografare e vuoi una giornata compatta: l'itinerario dei punti foto più famosi. Con bambini o se ami i parchi divertimento: l'itinerario novità 2026."),
-  ("Quale itinerario si può fare con lo scooter elettrico?", "L'itinerario dei punti foto: ogni scooter elettrico ha 2 batterie (circa 60–70 km), sufficienti per tutto il giro. L'itinerario novità è lungo e in salita — prendi una Honda Air Blade 125cc."),
+  ("Quale itinerario si può fare con lo scooter elettrico?", "L'itinerario dei punti foto: ogni scooter elettrico ha 2 batterie (circa 50–60 km), sufficienti per tutto il giro. L'itinerario novità è lungo e in salita — prendi una Honda Air Blade 125cc."),
   ("Bisogna prenotare lo scooter in anticipo?", "Meglio scriverci su WhatsApp, Zalo o WeChat per tenerti da parte uno scooter. Da 2 giorni in su consegniamo gratis negli hotel del centro."),
  ]}
 FREE = "Gratis"

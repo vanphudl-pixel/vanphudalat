@@ -5,7 +5,7 @@ RN = {
  "h1": "Da Lat sehari tanpa tur: laluan tempat baharu 2026",
  "desc": "Tunggang motosikal sendiri ke taman rekreasi baharu di Da Lat: Langbiang Land, Mongo Land, Hoang Long Ohayo dan ladang strawberi — susunan, jarak, arah dan PDF percuma.",
  "lead": "Sama seperti tur sehari \"tempat baharu\" yang popular, tetapi dengan motosikal sendiri — pilih masa sendiri dan tinggal selama mana anda suka di setiap tempat. 4 tempat mengikut susunan yang sesuai: ke utara ke Langbiang Land, menyeberang ke Ta Nung, turun ikut Laluan Mimosa dan singgah di ladang strawberi semasa pulang.",
- "tips": ["Satu pusingan kira-kira {total} km garis lurus, jalan sebenar lebih jauh dan banyak bukit (Ta Nung, Laluan Mimosa) — gunakan Honda Air Blade 125cc; walaupun ada 2 bateri (kira-kira 60–70 km), skuter elektrik perlahan di bukit dan bateri mungkin tidak cukup.",
+ "tips": ["Satu pusingan kira-kira {total} km garis lurus, jalan sebenar lebih jauh dan banyak bukit (Ta Nung, Laluan Mimosa) — gunakan Honda Air Blade 125cc; walaupun ada 2 bateri (kira-kira 50–60 km), skuter elektrik perlahan di bukit dan bateri mungkin tidak cukup.",
           "Harga di setiap tempat ialah harga rujukan (dikumpul Oktober 2026) — boleh berubah, semak di pintu masuk.",
           "Isi minyak penuh sebelum naik ke Ta Nung — stesen minyak jarang di jalan bukit.",
           "Jalan Ta Nung dan Laluan Mimosa banyak selekoh — tunggang perlahan, jangan potong di selekoh."],
@@ -20,7 +20,7 @@ RC = {
  "h1": "Da Lat sehari tanpa tur: tempat bergambar popular",
  "desc": "Tunggang motosikal sendiri ke 4 tempat bergambar paling popular di Da Lat: Lac Hu Co Tran, Memory Station (Tram Ky Uc), Suoi Binh Yen dan Happy Hill di Tasik Tuyen Lam — susunan, jarak, arah dan PDF percuma.",
  "lead": "Hari yang sama seperti tur bergambar popular, tetapi dengan motosikal sendiri: pagi 2 tempat di timur bandar (arah Trai Mat), petang 2 tempat di sekitar Tasik Tuyen Lam. Waktu tengah hari anda melalui pusat bandar — senang untuk makan dan tukar bateri di kedai kami jika menunggang skuter elektrik.",
- "tips": ["Satu pusingan kira-kira {total} km garis lurus, jalan sebenar lebih jauh — 2 bateri skuter elektrik (kira-kira 60–70 km) cukup untuk seluruh pusingan; untuk mendaki dengan selesa, gunakan Honda Air Blade 125cc.",
+ "tips": ["Satu pusingan kira-kira {total} km garis lurus, jalan sebenar lebih jauh — 2 bateri skuter elektrik (kira-kira 50–60 km) cukup untuk seluruh pusingan; untuk mendaki dengan selesa, gunakan Honda Air Blade 125cc.",
           "Harga di setiap tempat ialah harga rujukan (dikumpul Oktober 2026), biasanya termasuk minuman — boleh berubah, semak di pintu masuk.",
           "Happy Hill sangat sesak pada hujung minggu — pergi pada hari biasa atau awal pagi.",
           "Jalan masuk ke Suoi Binh Yen dan Happy Hill sempit dan curam di sesetengah bahagian — tunggang perlahan, terutama ketika hujan."],
@@ -48,7 +48,7 @@ DAY = {
  "stops": "Tempat", "km": "Satu pusingan kira-kira {km} km garis lurus (kedai → semua tempat → kedai)", "open": "Buka peta laluan", "pdf": "Muat turun PDF",
  "verdict": {
   "routenew": "Sesuai untuk keluarga dengan kanak-kanak dan peminat taman tema. Jauh dan banyak bukit — gunakan Honda Air Blade 125cc.",
-  "routecheckin": "Sesuai untuk peminat fotografi. Lebih pendek — 2 bateri skuter elektrik (kira-kira 60–70 km) cukup untuk seluruh laluan, atau Air Blade supaya selesa.",
+  "routecheckin": "Sesuai untuk peminat fotografi. Lebih pendek — 2 bateri skuter elektrik (kira-kira 50–60 km) cukup untuk seluruh laluan, atau Air Blade supaya selesa.",
  },
  "more_h": "Laluan sehari lain di laman ini",
  "more": [("art:caudat", "Memburu awan dan matahari terbit di ladang teh Cau Dat"), ("art:waterfalls", "Air terjun sekitar Da Lat: Datanla, Prenn, Gajah, Pongour"), ("routes", "5 laluan motosikal sekitar Da Lat"), ("art:days3", "Jadual Da Lat 3 hari"), ("hub", "Semua tempat menarik Da Lat mengikut arah")],
@@ -57,7 +57,7 @@ DAY = {
   ("Susahkah melawat Da Lat sehari dengan motosikal sendiri?", "Tidak jika anda biasa menunggang skuter automatik: ikut Google Maps, perlahan di jalan bukit dan selekoh, pakai topi keledar dan patuhi peraturan jalan raya. Bertolak awal, terutama musim hujan kerana hujan biasanya turun pada waktu petang."),
   ("Berapa sewa motosikal sehari?", "150,000 VND sehari untuk semua motosikal — Honda Vision, Honda Air Blade 125cc atau skuter elektrik — dengan topi keledar dan pemegang telefon. Tiada deposit wang tunai: tinggalkan pasport atau kad pengenalan."),
   ("Laluan mana patut dipilih?", "Suka bergambar dan mahu hari yang ringkas: laluan tempat bergambar popular. Bersama kanak-kanak atau suka taman tema: laluan tempat baharu 2026."),
-  ("Laluan mana sesuai untuk skuter elektrik?", "Laluan tempat bergambar: setiap skuter elektrik ada 2 bateri (kira-kira 60–70 km), cukup untuk seluruh pusingan. Laluan tempat baharu jauh dan banyak bukit — gunakan Honda Air Blade 125cc."),
+  ("Laluan mana sesuai untuk skuter elektrik?", "Laluan tempat bergambar: setiap skuter elektrik ada 2 bateri (kira-kira 50–60 km), cukup untuk seluruh pusingan. Laluan tempat baharu jauh dan banyak bukit — gunakan Honda Air Blade 125cc."),
   ("Perlu tempah motosikal awal?", "Sebaiknya mesej kami di WhatsApp, Zalo atau WeChat untuk simpan motosikal. Sewa 2 hari atau lebih, kami hantar percuma ke hotel di pusat bandar."),
  ]}
 FREE = "Percuma"

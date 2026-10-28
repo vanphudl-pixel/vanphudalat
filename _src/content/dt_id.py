@@ -5,7 +5,7 @@ RN = {
  "h1": "Da Lat 1 hari tanpa tur: rute tempat baru 2026",
  "desc": "Naik motor sendiri ke taman rekreasi baru di Da Lat: Langbiang Land, Mongo Land, Hoang Long Ohayo dan kebun stroberi — urutan, jarak, petunjuk arah dan PDF gratis.",
  "lead": "Sama seperti tur 1 hari \"tempat baru\" yang populer, tapi naik motor sendiri — berangkat kapan saja dan tinggal selama yang Anda mau di tiap tempat. 4 titik dengan urutan yang pas: ke utara ke Langbiang Land, menyeberang ke Ta Nung, turun lewat Celah Mimosa dan mampir ke kebun stroberi saat pulang.",
- "tips": ["Satu putaran sekitar {total} km garis lurus, jalan sebenarnya lebih panjang dan banyak tanjakan (Ta Nung, Celah Mimosa) — pakai Honda Air Blade 125cc; meski punya 2 baterai (sekitar 60–70 km), skuter listrik lambat di tanjakan dan baterainya bisa kurang.",
+ "tips": ["Satu putaran sekitar {total} km garis lurus, jalan sebenarnya lebih panjang dan banyak tanjakan (Ta Nung, Celah Mimosa) — pakai Honda Air Blade 125cc; meski punya 2 baterai (sekitar 50–60 km), skuter listrik lambat di tanjakan dan baterainya bisa kurang.",
           "Harga di tiap titik adalah harga acuan (dikumpulkan Oktober 2026) — bisa berubah, cek di loket.",
           "Isi bensin penuh sebelum naik ke Ta Nung — di jalan pegunungan jarang ada SPBU.",
           "Jalan Ta Nung dan Celah Mimosa banyak tikungan — pelan-pelan, jangan menyalip di tikungan."],
@@ -20,7 +20,7 @@ RC = {
  "h1": "Da Lat 1 hari tanpa tur: rute spot foto populer",
  "desc": "Naik motor sendiri ke 4 spot foto terpopuler di Da Lat: Lac Hu Co Tran, Memory Station (Tram Ky Uc), Suoi Binh Yen dan Happy Hill di Danau Tuyen Lam — urutan, jarak, petunjuk arah dan PDF gratis.",
  "lead": "Hari yang sama seperti tur spot foto populer, tapi naik motor sendiri: pagi 2 titik di timur kota (arah Trai Mat), siang 2 titik di sekitar Danau Tuyen Lam. Saat makan siang Anda melewati pusat kota — praktis untuk makan dan tukar baterai di toko kami jika pakai skuter listrik.",
- "tips": ["Satu putaran sekitar {total} km garis lurus, jalan sebenarnya lebih panjang — 2 baterai skuter listrik (sekitar 60–70 km) cukup untuk seluruh putaran; agar nyaman di tanjakan, pakai Honda Air Blade 125cc.",
+ "tips": ["Satu putaran sekitar {total} km garis lurus, jalan sebenarnya lebih panjang — 2 baterai skuter listrik (sekitar 50–60 km) cukup untuk seluruh putaran; agar nyaman di tanjakan, pakai Honda Air Blade 125cc.",
           "Harga di tiap titik adalah harga acuan (dikumpulkan Oktober 2026), biasanya sudah termasuk minuman — bisa berubah, cek di loket.",
           "Happy Hill sangat ramai di akhir pekan — datang di hari kerja atau pagi-pagi.",
           "Jalan masuk ke Suoi Binh Yen dan Happy Hill di beberapa bagian sempit dan curam — pelan-pelan, apalagi saat hujan."],
@@ -48,7 +48,7 @@ DAY = {
  "stops": "Titik", "km": "Satu putaran sekitar {km} km garis lurus (toko → semua titik → toko)", "open": "Buka peta rute", "pdf": "Unduh PDF",
  "verdict": {
   "routenew": "Cocok untuk keluarga dengan anak dan penggemar taman rekreasi. Jauh dan banyak tanjakan — pakai Honda Air Blade 125cc.",
-  "routecheckin": "Cocok untuk pecinta foto. Lebih pendek — 2 baterai skuter listrik (sekitar 60–70 km) cukup untuk seluruh rute, atau pakai Air Blade agar nyaman.",
+  "routecheckin": "Cocok untuk pecinta foto. Lebih pendek — 2 baterai skuter listrik (sekitar 50–60 km) cukup untuk seluruh rute, atau pakai Air Blade agar nyaman.",
  },
  "more_h": "Rute 1 hari lain di situs ini",
  "more": [("art:caudat", "Berburu awan dan matahari terbit di kebun teh Cau Dat"), ("art:waterfalls", "Air terjun di sekitar Da Lat: Datanla, Prenn, Gajah, Pongour"), ("routes", "5 rute motor di sekitar Da Lat"), ("art:days3", "Itinerary Da Lat 3 hari"), ("hub", "Semua tempat wisata Da Lat menurut arah")],
@@ -57,7 +57,7 @@ DAY = {
   ("Apakah Da Lat 1 hari naik motor sendiri sulit?", "Tidak, jika Anda sudah terbiasa dengan skuter matic: ikuti Google Maps, pelan-pelan di jalan pegunungan dan tikungan, pakai helm dan patuhi aturan lalu lintas. Berangkat pagi, terutama di musim hujan karena hujan biasanya turun siang hari."),
   ("Berapa biaya sewa motor 1 hari?", "150.000 VND per hari untuk semua motor — Honda Vision, Honda Air Blade 125cc atau skuter listrik — termasuk helm dan dudukan ponsel. Tanpa deposit uang tunai: cukup tinggalkan paspor atau KTP."),
   ("Rute mana yang sebaiknya dipilih?", "Suka foto dan ingin hari yang santai: rute spot foto populer. Bersama anak atau suka taman rekreasi: rute tempat baru 2026."),
-  ("Rute mana yang bisa dengan skuter listrik?", "Rute spot foto: setiap skuter listrik punya 2 baterai (sekitar 60–70 km), cukup untuk seluruh putaran. Rute tempat baru jauh dan banyak tanjakan — pakai Honda Air Blade 125cc."),
+  ("Rute mana yang bisa dengan skuter listrik?", "Rute spot foto: setiap skuter listrik punya 2 baterai (sekitar 50–60 km), cukup untuk seluruh putaran. Rute tempat baru jauh dan banyak tanjakan — pakai Honda Air Blade 125cc."),
   ("Perlu pesan motor dulu?", "Sebaiknya hubungi kami lewat WhatsApp, Zalo atau WeChat untuk menyimpan motor. Sewa 2 hari ke atas, motor diantar gratis ke hotel di pusat kota."),
  ]}
 FREE = "Gratis"

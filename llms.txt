@@ -21,7 +21,7 @@
 
 ## Pages
 - [Home (English)](https://vanphudalat.com/): prices, bikes, FAQ, map
-- [Electric scooter rental (2 batteries per scooter, about 60–70 km in total — 35–40 km each; battery swap 20,000 VND)](https://vanphudalat.com/electric-scooter-rental-dalat/)
+- [Electric scooter rental (2 batteries per scooter, about 50–60 km in total — 25–30 km each; battery swap 20,000 VND)](https://vanphudalat.com/electric-scooter-rental-dalat/)
 - [Da Lat photo spot map (16 places, opening hours, free PDF)](https://vanphudalat.com/photo-map/)
 - [Da Lat pagoda map (7 pagodas and Zen monasteries, opening hours, free PDF)](https://vanphudalat.com/pagoda-map/)
 - [Da Lat church map (6 churches incl. the Rooster Church and Domaine de Marie, opening hours, free PDF)](https://vanphudalat.com/church-map/)
@@ -33,6 +33,7 @@
 - [Da Lat 4-star hotels — map of 10 popular 4-star hotels and resorts, free PDF](https://vanphudalat.com/4-star-hotels-map/)
 - [Da Lat 3-star hotels — map of 8 popular 3-star hotels near the night market, free PDF](https://vanphudalat.com/3-star-hotels-map/)
 - [Places to visit in Da Lat by motorbike — every sight from our maps grouped by direction, with distance, hours and electric-scooter suitability](https://vanphudalat.com/places-to-visit-in-da-lat/) (Vietnamese: https://vanphudalat.com/vi/dia-diem-du-lich-da-lat/)
+- [Da Lat tourist map by motorbike route — 6 loops from the shop with stops in riding order, distances, electric-scooter suitability and 1–4 day plans](https://vanphudalat.com/da-lat-tourist-map/) (Vietnamese: https://vanphudalat.com/vi/ban-do-du-lich-da-lat/)
 - [Da Lat day trip on your own by motorbike — self-guided versions of the popular 1-day group tours](https://vanphudalat.com/da-lat-day-trip-by-motorbike/) (Vietnamese: https://vanphudalat.com/vi/da-lat-1-ngay-tu-tuc/)
 - [Self-guided Da Lat day trip by motorbike: new attractions 2026 (Langbiang Land, Mongo Land, Hoang Long Ohayo, strawberry farm) — ordered route, distances, free PDF](https://vanphudalat.com/route-new-attractions/)
 - [Self-guided Da Lat day trip by motorbike: hot check-in spots (Lac Hu Co Tran, Memory Station, Suoi Binh Yen, Happy Hill) — ordered route, distances, free PDF](https://vanphudalat.com/route-check-in/)

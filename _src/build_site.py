@@ -70,6 +70,7 @@ from content import placeshub_price as HUBP
 from content import routenew as RN
 from content import routecheckin as RC
 from content import dayhub as DAY
+from content import tourmap as TM
 from content._route import legs as route_legs
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
@@ -987,7 +988,7 @@ def page_street(i, s):
 <ul>{ideas_html}</ul>
 <p><b>Mẹo:</b> {tip}</p>
 <h2>Xe xăng hay xe điện?</h2>
-<p>Xe máy điện êm, dễ chạy, hợp dạo phố: mỗi xe có 2 pin, một pin đi được khoảng 35–40 km, tổng cộng khoảng 60–70 km; đổi pin tại tiệm 20.000 VND/lần. Xe điện chở tối đa 2 người với tổng cân nặng dưới 140 kg và không nên đi các đèo dài dốc như Prenn, Mimosa, Langbiang — những cung đó nên chọn Honda Air Blade 125cc. <a href="{ev}">Xem chi tiết xe máy điện</a>.</p>
+<p>Xe máy điện êm, dễ chạy, hợp dạo phố: mỗi xe có 2 pin, một pin đi được khoảng 25–30 km, tổng cộng khoảng 50–60 km; đổi pin tại tiệm 20.000 VND/lần. Xe điện chở tối đa 2 người với tổng cân nặng dưới 140 kg và không nên đi các đèo dài dốc như Prenn, Mimosa, Langbiang — những cung đó nên chọn Honda Air Blade 125cc. <a href="{ev}">Xem chi tiết xe máy điện</a>.</p>
 <p>Các đường khác gần đây: {near_html} · <a href="{hub}">Tất cả tuyến đường phường Xuân Hương</a></p>
 </section>
 <section class="faq"><h2>Câu hỏi thường gặp</h2>{"".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in qa)}</section>
@@ -1420,6 +1421,7 @@ def page_hub(l):
     faq_html = "".join(f'<section id="q{j}"><h2>{q}</h2><p>{a}</p>' + (('<p class="chips">' + "".join(f'<a href="{hub_link(l, me, k)}">{x} →</a>' for k, x in lk) + "</p>") if lk else "") + "</section>" for j, (q, a, lk) in enumerate(faqs, 1))
     toc = "".join(f'<li><a href="#{z}">{t["zones"][z][0]}</a></li>' for z in HUB.ZONES) + "".join(f'<li><a href="#q{j}">{q}</a></li>' for j, (q, a, lk) in enumerate(faqs, 1))
     themes = "".join(f'<a href="{rel(me, map_path(M, l))}">{M.T[l]["h1"]}</a>' for M in THEMES if l in M.LANGS)
+    if l in TM.LANGS: themes = f'<a href="{rel(me, lang_root(l) + TM.SLUG[l] + "/")}"><b>{TM.T[l]["h1"]}</b></a>' + themes
     title, h1, desc = t["title"].format(**fill), t["h1"].format(**fill), t["desc"].format(**fill)
     lds = [{"@context": "https://schema.org", "@type": "Article", "headline": h1, "description": desc, "inLanguage": l, "mainEntityOfPage": BASE + me,
             "image": BASE + "img/airblade.jpg", "datePublished": HUB.UPDATED, "dateModified": HUB.UPDATED,
@@ -1515,6 +1517,112 @@ def page_day(l):
 """ + foot(l, frm=me)
 for l in DAY.LANGS:
     write(day_path(l), page_day(l))
+
+# ------------------------------------------------------------------ tourist map by motorbike route (vi + en)
+def tm_path(l): return lang_root(l) + TM.SLUG[l] + "/"
+def page_tourmap(l):
+    t = TM.T[l]; me = tm_path(l)
+    hub = {s[0]: s for s in HUB.spots(l)}
+    amt = AM.T[l]["s"]
+    am = {s[0]: (s[0], s[1], s[2], s[3], s[4], s[5], amt[s[0]], None, AM) for s in AM.SPOTS}
+    routes = []
+    for rid, col, stops in TM.ROUTES:
+        sp = [hub[sid] if src == "hub" else am[sid] for src, sid in stops]
+        lg = route_legs(sp); tot = sum(lg)
+        ev = all(x[4] for x in sp) and tot * TM.ROAD[1] <= TM.EV_MAX
+        routes.append((rid, col, sp, tot, ev))
+    nm = t["names"]
+    ev_list = ", ".join(nm[r[0]][0] for r in routes if r[4])
+    far = max(routes, key=lambda r: r[3])
+    fill = {"ev_list": ev_list, "far_name": nm[far[0]][0], "far_km": f"{far[3]:.0f}"}
+    bar = "".join(f'<a href="{rel(me, tm_path(x))}" hreflang="{x}" data-l="{x}"{" class=\"on\" aria-current=\"page\"" if x == l else ""}>{LABEL[x]}</a>' for x in TM.LANGS)
+    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + tm_path(x)}">\n' for x in TM.LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + tm_path("en")}">\n'
+    js_routes, cards, n = [], "", 0
+    for k, (rid, col, sp, tot, ev) in enumerate(routes, 1):
+        name, dur, intro = nm[rid]
+        pts, rows = [], ""
+        for sid, lat, lng, cid, sev, h, (pn, best, d), _z, M in sp:
+            n += 1
+            g = gmap(cid, lat, lng); hr = PM.T[l]["h"].get(h, h)
+            rows += f'<li><span class="pmn" style="background:{col}">{n}</span><div><b>{pn}</b><br><small>{t["hours"]}: {hr}</small><br>{d}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a>{vlink(l, cid)}</div></li>'
+            pts.append({"i": n, "n": pn, "lat": lat, "lng": lng, "g": g, "h": hr})
+        wp = "|".join(f"{p['lat']},{p['lng']}" for p in pts)
+        gdir = f"https://www.google.com/maps/dir/?api=1&origin={LAT},{LON}&destination={LAT},{LON}&waypoints={wp}&travelmode=driving".replace("|", "%7C")
+        a, b = (round(tot * f) for f in TM.ROAD)
+        bike = t["ev_ok"] if ev else t["ev_no"]
+        cards += (f'<section id="{rid}" class="route"><h3><span class="dot" style="background:{col}"></span>{name}</h3>'
+                  f'<div class="meta">{t["loop"]}: ≈ {tot:.0f} {t["straight"]} · {t["road"].format(a=a, b=b)} · {t["time"]}: {dur}</div>'
+                  f'<p>{intro}</p><p><b>{t["bike"]}:</b> {"🔋" if ev else "⛽"} {bike}</p>'
+                  f'<ol class="pmlist">{rows}</ol><p><a class="btn alt" href="{_esc(gdir)}" target="_blank" rel="noopener" style="border:1px solid var(--line)">🧭 {t["open_gm"]}</a></p></section>')
+        js_routes.append({"id": rid, "c": col, "n": name, "p": pts})
+    plans = "".join(f'<li><b>{d}:</b> {x}' + (f' <a href="{hub_link(l, me, lk)}">→</a>' if lk and (not lk.startswith("art:") or lk[4:] in C[l]["articles"]) else "") + "</li>" for d, x, lk in t["plans"])
+    avoid = "".join(f"<li>{x}</li>" for x in t["avoid"])
+    faqs = [(q, a.format(**fill)) for q, a in t["faq"]]
+    faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in faqs)
+    themes = "".join(f'<a href="{rel(me, map_path(M, l))}">{M.T[l]["h1"]}</a>' for M in THEMES if l in M.LANGS)
+    more = "".join(f'<a href="{hub_link(l, me, k)}">{x} →</a>' for k, x in t["more"])
+    toc = f'<li><a href="#map">{t["map_h"]}</a></li>' + "".join(f'<li><a href="#{r[0]}">{nm[r[0]][0]}</a></li>' for r in routes) + f'<li><a href="#plan">{t["plan_h"]}</a></li><li><a href="#faq">{t["faq_h"]}</a></li>'
+    chips = f'<button type="button" class="rbtn on" data-r="">{t["all"]}</button>' + "".join(f'<button type="button" class="rbtn" data-r="{r[0]}"><span class="dot" style="background:{r[1]}"></span>{nm[r[0]][0].split(" · ")[0]}</button>' for r in routes)
+    allp = [p for r in js_routes for p in r["p"]]
+    lds = [{"@context": "https://schema.org", "@type": "Article", "headline": t["h1"], "description": t["desc"], "inLanguage": l, "mainEntityOfPage": BASE + me,
+            "image": BASE + "img/airblade.jpg", "datePublished": TM.UPDATED, "dateModified": TM.UPDATED,
+            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}, "publisher": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}},
+           {"@context": "https://schema.org", "@type": "ItemList", "name": t["routes_h"], "itemListElement": [
+            {"@type": "ListItem", "position": i, "item": {"@type": "TouristTrip", "name": r["n"], "itinerary": {"@type": "ItemList", "itemListElement": [
+                {"@type": "ListItem", "position": j, "item": {"@type": "TouristAttraction", "name": p["n"], "geo": {"@type": "GeoCoordinates", "latitude": p["lat"], "longitude": p["lng"]}, "hasMap": p["g"]}} for j, p in enumerate(r["p"], 1)]}}}
+            for i, r in enumerate(js_routes, 1)]},
+           {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]},
+           crumbs_ld(l, [(t["h1"], me)])]
+    js = json.dumps(js_routes, ensure_ascii=False)
+    return f"""<!doctype html>
+<html lang="{l}"><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>{t["title"]}</title>
+<meta name="description" content="{t["desc"]}"><link rel="canonical" href="{BASE + me}">
+{alts}<meta property="og:type" content="article"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/airblade.jpg">
+{"".join(ldjson(x) for x in lds)}
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="preload" href="/fonts/bvp-latin-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/bvp-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+<style>{CSS}
+#pmap{{height:480px;border-radius:14px;border:1px solid var(--line)}}
+.pmlist{{list-style:none;padding:0;display:grid;gap:10px}} .pmlist li{{display:flex;gap:10px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:10px}}
+.pmn{{flex:none;width:28px;height:28px;border-radius:50%;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}}
+.pmk{{background:none;border:none}} .pmk span{{display:flex;width:24px;height:24px;border-radius:50%;color:#fff;font:700 11px sans-serif;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}}
+.dot{{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:middle}}
+.rbar{{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}} .rbtn{{font:inherit;font-size:14px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}} .rbtn.on{{background:#1a1a1a;color:#fff;border-color:#1a1a1a}}
+.route .meta{{font-size:14px;opacity:.8;margin:4px 0 8px}}
+@media(max-width:640px){{.toc{{columns:1}}}}
+</style></head><body>
+<header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
+<div class="hero">{crumbs(l, me, [(t["h1"], None)])}<h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p><p class="upd"><time datetime="{TM.UPDATED}">{UPD[l]}: {fdate(l, TM.UPDATED)}</time></p>
+<div class="cta">{hero_btns(l)}</div></div></div></header>
+<main class="wrap">
+<section><h2>{t["toc"]}</h2><ol class="toc">{toc}</ol></section>
+<section id="map"><h2>{t["map_h"]}</h2><div class="rbar">{chips}</div><div id="pmap" role="img" aria-label="{t["map_h"]}"></div>
+<p class="note">{t["km_note"]}</p></section>
+<section><h2>{t["routes_h"]}</h2></section>
+{cards}
+<section id="plan" class="prose"><h2>{t["plan_h"]}</h2><ul>{plans}</ul><h3>{t["avoid_h"]}</h3><ul>{avoid}</ul></section>
+<section id="faq" class="faq"><h2>{t["faq_h"]}</h2>{faq}</section>
+<section><h2>{t["themes_h"]}</h2><p class="chips">{themes}</p></section>
+<section><h2>{t["more_h"]}</h2><p class="chips">{more}</p></section>
+<section class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px"><h2>{t["cta_h"]}</h2><p>{t["cta"]}</p><p><a class="btn" href="{rel(me, home_path(l))}">{kw_rent(l)} →</a> <a class="btn alt" href="{rel(me, ev_path(l))}" style="border:1px solid var(--line)">{EV[l]["h1"]} →</a></p></section>
+<section>{contact_box(l)}</section>
+</main>
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script>
+(function(){{if(!window.L)return;var R={js},S=[{LAT},{LON}];
+var m=L.map('pmap',{{scrollWheelZoom:false}});L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:18,attribution:'&copy; OpenStreetMap'}}).addTo(m);
+var G={{}};R.forEach(function(r){{var g=L.featureGroup(),ll=[S];r.p.forEach(function(p){{ll.push([p.lat,p.lng]);L.marker([p.lat,p.lng],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:'+r.c+'">'+p.i+'</span>',iconSize:[24,24],iconAnchor:[12,12]}})}}).bindPopup('<b>'+p.i+'. '+p.n+'</b><br><small>'+r.n+'</small><br>{t["hours"]}: '+p.h+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>📍 {t["dir"]}</a>').addTo(g);}});ll.push(S);
+L.polyline(ll,{{color:r.c,weight:3,opacity:.6,dashArray:'6 8'}}).addTo(g);g.addTo(m);G[r.id]=g;}});
+L.marker(S,{{icon:L.divIcon({{className:'pmk',html:'<span style="background:#1a1a1a;width:auto;padding:0 8px;border-radius:12px">Van Phu</span>',iconSize:[70,26],iconAnchor:[35,13]}})}}).addTo(m).bindPopup('<b>{t["shop"]}</b><br><a href="{GMAPS}" target="_blank" rel="noopener">{t["dir"]} →</a>');
+var all=L.featureGroup(Object.keys(G).map(function(k){{return G[k]}}));m.fitBounds(all.getBounds(),{{padding:[20,20]}});
+document.querySelectorAll('.rbtn').forEach(function(b){{b.addEventListener('click',function(){{var id=b.getAttribute('data-r');document.querySelectorAll('.rbtn').forEach(function(x){{x.classList.toggle('on',x===b)}});
+Object.keys(G).forEach(function(k){{if(!id||k===id)G[k].addTo(m);else m.removeLayer(G[k]);}});m.fitBounds((id?G[id]:all).getBounds(),{{padding:[20,20]}});}});}});
+}})();
+</script>
+""" + foot(l, frm=me)
+for l in TM.LANGS:
+    write(tm_path(l), page_tourmap(l))
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
@@ -1542,6 +1650,9 @@ for l in DAY.LANGS:
 _hub_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + hub_path(x)}"/>\n' for x in HUB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + hub_path("en")}"/>\n'
 for l in HUB.LANGS:
     urls += f"  <url>\n    <loc>{BASE + hub_path(l)}</loc>\n{_hub_alts}    <lastmod>{HUB.UPDATED}</lastmod>\n  </url>\n"
+_tm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + tm_path(x)}"/>\n' for x in TM.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + tm_path("en")}"/>\n'
+for l in TM.LANGS:
+    urls += f"  <url>\n    <loc>{BASE + tm_path(l)}</loc>\n{_tm_alts}    <lastmod>{TM.UPDATED}</lastmod>\n  </url>\n"
 for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path(), tour_path()] + [guide_path(_l, _g) for _l in GD.GUIDES for _g in GD.GUIDES[_l]] + [st_path(_s) for _s in ST.S]:
     urls += f"  <url>\n    <loc>{BASE + _me}</loc>\n    <lastmod>{ST.UPDATED}</lastmod>\n  </url>\n"
 # Missing pages (GitHub Pages serves /404.html for any unknown URL): send the visitor to the home page instead of a blank error.
@@ -1577,7 +1688,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
 ## Pages
 - [Home (English)]({BASE}): prices, bikes, FAQ, map
-- [Electric scooter rental (2 batteries per scooter, about 60–70 km in total — 35–40 km each; battery swap 20,000 VND)]({BASE + ev_path("en")})
+- [Electric scooter rental (2 batteries per scooter, about 50–60 km in total — 25–30 km each; battery swap 20,000 VND)]({BASE + ev_path("en")})
 - [Da Lat photo spot map (16 places, opening hours, free PDF)]({BASE + pm_path("en")})
 - [Da Lat pagoda map (7 pagodas and Zen monasteries, opening hours, free PDF)]({BASE + map_path(PG, "en")})
 - [Da Lat church map (6 churches incl. the Rooster Church and Domaine de Marie, opening hours, free PDF)]({BASE + map_path(CH, "en")})
@@ -1589,6 +1700,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Da Lat 4-star hotels — map of 10 popular 4-star hotels and resorts, free PDF]({BASE + map_path(H4, "en")})
 - [Da Lat 3-star hotels — map of 8 popular 3-star hotels near the night market, free PDF]({BASE + map_path(H3, "en")})
 - [Places to visit in Da Lat by motorbike — every sight from our maps grouped by direction, with distance, hours and electric-scooter suitability]({BASE + "places-to-visit-in-da-lat/"}) (Vietnamese: {BASE + "vi/dia-diem-du-lich-da-lat/"})
+- [Da Lat tourist map by motorbike route — 6 loops from the shop with stops in riding order, distances, electric-scooter suitability and 1–4 day plans]({BASE + "da-lat-tourist-map/"}) (Vietnamese: {BASE + "vi/ban-do-du-lich-da-lat/"})
 - [Da Lat day trip on your own by motorbike — self-guided versions of the popular 1-day group tours]({BASE + "da-lat-day-trip-by-motorbike/"}) (Vietnamese: {BASE + "vi/da-lat-1-ngay-tu-tuc/"})
 - [Self-guided Da Lat day trip by motorbike: new attractions 2026 (Langbiang Land, Mongo Land, Hoang Long Ohayo, strawberry farm) — ordered route, distances, free PDF]({BASE + map_path(RN, "en")})
 - [Self-guided Da Lat day trip by motorbike: hot check-in spots (Lac Hu Co Tran, Memory Station, Suoi Binh Yen, Happy Hill) — ordered route, distances, free PDF]({BASE + map_path(RC, "en")})
