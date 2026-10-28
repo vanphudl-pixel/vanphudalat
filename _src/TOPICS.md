@@ -31,6 +31,8 @@ Owner: Phú. Report language: Vietnamese.
 
 - Vietnamese-only street pages (owner asked: Vietnamese only, no other languages): /vi/thue-xe-may-da-lat/<duong-...>/ — one page per street of phường Xuân Hương – Đà Lạt ("Thuê xe máy Đà Lạt đường X", delivery focus) + hub /vi/thue-xe-may-da-lat/phuong-xuan-huong/. Data in `content/streets_vi.py` (unique intro + tip per street; outer=True → "gọi trước để hỏi giao xe"). Do not translate them.
 
+- Indonesian funnel block (owner asked 2026-10-28): every /id/ page shows a consultation block above the footer (ready-made WhatsApp messages: itinerary, halal food, rental, join the "Dalat Bareng Phu" community), 2 real Google reviews and a short FAQ. Text lives in `content/funnelid.py`, rendered by `id_funnel()` in build_site.py. Do not remove it; edit only funnelid.py. When the owner's Indonesian Facebook group / WhatsApp Community exist, the "Gabung komunitas" button can point there.
+
 ## Published
 - 2026-10-22 streets-vi — 41 Vietnamese-only street landing pages + hub (phường Xuân Hương)
 - 2026-10-10 weather — Da Lat weather by month

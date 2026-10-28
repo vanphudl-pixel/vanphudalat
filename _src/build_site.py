@@ -48,6 +48,7 @@ from content import photomap as PM
 from content import pagodamap as PG
 from content import churchmap as CH
 from content import halalid as HI
+from content import funnelid as FI
 from content import sunflowermap as SF
 from content import cloudmap as CL
 from content import cafemap as CF
@@ -509,6 +510,15 @@ def head(l, kind, key, title, desc, ld, img="electric-row"):
 </head>
 <body>"""
 
+def id_funnel():
+    """Indonesian-only funnel block above the footer of every /id/ page (content/funnelid.py)."""
+    asks = "".join(f'<a class="btn wa" href="https://wa.me/84944081101?text={quote(m)}" target="_blank" rel="noopener">{_esc(b)}</a>' for b, m in FI.ASKS)
+    faq = "".join(f'<details><summary>{_esc(q)}</summary><p>{_esc(a)}</p></details>' for q, a in FI.FAQ)
+    return (f'<div class="wrap idf" style="padding-bottom:24px"><section class="box" id="konsultasi"><h2>{_esc(FI.H2)}</h2><p>{_esc(FI.LEAD)}</p><div class="cta">{asks}</div>'
+            f'<p>{_esc(FI.HALAL_LINE)} <a href="/{halal_path()}">{_esc(FI.HALAL_LINK)}</a>.</p></section>'
+            f'<section><h2>{_esc(FI.REV_H)}</h2>{rev_cards(FI.REV_IDS)}</section>'
+            f'<section class="faq"><h2>{_esc(FI.FAQ_H)}</h2>{faq}</section></div>')
+
 def foot(l, root_redirect=False, frm=None):
     u = C[l]["ui"]
     redirect = ""
@@ -522,7 +532,8 @@ def foot(l, root_redirect=False, frm=None):
         kw = f'<br><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a> · <a href="{rel(frm, routes_path(l))}">{C[l]["routes"]["h1"]}</a>'
         if l == "vi":
             kw += f' · <a href="{rel(frm, home_path("vi") + "phuong-xuan-huong/")}">Thuê xe máy theo tuyến đường phường Xuân Hương</a>'
-    return f"""<footer><div class="fcalls"><a class="fp call" href="{TEL}">📞 {CALL[l][1]}: {phone_txt(l)}</a><a class="fp" href="{TEL2}">📞 {phone2_txt(l)}</a><a class="fp yt" href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></div>{nap_block(l)}{u["footer"]}{kw}</footer>
+    pre = id_funnel() if l == "id" else ""
+    return pre + f"""<footer><div class="fcalls"><a class="fp call" href="{TEL}">📞 {CALL[l][1]}: {phone_txt(l)}</a><a class="fp" href="{TEL2}">📞 {phone2_txt(l)}</a><a class="fp yt" href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></div>{nap_block(l)}{u["footer"]}{kw}</footer>
 {floats(l)}
 <div class="lb" id="lb"><img alt=""></div>
 <script>
