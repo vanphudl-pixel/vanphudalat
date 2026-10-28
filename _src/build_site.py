@@ -71,6 +71,7 @@ from content import routenew as RN
 from content import routecheckin as RC
 from content import dayhub as DAY
 from content import tourmap as TM
+from content import licence as LIC
 from content._route import legs as route_legs
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
@@ -262,6 +263,10 @@ def routes_path(l): return lang_root(l) + C[l]["routes"]["slug"] + "/"
 def blog_path(l): return lang_root(l) + "blog/"
 def ev_path(l): return lang_root(l) + EV[l]["slug"] + "/"
 def art_path(l, k): return blog_path(l) + C[l]["articles"][k][0] + "/"
+def lic_path(l): return lang_root(l) + LIC.SLUG[l] + "/"
+LIC_LANGS = [x for x in LIC.LANGS if x in LIC.T]
+LIC_FROM = {"lt-documents", "lt-ev-foreigners", "evrules", "lt-ev-experience", "lt-procedure"}  # articles that link to the licence page
+def lic_link(l, me): return f'<p class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px">🪪 <a href="{rel(me, lic_path(l))}"><b>{LIC.T[l]["h1"]}</b></a> →</p>' if l in LIC.T else ""
 
 def path_of(l, kind, key=None):
     return {"home": home_path, "routes": routes_path, "blog": blog_path, "ev": ev_path}[kind](l) if kind != "art" else art_path(l, key)
@@ -744,7 +749,7 @@ def page_article(l, k):
  <img class="heroimg" src="{pre}img/{img}.jpg" alt="{h1}" width="1200" height="675">
 </div></div></header>
 <main class="wrap">
- <section class="prose">{vbox(l, VIDEO_ART[k], h1) if k in VIDEO_ART else ""}{html}</section>
+ <section class="prose">{vbox(l, VIDEO_ART[k], h1) if k in VIDEO_ART else ""}{html}{lic_link(l, me) if k in LIC_FROM else ""}</section>
  {faq_html}
  <section>{contact_box(l)}{cta_box(l, me)}</section>
  <section><h2>{u["read_also"]}</h2>{posts(l, me, others)}</section>
@@ -806,7 +811,7 @@ def page_ev(l):
 </div></div></header>
 <main class="wrap">
  <section><img src="{pre}img/electric-row.jpg" alt="{e["h1"]}" style="width:100%;border-radius:12px" loading="lazy"></section>
- <section><h2>{e["h_facts"]}</h2><table class="price">{facts}</table></section>
+ <section><h2>{e["h_facts"]}</h2><table class="price">{facts}</table>{lic_link(l, me)}</section>
  <section><h2>{e["h_good"]}</h2><ul class="checks">{good}</ul></section>
  <section><h2>{e["h_note"]}</h2><ul class="checks">{notes}</ul></section>
  <section><h2>{e["h_faq"]}</h2>{faq}</section>
@@ -1208,7 +1213,7 @@ def page_guide(l, i):
     langlink = f'<div class="langs"><a href="{rel(me, home_path(l))}" class="on" data-l="{l}">{l.upper()}</a></div>'
     top = f'<div class="top"><div class="logo">Văn Phú Đà Lạt</div>{langlink}</div>'
     others = [o for j, o in enumerate(GD.GUIDES[l]) if j != i]
-    related = "".join(f'<li><a href="{rel(me, guide_path(l, o))}">{o["h1"]}</a></li>' for o in others)
+    related = "".join(f'<li><a href="{rel(me, guide_path(l, o))}">{o["h1"]}</a></li>' for o in others) + (f'<li><a href="{rel(me, lic_path(l))}">{LIC.T[l]["h1"]}</a></li>' if l in LIC.T else "")
     secs = "".join(f"<section><h2>{h}</h2>{body}</section>" for h, body in g["sections"])
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in g["faq"]]}
@@ -1518,6 +1523,50 @@ def page_day(l):
 for l in DAY.LANGS:
     write(day_path(l), page_day(l))
 
+# ------------------------------------------------------------------ licence pillar page (all languages, owner asked 2026-10-28)
+def page_licence(l):
+    t = LIC.T[l]; me = lic_path(l)
+    links = {"{EV}": rel(me, ev_path(l)), "{HOME}": rel(me, home_path(l)), "{DOCS}": rel(me, art_path(l, "lt-documents")),
+             "{RULES}": rel(me, art_path(l, "evrules")), "{ROUTES}": rel(me, routes_path(l))}
+    def fill(x):
+        for a, b in links.items(): x = x.replace(a, b)
+        return x
+    bar = "".join(f'<a href="{rel(me, lic_path(x))}" hreflang="{x}" data-l="{x}"{" class=\"on\" aria-current=\"page\"" if x == l else ""}>{LABEL[x]}</a>' for x in LIC_LANGS)
+    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + lic_path(x)}">\n' for x in LIC_LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + lic_path("en")}">\n'
+    short = "".join(f"<tr><td>{k}</td><td><b>{v}</b></td></tr>" for k, v in t["short"])
+    secs = "".join(f'<section class="prose"><h2>{h}</h2>{fill(b)}</section>' for h, b in t["secs"])
+    faq = "".join(f"<details><summary>{q}</summary><p>{fill(a)}</p></details>" for q, a in t["faq"])
+    more = "".join(f'<a href="{fill(u)}">{x} →</a>' for u, x in t["more"])
+    strip = lambda x: re.sub(r"<[^>]+>", "", x)
+    lds = [{"@context": "https://schema.org", "@type": "Article", "headline": t["h1"], "description": t["desc"], "inLanguage": l, "mainEntityOfPage": BASE + me,
+            "image": BASE + "img/electric-row.jpg", "datePublished": LIC.UPDATED, "dateModified": LIC.UPDATED,
+            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}, "publisher": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}},
+           {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in t["faq"]]},
+           business_ld(l, BASE + me), crumbs_ld(l, [(t["crumb"], me)])]
+    return f"""<!doctype html>
+<html lang="{l}"{' dir="rtl"' if l == "he" else ""}><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>{t["title"]}</title>
+<meta name="description" content="{t["desc"]}"><link rel="canonical" href="{BASE + me}">
+{alts}<meta property="og:type" content="article"><meta property="og:locale" content="{LOCALE[l]}"><meta property="og:title" content="{t["title"]}"><meta property="og:description" content="{t["desc"]}"><meta property="og:url" content="{BASE + me}"><meta property="og:image" content="{BASE}img/electric-row.jpg">
+{"".join(ldjson(x) for x in lds)}
+<link rel="preload" href="/fonts/bvp-latin-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/bvp-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+<style>{CSS}
+</style></head><body>
+<header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
+<div class="hero">{crumbs(l, me, [(t["crumb"], None)])}<h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p><p class="upd"><time datetime="{LIC.UPDATED}">{UPD[l]}: {fdate(l, LIC.UPDATED)}</time></p>
+<div class="cta">{hero_btns(l)}</div></div></div></header>
+<main class="wrap">
+<section><h2>{t["short_h"]}</h2><table class="price">{short}</table></section>
+<section><img src="{rel(me, "/img/electric-row.jpg")}" alt="{t["h1"]}" loading="lazy" style="width:100%;border-radius:12px"></section>
+{secs}
+<section class="faq"><h2>{t["faq_h"]}</h2>{faq}</section>
+<section><h2>{t["more_h"]}</h2><p class="chips">{more}</p></section>
+<section>{contact_box(l)}{cta_box(l, me)}</section>
+</main>
+""" + foot(l, frm=me)
+for l in LIC_LANGS:
+    write(lic_path(l), page_licence(l))
+
 # ------------------------------------------------------------------ tourist map by motorbike route (vi + en)
 def tm_path(l): return lang_root(l) + TM.SLUG[l] + "/"
 def page_tourmap(l):
@@ -1653,6 +1702,9 @@ for l in HUB.LANGS:
 _tm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + tm_path(x)}"/>\n' for x in TM.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + tm_path("en")}"/>\n'
 for l in TM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + tm_path(l)}</loc>\n{_tm_alts}    <lastmod>{TM.UPDATED}</lastmod>\n  </url>\n"
+_lic_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + lic_path(x)}"/>\n' for x in LIC_LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + lic_path("en")}"/>\n'
+for l in LIC_LANGS:
+    urls += f"  <url>\n    <loc>{BASE + lic_path(l)}</loc>\n{_lic_alts}    <lastmod>{LIC.UPDATED}</lastmod>\n  </url>\n"
 for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path(), tour_path()] + [guide_path(_l, _g) for _l in GD.GUIDES for _g in GD.GUIDES[_l]] + [st_path(_s) for _s in ST.S]:
     urls += f"  <url>\n    <loc>{BASE + _me}</loc>\n    <lastmod>{ST.UPDATED}</lastmod>\n  </url>\n"
 # Missing pages (GitHub Pages serves /404.html for any unknown URL): send the visitor to the home page instead of a blank error.
@@ -1713,6 +1765,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Da Lat to Saigon bus — map of the Da Lat bus station and 12 bus company offices, free PDF]({BASE + map_path(BU, "en")})
 - [Da Lat to Da Nang bus — map of the Da Lat bus station and 6 bus company offices on the Da Nang / Hoi An route, free PDF]({BASE + map_path(DN, "en")})
 - [Da Lat Flower Festival 2026 — planned 19–31 Dec 2026: programme, venue map, free PDF]({BASE + map_path(FE, "en")})
+- [Do I need a license to rent a motorbike in Vietnam? Gas scooters need a valid motorbike license; electric scooters in the moped class (up to 50 km/h, motor up to 4 kW) need none]({BASE + lic_path("en")}) (Vietnamese: {BASE + lic_path("vi")})
 - [Motorbike routes around Da Lat]({BASE + routes_path("en")})
 - [Travel blog]({BASE + blog_path("en")})
 """ + "".join(f"- [{LABEL[x]} home]({BASE + home_path(x)})\n" for x in LANGS if x != "en")
