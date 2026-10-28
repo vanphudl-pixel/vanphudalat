@@ -313,7 +313,9 @@ CALL = {"vi": ("Gọi", "Điện thoại"), "en": ("Call", "Phone"), "ru": ("П�
 VIDEO_CID = {"10570931153699557351": "gA532ZVEENM",   # Domaine de Marie (Mai Anh Dao church)
              "4046450182113774666": "sbj0q40Xq7w",    # Da Lat Cathedral (Chicken church)
              "ChIJgxSFnygTcTER6-xbx0o255o": "on6LKx_BZNo"}  # Don Bosco church (Salesian)
-VIDEO_ART = {"domainedemarie": "gA532ZVEENM"}
+EV_VIDEO = "vJebSgBDFOo"  # owner's Shorts of the electric-scooter fleet at the shop (uploaded 2026-10-28)
+VIDEO_ART = {"domainedemarie": "gA532ZVEENM", "lt-ev-foreigners": EV_VIDEO, "lt-ev-city": EV_VIDEO}
+VIDEO_DATE = {"gA532ZVEENM": "2026-10-14", "vJebSgBDFOo": "2026-10-28"}  # upload dates for VideoObject schema
 VLBL = {"vi": "Xem video", "en": "Watch the video", "ru": "Смотреть видео", "zh": "观看视频", "ko": "영상 보기", "ja": "動画を見る", "th": "ดูวิดีโอ",
         "id": "Tonton video", "ms": "Tonton video", "de": "Video ansehen", "fr": "Voir la vidéo", "es": "Ver el vídeo", "he": "צפו בסרטון",
         "it": "Guarda il video", "nl": "Bekijk de video", "km": "មើលវីដេអូ", "lo": "ເບິ່ງວິດີໂອ", "my": "ဗီဒီယိုကြည့်ရန်"}
@@ -842,6 +844,7 @@ def page_ev(l):
 </div></div></header>
 <main class="wrap">
  <section><img src="{pre}img/electric-row.jpg" alt="{e["h1"]}" style="width:100%;border-radius:12px" loading="lazy"></section>
+ <section>{vbox(l, EV_VIDEO, e["h1"])}</section>
  <section><h2>{e["h_facts"]}</h2><table class="price">{facts}</table>{lic_link(l, me)}</section>
  <section><h2>{e["h_good"]}</h2><ul class="checks">{good}</ul></section>
  <section><h2>{e["h_note"]}</h2><ul class="checks">{notes}</ul></section>
@@ -967,6 +970,13 @@ def add_ld(path, html):
     if "AutoRental" not in types:
         m = re.search(r'<html lang="([a-z]+)"', html); _l = m.group(1) if m and m.group(1) in C else "en"
         add.append(business_ld(_l, BASE + path))
+    if "VideoObject" not in types:
+        for v, name in dict(re.findall(r'data-yt="([\w-]+)" aria-label="[^:"]*: ([^"]+)"', html)).items():
+            add.append({"@context": "https://schema.org", "@type": "VideoObject", "name": _html.unescape(name),
+                        "description": (_plain(m.group(1)) if (m := re.search(r'<meta name="description" content="([^"]*)"', html)) else _html.unescape(name)),
+                        "thumbnailUrl": [f"https://i.ytimg.com/vi/{v}/hqdefault.jpg"], "uploadDate": VIDEO_DATE.get(v, "2026-10-10"),
+                        "embedUrl": f"https://www.youtube.com/embed/{v}", "url": f"https://www.youtube.com/shorts/{v}",
+                        "publisher": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}})
     if "FAQPage" not in types:
         qa = _faq_from_page(html)
         if qa:
