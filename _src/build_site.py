@@ -58,6 +58,7 @@ from content import threestarmap as H3
 from content import busmap as BU
 from content import danangbusmap as DN
 from content import waterfallmap as WF
+from content import attractmap as AM
 from content import nightcafemap as NC
 from content import nhatrangbusmap as NT
 from content import nightmarketmap as NM
@@ -1316,6 +1317,7 @@ def page_photomap(l, M=PM):
     seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t.get("season", []))
     tips = "".join(f"<li>{x}</li>" for x in t["tips"])
     pdf = f"{pre}files/{getattr(M, 'PDF', 'VanPhu-Dalat-Photo-Map')}-{l.upper()}.pdf"
+    pdf_btn = f'<a class="btn wa" href="{pdf}" download>⬇ {t["pdf"]}</a>' if getattr(M, "PDF", "VanPhu-Dalat-Photo-Map") else ""
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": t["h1"], "itemListElement": [
         {"@type": "ListItem", "position": p["i"], "item": {"@type": "TouristAttraction", "name": p["n"], "geo": {"@type": "GeoCoordinates", "latitude": p["lat"], "longitude": p["lng"]}, "hasMap": p["g"]}} for p in pts]}
     js = json.dumps(pts, ensure_ascii=False)
@@ -1340,7 +1342,7 @@ def page_photomap(l, M=PM):
 </style></head><body>
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
 <div class="hero"><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}{art_link}</p>
-<div class="cta"><a class="btn wa" href="{pdf}" download>⬇ {t["pdf"]}</a><a class="btn alt" href="{rel(me, home_path(l))}">{t["cta_h"]}</a></div></div></div></header>
+<div class="cta">{pdf_btn}<a class="btn alt" href="{rel(me, home_path(l))}">{t["cta_h"]}</a></div></div></div></header>
 <main class="wrap">
 <section><div id="pmap" role="img" aria-label="{t["h1"]}"></div>
 <div class="pmleg"><span><span class="pmn ev" style="display:inline-flex;width:14px;height:14px"></span> {t["ev"]}</span><span><span class="pmn gas" style="display:inline-flex;width:14px;height:14px"></span> {t["gas"]}</span></div>
@@ -1362,7 +1364,7 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 """ + foot(l, frm=me)
 
 # ------------------------------------------------------------------ places hub (pillar page, vi + en)
-THEMES = [RN, RC, PM, WF, PG, CH, SF, CL, CF, NC, NM, BB, FE, HT, H4, H3, BU, DN, NT]
+THEMES = [RN, RC, PM, WF, AM, PG, CH, SF, CL, CF, NC, NM, BB, FE, HT, H4, H3, BU, DN, NT]
 _TNAME = {M.__name__.split(".")[-1]: M for M in THEMES}
 def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
 def day_path(l): return lang_root(l) + DAY.SLUG[l] + "/"
@@ -1504,7 +1506,7 @@ for l in DAY.LANGS:
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, NC, NT, NM):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, NC, NT, NM):
     for l in _M.LANGS:
         write(map_path(_M, l), page_photomap(l, _M))
 
@@ -1518,7 +1520,7 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, NC, NT, NM):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, NC, NT, NM):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
@@ -1579,6 +1581,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Self-guided Da Lat day trip by motorbike: new attractions 2026 (Langbiang Land, Mongo Land, Hoang Long Ohayo, strawberry farm) — ordered route, distances, free PDF]({BASE + map_path(RN, "en")})
 - [Self-guided Da Lat day trip by motorbike: hot check-in spots (Lac Hu Co Tran, Memory Station, Suoi Binh Yen, Happy Hill) — ordered route, distances, free PDF]({BASE + map_path(RC, "en")})
 - [Da Lat waterfalls map — 6 waterfalls open to visitors (Datanla, Prenn, Cam Ly, Lien Khuong, Elephant Falls, Pongour) with hours, reference ticket prices, free PDF]({BASE + map_path(WF, "en")})
+- [Self-guided attractions in Da Lat — 29 places from waterfalls and tea hills to pagodas and the night market, opening hours from Google Maps, reference ticket prices and directions]({BASE + map_path(AM, "en")})
 - [Da Lat night-view cafés — map of 6 cafés overlooking the lit greenhouse valley (Chenh Venh, Chang Vang, Loi Cua Gio, Vi Yeu Ma Den, Lang Vu Thi, Nha May Cay), free PDF]({BASE + map_path(NC, "en")})
 - [How to get from Nha Trang to Da Lat — bus & limousine map: Da Lat bus station and the Da Lat offices of FUTA, The Sinh Tourist, Lac Hong, An Phu, HM; free PDF]({BASE + map_path(NT, "en")})
 - [Da Lat night market & evening food map — night market, grilled rice paper, hot soy milk, che, chicken hot pot with lemon basil; free PDF]({BASE + map_path(NM, "en")})
