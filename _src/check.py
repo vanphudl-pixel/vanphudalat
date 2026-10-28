@@ -49,19 +49,21 @@ for l in LANGS:
 
 # Licence pillar page (content/licence.py, owner allowed licence wording ONLY here, 2026-10-28):
 # every language present, every non-licence rule still enforced (currency, range wording, no 120 kg / 120k).
-_LIC = importlib.import_module("content.licence")
-if set(_LIC.T) != set(LANGS):
-    problems.append(f"licence: languages differ from site languages: {set(LANGS) ^ set(_LIC.T)}")
-for l, t in _LIC.T.items():
-    txt = repr(t)
-    for pat in [r"per carica", r"per lading", r"ដុង", r"ດົ່ງ", r"ဒေါင်",
-                r"(per charge|par charge|por carga|pro (Akku)?ladung|mỗi lần sạc|на (одном |полном )?заряде|充满电约|満充電で約|완충 시 약|1회 충전 약|ชาร์จเต็มวิ่ง|sekali isi|setiap cas|בטעינה|לטעינה)",
-                r"120\s?(kg|кг|公斤|กก)", r"\d[\d.,\u00a0\u202f ]*\d\s?(đ\b|₫|донг|ดอง|דונג|越南盾|ドン)", r"120[.,\u00a0\u202f ]?000\s?VND|\b120k\b",
-                r"international driving permit|1949|1968"]:
-        if re.search(pat, txt, re.I):
-            problems.append(f"licence/{l}: forbidden wording /{pat}/")
-    if '"' in t["title"] + t["desc"]:
-        problems.append(f"licence/{l}: ASCII quote in title/desc breaks the meta tag")
+# Same checks for the night-bus arrival pillar (content/arrive.py): it may name the licence only to link to the licence page.
+for _PN in ("licence", "arrive"):
+  _P = importlib.import_module(f"content.{_PN}")
+  if set(_P.T) != set(LANGS):
+    problems.append(f"{_PN}: languages differ from site languages: {set(LANGS) ^ set(_P.T)}")
+  for l, t in _P.T.items():
+      txt = repr(t)
+      for pat in [r"per carica", r"per lading", r"ដុង", r"ດົ່ງ", r"ဒေါင်",
+                  r"(per charge|par charge|por carga|pro (Akku)?ladung|mỗi lần sạc|на (одном |полном )?заряде|充满电约|満充電で約|완충 시 약|1회 충전 약|ชาร์จเต็มวิ่ง|sekali isi|setiap cas|בטעינה|לטעינה)",
+                  r"120\s?(kg|кг|公斤|กก)", r"\d[\d.,\u00a0\u202f ]*\d\s?(đ\b|₫|донг|ดอง|דונג|越南盾|ドン)", r"120[.,\u00a0\u202f ]?000\s?VND|\b120k\b",
+                  r"international driving permit|1949|1968"]:
+          if re.search(pat, txt, re.I):
+              problems.append(f"{_PN}/{l}: forbidden wording /{pat}/")
+      if '"' in t["title"] + t["desc"]:
+          problems.append(f"{_PN}/{l}: ASCII quote in title/desc breaks the meta tag")
 
 # every page: internal links and images must exist
 pages = list(ROOT.rglob("index.html"))
