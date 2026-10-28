@@ -73,6 +73,7 @@ from content import dayhub as DAY
 from content import tourmap as TM
 from content import licence as LIC
 from content import arrive as ARR
+from content import routeshub as RH
 from content._route import legs as route_legs
 from content.extra_a import ART as _A
 from content.extra_b import ART as _B
@@ -264,6 +265,9 @@ def routes_path(l): return lang_root(l) + C[l]["routes"]["slug"] + "/"
 def blog_path(l): return lang_root(l) + "blog/"
 def ev_path(l): return lang_root(l) + EV[l]["slug"] + "/"
 def art_path(l, k): return blog_path(l) + C[l]["articles"][k][0] + "/"
+def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
+def day_path(l): return lang_root(l) + DAY.SLUG[l] + "/"
+def tm_path(l): return lang_root(l) + TM.SLUG[l] + "/"
 def lic_path(l): return lang_root(l) + LIC.SLUG[l] + "/"
 LIC_LANGS = [x for x in LIC.LANGS if x in LIC.T]
 LIC_FROM = {"lt-documents", "lt-ev-foreigners", "evrules", "lt-ev-experience", "lt-procedure"}  # articles that link to the licence page
@@ -674,29 +678,51 @@ def crumbs_ld(l, items):
         el.append({"@type": "ListItem", "position": i, "name": n, "item": BASE + p})
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": el}
 
+def _rh_link(l, me, key):
+    if key.startswith("art:"): return rel(me, art_path(l, key[4:]))
+    return {"day": lambda: rel(me, day_path(l)) if l in DAY.LANGS else None, "tm": lambda: rel(me, tm_path(l)) if l in TM.LANGS else None,
+            "hub": lambda: rel(me, hub_path(l)) if l in HUB.LANGS else None, "pm": lambda: rel(me, pm_path(l)), "wf": lambda: rel(me, map_path(WF, l)),
+            "cl": lambda: rel(me, map_path(CL, l)), "lic": lambda: rel(me, lic_path(l)), "arr": lambda: rel(me, arr_path(l)), "ev": lambda: rel(me, ev_path(l))}[key]()
 def page_routes(l):
     r, u = C[l]["routes"], C[l]["ui"]
     me = routes_path(l)
     items = "".join(f'<div class="route"><h3>{i}. {t}</h3><div class="meta">{m}</div><p>{d}</p><p><i>{tip}</i></p></div>'
                     for i, (t, m, d, tip) in enumerate(r["items"], 1))
     tips = "".join(f"<li>{t}</li>" for t in r["tips"])
-    art = {"@context": "https://schema.org", "@type": "Article", "headline": r["h1"], "inLanguage": l, "mainEntityOfPage": BASE + me,
-           "image": BASE + "img/airblade.jpg", "datePublished": "2026-10-10",
+    x = RH.T.get(l)
+    hub = ""; lds_extra = []
+    if x:
+        rows = "".join(f'<tr><td>{t}</td><td>{x["km"].format(d=d)}</td><td>{x["why"][w]}</td><td><b>{x["bike"][b]}</b></td></tr>'
+                       for (t, *_), (d, w, b) in zip(r["items"], RH.ROWS))
+        def chips(keys, labels):
+            return "".join(f'<a href="{h}">{labels[k]} →</a>' for k in keys for h in [_rh_link(l, me, k)] if h)
+        faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in x["faq"])
+        hub = f"""
+ <section><h2>{x["h_bike"]}</h2><p>{x["bike_intro"]}</p><table class="price"><tr>{"".join(f"<th>{c}</th>" for c in x["cols"])}</tr>{rows}</table></section>
+ <section class="prose"><h2>{x["ev_h"]}</h2>{x["ev_html"]}<p><a class="btn alt" href="{rel(me, ev_path(l))}" style="border:1px solid var(--line)">⚡ {EV[l]["h1"]} →</a></p></section>
+ <section><h2>{x["plan_h"]}</h2><p class="chips">{chips(RH.PLAN, x["plan"])}</p></section>
+ <section><h2>{x["before_h"]}</h2><p class="chips">{chips(RH.BEFORE, x["before"])}</p></section>
+ <section class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px"><h2>{x["cta_h"]}</h2><p>{x["cta"]}</p><p><a class="btn" href="{rel(me, home_path(l))}">{kw_rent(l)} →</a></p></section>
+ <section class="faq"><h2>{x["faq_h"]}</h2>{faq}</section>"""
+        lds_extra = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in x["faq"]]},
+                     {"@context": "https://schema.org", "@type": "ItemList", "name": r["h_list"], "itemListElement": [{"@type": "ListItem", "position": i, "name": t} for i, (t, *_) in enumerate(r["items"], 1)]}]
+    art = {"@context": "https://schema.org", "@type": "Article", "headline": r["h1"], "description": r["desc"], "inLanguage": l, "mainEntityOfPage": BASE + me,
+           "image": BASE + "img/airblade.jpg", "datePublished": "2026-10-10", "dateModified": RH.UPDATED if x else "2026-10-10",
            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}}
     body = f"""
 <header><div class="wrap">{langbar(l, "routes", None, me)}
 <div class="hero">{crumbs(l, me, [(u["crumbs_routes"], None)])}
- <h1>{r["h1"]}</h1><p class="lead">{r["lead"]}</p>
+ <h1>{r["h1"]}</h1><p class="lead">{r["lead"]}</p>{f'<p class="upd"><time datetime="{RH.UPDATED}">{UPD[l]}: {fdate(l, RH.UPDATED)}</time></p>' if x else ""}
  <div class="cta">{hero_btns(l)}</div>
 </div></div></header>
 <main class="wrap">
- <section><h2>{r["h_list"]}</h2>{items}</section>
+ <section><h2>{r["h_list"]}</h2>{items}</section>{hub}
  <section><h2>{r["h_tips"]}</h2><ul class="checks">{tips}</ul></section>
  <section>{contact_box(l)}{cta_box(l, me)}</section>
  <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:6])}</section>
 </main>
 """
-    return head(l, "routes", None, r["title"], r["desc"], [art, crumbs_ld(l, [(u["crumbs_routes"], me)])], "airblade") + body + foot(l, frm=me)
+    return head(l, "routes", None, r["title"], r["desc"], [art, business_ld(l, BASE + me), crumbs_ld(l, [(u["crumbs_routes"], me)])] + lds_extra, "airblade") + body + foot(l, frm=me)
 
 def page_blog(l):
     b, u = C[l]["blog"], C[l]["ui"]
@@ -902,8 +928,54 @@ def add_pwa(html):
     if '<meta charset="utf-8">' in html:
         html = html.replace('<meta charset="utf-8">', '<meta charset="utf-8">' + PWA_HEAD, 1)
     return html.replace('</body>', PWA_JS + '</body>', 1) if '</body>' in html else html
+# ---- structured data on every indexable page (owner asked 2026-10-28):
+# the shop's LocalBusiness/AutoRental entity (hours 04:30–21:00, priceRange, geo) and a FAQPage built only from Q&A that is visible
+# on the page (<details> blocks and genuine question <h2>s). Contact/CTA headings ("Questions about Da Lat?", "Ready to rent?")
+# are excluded: their "answer" is a booking box, not an answer.
+_LD_RE = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
+def _plain(x): return re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", x))).strip()
+def _cta_heads():
+    out = set()
+    for _l in LANGS:
+        for x in (contact_box(_l) + cta_box(_l, home_path(_l))).split("<h2")[1:]:
+            out.add(_plain(x.split(">", 1)[1].split("</h2>")[0]))
+    return out
+_CTA_H = None
+def _faq_from_page(html):
+    global _CTA_H
+    if _CTA_H is None: _CTA_H = _cta_heads()
+    qa = [(_plain(q), _plain(a)) for q, a in re.findall(r"<details><summary>(.*?)</summary>(.*?)</details>", html, re.S)]
+    main = html.split("<main", 1)[-1]
+    parts = re.split(r"(<h2>[^<]{8,}[?？]</h2>)", main)
+    for i in range(1, len(parts) - 1, 2):
+        q = _plain(parts[i]); body = re.split(r"<h2|<section|</section>|<details", parts[i + 1])[0]
+        a = _plain(body)
+        if q in _CTA_H or "wa.me/" in body or "tel:" in body or len(a) < 40: continue
+        qa.append((q, a[:1000]))
+    seen, out = set(), []
+    for q, a in qa:
+        if q and a and q not in seen: seen.add(q); out.append((q, a))
+    return out
+def add_ld(path, html):
+    if 'http-equiv="refresh"' in html or 'name="robots" content="noindex"' in html or "</head>" not in html: return html
+    types = []
+    for x in _LD_RE.findall(html):
+        try: t = json.loads(x).get("@type")
+        except Exception: continue
+        types += t if isinstance(t, list) else [t]
+    add = []
+    if "AutoRental" not in types:
+        m = re.search(r'<html lang="([a-z]+)"', html); _l = m.group(1) if m and m.group(1) in C else "en"
+        add.append(business_ld(_l, BASE + path))
+    if "FAQPage" not in types:
+        qa = _faq_from_page(html)
+        if qa:
+            add.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+                {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qa]})
+    return html.replace("</head>", "".join(ldjson(x) for x in add) + "</head>", 1) if add else html
+
 def write(path, html):
-    html = add_pwa(add_csp(add_ga(speed(html))))
+    html = add_pwa(add_csp(add_ga(speed(add_ld(path, html)))))
     p = OUT / path / "index.html"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(html, encoding="utf-8")
@@ -1389,8 +1461,6 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 # ------------------------------------------------------------------ places hub (pillar page, vi + en)
 THEMES = [RN, RC, PM, WF, AM, FM, PG, CH, SF, CL, CF, NC, NM, BB, FE, HT, H4, H3, BU, DN, NT]
 _TNAME = {M.__name__.split(".")[-1]: M for M in THEMES}
-def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
-def day_path(l): return lang_root(l) + DAY.SLUG[l] + "/"
 def hub_link(l, me, key):
     if key == "routes": return rel(me, routes_path(l))
     if key == "ev": return rel(me, ev_path(l))
@@ -1576,7 +1646,6 @@ for _M in (LIC, ARR):
         write(pil_path(_M, l), page_pillar(_M, l))
 
 # ------------------------------------------------------------------ tourist map by motorbike route (vi + en)
-def tm_path(l): return lang_root(l) + TM.SLUG[l] + "/"
 def page_tourmap(l):
     t = TM.T[l]; me = tm_path(l)
     hub = {s[0]: s for s in HUB.spots(l)}
