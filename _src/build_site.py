@@ -59,6 +59,7 @@ from content import busmap as BU
 from content import danangbusmap as DN
 from content import waterfallmap as WF
 from content import attractmap as AM
+from content import flowermap as FM
 from content import nightcafemap as NC
 from content import nhatrangbusmap as NT
 from content import nightmarketmap as NM
@@ -1364,7 +1365,7 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 """ + foot(l, frm=me)
 
 # ------------------------------------------------------------------ places hub (pillar page, vi + en)
-THEMES = [RN, RC, PM, WF, AM, PG, CH, SF, CL, CF, NC, NM, BB, FE, HT, H4, H3, BU, DN, NT]
+THEMES = [RN, RC, PM, WF, AM, FM, PG, CH, SF, CL, CF, NC, NM, BB, FE, HT, H4, H3, BU, DN, NT]
 _TNAME = {M.__name__.split(".")[-1]: M for M in THEMES}
 def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
 def day_path(l): return lang_root(l) + DAY.SLUG[l] + "/"
@@ -1506,7 +1507,7 @@ for l in DAY.LANGS:
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, NC, NT, NM):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, FM, NC, NT, NM):
     for l in _M.LANGS:
         write(map_path(_M, l), page_photomap(l, _M))
 
@@ -1520,7 +1521,7 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, NC, NT, NM):
+for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, FM, NC, NT, NM):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
@@ -1582,6 +1583,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Self-guided Da Lat day trip by motorbike: hot check-in spots (Lac Hu Co Tran, Memory Station, Suoi Binh Yen, Happy Hill) — ordered route, distances, free PDF]({BASE + map_path(RC, "en")})
 - [Da Lat waterfalls map — 6 waterfalls open to visitors (Datanla, Prenn, Cam Ly, Lien Khuong, Elephant Falls, Pongour) with hours, reference ticket prices, free PDF]({BASE + map_path(WF, "en")})
 - [Self-guided attractions in Da Lat — 29 places from waterfalls and tea hills to pagodas and the night market, opening hours from Google Maps, reference ticket prices and directions]({BASE + map_path(AM, "en")})
+- [Da Lat flower gardens — 9 gardens and flower fields with hours, reference ticket prices and directions]({BASE + map_path(FM, "en")})
 - [Da Lat night-view cafés — map of 6 cafés overlooking the lit greenhouse valley (Chenh Venh, Chang Vang, Loi Cua Gio, Vi Yeu Ma Den, Lang Vu Thi, Nha May Cay), free PDF]({BASE + map_path(NC, "en")})
 - [How to get from Nha Trang to Da Lat — bus & limousine map: Da Lat bus station and the Da Lat offices of FUTA, The Sinh Tourist, Lac Hong, An Phu, HM; free PDF]({BASE + map_path(NT, "en")})
 - [Da Lat night market & evening food map — night market, grilled rice paper, hot soy milk, che, chicken hot pot with lemon basil; free PDF]({BASE + map_path(NM, "en")})
