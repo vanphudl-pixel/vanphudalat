@@ -1813,6 +1813,8 @@ def _keep_loc(loc):
     path = loc[len(BASE):]
     if path.startswith("files/"):
         return False
+    if re.match(r"^(?:(?:de|fr|es|he|it|nl|km|lo|my)/blog/|vi/thue-xe-may-da-lat/duong-)", path):
+        return False
     first = path.split("/", 1)[0]
     return not (first in _ALL_PREFIX)
 _kept = []
@@ -1823,6 +1825,20 @@ for _blk in urls.split("  <url>\n")[1:]:
     _blk = "\n".join(_ln for _ln in _blk.split("\n") if not any(f'hreflang="{x}"' in _ln for x in _ALL_PREFIX))
     _kept.append("  <url>\n" + _blk)
 urls = "".join(_kept)
+
+# Thin pages kept out of Google's index (still reachable through links):
+#  - blog posts in the non-priority languages (de, fr, es, he, it, nl, km, lo, my); English and priority-language blogs stay indexed;
+#  - the vi road pages (thue-xe-may-da-lat/duong-*), near-identical templates per street name.
+# They are also dropped from the sitemap above via _keep_loc.
+import re as _re
+_NOINDEX_RE = _re.compile(r"^(?:(?:de|fr|es|he|it|nl|km|lo|my)/blog/|vi/thue-xe-may-da-lat/duong-)")
+for _f in OUT.rglob("index.html"):
+    _rel = _f.parent.relative_to(OUT).as_posix() + "/"
+    if _NOINDEX_RE.match(_rel):
+        _t = _f.read_text(encoding="utf-8")
+        if 'name="robots" content="noindex"' not in _t:
+            _t = _t.replace("<head>", '<head><meta name="robots" content="noindex">', 1)
+            _f.write_text(_t, encoding="utf-8")
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
