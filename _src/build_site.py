@@ -1804,6 +1804,25 @@ for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path(), tour_path()] + [guide
 <meta http-equiv="refresh" content="0; url={BASE}">
 </head><body><p>Page not found. <a href="{BASE}">Go to the Van Phu Dalat home page</a>.</p></body></html>
 """, encoding="utf-8")
+# Sitemap scope: keep priority languages only (English root + vi, ru, zh, id, ms, th, ko, ja).
+# Other-language pages and PDFs stay on the site (linked and reachable) but are left out of the sitemap,
+# so Google's crawl budget goes to the pages we want indexed. hreflang alternates are filtered the same way.
+SITEMAP_LANGS = {"vi", "ru", "zh", "id", "ms", "th", "ko", "ja"}
+_ALL_PREFIX = {"de", "fr", "es", "he", "it", "nl", "km", "lo", "my"}
+def _keep_loc(loc):
+    path = loc[len(BASE):]
+    if path.startswith("files/"):
+        return False
+    first = path.split("/", 1)[0]
+    return not (first in _ALL_PREFIX)
+_kept = []
+for _blk in urls.split("  <url>\n")[1:]:
+    _loc = _blk.split("<loc>", 1)[1].split("</loc>", 1)[0]
+    if not _keep_loc(_loc):
+        continue
+    _blk = "\n".join(_ln for _ln in _blk.split("\n") if not any(f'hreflang="{x}"' in _ln for x in _ALL_PREFIX))
+    _kept.append("  <url>\n" + _blk)
+urls = "".join(_kept)
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
