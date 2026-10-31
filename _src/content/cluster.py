@@ -14,6 +14,6 @@ CLUSTERS = {
     # Group 4 — delivery & location
     "location": ["getaround", "where-to-stay", "selfguided", "lt-busstation", "lt-delivery", "lt-center", "nightmarket", "thingstodo", "oneday"],
     # bikes & trip length
-    "bikes": ["lt-automatic", "lt-2days", "days2", "lt-airblade", "lt-vision", "lt-two", "lt-multiday", "lt-backpacker", "lt-rainy", "rainyday", "riding"],
+    "bikes": ["lt-automatic", "lt-2days", "days2", "lt-airblade", "lt-vision", "lt-two", "lt-multiday", "lt-backpacker", "budget", "lt-rainy", "rainyday", "riding"],
 }
 GROUP = {k: g for g, ks in CLUSTERS.items() for k in ks}
