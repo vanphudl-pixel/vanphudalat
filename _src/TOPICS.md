@@ -104,6 +104,9 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-10-31 budget — Planning a Da Lat trip budget (transport, stay, food, sights qualitative; only own prices exact: 150,000 VND/day, week 1,050,000 VND, battery swap 20,000 VND; vi "chi phí du lịch Đà Lạt", ru "бюджет поездки в Далат"; links getting, where-to-stay, food, lt-multiday, routes; photos honda-vision-girls-helmets-dalat + honda-vision-cafe-garden-dalat; cluster bikes; 18 languages)
 - 2026-10-31 lt-checklist — Long-tail: 10 things to check before renting a motorbike (vi "thuê xe máy Đà Lạt cần kiểm tra gì", en "what to check before renting a motorbike in Da Lat", ru "что проверить перед арендой байка в Далате", zh "大叻租摩托车要检查什么", th "เช่ามอเตอร์ไซค์ดาลัด ต้องเช็กอะไรบ้าง"; links lt-procedure, lt-ev-checklist; photos honda-air-blade-vision-fleet-van-phu + guest-white-honda-vision-van-phu-shop + air-blade-handover-dalat-homestay; 18 languages)
 - 2026-10-31 lt-ev-checklist — EV long-tail: what to check when picking up an electric scooter (vi "thuê xe máy điện Đà Lạt cần kiểm tra gì", en "what to check when picking up an electric scooter in Da Lat", ru "что проверить при аренде электроскутера в Далате", zh "大叻租电动车要检查什么", th "เช่ามอเตอร์ไซค์ไฟฟ้าดาลัด ต้องเช็กอะไรบ้าง"; 2 batteries, display, power switch, horn (quiet motor); no km figure (links lt-ev-battery); links evrules, lt-checklist; photos electric-scooters-van-phu-shop + guest-white-electric-scooter-dalat; 18 languages)
+- 2026-11-01 passes — [KW2] Dalat scenic roads and viewpoints by motorbike: Prenn, Mimosa (check if open), Tuyen Lam, Lang Biang, Trai Mat, Cau Dat; safe photo stops, riding passes, Air Blade for passes, no EV on passes (vi "cung đường đẹp Đà Lạt", ru "живописные дороги Далата"; links tuyenlam, riding, routes; photos friends-air-blade-van-phu-gate + van-phu-guest-air-blade-thumbs-up; cluster bikes; 18 languages)
+- 2026-11-01 lt-rainy — Long-tail [KW2]: renting a motorbike in the rainy season (en "Renting a motorbike in Da Lat in the rainy season" + "Dalat in the rain: transport tips", vi "thuê xe máy Đà Lạt mùa mưa", ru "аренда байка в Далате в сезон дождей", zh "大叻雨季租摩托车", th "เช่ามอเตอร์ไซค์ดาลัดหน้าฝน"; links rainyday, lt-ev-rain; photos van-phu-shop-busy-morning-vision-air-blade + honda-vision-bui-thi-xuan-street-dalat; 18 languages)
+- 2026-11-01 lt-ev-families — EV long-tail: electric scooter for families and older travellers (vi "thuê xe máy điện Đà Lạt cho gia đình", en "electric scooter rental in Da Lat for families", ru "аренда электроскутера в Далате для семьи", zh "大叻家庭租电动车", th "เช่ามอเตอร์ไซค์ไฟฟ้าดาลัดสำหรับครอบครัว"; 2 riders <140 kg, rider 16+, helmets; no km figure (links lt-ev-battery); links evrules; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; 18 languages)
 
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
@@ -117,7 +120,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - OWNER'S KEYWORD PLAN 2 (17/10/2026, English-search priorities): each topic below marked [KW2] lists an exact English target phrase → the en title_tag, H1 and meta must contain it (natural capitalisation); vi and other languages use their natural equivalent. Already covered, do NOT write new articles for: "Dalat motorbike rental price" / "How much does it cost to rent a scooter in Dalat" (existing `price`), "Dalat motorbike rental requirements" (lt-documents), "Best places to visit around Dalat by scooter" (routes page + photospots), "What to know before riding a scooter in Dalat" (riding + lt-first-time). Never write "international driving permit" topics; licence questions are answered only on the licence pillar page (/do-i-need-a-license-to-rent-a-motorbike-in-vietnam/, vi /vi/thue-xe-may-co-can-bang-lai/).
 - Internal links: add every new key to its cluster in `content/cluster.py` ("Read also" then shows cluster siblings first), and link 1–2 sibling articles in the body with <a href="{ART:<key>}">…</a>.
 - "Documents" topics: the ONLY documents are passport (foreigners) or CCCD/ID card (Vietnamese guests). Never mention any other document, licence or permit.
-- [ ] lt-rainy — Renting a motorbike in Da Lat in the rainy season (raincoat, slippery hills, what to avoid) — [KW2] en secondary: "Dalat in the rain: transport tips"; link rainyday
 - [ ] lt-backpacker — Motorbike rental in Da Lat for backpackers and budget travellers
 - [ ] lt-booking — How to book a motorbike in Da Lat online (WhatsApp, Zalo, WeChat, Telegram — what to send)
 - [ ] lt-reliable — How to choose a reliable motorbike rental in Da Lat (transparent price, no hidden fees, written rules) — generic advice, no competitor claims
@@ -134,7 +136,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-families — Electric scooter in Da Lat for families and older travellers (gentle, quiet; safety)
 - [ ] lt-ev-faq — Electric scooter rental in Da Lat: 10 common questions answered
 - [ ] lt-ev-lake — Around Xuan Huong Lake and the city flower garden by electric scooter (short lakeside loop, stops, parking)
 - [ ] lt-ev-market — Going to Da Lat Market by electric scooter: morning shopping, guarded parking, carrying bags
@@ -148,7 +149,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-cold — Electric scooter in Da Lat's cool weather: what to wear (jacket, gloves, rain gear, cold mornings)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 29/10 passes — [KW2] Scenic roads and viewpoints around Da Lat (Prenn, Mimosa) — safety focus — en: "Dalat scenic roads and viewpoints"
 - [ ] 30/10 kids — Da Lat with kids
 - [ ] 31/10 pinkgrass — Pink grass (cỏ hồng) season around Da Lat: where to see it by bike
 - [ ] 01/11 november — Da Lat in November: weather, what's in season, what to pack
