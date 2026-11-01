@@ -4,7 +4,7 @@ Owner: Phú. Report language: Vietnamese.
 
 ## How a new article is added
 1. Pick the first unchecked topic in "Backlog". The backlog is a dated daily calendar (one article per day); follow its order. If a day was missed, just take the next unchecked one. Topics marked (publish ~date) wait until that date.
-2. Add the article to **every** file in `content/` (en, ru, zh, ko, ja, th, id, ms, vi, de, fr, es, he) under the **same key**, appended at the END of `C["articles"]` (order = publish order).
+2. **Owner decision 2026-11-01: new articles are written ONLY in 6 languages — vi, en, zh, ru, ko, id** (FOCUS_LANGS in build_site.py). Add the article to `content/vi.py`, `en.py`, `zh.py`, `ru.py`, `ko.py`, `id.py` under the **same key**, appended at the END of `C["articles"]` (order = publish order). Do NOT add new articles to ja, th, ms, de, fr, es, he, it, nl, km, lo, my — the build leaves them out of those languages automatically (listings, hreflang, language bar, sitemap use only languages that have the article). Articles published up to 2026-11-01 stay in all 18 languages; never delete them.
    Tuple: `(slug, title_tag, h1, meta_description, lead, image_name, html_body)`
    - slug: en/zh/ko/ja/th/id/ms/de/fr/es/he → same English kebab slug; ru → transliterated Russian slug; vi → Vietnamese kebab slug without diacritics.
    - image_name: one of the files in `/img` without `.jpg`: electric-row, electric-helmets, airblade, fleet-gas, vision-white (do NOT use guest-1/guest-2 as article images).

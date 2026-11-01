@@ -26,8 +26,13 @@ for l in LANGS:
         miss = set(ref[sec]) - set(c[sec])
         if miss:
             problems.append(f"{l}: section {sec} missing keys {miss}")
-    if list(c["articles"]) != list(ref["articles"]):
-        problems.append(f"{l}: article keys/order differ from en")
+    # Owner 2026-11-01: new articles only in the focus languages; other languages may lack the newest keys,
+    # but must keep en order, and the focus languages must have every article.
+    if l in ("vi", "en", "zh", "ru", "ko", "id"):
+        if list(c["articles"]) != list(ref["articles"]):
+            problems.append(f"{l}: article keys/order differ from en")
+    elif [k for k in ref["articles"] if k in c["articles"]] != list(c["articles"]):
+        problems.append(f"{l}: article keys not in en order or unknown keys")
     slugs = [a[0] for a in c["articles"].values()]
     if len(slugs) != len(set(slugs)):
         problems.append(f"{l}: duplicate article slugs")

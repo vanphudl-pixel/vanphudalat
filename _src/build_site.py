@@ -84,6 +84,13 @@ C["en"]["dates"].update({"price": "2026-10-12", "evgas": "2026-10-12"})
 TPL = (HERE / "template.html").read_text(encoding="utf-8")
 # article order = order in content/en.py (oldest first); every language must have every key
 ARTICLES = list(C["en"]["articles"].keys())
+# Owner decision 2026-11-01: new articles are written only in FOCUS_LANGS (vi, en, zh, ru, ko, id).
+# Older articles stay in all 18 languages. A language simply lacks the keys it was not written in:
+# listings, "read also", hreflang, language bar and sitemap only use the languages that really have the article.
+FOCUS_LANGS = ["vi", "en", "zh", "ru", "ko", "id"]
+def arts(l): return [k for k in ARTICLES if k in C[l]["articles"]]
+ART_LANGS = {k: [x for x in LANGS if k in C[x]["articles"]] for k in ARTICLES}
+def langs_of(kind, key): return ART_LANGS[key] if kind == "art" else LANGS
 DATES = C["en"].get("dates", {})
 def adate(k): return DATES.get(k, "2026-10-10")
 from content.artfaq import FAQ as AFAQ, UPDATED as AUPD, H as AFAQ_H
@@ -496,7 +503,7 @@ def contacts(l):
 
 def langbar(l, kind, key, frm):
     out = ""
-    for x in LANGS:
+    for x in langs_of(kind, key):
         cls = ' class="on" aria-current="page"' if x == l else ""
         out += f'<a href="{rel(frm, path_of(x, kind, key))}" hreflang="{x}" data-l="{x}"{cls}>{LABEL[x]}</a>'
     return f'<div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{out}</div></div>'
@@ -505,7 +512,7 @@ def ldjson(o): return '<script type="application/ld+json">' + json.dumps(o, ensu
 
 def head(l, kind, key, title, desc, ld, img="electric-row"):
     me = path_of(l, kind, key)
-    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + path_of(x, kind, key)}">\n' for x in LANGS)
+    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + path_of(x, kind, key)}">\n' for x in langs_of(kind, key))
     alts += f'<link rel="alternate" hreflang="x-default" href="{BASE + path_of("en", kind, key)}">\n'
     return f"""<!doctype html>
 <html lang="{l}"{' dir="rtl"' if l == "he" else ""}>
@@ -658,7 +665,7 @@ def page_home(l):
  {pm_section(l, me)}
  <section class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px"><p>{FE.T[l]["desc"]}</p><p><a class="btn" href="{rel(me, map_path(FE, l))}">🌸 {FE.T[l]["h1"]} →</a></p></section>
  <section class="faq"><h2>{h["h_faq"]}</h2>{faq}</section>
- <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:6])}</section>
+ <section><h2>{u["blog_h"]}</h2>{posts(l, me, arts(l)[::-1][:6])}</section>
  <section><h2>{h["h_map"]}</h2>{mp}</section>
  <section>{contact_box(l)}</section>
  <section><h2>{h["h_contacts"]}</h2>{contacts(l)}</section>
@@ -721,7 +728,7 @@ def page_routes(l):
  <section><h2>{r["h_list"]}</h2>{items}</section>{hub}
  <section><h2>{r["h_tips"]}</h2><ul class="checks">{tips}</ul></section>
  <section>{contact_box(l)}{cta_box(l, me)}</section>
- <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:6])}</section>
+ <section><h2>{u["blog_h"]}</h2>{posts(l, me, arts(l)[::-1][:6])}</section>
 </main>
 """
     return head(l, "routes", None, r["title"], r["desc"], [art, business_ld(l, BASE + me), crumbs_ld(l, [(u["crumbs_routes"], me)])] + lds_extra, "airblade") + body + foot(l, frm=me)
@@ -744,7 +751,7 @@ def page_blog(l):
  <h1>{b["h1"]}</h1><p class="lead">{b["lead"]}</p>
 </div></div></header>
 <main class="wrap">
- <section>{posts(l, me, ARTICLES[::-1]).replace("</div>", extra + "</div>", 1)}</section>
+ <section>{posts(l, me, arts(l)[::-1]).replace("</div>", extra + "</div>", 1)}</section>
  <section>{contact_box(l)}{cta_box(l, me)}</section>
 </main>
 """
@@ -767,8 +774,8 @@ def page_article(l, k):
            "mainEntityOfPage": BASE + me, "image": [f"{BASE}img/{x}.jpg" for x in dict.fromkeys([img] + _phs)], "datePublished": adate(k), "dateModified": mdate(l, k),
            "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"},
            "publisher": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}}
-    _sib = [x for x in ARTICLES[::-1] if x != k and k in CL_GROUP and CL_GROUP.get(x) == CL_GROUP[k]]
-    others = (_sib + [x for x in ARTICLES[::-1] if x != k and x not in _sib])[:3]
+    _sib = [x for x in arts(l)[::-1] if x != k and k in CL_GROUP and CL_GROUP.get(x) == CL_GROUP[k]]
+    others = (_sib + [x for x in arts(l)[::-1] if x != k and x not in _sib])[:3]
     qa = AFAQ.get(l, {}).get(k, [])
     faq_html = (f'<section class="faq"><h2>{AFAQ_H[l]}</h2>' + "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in qa) + "</section>") if qa else ""
     lds = [art, crumbs_ld(l, [(u["crumbs_blog"], blog_path(l)), (h1, me)])]
@@ -850,7 +857,7 @@ def page_ev(l):
  <section><h2>{e["h_faq"]}</h2>{faq}</section>
  {rev_section(l, ("keziah", "peter", "jan"))}
  <section>{contact_box(l)}{cta_box(l, me)}</section>
- <section><h2>{u["blog_h"]}</h2>{posts(l, me, ARTICLES[::-1][:3])}</section>
+ <section><h2>{u["blog_h"]}</h2>{posts(l, me, arts(l)[::-1][:3])}</section>
 </main>
 """
     return head(l, "ev", None, e["title"], e["desc"], [svc, faq_ld, crumbs_ld(l, [(e["crumb"], me)])], "electric-row") + body + foot(l, frm=me)
@@ -1001,7 +1008,7 @@ for l in LANGS:
     write(routes_path(l), page_routes(l))
     write(blog_path(l), page_blog(l))
     write(ev_path(l), page_ev(l))
-    for k in ARTICLES:
+    for k in arts(l):
         write(art_path(l, k), page_article(l, k))
 
 # ------------------------------------------------------------------ Vietnamese-only street pages (phường Xuân Hương)
@@ -1767,10 +1774,10 @@ for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, FM, N
 
 urls = ""
 for kind, key in groups:
-    alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + path_of(x, kind, key)}"/>\n' for x in LANGS)
+    alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + path_of(x, kind, key)}"/>\n' for x in langs_of(kind, key))
     alts += f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + path_of("en", kind, key)}"/>\n'
-    for l in LANGS:
-        lm = mdate(l, key) if kind == "art" else max([adate(k) for k in ARTICLES] + ["2026-10-10"])
+    for l in langs_of(kind, key):
+        lm = mdate(l, key) if kind == "art" else max([adate(k) for k in arts(l)] + ["2026-10-10"])
         urls += f"  <url>\n    <loc>{BASE + path_of(l, kind, key)}</loc>\n{alts}    <lastmod>{lm}</lastmod>\n  </url>\n"
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
